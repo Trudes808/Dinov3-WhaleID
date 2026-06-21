@@ -1,0 +1,4 @@
+-r requirements.txt
+torch
+huggingface_hub
+git+https://github.com/huggingface/transformers.git
