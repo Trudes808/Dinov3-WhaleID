@@ -1,0 +1,14 @@
+# Python 3.12 venv at .venv (created with `python3 -m venv --without-pip .venv` + get-pip.py on this
+# machine because ensurepip is missing). Torch wheels must match the driver's CUDA (12.4 here):
+#   .venv/bin/pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+#   .venv/bin/pip install -r requirements-training.txt
+# DINOv3 itself is imported from a local checkout (DINOV3_REPO, default ~/dinov3), not installed.
+numpy
+pillow
+opencv-python-headless
+scipy
+omegaconf
+matplotlib
+tqdm
+pyyaml
+termcolor

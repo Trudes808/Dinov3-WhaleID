@@ -208,3 +208,12 @@ __marimo__/
 
 /runs/
 /Data/
+# ---- model fine-tuning (added 2026-10-11) ----
+.venv/
+experiments/*/checkpoints/
+experiments/*/eval_*/overlays*/
+experiments/*/eval_*/masks/
+experiments/*/eval_*/per_image*.jsonl
+experiments/*/val_per_image.jsonl
+experiments/*.stdout
+experiments/predictions_*/

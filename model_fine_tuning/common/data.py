@@ -1,0 +1,303 @@
+"""Reading a Whale-Image-Data-Factory run and building training crops.
+
+Dataset layout (RUN/dataset): images/<id>.png (RGBA), masks/<id>.png (palette, 0/1 visible
+whale), bodycoords/<id>.png (R = fraction along body, G = angle/360, B = 255 where defined,
+over the *amodal* whale), meta/<id>.json (pose, intrinsics, keypoints...), manifest.jsonl.
+
+Two crop strategies:
+  * SegCropDataset   random crops at roughly native scale (scale jitter), biased to contain
+                     whale pixels; evaluation uses the full frame.
+  * BodyCropDataset  square crops centred on the visible whale with a margin, resized to a
+                     fixed size, so the whale fills a consistent fraction of the input;
+                     at test time the crop comes from the segmentation model's mask.
+Padding outside the source image is labelled IGNORE (255) in masks and invalid in body coords.
+"""
+
+from __future__ import annotations
+
+import json
+import math
+from pathlib import Path
+
+import cv2
+import numpy as np
+from PIL import Image
+import torch
+from torch.utils.data import Dataset
+
+from . import geometry
+from .splits import load_split
+
+IGNORE = 255
+
+
+class WhaleRun:
+    def __init__(self, run_dir: Path, split_path: Path | None = None):
+        self.run_dir = Path(run_dir)
+        self.dataset_dir = self.run_dir / "dataset"
+        with open(self.dataset_dir / "manifest.jsonl") as handle:
+            self.rows = [json.loads(line) for line in handle if line.strip()]
+        self.by_id = {r["id"]: r for r in self.rows}
+        self.split = load_split(split_path) if split_path else None
+        self._meta: dict[str, dict] = {}
+        lm = self.dataset_dir / "landmarks_mesh_frame_cm.json"
+        self.landmarks_m = geometry.load_landmarks(lm) if lm.exists() else None
+
+    def ids(self, split: str | None = None) -> list[str]:
+        if split is None or split == "all":
+            return [r["id"] for r in self.rows]
+        if self.split is None:
+            raise ValueError("no split file loaded")
+        return [i for i in self.split[split] if i in self.by_id]
+
+    def meta(self, shot_id: str) -> dict:
+        if shot_id not in self._meta:
+            self._meta[shot_id] = json.loads((self.dataset_dir / "meta" / f"{shot_id}.json").read_text())
+        return self._meta[shot_id]
+
+    def image(self, shot_id: str) -> np.ndarray:
+        bgr = cv2.imread(str(self.dataset_dir / "images" / f"{shot_id}.png"), cv2.IMREAD_COLOR)
+        if bgr is None:
+            raise FileNotFoundError(shot_id)
+        return cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
+
+    def mask(self, shot_id: str) -> np.ndarray:
+        """uint8 label: 0 background, 1 visible whale, IGNORE where the factory wrote class 2
+        (whale just below the surface, which may show through the water: not scored)."""
+        # Palette PNG: PIL returns the class ids (cv2 would expand the palette to colours).
+        m = np.asarray(Image.open(self.dataset_dir / "masks" / f"{shot_id}.png"))
+        if m.ndim == 3:
+            m = m[..., 0]
+        if m.max(initial=0) > 2:                     # a colour-expanded or 0/255 mask
+            m = np.where(m >= 200, 1, np.where(m > 0, 2, 0))
+        out = (m == 1).astype(np.uint8)
+        out[m == 2] = IGNORE
+        return out
+
+    def visible(self, shot_id: str) -> np.ndarray:
+        return self.mask(shot_id) == 1
+
+    def bodycoords(self, shot_id: str):
+        bgr = cv2.imread(str(self.dataset_dir / "bodycoords" / f"{shot_id}.png"), cv2.IMREAD_COLOR)
+        rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
+        return decode_bodycoords(rgb)
+
+    def is_deformed(self, shot_id: str) -> bool:
+        """True when the factory bent the body for this shot (run02+): the rigid pose and the
+        canonical body table are then only approximate."""
+        return any(abs(float(v)) > 1e-9 for v in (self.meta(shot_id).get("deform") or {}).values())
+
+    def has_bodycoords(self, shot_id: str) -> bool:
+        return (self.dataset_dir / "bodycoords" / f"{shot_id}.png").exists()
+
+
+def decode_bodycoords(rgb: np.ndarray):
+    u = rgb[..., 0].astype(np.float32) / 255.0
+    theta = rgb[..., 1].astype(np.float32) / 255.0 * 360.0
+    defined = rgb[..., 2] > 127
+    return u, theta, defined
+
+
+# ---- geometric warps ---------------------------------------------------------------------------
+def warp_params(x0: float, y0: float, scale: float) -> np.ndarray:
+    """Affine mapping source pixel -> crop pixel: crop = (src - (x0, y0)) * scale."""
+    return np.array([[scale, 0.0, -x0 * scale], [0.0, scale, -y0 * scale]], np.float64)
+
+
+def warp_image(image: np.ndarray, M: np.ndarray, size: tuple[int, int], interpolation=cv2.INTER_LINEAR, border=0) -> np.ndarray:
+    flags = interpolation
+    return cv2.warpAffine(image, M, size, flags=flags, borderMode=cv2.BORDER_CONSTANT, borderValue=border)
+
+
+def warp_nearest(label: np.ndarray, M: np.ndarray, size: tuple[int, int], fill) -> np.ndarray:
+    return cv2.warpAffine(label, M, size, flags=cv2.INTER_NEAREST, borderMode=cv2.BORDER_CONSTANT, borderValue=fill)
+
+
+# ---- photometric augmentation -------------------------------------------------------------------
+def photometric(image: np.ndarray, rng: np.random.Generator, strength: float = 1.0) -> np.ndarray:
+    """Augmentations aimed at the sim-to-real gap: exposure, white balance, saturation, blur,
+    sensor noise, JPEG, occasional greyscale. Input/output uint8 RGB."""
+    img = image.astype(np.float32) / 255.0
+    s = strength
+    # exposure / contrast / gamma
+    img = img * rng.uniform(1 - 0.35 * s, 1 + 0.35 * s)
+    img = (img - 0.5) * rng.uniform(1 - 0.3 * s, 1 + 0.3 * s) + 0.5
+    img = np.clip(img, 0, 1) ** rng.uniform(1 - 0.3 * s, 1 + 0.3 * s)
+    # white balance
+    img = img * rng.uniform(1 - 0.12 * s, 1 + 0.12 * s, size=(1, 1, 3))
+    # saturation
+    grey = img.mean(axis=2, keepdims=True)
+    img = grey + (img - grey) * rng.uniform(1 - 0.5 * s, 1 + 0.3 * s)
+    if rng.random() < 0.05 * s:
+        img = np.repeat(img.mean(axis=2, keepdims=True), 3, axis=2)
+    img = np.clip(img, 0, 1)
+    if rng.random() < 0.3 * s:
+        k = int(rng.choice([3, 5, 7]))
+        img = cv2.GaussianBlur(img, (k, k), 0)
+    if rng.random() < 0.5 * s:
+        img = img + rng.normal(0, rng.uniform(0.0, 0.03 * s), img.shape).astype(np.float32)
+    out = np.clip(img * 255.0, 0, 255).astype(np.uint8)
+    if rng.random() < 0.3 * s:
+        q = int(rng.uniform(35, 95))
+        ok, buf = cv2.imencode(".jpg", cv2.cvtColor(out, cv2.COLOR_RGB2BGR), [cv2.IMWRITE_JPEG_QUALITY, q])
+        if ok:
+            out = cv2.cvtColor(cv2.imdecode(buf, cv2.IMREAD_COLOR), cv2.COLOR_BGR2RGB)
+    return out
+
+
+def to_tensor(image: np.ndarray) -> torch.Tensor:
+    return torch.from_numpy(np.ascontiguousarray(image)).permute(2, 0, 1).float() / 255.0
+
+
+def pad_to_multiple(image: np.ndarray, multiple: int = 16, fill=0):
+    """Pad bottom/right so H and W are multiples of ``multiple``. Returns (padded, (H, W) original)."""
+    h, w = image.shape[:2]
+    H = int(math.ceil(h / multiple) * multiple)
+    W = int(math.ceil(w / multiple) * multiple)
+    if (H, W) == (h, w):
+        return image, (h, w)
+    pad = ((0, H - h), (0, W - w)) + ((0, 0),) * (image.ndim - 2)
+    return np.pad(image, pad, constant_values=fill), (h, w)
+
+
+def groups_for(row: dict) -> dict:
+    from .metrics import size_bin
+
+    return {"category": row["category"], "sea_state": row["sea_state"], "look": row["look"], "size_bin": size_bin(row["visible_pixels"]),
+            "negative": bool(row["negative"])}
+
+
+# ---- segmentation ------------------------------------------------------------------------------
+class SegCropDataset(Dataset):
+    def __init__(self, run: WhaleRun, ids: list[str], crop: int = 512, scale_range=(0.5, 1.5), whale_bias: float = 0.7,
+                 flip: bool = True, photometric_strength: float = 1.0, train: bool = True, seed: int = 0):
+        self.run, self.ids, self.crop = run, list(ids), crop
+        self.scale_range, self.whale_bias, self.flip = scale_range, whale_bias, flip
+        self.photometric_strength, self.train, self.seed = photometric_strength, train, seed
+        self.epoch = 0
+
+    def __len__(self):
+        return len(self.ids)
+
+    def set_epoch(self, epoch: int):
+        self.epoch = epoch
+
+    def __getitem__(self, index: int):
+        shot_id = self.ids[index]
+        image = self.run.image(shot_id)
+        mask = self.run.mask(shot_id)
+        if not self.train:
+            img, (h, w) = pad_to_multiple(image)
+            m, _ = pad_to_multiple(mask, fill=IGNORE)
+            return {"id": shot_id, "image": to_tensor(img), "mask": torch.from_numpy(m.astype(np.int64)), "orig_hw": torch.tensor([h, w])}
+        rng = np.random.default_rng([self.seed, self.epoch, index])
+        H, W = mask.shape
+        C = self.crop
+        s = float(np.exp(rng.uniform(np.log(self.scale_range[0]), np.log(self.scale_range[1]))))
+        win = C / s
+        ys, xs = np.nonzero(mask)
+        if len(xs) and rng.random() < self.whale_bias:
+            k = rng.integers(len(xs))
+            x0 = xs[k] - rng.uniform(0.1, 0.9) * win
+            y0 = ys[k] - rng.uniform(0.1, 0.9) * win
+        else:
+            x0 = rng.uniform(-0.2 * win, W - 0.8 * win)
+            y0 = rng.uniform(-0.2 * win, H - 0.8 * win)
+        M = warp_params(x0, y0, s)
+        img = warp_image(image, M, (C, C))
+        m = warp_nearest(mask, M, (C, C), IGNORE)
+        if self.flip and rng.random() < 0.5:
+            img, m = img[:, ::-1], m[:, ::-1]
+        img = photometric(np.ascontiguousarray(img), rng, self.photometric_strength)
+        return {"id": shot_id, "image": to_tensor(img), "mask": torch.from_numpy(np.ascontiguousarray(m).astype(np.int64))}
+
+
+# ---- body coordinates + pose ------------------------------------------------------------------------
+def bbox_of(mask: np.ndarray):
+    ys, xs = np.nonzero(mask)
+    if len(xs) == 0:
+        return None
+    return [int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1]
+
+
+def square_crop_params(bbox, crop: int, margin: float, jitter: float, rng: np.random.Generator | None, min_side: float = 160.0):
+    """Square source window around a bbox -> (x0, y0, scale) mapping it to crop x crop pixels."""
+    x1, y1, x2, y2 = bbox
+    cx, cy = (x1 + x2) / 2.0, (y1 + y2) / 2.0
+    side = max(x2 - x1, y2 - y1) * margin
+    side = max(side, min_side)
+    if rng is not None and jitter > 0:
+        cx += rng.uniform(-jitter, jitter) * side
+        cy += rng.uniform(-jitter, jitter) * side
+    scale = crop / side
+    return cx - side / 2.0, cy - side / 2.0, scale
+
+
+class BodyCropDataset(Dataset):
+    """Whale-centred crops with dense body-coordinate targets and the rigid pose."""
+
+    def __init__(self, run: WhaleRun, ids: list[str], crop: int = 512, min_visible: int = 300, margin_range=(1.25, 2.2),
+                 jitter: float = 0.12, flip: bool = True, photometric_strength: float = 1.0, train: bool = True, seed: int = 0,
+                 eval_margin: float = 1.6, bboxes: dict[str, list] | None = None):
+        self.run, self.crop, self.train, self.seed = run, crop, train, seed
+        self.margin_range, self.jitter, self.flip, self.photometric_strength = margin_range, jitter, flip, photometric_strength
+        self.eval_margin, self.bboxes = eval_margin, bboxes
+        self.ids = [i for i in ids if run.by_id[i]["visible_pixels"] >= min_visible and run.has_bodycoords(i)]
+        if bboxes is not None:
+            self.ids = [i for i in self.ids if i in bboxes and bboxes[i] is not None]
+        self.epoch = 0
+
+    def __len__(self):
+        return len(self.ids)
+
+    def set_epoch(self, epoch: int):
+        self.epoch = epoch
+
+    def __getitem__(self, index: int):
+        shot_id = self.ids[index]
+        run = self.run
+        image = run.image(shot_id)
+        mask = run.mask(shot_id)
+        u, theta, defined = run.bodycoords(shot_id)
+        meta = run.meta(shot_id)
+        rng = np.random.default_rng([self.seed, self.epoch, index])
+        C = self.crop
+        if self.train:
+            margin = rng.uniform(*self.margin_range)
+            x0, y0, s = square_crop_params(bbox_of(mask == 1), C, margin, self.jitter, rng)
+        else:
+            bbox = self.bboxes[shot_id] if self.bboxes is not None else bbox_of(mask == 1)
+            x0, y0, s = square_crop_params(bbox, C, self.eval_margin, 0.0, None)
+        M = warp_params(x0, y0, s)
+        img = warp_image(image, M, (C, C))
+        m = warp_nearest(mask, M, (C, C), IGNORE)
+        uc = warp_nearest(u, M, (C, C), 0.0)
+        tc = warp_nearest(theta, M, (C, C), 0.0)
+        dc = warp_nearest(defined.astype(np.uint8), M, (C, C), 0)
+        R, t = geometry.gt_camera_from_whale(meta)
+        ppm = float(meta["pixels_per_metre_at_whale"]) * s
+        flipped = False
+        if self.train and self.flip and rng.random() < 0.5:
+            flipped = True
+            img, m, uc, tc, dc = img[:, ::-1], m[:, ::-1], uc[:, ::-1], tc[:, ::-1], dc[:, ::-1]
+            tc = (360.0 - tc) % 360.0
+            R = geometry.flip_rotation(R)
+        if self.train:
+            img = photometric(np.ascontiguousarray(img), rng, self.photometric_strength)
+        valid = (m == 1) & (dc > 0)
+        rad = np.radians(tc)
+        sample = {
+            "id": shot_id,
+            "image": to_tensor(img),
+            "mask": torch.from_numpy(np.ascontiguousarray(m).astype(np.int64)),
+            "u": torch.from_numpy(np.ascontiguousarray(uc)).float(),
+            "theta_deg": torch.from_numpy(np.ascontiguousarray(tc)).float(),
+            "sincos": torch.from_numpy(np.ascontiguousarray(np.stack([np.sin(rad), np.cos(rad)], 0))).float(),
+            "valid": torch.from_numpy(np.ascontiguousarray(valid)),
+            "R": torch.from_numpy(R).float(),
+            "d6": torch.from_numpy(geometry.rotation_to_6d(R)),
+            "log_ppm": torch.tensor(math.log(ppm), dtype=torch.float32),
+            "crop_x0y0s": torch.tensor([x0, y0, s], dtype=torch.float64),
+            "flipped": flipped,
+        }
+        return sample
