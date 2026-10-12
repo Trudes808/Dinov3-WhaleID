@@ -23,4 +23,5 @@ DINOV3_WEIGHTS = Path(os.environ.get("DINOV3_WEIGHTS", DINOV3_REPO / "weights" /
 WHALE_RUN_DIR = Path(os.environ.get("WHALE_RUN_DIR", Path.home() / "NOAA_whales" / "Whale-Image-Data-Factory" / "data" / "renders" / "run01"))
 WHALE_MESH_OBJ = Path(os.environ.get("WHALE_MESH_OBJ", Path.home() / "NOAA_whales" / "Whale-Image-Data-Factory" / "third_party_assets" / "humpback_k9239" / "converted" / "SM_Humpback.obj"))
 BODY_TABLE = ASSETS_DIR / "humpback_body_table.npz"
+FOLDED_TABLE = ASSETS_DIR / "humpback_folded_table.npz"   # canonical surface points, folded (x, |y|, z)
 TEST_DATA_DIR = Path(os.environ.get("WHALE_TEST_DATA", Path.home() / "NOAA_whales" / "test_data_do_not_use"))

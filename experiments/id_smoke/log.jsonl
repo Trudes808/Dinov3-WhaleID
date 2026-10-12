@@ -1,0 +1,5 @@
+{"event": "epoch", "epoch": 0, "step": 15, "loss": 40.50191459655762, "seconds": 4.6, "elapsed_s": 4.7}
+{"event": "val", "epoch": 0, "step": 15, "auc_body_same_day": 0.526326782051413, "pairs_body": 53628, "auc_fin_same_day": 0.5347282386601429, "pairs_fin": 27028, "auc_fluke_same_day": 0.6326617047669679, "pairs_fluke": 2775, "auc_mean": 0.5645722418261746, "elapsed_s": 10.6}
+{"event": "epoch", "epoch": 1, "step": 30, "loss": 40.32899843851725, "seconds": 3.8, "elapsed_s": 14.8}
+{"event": "val", "epoch": 1, "step": 30, "auc_body_same_day": 0.5269265903289018, "pairs_body": 53628, "auc_fin_same_day": 0.5358489709957847, "pairs_fin": 27028, "auc_fluke_same_day": 0.6347767145135567, "pairs_fluke": 2775, "auc_mean": 0.5658507586127478, "elapsed_s": 20.3}
+{"event": "done", "best_val_auc": 0.5658507586127478, "elapsed_s": 20.9}

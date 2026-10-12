@@ -1,0 +1,9 @@
+{
+ "auc_body_same_day": 0.5269265903289018,
+ "pairs_body": 53628,
+ "auc_fin_same_day": 0.5358489709957847,
+ "pairs_fin": 27028,
+ "auc_fluke_same_day": 0.6347767145135567,
+ "pairs_fluke": 2775,
+ "auc_mean": 0.5658507586127478
+}

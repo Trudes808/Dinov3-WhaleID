@@ -1,0 +1,1 @@
+Mirror-consistency fine-tune on unlabelled real photos (w=5, 10 epochs from canon_r02_ft4): COLLAPSED on real inputs (near-constant predictions, spread 2 cm vs 78 cm) while synthetic metrics stayed normal. Do not use. See experiments/LOG.md.

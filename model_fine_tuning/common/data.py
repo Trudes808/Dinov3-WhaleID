@@ -29,6 +29,7 @@ from . import geometry
 from .splits import load_split
 
 IGNORE = 255
+CANON_OFFSET = 32768   # canon npz value = mm + offset (factory.postprocess)
 
 
 class WhaleRun:
@@ -81,6 +82,19 @@ class WhaleRun:
         bgr = cv2.imread(str(self.dataset_dir / "bodycoords" / f"{shot_id}.png"), cv2.IMREAD_COLOR)
         rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
         return decode_bodycoords(rgb)
+
+    def has_canon(self, shot_id: str) -> bool:
+        return (self.dataset_dir / "canon" / f"{shot_id}.npz").exists()
+
+    def canon(self, shot_id: str) -> tuple[np.ndarray, np.ndarray]:
+        """Canonical surface point per pixel (cm, undeformed mesh frame: x tail -> snout, y right,
+        z up) as float32 (H, W, 3) with nan outside the whale, and the defined mask."""
+        with np.load(self.dataset_dir / "canon" / f"{shot_id}.npz") as data:
+            values = data["xyz_mm"]
+        defined = values[..., 0] > 0
+        cm = (values.astype(np.float32) - CANON_OFFSET) / 10.0
+        cm[~defined] = np.nan
+        return cm, defined
 
     def is_deformed(self, shot_id: str) -> bool:
         """True when the factory bent the body for this shot (run02+): the rigid pose and the
@@ -301,3 +315,129 @@ class BodyCropDataset(Dataset):
             "flipped": flipped,
         }
         return sample
+
+
+class CanonCropDataset(Dataset):
+    """Whale-centred crops with the canonical surface point per pixel as the dense target.
+
+    Targets per pixel (where the visible whale has a label): "xyz" = the folded, normalised
+    canonical point ((x - x_min) / L, |y| / L, z / L) with L the body length, "side" = sign of
+    y (+1 right, -1 left, 0 on the midline), "valid". The side is NOT part of the regression
+    target: a mirrored image of this bilaterally symmetric body has the same folded coordinates,
+    so a horizontal flip leaves "xyz" unchanged and only mirrors "side" and the rotation. Also
+    returns the rigid pose R, log pixels-per-metre and the crop transform, like BodyCropDataset."""
+
+    def __init__(self, run: WhaleRun, ids: list[str], table: dict, crop: int = 512, min_visible: int = 300, margin_range=(1.25, 2.2),
+                 jitter: float = 0.12, flip: bool = True, photometric_strength: float = 1.0, train: bool = True, seed: int = 0,
+                 eval_margin: float = 1.6, bboxes: dict[str, list] | None = None):
+        self.run, self.crop, self.train, self.seed = run, crop, train, seed
+        self.margin_range, self.jitter, self.flip, self.photometric_strength = margin_range, jitter, flip, photometric_strength
+        self.eval_margin, self.bboxes = eval_margin, bboxes
+        self.x_min_cm, self.length_cm = float(table["x_min_m"]) * 100.0, float(table["length_m"]) * 100.0
+        self.ids = [i for i in ids if run.by_id[i]["visible_pixels"] >= min_visible and run.has_canon(i)]
+        if bboxes is not None:
+            self.ids = [i for i in self.ids if i in bboxes and bboxes[i] is not None]
+        self.epoch = 0
+
+    def __len__(self):
+        return len(self.ids)
+
+    def set_epoch(self, epoch: int):
+        self.epoch = epoch
+
+    def fold(self, canon_cm: np.ndarray) -> np.ndarray:
+        """(H, W, 3) cm -> (3, H, W) folded, normalised target (nan -> 0)."""
+        x = (canon_cm[..., 0] - self.x_min_cm) / self.length_cm
+        y = np.abs(canon_cm[..., 1]) / self.length_cm
+        z = canon_cm[..., 2] / self.length_cm
+        return np.nan_to_num(np.stack([x, y, z], 0)).astype(np.float32)
+
+    def __getitem__(self, index: int):
+        shot_id = self.ids[index]
+        run = self.run
+        image = run.image(shot_id)
+        mask = run.mask(shot_id)
+        canon_cm, defined = run.canon(shot_id)
+        meta = run.meta(shot_id)
+        rng = np.random.default_rng([self.seed, self.epoch, index])
+        C = self.crop
+        if self.train:
+            margin = rng.uniform(*self.margin_range)
+            x0, y0, s = square_crop_params(bbox_of(mask == 1), C, margin, self.jitter, rng)
+        else:
+            bbox = self.bboxes[shot_id] if self.bboxes is not None else bbox_of(mask == 1)
+            x0, y0, s = square_crop_params(bbox, C, self.eval_margin, 0.0, None)
+        M = warp_params(x0, y0, s)
+        img = warp_image(image, M, (C, C))
+        m = warp_nearest(mask, M, (C, C), IGNORE)
+        cc = np.stack([warp_nearest(np.nan_to_num(canon_cm[..., k]), M, (C, C), 0.0) for k in range(3)], -1)
+        dc = warp_nearest(defined.astype(np.uint8), M, (C, C), 0) > 0
+        R, t = geometry.gt_camera_from_whale(meta)
+        ppm = float(meta["pixels_per_metre_at_whale"]) * s
+        flipped = False
+        if self.train and self.flip and rng.random() < 0.5:
+            flipped = True
+            img, m, cc, dc = img[:, ::-1], m[:, ::-1], cc[:, ::-1], dc[:, ::-1]
+            cc = cc * np.array([1.0, -1.0, 1.0], np.float32)       # the mirror image shows the mirrored body point
+            R = geometry.flip_rotation(R)
+        if self.train:
+            img = photometric(np.ascontiguousarray(img), rng, self.photometric_strength)
+        valid = (m == 1) & dc
+        side = np.sign(cc[..., 1]).astype(np.int8)
+        side[np.abs(cc[..., 1]) < 2.0] = 0                           # within 2 cm of the midline: no side
+        side[~dc] = 0
+        sample = {
+            "id": shot_id,
+            "image": to_tensor(np.ascontiguousarray(img)),
+            "mask": torch.from_numpy(np.ascontiguousarray(m).astype(np.int64)),
+            "xyz": torch.from_numpy(self.fold(np.where(dc[..., None], cc, np.nan))),
+            "side": torch.from_numpy(np.ascontiguousarray(side)),
+            "valid": torch.from_numpy(np.ascontiguousarray(valid)),
+            "R": torch.from_numpy(R).float(),
+            "d6": torch.from_numpy(geometry.rotation_to_6d(R)),
+            "log_ppm": torch.tensor(math.log(ppm), dtype=torch.float32),
+            "crop_x0y0s": torch.tensor([x0, y0, s], dtype=torch.float64),
+            "flipped": flipped,
+        }
+        return sample
+
+
+class RealCropDataset(Dataset):
+    """Unlabelled real photos with predicted masks, cropped like the synthetic training crops
+    (mask bbox, random margin and jitter, photometric augmentation). Used for the label-free
+    mirror-consistency loss: the folded canonical coordinates of a crop and of its mirror image
+    must agree. Returns the crop and the mask warped into it."""
+
+    def __init__(self, images_dir: Path, masks_dir: Path, crop: int = 512, margin_range=(1.25, 2.2), jitter: float = 0.12,
+                 photometric_strength: float = 1.0, min_pixels: int = 2000, seed: int = 0):
+        self.images_dir, self.masks_dir, self.crop = Path(images_dir), Path(masks_dir), crop
+        self.margin_range, self.jitter, self.photometric_strength, self.seed = margin_range, jitter, photometric_strength, seed
+        self.items = []
+        for f in sorted(self.images_dir.glob("*.jpg")):
+            m = self.masks_dir / f"{f.stem}_mask.png"
+            if m.exists():
+                mask = cv2.imread(str(m), cv2.IMREAD_UNCHANGED)
+                if mask is not None and (mask > 0).sum() >= min_pixels:
+                    self.items.append((f, m))
+        self.epoch = 0
+
+    def __len__(self):
+        return len(self.items)
+
+    def set_epoch(self, epoch: int):
+        self.epoch = epoch
+
+    def __getitem__(self, index: int):
+        f, m = self.items[index]
+        image = cv2.cvtColor(cv2.imread(str(f), cv2.IMREAD_COLOR), cv2.COLOR_BGR2RGB)
+        mask = cv2.imread(str(m), cv2.IMREAD_UNCHANGED) > 0
+        if mask.shape != image.shape[:2]:
+            mask = cv2.resize(mask.astype(np.uint8), (image.shape[1], image.shape[0]), interpolation=cv2.INTER_NEAREST) > 0
+        rng = np.random.default_rng([self.seed + 7919, self.epoch, index])
+        C = self.crop
+        x0, y0, s = square_crop_params(bbox_of(mask), C, rng.uniform(*self.margin_range), self.jitter, rng)
+        M = warp_params(x0, y0, s)
+        img = photometric(np.ascontiguousarray(warp_image(image, M, (C, C))), rng, self.photometric_strength)
+        mc = cv2.warpAffine(mask.astype(np.uint8), M, (C, C), flags=cv2.INTER_NEAREST) > 0
+        return {"id": f.stem, "image": to_tensor(img), "whale": torch.from_numpy(np.ascontiguousarray(mc))}
+

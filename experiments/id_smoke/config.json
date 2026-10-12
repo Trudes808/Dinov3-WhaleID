@@ -1,0 +1,63 @@
+{
+ "task": "identity",
+ "args": {
+  "name": "id_smoke",
+  "data_root": "experiments/days",
+  "labels": "/home/sat3737/NOAA_whales/Dinov3-WhaleID/model_fine_tuning/splits/labels_all_days.json",
+  "days": "/home/sat3737/NOAA_whales/Dinov3-WhaleID/model_fine_tuning/splits/days.json",
+  "train_days": [
+   "2024-12-18"
+  ],
+  "val_days": [
+   "2024-12-18"
+  ],
+  "out_root": "/home/sat3737/NOAA_whales/Dinov3-WhaleID/experiments",
+  "size": 448,
+  "dim": 512,
+  "unfreeze_blocks": 4,
+  "P": 6,
+  "K": 3,
+  "batches_per_epoch": 15,
+  "epochs": 2,
+  "lr_head": 0.0003,
+  "lr_backbone": 2e-05,
+  "w_arc": 1.0,
+  "w_supcon": 1.0,
+  "arc_margin": 0.4,
+  "workers": 4,
+  "seed": 0,
+  "max_steps": null,
+  "allow_eval_days": true
+ },
+ "model": {
+  "arch": "vitb16",
+  "dim": 512,
+  "unfreeze_blocks": 4,
+  "n_classes": 16,
+  "task": "identity"
+ },
+ "train_charts": 636,
+ "val_charts": 636,
+ "identities": [
+  "2024-12-18_G01A01",
+  "2024-12-18_G02A01",
+  "2024-12-18_G02A02",
+  "2024-12-18_G02A03",
+  "2024-12-18_G02A04",
+  "2024-12-18_G03A01",
+  "2024-12-18_G03A02",
+  "2024-12-18_G03A03",
+  "2024-12-18_G04A01",
+  "2024-12-18_G04A02",
+  "2024-12-18_G05A01",
+  "2024-12-18_G05A02",
+  "2024-12-18_G05A03",
+  "2024-12-18_G06A01",
+  "2024-12-18_G06A02",
+  "2024-12-18_G07A03"
+ ],
+ "params": {
+  "total_M": 87.8,
+  "trainable_M": 30.48
+ }
+}

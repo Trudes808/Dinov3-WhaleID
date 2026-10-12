@@ -53,3 +53,35 @@ def hstack(images: list[np.ndarray]) -> np.ndarray:
     h = max(i.shape[0] for i in images)
     padded = [np.pad(i, ((0, h - i.shape[0]), (0, 0), (0, 0))) for i in images]
     return np.concatenate(padded, axis=1)
+
+
+def canon_rgb(xyz_hat: np.ndarray, side: np.ndarray | None, valid: np.ndarray) -> np.ndarray:
+    """Colour for folded canonical coordinates (3, H, W) or (H, W, 3): hue runs tail -> snout,
+    saturation grows with the lateral offset from the midline (ridge/belly pale, flank tips
+    saturated), value with height (belly dark, back bright). With a side map, the left side is
+    shifted towards blue-ish hues so the two flanks are distinguishable."""
+    import cv2
+
+    x = np.asarray(xyz_hat)
+    if x.shape[0] == 3 and x.ndim == 3 and x.shape[-1] != 3:
+        x = np.moveaxis(x, 0, -1)
+    u = np.clip(x[..., 0], 0, 1)
+    lat = np.clip(x[..., 1] / 0.2, 0, 1)
+    height = np.clip((x[..., 2] + 0.25) / 0.46, 0, 1)
+    hue = (u * 150.0).astype(np.float32)                       # 0 (red, tail) -> 150 (cyan, snout) in OpenCV's 0..180 hue
+    if side is not None:
+        hue = np.where(np.asarray(side) < 0, (hue + 90.0) % 180.0, hue).astype(np.float32)
+    hsv = np.stack([hue, (0.35 + 0.65 * lat) * 255, (0.45 + 0.55 * height) * 255], -1).astype(np.uint8)
+    rgb = cv2.cvtColor(hsv, cv2.COLOR_HSV2RGB)
+    rgb[~np.asarray(valid, bool)] = 0
+    return rgb
+
+
+def side_rgb(side: np.ndarray, valid: np.ndarray) -> np.ndarray:
+    out = np.zeros(np.shape(side) + (3,), np.uint8)
+    v = np.asarray(valid, bool)
+    out[v & (np.asarray(side) > 0)] = (255, 80, 80)
+    out[v & (np.asarray(side) < 0)] = (80, 80, 255)
+    out[v & (np.asarray(side) == 0)] = (255, 255, 255)
+    return out
+

@@ -156,3 +156,5 @@
 {"event": "train", "epoch": 29, "step": 4850, "loss": 0.03849909698590636, "bce": 0.0058901249431073666, "dice": 0.059001386165618896, "lr_factor": 0.02054703826409516, "elapsed_s": 2823.7}
 {"event": "train", "epoch": 29, "step": 4900, "loss": 0.042010062281042336, "bce": 0.011976019479334354, "dice": 0.023402869701385498, "lr_factor": 0.02004786448068614, "elapsed_s": 2841.5}
 {"event": "epoch", "epoch": 29, "step": 4920, "loss": 0.03666451623913173, "seconds": 57.4, "elapsed_s": 2848.6}
+{"event": "val", "epoch": 29, "step": 4920, "dataset_iou": 0.9488514022536029, "mean_image_iou": 0.9296220076201638, "negatives_clean": 1.0, "recall": 0.9671964700934753, "precision": 0.9804020508460441, "elapsed_s": 2887.4}
+{"event": "done", "best_val_dataset_iou": 0.9511607717023454, "elapsed_s": 2887.8}

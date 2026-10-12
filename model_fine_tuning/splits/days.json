@@ -1,0 +1,66 @@
+{
+ "_note": "Whole days are held out. eval days are never used for training, model selection or threshold tuning; val days select epochs and hyper-parameters; train is the rest with >= 40 labelled photos. Identities merged across days by 'same as' notes never straddle the splits (checked).",
+ "eval": [
+  "2024-12-18",
+  "2024-12-26",
+  "2025-02-19",
+  "2025-03-21"
+ ],
+ "val": [
+  "2025-01-15",
+  "2025-02-27",
+  "2025-03-14"
+ ],
+ "train": [
+  "2024-12-23",
+  "2025-01-02",
+  "2025-01-08",
+  "2025-01-16",
+  "2025-01-17",
+  "2025-01-20",
+  "2025-01-23",
+  "2025-02-03",
+  "2025-02-12",
+  "2025-02-24",
+  "2025-02-28",
+  "2025-03-03",
+  "2025-03-06",
+  "2025-03-13",
+  "2025-03-18",
+  "2025-03-20",
+  "2025-03-24",
+  "2025-03-26",
+  "2025-04-01",
+  "2025-04-09",
+  "2025-04-11"
+ ],
+ "excluded_small_days": [
+  "2024-12-08",
+  "2024-12-09",
+  "2024-12-20",
+  "2025-01-03",
+  "2025-01-09",
+  "2025-01-24",
+  "2025-01-26",
+  "2025-02-02",
+  "2025-02-10",
+  "2025-02-11",
+  "2025-02-13",
+  "2025-02-17"
+ ],
+ "stats": {
+  "eval": {
+   "photos": 2167,
+   "identities_ge2": 92
+  },
+  "val": {
+   "photos": 889,
+   "identities_ge2": 44
+  },
+  "train": {
+   "photos": 8065,
+   "identities_ge2": 308
+  }
+ },
+ "cross_split_identity_leaks": {}
+}

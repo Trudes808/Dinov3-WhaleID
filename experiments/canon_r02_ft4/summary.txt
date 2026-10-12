@@ -1,0 +1,27 @@
+# canonical-surface model canon_r02_ft4 vs (u,theta) body model body_r02_ft4 -- 2026-10-12T02:12:33Z
+
+## synthetic run02 test split
+[oracle_crops] images new=256 old=256
+  NEW surface error mean/median 0.475/0.211 m  torso 0.41722141621677183 fluke 0.8136830082999582 fin 1.089706432314022
+  NEW mirror: folded disagreement 0.240 m, side agreement 0.9104291204671542, unstable crops 0.07421875
+  NEW side accuracy vs GT 0.9237035575424313  margin median 0.0004408318579976091
+  NEW rotation direct median 12.6 (<15: 0.61328125)  PnP median 14.543160960808091 (<15: 0.5234375)
+  NEW points of interest from the map: PCK@0.05 0.5318824404761905  PCK@0.1 0.5450334821428571  (PnP-reprojected PCK@0.1 0.8788271949404762)
+  OLD u MAE 0.0234 (0.38 m along the body), angle MAE 10.2 deg, rotation direct median 12.3, PnP median 17.6, PnP-reprojected PCK@0.1 0.8568963913690477
+[seg_crops] images new=256 old=256
+  NEW surface error mean/median 0.490/0.219 m  torso 0.4168898905237614 fluke 0.8792053770236032 fin 1.2569540224285594
+  NEW mirror: folded disagreement 0.234 m, side agreement 0.9315099081403626, unstable crops 0.0625
+  NEW side accuracy vs GT 0.9139333361650713  margin median 0.0004856010989960725
+  NEW rotation direct median 11.7 (<15: 0.625)  PnP median 14.77238658636739 (<15: 0.5078125)
+  NEW points of interest from the map: PCK@0.05 0.5348400297619048  PCK@0.1 0.5426525297619048  (PnP-reprojected PCK@0.1 0.868740699404762)
+  OLD u MAE 0.0223 (0.36 m along the body), angle MAE 10.3 deg, rotation direct median 12.6, PnP median 17.1, PnP-reprojected PCK@0.1 0.8708286830357143
+
+## real photos (2024-12-18)
+== real photos: fraction of whale pixels whose LEFT/RIGHT changes when the crop is mirrored
+  before ((u,theta) head, 120 crops): median 0.000 mean 0.162  crops >20%: 21.05%
+  after  (canonical surface, 334 crops): median 0.022 mean 0.149  crops >20%: 18.86%
+== after: folded-coordinate disagreement under mirroring (metres on the whale), median over crops: 0.319 m
+== after: side margin (relative cost gap between the two global hypotheses): median 0.001  crops with margin < 0.1: 66.17%
+== after: direct-head rotation change under mirroring, median deg: 15.6   direct vs PnP (resolved side), median deg: 46.5
+== after: points of interest found per photo (of 9 landmarks): median 1.0
+sheet: experiments/real_2024-12-18/canon_canon_r02_ft4_compare/worst_before_as_seen_after.jpg
