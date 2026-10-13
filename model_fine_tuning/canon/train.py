@@ -52,6 +52,10 @@ def parse(argv=None):
     p.add_argument("--w-xyz", type=float, default=10.0)
     p.add_argument("--w-rot", type=float, default=2.0)
     p.add_argument("--w-scale", type=float, default=1.0)
+    p.add_argument("--keypoints", action="store_true", help="run03 heads: keypoint heatmaps + states, deformation parameters")
+    p.add_argument("--w-kp", type=float, default=100.0)
+    p.add_argument("--w-kp-state", type=float, default=0.5)
+    p.add_argument("--w-deform", type=float, default=1.0)
     p.add_argument("--workers", type=int, default=8)
     p.add_argument("--eval-every", type=int, default=1)
     p.add_argument("--seed", type=int, default=0)
@@ -77,6 +81,27 @@ def build_table() -> dict:
     return table
 
 
+def keypoint_metrics(heat, state_pred, deform_pred, uv_gt, state_gt, deform_gt, crop: int, length_px: float) -> dict:
+    """Per-crop keypoint-head metrics: PCK of the heatmap peaks for the keypoints that are visible in
+    the ground truth (fractions of the whale's image length), state accuracy over the known
+    keypoints, F1 of 'visible' detection, mean deformation error in degrees."""
+    from .model import DEFORM_SCALE_DEG, decode_heatmaps
+
+    uv, conf = decode_heatmaps(heat, stride=crop // heat.shape[-1])
+    vis = state_gt == 0
+    row = {}
+    if vis.any() and length_px > 1:
+        err = np.linalg.norm(uv[vis] - uv_gt[vis], axis=1) / length_px
+        row["kp_pck_0.05"] = float(np.mean(err < 0.05)); row["kp_pck_0.1"] = float(np.mean(err < 0.1)); row["kp_visible_n"] = int(vis.sum())
+    known = state_gt >= 0
+    if known.any():
+        row["kp_state_acc"] = float(np.mean(state_pred[known] == state_gt[known]))
+        tp = np.sum((state_pred == 0) & vis); fp = np.sum((state_pred == 0) & known & ~vis); fn = np.sum((state_pred != 0) & vis)
+        row["kp_visible_f1"] = float(2 * tp / max(2 * tp + fp + fn, 1))
+    row["deform_err_deg"] = float(np.abs(deform_pred - deform_gt).mean() * DEFORM_SCALE_DEG)
+    return row
+
+
 @torch.no_grad()
 def evaluate(model, loader, device, amp: bool, table: dict) -> dict:
     """Dense surface error (metres, on valid pixels, by region), visibility IoU, direct rotation
@@ -91,6 +116,11 @@ def evaluate(model, loader, device, amp: bool, table: dict) -> dict:
         vis = (out["vis_logit"].float() > 0).cpu().numpy()
         R_pred = out["R"].float().cpu().numpy()
         logppm = out["log_ppm"].float().cpu().numpy()
+        kp = None
+        if "kp_heat" in out and "kp_uv" in batch:
+            kp = {"heat": out["kp_heat"].float().cpu().numpy(), "state": out["kp_state_logit"].float().argmax(-1).cpu().numpy(),
+                  "deform": out["deform"].float().cpu().numpy(), "uv_gt": batch["kp_uv"].numpy(), "state_gt": batch["kp_state"].numpy(),
+                  "deform_gt": batch["deform"].numpy()}
         valid = batch["valid"].numpy()
         gt = batch["xyz"].numpy()
         mask = batch["mask"].numpy()
@@ -113,9 +143,13 @@ def evaluate(model, loader, device, amp: bool, table: dict) -> dict:
             row["vis_iou"] = float(inter / max(union, 1))
             row["rot_direct_deg"] = geometry.geodesic_deg(R_pred[i], R_gt[i])
             row["logscale_direct"] = float(abs(logppm[i] - logppm_gt[i]))
+            if kp is not None:
+                row.update(keypoint_metrics(kp["heat"][i], kp["state"][i], kp["deform"][i], kp["uv_gt"][i], kp["state_gt"][i], kp["deform_gt"][i],
+                                            crop=mask.shape[-1], length_px=float(np.exp(logppm_gt[i])) * table["length_m"]))
             per_image.append(row)
     summary = {"images": len(per_image)}
-    for key in ("surface_err_m", "surface_err_median_m", "surface_err_torso_m", "surface_err_fluke_m", "surface_err_fin_m", "vis_iou", "rot_direct_deg", "logscale_direct"):
+    for key in ("surface_err_m", "surface_err_median_m", "surface_err_torso_m", "surface_err_fluke_m", "surface_err_fin_m", "vis_iou", "rot_direct_deg", "logscale_direct",
+                "kp_pck_0.05", "kp_pck_0.1", "kp_state_acc", "kp_visible_f1", "deform_err_deg"):
         summary.update(summarize_values([r.get(key) for r in per_image], key + "_"))
     rd = np.asarray([r["rot_direct_deg"] for r in per_image])
     summary["rot_direct_under_15deg"] = float(np.mean(rd < 15)) if len(rd) else None
@@ -143,12 +177,13 @@ def main(argv=None) -> int:
         table = geometry.load_folded_table(paths.FOLDED_TABLE)
     train_ds = CanonCropDataset(run, run.ids("train")[: args.max_train], table, crop=args.crop, min_visible=args.min_visible,
                                 margin_range=(args.margin_min, args.margin_max), jitter=args.jitter, photometric_strength=args.photometric,
-                                train=True, seed=args.seed)
-    val_ds = CanonCropDataset(run, run.ids("val")[: args.max_val], table, crop=args.crop, min_visible=args.min_visible, train=False)
+                                train=True, seed=args.seed, keypoints=args.keypoints)
+    val_ds = CanonCropDataset(run, run.ids("val")[: args.max_val], table, crop=args.crop, min_visible=args.min_visible, train=False, keypoints=args.keypoints)
     train_loader = DataLoader(train_ds, batch_size=args.batch_size, shuffle=True, num_workers=args.workers, pin_memory=True, drop_last=True,
                               persistent_workers=args.workers > 0)
     val_loader = DataLoader(val_ds, batch_size=args.batch_size, shuffle=False, num_workers=min(args.workers, 4), pin_memory=True)
-    model = WhaleCanonModel(arch=args.arch, unfreeze_blocks=args.unfreeze_blocks, layers=args.layers).to(device)
+    from ..common.run03_labels import KEYPOINTS
+    model = WhaleCanonModel(arch=args.arch, unfreeze_blocks=args.unfreeze_blocks, layers=args.layers, keypoints=len(KEYPOINTS) if args.keypoints else 0).to(device)
     if args.init_from:
         model.load_state_dict(load_checkpoint(args.init_from)["model"], strict=True)
     real_loader, real_iter = None, None
@@ -164,7 +199,7 @@ def main(argv=None) -> int:
     (out / "config.json").write_text(json.dumps(config, indent=1))
     logger = Logger(out)
     logger.log(event="start", **{k: v for k, v in config.items() if k != "args"})
-    weights = {"vis": args.w_vis, "xyz": args.w_xyz, "rot": args.w_rot, "scale": args.w_scale}
+    weights = {"vis": args.w_vis, "xyz": args.w_xyz, "rot": args.w_rot, "scale": args.w_scale, "kp": args.w_kp, "kp_state": args.w_kp_state, "deform": args.w_deform}
     optimizer = torch.optim.AdamW(model.param_groups(args.lr_head, args.lr_backbone, args.layer_decay, args.weight_decay))
     total_steps = args.epochs * len(train_loader)
     step, start_epoch, best = 0, 0, -1.0

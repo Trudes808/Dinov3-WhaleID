@@ -42,7 +42,7 @@ def make_split(rows: list[dict], fractions=(0.7, 0.15, 0.15), seed: int = 0, str
     return {k: sorted(v) for k, v in out.items()}
 
 
-DEFECT_FLAGS = {"empty_mask", "visible_outside_amodal"}
+DEFECT_FLAGS = {"empty_mask", "visible_outside_amodal", "projection_not_covered"}
 
 
 def filter_rows(rows: list[dict], min_visible_px: int = 0, drop_flagged: bool = False) -> list[dict]:

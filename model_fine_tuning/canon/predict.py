@@ -36,6 +36,18 @@ from .evaluate import predict_crop
 from .model import WhaleCanonModel
 
 
+def keep_main_components(mask: np.ndarray, keep_frac: float = 0.25) -> np.ndarray:
+    """Drop small stray blobs of a whale mask (false positives on an island or the horizon pull the crop
+    away from the whale): keep the largest connected component and any component at least keep_frac of
+    its size (a fluke and a back can be separate blobs)."""
+    n, labels, stats, _ = cv2.connectedComponentsWithStats(mask.astype(np.uint8), connectivity=8)
+    if n <= 2:
+        return mask
+    areas = stats[1:, cv2.CC_STAT_AREA]
+    keep = np.nonzero(areas >= keep_frac * areas.max())[0] + 1
+    return np.isin(labels, keep)
+
+
 @torch.no_grad()
 def estimate(model: WhaleCanonModel, image: np.ndarray, mask: np.ndarray, device, K: np.ndarray, table: dict, landmarks: dict,
              crop: int = 512, margin: float = 1.6, tta: bool = True) -> dict | None:
@@ -68,7 +80,17 @@ def estimate(model: WhaleCanonModel, image: np.ndarray, mask: np.ndarray, device
         if rec["uv"] is not None:
             u, v = rec["uv"]
             rec["uv_full"] = (float(Minv[0, 0] * u + Minv[0, 1] * v + Minv[0, 2]), float(Minv[1, 0] * u + Minv[1, 1] * v + Minv[1, 2]))
-    return {"crop": crop_img, "x0y0s": (float(x0), float(y0), float(s)), "signed_m": signed, "folded_m": pm, "use": use, "side": side,
+    keypoints = None
+    if "kp_heat" in pred:
+        from ..common.run03_labels import KEYPOINTS
+        from .model import decode_heatmaps
+
+        uv, conf = decode_heatmaps(pred["kp_heat"][0], stride=crop // pred["kp_heat"].shape[-1])
+        prob = pred["kp_state_prob"][0]
+        keypoints = {"names": KEYPOINTS, "uv": uv, "conf": conf, "state": prob.argmax(-1), "state_prob": prob, "deform": pred["deform"][0],
+                     "uv_full": np.stack([Minv[0, 0] * uv[:, 0] + Minv[0, 1] * uv[:, 1] + Minv[0, 2],
+                                          Minv[1, 0] * uv[:, 0] + Minv[1, 1] * uv[:, 1] + Minv[1, 2]], 1)}
+    return {"crop": crop_img, "x0y0s": (float(x0), float(y0), float(s)), "signed_m": signed, "folded_m": pm, "use": use, "side": side, "keypoints": keypoints,
             "disagree_m": disagree, "fit": res["fit"], "side_purity": res["purity"], "side_margin": res["margin"],
             "cue_side": cue, "cue_confidence": cue_conf, "head_side": geometry.initial_side_from_rotation(pred["R"][0]), "prior_side": prior, "side_flip_agreement": side_flip_agreement,
             "flip_disagreement_median_m": float(np.median(disagree[use])) if use.any() else None,
@@ -107,7 +129,9 @@ def main(argv=None) -> int:
             H, W = image.shape[:2]
             stem = path.stem
             prob, mask = segment(seg_model, image, device, args.max_side, args.threshold)
-            rec = {"image": str(path), "whale_pixels": int(mask.sum())}
+            raw_pixels = int(mask.sum())
+            mask = keep_main_components(mask)
+            rec = {"image": str(path), "whale_pixels": int(mask.sum()), "whale_pixels_before_cleanup": raw_pixels}
             cv2.imwrite(str(args.out / f"{stem}_mask.png"), mask.astype(np.uint8))
             if mask.sum() < args.min_pixels:
                 rec["status"] = "no_whale"
@@ -116,18 +140,27 @@ def main(argv=None) -> int:
                 continue
             K = geometry.intrinsics_guess(W, H, args.focal_mm, args.sensor_width_mm, args.hfov_deg)
             est = estimate(model, image, mask, device, K, table, landmarks, tta=not args.no_tta)
+            extra = {}
+            if est.get("keypoints"):
+                kp = est["keypoints"]
+                extra = {"kp_uv": kp["uv"].astype(np.float32), "kp_conf": kp["conf"].astype(np.float32), "kp_state": kp["state"].astype(np.int8),
+                         "kp_state_prob": kp["state_prob"].astype(np.float32), "deform": kp["deform"].astype(np.float32)}
             np.savez_compressed(args.out / f"{stem}_canon.npz", signed_mm=np.round(np.nan_to_num(est["signed_m"]) * 1000).astype(np.int16),
-                                use=est["use"], side=est["side"], disagree_mm=np.round(est["disagree_m"] * 1000).astype(np.uint16), x0y0s=np.array(est["x0y0s"]))
+                                use=est["use"], side=est["side"], disagree_mm=np.round(est["disagree_m"] * 1000).astype(np.uint16), x0y0s=np.array(est["x0y0s"]), **extra)
             crop = est["crop"]
             colour = np.where(est["use"][..., None], 0.35 * crop + 0.65 * canon_rgb(np.moveaxis((est["folded_m"] - [table["x_min_m"], 0, 0]) / table["length_m"], -1, 0), est["side"], est["use"]), crop).astype(np.uint8)
             pts = {n: v["uv"] for n, v in est["landmarks"].items() if v["uv"] is not None}
             colour = draw_points(colour, pts, (255, 255, 0), 3)
+            if est.get("keypoints"):
+                kp = est["keypoints"]
+                colour = draw_points(colour, {n: tuple(kp["uv"][k]) for k, n in enumerate(kp["names"]) if kp["state"][k] == 0 and kp["conf"][k] > 0.3}, (255, 0, 255), 4)
             heat = np.clip(est["disagree_m"] / 0.5, 0, 1)
             heat_rgb = cv2.cvtColor(cv2.applyColorMap((heat * 255).astype(np.uint8), cv2.COLORMAP_JET), cv2.COLOR_BGR2RGB)
             heat_panel = np.where(est["use"][..., None], heat_rgb, crop).astype(np.uint8)
             side_panel = np.where(est["use"][..., None], 0.4 * crop + 0.6 * side_rgb(est["side"], est["use"]), crop).astype(np.uint8)
             panel = hstack([crop, colour, side_panel, heat_panel])
-            cv2.putText(panel, f"flip-disagree med={est['flip_disagreement_median_m']:.2f}m side agree={est['side_flip_agreement']} purity={est['side_purity']}",
+            fd = est["flip_disagreement_median_m"]
+            cv2.putText(panel, f"flip-disagree med={'n/a' if fd is None else f'{fd:.2f}m'} side agree={est['side_flip_agreement']} purity={est['side_purity']}",
                         (8, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1, cv2.LINE_AA)
             cv2.imwrite(str(args.out / f"{stem}_overlay.jpg"), cv2.cvtColor(panel, cv2.COLOR_RGB2BGR), [cv2.IMWRITE_JPEG_QUALITY, 88])
             fit = est["fit"]
@@ -137,6 +170,11 @@ def main(argv=None) -> int:
                         "rotation_direct": np.round(est["R_direct"], 4).tolist(), "rot_direct_flip_consistency_deg": round(est["R_direct_flip_consistency_deg"], 1),
                         "ppm_direct": round(est["ppm_direct"], 2), "intrinsics_fx": round(float(K[0, 0]), 1),
                         "landmarks": {n: {"uv_full": v.get("uv_full"), "dist_m": None if v["dist_m"] is None else round(v["dist_m"], 3)} for n, v in est["landmarks"].items()}})
+            if est.get("keypoints"):
+                kp = est["keypoints"]
+                rec["keypoints"] = {n: {"uv_full": [round(float(x), 1) for x in kp["uv_full"][k]], "conf": round(float(kp["conf"][k]), 3), "state": int(kp["state"][k])}
+                                    for k, n in enumerate(kp["names"])}
+                rec["deform_deg"] = [round(float(v) * 30.0, 1) for v in kp["deform"]]
             if fit is not None:
                 rec.update({"rotation_pnp": np.round(fit["R"], 4).tolist(), "translation_m_pnp": np.round(fit["t_m"], 2).tolist(), "ppm_pnp": round(fit["ppm"], 2),
                             "pnp_inliers": fit["inliers"], "pnp_inlier_fraction": round(fit["inlier_fraction"], 3),

@@ -474,3 +474,11 @@ def mesh_region(folded_m: np.ndarray, table: dict) -> np.ndarray:
     region[(u > 0.5) & (u < 0.75) & (lateral > 1.2) & (f[..., 2] < 0)] = 2
     return region
 
+
+
+def keypoint_visible(entry: dict) -> bool:
+    """A factory keypoint usable as 2D ground truth: run03 metas carry a state (visible / under_water /
+    hidden / occluded / out_of_frame); older runs only in_frame and occluded."""
+    if "state" in entry:
+        return entry["state"] == "visible"
+    return bool(entry.get("in_frame")) and not entry.get("occluded")

@@ -36,6 +36,11 @@ class DenseDecoder(nn.Module):
     def forward(self, feats: list[torch.Tensor], image: torch.Tensor):
         """feats: list of (B, C, h, w) at stride 16; image: normalised (B, 3, H, W).
         Returns (full-res output (B, out, H, W), coarse fused features (B, width, h, w))."""
+        out, coarse, _ = self.forward_full(feats, image)
+        return out, coarse
+
+    def forward_full(self, feats: list[torch.Tensor], image: torch.Tensor):
+        """As forward, plus the stride-4 fine features (B, fine_width, H/4, W/4) for extra heads."""
         w = torch.softmax(self.layer_weights, 0)
         x = sum(w[i] * self.proj[i](f) for i, f in enumerate(feats))
         x = self.coarse(x)
@@ -46,4 +51,4 @@ class DenseDecoder(nn.Module):
         x = self.fine(torch.cat([x, s], 1))
         out = self.out(x)
         out = F.interpolate(out, size=(H, W), mode="bilinear", align_corners=False)
-        return out, coarse
+        return out, coarse, x

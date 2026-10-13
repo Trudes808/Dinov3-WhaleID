@@ -66,8 +66,23 @@ def predict_crop(model, image_t: torch.Tensor, device, tta: bool = True) -> dict
     R_b = np.stack([geometry.flip_rotation(r) for r in b["R"].float().cpu().numpy()])
     xyz = 0.5 * (xyz_a + xyz_b) if tta else xyz_a
     vis = (vis_a & vis_b) if tta else vis_a
-    return {"xyz": xyz, "xyz_a": xyz_a, "xyz_b": xyz_b, "vis": vis, "vis_a": vis_a, "vis_b": vis_b, "R": R_a, "R_b": R_b,
-            "log_ppm": a["log_ppm"].float().cpu().numpy()}
+    out = {"xyz": xyz, "xyz_a": xyz_a, "xyz_b": xyz_b, "vis": vis, "vis_a": vis_a, "vis_b": vis_b, "R": R_a, "R_b": R_b,
+           "log_ppm": a["log_ppm"].float().cpu().numpy()}
+    if "kp_heat" in a:
+        from ..common.run03_labels import FLIP_PAIRS, KEYPOINTS
+
+        swap = list(range(len(KEYPOINTS)))
+        for p, q in FLIP_PAIRS:
+            i, j = KEYPOINTS.index(p), KEYPOINTS.index(q)
+            swap[i], swap[j] = j, i
+        heat_a = a["kp_heat"].float().cpu().numpy()
+        heat_b = b["kp_heat"].float().cpu().numpy()[:, swap][..., ::-1]
+        st_a = torch.softmax(a["kp_state_logit"].float(), -1).cpu().numpy()
+        st_b = torch.softmax(b["kp_state_logit"].float(), -1).cpu().numpy()[:, swap]
+        out["kp_heat"] = 0.5 * (heat_a + heat_b) if tta else heat_a
+        out["kp_state_prob"] = 0.5 * (st_a + st_b) if tta else st_a
+        out["deform"] = a["deform"].float().cpu().numpy()
+    return out
 
 
 def landmark_pck(pred_uv: dict, meta: dict, names: list[str], x0: float, y0: float, s: float, length_px: float) -> dict:
@@ -81,9 +96,39 @@ def landmark_pck(pred_uv: dict, meta: dict, names: list[str], x0: float, y0: flo
             "found": int(np.isfinite(errs).sum()), "n": len(names)}
 
 
+def keypoint_rows(heat, state_prob, deform_pred, uv_gt, state_gt, deform_gt, crop: int, length_px: float, Kc, landmarks: dict, R_gt) -> dict:
+    """Keypoint-head metrics for one crop (heatmap PCK on the visible keypoints, state accuracy, visible
+    F1, deformation error) and the rotation from a PnP on the detected keypoints alone, which is the
+    head's value for views where the dense map is ambiguous (fin tips, rolled whales)."""
+    from ..common.run03_labels import KEYPOINTS
+    from .model import DEFORM_SCALE_DEG, decode_heatmaps
+
+    uv, conf = decode_heatmaps(heat, stride=crop // heat.shape[-1])
+    state_pred = state_prob.argmax(-1)
+    vis = state_gt == 0
+    row = {}
+    if vis.any() and length_px > 1:
+        err = np.linalg.norm(uv[vis] - uv_gt[vis], axis=1) / length_px
+        row.update({"kp_pck_0.05": float(np.mean(err < 0.05)), "kp_pck_0.1": float(np.mean(err < 0.1)), "kp_visible_n": int(vis.sum())})
+    known = state_gt >= 0
+    if known.any():
+        row["kp_state_acc"] = float(np.mean(state_pred[known] == state_gt[known]))
+        tp = np.sum((state_pred == 0) & vis); fp = np.sum((state_pred == 0) & known & ~vis); fn = np.sum((state_pred != 0) & vis)
+        row["kp_visible_f1"] = float(2 * tp / max(2 * tp + fp + fn, 1))
+    row["deform_err_deg"] = float(np.abs(deform_pred - deform_gt).mean() * DEFORM_SCALE_DEG)
+    detected = (state_pred == 0) & (conf > 0.3) & np.array([n in landmarks for n in KEYPOINTS])
+    row["kp_detected_n"] = int(detected.sum())
+    if detected.sum() >= 5:
+        pts = np.stack([landmarks[KEYPOINTS[k]] for k in np.nonzero(detected)[0]])
+        fit = geometry.fit_pose_pnp_points(np.repeat(pts, 3, 0), np.repeat(uv[detected], 3, 0), Kc, reproj_px=max(0.03 * length_px, 4.0), iterations=200)
+        if fit is not None:
+            row["rot_kppnp_deg"] = geometry.geodesic_deg(fit["R"], R_gt)
+    return row
+
+
 @torch.no_grad()
 def run_eval(model, run: WhaleRun, ids, device, table, args, tag: str, out: Path, bboxes=None) -> dict:
-    ds = CanonCropDataset(run, ids, table, crop=512, min_visible=args.min_visible, train=False, bboxes=bboxes)
+    ds = CanonCropDataset(run, ids, table, crop=512, min_visible=args.min_visible, train=False, bboxes=bboxes, keypoints=bool(getattr(model, "keypoints", 0)))
     loader = DataLoader(ds, batch_size=args.batch_size, num_workers=args.workers)
     L = table["length_m"]
     landmarks = run.landmarks_m
@@ -141,7 +186,7 @@ def run_eval(model, run: WhaleRun, ids, device, table, args, tag: str, out: Path
                 row["logscale_pnp"] = float(abs(np.log(fit["ppm"]) - batch["log_ppm"][i].item()))
                 row["pnp_inlier_fraction"] = fit["inlier_fraction"]
             # points of interest: from the dense map (signed) and, for comparison, PnP-reprojected
-            names = [n for n in landmarks if meta["keypoints"][n]["in_frame"] and not meta["keypoints"][n]["occluded"]]
+            names = [n for n in landmarks if n in meta["keypoints"] and geometry.keypoint_visible(meta["keypoints"][n])]
             length_px = meta["pixels_per_metre_at_whale"] * meta["whale_length_m"] * s
             signed = geometry.signed_points(pm, side)
             lm_map = geometry.landmarks_from_map(signed, use & (side != 0), landmarks, max_dist_m=1.0)
@@ -153,18 +198,38 @@ def run_eval(model, run: WhaleRun, ids, device, table, args, tag: str, out: Path
                     uv, _ = geometry.project_ue(np.stack([landmarks[n] for n in names]), fit["R"], fit["t_m"], Kc)
                     m2 = landmark_pck({n: {"uv": tuple(p)} for n, p in zip(names, uv)}, meta, names, x0, y0, s, length_px)
                     row.update({"lm_pnp_pck_0.05": m2["pck_0.05"], "lm_pnp_pck_0.1": m2["pck_0.1"]})
+            if "kp_heat" in pred and "kp_uv" in batch:
+                row.update(keypoint_rows(pred["kp_heat"][i], pred["kp_state_prob"][i], pred["deform"][i], batch["kp_uv"][i].numpy(), batch["kp_state"][i].numpy(),
+                                         batch["deform"][i].numpy(), mask.shape[-1], length_px, Kc, landmarks, R_gt))
+            row["category"] = meta.get("category")
             per_image.append(row)
             keep[sid] = {"img": (batch["image"][i].permute(1, 2, 0).numpy() * 255).astype(np.uint8), "pred": pred["xyz"][i], "use": use, "side": side,
                          "gt": batch["xyz"][i].numpy(), "gt_valid": v, "gt_side": gt_side, "lm_map": lm_map, "names": names, "x0y0s": (x0, y0, s)}
     summary = {"crops": tag, "images_evaluated": len(per_image)}
     keys = ["surface_err_m", "surface_err_median_m", "surface_err_torso_m", "surface_err_fluke_m", "surface_err_fin_m", "flip_surface_disagreement_m", "vis_iou",
             "rot_direct_deg", "rot_direct_flip_consistency_deg", "rot_pnp_deg", "logscale_pnp", "pnp_inlier_fraction", "side_acc", "side_flip_agreement", "side_purity",
-            "lm_map_pck_0.05", "lm_map_pck_0.1", "lm_map_err_frac_median", "lm_pnp_pck_0.05", "lm_pnp_pck_0.1", "side_margin", "lm_map_found_frac", "cue_confidence"]
+            "lm_map_pck_0.05", "lm_map_pck_0.1", "lm_map_err_frac_median", "lm_pnp_pck_0.05", "lm_pnp_pck_0.1", "side_margin", "lm_map_found_frac", "cue_confidence",
+            "kp_pck_0.05", "kp_pck_0.1", "kp_state_acc", "kp_visible_f1", "deform_err_deg", "rot_kppnp_deg", "kp_detected_n"]
     for key in keys:
         summary.update(summarize_values([r.get(key) for r in per_image], key + "_"))
-    for key, thr in (("rot_direct_deg", 15), ("rot_pnp_deg", 15), ("rot_direct_deg", 30), ("rot_pnp_deg", 30)):
+    for key, thr in (("rot_direct_deg", 15), ("rot_pnp_deg", 15), ("rot_direct_deg", 30), ("rot_pnp_deg", 30), ("rot_kppnp_deg", 15), ("rot_kppnp_deg", 30)):
         vals = np.asarray([r[key] for r in per_image if r.get(key) is not None])
         summary[f"{key}_under_{thr}"] = float(np.mean(vals < thr)) if len(vals) else None
+    summary["rot_kppnp_images"] = sum(r.get("rot_kppnp_deg") is not None for r in per_image)
+    # per pose category: the hard views (close-ups, rolled whales) are what run03 is for
+    by_cat = {}
+    for cat in sorted({r.get("category") for r in per_image} - {None}):
+        rs = [r for r in per_image if r.get("category") == cat]
+        entry = {"n": len(rs)}
+        for key in ("surface_err_median_m", "side_acc", "lm_map_pck_0.1", "kp_pck_0.1", "kp_state_acc", "deform_err_deg"):
+            vals = [r[key] for r in rs if r.get(key) is not None]
+            entry[key] = float(np.median(vals)) if vals else None
+        for key in ("rot_direct_deg", "rot_pnp_deg", "rot_kppnp_deg"):
+            vals = np.asarray([r[key] for r in rs if r.get(key) is not None])
+            entry[f"{key}_under_15"] = float(np.mean(vals < 15)) if len(vals) else None
+            entry[f"{key}_n"] = int(len(vals))
+        by_cat[cat] = entry
+    summary["by_category"] = by_cat
     summary["surface_err_frac_of_length_mean"] = summary.get("surface_err_m_mean", np.nan) / L
     summary["facing_acc_head"] = float(np.mean([r["head_side"] == r["facing_gt"] for r in per_image if "facing_gt" in r])) if per_image else None
     summary["facing_acc_prior"] = float(np.mean([r["prior_side"] == r["facing_gt"] for r in per_image if "facing_gt" in r])) if per_image else None

@@ -217,3 +217,23 @@ experiments/*/eval_*/per_image*.jsonl
 experiments/*/val_per_image.jsonl
 experiments/*.stdout
 experiments/predictions_*/
+
+# ---- generated / cached outputs (added 2026-10-12) ----
+# Per-day inference outputs (atlases, canon maps, crops, charts, clusters, sheets)
+# and the symlinked day folders. Regenerate with the scripts in test_scripts/ and experiments/*.sh
+/experiments/real_*/
+/experiments/days/
+# Run logs and captured stdout
+*.log
+*.stdout
+# Model weights / checkpoints / trained heads
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+# Cached arrays and embeddings (hand-curated lookup tables in assets/ are kept)
+*.npz
+!model_fine_tuning/assets/*.npz
+*.npy
+# Editor / OS clutter
+.DS_Store

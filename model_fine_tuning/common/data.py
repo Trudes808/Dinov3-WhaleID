@@ -78,6 +78,16 @@ class WhaleRun:
     def visible(self, shot_id: str) -> np.ndarray:
         return self.mask(shot_id) == 1
 
+    def primary(self, shot_id: str, mask: np.ndarray) -> np.ndarray:
+        """The shot's own whale (for the crop box): instances/<id>.png == 1 when the shot has a companion
+        whale (run04 mom + calf, factory.postprocess), otherwise the visible-whale class of the mask."""
+        path = self.dataset_dir / "instances" / f"{shot_id}.png"
+        if path.exists():
+            inst = np.asarray(Image.open(path))
+            if (inst == 1).any():
+                return inst == 1
+        return mask == 1
+
     def bodycoords(self, shot_id: str):
         bgr = cv2.imread(str(self.dataset_dir / "bodycoords" / f"{shot_id}.png"), cv2.IMREAD_COLOR)
         rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
@@ -278,9 +288,9 @@ class BodyCropDataset(Dataset):
         C = self.crop
         if self.train:
             margin = rng.uniform(*self.margin_range)
-            x0, y0, s = square_crop_params(bbox_of(mask == 1), C, margin, self.jitter, rng)
+            x0, y0, s = square_crop_params(bbox_of(run.primary(shot_id, mask)), C, margin, self.jitter, rng)
         else:
-            bbox = self.bboxes[shot_id] if self.bboxes is not None else bbox_of(mask == 1)
+            bbox = self.bboxes[shot_id] if self.bboxes is not None else bbox_of(run.primary(shot_id, mask))
             x0, y0, s = square_crop_params(bbox, C, self.eval_margin, 0.0, None)
         M = warp_params(x0, y0, s)
         img = warp_image(image, M, (C, C))
@@ -289,7 +299,7 @@ class BodyCropDataset(Dataset):
         tc = warp_nearest(theta, M, (C, C), 0.0)
         dc = warp_nearest(defined.astype(np.uint8), M, (C, C), 0)
         R, t = geometry.gt_camera_from_whale(meta)
-        ppm = float(meta["pixels_per_metre_at_whale"]) * s
+        ppm = float(meta["pixels_per_metre_at_whale"]) * s * float(meta.get("body_scale", 1.0))   # per unit-mesh metre
         flipped = False
         if self.train and self.flip and rng.random() < 0.5:
             flipped = True
@@ -317,6 +327,50 @@ class BodyCropDataset(Dataset):
         return sample
 
 
+# ---- run03 keypoint labels (see run03_labels.py) ----
+KP_STATE_CLASS = {"visible": 0, "under_water": 1, "hidden": 2, "occluded": 2, "out_of_frame": 3}   # the model's 4 classes; missing -> -1
+DEFORM_FLIP_SIGN = np.array([1, 1, 1, -1, -1, 1, 1], np.float32)   # arch, tail_curl, head_pitch, lateral, fluke_twist, fin_raise, fin_sweep
+
+
+def keypoint_targets(meta: dict, x0: float, y0: float, s: float, crop: int, flipped: bool, heat_size: int, sigma: float = 2.5):
+    """Keypoint targets for a crop: uv (K, 2) crop pixels (nan when missing), state class (K,) with
+    -1 = missing, Gaussian heatmaps (K, heat_size, heat_size) for the visible keypoints inside the crop,
+    on the stride crop / heat_size grid. Mirrored crops swap the left/right keypoints."""
+    from .run03_labels import FLIP_PAIRS, KEYPOINTS
+
+    K = len(KEYPOINTS)
+    uv = np.full((K, 2), np.nan, np.float32); st = np.full(K, -1, np.int64)
+    kps = meta.get("keypoints") or {}
+    for i, name in enumerate(KEYPOINTS):
+        k = kps.get(name)
+        if not k or "state" not in k:
+            continue
+        uv[i] = ((k["uv"][0] - x0) * s, (k["uv"][1] - y0) * s)
+        st[i] = KP_STATE_CLASS.get(k["state"], -1)
+    if flipped:
+        uv[:, 0] = crop - uv[:, 0]
+        for a, b in FLIP_PAIRS:
+            i, j = KEYPOINTS.index(a), KEYPOINTS.index(b)
+            uv[[i, j]] = uv[[j, i]]; st[[i, j]] = st[[j, i]]
+    inside = np.isfinite(uv).all(1) & (uv >= 0).all(1) & (uv < crop).all(1)
+    st[(st == 0) & ~inside] = 3                                  # a visible keypoint cut off by the crop is out of frame
+    stride = crop / heat_size
+    heat = np.zeros((K, heat_size, heat_size), np.float32)
+    gy, gx = np.mgrid[0:heat_size, 0:heat_size]
+    for i in np.nonzero(st == 0)[0]:
+        cx, cy = uv[i] / stride - 0.5
+        heat[i] = np.exp(-((gx - cx) ** 2 + (gy - cy) ** 2) / (2 * sigma ** 2))
+    return uv, st, heat
+
+
+def deform_target(meta: dict, flipped: bool, scale_deg: float = 30.0) -> np.ndarray:
+    from .run03_labels import DEFORM_PARAMS
+
+    d = meta.get("deform") or {}
+    v = np.array([float(d.get(k, 0.0)) for k in DEFORM_PARAMS], np.float32) / scale_deg
+    return v * DEFORM_FLIP_SIGN if flipped else v
+
+
 class CanonCropDataset(Dataset):
     """Whale-centred crops with the canonical surface point per pixel as the dense target.
 
@@ -329,10 +383,11 @@ class CanonCropDataset(Dataset):
 
     def __init__(self, run: WhaleRun, ids: list[str], table: dict, crop: int = 512, min_visible: int = 300, margin_range=(1.25, 2.2),
                  jitter: float = 0.12, flip: bool = True, photometric_strength: float = 1.0, train: bool = True, seed: int = 0,
-                 eval_margin: float = 1.6, bboxes: dict[str, list] | None = None):
+                 eval_margin: float = 1.6, bboxes: dict[str, list] | None = None, keypoints: bool = False, heat_stride: int = 4):
         self.run, self.crop, self.train, self.seed = run, crop, train, seed
         self.margin_range, self.jitter, self.flip, self.photometric_strength = margin_range, jitter, flip, photometric_strength
         self.eval_margin, self.bboxes = eval_margin, bboxes
+        self.keypoints, self.heat_stride = keypoints, heat_stride     # run03 targets: heatmaps, keypoint states, deformation
         self.x_min_cm, self.length_cm = float(table["x_min_m"]) * 100.0, float(table["length_m"]) * 100.0
         self.ids = [i for i in ids if run.by_id[i]["visible_pixels"] >= min_visible and run.has_canon(i)]
         if bboxes is not None:
@@ -363,9 +418,9 @@ class CanonCropDataset(Dataset):
         C = self.crop
         if self.train:
             margin = rng.uniform(*self.margin_range)
-            x0, y0, s = square_crop_params(bbox_of(mask == 1), C, margin, self.jitter, rng)
+            x0, y0, s = square_crop_params(bbox_of(run.primary(shot_id, mask)), C, margin, self.jitter, rng)
         else:
-            bbox = self.bboxes[shot_id] if self.bboxes is not None else bbox_of(mask == 1)
+            bbox = self.bboxes[shot_id] if self.bboxes is not None else bbox_of(run.primary(shot_id, mask))
             x0, y0, s = square_crop_params(bbox, C, self.eval_margin, 0.0, None)
         M = warp_params(x0, y0, s)
         img = warp_image(image, M, (C, C))
@@ -373,7 +428,7 @@ class CanonCropDataset(Dataset):
         cc = np.stack([warp_nearest(np.nan_to_num(canon_cm[..., k]), M, (C, C), 0.0) for k in range(3)], -1)
         dc = warp_nearest(defined.astype(np.uint8), M, (C, C), 0) > 0
         R, t = geometry.gt_camera_from_whale(meta)
-        ppm = float(meta["pixels_per_metre_at_whale"]) * s
+        ppm = float(meta["pixels_per_metre_at_whale"]) * s * float(meta.get("body_scale", 1.0))   # per unit-mesh metre
         flipped = False
         if self.train and self.flip and rng.random() < 0.5:
             flipped = True
@@ -399,6 +454,10 @@ class CanonCropDataset(Dataset):
             "crop_x0y0s": torch.tensor([x0, y0, s], dtype=torch.float64),
             "flipped": flipped,
         }
+        if self.keypoints:
+            uv, st, heat = keypoint_targets(meta, x0, y0, s, C, flipped, C // self.heat_stride)
+            sample.update({"kp_uv": torch.from_numpy(uv), "kp_state": torch.from_numpy(st), "kp_heat": torch.from_numpy(heat),
+                           "deform": torch.from_numpy(deform_target(meta, flipped))})
         return sample
 
 
