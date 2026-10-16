@@ -1,0 +1,21 @@
+{"event": "start", "task": "segmentation", "model": {"arch": "vitb16", "unfreeze_blocks": 4, "layers": null, "decoder_width": 256}, "train_images": 498, "val_images": 106, "params": {"total_M": 88.21, "trainable_M": 30.9}, "elapsed_s": 0.0}
+{"event": "train", "epoch": 0, "step": 50, "loss": 0.7848207998275757, "bce": 0.08803334832191467, "dice": 0.4201081097126007, "lr_factor": 1.0, "elapsed_s": 12.4}
+{"event": "epoch", "epoch": 0, "step": 62, "loss": 0.7246228148860316, "seconds": 15.1, "elapsed_s": 15.1}
+{"event": "val", "epoch": 0, "step": 62, "dataset_iou": 0.9115380935747198, "mean_image_iou": 0.7932523712434854, "negatives_clean": 1.0, "recall": 0.968478208698925, "precision": 0.9394089657543717, "boundary_f1_open": 0.09920330823152458, "boundary_f1_seam": 0.665447150630908, "true_contour_recall": 0.4917061413332756, "elapsed_s": 22.8}
+{"event": "train", "epoch": 1, "step": 100, "loss": 0.3948524609992379, "bce": 0.0408385694026947, "dice": 0.3408654034137726, "lr_factor": 0.9450637570171638, "elapsed_s": 32.1}
+{"event": "epoch", "epoch": 1, "step": 124, "loss": 0.3661381611900945, "seconds": 13.7, "elapsed_s": 37.1}
+{"event": "val", "epoch": 1, "step": 124, "dataset_iou": 0.9344889037077218, "mean_image_iou": 0.8432064078876967, "negatives_clean": 0.8, "recall": 0.9649827534587895, "precision": 0.96729038542471, "boundary_f1_open": 0.18829155939808792, "boundary_f1_seam": 0.7887623866619949, "true_contour_recall": 0.6336593283344352, "elapsed_s": 44.4}
+{"event": "train", "epoch": 2, "step": 150, "loss": 0.31481348321988034, "bce": 0.04902886599302292, "dice": 0.1943400800228119, "lr_factor": 0.7886542956474278, "elapsed_s": 51.4}
+{"event": "epoch", "epoch": 2, "step": 186, "loss": 0.28904159811715924, "seconds": 13.9, "elapsed_s": 59.3}
+{"event": "val", "epoch": 2, "step": 186, "dataset_iou": 0.9443291177462924, "mean_image_iou": 0.8579162774144878, "negatives_clean": 0.8, "recall": 0.9777649580252455, "precision": 0.9650533372246141, "boundary_f1_open": 0.2243636995753599, "boundary_f1_seam": 0.8170941995259289, "true_contour_recall": 0.66479792343986, "elapsed_s": 67.1}
+{"event": "train", "epoch": 3, "step": 200, "loss": 0.27560533370290485, "bce": 0.017009414732456207, "dice": 0.5597881078720093, "lr_factor": 0.5672372433457932, "elapsed_s": 71.6}
+{"event": "epoch", "epoch": 3, "step": 248, "loss": 0.24937564567212137, "seconds": 14.5, "elapsed_s": 82.5}
+{"event": "val", "epoch": 3, "step": 248, "dataset_iou": 0.9431319697424152, "mean_image_iou": 0.8728337394182788, "negatives_clean": 0.8, "recall": 0.962085770311077, "precision": 0.9795387726947006, "boundary_f1_open": 0.2905483078853978, "boundary_f1_seam": 0.8477305669289178, "true_contour_recall": 0.7284453581975897, "elapsed_s": 89.8}
+{"event": "train", "epoch": 4, "step": 250, "loss": 0.287615105509758, "bce": 0.06232186406850815, "dice": 0.18420732021331787, "lr_factor": 0.3324672466983775, "elapsed_s": 91.3}
+{"event": "train", "epoch": 4, "step": 300, "loss": 0.2284695500135422, "bce": 0.021163973957300186, "dice": 0.4722321033477783, "lr_factor": 0.1391140765055163, "elapsed_s": 101.8}
+{"event": "epoch", "epoch": 4, "step": 310, "loss": 0.23350604611539072, "seconds": 13.6, "elapsed_s": 103.9}
+{"event": "val", "epoch": 4, "step": 310, "dataset_iou": 0.9487799007572185, "mean_image_iou": 0.8797223085012125, "negatives_clean": 1.0, "recall": 0.9715262744459611, "precision": 0.9759173008380447, "boundary_f1_open": 0.328143089313193, "boundary_f1_seam": 0.8502898798654219, "true_contour_recall": 0.7259821218754414, "elapsed_s": 111.6}
+{"event": "train", "epoch": 5, "step": 350, "loss": 0.24584005642682313, "bce": 0.05679041147232056, "dice": 0.17982491850852966, "lr_factor": 0.03228532303090643, "elapsed_s": 121.6}
+{"event": "epoch", "epoch": 5, "step": 372, "loss": 0.2240713461031837, "seconds": 13.6, "elapsed_s": 126.2}
+{"event": "val", "epoch": 5, "step": 372, "dataset_iou": 0.9498555910445805, "mean_image_iou": 0.8809810627532487, "negatives_clean": 1.0, "recall": 0.9742147224956954, "precision": 0.9743513150603289, "boundary_f1_open": 0.3176439136772292, "boundary_f1_seam": 0.8552835137287119, "true_contour_recall": 0.734368700954445, "elapsed_s": 133.6}
+{"event": "done", "best_val_dataset_iou": 0.9498555910445805, "elapsed_s": 134.5}

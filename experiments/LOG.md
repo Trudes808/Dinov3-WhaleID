@@ -450,3 +450,85 @@ embedding cosine, fins only when both photos are near-profile (|nose_right| >= 0
 body also against the other photo's mirrored chart (the flip hypothesis), z-scored per day;
 then the unchanged clustering (time term, self-calibrated threshold) and explanations.
 Baselines reported per eval day: time only; identity + time; identity alone.
+
+## 2026-10-14 — run04: contour-weighted losses (seg_r04_cw / canon_r04_cw) vs the plain recipe (seg_r04_ft4 / canon_r04_ft4)
+
+Run04 (Whale-Image-Data-Factory, rigged 4k humpback, individuals, mom + calf, frozen waves, 10 000 shots) labels every
+boundary pixel of the visible mask: 1 = the whale's own silhouette (open air against sky or water), 2 = a seam where
+the body continues under the surface or behind foam, 3 = the edge against the calf. In a real photo the top contour is
+the trustworthy one and the waterline / foam edges are not, so the losses now weight the pixels within 3 px of the
+contours: silhouette x4 (segmentation BCE, visibility BCE) and x3 (canonical-coordinate L1), seams x0.3 (BCE only;
+the seam's coordinates are exact, its position in a photo is not). `common/contours.py`; flags on both trainers.
+
+Evaluation adds the boundary F-score split away from / at the seams (`boundary_f1_open` / `boundary_f1_seam`) and
+the recall of the silhouette pixels, for the segmentation model and the visibility head. `scripts/run04_train.sh`
+trains the contour-weighted variant, evaluates it, then the plain run03 recipe on the same split (the ablation);
+`run04_evaluate.sh` also evaluates the run03 models on the run04 test split, so the synthetic comparison is like
+for like; `run04_report.py` writes `experiments/run04_report.md`. Smoke-tested end to end (3 steps, h4k_test12).
+The Whale-Image-Data-Factory pipeline (`tools/run04_pipeline.sh`) runs both scripts after the render.
+
+Dev rehearsal (run04_dev: 752 shots from 21 finished run04 batches, 6 epochs per model, both variants): the
+training chain, evaluation and report run end to end; at 6 epochs the weighting changes nothing measurable
+(segmentation dataset IoU 0.960 vs 0.959, pooled open-air boundary F1 0.805 vs 0.803, run03 model 0.800 on the
+same images; run04_dev_report.md). The open-air score is scored along the gt silhouette only (predicted boundary
+within 8 px of it): scored over the whole "far from seams" zone it was dominated by predictions straying a few
+pixels past the waterline or foam edge, precision 0.2, which is seam error, not silhouette error. The run03 canon model on the
+run04 dev test split: surface error 2.8 m, rotation median 100 deg, facing accuracy 74 % (own split: 0.25 m,
+9 deg, 91 %): it mirrors the side on run04's close-ups and head-on views; the labels themselves were checked
+(same canonical frame as run03, GT rotation within ~10 deg of a PnP on the factory keypoints for straight poses).
+Boundary scores are pooled over the split (`common.contours.pooled_boundary_scores`) because a surfacing whale
+seen from an elevated camera has almost no open-air contour (its back ends at the far waterline: all seam).
+
+Results, contour-weighted pair (2026-10-16 03:46 UTC; seg 1.9 h, canon 1.9 h on 6 676 / 6 296 train images;
+run04_report.md). Synthetic, run04 test split, like for like against the run03 models on the same images:
+segmentation IoU 0.961 vs 0.935, open-air boundary F1 (pooled) 0.857 vs 0.790, silhouette recall 0.72 vs 0.54;
+canon surface error 0.43 m vs 2.37 m (median 0.27 vs 1.63), rotation within 15 deg 68 % vs 2 % (direct head;
+run03 on its own easier split: 74 %), side accuracy 0.87 vs 0.66, landmark PCK@0.1 0.90 vs 0.51. The PnP
+rotation is poor for the run04 model even on synthetic data (median 31 deg, 10 % within 15 deg; run03 on its own
+split 12.7 deg): a rigid K9239 fit against a dense map of bent bodies (every run04 shot is a keyframe pose).
+Real photos (2024-12-18, label-free outline metric): worse than run03, with the PnP pose (above-water IoU median
+0.20 vs 0.31, 71 % of photos worse) and with the rotation from the direct head and a fitted translation (0.23 vs
+0.31; reprojection error 30 px vs 21 px). Mirror test on real photos: equal (side flips 18 % vs 17 %, folded
+disagreement 0.30 m vs 0.33 m). On the photo that worsened most (a raised fluke) both maps are the same up to
+the left/right assignment, and the rigid PnP then lands on different poses: the fluke-only side ambiguity.
+Plain ablation (2026-10-16 08:02 UTC, the pipeline's last stage): on the synthetic test split the two variants
+are within noise of each other (seg IoU 0.961 vs 0.960, open-air boundary F1 0.857 vs 0.851, surface error 0.43
+vs 0.44 m, rotation 68 % both); on the real photos the plain recipe is slightly better (outline IoU 0.232 vs 0.197
+with PnP, 0.235 vs 0.228 with the direct rotation; folded mirror disagreement 0.25 vs 0.30 m). The contour
+weighting as configured (x4 / x0.3, 3 px) is a null result: keep the plain recipe as the run04 reference
+(seg_r04_ft4 / canon_r04_ft4) unless a stronger setting is tried.
+Domain check (experiments/run04_domain_check/): the real-photo gap is explained by the data, not the losses.
+Open questions for the plain ablation (training) and after: whether the weighting costs anything on real
+photos, and why the run04 map fits real photos worse (render look / pose distribution / the 4k whale), since the
+synthetic gains are large. The dense map + rotation head on real photos is the number to improve; the rigid PnP
+is the weak link in both evaluations and the bendable fit is the planned replacement.
+
+## 2026-10-16 — mesh fit: bendable fit instead of the rigid PnP (canon/fit_mesh.py), and the run05 pose fix
+
+The rigid PnP of the dense map is the weak link of every real-photo number (a bent whale cannot be matched by a rigid
+mesh; the rotation goes with it). `canon/fit_mesh.py` fits the pose and the factory's body bend (arch, tail curl, head
+pitch, lateral sweep; `factory/deform.py` imported from the sibling repo) to the prediction: (1) rotation from the
+direct head, translation by a linear least squares on the correspondences (PnP-independent: the PnP translation is
+wrong whenever its rotation is); (2) robust least squares on the dense correspondences with a soft prior on the bend;
+(3) a bounded Powell refinement on the rendered above-water silhouette: per-column top edge against the mask's top
+edge (the whale's own contour; the waterline is never matched), mesh above the whale, columns beyond the mask, excess
+above water. The silhouette renderer used every third face (a wireframe decimation that leaked from the review app)
+and left holes; fixed in outline_metric too (its numbers for all models were refreshed with the full mesh).
+Synthetic test crops of run04 (48, oracle crops, scored against the true mask and rotation, canon_r04_ft4, K9239
+mesh): above-water IoU vs truth 0.40 (rigid PnP) -> 0.51 (bend), top-edge error 4.5 -> 2.0 px, rotation error
+33 -> 25 deg median. Real photos and the real-vs-synthetic grid: experiments/real_2024-12-18/fit_*/ and
+fit_grid_canon_r04_ft4.jpg (orange rigid PnP, green bend, white refined). `scripts/fit_real_photos.sh`,
+`scripts/fit_synthetic.sh`, `canon/fit_grid.py`.
+
+Experiment 3a: canon_r04_ft4_real = canon_r04_ft4 fine-tuned 6 epochs with the mirror-consistency loss on the real
+photos, EMA teacher with stop-gradient (`--consistency-teacher ema`; the two-branch loss of 2026-10-12 collapsed),
+w 1.0: no collapse (coordinate spread on real crops 0.05-0.09 body lengths throughout), val score 0.713 vs 0.708.
+Experiment 3b: canon_r0304_ft4 = the plain recipe on run03 + run04 together (`common.data.CombinedRun`,
+`--extra-run-dir/--extra-split`, `scripts/run0304_combined.sh`). Results: see the follow-up entry.
+
+Run05 pose finding (factory): the straight dive-start keyframes carry the head high and the dorsal fin low in the
+levelled frame (zero bend: snout 70 cm above the dorsal tip), so a mild hump centred mid-body exposes the blowhole-to-
+rostrum region, not the back (first test render: 78 % of the surfacing pixels on the rostrum). The `surface` pose is
+therefore a milder back_arch with the apex at the dorsal fin (arch -55..-30 at body fraction 0.36-0.42, head pitch
+-30..-12, tail curl -25..-8), with per-category pitch/roll jitter (4/8 deg) and the back-height clearance measured
+without the head (x < 450 cm). Framing: extent 0.08-0.7, 70-600 mm, 50-400 m. Config factory/config/run05_realism.json.

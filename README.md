@@ -89,12 +89,43 @@ test_scripts/bash/evaluate_test_split.sh seg_vitb16_ft4 body_vitb16_ft4         
 test_scripts/bash/canon_pipeline.sh canon_r02_ft4        # canonical surface model: train, evaluate, real photos
 python -m model_fine_tuning.canon.predict --seg-checkpoint SEG --checkpoint CANON --images DIR --out OUT
 test_scripts/bash/predict_test_data.sh   seg_vitb16_ft4 body_vitb16_ft4          # photos in test_data_do_not_use
+scripts/run04_train.sh    RUN/dataset   # run04: contour-weighted (seg_r04_cw, canon_r04_cw) then plain variants, each evaluated
+scripts/run04_evaluate.sh RUN/dataset   # run04: test split, real photos, run03 models on the same split, experiments/run04_report.md
 ```
+
+Run04 training (2026-10-14) re-weights the losses with the factory's contour label (`contours/<id>.png`: 1 = the
+whale's own silhouette, 2 = waterline / foam seam, 3 = calf edge; `common/contours.py`): within 3 px of the
+silhouette the segmentation / visibility BCE counts x4 and the canonical-coordinate L1 x3, within 3 px of a seam
+the BCE counts x0.3 (`--contour-w-true`, `--contour-w-seam`, `--contour-band`, canon `--contour-w-xyz`; unit
+weights = off, the default). The boundary F-score is reported along the whale's own silhouette (`boundary_f1_open`:
+the gt boundary away from the seams against the predicted boundary near it, what a mesh fit should match) and at
+the seams (`boundary_f1_seam`), plus the recall of the silhouette pixels
+(`true_contour_recall`); the `_pooled` versions (match counts summed over the split) are the ones to compare, since
+many surfacing whales have almost no open-air contour (an elevated camera sees the far waterline, so the back is
+all seam) and their per-image scores are noise. `run04_train.sh` trains the plain recipe on the same data as the ablation.
 
 `predict_test_data.sh` runs the labelled evaluations if the folder is a factory run, and the
 photo pipeline (segment -> crop -> body coordinates -> PnP pose) otherwise. For real photos
 pass `--focal-mm` and `--sensor-width-mm` (or `--hfov-deg`) so the translation and scale are
 in metres; the rotation does not need them.
+
+## Mesh fit (bendable) and the real-vs-synthetic grid
+
+`python -m model_fine_tuning.canon.fit_mesh` fits the pose *and* the body bend of the canonical mesh to a
+canonical-surface prediction instead of a rigid PnP: rotation from the direct head, a PnP-independent linear
+translation start, robust least squares on the dense correspondences over pose + arch / tail curl / head pitch /
+lateral sweep (the factory's `deform.py`, imported from the sibling repo) with a soft prior, then a bounded Powell
+refinement on the rendered above-water silhouette (per-column top edge against the mask's top edge, mesh above or
+beyond the whale, excess above water; the waterline is never matched). `scripts/fit_real_photos.sh NAME...` runs it
+on the real photos (`FIT_MESH` for the 4k canonical mesh, `assets/humpback4k_folded_table.npz` shares the K9239
+normalisation), `scripts/fit_synthetic.sh NAME` on run04 test crops scored against the true mask and rotation, and
+`canon/fit_grid.py` lays real photos beside synthetic shots of the same pose class (fluke / back / head from the
+predicted body fraction) with the rigid PnP (orange), bend (green) and refined (white) outlines. Per fit the json
+holds the above-water IoU, coverage, excess, top-edge error and the bend angles for each variant.
+
+Training on several runs at once: `--extra-run-dir RUN --extra-split SPLIT` (ids prefixed by the run index,
+`common.data.CombinedRun`). Real-photo mirror consistency: `--consistency-teacher ema` predicts the mirrored branch
+with an EMA copy under no_grad (the plain two-branch loss collapsed to a constant map).
 
 ## Data the models learn from
 
@@ -107,7 +138,9 @@ trains on whale-centred crops (1112 frames with >= 300 visible pixels) and is ev
 with oracle crops (GT mask box) and end-to-end crops from the segmentation model.
 
 The canonical-surface model needs `canon/<id>.npz` in the run (factory
-`postprocess --canon-only --workers N` adds it to an existing run). Real photos in camera RAW are
+`postprocess --canon-only --workers N` adds it to an existing run). Run04 adds `contours/<id>.png` (boundary
+classes, above) and `instances/<id>.png` (1 = the shot's whale, 2 = the calf; crops are centred on the shot's
+own whale, `WhaleRun.primary`). Real photos in camera RAW are
 decoded with `test_scripts/python/convert_raw.py` (rawpy).
 
 Frames and conventions are documented in `model_fine_tuning/common/geometry.py`; note the

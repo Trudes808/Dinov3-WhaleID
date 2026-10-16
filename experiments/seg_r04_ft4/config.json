@@ -1,0 +1,49 @@
+{
+ "task": "segmentation",
+ "args": {
+  "name": "seg_r04_ft4",
+  "run_dir": "/home/sat3737/NOAA_whales/Whale-Image-Data-Factory/data/renders/run04",
+  "split": "model_fine_tuning/splits/run04.json",
+  "out_root": "/home/sat3737/NOAA_whales/Dinov3-WhaleID/experiments",
+  "arch": "vitb16",
+  "unfreeze_blocks": 4,
+  "layers": null,
+  "epochs": 30,
+  "batch_size": 8,
+  "crop": 512,
+  "scale_min": 0.5,
+  "scale_max": 1.5,
+  "whale_bias": 0.7,
+  "photometric": 1.0,
+  "lr_head": 0.0003,
+  "lr_backbone": 3e-05,
+  "layer_decay": 0.8,
+  "weight_decay": 0.05,
+  "warmup_steps": 200,
+  "dice_weight": 1.0,
+  "contour_band": 3,
+  "contour_w_true": 1.0,
+  "contour_w_seam": 1.0,
+  "workers": 6,
+  "eval_every": 1,
+  "eval_batch": 4,
+  "seed": 0,
+  "max_train": null,
+  "max_val": null,
+  "max_steps": null,
+  "resume": null,
+  "no_amp": false
+ },
+ "model": {
+  "arch": "vitb16",
+  "unfreeze_blocks": 4,
+  "layers": null,
+  "decoder_width": 256
+ },
+ "train_images": 6676,
+ "val_images": 1429,
+ "params": {
+  "total_M": 88.21,
+  "trainable_M": 30.9
+ }
+}

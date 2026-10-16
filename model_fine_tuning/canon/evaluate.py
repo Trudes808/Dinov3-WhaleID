@@ -24,6 +24,7 @@ import torch
 from torch.utils.data import DataLoader
 
 from ..common import geometry, paths
+from ..common.contours import boundary_f1_split, pooled_boundary_scores
 from ..common.data import IGNORE, CanonCropDataset, WhaleRun
 from ..common.metrics import summarize_values
 from ..common.train_utils import move
@@ -159,6 +160,10 @@ def run_eval(model, run: WhaleRun, ids, device, table, args, tag: str, out: Path
             row["flip_surface_disagreement_m"] = float(np.linalg.norm(pa - pb, axis=-1)[both].mean()) if both.sum() else None
             gtm = mask == 1
             row["vis_iou"] = float(np.sum(pred["vis"][i] & gtm) / max(np.sum((pred["vis"][i] | gtm) & (mask != IGNORE)), 1))
+            if "contours" in batch:        # boundary score of the visibility head away from / at the water seams (run04 label)
+                bf = boundary_f1_split(use, gtm, batch["contours"][i].numpy(), ignore=mask == IGNORE)
+                row["vis_bf1_open"], row["vis_bf1_seam"], row["vis_true_contour_recall"] = bf["bf1_open"], bf["bf1_seam"], bf["true_contour_recall"]
+                row.update({k: bf[k] for k in ("open_counts", "seam_counts", "true_contour_px", "true_contour_hit") if k in bf})
             R_gt = batch["R"][i].numpy()
             row["rot_direct_deg"] = geometry.geodesic_deg(pred["R"][i], R_gt)
             row["rot_direct_flip_consistency_deg"] = geometry.geodesic_deg(pred["R"][i], pred["R_b"][i])
@@ -207,11 +212,13 @@ def run_eval(model, run: WhaleRun, ids, device, table, args, tag: str, out: Path
                          "gt": batch["xyz"][i].numpy(), "gt_valid": v, "gt_side": gt_side, "lm_map": lm_map, "names": names, "x0y0s": (x0, y0, s)}
     summary = {"crops": tag, "images_evaluated": len(per_image)}
     keys = ["surface_err_m", "surface_err_median_m", "surface_err_torso_m", "surface_err_fluke_m", "surface_err_fin_m", "flip_surface_disagreement_m", "vis_iou",
+            "vis_bf1_open", "vis_bf1_seam", "vis_true_contour_recall",
             "rot_direct_deg", "rot_direct_flip_consistency_deg", "rot_pnp_deg", "logscale_pnp", "pnp_inlier_fraction", "side_acc", "side_flip_agreement", "side_purity",
             "lm_map_pck_0.05", "lm_map_pck_0.1", "lm_map_err_frac_median", "lm_pnp_pck_0.05", "lm_pnp_pck_0.1", "side_margin", "lm_map_found_frac", "cue_confidence",
             "kp_pck_0.05", "kp_pck_0.1", "kp_state_acc", "kp_visible_f1", "deform_err_deg", "rot_kppnp_deg", "kp_detected_n"]
     for key in keys:
         summary.update(summarize_values([r.get(key) for r in per_image], key + "_"))
+    summary.update({f"vis_{k}": v for k, v in pooled_boundary_scores(per_image).items()})
     for key, thr in (("rot_direct_deg", 15), ("rot_pnp_deg", 15), ("rot_direct_deg", 30), ("rot_pnp_deg", 30), ("rot_kppnp_deg", 15), ("rot_kppnp_deg", 30)):
         vals = np.asarray([r[key] for r in per_image if r.get(key) is not None])
         summary[f"{key}_under_{thr}"] = float(np.mean(vals < thr)) if len(vals) else None

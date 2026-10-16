@@ -88,6 +88,24 @@ class WhaleRun:
                 return inst == 1
         return mask == 1
 
+    def contours(self, shot_id: str) -> np.ndarray | None:
+        """Boundary classes of the visible mask (factory.postprocess): 1 true silhouette (the whale ends there,
+        e.g. the top contour), 2 waterline / foam edge (the body continues under water: unreliable in real
+        photos), 3 edge against a calf; None for datasets without the label. For contour-weighted losses and
+        for silhouette fitting that uses the top contour only."""
+        path = self.dataset_dir / "contours" / f"{shot_id}.png"
+        if not path.exists():
+            return None
+        return np.asarray(Image.open(path))
+
+    def contours_or_zeros(self, shot_id: str) -> np.ndarray:
+        """contours() or an all-zero map of the mask's shape (runs before the label: no re-weighting, no split metrics)."""
+        c = self.contours(shot_id)
+        if c is not None:
+            return c.astype(np.uint8)
+        m = self.mask(shot_id)
+        return np.zeros(m.shape, np.uint8)
+
     def bodycoords(self, shot_id: str):
         bgr = cv2.imread(str(self.dataset_dir / "bodycoords" / f"{shot_id}.png"), cv2.IMREAD_COLOR)
         rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
@@ -113,6 +131,48 @@ class WhaleRun:
 
     def has_bodycoords(self, shot_id: str) -> bool:
         return (self.dataset_dir / "bodycoords" / f"{shot_id}.png").exists()
+
+
+class CombinedRun:
+    """Several factory runs as one dataset (run03 + run04: the flat-whale and the rigged-whale data together). Ids
+    are "<k>:<id>" with k the run's index, every accessor dispatches on the prefix, the splits are the unions of
+    the runs' splits. landmarks_m and dataset_dir are the first run's (evaluation stays per run)."""
+
+    def __init__(self, runs: list[WhaleRun]):
+        self.runs = runs
+        self.rows = [dict(r, id=f"{k}:{r['id']}") for k, run in enumerate(runs) for r in run.rows]
+        self.by_id = {r["id"]: r for r in self.rows}
+        self.run_dir, self.dataset_dir, self.landmarks_m = runs[0].run_dir, runs[0].dataset_dir, runs[0].landmarks_m
+        self.split = None
+
+    def _run(self, shot_id: str) -> tuple[WhaleRun, str]:
+        k, i = shot_id.split(":", 1)
+        return self.runs[int(k)], i
+
+    def ids(self, split: str | None = None) -> list[str]:
+        return [f"{k}:{i}" for k, run in enumerate(self.runs) for i in run.ids(split)]
+
+    def meta(self, shot_id): run, i = self._run(shot_id); return run.meta(i)
+    def image(self, shot_id): run, i = self._run(shot_id); return run.image(i)
+    def mask(self, shot_id): run, i = self._run(shot_id); return run.mask(i)
+    def visible(self, shot_id): run, i = self._run(shot_id); return run.visible(i)
+    def primary(self, shot_id, mask): run, i = self._run(shot_id); return run.primary(i, mask)
+    def contours(self, shot_id): run, i = self._run(shot_id); return run.contours(i)
+    def contours_or_zeros(self, shot_id): run, i = self._run(shot_id); return run.contours_or_zeros(i)
+    def bodycoords(self, shot_id): run, i = self._run(shot_id); return run.bodycoords(i)
+    def has_canon(self, shot_id): run, i = self._run(shot_id); return run.has_canon(i)
+    def canon(self, shot_id): run, i = self._run(shot_id); return run.canon(i)
+    def is_deformed(self, shot_id): run, i = self._run(shot_id); return run.is_deformed(i)
+    def has_bodycoords(self, shot_id): run, i = self._run(shot_id); return run.has_bodycoords(i)
+
+
+def open_runs(run_dir, split, extra_dirs=None, extra_splits=None):
+    """WhaleRun, or a CombinedRun when extra run directories (with their split files) are given."""
+    run = WhaleRun(run_dir, split)
+    if not extra_dirs:
+        return run
+    extra_splits = extra_splits or []
+    return CombinedRun([run] + [WhaleRun(Path(d), Path(s) if s else None) for d, s in zip(extra_dirs, extra_splits + [None] * (len(extra_dirs) - len(extra_splits)))])
 
 
 def decode_bodycoords(rgb: np.ndarray):
@@ -210,10 +270,13 @@ class SegCropDataset(Dataset):
         shot_id = self.ids[index]
         image = self.run.image(shot_id)
         mask = self.run.mask(shot_id)
+        contours = self.run.contours_or_zeros(shot_id)
         if not self.train:
             img, (h, w) = pad_to_multiple(image)
             m, _ = pad_to_multiple(mask, fill=IGNORE)
-            return {"id": shot_id, "image": to_tensor(img), "mask": torch.from_numpy(m.astype(np.int64)), "orig_hw": torch.tensor([h, w])}
+            c, _ = pad_to_multiple(contours, fill=0)
+            return {"id": shot_id, "image": to_tensor(img), "mask": torch.from_numpy(m.astype(np.int64)), "orig_hw": torch.tensor([h, w]),
+                    "contours": torch.from_numpy(c.astype(np.uint8))}
         rng = np.random.default_rng([self.seed, self.epoch, index])
         H, W = mask.shape
         C = self.crop
@@ -230,10 +293,12 @@ class SegCropDataset(Dataset):
         M = warp_params(x0, y0, s)
         img = warp_image(image, M, (C, C))
         m = warp_nearest(mask, M, (C, C), IGNORE)
+        c = warp_nearest(contours, M, (C, C), 0)
         if self.flip and rng.random() < 0.5:
-            img, m = img[:, ::-1], m[:, ::-1]
+            img, m, c = img[:, ::-1], m[:, ::-1], c[:, ::-1]
         img = photometric(np.ascontiguousarray(img), rng, self.photometric_strength)
-        return {"id": shot_id, "image": to_tensor(img), "mask": torch.from_numpy(np.ascontiguousarray(m).astype(np.int64))}
+        return {"id": shot_id, "image": to_tensor(img), "mask": torch.from_numpy(np.ascontiguousarray(m).astype(np.int64)),
+                "contours": torch.from_numpy(np.ascontiguousarray(c).astype(np.uint8))}
 
 
 # ---- body coordinates + pose ------------------------------------------------------------------------
@@ -413,6 +478,7 @@ class CanonCropDataset(Dataset):
         image = run.image(shot_id)
         mask = run.mask(shot_id)
         canon_cm, defined = run.canon(shot_id)
+        contours = run.contours_or_zeros(shot_id)
         meta = run.meta(shot_id)
         rng = np.random.default_rng([self.seed, self.epoch, index])
         C = self.crop
@@ -425,6 +491,7 @@ class CanonCropDataset(Dataset):
         M = warp_params(x0, y0, s)
         img = warp_image(image, M, (C, C))
         m = warp_nearest(mask, M, (C, C), IGNORE)
+        ct = warp_nearest(contours, M, (C, C), 0)
         cc = np.stack([warp_nearest(np.nan_to_num(canon_cm[..., k]), M, (C, C), 0.0) for k in range(3)], -1)
         dc = warp_nearest(defined.astype(np.uint8), M, (C, C), 0) > 0
         R, t = geometry.gt_camera_from_whale(meta)
@@ -432,7 +499,7 @@ class CanonCropDataset(Dataset):
         flipped = False
         if self.train and self.flip and rng.random() < 0.5:
             flipped = True
-            img, m, cc, dc = img[:, ::-1], m[:, ::-1], cc[:, ::-1], dc[:, ::-1]
+            img, m, cc, dc, ct = img[:, ::-1], m[:, ::-1], cc[:, ::-1], dc[:, ::-1], ct[:, ::-1]
             cc = cc * np.array([1.0, -1.0, 1.0], np.float32)       # the mirror image shows the mirrored body point
             R = geometry.flip_rotation(R)
         if self.train:
@@ -445,6 +512,7 @@ class CanonCropDataset(Dataset):
             "id": shot_id,
             "image": to_tensor(np.ascontiguousarray(img)),
             "mask": torch.from_numpy(np.ascontiguousarray(m).astype(np.int64)),
+            "contours": torch.from_numpy(np.ascontiguousarray(ct).astype(np.uint8)),
             "xyz": torch.from_numpy(self.fold(np.where(dc[..., None], cc, np.nan))),
             "side": torch.from_numpy(np.ascontiguousarray(side)),
             "valid": torch.from_numpy(np.ascontiguousarray(valid)),

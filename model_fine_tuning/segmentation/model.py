@@ -48,12 +48,15 @@ class WhaleSegModel(nn.Module):
         return model.to(device).eval(), ckpt
 
 
-def seg_loss(logits: torch.Tensor, target: torch.Tensor, dice_weight: float = 1.0) -> tuple[torch.Tensor, dict]:
-    """BCE + soft Dice over non-ignored pixels. target int64 with IGNORE for padding."""
+def seg_loss(logits: torch.Tensor, target: torch.Tensor, dice_weight: float = 1.0, weight: torch.Tensor | None = None) -> tuple[torch.Tensor, dict]:
+    """BCE + soft Dice over non-ignored pixels. target int64 with IGNORE for padding. weight: optional (B, H, W)
+    per-pixel factor on the BCE (common.contours.contour_weight_map: up at the true silhouette, down at the
+    waterline / foam seams); the Dice term is the unweighted region overlap."""
     valid = target != IGNORE
     t = (target == 1).float()
     bce = F.binary_cross_entropy_with_logits(logits, t, reduction="none")
-    bce = (bce * valid).sum() / valid.sum().clamp(min=1)
+    w = valid.float() if weight is None else valid.float() * weight
+    bce = (bce * w).sum() / w.sum().clamp(min=1)
     p = torch.sigmoid(logits) * valid
     inter = (p * t).sum(dim=(1, 2))
     denom = p.sum(dim=(1, 2)) + t.sum(dim=(1, 2))

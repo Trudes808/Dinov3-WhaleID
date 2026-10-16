@@ -10,6 +10,11 @@ visible whale meets the water, at the fitted distance) rendered with that pose, 
 intersection over union with the predicted whale mask: a pose that raises parts the photo does
 not show, or hides parts it does, scores badly. Also the inlier fraction and reprojection error of the fit.
 No labels are used, so it can be run for any checkpoint on any day's photos.
+
+--rotation direct: the pose's rotation is the model's direct rotation head (rotation_direct in points.jsonl)
+and only the translation is fitted (robust least squares on the same correspondences). A rigid PnP on a bent
+whale cannot match the body and takes the rotation with it; this variant scores the dense map and the rotation
+head without that step, for models that have both (run03+).
 """
 
 from __future__ import annotations
@@ -64,7 +69,25 @@ def keypoint_correspondences(z, landmarks: dict, min_conf: float = 0.3) -> tuple
     return np.stack([landmarks[KEYPOINTS[k]] for k in keep]).astype(np.float64), uv[keep].astype(np.float64)
 
 
-def score_photo(z, K, V, F, landmarks: dict | None = None, kp_weight: int = 0) -> dict:
+def fit_translation(pts: np.ndarray, pix: np.ndarray, K: np.ndarray, R: np.ndarray, t0: np.ndarray, reproj_px: float = 8.0):
+    """Translation (metres, UE camera frame) that best reprojects pts under the fixed rotation R: Huber least squares
+    started at t0. Returns (t, per-point reprojection error in px)."""
+    from scipy.optimize import least_squares
+
+    def resid(t):
+        proj, depth = geometry.project_ue(pts, R, t, K)
+        bad = depth <= 0.5
+        r = proj - pix
+        r[bad] = 50.0 * reproj_px
+        return r.ravel()
+
+    sol = least_squares(resid, np.asarray(t0, float), loss="huber", f_scale=reproj_px, max_nfev=300)
+    proj, _ = geometry.project_ue(pts, R, sol.x, K)
+    return sol.x, np.linalg.norm(proj - pix, axis=1)
+
+
+def score_photo(z, K, V, F, landmarks: dict | None = None, kp_weight: int = 0, direct: tuple | None = None) -> dict:
+    """direct: (R, t0) to use the direct rotation head with a fitted translation instead of a PnP."""
     use = z["use"]; signed = z["signed_mm"].astype(np.float32) / 1000.0
     crop = use.shape[0]
     ys, xs = np.nonzero(use)
@@ -80,11 +103,18 @@ def score_photo(z, K, V, F, landmarks: dict | None = None, kp_weight: int = 0) -
         n_kp = len(kp_pts)
         if n_kp:
             pts = np.concatenate([pts, np.repeat(kp_pts, kp_weight, 0)]); pix = np.concatenate([pix, np.repeat(kp_pix, kp_weight, 0)])
-    fit = geometry.fit_pose_pnp_points(pts, pix, K, reproj_px=8.0, max_points=len(pts))
-    if fit is None:
-        return {"ok": False, "reason": "pnp failed"}
-    proj, _ = geometry.project_ue(pts, fit["R"], fit["t_m"], K)
-    err = np.linalg.norm(proj - pix, axis=1)
+    if direct is not None:
+        R, t0 = direct
+        t, err = fit_translation(pts, pix, K, R, t0)
+        if not np.isfinite(t).all() or t[0] <= 1.0:
+            return {"ok": False, "reason": "translation fit failed"}
+        fit = {"R": R, "t_m": t, "inlier_fraction": float(np.mean(err < 8.0))}
+    else:
+        fit = geometry.fit_pose_pnp_points(pts, pix, K, reproj_px=8.0, max_points=len(pts))
+        if fit is None:
+            return {"ok": False, "reason": "pnp failed"}
+        proj, _ = geometry.project_ue(pts, fit["R"], fit["t_m"], K)
+        err = np.linalg.norm(proj - pix, axis=1)
     mask = cv2.resize(use.astype(np.uint8), (SIL, SIL), interpolation=cv2.INTER_AREA) > 0
     rows = np.nonzero(use.any(1))[0]
     water_row = float(np.percentile(rows, 99)) + 3.0 * (crop / SIL)
@@ -102,8 +132,14 @@ def main(argv=None) -> int:
     p.add_argument("--out", type=Path, default=None); p.add_argument("--mesh", type=Path, default=paths.WHALE_MESH_OBJ); p.add_argument("--limit", type=int, default=0)
     p.add_argument("--kp-weight", type=int, default=0, help="run03 keypoint heads: add each detected visible keypoint this many times to the PnP points (0 = dense map only)")
     p.add_argument("--landmarks", type=Path, default=paths.ASSETS_DIR / "landmarks_run03_mesh_frame_cm.json", help="mesh-frame positions of the 18 keypoints")
+    p.add_argument("--rotation", choices=("pnp", "direct"), default="pnp", help="direct: the model's rotation head, translation fitted (points.jsonl needed)")
     a = p.parse_args(argv)
-    V = geometry.load_obj_vertices(a.mesh) / 100.0; F = geometry.load_obj_faces(a.mesh)[::3]
+    records = {}
+    if a.rotation == "direct":
+        for line in open(a.canon_dir / "points.jsonl"):
+            r = json.loads(line)
+            records[Path(r["image"]).stem] = r
+    V = geometry.load_obj_vertices(a.mesh) / 100.0; F = geometry.load_obj_faces(a.mesh)      # every face: [::3] (a wireframe decimation) left holes in the silhouette
     landmarks = geometry.load_landmarks(a.landmarks) if a.kp_weight > 0 else None
     ts = json.loads(a.timestamps.read_text())
     rows = {}
@@ -116,9 +152,17 @@ def main(argv=None) -> int:
         img = cv2.imread(str(a.images / f"{stem}.jpg")); H, W = img.shape[:2]
         meta = ts.get(stem, {}); focal = float(meta["focal_mm"]) if meta.get("focal_mm") else None
         K = geometry.intrinsics_for_crop(geometry.intrinsics_guess(W, H, focal, SENSOR_WIDTH_MM.get(meta.get("camera"), 36.0)), x0, y0, s)
-        rows[stem] = score_photo(z, K, V, F, landmarks, a.kp_weight)
+        direct = None
+        if a.rotation == "direct":
+            r = records.get(stem)
+            if not r or not r.get("rotation_direct"):
+                rows[stem] = {"ok": False, "reason": "no direct rotation"}
+                continue
+            t0 = r.get("translation_m_pnp") or [float(K[0, 0]) / max(float(r.get("ppm_direct") or 1.0), 1e-6), 0.0, 0.0]
+            direct = (np.asarray(r["rotation_direct"], float), np.asarray(t0, float))
+        rows[stem] = score_photo(z, K, V, F, landmarks, a.kp_weight, direct=direct)
     ok = [r for r in rows.values() if r["ok"]]
-    summary = {"photos": len(rows), "scored": len(ok), "canon_dir": str(a.canon_dir), "kp_weight": a.kp_weight,
+    summary = {"photos": len(rows), "scored": len(ok), "canon_dir": str(a.canon_dir), "kp_weight": a.kp_weight, "rotation": a.rotation,
                "photos_with_keypoints": int(sum(r.get("keypoints_used", 0) > 0 for r in ok))}
     for k in ("iou_above_water", "coverage", "excess_above_water", "inlier_fraction", "median_reproj_px"):
         v = np.array([r[k] for r in ok]); summary[k] = {"mean": round(float(v.mean()), 4), "median": round(float(np.median(v)), 4), "p25": round(float(np.percentile(v, 25)), 4), "p75": round(float(np.percentile(v, 75)), 4)}

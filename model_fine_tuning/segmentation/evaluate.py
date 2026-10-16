@@ -72,7 +72,8 @@ def main(argv=None) -> int:
             pred = prob[i, :h, :w] >= args.threshold
             gt = masks[i, :h, :w] == 1
             ignore = masks[i, :h, :w] == IGNORE
-            row = acc.add(sid, pred, gt, groups_for(run.by_id[sid]), boundary=True, ignore=ignore)
+            contours = batch["contours"][i, :h, :w].cpu().numpy() if "contours" in batch else None
+            row = acc.add(sid, pred, gt, groups_for(run.by_id[sid]), boundary=True, ignore=ignore, contours=contours)
             keep[sid] = pred
             if args.save_masks:
                 cv2.imwrite(str(out / "masks" / f"{sid}.png"), pred.astype(np.uint8))

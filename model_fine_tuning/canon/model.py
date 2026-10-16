@@ -20,6 +20,7 @@ import torch.nn.functional as F
 from torch import nn
 
 from ..common.backbone import DinoFeatures, normalize_image
+from ..common.contours import contour_weight_map
 from ..common.data import IGNORE
 from ..common.geometry import rotation_from_6d_torch
 from ..common.heads import DenseDecoder
@@ -105,17 +106,27 @@ class WhaleCanonModel(nn.Module):
         return model.to(device).eval(), ckpt
 
 
-def canon_loss(out: dict, batch: dict, weights: dict | None = None) -> tuple[torch.Tensor, dict]:
+def canon_loss(out: dict, batch: dict, weights: dict | None = None, contour: dict | None = None) -> tuple[torch.Tensor, dict]:
     """Visibility BCE (ignore class excluded), L1 on the folded coordinates over valid pixels,
-    Frobenius on the rotation, L1 on log scale."""
+    Frobenius on the rotation, L1 on log scale.
+
+    contour (run04+, needs batch["contours"]): {"band": px, "w_true", "w_seam", "w_xyz"} re-weights the pixels
+    within band px of the mask's contours: the visibility BCE by w_true at the whale's own silhouette and by
+    w_seam at the waterline / foam / calf seams, the coordinate L1 by w_xyz at the silhouette (seams unchanged:
+    their coordinates are exact, only their position in a real photo is not)."""
     w = {"vis": 1.0, "xyz": 10.0, "rot": 2.0, "scale": 1.0}
     w.update(weights or {})
     mask = batch["mask"]
-    not_ignored = mask != IGNORE
+    not_ignored = (mask != IGNORE).float()
     vis_t = (mask == 1).float()
     vis = F.binary_cross_entropy_with_logits(out["vis_logit"], vis_t, reduction="none")
-    vis = (vis * not_ignored).sum() / not_ignored.sum().clamp(min=1)
-    valid = batch["valid"]
+    wv, wx = not_ignored, None
+    if contour and "contours" in batch:
+        band = int(contour.get("band", 3))
+        wv = not_ignored * contour_weight_map(batch["contours"], band, float(contour.get("w_true", 1.0)), float(contour.get("w_seam", 1.0)))
+        wx = contour_weight_map(batch["contours"], band, float(contour.get("w_xyz", 1.0)), 1.0)
+    vis = (vis * wv).sum() / wv.sum().clamp(min=1)
+    valid = batch["valid"].float() if wx is None else batch["valid"].float() * wx
     n = valid.sum().clamp(min=1)
     l1 = (out["xyz"] - batch["xyz"]).abs().mean(1)          # (B, H, W): mean over the 3 coordinates
     xyz = (l1 * valid).sum() / n

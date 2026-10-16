@@ -19,7 +19,8 @@ import torch
 from torch.utils.data import DataLoader
 
 from ..common import geometry, paths
-from ..common.data import CanonCropDataset, RealCropDataset, WhaleRun
+from ..common.contours import boundary_f1_split, pooled_boundary_scores
+from ..common.data import CanonCropDataset, RealCropDataset, WhaleRun, open_runs
 from ..common.metrics import summarize_values
 from ..common.train_utils import Logger, apply_lr, count_params, load_checkpoint, lr_at, move, save_checkpoint, set_seed
 from .model import WhaleCanonModel, canon_loss, consistency_loss
@@ -32,6 +33,8 @@ def parse(argv=None):
     p.add_argument("--run-dir", type=Path, default=paths.WHALE_RUN_DIR)
     p.add_argument("--split", type=Path, default=paths.SPLITS_DIR / "run02.json")
     p.add_argument("--out-root", type=Path, default=paths.EXPERIMENTS_DIR)
+    p.add_argument("--extra-run-dir", type=Path, nargs="*", default=None, help="more factory runs to train on jointly (ids prefixed by run index)")
+    p.add_argument("--extra-split", type=Path, nargs="*", default=None, help="their split files, in the same order")
     p.add_argument("--arch", default="vitb16")
     p.add_argument("--unfreeze-blocks", type=int, default=4)
     p.add_argument("--layers", type=int, nargs="*", default=None)
@@ -52,6 +55,10 @@ def parse(argv=None):
     p.add_argument("--w-xyz", type=float, default=10.0)
     p.add_argument("--w-rot", type=float, default=2.0)
     p.add_argument("--w-scale", type=float, default=1.0)
+    p.add_argument("--contour-band", type=int, default=3, help="px either side of a mask contour that the contour weights cover")
+    p.add_argument("--contour-w-true", type=float, default=1.0, help="visibility BCE weight within the band of the whale's own silhouette (run04 contour label)")
+    p.add_argument("--contour-w-seam", type=float, default=1.0, help="visibility BCE weight within the band of waterline / foam / calf seams")
+    p.add_argument("--contour-w-xyz", type=float, default=1.0, help="coordinate L1 weight within the band of the whale's own silhouette")
     p.add_argument("--keypoints", action="store_true", help="run03 heads: keypoint heatmaps + states, deformation parameters")
     p.add_argument("--w-kp", type=float, default=100.0)
     p.add_argument("--w-kp-state", type=float, default=0.5)
@@ -70,6 +77,10 @@ def parse(argv=None):
     p.add_argument("--w-consistency", type=float, default=5.0)
     p.add_argument("--w-consistency-rot", type=float, default=1.0)
     p.add_argument("--real-batch-size", type=int, default=4)
+    p.add_argument("--consistency-teacher", choices=("none", "ema"), default="ema",
+                   help="ema: the mirrored branch is predicted by an EMA copy of the model under no_grad (stop-gradient), which the pure "
+                        "two-branch loss lacked and collapsed to a constant map (LOG 2026-10-12); none: the original two-branch loss")
+    p.add_argument("--ema-momentum", type=float, default=0.999)
     return p.parse_args(argv)
 
 
@@ -141,6 +152,10 @@ def evaluate(model, loader, device, amp: bool, table: dict) -> dict:
             inter = np.sum(vis[i] & gtm)
             union = np.sum((vis[i] | gtm) & (mask[i] != 255))
             row["vis_iou"] = float(inter / max(union, 1))
+            if "contours" in batch:
+                bf = boundary_f1_split(vis[i] & (mask[i] != 255), gtm, batch["contours"][i].numpy(), ignore=mask[i] == 255)
+                row["vis_bf1_open"], row["vis_bf1_seam"], row["vis_true_contour_recall"] = bf["bf1_open"], bf["bf1_seam"], bf["true_contour_recall"]
+                row.update({k: bf[k] for k in ("open_counts", "seam_counts", "true_contour_px", "true_contour_hit") if k in bf})
             row["rot_direct_deg"] = geometry.geodesic_deg(R_pred[i], R_gt[i])
             row["logscale_direct"] = float(abs(logppm[i] - logppm_gt[i]))
             if kp is not None:
@@ -149,8 +164,9 @@ def evaluate(model, loader, device, amp: bool, table: dict) -> dict:
             per_image.append(row)
     summary = {"images": len(per_image)}
     for key in ("surface_err_m", "surface_err_median_m", "surface_err_torso_m", "surface_err_fluke_m", "surface_err_fin_m", "vis_iou", "rot_direct_deg", "logscale_direct",
-                "kp_pck_0.05", "kp_pck_0.1", "kp_state_acc", "kp_visible_f1", "deform_err_deg"):
+                "vis_bf1_open", "vis_bf1_seam", "vis_true_contour_recall", "kp_pck_0.05", "kp_pck_0.1", "kp_state_acc", "kp_visible_f1", "deform_err_deg"):
         summary.update(summarize_values([r.get(key) for r in per_image], key + "_"))
+    summary.update({f"vis_{k}": v for k, v in pooled_boundary_scores(per_image).items()})
     rd = np.asarray([r["rot_direct_deg"] for r in per_image])
     summary["rot_direct_under_15deg"] = float(np.mean(rd < 15)) if len(rd) else None
     summary["rot_direct_under_30deg"] = float(np.mean(rd < 30)) if len(rd) else None
@@ -171,7 +187,7 @@ def main(argv=None) -> int:
     amp = not args.no_amp and device.type == "cuda"
     out = args.out_root / args.name
     out.mkdir(parents=True, exist_ok=True)
-    run = WhaleRun(args.run_dir, args.split)
+    run = open_runs(args.run_dir, args.split, args.extra_run_dir, args.extra_split)
     table = geometry.load_folded_table(paths.FOLDED_TABLE) if paths.FOLDED_TABLE.exists() else build_table() | {"tree": None}
     if table.get("tree") is None:
         table = geometry.load_folded_table(paths.FOLDED_TABLE)
@@ -186,20 +202,30 @@ def main(argv=None) -> int:
     model = WhaleCanonModel(arch=args.arch, unfreeze_blocks=args.unfreeze_blocks, layers=args.layers, keypoints=len(KEYPOINTS) if args.keypoints else 0).to(device)
     if args.init_from:
         model.load_state_dict(load_checkpoint(args.init_from)["model"], strict=True)
-    real_loader, real_iter = None, None
+    real_loader, real_iter, teacher = None, None, None
     if args.real_images:
         real_ds = RealCropDataset(args.real_images, args.real_masks or args.real_images, crop=args.crop, margin_range=(args.margin_min, args.margin_max),
                                   jitter=args.jitter, photometric_strength=args.photometric, seed=args.seed)
         real_loader = DataLoader(real_ds, batch_size=args.real_batch_size, shuffle=True, num_workers=min(args.workers, 4), pin_memory=True, drop_last=True,
                                  persistent_workers=True)
-        print(f"mirror-consistency on {len(real_ds)} real crops", flush=True)
-    config = {"task": "canon", "args": {k: (str(v) if isinstance(v, Path) else v) for k, v in vars(args).items()},
+        print(f"mirror-consistency on {len(real_ds)} real crops (teacher: {args.consistency_teacher})", flush=True)
+        if args.consistency_teacher == "ema":
+            import copy
+            teacher = copy.deepcopy(model).eval()
+            for q in teacher.parameters():
+                q.requires_grad_(False)
+    config = {"task": "canon", "args": {k: (str(v) if isinstance(v, Path) else [str(x) for x in v] if isinstance(v, list) and v and isinstance(v[0], Path) else v) for k, v in vars(args).items()},
               "model": model.config, "train_images": len(train_ds), "val_images": len(val_ds), "params": count_params(model),
               "real_images": len(real_loader.dataset) if real_loader is not None else 0}
     (out / "config.json").write_text(json.dumps(config, indent=1))
     logger = Logger(out)
     logger.log(event="start", **{k: v for k, v in config.items() if k != "args"})
     weights = {"vis": args.w_vis, "xyz": args.w_xyz, "rot": args.w_rot, "scale": args.w_scale, "kp": args.w_kp, "kp_state": args.w_kp_state, "deform": args.w_deform}
+    contour = None
+    if args.contour_w_true != 1.0 or args.contour_w_seam != 1.0 or args.contour_w_xyz != 1.0:
+        contour = {"band": args.contour_band, "w_true": args.contour_w_true, "w_seam": args.contour_w_seam, "w_xyz": args.contour_w_xyz}
+        print(f"contour-weighted losses: band {args.contour_band} px, visibility silhouette x{args.contour_w_true} seams x{args.contour_w_seam}, "
+              f"coordinates at the silhouette x{args.contour_w_xyz}", flush=True)
     optimizer = torch.optim.AdamW(model.param_groups(args.lr_head, args.lr_backbone, args.layer_decay, args.weight_decay))
     total_steps = args.epochs * len(train_loader)
     step, start_epoch, best = 0, 0, -1.0
@@ -221,7 +247,7 @@ def main(argv=None) -> int:
             with torch.autocast("cuda", dtype=torch.bfloat16, enabled=amp):
                 out_ = model(b["image"])
             out_ = {k: v.float() for k, v in out_.items()}
-            loss, parts = canon_loss(out_, b, weights)
+            loss, parts = canon_loss(out_, b, weights, contour=contour)
             if real_loader is not None:
                 try:
                     rb = next(real_iter)
@@ -232,16 +258,30 @@ def main(argv=None) -> int:
                 rb = move(rb, device)
                 with torch.autocast("cuda", dtype=torch.bfloat16, enabled=amp):
                     ra = model(rb["image"])
-                    rbm = model(rb["image"].flip(-1))
+                    if teacher is not None:
+                        with torch.no_grad():
+                            rbm = teacher(rb["image"].flip(-1))
+                    else:
+                        rbm = model(rb["image"].flip(-1))
                 ra = {k: v.float() for k, v in ra.items()}
                 rbm = {k: v.float() for k, v in rbm.items()}
                 closs, cparts = consistency_loss(ra, rbm, rb["whale"], w_rot=args.w_consistency_rot)
                 loss = loss + args.w_consistency * closs
                 parts.update(cparts)
+                with torch.no_grad():     # collapse guard: the spread of the predicted coordinates on real whale pixels (a constant map = 0)
+                    w = rb["whale"][:, None].float()
+                    mean = (ra["xyz"] * w).sum(dim=(2, 3), keepdim=True) / w.sum(dim=(2, 3), keepdim=True).clamp(min=1)
+                    parts["cons_spread"] = float(((((ra["xyz"] - mean) ** 2) * w).sum() / w.sum().clamp(min=1)).sqrt().item())
             optimizer.zero_grad(set_to_none=True)
             loss.backward()
             torch.nn.utils.clip_grad_norm_([p for g in optimizer.param_groups for p in g["params"]], 1.0)
             optimizer.step()
+            if teacher is not None:
+                with torch.no_grad():
+                    for q_t, q_s in zip(teacher.parameters(), model.parameters()):
+                        q_t.mul_(args.ema_momentum).add_(q_s.detach(), alpha=1 - args.ema_momentum)
+                    for b_t, b_s in zip(teacher.buffers(), model.buffers()):
+                        b_t.copy_(b_s)
             running.append(loss.item())
             step += 1
             if step % 50 == 0:

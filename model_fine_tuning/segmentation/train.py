@@ -18,7 +18,8 @@ import torch
 from torch.utils.data import DataLoader
 
 from ..common import paths
-from ..common.data import IGNORE, SegCropDataset, WhaleRun, groups_for
+from ..common.contours import contour_weight_map
+from ..common.data import IGNORE, SegCropDataset, WhaleRun, groups_for, open_runs
 from ..common.metrics import SegAccumulator
 from ..common.train_utils import Logger, apply_lr, count_params, load_checkpoint, lr_at, move, save_checkpoint, set_seed
 from .model import WhaleSegModel, seg_loss
@@ -30,6 +31,8 @@ def parse(argv=None):
     p.add_argument("--run-dir", type=Path, default=paths.WHALE_RUN_DIR)
     p.add_argument("--split", type=Path, default=paths.SPLITS_DIR / "run01.json")
     p.add_argument("--out-root", type=Path, default=paths.EXPERIMENTS_DIR)
+    p.add_argument("--extra-run-dir", type=Path, nargs="*", default=None, help="more factory runs to train on jointly (ids prefixed by run index)")
+    p.add_argument("--extra-split", type=Path, nargs="*", default=None, help="their split files, in the same order")
     p.add_argument("--arch", default="vitb16")
     p.add_argument("--unfreeze-blocks", type=int, default=4, help="0 frozen, N last blocks, -1 everything")
     p.add_argument("--layers", type=int, nargs="*", default=None)
@@ -46,6 +49,9 @@ def parse(argv=None):
     p.add_argument("--weight-decay", type=float, default=0.05)
     p.add_argument("--warmup-steps", type=int, default=200)
     p.add_argument("--dice-weight", type=float, default=1.0)
+    p.add_argument("--contour-band", type=int, default=3, help="px either side of a mask contour that the contour weights cover")
+    p.add_argument("--contour-w-true", type=float, default=1.0, help="BCE weight within the band of the whale's own silhouette (run04 contour label)")
+    p.add_argument("--contour-w-seam", type=float, default=1.0, help="BCE weight within the band of waterline / foam / calf seams")
     p.add_argument("--workers", type=int, default=8)
     p.add_argument("--eval-every", type=int, default=1, help="epochs")
     p.add_argument("--eval-batch", type=int, default=4)
@@ -73,7 +79,8 @@ def evaluate(model, loader, device, amp: bool, threshold: float = 0.5, run: Whal
             pred = prob[i, :h, :w] >= threshold
             gt = masks[i, :h, :w] == 1
             ignore = masks[i, :h, :w] == IGNORE
-            acc.add(shot_id, pred, gt, groups_for(run.by_id[shot_id]) if run else None, boundary=False, ignore=ignore)
+            contours = batch["contours"][i, :h, :w].cpu().numpy() if "contours" in batch else None
+            acc.add(shot_id, pred, gt, groups_for(run.by_id[shot_id]) if run else None, boundary=False, ignore=ignore, contours=contours)
     return acc.summary()
 
 
@@ -84,7 +91,7 @@ def main(argv=None) -> int:
     amp = not args.no_amp and device.type == "cuda"
     out = args.out_root / args.name
     out.mkdir(parents=True, exist_ok=True)
-    run = WhaleRun(args.run_dir, args.split)
+    run = open_runs(args.run_dir, args.split, args.extra_run_dir, args.extra_split)
     train_ids = run.ids("train")[: args.max_train]
     val_ids = run.ids("val")[: args.max_val]
     train_ds = SegCropDataset(run, train_ids, crop=args.crop, scale_range=(args.scale_min, args.scale_max), whale_bias=args.whale_bias,
@@ -95,13 +102,16 @@ def main(argv=None) -> int:
     val_loader = DataLoader(val_ds, batch_size=args.eval_batch, shuffle=False, num_workers=min(args.workers, 4), pin_memory=True)
 
     model = WhaleSegModel(arch=args.arch, unfreeze_blocks=args.unfreeze_blocks, layers=args.layers).to(device)
-    config = {"task": "segmentation", "args": {k: (str(v) if isinstance(v, Path) else v) for k, v in vars(args).items()},
+    config = {"task": "segmentation", "args": {k: (str(v) if isinstance(v, Path) else [str(x) for x in v] if isinstance(v, list) and v and isinstance(v[0], Path) else v) for k, v in vars(args).items()},
               "model": model.config, "train_images": len(train_ds), "val_images": len(val_ds), "params": count_params(model)}
     (out / "config.json").write_text(json.dumps(config, indent=1))
     logger = Logger(out)
     logger.log(event="start", **{k: v for k, v in config.items() if k != "args"})
 
     optimizer = torch.optim.AdamW(model.param_groups(args.lr_head, args.lr_backbone, args.layer_decay, args.weight_decay), betas=(0.9, 0.999))
+    contour_weighted = args.contour_w_true != 1.0 or args.contour_w_seam != 1.0
+    if contour_weighted:
+        print(f"contour-weighted BCE: band {args.contour_band} px, silhouette x{args.contour_w_true}, seams x{args.contour_w_seam}", flush=True)
     steps_per_epoch = len(train_loader)
     total_steps = args.epochs * steps_per_epoch
     step, start_epoch, best = 0, 0, -1.0
@@ -123,7 +133,8 @@ def main(argv=None) -> int:
             batch = move(batch, device)
             with torch.autocast("cuda", dtype=torch.bfloat16, enabled=amp):
                 logits = model(batch["image"])
-            loss, parts = seg_loss(logits.float(), batch["mask"], args.dice_weight)
+            weight = contour_weight_map(batch["contours"], args.contour_band, args.contour_w_true, args.contour_w_seam) if contour_weighted else None
+            loss, parts = seg_loss(logits.float(), batch["mask"], args.dice_weight, weight=weight)
             optimizer.zero_grad(set_to_none=True)
             loss.backward()
             torch.nn.utils.clip_grad_norm_([p for g in optimizer.param_groups for p in g["params"]], 1.0)
@@ -140,7 +151,9 @@ def main(argv=None) -> int:
             metrics = evaluate(model, val_loader, device, amp, run=run)
             score = metrics["dataset_iou"] if metrics["dataset_iou"] is not None else -1.0
             logger.log(event="val", epoch=epoch, step=step, dataset_iou=metrics["dataset_iou"], mean_image_iou=metrics["mean_image_iou"],
-                       negatives_clean=metrics["negatives_clean"], recall=metrics["recall"], precision=metrics["precision"])
+                       negatives_clean=metrics["negatives_clean"], recall=metrics["recall"], precision=metrics["precision"],
+                       boundary_f1_open=metrics.get("boundary_f1_open"), boundary_f1_seam=metrics.get("boundary_f1_seam"),
+                       true_contour_recall=metrics.get("true_contour_recall"))
             extra = {"optimizer": optimizer.state_dict(), "step": step, "epoch": epoch, "best": best, "val": metrics}
             if score > best:
                 best = score

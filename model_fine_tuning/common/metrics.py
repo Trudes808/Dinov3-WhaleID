@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import numpy as np
 
+from .contours import pooled_boundary_scores
+
 
 def binary_confusion(pred: np.ndarray, gt: np.ndarray, ignore: np.ndarray | None = None) -> dict:
     pred = pred.astype(bool)
@@ -52,15 +54,20 @@ class SegAccumulator:
         self.rows = []
 
     def add(self, shot_id: str, pred: np.ndarray, gt: np.ndarray, groups: dict | None = None, boundary: bool = True,
-            ignore: np.ndarray | None = None) -> dict:
+            ignore: np.ndarray | None = None, contours: np.ndarray | None = None) -> dict:
         """ignore: pixels left out of the confusion counts (label class 2, padding). For the
-        boundary score they are treated as background in both pred and gt."""
+        boundary score they are treated as background in both pred and gt. contours: the factory's
+        contour classes (run04+) for the boundary score split into open-air silhouette vs seams."""
         c = binary_confusion(pred, gt, ignore)
         row = {"id": shot_id, **c, "iou": iou_from_confusion(c), "gt_pixels": int(gt.sum()), "pred_pixels": int(pred.sum())}
         if ignore is not None and ignore.any():
             row["ignored_pixels"] = int(ignore.sum())
             pred, gt = pred & ~ignore, gt & ~ignore
         row["bf1"] = boundary_f1(pred, gt) if boundary else None
+        if contours is not None and (contours > 0).any():
+            from .contours import boundary_f1_split
+
+            row.update(boundary_f1_split(pred, gt, contours, ignore=ignore))
         row.update(groups or {})
         self.rows.append(row)
         return row
@@ -94,6 +101,11 @@ class SegAccumulator:
             "iou_at_0.5": float(np.mean([i >= 0.5 for i in ious])) if ious else None,
             "iou_at_0.75": float(np.mean([i >= 0.75 for i in ious])) if ious else None,
             "boundary_f1": float(np.mean(bfs)) if bfs else None,
+            **{f"boundary_f1_{k}": (float(np.mean(v)) if v else None) for k in ("open", "seam")
+               for v in [[r[f"bf1_{k}"] for r in with_gt if r.get(f"bf1_{k}") is not None]]},
+            "true_contour_recall": float(np.mean([r["true_contour_recall"] for r in with_gt if r.get("true_contour_recall") is not None]))
+            if any(r.get("true_contour_recall") is not None for r in with_gt) else None,
+            **pooled_boundary_scores(with_gt),
             "negatives": len(without),
             "negatives_clean": float(np.mean([r["pred_pixels"] == 0 for r in without])) if without else None,
             "negatives_fp_pixels_mean": float(np.mean([r["pred_pixels"] for r in without])) if without else None,
