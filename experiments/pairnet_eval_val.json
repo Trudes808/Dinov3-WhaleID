@@ -1,0 +1,19 @@
+{
+ "auc_teacher_body": 0.8159396701388888,
+ "pairs_body": 2112,
+ "auc_teacher_fin": 0.8791944444444444,
+ "pairs_fin": 1320,
+ "auc_teacher_fluke": 0.8777086677367576,
+ "pairs_fluke": 1578,
+ "auc_teacher_mean": 0.8576142607733637,
+ "auc_student_body": 0.8396430121527778,
+ "auc_student_fin": 0.8782291666666666,
+ "auc_student_fluke": 0.875487924996352,
+ "auc_student_mean": 0.8644533679385988,
+ "auc_reference_body": 0.8067762586805556,
+ "auc_reference_fin": 0.8680208333333332,
+ "auc_reference_fluke": 0.8685520939734424,
+ "auc_reference_mean": 0.8477830619957771,
+ "pairs": 5010,
+ "positives": 466
+}

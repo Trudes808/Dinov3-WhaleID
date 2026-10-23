@@ -1,0 +1,111 @@
+{
+ "channels": [
+  "id:id_v3|body",
+  "id:id_v3|fin",
+  "id:id_v3|fluke"
+ ],
+ "calib": {
+  "id:id_v3|body": [
+   1.3989810943603516,
+   -2.752150297164917
+  ],
+  "id:id_v3|fin": [
+   1.5275253057479858,
+   -3.0195999145507812
+  ],
+  "id:id_v3|fluke": [
+   1.856180191040039,
+   -2.3764455318450928
+  ]
+ },
+ "weights": [
+  0.8719063644516986,
+  0.0,
+  0.2938626515000294,
+  0.10546946697420487,
+  0.45223132293115287,
+  -0.6895829534439155
+ ],
+ "bias": 0.7238891395162718,
+ "val_report": {
+  "2025-01-15": {
+   "pairs": 2926,
+   "positive": 504,
+   "auc_id:id_v3|body": 0.7811,
+   "cover_id:id_v3|body": 1.0,
+   "auc_id:id_v3|fin": 0.8576,
+   "cover_id:id_v3|fin": 0.419,
+   "auc_id:id_v3|fluke": 0.7891,
+   "cover_id:id_v3|fluke": 0.086,
+   "auc_fused": 0.7976
+  },
+  "2025-02-27": {
+   "pairs": 52003,
+   "positive": 7032,
+   "auc_id:id_v3|body": 0.8721,
+   "cover_id:id_v3|body": 1.0,
+   "auc_id:id_v3|fin": 0.8961,
+   "cover_id:id_v3|fin": 0.398,
+   "auc_id:id_v3|fluke": 0.9066,
+   "cover_id:id_v3|fluke": 0.072,
+   "auc_fused": 0.8782
+  },
+  "2025-03-14": {
+   "pairs": 73920,
+   "positive": 7265,
+   "auc_id:id_v3|body": 0.8131,
+   "cover_id:id_v3|body": 1.0,
+   "auc_id:id_v3|fin": 0.8427,
+   "cover_id:id_v3|fin": 0.712,
+   "auc_id:id_v3|fluke": 0.9054,
+   "cover_id:id_v3|fluke": 0.023,
+   "auc_fused": 0.8261
+  }
+ },
+ "eval_report": {
+  "2024-12-18": {
+   "pairs": 54285,
+   "positive": 9124,
+   "auc_id:id_v3|body": 0.7452,
+   "cover_id:id_v3|body": 1.0,
+   "auc_id:id_v3|fin": 0.8077,
+   "cover_id:id_v3|fin": 0.511,
+   "auc_id:id_v3|fluke": 0.6619,
+   "cover_id:id_v3|fluke": 0.089,
+   "auc_fused": 0.7509
+  },
+  "2024-12-26": {
+   "pairs": 301476,
+   "positive": 20313,
+   "auc_id:id_v3|body": 0.7791,
+   "cover_id:id_v3|body": 1.0,
+   "auc_id:id_v3|fin": 0.8087,
+   "cover_id:id_v3|fin": 0.494,
+   "auc_id:id_v3|fluke": 0.7273,
+   "cover_id:id_v3|fluke": 0.102,
+   "auc_fused": 0.7777
+  },
+  "2025-02-19": {
+   "pairs": 83436,
+   "positive": 8317,
+   "auc_id:id_v3|body": 0.7377,
+   "cover_id:id_v3|body": 1.0,
+   "auc_id:id_v3|fin": 0.7254,
+   "cover_id:id_v3|fin": 0.419,
+   "auc_id:id_v3|fluke": 0.7999,
+   "cover_id:id_v3|fluke": 0.125,
+   "auc_fused": 0.7351
+  },
+  "2025-03-21": {
+   "pairs": 142845,
+   "positive": 10472,
+   "auc_id:id_v3|body": 0.7323,
+   "cover_id:id_v3|body": 1.0,
+   "auc_id:id_v3|fin": 0.786,
+   "cover_id:id_v3|fin": 0.304,
+   "auc_id:id_v3|fluke": 0.7502,
+   "cover_id:id_v3|fluke": 0.204,
+   "auc_fused": 0.738
+  }
+ }
+}

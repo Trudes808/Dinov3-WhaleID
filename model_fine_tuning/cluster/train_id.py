@@ -8,7 +8,9 @@ class per identity = (day, animal) after the catalog's "same as" merges) and a s
 contrastive term, both computed within part type (a fin is never pushed towards a fluke).
 Batches are P identities x K charts drawn mostly from the same day, so that the negatives
 are the animals photographed alongside each other (the clustering problem) rather than
-whales from another month. No horizontal flips (the charts are mirrored to a common flank
+whales from another month. With --group-hard the batch's identities are drawn group by group
+(the catalog's Gxx of the day), so the hardest negatives, the animals swimming together, fill
+the batch; charts named <stem>~k (instance k of a photo) are accepted. No horizontal flips (the charts are mirrored to a common flank
 and marks are asymmetric); random resized crops, small rotations, photometric jitter.
 Model selection on the val days by part-wise pair AUC.
 """
@@ -37,22 +39,33 @@ PARTS = ("body", "fin", "fluke")
 
 
 # ------------------------------------------------------------------ data
-def scan_charts(data_root: Path, labels: dict, days: list[str], min_photos: int = 2) -> list[dict]:
-    """One record per chart: path, part, identity id, day, stem. Identities with fewer than
+def scan_charts(data_root: Path, labels: dict, days: list[str], min_photos: int = 2, parts_tag: str = "parts", only_parts: tuple = PARTS) -> list[dict]:
+    """One record per chart: path, part, identity id, day, stem, burst. Identities with fewer than
     min_photos charts (any part) are dropped as classes but kept out of the data entirely."""
+    from .bursts import make_bursts
+
     recs = []
     for day in days:
-        parts_dir = data_root / day / "parts"
+        parts_dir = data_root / day / parts_tag
         if not parts_dir.exists():
             continue
         photos = labels["days"].get(day, {}).get("photos", {})
+        ts_file = data_root / day / "timestamps.json"
+        burst_of = {s: b["id"] for b in make_bursts(json.loads(ts_file.read_text()), 1.5) for s in b["photos"]} if ts_file.exists() else {}
         for npz in parts_dir.glob("*__*.npz"):
             stem, part = npz.name[: -4].rsplit("__", 1)
+            if part not in only_parts or npz.name.endswith(".canon48.npy"):
+                continue
             base = stem.split("__")[-1]                       # convert_raw names: <folder>__<baseName>
+            if "~" in base:                                   # instance charts (cluster/parts.py --instances): only the main instance is labelled
+                base, inst = base.rsplit("~", 1)
+                if inst != "0":
+                    continue
             ident = photos.get(base)
             if ident is None or ident.split("_")[1].startswith("O"):
                 continue
-            recs.append({"path": parts_dir / "charts" / f"{stem}__{part}.jpg", "npz": npz, "part": part, "ident": ident, "day": day, "stem": stem})
+            recs.append({"path": parts_dir / "charts" / f"{stem}__{part}.jpg", "npz": npz, "part": part, "ident": ident, "day": day, "stem": stem,
+                         "group": f"{day}_{ident.split('_')[1][:3]}", "burst": burst_of.get(stem.rsplit("~", 1)[0] if "~" in stem else stem, -1)})
     counts = {}
     for r in recs:
         counts[r["ident"]] = counts.get(r["ident"], 0) + 1
@@ -60,8 +73,11 @@ def scan_charts(data_root: Path, labels: dict, days: list[str], min_photos: int 
 
 
 class ChartDataset(Dataset):
-    def __init__(self, recs: list[dict], size: int = 448, train: bool = True, seed: int = 0):
-        self.recs, self.size, self.train = recs, size, train
+    def __init__(self, recs: list[dict], size: int = 448, train: bool = True, seed: int = 0, center_crop: int = 0):
+        """center_crop: side (px) of the central window taken from the chart before resizing (native-resolution fin /
+        fluke charts: the part box sits in the centre; 1536 of a 3072-px chart covers the fin box at 2x the resolution
+        of the 1536-px charts)."""
+        self.recs, self.size, self.train, self.center_crop = recs, size, train, center_crop
         self.rng = np.random.default_rng(seed)
 
     def __len__(self):
@@ -70,6 +86,9 @@ class ChartDataset(Dataset):
     def __getitem__(self, i):
         r = self.recs[i]
         img = cv2.cvtColor(cv2.imread(str(r["path"]), cv2.IMREAD_COLOR), cv2.COLOR_BGR2RGB)
+        if self.center_crop and img.shape[0] > self.center_crop:
+            c = self.center_crop; o = (img.shape[0] - c) // 2
+            img = img[o:o + c, o:o + c]
         S = img.shape[0]
         if self.train:
             rng = self.rng
@@ -94,23 +113,45 @@ class PKSampler:
     """Batches of P identities x K charts, identities drawn from one day at a time (with a
     chance of mixing in a second day), so most negatives are the same day's other animals."""
 
-    def __init__(self, recs: list[dict], P: int, K: int, batches_per_epoch: int, seed: int = 0, mix_prob: float = 0.3):
-        self.by_day = {}
+    def __init__(self, recs: list[dict], P: int, K: int, batches_per_epoch: int, seed: int = 0, mix_prob: float = 0.3, group_hard: bool = False):
+        self.by_day = {}; self.by_group = {}
         for i, r in enumerate(recs):
             self.by_day.setdefault(r["day"], {}).setdefault(r["ident"], []).append(i)
+            self.by_group.setdefault(r["day"], {}).setdefault(r.get("group", "?"), set()).add(r["ident"])
         self.days = [d for d in self.by_day if len(self.by_day[d]) >= 2]
-        self.P, self.K, self.n, self.mix_prob = P, K, batches_per_epoch, mix_prob
+        self.P, self.K, self.n, self.mix_prob, self.group_hard = P, K, batches_per_epoch, mix_prob, group_hard
         self.rng = random.Random(seed)
         self.weights = [sum(len(v) for v in self.by_day[d].values()) for d in self.days]
+
+    def pick_identities(self, day: str, pool: dict) -> list[str]:
+        """Group-hard: fill the batch group by group (the animals photographed together are the negatives
+        that matter), starting from a random multi-animal group of the day, then the day's other animals."""
+        if not self.group_hard:
+            return self.rng.sample(list(pool), min(self.P, len(pool)))
+        groups = [sorted(g & set(pool)) for g in self.by_group.get(day, {}).values()]
+        groups = [g for g in groups if len(g) >= 2]
+        self.rng.shuffle(groups)
+        chosen: list[str] = []
+        for g in groups:
+            for ident in g:
+                if ident not in chosen and len(chosen) < self.P:
+                    chosen.append(ident)
+            if len(chosen) >= self.P:
+                break
+        rest = [i for i in pool if i not in chosen]; self.rng.shuffle(rest)
+        return chosen + rest[: self.P - len(chosen)]
 
     def __iter__(self):
         for _ in range(self.n):
             day = self.rng.choices(self.days, weights=self.weights)[0]
             pool = dict(self.by_day[day])
-            if self.rng.random() < self.mix_prob:
+            idents = self.pick_identities(day, pool)
+            if self.rng.random() < self.mix_prob or len(idents) < self.P:
                 other = self.rng.choices(self.days, weights=self.weights)[0]
-                pool.update(self.by_day[other])
-            idents = self.rng.sample(list(pool), min(self.P, len(pool)))
+                extra = {k: v for k, v in self.by_day[other].items() if k not in pool}
+                pool.update(extra)
+                more = [i for i in extra if i not in idents]; self.rng.shuffle(more)
+                idents = idents + more[: max(self.P - len(idents), 0)] if len(idents) < self.P else idents
             batch = []
             for ident in idents:
                 items = pool[ident]
@@ -187,8 +228,8 @@ class WhaleIdModel(nn.Module):
 
 # ------------------------------------------------------------------ evaluation on val days
 @torch.no_grad()
-def embed_records(model, recs: list[dict], device, size: int, batch: int = 32, workers: int = 4) -> np.ndarray:
-    ds = ChartDataset(recs, size=size, train=False)
+def embed_records(model, recs: list[dict], device, size: int, batch: int = 32, workers: int = 4, center_crop: int = 0) -> np.ndarray:
+    ds = ChartDataset(recs, size=size, train=False, center_crop=center_crop)
     loader = DataLoader(ds, batch_size=batch, num_workers=workers)
     out = []
     for b in loader:
@@ -199,6 +240,8 @@ def embed_records(model, recs: list[dict], device, size: int, batch: int = 32, w
 
 
 def pair_auc_by_part(Z: np.ndarray, recs: list[dict]) -> dict:
+    """Same-day pair AUC per part, plus the within-group cross-burst AUC (the animals photographed together, the
+    pairs the day clustering gets wrong) when the records carry groups and bursts."""
     from sklearn.metrics import roc_auc_score
 
     out = {}
@@ -207,6 +250,7 @@ def pair_auc_by_part(Z: np.ndarray, recs: list[dict]) -> dict:
         if len(idx) < 10:
             continue
         z = Z[idx]; ident = np.array([recs[i]["ident"] for i in idx]); day = np.array([recs[i]["day"] for i in idx])
+        group = np.array([recs[i].get("group", "?") for i in idx]); burst = np.array([recs[i].get("burst", -1) for i in idx])
         sim = z @ z.T
         iu = np.triu_indices(len(idx), 1)
         same_day = (day[:, None] == day[None, :])[iu]
@@ -216,8 +260,13 @@ def pair_auc_by_part(Z: np.ndarray, recs: list[dict]) -> dict:
         if y[m].any() and (~y[m]).any():
             out[f"auc_{part}_same_day"] = float(roc_auc_score(y[m], s[m]))
             out[f"pairs_{part}"] = int(m.sum())
-    vals = [v for k, v in out.items() if k.startswith("auc_")]
+        wg = same_day & (group[:, None] == group[None, :])[iu] & (burst[:, None] != burst[None, :])[iu]
+        if wg.sum() > 50 and y[wg].any() and (~y[wg]).any():
+            out[f"auc_{part}_within_group"] = float(roc_auc_score(y[wg], s[wg])); out[f"pairs_{part}_within_group"] = int(wg.sum())
+    vals = [v for k, v in out.items() if k.startswith("auc_") and k.endswith("_same_day")]
     out["auc_mean"] = float(np.mean(vals)) if vals else 0.0
+    wvals = [v for k, v in out.items() if k.endswith("_within_group") and k.startswith("auc_")]
+    out["auc_within_group_mean"] = float(np.mean(wvals)) if wvals else 0.0
     return out
 
 
@@ -244,6 +293,12 @@ def main(argv=None) -> int:
     p.add_argument("--seed", type=int, default=0)
     p.add_argument("--max-steps", type=int, default=None)
     p.add_argument("--allow-eval-days", action="store_true", help="smoke tests only: permit eval days in train/val")
+    p.add_argument("--group-hard", action="store_true", help="draw the batch's identities group by group (same-group animals as negatives)")
+    p.add_argument("--mix-prob", type=float, default=0.3)
+    p.add_argument("--init", type=Path, default=None, help="start from this identity checkpoint (continued training)")
+    p.add_argument("--parts-tag", default="parts", help="chart directory per day (parts = 512 px, parts_hr = 1536, parts_xr = 3072 fin / fluke)")
+    p.add_argument("--only-parts", default="body,fin,fluke"); p.add_argument("--center-crop", type=int, default=0, help="central window (px) of the chart before resizing")
+    p.add_argument("--select", default="same_day", choices=["same_day", "within_group"], help="model selection metric")
     args = p.parse_args(argv)
     set_seed(args.seed)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -251,22 +306,28 @@ def main(argv=None) -> int:
     train_days = args.train_days or days["train"]; val_days = args.val_days or days["val"]
     if not args.allow_eval_days:
         assert not set(train_days) & set(days["eval"]) and not set(val_days) & set(days["eval"]), "eval days must stay held out"
-    train_recs = scan_charts(args.data_root, labels, train_days)
-    val_recs = scan_charts(args.data_root, labels, val_days)
+    only = tuple(x for x in args.only_parts.split(",") if x)
+    train_recs = scan_charts(args.data_root, labels, train_days, parts_tag=args.parts_tag, only_parts=only)
+    val_recs = scan_charts(args.data_root, labels, val_days, parts_tag=args.parts_tag, only_parts=only)
     idents = sorted({r["ident"] for r in train_recs}); cls_index = {i: k for k, i in enumerate(idents)}
     print(f"train: {len(train_recs)} charts, {len(idents)} identities, {len({r['day'] for r in train_recs})} days; val: {len(val_recs)} charts", flush=True)
     for part in PARTS:
         print(f"  {part}: {sum(r['part'] == part for r in train_recs)} train charts", flush=True)
     out = args.out_root / args.name; out.mkdir(parents=True, exist_ok=True)
     model = WhaleIdModel(len(idents), args.dim, args.unfreeze_blocks).to(device)
+    if args.init:
+        from ..common.train_utils import load_checkpoint
+        state = load_checkpoint(args.init)["model"]
+        state = {k: v for k, v in state.items() if not k.startswith("arc.")}          # class centres are re-learned
+        missing = model.load_state_dict(state, strict=False); print("init from", args.init, "missing", len(missing.missing_keys), flush=True)
     for m in model.arc:
         m.m = args.arc_margin
     config = {"task": "identity", "args": {k: (str(v) if isinstance(v, Path) else v) for k, v in vars(args).items()}, "model": model.config,
               "train_charts": len(train_recs), "val_charts": len(val_recs), "identities": idents, "params": count_params(model)}
     (out / "config.json").write_text(json.dumps(config, indent=1))
     logger = Logger(out)
-    ds = ChartDataset(train_recs, size=args.size, train=True, seed=args.seed)
-    sampler = PKSampler(train_recs, args.P, args.K, args.batches_per_epoch, seed=args.seed)
+    ds = ChartDataset(train_recs, size=args.size, train=True, seed=args.seed, center_crop=args.center_crop)
+    sampler = PKSampler(train_recs, args.P, args.K, args.batches_per_epoch, seed=args.seed, mix_prob=args.mix_prob, group_hard=args.group_hard)
     loader = DataLoader(ds, batch_sampler=sampler, num_workers=args.workers, pin_memory=True, persistent_workers=args.workers > 0)
     head_params = [p_ for n, p_ in model.named_parameters() if not n.startswith("backbone.") and p_.requires_grad]
     groups = model.backbone.param_groups(args.lr_backbone, 0.8, 0.05) + [{"params": head_params, "lr": args.lr_head, "weight_decay": 1e-4}]
@@ -296,10 +357,12 @@ def main(argv=None) -> int:
                 break
         logger.log(event="epoch", epoch=epoch, step=step, loss=float(np.mean(losses)) if losses else None, seconds=round(time.time() - t0, 1))
         model.eval()
-        metrics = pair_auc_by_part(embed_records(model, val_recs, device, args.size, workers=min(args.workers, 4)), val_recs) if val_recs else {"auc_mean": 0.0}
+        metrics = pair_auc_by_part(embed_records(model, val_recs, device, args.size, workers=min(args.workers, 4), center_crop=args.center_crop), val_recs) if val_recs else {"auc_mean": 0.0, "auc_within_group_mean": 0.0}
         logger.log(event="val", epoch=epoch, step=step, **metrics)
-        if metrics["auc_mean"] > best:
-            best = metrics["auc_mean"]
+        crit = metrics["auc_within_group_mean"] if args.select == "within_group" else metrics["auc_mean"]
+        print(f"epoch {epoch}: same-day {metrics['auc_mean']:.3f}  within-group {metrics.get('auc_within_group_mean', 0.0):.3f}", flush=True)
+        if crit > best:
+            best = crit
             save_checkpoint(out / "checkpoints" / "best.pt", model, config, {"epoch": epoch, "val": metrics})
             (out / "val_metrics.json").write_text(json.dumps(metrics, indent=1))
         save_checkpoint(out / "checkpoints" / "last.pt", model, config, {"epoch": epoch, "val": metrics})

@@ -1,0 +1,43 @@
+{
+ "task": "pair_verifier",
+ "args": {
+  "cmd": "train",
+  "data_root": "experiments/days_all",
+  "labels": "/home/sat3737/NOAA_whales/Dinov3-WhaleID/model_fine_tuning/splits/labels_all_days.json",
+  "days": "/home/sat3737/NOAA_whales/Dinov3-WhaleID/model_fine_tuning/splits/days.json",
+  "train_days": null,
+  "val_days": null,
+  "out_root": "/home/sat3737/NOAA_whales/Dinov3-WhaleID/experiments",
+  "P": 6,
+  "size": 512,
+  "batches_per_epoch": 300,
+  "epochs": 10,
+  "val_batches": 60,
+  "lr_head": 0.0003,
+  "lr_backbone": 2e-05,
+  "workers": 6,
+  "seed": 0,
+  "max_steps": null,
+  "allow_eval_days": false,
+  "reference": "experiments/id_v4/checkpoints/best.pt",
+  "name": "pair_teacher",
+  "dim": 256,
+  "layers": 3,
+  "unfreeze_blocks": 2,
+  "init_backbone": "experiments/id_v4/checkpoints/best.pt",
+  "residual_ref": "experiments/id_v4/checkpoints/best.pt"
+ },
+ "model": {
+  "arch": "vitb16",
+  "dim": 256,
+  "layers": 3,
+  "unfreeze_blocks": 2,
+  "size": 512,
+  "task": "pair_verifier",
+  "reference": "experiments/id_v4/checkpoints/best.pt"
+ },
+ "params": {
+  "total_M": 177.41,
+  "trainable_M": 17.75
+ }
+}

@@ -1,0 +1,174 @@
+{
+ "channels": [
+  "id:id_v2|body",
+  "id:id_v2|fin",
+  "id:id_v2|fluke",
+  "md|body",
+  "md|fin",
+  "md|fluke"
+ ],
+ "calib": {
+  "id:id_v2|body": [
+   1.4501996040344238,
+   -2.751997947692871
+  ],
+  "id:id_v2|fin": [
+   1.5120652914047241,
+   -3.0000882148742676
+  ],
+  "id:id_v2|fluke": [
+   1.8298771381378174,
+   -2.3305411338806152
+  ],
+  "md|body": [
+   0.5521737933158875,
+   -2.1992859840393066
+  ],
+  "md|fin": [
+   0.610771119594574,
+   -2.339704751968384
+  ],
+  "md|fluke": [
+   0.7449430823326111,
+   -1.7348558902740479
+  ]
+ },
+ "weights": [
+  0.8647243896208753,
+  0.0,
+  0.31016774701707006,
+  0.4947474103696829,
+  0.41005239025219864,
+  -0.25513992601818164,
+  0.22460888003820476,
+  0.0,
+  -0.44625835192539376,
+  0.4947474103696829,
+  -0.0475248954708895,
+  -0.25513992601818164
+ ],
+ "bias": 0.07565004639832869,
+ "val_report": {
+  "2025-01-15": {
+   "pairs": 2926,
+   "positive": 504,
+   "auc_id:id_v2|body": 0.8174,
+   "cover_id:id_v2|body": 1.0,
+   "auc_id:id_v2|fin": 0.8227,
+   "cover_id:id_v2|fin": 0.419,
+   "auc_id:id_v2|fluke": 0.752,
+   "cover_id:id_v2|fluke": 0.086,
+   "auc_md|body": 0.5759,
+   "cover_md|body": 1.0,
+   "auc_md|fin": 0.633,
+   "cover_md|fin": 0.419,
+   "auc_md|fluke": 0.6511,
+   "cover_md|fluke": 0.086,
+   "auc_fused": 0.8184
+  },
+  "2025-02-27": {
+   "pairs": 52003,
+   "positive": 7032,
+   "auc_id:id_v2|body": 0.877,
+   "cover_id:id_v2|body": 1.0,
+   "auc_id:id_v2|fin": 0.8677,
+   "cover_id:id_v2|fin": 0.398,
+   "auc_id:id_v2|fluke": 0.8693,
+   "cover_id:id_v2|fluke": 0.072,
+   "auc_md|body": 0.666,
+   "cover_md|body": 1.0,
+   "auc_md|fin": 0.6385,
+   "cover_md|fin": 0.398,
+   "auc_md|fluke": 0.6426,
+   "cover_md|fluke": 0.072,
+   "auc_fused": 0.8779
+  },
+  "2025-03-14": {
+   "pairs": 73920,
+   "positive": 7265,
+   "auc_id:id_v2|body": 0.8339,
+   "cover_id:id_v2|body": 1.0,
+   "auc_id:id_v2|fin": 0.8668,
+   "cover_id:id_v2|fin": 0.712,
+   "auc_id:id_v2|fluke": 0.9286,
+   "cover_id:id_v2|fluke": 0.023,
+   "auc_md|body": 0.6292,
+   "cover_md|body": 1.0,
+   "auc_md|fin": 0.6608,
+   "cover_md|fin": 0.712,
+   "auc_md|fluke": 0.782,
+   "cover_md|fluke": 0.023,
+   "auc_fused": 0.845
+  }
+ },
+ "eval_report": {
+  "2024-12-18": {
+   "pairs": 54285,
+   "positive": 9124,
+   "auc_id:id_v2|body": 0.7359,
+   "cover_id:id_v2|body": 1.0,
+   "auc_id:id_v2|fin": 0.8043,
+   "cover_id:id_v2|fin": 0.511,
+   "auc_id:id_v2|fluke": 0.6465,
+   "cover_id:id_v2|fluke": 0.089,
+   "auc_md|body": 0.6115,
+   "cover_md|body": 1.0,
+   "auc_md|fin": 0.6772,
+   "cover_md|fin": 0.511,
+   "auc_md|fluke": 0.5987,
+   "cover_md|fluke": 0.089,
+   "auc_fused": 0.7443
+  },
+  "2024-12-26": {
+   "pairs": 301476,
+   "positive": 20313,
+   "auc_id:id_v2|body": 0.7976,
+   "cover_id:id_v2|body": 1.0,
+   "auc_id:id_v2|fin": 0.792,
+   "cover_id:id_v2|fin": 0.494,
+   "auc_id:id_v2|fluke": 0.7789,
+   "cover_id:id_v2|fluke": 0.102,
+   "auc_md|body": 0.5784,
+   "cover_md|body": 1.0,
+   "auc_md|fin": 0.5945,
+   "cover_md|fin": 0.494,
+   "auc_md|fluke": 0.5916,
+   "cover_md|fluke": 0.102,
+   "auc_fused": 0.796
+  },
+  "2025-02-19": {
+   "pairs": 83436,
+   "positive": 8317,
+   "auc_id:id_v2|body": 0.7533,
+   "cover_id:id_v2|body": 1.0,
+   "auc_id:id_v2|fin": 0.7526,
+   "cover_id:id_v2|fin": 0.419,
+   "auc_id:id_v2|fluke": 0.8086,
+   "cover_id:id_v2|fluke": 0.125,
+   "auc_md|body": 0.5631,
+   "cover_md|body": 1.0,
+   "auc_md|fin": 0.5954,
+   "cover_md|fin": 0.419,
+   "auc_md|fluke": 0.6188,
+   "cover_md|fluke": 0.125,
+   "auc_fused": 0.7533
+  },
+  "2025-03-21": {
+   "pairs": 142845,
+   "positive": 10472,
+   "auc_id:id_v2|body": 0.7446,
+   "cover_id:id_v2|body": 1.0,
+   "auc_id:id_v2|fin": 0.7898,
+   "cover_id:id_v2|fin": 0.304,
+   "auc_id:id_v2|fluke": 0.7616,
+   "cover_id:id_v2|fluke": 0.204,
+   "auc_md|body": 0.5871,
+   "cover_md|body": 1.0,
+   "auc_md|fin": 0.6722,
+   "cover_md|fin": 0.304,
+   "auc_md|fluke": 0.6394,
+   "cover_md|fluke": 0.204,
+   "auc_fused": 0.7477
+  }
+ }
+}

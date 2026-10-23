@@ -1,0 +1,9 @@
+run05 evaluation summary
+- run04 models on run05 test: seg {"images": 1379, "n": 1379, "dataset_iou": 0.933, "precision": 0.963, "recall": 0.967, "mean_image_iou": 0.899, "median_image_iou": 0.922, "iou_at_0.5": 0.993, "iou_at_0.75": 0.942, "boundary_f1": 0.899, "boundary_f1_open": 0.905, "boundary_f1_seam": 0.924, "true_contour_recall": 0.694, "boundary_f1
+    canon {"epoch": 36, "tta": 1}
+- run05 models on run05 test: seg {"images": 1379, "n": 1379, "dataset_iou": 0.933, "precision": 0.968, "recall": 0.963, "mean_image_iou": 0.906, "median_image_iou": 0.93, "iou_at_0.5": 0.995, "iou_at_0.75": 0.954, "boundary_f1": 0.904, "boundary_f1_open": 0.889, "boundary_f1_seam": 0.929, "true_contour_recall": 0.703, "boundary_f1_
+    canon {"epoch": 38, "tta": 1}
+- real 2024-12-18 outline metric canon_r04_ft4: {}
+- real 2024-12-18 outline metric canon_r04_ft4_direct: {}
+- real 2024-12-18 outline metric canon_r05_ft4: {}
+- real 2024-12-18 outline metric canon_r05_ft4_direct: {}

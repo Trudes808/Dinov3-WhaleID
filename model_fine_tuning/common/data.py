@@ -114,6 +114,13 @@ class WhaleRun:
     def has_canon(self, shot_id: str) -> bool:
         return (self.dataset_dir / "canon" / f"{shot_id}.npz").exists()
 
+    def has_vertex(self, shot_id: str) -> bool:
+        return (self.dataset_dir / "vertex" / f"{shot_id}.png").exists()
+
+    def vertex(self, shot_id: str) -> np.ndarray:
+        """Template vertex per pixel (common.vertex_labels): uint16, 0 = no label, else template index + 1."""
+        return np.asarray(Image.open(self.dataset_dir / "vertex" / f"{shot_id}.png")).astype(np.uint16)
+
     def canon(self, shot_id: str) -> tuple[np.ndarray, np.ndarray]:
         """Canonical surface point per pixel (cm, undeformed mesh frame: x tail -> snout, y right,
         z up) as float32 (H, W, 3) with nan outside the whale, and the defined mask."""
@@ -164,6 +171,8 @@ class CombinedRun:
     def canon(self, shot_id): run, i = self._run(shot_id); return run.canon(i)
     def is_deformed(self, shot_id): run, i = self._run(shot_id); return run.is_deformed(i)
     def has_bodycoords(self, shot_id): run, i = self._run(shot_id); return run.has_bodycoords(i)
+    def has_vertex(self, shot_id): run, i = self._run(shot_id); return run.has_vertex(i)
+    def vertex(self, shot_id): run, i = self._run(shot_id); return run.vertex(i)
 
 
 def open_runs(run_dir, split, extra_dirs=None, extra_splits=None):
@@ -448,13 +457,15 @@ class CanonCropDataset(Dataset):
 
     def __init__(self, run: WhaleRun, ids: list[str], table: dict, crop: int = 512, min_visible: int = 300, margin_range=(1.25, 2.2),
                  jitter: float = 0.12, flip: bool = True, photometric_strength: float = 1.0, train: bool = True, seed: int = 0,
-                 eval_margin: float = 1.6, bboxes: dict[str, list] | None = None, keypoints: bool = False, heat_stride: int = 4):
+                 eval_margin: float = 1.6, bboxes: dict[str, list] | None = None, keypoints: bool = False, heat_stride: int = 4,
+                 vertex_mirror: np.ndarray | None = None):
         self.run, self.crop, self.train, self.seed = run, crop, train, seed
+        self.vertex_mirror = vertex_mirror            # template mirror table: with it the per-pixel vertex label is returned (and flipped)
         self.margin_range, self.jitter, self.flip, self.photometric_strength = margin_range, jitter, flip, photometric_strength
         self.eval_margin, self.bboxes = eval_margin, bboxes
         self.keypoints, self.heat_stride = keypoints, heat_stride     # run03 targets: heatmaps, keypoint states, deformation
         self.x_min_cm, self.length_cm = float(table["x_min_m"]) * 100.0, float(table["length_m"]) * 100.0
-        self.ids = [i for i in ids if run.by_id[i]["visible_pixels"] >= min_visible and run.has_canon(i)]
+        self.ids = [i for i in ids if run.by_id[i]["visible_pixels"] >= min_visible and run.has_canon(i) and (vertex_mirror is None or run.has_vertex(i))]
         if bboxes is not None:
             self.ids = [i for i in self.ids if i in bboxes and bboxes[i] is not None]
         self.epoch = 0
@@ -492,6 +503,7 @@ class CanonCropDataset(Dataset):
         img = warp_image(image, M, (C, C))
         m = warp_nearest(mask, M, (C, C), IGNORE)
         ct = warp_nearest(contours, M, (C, C), 0)
+        vt = warp_nearest(run.vertex(shot_id), M, (C, C), 0) if self.vertex_mirror is not None else None
         cc = np.stack([warp_nearest(np.nan_to_num(canon_cm[..., k]), M, (C, C), 0.0) for k in range(3)], -1)
         dc = warp_nearest(defined.astype(np.uint8), M, (C, C), 0) > 0
         R, t = geometry.gt_camera_from_whale(meta)
@@ -501,6 +513,10 @@ class CanonCropDataset(Dataset):
             flipped = True
             img, m, cc, dc, ct = img[:, ::-1], m[:, ::-1], cc[:, ::-1], dc[:, ::-1], ct[:, ::-1]
             cc = cc * np.array([1.0, -1.0, 1.0], np.float32)       # the mirror image shows the mirrored body point
+            if vt is not None:
+                vt = vt[:, ::-1]
+                lab = vt > 0
+                vt = np.where(lab, self.vertex_mirror[np.maximum(vt.astype(np.int64) - 1, 0)] + 1, 0).astype(np.uint16)
             R = geometry.flip_rotation(R)
         if self.train:
             img = photometric(np.ascontiguousarray(img), rng, self.photometric_strength)
@@ -522,6 +538,9 @@ class CanonCropDataset(Dataset):
             "crop_x0y0s": torch.tensor([x0, y0, s], dtype=torch.float64),
             "flipped": flipped,
         }
+        if vt is not None:
+            vt = vt.copy(); vt[m != 1] = 0                                           # labels only where the whale is visible
+            sample["vertex"] = torch.from_numpy(np.ascontiguousarray(vt).astype(np.int64))
         if self.keypoints:
             uv, st, heat = keypoint_targets(meta, x0, y0, s, C, flipped, C // self.heat_stride)
             sample.update({"kp_uv": torch.from_numpy(uv), "kp_state": torch.from_numpy(st), "kp_heat": torch.from_numpy(heat),

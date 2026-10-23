@@ -1,0 +1,15 @@
+{
+ "auc_student_body": 0.8197424067666281,
+ "pairs_body": 1122,
+ "auc_student_fin": 0.8746039944903581,
+ "pairs_fin": 1452,
+ "auc_student_fluke": 0.8768013381369016,
+ "pairs_fluke": 1188,
+ "auc_student_mean": 0.8570492464646292,
+ "auc_reference_body": 0.8245098039215686,
+ "auc_reference_fin": 0.8471648301193756,
+ "auc_reference_fluke": 0.8592141662377766,
+ "auc_reference_mean": 0.8436296000929069,
+ "pairs": 3762,
+ "positives": 350
+}

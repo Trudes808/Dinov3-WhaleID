@@ -1,0 +1,12 @@
+{
+ "auc_fin_same_day": 0.5821676285244167,
+ "pairs_fin": 73432,
+ "auc_fin_within_group": 0.5685852252318147,
+ "pairs_fin_within_group": 23211,
+ "auc_fluke_same_day": 0.6195221332829246,
+ "pairs_fluke": 5705,
+ "auc_fluke_within_group": 0.5947011415505314,
+ "pairs_fluke_within_group": 1683,
+ "auc_mean": 0.6008448809036706,
+ "auc_within_group_mean": 0.581643183391173
+}

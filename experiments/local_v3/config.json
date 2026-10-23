@@ -1,0 +1,42 @@
+{
+ "task": "local_desc",
+ "args": {
+  "name": "local_v3",
+  "data_root": "experiments/days_all",
+  "labels": "/home/sat3737/NOAA_whales/Dinov3-WhaleID/model_fine_tuning/splits/labels_all_days.json",
+  "days": "/home/sat3737/NOAA_whales/Dinov3-WhaleID/model_fine_tuning/splits/days.json",
+  "out_root": "/home/sat3737/NOAA_whales/Dinov3-WhaleID/experiments",
+  "train_days": null,
+  "val_days": null,
+  "dim": 128,
+  "unfreeze_blocks": 4,
+  "P": 6,
+  "crop": 1024,
+  "batches_per_epoch": 300,
+  "epochs": 16,
+  "val_batches": 40,
+  "lr_head": 0.0003,
+  "lr_backbone": 1e-05,
+  "tau": 0.1,
+  "r_pos": 0.05,
+  "r_far": 0.12,
+  "workers": 6,
+  "seed": 0,
+  "max_steps": null,
+  "allow_eval_days": false,
+  "head": "conv",
+  "anchor_weight": "contrast",
+  "topk_frac": 0.2
+ },
+ "model": {
+  "arch": "vitb16",
+  "dim": 128,
+  "unfreeze_blocks": 4,
+  "task": "local_desc",
+  "head": "conv"
+ },
+ "params": {
+  "total_M": 87.47,
+  "trainable_M": 30.16
+ }
+}
