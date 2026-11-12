@@ -2033,3 +2033,70 @@ dorsal stacks before lone fluke stacks; (e) no automatic first animal behind an 
 with the closest animals of the earlier encounters (the catalog's "same as"); (f) for the model, a fin-outline channel
 that survives posture, flank and lighting. (a) and (c) would each have caught all three splits inside encounters on this
 day; each needs the catalogue-replay simulation with a researcher who splits by view before it is built.
+
+2026-11-12, same day: the dashed box around the detected whale became four corner brackets set 4 px outside the box
+(lab_pane.js, all panes), with `B` / "marks" on the Animals page to hide them: the researcher found the line beside a
+fin edge made the edge harder to compare. tests/labeling_e2e.py 73 checks.
+
+## 2026-11-12 late afternoon — Photo Labeling: merge hints by animal-to-animal similarity; the group type; where questions lack a shared part
+Request (user, after the comparison of the 2024-12-23 test run with the catalog): how is the group type determined;
+"improve the merge hints, determine a threshold that seems more reasonable, its a hint after all it can be ignored"; a
+merge check in Review where "full animals can be compared against each other collectively by fluke, dorsal, and other";
+what a "second look" would be (discussion); saving a question until there is a shared part "may be handled by our new
+fluke, dorsal, other order". Built: the merge hints (Whale-Review-Web frontend only, no backend restart). Measured: the
+rest. Work in experiments/labeling_runs/merge_hints/ (fetch.py reads every day's payload and pair matrices from the
+page's API; sim.py, sim2.py, user_day.py, shared_part.py, second_look.py; logs).
+Outcome. (1) Merge hints now compare whole animals: similarity = every stack of the smaller animal against the whole
+other animal by the blend of step 2, averaged (animalSim); a pair is hinted at 50 % or more, or at 25 % or more when
+each is the other's most similar animal of the encounter; the row shows fluke / dorsal / other and opens the
+side-by-side view. On the 2024-12-23 run as saved at 14:48 this shows exactly the three split whales (28, 32, 37 %) and
+nothing else; the earlier rule (link of the closest pair of stacks >= 0.85) showed none. (2) Simulated on the labelled
+days, two split whales in three are shown for about one wrong hint per encounter; on the eval days the gain over the
+earlier rule is small. (3) Under the page's current order a stack meets its own animal without a fluke or dorsal fin in
+common in about 1 % of the questions, a third of what capture order gives: the order handles most of it. (4) Correction
+to the entry above: the test run was sorted with the earlier animal-by-animal order (its log has "collect" steps until
+14:48), so the fluke stack held against a dorsal-only animal came from that order, not from flukes-first.
+The score. First simulation (sim.py): every catalogue animal sorted right except one left in two pieces (fluke stacks
+apart, one fin side apart, apart at the longest gap, one stack apart, one to three stacks apart), against pairs of
+different animals of the encounter. AUC of the candidates on the val days for pieces of one to three stacks: link score
+of the closest pair 0.82, best match per part (the blend over the two sets, what the side-by-side view shows) 0.81,
+best-match mean per part 0.85, the stack average 0.87 (0.91 for single stacks); train days 0.90 / 0.85 / 0.93 / 0.95.
+The stack average also gives far fewer wrong hints at a given share of split cases shown. But the three real pairs of
+the test run score 0.28 to 0.37 on it, below any threshold that simulation would pick (0.40 to 0.50): a researcher
+splits where the pieces look different, random splits are easier.
+The threshold. Second simulation (sim2.py): the catalogue plays a researcher who never joins two whales (as in the test
+run: no wrong "same") and starts a new animal for a stack of a whale already there with P = 0.2 x clip((0.75 -
+similarity) / 0.5, 0, 1), stacks in the page's order; this gives 1.65 (val), 1.78 (train), 1.83 (eval) animals per
+catalogue animal, the test run had 1.67. Rules compared by the share of split whales with a true pair shown and the
+wrong hints per encounter (5 runs per day). Val: link >= 0.85 (before) 38 % at 0.62; similarity >= 0.40 52 % at 1.08; >=
+0.25 78 % at 3.01; >= 0.50 or >= 0.25 when each is the other's closest (chosen) 65 % at 0.71, 58 % of the hints right,
+no encounter with more than 3 wrong; the same rule on the best-match blend 55 to 62 % at 0.7 to 1.0. Train: before 52 %
+at 0.87, chosen 69 % at 0.85. Eval, read once after the choice: before 55 % at 1.08, chosen 60 % at 1.18 (half the hints
+right). So the mutual-closest clause is what reaches the low-scoring real splits without flooding large groups; a flat
+low threshold costs four times the wrong hints for a fifth more reach. The hints across encounters (appearance >= 0.85,
+"same as") are unchanged: the one such case of the test run (one photo behind a false cut) scores below several wrong
+pairs on every score tried.
+The page (Whale-Review-Web frontend/js/lab_core.js blendOf, animalSim, MERGE, mergeHints; lab_review.js hint rows;
+labeling.css; backend/labeling_model.json "merge" with the numbers above; tests/labeling_e2e.py five checks, 78 in all,
+pass on 2025-02-27, 2025-01-02, 2024-12-18; label_assist.py fit keeps the merge block). The backend was not restarted
+(another session was editing backend/labeling.py), so the page runs on the defaults in MERGE, the same numbers; the
+model file takes over at the next restart. Installed as exact string patches on the live files, tried first on a private
+copy of frontend/ with a copy of the 14:48 state.
+Group type. In the catalog it is the tail of the collection set name ("<day> Group N <type>"): 33 MCE, 30 CG, 18 Pair,
+15 MC, 8 Single, 6 Singer, 2 MYE, 2 Trio and 4 free-text ones on the 28 days. Animals per group by type: Single 1 (8 of
+8), Singer 1 (5 of 5 photographed), Pair 2 (15 of 18; 1 twice, 3 once), MC 2 (12 of 15), MCE 3 (28 of 33; 2, 4, 5), Trio
+and MYE 3, CG 2 to 20 (median 6). So the type caps the animals of 85 to 100 % of the groups that are not competitive
+groups: a soft cap. Whether the type is written in the field log at the time or settled later from the photos is not
+known here (the catalog only holds the result); the page today proposes a type from the animals found ("type: Trio ?" on
+the test run's mother-calf group with three animals), which cannot catch a split. The user will ask the researchers.
+Shared part (shared_part.py; catalogue as the researcher, per catalogue encounter). Stacks whose whale is already an
+animal when they come up, with no fluke and no dorsal fin in common with any stack sorted to it so far: page order 1.5 %
+(val, 6 of 390), 0.9 % (eval), 0.8 % (train), always a dorsal stack meeting an animal known by flukes only, 7 to 12 % of
+the whales have one such moment; capture order 3.8 / 3.0 / 2.7 %, a quarter of the whales. Another 2 to 5 % share a
+dorsal fin only from the other side. On 2024-12-23 there is no such stack under either order. Parking was not built: the
+order leaves about 1 %, and such a pair now comes back as a merge hint.
+Second look (second_look.py; for the discussion, not built). With the page's similarity of a stack to its most similar
+animal: a bar at 0.5 would stop 11 to 18 % of the true new whales for a second look (about three a day on the eval days)
+and would cover the half of the true matches that score above it; a bar at 0.4: 16 to 34 % and two thirds. The test
+run's splits scored 0.33 to 0.52 as whole animals, so a second look at the moment of the answer covers at most half of
+such errors; the merge hints now cover the same pairs later with all of each animal's photos.

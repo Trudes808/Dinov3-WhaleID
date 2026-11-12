@@ -73,6 +73,9 @@ class Day:
         S_, L_ = (A, B) if len(A) <= len(B) else (B, A); v = []
         for x in S_:
             jx = np.ix_([x], L_); v.append(s.parts_score(s.F[jx].max(), s.Dn[jx].max(), s.B[jx].max(), int(s.Q[jx].max()), s.gap(np.array([x]), L_))[0])
+        if len(A) == len(B):                                 # two animals of one size: both directions, so the score does not depend on the order
+            for x in L_:
+                jx = np.ix_([x], S_); v.append(s.parts_score(s.F[jx].max(), s.Dn[jx].max(), s.B[jx].max(), int(s.Q[jx].max()), s.gap(np.array([x]), S_))[0])
         out['stack_mean'] = float(np.mean(v)); out['stack_max'] = float(np.max(v))
         out['shared'] = ('fluke' if fl is not None else '') + ('dorsal' if do is not None else '')
         return out

@@ -435,7 +435,7 @@ def main(argv=None) -> int:
                         "propose": a.propose, "maybe": (old.get("boundary") or {}).get("maybe", 0.15), "fit_days": split["train"], "eval": brep},
            "run": old.get("run") or {"what": "following stacks offered together with the head stack when their link to the run so far is at least tau", "tau": 0.9, "max": 8},
            "passer_by": old.get("passer_by"),
-           "blend": old.get("blend"), "order": old.get("order"), "collect": old.get("collect"),          # the page's similarity blend and order of work (fitted / measured outside this script, see experiments/LOG.md 2026-11-12)
+           "blend": old.get("blend"), "order": old.get("order"), "collect": old.get("collect"), "merge": old.get("merge"),          # the page's similarity blend and order of work (fitted / measured outside this script, see experiments/LOG.md 2026-11-12)
            "confidence": old.get("confidence") or {"lead": {"top": 0.7, "margin": 0.35, "first_right": {"val": None, "eval": None}}, "open": {"first_right": {"val": None, "eval": None}, "top3": {"val": None, "eval": None}, "new_animal": {"val": None, "eval": None}}}}
     a.out.write_text(json.dumps(out, indent=1)); print("wrote", a.out)
     return 0
