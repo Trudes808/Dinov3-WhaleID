@@ -1,0 +1,152 @@
+{
+ "channels": [
+  "id:pair_student|body",
+  "id:pair_student|fin",
+  "id:pair_student|fluke",
+  "oshape:parts_v2u|fin",
+  "oshape:parts_v2u|fluke"
+ ],
+ "calib": {
+  "id:pair_student|body": [
+   1.5881843566894531,
+   -2.8815808296203613
+  ],
+  "id:pair_student|fin": [
+   1.8180241584777832,
+   -3.278653860092163
+  ],
+  "id:pair_student|fluke": [
+   2.051220178604126,
+   -2.5316643714904785
+  ],
+  "oshape:parts_v2u|fin": [
+   1.0440311431884766,
+   -2.409926652908325
+  ],
+  "oshape:parts_v2u|fluke": [
+   0.4160025715827942,
+   -1.370732307434082
+  ]
+ },
+ "weights": [
+  0.8518280982971191,
+  0.0,
+  0.35405823588371277,
+  0.0,
+  0.307623028755188,
+  0.0,
+  0.07543686777353287,
+  0.0,
+  -0.007881097495555878,
+  0.0
+ ],
+ "bias": 0.14065206050872803,
+ "missing_indicators": false,
+ "val_report": {
+  "2025-01-15": {
+   "pairs": 2926,
+   "positive": 504,
+   "auc_id:pair_student|body": 0.8154,
+   "cover_id:pair_student|body": 1.0,
+   "auc_id:pair_student|fin": 0.8514,
+   "cover_id:pair_student|fin": 0.419,
+   "auc_id:pair_student|fluke": 0.8101,
+   "cover_id:pair_student|fluke": 0.086,
+   "auc_oshape:parts_v2u|fin": 0.7563,
+   "cover_oshape:parts_v2u|fin": 0.094,
+   "auc_fused": 0.8174
+  },
+  "2025-02-27": {
+   "pairs": 52003,
+   "positive": 7032,
+   "auc_id:pair_student|body": 0.8735,
+   "cover_id:pair_student|body": 1.0,
+   "auc_id:pair_student|fin": 0.9124,
+   "cover_id:pair_student|fin": 0.398,
+   "auc_id:pair_student|fluke": 0.9075,
+   "cover_id:pair_student|fluke": 0.072,
+   "auc_oshape:parts_v2u|fin": 0.6817,
+   "cover_oshape:parts_v2u|fin": 0.075,
+   "auc_oshape:parts_v2u|fluke": 0.6349,
+   "cover_oshape:parts_v2u|fluke": 0.002,
+   "auc_fused": 0.8803
+  },
+  "2025-03-14": {
+   "pairs": 73920,
+   "positive": 7265,
+   "auc_id:pair_student|body": 0.841,
+   "cover_id:pair_student|body": 1.0,
+   "auc_id:pair_student|fin": 0.8662,
+   "cover_id:pair_student|fin": 0.712,
+   "auc_id:pair_student|fluke": 0.9377,
+   "cover_id:pair_student|fluke": 0.023,
+   "auc_oshape:parts_v2u|fin": 0.6827,
+   "cover_oshape:parts_v2u|fin": 0.135,
+   "auc_oshape:parts_v2u|fluke": 0.6668,
+   "cover_oshape:parts_v2u|fluke": 0.002,
+   "auc_fused": 0.8543
+  }
+ },
+ "eval_report": {
+  "2024-12-18": {
+   "pairs": 54285,
+   "positive": 9124,
+   "auc_id:pair_student|body": 0.7722,
+   "cover_id:pair_student|body": 1.0,
+   "auc_id:pair_student|fin": 0.8453,
+   "cover_id:pair_student|fin": 0.511,
+   "auc_id:pair_student|fluke": 0.6548,
+   "cover_id:pair_student|fluke": 0.089,
+   "auc_oshape:parts_v2u|fin": 0.5758,
+   "cover_oshape:parts_v2u|fin": 0.108,
+   "auc_oshape:parts_v2u|fluke": 0.5423,
+   "cover_oshape:parts_v2u|fluke": 0.017,
+   "auc_fused": 0.7811
+  },
+  "2024-12-26": {
+   "pairs": 301476,
+   "positive": 20313,
+   "auc_id:pair_student|body": 0.7968,
+   "cover_id:pair_student|body": 1.0,
+   "auc_id:pair_student|fin": 0.8168,
+   "cover_id:pair_student|fin": 0.494,
+   "auc_id:pair_student|fluke": 0.7559,
+   "cover_id:pair_student|fluke": 0.102,
+   "auc_oshape:parts_v2u|fin": 0.6465,
+   "cover_oshape:parts_v2u|fin": 0.066,
+   "auc_oshape:parts_v2u|fluke": 0.5208,
+   "cover_oshape:parts_v2u|fluke": 0.016,
+   "auc_fused": 0.7942
+  },
+  "2025-02-19": {
+   "pairs": 83436,
+   "positive": 8317,
+   "auc_id:pair_student|body": 0.7677,
+   "cover_id:pair_student|body": 1.0,
+   "auc_id:pair_student|fin": 0.7708,
+   "cover_id:pair_student|fin": 0.419,
+   "auc_id:pair_student|fluke": 0.8296,
+   "cover_id:pair_student|fluke": 0.125,
+   "auc_oshape:parts_v2u|fin": 0.5884,
+   "cover_oshape:parts_v2u|fin": 0.088,
+   "auc_oshape:parts_v2u|fluke": 0.6481,
+   "cover_oshape:parts_v2u|fluke": 0.024,
+   "auc_fused": 0.7687
+  },
+  "2025-03-21": {
+   "pairs": 142845,
+   "positive": 10472,
+   "auc_id:pair_student|body": 0.7331,
+   "cover_id:pair_student|body": 1.0,
+   "auc_id:pair_student|fin": 0.7909,
+   "cover_id:pair_student|fin": 0.304,
+   "auc_id:pair_student|fluke": 0.753,
+   "cover_id:pair_student|fluke": 0.204,
+   "auc_oshape:parts_v2u|fin": 0.6873,
+   "cover_oshape:parts_v2u|fin": 0.051,
+   "auc_oshape:parts_v2u|fluke": 0.6398,
+   "cover_oshape:parts_v2u|fluke": 0.049,
+   "auc_fused": 0.7386
+  }
+ }
+}

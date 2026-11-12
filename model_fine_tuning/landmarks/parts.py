@@ -178,7 +178,99 @@ class PartCropDataset(Dataset):
         valid = (m != IGNORE).astype(np.float32)
         return {"id": shot_id, "part": row["part"], "image": to_tensor(np.ascontiguousarray(img)), "dense": torch.from_numpy(dense), "valid": torch.from_numpy(valid),
                 "uv": torch.from_numpy(uv), "state": torch.from_numpy(st), "heat": torch.from_numpy(heat), "flipped": flipped,
-                "extent_px": torch.tensor(float(row["extent"]) * s, dtype=torch.float32), "crop_x0y0s": torch.tensor([x0, y0, s], dtype=torch.float64)}
+                "extent_px": torch.tensor(float(row["extent"]) * s, dtype=torch.float32), "crop_x0y0s": torch.tensor([x0, y0, s], dtype=torch.float64),
+                "dense_w": torch.tensor(1.0), "state_w": torch.tensor(1.0)}
+
+
+# ----------------------------------------------------------------------------------------------- real photos: the researcher's clicks
+REAL_LABELS_ROOT = Path(__file__).resolve().parents[3] / "Whale-Review-Web" / "data"
+
+
+def real_rows(days_root: Path, labels_root: Path, days: list[str], min_points: int = 2) -> list[dict]:
+    """The researcher's keypoints from the pairs page (Whale-Review-Web data/<day>/pair_marks.json: photo fractions,
+    the latest record of a photo wins) mapped into the part charts of parts_xr (M warps full-resolution photo px into
+    the 3072-px chart, then the chart builder's mirror / vertical flip, cluster/parts.py). One row per (photo, part)
+    with at least min_points clicked points of the part and a chart: {id, key, day, part, chart, keypoints: {name:
+    {uv, state}}, bbox, extent} in chart px. Only the clicked points are supervised: the chains, the unclicked points
+    and the dense maps are "missing"."""
+    from PIL import Image
+    rows = []
+    for day in days:
+        f = labels_root / day / "pair_marks.json"
+        if not f.exists():
+            continue
+        labs = json.loads(f.read_text()); labs = labs["labels"] if isinstance(labs, dict) else labs
+        photos: dict = {}
+        for l in labs:
+            if l.get("verdict") == "skip":
+                continue
+            for side in ("a", "b"):
+                kp = (l.get("keypoints") or {}).get(side) or {}
+                if kp:
+                    photos.setdefault(l[f"key_{side}"], {}).update(kp)
+        day_dir = days_root / day; sizes: dict = {}
+        for key, kp in photos.items():
+            stem = key.rsplit("~", 1)[0]
+            for part, spec in PARTS.items():
+                names = [n for n in spec["points"] if n in kp]
+                chart = day_dir / "parts_xr" / "charts" / f"{key}__{part}.jpg"; tf = day_dir / "parts_xr" / f"{key}__{part}.npz"
+                if len(names) < min_points or not chart.exists() or not tf.exists():
+                    continue
+                if stem not in sizes:
+                    sizes[stem] = Image.open(day_dir / "images" / f"{stem}.jpg").size
+                W, H = sizes[stem]; size = Image.open(chart).size[0]
+                z = np.load(tf, allow_pickle=True); M = z["M"]; sf = float(z["scale_full"])
+                mirrored = bool(z["mirrored"]) if "mirrored" in z.files else False; flipped_v = bool(z["flipped_v"]) if "flipped_v" in z.files else False
+                kps = {}
+                for n in names:
+                    u, v = M @ np.array([kp[n]["x"] * W * sf, kp[n]["y"] * H * sf, 1.0])
+                    if mirrored:
+                        u = size - 1 - u
+                    if flipped_v:
+                        v = size - 1 - v
+                    kps[n] = {"uv": [float(u), float(v)], "state": "visible"}
+                uv = np.array([k["uv"] for k in kps.values()]); x0, y0 = uv.min(0); x1, y1 = uv.max(0)
+                rows.append({"id": f"{day}/{key}__{part}", "key": key, "day": day, "part": part, "chart": str(chart), "keypoints": kps,
+                             "bbox": [float(x0), float(y0), float(x1), float(y1)], "extent": float(max(x1 - x0, y1 - y0, 1.0))})
+    return rows
+
+
+class RealPartDataset(Dataset):
+    """Crops around the clicked points of a real part chart, same geometry and augmentation as PartCropDataset; no
+    dense targets (dense_w = 0) and, by default, no state supervision (state_w): the clicks only say where the point is."""
+    def __init__(self, rows: list[dict], crop: int = 512, train: bool = True, margin_range=(1.4, 3.0), eval_margin: float = 2.0, jitter: float = 0.1,
+                 photometric_strength: float = 1.0, seed: int = 0, state_weight: float = 0.0):
+        self.rows, self.crop, self.train, self.margin_range, self.eval_margin, self.jitter = rows, crop, train, margin_range, eval_margin, jitter
+        self.photometric_strength, self.seed, self.state_weight, self.epoch = photometric_strength, seed, state_weight, 0
+
+    def __len__(self):
+        return len(self.rows)
+
+    def set_epoch(self, epoch: int):
+        self.epoch = epoch
+
+    def __getitem__(self, index: int):
+        row = self.rows[index]; C = self.crop
+        image = cv2.imread(row["chart"], cv2.IMREAD_COLOR)[..., ::-1]
+        rng = np.random.default_rng([self.seed, self.epoch, index])
+        H, W = image.shape[:2]
+        margin = rng.uniform(*self.margin_range) if self.train else self.eval_margin
+        margin = min(margin, 1.15 * max(W, H) / max(row["extent"], 1.0))
+        min_side = max(64.0, row["extent"] * 1.4)
+        x0, y0, s = square_crop_params(row["bbox"], C, margin, self.jitter if self.train else 0.0, rng if self.train else None, min_side=min_side)
+        img = warp_image(np.ascontiguousarray(image), warp_params(x0, y0, s), (C, C))
+        flipped = bool(self.train and rng.random() < 0.5)
+        if flipped:
+            img = img[:, ::-1]
+        if self.train:
+            img = photometric(np.ascontiguousarray(img), rng, self.photometric_strength)
+        uv, st, heat = crop_targets({"keypoints": row["keypoints"]}, x0, y0, s, C, flipped, C // HEAT_STRIDE)
+        other = [i for i, n in enumerate(ALL_NAMES) if PART_OF[n] != row["part"]]
+        st[other] = -1; heat[other] = 0.0; uv[other] = np.nan
+        return {"id": row["id"], "part": row["part"], "image": to_tensor(np.ascontiguousarray(img)), "dense": torch.zeros((len(DENSE), C, C)), "valid": torch.zeros((C, C)),
+                "uv": torch.from_numpy(uv), "state": torch.from_numpy(st), "heat": torch.from_numpy(heat), "flipped": flipped,
+                "extent_px": torch.tensor(float(row["extent"]) * s, dtype=torch.float32), "crop_x0y0s": torch.tensor([x0, y0, s], dtype=torch.float64),
+                "dense_w": torch.tensor(0.0), "state_w": torch.tensor(float(self.state_weight))}
 
 
 # ----------------------------------------------------------------------------------------------- model
@@ -221,18 +313,28 @@ class PartNet(nn.Module):
 
 
 def losses(out: dict, batch: dict, w_heat: float = 100.0, w_state: float = 0.5, w_dense: float = 1.0, edge_pos_weight: float = 10.0) -> tuple[torch.Tensor, dict]:
-    st = batch["state"]; known = st >= 0                                                     # (B, K)
+    """Per-sample weights state_w / dense_w (ones for the renders; real photos carry no dense targets and, by default,
+    no state supervision) scale the state and dense terms; the heat term is masked by the known landmarks."""
+    st = batch["state"]; known = st >= 0; B = st.shape[0]                                    # (B, K)
+    sw = batch.get("state_w"); dw = batch.get("dense_w")
+    sw = torch.ones(B, device=st.device) if sw is None else sw.float(); dw = torch.ones(B, device=st.device) if dw is None else dw.float()
     heat_err = ((out["heat"].float() - batch["heat"]) ** 2).mean((2, 3))                      # (B, K)
     heat = (heat_err * known).sum() / known.sum().clamp(min=1)
-    state = F.cross_entropy(out["state_logit"].float()[known], st[known]) if known.any() else out["state_logit"].sum() * 0
+    sk = known & (sw[:, None] > 0)
+    if sk.any():
+        ce = F.cross_entropy(out["state_logit"].float()[sk], st[sk], reduction="none"); w = sw[:, None].expand_as(st)[sk]
+        state = (ce * w).sum() / w.sum().clamp(min=1e-6)
+    else:
+        state = out["state_logit"].sum() * 0
     dl = out["dense_logit"].float(); tgt = batch["dense"]; valid = batch["valid"][:, None]
-    bce_mask = (F.binary_cross_entropy_with_logits(dl[:, :1], tgt[:, :1], reduction="none") * valid).sum() / valid.sum().clamp(min=1)
+    bce_mask = (F.binary_cross_entropy_with_logits(dl[:, :1], tgt[:, :1], reduction="none") * valid).sum((1, 2, 3)) / valid.sum((1, 2, 3)).clamp(min=1)
     pw = torch.tensor(edge_pos_weight, device=dl.device)
-    bce_edge = F.binary_cross_entropy_with_logits(dl[:, 1:], tgt[:, 1:], pos_weight=pw)
-    p = torch.sigmoid(dl[:, 1:]); dice = 1 - (2 * (p * tgt[:, 1:]).sum((2, 3)) + 1) / (p.sum((2, 3)) + tgt[:, 1:].sum((2, 3)) + 1)
-    dense = bce_mask + bce_edge + dice.mean()
+    bce_edge = F.binary_cross_entropy_with_logits(dl[:, 1:], tgt[:, 1:], pos_weight=pw, reduction="none").mean((1, 2, 3))
+    p = torch.sigmoid(dl[:, 1:]); dice = 1 - (2 * (p * tgt[:, 1:]).sum((2, 3)) + 1) / (p.sum((2, 3)) + tgt[:, 1:].sum((2, 3)) + 1)   # (B, 2)
+    dense = ((bce_mask + bce_edge + dice.mean(1)) * dw).sum() / dw.sum().clamp(min=1e-6)
+    dice_m = (dice.mean(1) * dw).sum() / dw.sum().clamp(min=1e-6)
     total = w_heat * heat + w_state * state + w_dense * dense
-    return total, {"heat": heat.item(), "state": state.item(), "dense": dense.item(), "dice": dice.mean().item()}
+    return total, {"heat": heat.item(), "state": state.item(), "dense": dense.item(), "dice": dice_m.item()}
 
 
 def decode_heatmaps(heat: np.ndarray, stride: int = HEAT_STRIDE) -> tuple[np.ndarray, np.ndarray]:
@@ -316,8 +418,20 @@ def cmd_train(args) -> int:
     torch.manual_seed(args.seed); np.random.seed(args.seed)
     device = torch.device("cuda")
     out_dir = args.out_root / "part_landmarks" / args.name; out_dir.mkdir(parents=True, exist_ok=True)
-    runs = [WhaleRun(args.run_dir, args.split)] + [WhaleRun(d, s) for d, s in zip(args.extra_run_dir or [], args.extra_split or [])]
+    runs = [] if args.real_only else [WhaleRun(args.run_dir, args.split)] + [WhaleRun(d, s) for d, s in zip(args.extra_run_dir or [], args.extra_split or [])]
     train_sets, val_sets = [], []
+    if args.real_days:
+        # the researcher's clicks on real photos (train days only); the hold-out is by photo, so same-burst frames of a
+        # held-out photo may still be in the training part — the honest measure is a day never trained on
+        import zlib
+        rr = real_rows(args.days_root, args.real_labels_root, args.real_days, min_points=args.real_min_points)
+        held = lambda key: zlib.crc32(key.encode()) % 1000 < args.real_val_fraction * 1000
+        tr = [r for r in rr if not held(r["key"])]; va = [r for r in rr if held(r["key"])]
+        cnt = lambda rows: f"{sum(r['part'] == 'fin' for r in rows)} fin / {sum(r['part'] == 'fluke' for r in rows)} fluke"
+        print(f"real photos {args.real_days}: {len(rr)} part rows from {len({r['key'] for r in rr})} photos: train {len(tr)} ({cnt(tr)}) x{args.real_repeat}, val {len(va)} ({cnt(va)})", flush=True)
+        (out_dir / "real_rows.json").write_text(json.dumps({"train": tr, "val": va}))
+        train_sets.append(RealPartDataset(tr * args.real_repeat, crop=args.crop, train=True, seed=args.seed, margin_range=(args.margin_min, args.margin_max), jitter=args.jitter, state_weight=args.real_state_weight))
+        val_sets.append(RealPartDataset(va, crop=args.crop, train=False))
     for run in runs:
         rows = build_rows(run, {"train": run.ids("train"), "val": run.ids("val")}, out_dir.parent / "index")
         tr, va = rows["train"][: args.max_train], rows["val"][: args.max_val]
@@ -430,44 +544,98 @@ def chart_files(day_dir: Path, tag: str) -> list[tuple[Path, str]]:
     return out
 
 
+def _run(model, device, bgr: np.ndarray, C: int):
+    """One detector pass on a BGR window resized to C x C: (rgb crop, uv crop px, conf, state ids, dense probs)."""
+    img = cv2.resize(bgr, (C, C), interpolation=cv2.INTER_AREA)[..., ::-1]
+    x = to_tensor(np.ascontiguousarray(img))[None].to(device)
+    with torch.no_grad(), torch.autocast("cuda", dtype=torch.bfloat16, enabled=device.type == "cuda"):
+        out = model(x)
+    heat = out["heat"].float()[0].cpu().numpy(); uv, conf = decode_heatmaps(heat); st = out["state_logit"].float()[0].argmax(-1).cpu().numpy()
+    prob = torch.sigmoid(out["dense_logit"].float()[0]).cpu().numpy()
+    return img, uv, conf, st, prob
+
+
+def _to_chart(uv: np.ndarray, x0: float, y0: float, scale: float) -> np.ndarray:
+    return np.stack([x0 + uv[:, 0] * scale, y0 + uv[:, 1] * scale], 1)
+
+
+REFINE_ANCHORS = {"fin": ("dorsal_fin_tip", "dorsal_fin_back", "dorsal_fin_front"), "fluke": ("fluke_tip_left", "fluke_tip_right", "fluke_notch", "spine_end")}
+
+
 def cmd_predict(args) -> int:
     """Real photos: run the detector on each fin / fluke chart of the day, write part_landmarks/<key>__<part>.json
-    (landmarks in chart pixels with confidence and state, own-edge map as a PNG) and an overview sheet."""
+    (landmarks in chart pixels with confidence and state, own-edge map as a PNG) and an overview sheet.
+    Two passes: the padded whole chart, then (--refine) a zoomed window around the part found by the first pass
+    (side = refine_factor x the landmarks' extent), so a small dorsal fin on a big back gets the detector's full
+    resolution; the second pass's landmarks and edge map are kept, with the window recorded in the record."""
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = PartNet.load(args.ckpt, device)
     day_dir = args.days_root / args.day; out_dir = day_dir / f"part_landmarks{args.suffix}"; out_dir.mkdir(exist_ok=True)
     files = chart_files(day_dir, args.parts_tag)
     if args.limit:
         files = files[: args.limit]
-    tiles = []
+    tiles = []; n_refined = 0; n_upright = 0
     for f, part in files:
-        bgr = cv2.imread(str(f)); H, W = bgr.shape[:2]; C = args.crop
-        # the native charts frame the part tightly; pad so the part fills the crop like the training windows did
+        chart = cv2.imread(str(f)); H, W = chart.shape[:2]; C = args.crop
+        # --upright: undo the chart builder's canonical orientation (cluster/parts.py: mirrored / vertically flipped,
+        # rotated so the body axis or the fluke span is horizontal) so the detector sees the photo's own orientation,
+        # as in its training renders; landmarks are mapped back into chart pixels afterwards
+        upright = None
+        if args.upright:
+            npz = f.parent.parent / f"{f.stem}.npz"
+            if npz.exists():
+                z = np.load(npz, allow_pickle=True); A = np.asarray(z["M"])[:, :2]
+                theta = float(np.degrees(np.arctan2(A[1, 0], A[0, 0])))
+                mir = bool(z["mirrored"]) if "mirrored" in z.files else False; fv = bool(z["flipped_v"]) if "flipped_v" in z.files else False
+                if abs(theta) > 5.0 or mir or fv:
+                    img_u = chart[:, ::-1] if mir else chart
+                    img_u = img_u[::-1, :] if fv else img_u
+                    R = cv2.getRotationMatrix2D((W / 2.0, H / 2.0), theta, 1.0)         # undo the builder's rotation (its angle sign: y down)
+                    chart = cv2.warpAffine(np.ascontiguousarray(img_u), R, (W, H), borderMode=cv2.BORDER_REPLICATE)
+                    upright = {"theta": theta, "mirrored": mir, "flipped_v": fv}; n_upright += 1
         pad = int(round(args.pad * max(H, W)))
-        if pad > 0:
-            bgr = cv2.copyMakeBorder(bgr, pad, pad, pad, pad, cv2.BORDER_REPLICATE)
-        Hp, Wp = bgr.shape[:2]
-        img = cv2.resize(bgr, (C, C), interpolation=cv2.INTER_AREA)[..., ::-1]
-        x = to_tensor(np.ascontiguousarray(img))[None].to(device)
-        with torch.no_grad(), torch.autocast("cuda", dtype=torch.bfloat16, enabled=device.type == "cuda"):
-            out = model(x)
-        heat = out["heat"].float()[0].cpu().numpy(); uv, conf = decode_heatmaps(heat); st = out["state_logit"].float()[0].argmax(-1).cpu().numpy()
-        prob = torch.sigmoid(out["dense_logit"].float()[0]).cpu().numpy()
-        sx, sy = Wp / C, Hp / C
-        rec = {"chart": f.name, "part": part, "size": [W, H], "pad": pad, "landmarks": {n: {"uv": [float(uv[NAME_INDEX[n], 0] * sx - pad), float(uv[NAME_INDEX[n], 1] * sy - pad)], "conf": float(conf[NAME_INDEX[n]]),
-                                                                                "state": STATES[int(st[NAME_INDEX[n]])]} for n in landmark_names(part)}}
+        padded = cv2.copyMakeBorder(chart, pad, pad, pad, pad, cv2.BORDER_REPLICATE) if pad > 0 else chart
+        img, uv, conf, st, prob = _run(model, device, padded, C)
+        uv_chart = _to_chart(uv, -pad, -pad, padded.shape[1] / C)
+        window = None
+        if args.refine:
+            names = [n for n in REFINE_ANCHORS[part] if STATES[int(st[NAME_INDEX[n]])] in ("visible", "hidden") and conf[NAME_INDEX[n]] >= args.refine_min_conf]
+            if len(names) >= 2:
+                pts = np.array([uv_chart[NAME_INDEX[n]] for n in names]); centre = pts.mean(0)
+                extent = max(np.linalg.norm(pts[i] - pts[j]) for i in range(len(pts)) for j in range(i + 1, len(pts)))
+                side = max(args.refine_factor * extent, args.refine_min_side)
+                if side < args.refine_max_fraction * max(H, W):
+                    x0, y0 = centre[0] - side / 2, centre[1] - side / 2
+                    bx = int(max(0, -x0) + side); by = int(max(0, -y0) + side)            # generous borders, then cut the window
+                    big = cv2.copyMakeBorder(chart, by, by, bx, bx, cv2.BORDER_REPLICATE)
+                    wx, wy = int(round(x0 + bx)), int(round(y0 + by)); S = int(round(side))
+                    win = big[wy:wy + S, wx:wx + S]
+                    if win.shape[0] >= 32 and win.shape[1] >= 32:
+                        img, uv, conf, st, prob = _run(model, device, win, C)
+                        uv_chart = _to_chart(uv, x0, y0, S / C); window = [float(x0), float(y0), float(S)]; n_refined += 1
+        if upright is not None:
+            # back to the builder's chart: rotate by -theta about the centre, then redo the flips
+            R_back = cv2.getRotationMatrix2D((W / 2.0, H / 2.0), -upright["theta"], 1.0)
+            uv_chart = np.concatenate([uv_chart, np.ones((len(uv_chart), 1))], 1) @ R_back.T
+            if upright["flipped_v"]:
+                uv_chart[:, 1] = H - 1 - uv_chart[:, 1]
+            if upright["mirrored"]:
+                uv_chart[:, 0] = W - 1 - uv_chart[:, 0]
+        rec = {"chart": f.name, "part": part, "size": [W, H], "pad": pad, "window": window, "upright": upright,
+               "landmarks": {n: {"uv": [float(uv_chart[NAME_INDEX[n], 0]), float(uv_chart[NAME_INDEX[n], 1])], "conf": float(conf[NAME_INDEX[n]]),
+                                 "state": STATES[int(st[NAME_INDEX[n]])]} for n in landmark_names(part)}}
         (out_dir / f"{f.stem}.json").write_text(json.dumps(rec))
         cv2.imwrite(str(out_dir / f"{f.stem}__edges.png"), (np.stack([prob[0], prob[1], prob[2]], -1) * 255).astype(np.uint8))
         if len(tiles) < args.sheet_count:
             tile = draw_prediction(np.ascontiguousarray(img[..., ::-1]), uv, conf, st, part, prob > 0.5)
-            cv2.putText(tile, f.stem.split("__")[-2][-18:] + " " + part, (4, 14), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (255, 255, 255), 1)
+            cv2.putText(tile, f.stem.split("__")[-2][-18:] + " " + part + (" zoom" if window else ""), (4, 14), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (255, 255, 255), 1)
             tiles.append(cv2.resize(tile, (args.tile, args.tile)))
     if tiles:
         while len(tiles) % args.cols:
             tiles.append(np.zeros_like(tiles[0]))
         sheet = np.concatenate([np.concatenate(tiles[i:i + args.cols], 1) for i in range(0, len(tiles), args.cols)], 0)
         cv2.imwrite(str(out_dir / "sheet.png"), sheet)
-    print(f"{len(files)} charts -> {out_dir}")
+    print(f"{len(files)} charts ({n_refined} refined with a zoomed second pass, {n_upright} re-oriented upright) -> {out_dir}")
     return 0
 
 
@@ -484,6 +652,11 @@ def main(argv=None) -> int:
     t.add_argument("--warmup-steps", type=int, default=200); t.add_argument("--w-heat", type=float, default=100.0); t.add_argument("--w-state", type=float, default=0.5); t.add_argument("--w-dense", type=float, default=1.0)
     t.add_argument("--workers", type=int, default=8); t.add_argument("--seed", type=int, default=0); t.add_argument("--max-train", type=int, default=None); t.add_argument("--max-val", type=int, default=None)
     t.add_argument("--init-from", type=Path, default=None); t.add_argument("--no-amp", action="store_true")
+    t.add_argument("--real-days", nargs="*", default=None, help="days whose pair_marks.json clicks are training data (train days only)")
+    t.add_argument("--real-labels-root", type=Path, default=REAL_LABELS_ROOT); t.add_argument("--days-root", type=Path, default=paths.EXPERIMENTS_DIR / "days_all")
+    t.add_argument("--real-val-fraction", type=float, default=0.2); t.add_argument("--real-repeat", type=int, default=4, help="how many times the real rows appear per epoch")
+    t.add_argument("--real-min-points", type=int, default=2); t.add_argument("--real-state-weight", type=float, default=0.0)
+    t.add_argument("--real-only", action="store_true", help="no renders: fine-tune on the real clicks alone (use --init-from)")
     s = sub.add_parser("sheet")
     s.add_argument("--ckpt", type=Path, required=True); s.add_argument("--run-dir", type=Path, default=paths.WHALE_RUN_DIR); s.add_argument("--split", type=Path, default=paths.SPLITS_DIR / "run04.json")
     s.add_argument("--out-root", type=Path, default=paths.EXPERIMENTS_DIR); s.add_argument("--out", type=Path, required=True); s.add_argument("--count", type=int, default=48); s.add_argument("--cols", type=int, default=8)
@@ -492,6 +665,11 @@ def main(argv=None) -> int:
     r.add_argument("--ckpt", type=Path, required=True); r.add_argument("--day", required=True); r.add_argument("--days-root", type=Path, default=paths.EXPERIMENTS_DIR / "days_all")
     r.add_argument("--parts-tag", default="xr"); r.add_argument("--suffix", default=""); r.add_argument("--crop", type=int, default=512); r.add_argument("--limit", type=int, default=0)
     r.add_argument("--pad", type=float, default=0.15, help="border added around the chart (fraction of its side) before the crop")
+    r.add_argument("--refine", action="store_true", help="second pass on a window around the part found by the first")
+    r.add_argument("--refine-factor", type=float, default=2.6); r.add_argument("--refine-min-side", type=float, default=360.0)
+    r.add_argument("--refine-max-fraction", type=float, default=0.85, help="skip the second pass when the window would be this share of the chart")
+    r.add_argument("--refine-min-conf", type=float, default=0.1)
+    r.add_argument("--upright", action="store_true", help="undo the chart's canonical rotation / flips before detection")
     r.add_argument("--sheet-count", type=int, default=64); r.add_argument("--cols", type=int, default=8); r.add_argument("--tile", type=int, default=384)
     args = p.parse_args(argv)
     return {"train": cmd_train, "sheet": cmd_sheet, "predict": cmd_predict}[args.cmd](args)

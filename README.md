@@ -147,6 +147,80 @@ Frames and conventions are documented in `model_fine_tuning/common/geometry.py`;
 Unreal frames are left-handed, which the PnP step has to account for (the unit tests check
 that PnP on the ground-truth coordinates recovers the ground-truth pose).
 
+## Day clustering, stage one: safe clusters (2026-11-03)
+
+`model_fine_tuning/cluster/safe_clusters.py` + `safe_tracklets.py`: the photographer's runs of shots of one whale,
+linked with high precision from the capture sequence and the frames, before any identity matching. Stage one =
+tracklets (`cluster/tracklets.py`: bursts of one camera with gaps <= 1.5 s, instances of consecutive photos assigned
+on position, size and the student body-embedding cosine, max cost 1.5). Stage two = a gradient-boosted classifier
+on tracklet pairs of one camera (at most 3 tracklets apart, gap <= 300 s, no shared photo): the gap, the continuity
+between the last and first frames (position, size, focal length, metered exposure, range from focal length over
+pixels-per-metre, the canon model's rotation, colour of whale and water), the appearance over all instance pairs
+(max / mean cosine per part) and the tracklet sizes; links are chained best first by union-find, one instance per
+photo per cluster. Production = the strict tier (`--strict --threshold 0.995`): P >= 0.995 and no link whose end
+frame holds several whale instances, which made zero wrong automatic links on all 7 labelled days; weaker candidates
+and the closest-looking clusters of one interaction are written as `suggestions` for the reviewer (Whale-Review-Web
+/bursts, level "safe clusters"). Fitted on the train days, threshold and settings chosen on the val days.
+
+    python -m model_fine_tuning.cluster.safe_clusters features --day-dir experiments/days_all/DAY     # EXIF, pose, colour per instance -> DAY/safe/photos.json
+    python -m model_fine_tuning.cluster.safe_tracklets cluster --day-dir experiments/days_all/DAY --model experiments/safe_clusters/safe_model.pkl \
+        --threshold 0.995 --strict --cost 1.5 --skip 3 [--labels model_fine_tuning/splits/labels_all_days.json]   # -> DAY/safe/clusters.json (+ suggestions, audit)
+    python -m model_fine_tuning.cluster.safe_tracklets report|sweep --root experiments/days_all --days model_fine_tuning/splits/days.json \
+        --labels ... --model ... [--threshold 0.98] [--baselines]                                            # per-day table / threshold sweep
+
+Needs `DAY/cluster_v3/embeddings.npz` (student embeddings: `cluster_day.py channels --sources id:experiments/pair_student_g/checkpoints/best.pt`).
+Result of the strict tier (photos in impure clusters, by the catalog's one-label-per-photo): val 4 / 878, eval 4 / 2146,
+all four stage-one assignments inside multi-whale bursts, at 8.5 / 9.2 clusters per animal (P 0.98 without the rule:
+8 and 22 impure photos at 6.9 / 6.7; 1.5-s bursts: 18 and 79 at 5.7 / 5.5). Multi-whale audit (bursts holding two or
+more catalog animals): val 7 of 10 split into pure clusters, eval 16 of 17. Nearly every remaining wrong link is a frame with two whales whose catalog label flips; nearly no
+link is made across gaps over 1.5 s at this threshold (same-animal share there is 30-60 % and the appearance AUC
+0.75-0.88), so joining the clusters into animals is the job of the part-based stage. See experiments/LOG.md.
+
+## Day clustering: the instance filter and the link scores for the reviewer (2026-11-11)
+
+`model_fine_tuning/cluster/link_scores.py`, after the first day of researcher links (experiments/LOG.md 2026-11-11,
+"later" and "night"). Nothing in it is fine-tuned: frozen DINOv3 ViT-B/16 features with small models on top.
+
+- **Not a whale** (`instances`, `not-whale`; model `experiments/safe_clusters/not_whale.pkl`): on wide-angle frames
+  the crew on the bow, the deck, gear in the foreground, poles and drones get a whale mask. A logistic regression on
+  the frozen features of one square crop per instance, fitted on 150 by-eye labels of 14 train days, lists them in
+  `DAY/safe/not_whale.json`; `safe_tracklets --filter` leaves them out of the clustering (and gives the photo's
+  catalog label to the largest instance left). Every flag on the val days (34) and on the eval days (11, looked at
+  once) is a real non-whale by eye; 210 of 11 810 instances are left out; the strict tier still makes no wrong
+  automatic link. Production clusters are made with `--filter` since 2026-11-11 (earlier files: `clusters_v1.json`).
+- **Window scores** (`windows`, `look`, `scores`): a researcher ties two clusters through one small area (a fin, a
+  scar, barnacles on a fluke tip). Every instance is covered with square windows at seven sizes; each window gets a
+  frozen CLS feature whitened to 128 d; a where-to-look model (logistic regression fitted on the 576 boxes the
+  researcher drew on 2025-01-02) keeps the ten windows per instance a researcher would use; `D_sal[i, j]` is the best
+  cosine between the kept windows of two instances (`DAY/safe/window_scores.npz`). A crop at a box cannot tell two
+  whales apart on its own (the best-looking patch of another whale scores as high). As a ranking signal next to the
+  student embedding it helped on the val days and not on the eval days (below): unproven, with boxes from one day.
+- **Candidate links, scored** (`pairs` -> `DAY/safe/link_scores.json`, read by Whale-Review-Web /bursts): every pair
+  of clusters inside one burst; each cluster's best partners up to a minute away by the **short-gap linker**
+  (`experiments/safe_clusters/link_gbt.pkl`: gradient-boosted trees on the cluster-pair table, time, frame
+  continuity, student cosines and window scores, fitted on the catalog labels of the train days by
+  `experiments/stage2_linker/linker.py`); and its best partners up to 15 min away by the **rank mean** (the mean
+  within-day rank of the student's fin and body cosines and `D_sal`). The linker holds everywhere it was checked: in
+  its band (1.5 to 60 s) AUC 0.82 on the val days, 0.82 on the eval days (read once) and 0.84 on the train days with
+  each day held out, against 0.67 to 0.69 for the student's best part (higher on 19 of 19 held-out days). The rank
+  mean with the window score does not: on the val days it finds 277 / 480 / 787 catalog-same pairs at precision 0.95
+  / 0.90 / 0.80 against 224 / 328 / 640 for the student alone, on the eval days 203 / 332 / 857 against 247 / 419 /
+  845. A train day is scored by the linker fitted without it (`experiments/safe_clusters/link_gbt_loo/DAY.pkl`,
+  `linker.py --loo`). No score is precise enough to link automatically across a gap: these order the reviewer's
+  queue, and each verdict saved there keeps the pair's scores so the order can be judged on the researcher's labels.
+
+    python -m model_fine_tuning.cluster.link_scores instances --day-dir experiments/days_all/DAY    # crop features of every instance (quick)
+    python -m model_fine_tuning.cluster.link_scores not-whale --day-dir experiments/days_all/DAY    # -> DAY/safe/not_whale.json
+    python -m model_fine_tuning.cluster.safe_tracklets cluster --day-dir experiments/days_all/DAY --model experiments/safe_clusters/safe_model.pkl \
+        --threshold 0.995 --strict --filter [--labels model_fine_tuning/splits/labels_all_days.json]     # clusters without the non-whales
+    python -m model_fine_tuning.cluster.link_scores windows --day-dir experiments/days_all/DAY      # GPU: ~250 windows per instance, ~560 crops/s
+    python -m model_fine_tuning.cluster.link_scores scores --day-dir experiments/days_all/DAY       # -> DAY/safe/window_scores.npz
+    python -m model_fine_tuning.cluster.link_scores pairs --day-dir experiments/days_all/DAY        # -> DAY/safe/link_scores.json (the review queue)
+
+The window extraction is bound by the GPU; several workers side by side gain little and each queued batch of crops
+sits in /dev/shm, so keep the loader's small batches. `look` and `--fit-whitening` refit the where-to-look model and
+the whitening (done once, on 2025-01-02); refit `look` when another day has region boxes.
+
 ## Earlier work
 
 The classical-vision isolation and clustering code from the first iteration lives in git
