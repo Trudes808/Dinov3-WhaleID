@@ -221,6 +221,41 @@ The window extraction is bound by the GPU; several workers side by side gain lit
 sits in /dev/shm, so keep the loader's small batches. `look` and `--fit-whitening` refit the where-to-look model and
 the whitening (done once, on 2025-01-02); refit `look` when another day has region boxes.
 
+## View class: fluke / dorsal fin / other (2026-11-12)
+
+`model_fine_tuning/cluster/view_class.py`: does a whale instance show its **fluke**, its **dorsal fin**, or neither?
+The researchers tell animals by the fluke first and the fin second, and the Photo Labeling page works through a day in
+that order; this says which stack is which, straight from the pixels (no mesh, no canonical map, no keypoints). Two
+small classifiers (fluke yes / no, fin yes / no) on frozen DINOv3 ViT-B/16 features of two crops of the instance box
+(a 448-px square and a shape-keeping crop, long side up to 672 px): PCA 128 + RBF SVM, a probability per answer.
+Trained on 1 360 labelled instances of the train + val days (by-eye labels of random and hard instances, the
+researcher's keypoint clicks, the catalogue's fluke collection; `experiments/view_class`, README there).
+
+Three-way accuracy on a random sample of the four eval days, labelled blind: **0.970** (128 of 132; fluke precision
+0.971 / recall 0.985, dorsal fin 0.965 / 0.982; at P >= 0.9 no false call in 113), against 0.841 for the fin / fluke
+flags of the part charts (`cluster/parts.py`, from the synthetic-trained canonical map), which call a fin on almost
+any back and miss a fifth of the flukes. "Other" is the weak class (8 of 10): pectoral fins and tail stocks.
+Synthetic shots as extra training data were tested and are not used: they help with 50-100 real labels (+2-3 points)
+and not with the labels there are now.
+
+    python -m model_fine_tuning.cluster.view_class features --day-dir experiments/days_all/DAY    # GPU, 10-20 s -> DAY/safe/view_feat.npz
+    python -m model_fine_tuning.cluster.view_class predict  --day-dir experiments/days_all/DAY    # -> DAY/safe/view_class.json {instance key: [P fluke, P dorsal fin]}
+    python -m model_fine_tuning.cluster.view_class fit                                           # refit on experiments/view_class/targets.json (train + val days)
+    python -m model_fine_tuning.cluster.view_class report --split val|eval                       # the saved model against the labels of a split
+
+`model_fine_tuning/cluster/view_match.py` (the same evening): for the instances that show a part, the classifier's
+frozen features become a 32-dimensional match embedding per part (centred on the day, whitened, scaled down along the
+directions in which one animal varies, within-day LDA; fitted on the catalogue animals of the train days by
+`experiments/view_match/vm_fit.py`, a train day embedded by the projection fitted without it). On days neither model
+saw, the dorsal-fin embedding tells one whale from two better than the student's fin cosine (stack pairs inside
+encounters, AUC 0.81 against 0.78); the Labeling Assistant blends the two for its ranking (first choice right on the
+eval days 71.7 % -> 75.1 %). For flukes it made no difference on the page and is not used.
+
+    python -m model_fine_tuning.cluster.view_match embed --day-dir experiments/days_all/DAY       # -> DAY/safe/view_match.npz (after view_class predict)
+
+A new day needs `view_class features`, `view_class predict` and `view_match embed` after `safe_clusters features` (they read `DAY/safe/photos.json`);
+Whale-Review-Web /labeling reads `view_class.json` when the day has one and falls back to the chart flags when not.
+
 ## Earlier work
 
 The classical-vision isolation and clustering code from the first iteration lives in git

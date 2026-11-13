@@ -1,0 +1,4697 @@
+{
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359019-184A2559~0": {
+"code": "D",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359033-184A2574~0": {
+"code": "D",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359037-184A2578~0": {
+"code": "D",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359051-184A2592~0": {
+"code": "D",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359060-184A2601~0": {
+"code": "F",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359078-184A2620~0": {
+"code": "F",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359094-184A2636~0": {
+"code": "F",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359099-184A2641~0": {
+"code": "F",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359139-184A2682~0": {
+"code": "F",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359164-184A2708~0": {
+"code": "F",
+"day": "2024-12-18",
+"rev": "ctx_ev",
+"round": "ev",
+"was": "f"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359169-184A2713~0": {
+"code": "D",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359196-184A2740~0": {
+"code": "D",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359207-184A2751~0": {
+"code": "F",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359208-184A2752~0": {
+"code": "F",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359210-184A2754~0": {
+"code": "F",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359211-184A2755~1": {
+"code": "F",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359214-184A2758~0": {
+"code": "D",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359244-184A2788~0": {
+"code": "D",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359259-184A2807~0": {
+"code": "D",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359263-184A2811~0": {
+"code": "D",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359265-184A2813~0": {
+"code": "D",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359270-184A2818~0": {
+"code": "d",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359276-184A2824~0": {
+"code": "F",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359286-184A2834~0": {
+"code": "O",
+"day": "2024-12-18",
+"rev": "ctx_ev",
+"round": "ev"
+},
+"2024-12-18_C1_Harvey__2024-12-18-Harvey-C1_NOAA_MMHSRP-24359289-184A2837~0": {
+"code": "F",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C3_R5_Smith__2024-12-18-Smith-C1_NOAA_MMHSRP-24359642-HR5_0720~0": {
+"code": "O",
+"day": "2024-12-18",
+"rev": "ctx_ev",
+"round": "ev"
+},
+"2024-12-18_C3_R5_Smith__2024-12-18-Smith-C1_NOAA_MMHSRP-24359659-HR5_0737~0": {
+"code": "D",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C3_R5_Smith__2024-12-18-Smith-C1_NOAA_MMHSRP-24359664-HR5_0742~0": {
+"code": "D",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C3_R5_Smith__2024-12-18-Smith-C1_NOAA_MMHSRP-24359667-HR5_0745~0": {
+"code": "D",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C3_R5_Smith__2024-12-18-Smith-C1_NOAA_MMHSRP-24359668-HR5_0746~0": {
+"code": "D",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C3_R5_Smith__2024-12-18-Smith-C1_NOAA_MMHSRP-24359681-HR5_0759~0": {
+"code": "D",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C3_R5_Smith__2024-12-18-Smith-C1_NOAA_MMHSRP-24359719-HR5_0797~0": {
+"code": "F",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C3_R5_Smith__2024-12-18-Smith-C1_NOAA_MMHSRP-24359720-HR5_0798~1": {
+"code": "F",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C3_R5_Smith__2024-12-18-Smith-C1_NOAA_MMHSRP-24359721-HR5_0799~0": {
+"code": "F",
+"day": "2024-12-18",
+"rev": "ctx_ev",
+"round": "ev",
+"was": "f"
+},
+"2024-12-18_C3_R5_Smith__2024-12-18-Smith-C1_NOAA_MMHSRP-24359729-HR5_0807~0": {
+"code": "F",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-18_C3_R5_Smith__2024-12-18-Smith-C1_NOAA_MMHSRP-24359732-HR5_0810~0": {
+"code": "F",
+"day": "2024-12-18",
+"round": "ev"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-001-184A3331~0": {
+"code": "d",
+"day": "2024-12-23",
+"rev": "dis1",
+"round": "r0",
+"was": "O"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-007-184A3337~0": {
+"code": "F",
+"day": "2024-12-23",
+"round": "r0"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-008-184A3338~0": {
+"code": "F",
+"day": "2024-12-23",
+"round": "r0"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-009-184A3339~0": {
+"code": "F",
+"day": "2024-12-23",
+"round": "r0"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-012-184A3342~0": {
+"code": "f",
+"day": "2024-12-23",
+"rev": "dis1",
+"round": "r0",
+"was": "F"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-027-184A3358~0": {
+"code": "D",
+"day": "2024-12-23",
+"round": "r0"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-030-184A3361~0": {
+"code": "D",
+"day": "2024-12-23",
+"round": "r0"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-034-184A3365~0": {
+"code": "D",
+"day": "2024-12-23",
+"round": "r0"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-037-184A3368~0": {
+"code": "F",
+"day": "2024-12-23",
+"round": "r0"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-038-184A3369~0": {
+"code": "F",
+"day": "2024-12-23",
+"round": "al2"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-042-184A3373~0": {
+"code": "F",
+"day": "2024-12-23",
+"round": "r0"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-048-184A3379~0": {
+"code": "O",
+"day": "2024-12-23",
+"round": "aud"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-050-184A3381~0": {
+"code": "O",
+"day": "2024-12-23",
+"rev": "rev1",
+"round": "r0"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-053-184A3384~0": {
+"code": "F",
+"ctx": true,
+"day": "2024-12-23",
+"rev": "rev1",
+"round": "r0",
+"was": "f"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-060-184A3391~0": {
+"code": "F",
+"day": "2024-12-23",
+"round": "r0"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-062-184A3393~0": {
+"code": "F",
+"day": "2024-12-23",
+"round": "r0"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-065-184A3396~1": {
+"code": "f",
+"day": "2024-12-23",
+"round": "aud"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-070-184A3402~0": {
+"code": "F",
+"day": "2024-12-23",
+"round": "r0"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-072-184A3404~0": {
+"code": "O",
+"day": "2024-12-23",
+"round": "al2"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-081-184A3413~0": {
+"code": "D",
+"day": "2024-12-23",
+"round": "aud"
+},
+"2024-12-23_C1_Harvey__2024-12-23-Harvey-NOAA-MMHSRP-24359-088-184A3420~0": {
+"code": "F",
+"day": "2024-12-23",
+"round": "r0"
+},
+"2024-12-23_C3_R5_Smith__2024-12-23-Smith-NOAA-MMHSRP-24359-042-HR5_1259~0": {
+"code": "D",
+"day": "2024-12-23",
+"round": "r0"
+},
+"2024-12-23_C3_R5_Smith__2024-12-23-Smith-NOAA-MMHSRP-24359-045-HR5_1262~0": {
+"code": "D",
+"day": "2024-12-23",
+"round": "r0"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590063-184A3490~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590099-184A3526~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590113-184A3540~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590115-184A3542~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590116-184A3543~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590153-184A3580~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590157-184A3584~0": {
+"code": "f",
+"day": "2024-12-26",
+"rev": "ctx_ev",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590174-184A3601~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590217-184A3644~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590245-184A3672~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590305-184A3733~1": {
+"code": "F",
+"day": "2024-12-26",
+"rev": "ctx_ev",
+"round": "ev",
+"was": "f"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590328-184A3757~0": {
+"code": "F",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590359-184A3788~0": {
+"code": "F",
+"day": "2024-12-26",
+"rev": "ctx_ev",
+"round": "ev",
+"was": "f"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590380-184A3812~0": {
+"code": "F",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590410-184A3844~0": {
+"code": "F",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590462-184A3896~0": {
+"code": "D",
+"day": "2024-12-26",
+"rev": "ctx_ev",
+"round": "ev",
+"was": "Df"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590483-184A3917~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590489-184A3923~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590499-184A3933~0": {
+"code": "F",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590516-184A3950~0": {
+"code": "d",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590543-184A3979~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590544-184A3980~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590569-184A4005~0": {
+"code": "F",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590656-184A4094~0": {
+"code": "F",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590723-184A4161~0": {
+"code": "F",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590747-184A4186~1": {
+"code": "O",
+"day": "2024-12-26",
+"rev": "ctx_ev",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590765-184A4204~0": {
+"code": "F",
+"day": "2024-12-26",
+"rev": "ctx_ev",
+"round": "ev",
+"was": "f"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590778-184A4217~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590808-184A4251~0": {
+"code": "F",
+"day": "2024-12-26",
+"rev": "ctx_ev",
+"round": "ev",
+"was": "f"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590827-184A4270~0": {
+"code": "F",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590846-184A4289~0": {
+"code": "F",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590855-184A4300~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590877-184A4324~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590915-184A4362~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590994-184A4441~0": {
+"code": "O",
+"day": "2024-12-26",
+"rev": "ctx_ev",
+"round": "ev"
+},
+"2024-12-26_C1_Harvey__2024-12-26-Harvey_NOAA_MMHSRP-243590996-184A4443~0": {
+"code": "D",
+"day": "2024-12-26",
+"round": "ev"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-009-HR5_3176~0": {
+"code": "F",
+"day": "2025-01-15",
+"round": "r0"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-012-HR5_3179~0": {
+"code": "f",
+"ctx": true,
+"day": "2025-01-15",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-028-HR5_3195~0": {
+"code": "X",
+"day": "2025-01-15",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-034-HR5_3201~0": {
+"code": "D",
+"day": "2025-01-15",
+"round": "r0"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-035-HR5_3202~0": {
+"code": "F",
+"day": "2025-01-15",
+"round": "r0"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-046-HR5_3213~0": {
+"code": "f",
+"day": "2025-01-15",
+"round": "aud"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-056-HR5_3223~0": {
+"code": "D",
+"day": "2025-01-15",
+"round": "r0"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-066-HR5_3233~0": {
+"code": "D",
+"day": "2025-01-15",
+"round": "r0"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-069-HR5_3236~0": {
+"code": "F",
+"day": "2025-01-15",
+"round": "r0"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-080-HR5_3247~0": {
+"code": "F",
+"day": "2025-01-15",
+"round": "al2"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-093-HR5_3260~0": {
+"code": "O",
+"day": "2025-01-15",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-095-HR5_3262~0": {
+"code": "f",
+"day": "2025-01-15",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-096-HR5_3263~0": {
+"code": "O",
+"day": "2025-01-15",
+"round": "al1"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-102-HR5_3269~0": {
+"code": "D",
+"day": "2025-01-15",
+"round": "r0"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-134-HR5_3301~0": {
+"code": "D",
+"day": "2025-01-15",
+"round": "r0"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-135-HR5_3302~0": {
+"code": "d",
+"day": "2025-01-15",
+"round": "aud"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-150-HR5_3317~0": {
+"code": "O",
+"day": "2025-01-15",
+"round": "al2"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-158-HR5_3325~0": {
+"code": "O",
+"day": "2025-01-15",
+"round": "al1"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-164-HR5_3331~0": {
+"audit": "D",
+"code": "D",
+"day": "2025-01-15",
+"round": "al1"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-187-HR5_3354~0": {
+"audit": "F",
+"code": "F",
+"day": "2025-01-15",
+"round": "al1"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-191-HR5_3358~0": {
+"code": "F",
+"ctx": true,
+"day": "2025-01-15",
+"round": "r0",
+"was": "f"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-211-HR5_3378~0": {
+"code": "D",
+"day": "2025-01-15",
+"round": "r0"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-215-HR5_3382~0": {
+"code": "D",
+"day": "2025-01-15",
+"round": "r0"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-216-HR5_3383~0": {
+"code": "D",
+"day": "2025-01-15",
+"round": "r0"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-223-HR5_3390~0": {
+"code": "F",
+"day": "2025-01-15",
+"round": "r0"
+},
+"2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-225-HR5_3392~0": {
+"code": "f",
+"day": "2025-01-15",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359062-184A6595~0": {
+"code": "F",
+"day": "2025-01-16",
+"round": "r0"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359065-184A6598~0": {
+"code": "D",
+"day": "2025-01-16",
+"round": "r0"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359078-184A6613~0": {
+"code": "D",
+"day": "2025-01-16",
+"round": "aud"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359107-184A6642~0": {
+"code": "F",
+"day": "2025-01-16",
+"round": "al1"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359118-184A6653~1": {
+"code": "D",
+"day": "2025-01-16",
+"round": "aud"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359147-184A6682~0": {
+"code": "O",
+"day": "2025-01-16",
+"round": "al1"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359154-184A6689~0": {
+"code": "O",
+"day": "2025-01-16",
+"round": "al1"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359177-184A6712~0": {
+"code": "O",
+"day": "2025-01-16",
+"round": "aud"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359190-184A6725~1": {
+"code": "f",
+"day": "2025-01-16",
+"round": "aud"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359201-184A6736~0": {
+"code": "f",
+"day": "2025-01-16",
+"round": "al2"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359221-184A6756~0": {
+"code": "D",
+"day": "2025-01-16",
+"round": "r0"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359222-184A6757~0": {
+"code": "F",
+"day": "2025-01-16",
+"round": "al1"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359233-184A6768~0": {
+"code": "f",
+"day": "2025-01-16",
+"round": "al2"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359238-184A6773~0": {
+"code": "f",
+"day": "2025-01-16",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359248-184A6783~0": {
+"code": "d",
+"day": "2025-01-16",
+"round": "al2"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359264-184A6799~0": {
+"code": "d",
+"day": "2025-01-16",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359272-184A6807~0": {
+"code": "O",
+"day": "2025-01-16",
+"round": "al1"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359306-184A6841~0": {
+"code": "D",
+"day": "2025-01-16",
+"round": "r0"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359335-184A6870~0": {
+"code": "O",
+"day": "2025-01-16",
+"round": "aud"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359337-184A6872~0": {
+"code": "O",
+"day": "2025-01-16",
+"round": "al2"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359347-184A6882~0": {
+"code": "O",
+"ctx": true,
+"day": "2025-01-16",
+"rev": "rev1",
+"round": "r0",
+"was": "f"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359349-184A6884~1": {
+"code": "O",
+"day": "2025-01-16",
+"round": "aud"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359355-184A6890~0": {
+"code": "F",
+"day": "2025-01-16",
+"round": "al2"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359358-184A6893~0": {
+"code": "O",
+"day": "2025-01-16",
+"round": "al2"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359364-184A6899~0": {
+"code": "D",
+"day": "2025-01-16",
+"round": "r0"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359387-184A6922~0": {
+"code": "F",
+"day": "2025-01-16",
+"round": "al2"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359395-184A6930~0": {
+"code": "O",
+"day": "2025-01-16",
+"round": "aud"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359408-184A6943~0": {
+"code": "D",
+"day": "2025-01-16",
+"round": "r0"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359415-184A6950~1": {
+"code": "O",
+"day": "2025-01-16",
+"round": "al2"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359416-184A6951~0": {
+"code": "O",
+"day": "2025-01-16",
+"round": "al2"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359442-184A6977~0": {
+"code": "F",
+"day": "2025-01-16",
+"round": "al2"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359449-184A6984~1": {
+"code": "O",
+"day": "2025-01-16",
+"round": "al1"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359451-184A6986~0": {
+"code": "F",
+"day": "2025-01-16",
+"round": "r0"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359451-184A6986~1": {
+"code": "O",
+"day": "2025-01-16",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359461-184A6996~0": {
+"code": "D",
+"day": "2025-01-16",
+"round": "r0"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359471-184A7006~0": {
+"code": "O",
+"day": "2025-01-16",
+"round": "al1"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359505-184A7040~0": {
+"code": "D",
+"day": "2025-01-16",
+"round": "r0"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359541-184A7076~0": {
+"code": "D",
+"day": "2025-01-16",
+"round": "r0"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359568-184A7103~0": {
+"code": "df",
+"day": "2025-01-16",
+"round": "al1"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359598-184A7140~0": {
+"code": "D",
+"day": "2025-01-16",
+"round": "r0"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359601-184A7143~0": {
+"code": "O",
+"day": "2025-01-16",
+"round": "al1"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359617-184A7159~1": {
+"code": "F",
+"day": "2025-01-16",
+"round": "r0"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359630-184A7172~0": {
+"code": "d",
+"day": "2025-01-16",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359679-184A7221~1": {
+"code": "D",
+"day": "2025-01-16",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359004-184A7243~0": {
+"code": "F",
+"day": "2025-01-17",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359022-184A7262~0": {
+"code": "D",
+"day": "2025-01-17",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359026-184A7266~0": {
+"code": "f",
+"ctx": true,
+"day": "2025-01-17",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359036-184A7276~0": {
+"code": "F",
+"day": "2025-01-17",
+"round": "al2"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359039-184A7279~0": {
+"code": "F",
+"day": "2025-01-17",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359074-184A7316~0": {
+"code": "D",
+"day": "2025-01-17",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359105-184A7347~0": {
+"code": "O",
+"day": "2025-01-17",
+"rev": "dis1",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359126-184A7368~0": {
+"code": "d",
+"day": "2025-01-17",
+"round": "aud"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359135-184A7377~0": {
+"code": "f",
+"day": "2025-01-17",
+"round": "al2"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359136-184A7378~1": {
+"code": "F",
+"day": "2025-01-17",
+"round": "al2"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359144-184A7386~0": {
+"code": "F",
+"day": "2025-01-17",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359181-184A7423~0": {
+"code": "D",
+"day": "2025-01-17",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359218-184A7460~0": {
+"code": "F",
+"day": "2025-01-17",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359228-184A7470~0": {
+"code": "F",
+"day": "2025-01-17",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359243-184A7485~0": {
+"code": "d",
+"day": "2025-01-17",
+"round": "al1"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359245-184A7487~0": {
+"code": "F",
+"day": "2025-01-17",
+"round": "al1"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359253-184A7495~0": {
+"code": "F",
+"day": "2025-01-17",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359254-184A7496~0": {
+"code": "F",
+"ctx": true,
+"day": "2025-01-17",
+"round": "r0",
+"was": "f"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359259-184A7501~0": {
+"code": "D",
+"day": "2025-01-17",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359260-184A7502~0": {
+"code": "D",
+"day": "2025-01-17",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359278-184A7520~0": {
+"code": "F",
+"day": "2025-01-17",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359293-184A7535~0": {
+"code": "D",
+"day": "2025-01-17",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359313-184A7555~0": {
+"code": "f",
+"day": "2025-01-17",
+"round": "al1"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359343-184A7585~0": {
+"code": "O",
+"day": "2025-01-17",
+"round": "al2"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359356-184A7598~0": {
+"code": "O",
+"day": "2025-01-17",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359369-184A7612~0": {
+"code": "O",
+"day": "2025-01-17",
+"round": "al2"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359395-184A7638~0": {
+"code": "O",
+"day": "2025-01-17",
+"round": "al1"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359396-184A7639~0": {
+"code": "O",
+"day": "2025-01-17",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-1-17_C1_Harvey__2025-1-17-Harvey_NOAA_MMHSRP-24359398-184A7641~0": {
+"code": "D",
+"day": "2025-01-17",
+"round": "al2"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-009-184A7658~1": {
+"code": "O",
+"day": "2025-01-20",
+"round": "al2"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-046-184A7702~0": {
+"code": "D",
+"day": "2025-01-20",
+"round": "r0"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-048-184A7704~0": {
+"code": "O",
+"day": "2025-01-20",
+"round": "aud"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-060-184A7716~0": {
+"code": "D",
+"day": "2025-01-20",
+"round": "r0"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-062-184A7718~0": {
+"code": "D",
+"day": "2025-01-20",
+"round": "r0"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-065-184A7722~0": {
+"code": "D",
+"day": "2025-01-20",
+"round": "r0"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-087-184A7744~0": {
+"code": "D",
+"day": "2025-01-20",
+"round": "r0"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-177-184A7837~0": {
+"code": "O",
+"day": "2025-01-20",
+"round": "al1"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-191-184A7854~0": {
+"code": "D",
+"day": "2025-01-20",
+"round": "r0"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-205-184A7868~0": {
+"code": "F",
+"day": "2025-01-20",
+"round": "al1"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-212-184A7875~0": {
+"code": "D",
+"day": "2025-01-20",
+"round": "r0"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-251-184A7916~0": {
+"code": "O",
+"day": "2025-01-20",
+"round": "aud"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-258-184A7923~1": {
+"code": "F",
+"ctx": true,
+"day": "2025-01-20",
+"round": "r0",
+"was": "f"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-286-184A7951~1": {
+"code": "O",
+"day": "2025-01-20",
+"round": "aud"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-287-184A7952~0": {
+"code": "d",
+"day": "2025-01-20",
+"rev": "dis1",
+"round": "r0",
+"was": "D"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-287-184A7952~1": {
+"code": "O",
+"day": "2025-01-20",
+"round": "al2"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-311-184A7976~0": {
+"code": "F",
+"day": "2025-01-20",
+"round": "al2"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-336-184A8001~0": {
+"code": "D",
+"day": "2025-01-20",
+"round": "aud"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-363-184A8028~1": {
+"code": "f",
+"day": "2025-01-20",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-368-184A8033~0": {
+"code": "F",
+"ctx": true,
+"day": "2025-01-20",
+"round": "r0",
+"was": "f"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-390-184A8055~0": {
+"code": "d",
+"day": "2025-01-20",
+"round": "aud"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-425-184A8090~0": {
+"code": "F",
+"ctx": true,
+"day": "2025-01-20",
+"rev": "rev1",
+"round": "r0",
+"was": "f"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-444-184A8109~0": {
+"code": "F",
+"day": "2025-01-20",
+"round": "r0"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-450-184A8115~0": {
+"code": "D",
+"day": "2025-01-20",
+"round": "aud"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-460-184A8126~0": {
+"code": "D",
+"day": "2025-01-20",
+"round": "r0"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-467-184A8133~0": {
+"code": "D",
+"day": "2025-01-20",
+"round": "r0"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-511-184A8179~0": {
+"code": "F",
+"day": "2025-01-20",
+"round": "al2"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-513-184A8181~0": {
+"code": "F",
+"day": "2025-01-20",
+"round": "r0"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-622-184A8301~0": {
+"code": "D",
+"day": "2025-01-20",
+"round": "r0"
+},
+"2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-633-184A8312~0": {
+"code": "D",
+"day": "2025-01-20",
+"round": "r0"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359026-184A8349~0": {
+"code": "F",
+"day": "2025-01-23",
+"round": "r0"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359073-184A8396~0": {
+"code": "O",
+"day": "2025-01-23",
+"round": "al1"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359080-184A8403~0": {
+"code": "D",
+"day": "2025-01-23",
+"round": "r0"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359106-184A8429~0": {
+"code": "d",
+"day": "2025-01-23",
+"round": "al2"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359127-184A8451~0": {
+"code": "D",
+"day": "2025-01-23",
+"round": "r0"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359142-184A8466~0": {
+"code": "D",
+"day": "2025-01-23",
+"round": "r0"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359152-184A8476~0": {
+"code": "D",
+"day": "2025-01-23",
+"round": "r0"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359223-184A8547~0": {
+"code": "F",
+"day": "2025-01-23",
+"round": "r0"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359247-184A8571~0": {
+"code": "F",
+"day": "2025-01-23",
+"round": "r0"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359268-184A8592~0": {
+"code": "F",
+"day": "2025-01-23",
+"round": "r0"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359269-184A8593~0": {
+"code": "F",
+"day": "2025-01-23",
+"round": "al2"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359276-184A8600~1": {
+"code": "X",
+"day": "2025-01-23",
+"round": "aud"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359285-184A8609~0": {
+"code": "F",
+"ctx": true,
+"day": "2025-01-23",
+"rev": "rev1",
+"round": "r0",
+"was": "f"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359369-184A8694~0": {
+"code": "D",
+"day": "2025-01-23",
+"round": "r0"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359436-184A8761~0": {
+"code": "O",
+"day": "2025-01-23",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359455-184A8780~1": {
+"code": "f",
+"day": "2025-01-23",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359458-184A8783~1": {
+"code": "F",
+"day": "2025-01-23",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359462-184A8787~0": {
+"code": "D",
+"day": "2025-01-23",
+"round": "r0"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359485-184A8810~0": {
+"code": "F",
+"day": "2025-01-23",
+"round": "r0"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359487-184A8812~0": {
+"code": "F",
+"day": "2025-01-23",
+"round": "r0"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359498-184A8823~0": {
+"code": "F",
+"day": "2025-01-23",
+"round": "r0"
+},
+"2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359520-184A8845~0": {
+"code": "F",
+"day": "2025-01-23",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590046-184A4516~1": {
+"code": "X",
+"day": "2025-01-02",
+"round": "aud"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590050-184A4520~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590085-184A4555~0": {
+"code": "F",
+"day": "2025-01-02",
+"round": "al2"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590125-184A4595~0": {
+"code": "O",
+"day": "2025-01-02",
+"rev": "dis1",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590129-184A4599~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590138-184A4608~0": {
+"code": "F",
+"day": "2025-01-02",
+"round": "al2"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590139-184A4609~0": {
+"code": "F",
+"day": "2025-01-02",
+"round": "al2"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590177-184A4647~1": {
+"code": "D",
+"day": "2025-01-02",
+"round": "aud"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590188-184A4658~0": {
+"code": "O",
+"day": "2025-01-02",
+"round": "al1"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590202-184A4673~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "al1"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590228-184A4699~0": {
+"code": "f",
+"day": "2025-01-02",
+"round": "al1"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590229-184A4700~0": {
+"code": "F",
+"day": "2025-01-02",
+"rev": "dis1",
+"round": "dis1"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590239-184A4710~0": {
+"code": "O",
+"day": "2025-01-02",
+"round": "aud"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590279-184A4750~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590316-184A4787~1": {
+"code": "O",
+"day": "2025-01-02",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590317-184A4788~0": {
+"code": "O",
+"day": "2025-01-02",
+"round": "aud"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590318-184A4789~0": {
+"code": "O",
+"day": "2025-01-02",
+"rev": "dis1",
+"round": "dis1"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590324-184A4795~0": {
+"code": "O",
+"day": "2025-01-02",
+"round": "al2"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590332-184A4803~0": {
+"code": "F",
+"day": "2025-01-02",
+"round": "al1"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590375-184A4846~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "aud"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590387-184A4858~1": {
+"code": "O",
+"day": "2025-01-02",
+"round": "aud"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590418-184A4889~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590418-184A4889~1": {
+"code": "O",
+"day": "2025-01-02",
+"round": "aud"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590426-184A4897~0": {
+"code": "F",
+"day": "2025-01-02",
+"round": "al2"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590458-184A4929~0": {
+"code": "O",
+"day": "2025-01-02",
+"round": "al2"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590460-184A4931~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590470-184A4941~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590480-184A4951~0": {
+"code": "F",
+"day": "2025-01-02",
+"round": "al2"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590501-184A4972~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590532-184A5003~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590552-184A5023~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "al1"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590571-184A5042~0": {
+"code": "F",
+"day": "2025-01-02",
+"round": "al1"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590595-184A5066~0": {
+"code": "F",
+"day": "2025-01-02",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590610-184A5082~0": {
+"code": "d",
+"day": "2025-01-02",
+"round": "aud"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590616-184A5088~0": {
+"code": "F",
+"day": "2025-01-02",
+"round": "al1"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590624-184A5096~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "aud"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590659-184A5132~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590813-184A5287~0": {
+"code": "F",
+"day": "2025-01-02",
+"round": "al2"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590843-184A5319~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "al1"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590848-184A5324~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590874-184A5350~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590876-184A5352~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "al1"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590890-184A5366~0": {
+"code": "O",
+"day": "2025-01-02",
+"round": "aud"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590898-184A5374~0": {
+"code": "O",
+"day": "2025-01-02",
+"round": "al1"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590916-184A5392~0": {
+"code": "d",
+"day": "2025-01-02",
+"round": "al1"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590923-184A5399~0": {
+"code": "F",
+"day": "2025-01-02",
+"round": "al2"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590966-184A5442~0": {
+"code": "F",
+"day": "2025-01-02",
+"round": "al1"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590971-184A5447~0": {
+"code": "F",
+"day": "2025-01-02",
+"round": "aud"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590974-184A5450~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590999-184A5475~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "aud"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591000-184A5476~0": {
+"audit": "d",
+"code": "d",
+"day": "2025-01-02",
+"round": "al1"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591010-184A5486~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591017-184A5493~0": {
+"code": "d",
+"day": "2025-01-02",
+"round": "aud"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591028-184A5504~0": {
+"code": "F",
+"day": "2025-01-02",
+"round": "aud"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591044-184A5520~0": {
+"code": "O",
+"day": "2025-01-02",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591047-184A5523~0": {
+"code": "D",
+"day": "2025-01-02",
+"round": "aud"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591065-184A5541~0": {
+"code": "O",
+"day": "2025-01-02",
+"round": "al2"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591083-184A5559~0": {
+"code": "O",
+"day": "2025-01-02",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591086-184A5562~0": {
+"code": "F",
+"day": "2025-01-02",
+"round": "aud"
+},
+"2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591101-184A5581~0": {
+"code": "F",
+"day": "2025-01-02",
+"round": "al2"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359009-184A5652~0": {
+"code": "D",
+"day": "2025-01-08",
+"round": "r0"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359018-184A5661~0": {
+"code": "O",
+"day": "2025-01-08",
+"rev": "dis1",
+"round": "r0"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359026-184A5669~0": {
+"code": "O",
+"day": "2025-01-08",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359030-184A5673~0": {
+"code": "O",
+"day": "2025-01-08",
+"round": "aud"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359035-184A5678~0": {
+"code": "d",
+"day": "2025-01-08",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359044-184A5687~0": {
+"code": "X",
+"day": "2025-01-08",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359053-184A5696~0": {
+"code": "D",
+"day": "2025-01-08",
+"round": "r0"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359060-184A5703~1": {
+"code": "f",
+"day": "2025-01-08",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359079-184A5722~1": {
+"code": "f",
+"ctx": true,
+"day": "2025-01-08",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359101-184A5744~0": {
+"code": "d",
+"day": "2025-01-08",
+"round": "aud"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359108-184A5751~1": {
+"code": "f",
+"day": "2025-01-08",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359115-184A5758~0": {
+"code": "F",
+"day": "2025-01-08",
+"round": "r0"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359121-184A5764~0": {
+"code": "D",
+"day": "2025-01-08",
+"round": "r0"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359123-184A5766~0": {
+"code": "D",
+"day": "2025-01-08",
+"round": "r0"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359129-184A5772~0": {
+"code": "F",
+"day": "2025-01-08",
+"round": "r0"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359132-184A5775~0": {
+"code": "F",
+"day": "2025-01-08",
+"round": "r0"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359133-184A5776~0": {
+"code": "f",
+"day": "2025-01-08",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359143-184A5786~0": {
+"code": "D",
+"day": "2025-01-08",
+"round": "r0"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359149-184A5792~0": {
+"code": "F",
+"day": "2025-01-08",
+"round": "r0"
+},
+"2025-1-8_C1__2025-1-8-Lyman_NOAA_MMHSRP-24359155-184A5801~0": {
+"code": "F",
+"day": "2025-01-08",
+"round": "r0"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-015-184A0266~0": {
+"code": "F",
+"day": "2025-02-12",
+"round": "r0"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-047-184A0301~0": {
+"code": "F",
+"day": "2025-02-12",
+"round": "r0"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-078-184A0333~1": {
+"code": "D",
+"day": "2025-02-12",
+"round": "r0"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-081-184A0336~0": {
+"code": "f",
+"day": "2025-02-12",
+"rev": "dis1",
+"round": "r0",
+"was": "d"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-088-184A0343~0": {
+"code": "FD",
+"day": "2025-02-12",
+"round": "al1"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-127-184A0382~0": {
+"code": "f",
+"ctx": true,
+"day": "2025-02-12",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-129-184A0384~0": {
+"code": "X",
+"day": "2025-02-12",
+"round": "aud"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-132-184A0387~0": {
+"code": "d",
+"day": "2025-02-12",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-169-184A0424~0": {
+"code": "O",
+"day": "2025-02-12",
+"round": "al1"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-182-184A0437~0": {
+"code": "O",
+"day": "2025-02-12",
+"rev": "dis1",
+"round": "r0"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-209-184A0464~0": {
+"code": "D",
+"day": "2025-02-12",
+"round": "r0"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-210-184A0465~0": {
+"code": "D",
+"day": "2025-02-12",
+"round": "r0"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-218-184A0475~0": {
+"code": "F",
+"day": "2025-02-12",
+"round": "r0"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-220-184A0477~0": {
+"code": "O",
+"day": "2025-02-12",
+"round": "aud"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-223-184A0480~0": {
+"code": "d",
+"day": "2025-02-12",
+"round": "aud"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-277-184A0534~0": {
+"code": "f",
+"day": "2025-02-12",
+"round": "al1"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-284-184A0541~1": {
+"code": "O",
+"day": "2025-02-12",
+"round": "aud"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-292-184A0549~0": {
+"code": "F",
+"day": "2025-02-12",
+"round": "r0"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-316-184A0573~0": {
+"code": "F",
+"ctx": true,
+"day": "2025-02-12",
+"round": "r0",
+"was": "f"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-318-184A0577~0": {
+"code": "F",
+"day": "2025-02-12",
+"round": "al2"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-320-184A0579~0": {
+"code": "O",
+"day": "2025-02-12",
+"round": "al1"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-331-184A0590~0": {
+"code": "O",
+"day": "2025-02-12",
+"round": "al1"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-338-184A0597~0": {
+"code": "O",
+"day": "2025-02-12",
+"round": "al1"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-342-184A0601~0": {
+"code": "O",
+"day": "2025-02-12",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-365-184A0624~1": {
+"code": "f",
+"ctx": true,
+"day": "2025-02-12",
+"rev": "dis1",
+"round": "r0",
+"was": "F"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-398-184A0657~0": {
+"code": "D",
+"day": "2025-02-12",
+"round": "r0"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-403-184A0662~0": {
+"code": "F",
+"day": "2025-02-12",
+"round": "r0"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-423-184A0682~0": {
+"code": "F",
+"day": "2025-02-12",
+"round": "aud"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-437-184A0696~0": {
+"code": "D",
+"day": "2025-02-12",
+"round": "r0"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-448-184A0707~0": {
+"code": "f",
+"day": "2025-02-12",
+"round": "al2"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-463-184A0722~0": {
+"code": "F",
+"day": "2025-02-12",
+"round": "r0"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-466-184A0725~1": {
+"code": "F",
+"day": "2025-02-12",
+"round": "al1"
+},
+"2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-467-184A0726~0": {
+"code": "f",
+"day": "2025-02-12",
+"round": "al2"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-009-184A0737~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-028-184A0756~0": {
+"code": "D",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-039-184A0767~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-044-184A0772~0": {
+"code": "D",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-047-184A0775~0": {
+"code": "D",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-055-184A0783~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-066-184A0794~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-079-184A0807~1": {
+"code": "O",
+"day": "2025-02-19",
+"rev": "ctx_ev",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-099-184A0827~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-101-184A0829~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-111-184A0839~0": {
+"code": "D",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-131-184A0859~0": {
+"code": "D",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-137-184A0865~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-141-184A0869~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-155-184A0883~0": {
+"code": "d",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-159-184A0887~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-165-184A0893~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-167-184A0895~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-207-184A0935~0": {
+"code": "d",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-237-184A0965~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-249-184A0977~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-285-184A1013~1": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-294-184A1022~0": {
+"code": "D",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-318-184A1046~0": {
+"code": "D",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-354-184A1082~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-420-184A1148~0": {
+"code": "d",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-437-184A1165~0": {
+"code": "D",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-479-184A1207~0": {
+"code": "D",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-491-184A1219~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-525-184A1253~0": {
+"code": "d",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-527-184A1255~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-563-184A1291~0": {
+"code": "D",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-565-184A1293~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-575-184A1303~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-588-184A1316~0": {
+"code": "O",
+"day": "2025-02-19",
+"rev": "ctx_ev",
+"round": "ev"
+},
+"2025-2-19_C1_Lyman__2025-2-19-Lyman-NOAA-MMHSRP-24359-591-184A1319~0": {
+"code": "F",
+"day": "2025-02-19",
+"round": "ev"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-002-184A1335~0": {
+"code": "d",
+"day": "2025-02-24",
+"round": "aud"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-005-184A1338~0": {
+"code": "D",
+"day": "2025-02-24",
+"round": "r0"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-021-184A1354~0": {
+"code": "F",
+"day": "2025-02-24",
+"round": "r0"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-047-184A1380~0": {
+"code": "d",
+"day": "2025-02-24",
+"round": "al2"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-055-184A1388~0": {
+"code": "F",
+"day": "2025-02-24",
+"round": "al1"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-067-184A1400~0": {
+"code": "F",
+"day": "2025-02-24",
+"round": "r0"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-075-184A1408~0": {
+"code": "D",
+"day": "2025-02-24",
+"round": "r0"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-085-184A1418~0": {
+"code": "D",
+"day": "2025-02-24",
+"round": "aud"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-093-184A1426~0": {
+"code": "D",
+"day": "2025-02-24",
+"round": "r0"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-100-184A1433~0": {
+"code": "d",
+"day": "2025-02-24",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-146-184A1480~0": {
+"code": "O",
+"day": "2025-02-24",
+"round": "al1"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-162-184A1496~0": {
+"code": "D",
+"day": "2025-02-24",
+"round": "r0"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-182-184A1517~0": {
+"code": "D",
+"day": "2025-02-24",
+"round": "r0"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-184-184A1519~1": {
+"code": "O",
+"day": "2025-02-24",
+"round": "al1"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-190-184A1527~0": {
+"code": "D",
+"day": "2025-02-24",
+"round": "r0"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-194-184A1531~0": {
+"code": "F",
+"day": "2025-02-24",
+"round": "al1"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-220-184A1565~0": {
+"code": "d",
+"day": "2025-02-24",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-252-184A1599~0": {
+"code": "D",
+"day": "2025-02-24",
+"rev": "rev1",
+"round": "r0",
+"was": "d"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-261-184A1608~0": {
+"code": "F",
+"ctx": true,
+"day": "2025-02-24",
+"round": "r0",
+"was": "f"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-276-184A1624~0": {
+"code": "f",
+"day": "2025-02-24",
+"round": "al2"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-289-184A1637~0": {
+"code": "d",
+"day": "2025-02-24",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-298-184A1646~0": {
+"code": "O",
+"day": "2025-02-24",
+"round": "aud"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-311-184A1659~0": {
+"code": "F",
+"ctx": true,
+"day": "2025-02-24",
+"round": "r0",
+"was": "f"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-319-184A1667~0": {
+"code": "F",
+"day": "2025-02-24",
+"round": "al2"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-334-184A1682~0": {
+"code": "F",
+"day": "2025-02-24",
+"round": "r0"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-338-184A1686~1": {
+"code": "O",
+"day": "2025-02-24",
+"round": "al1"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-348-184A1696~0": {
+"code": "F",
+"day": "2025-02-24",
+"round": "al2"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-356-184A1704~0": {
+"code": "D",
+"day": "2025-02-24",
+"round": "r0"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-359-184A1707~0": {
+"code": "F",
+"day": "2025-02-24",
+"round": "al2"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-360-184A1708~0": {
+"code": "F",
+"day": "2025-02-24",
+"round": "r0"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-361-184A1709~0": {
+"code": "F",
+"day": "2025-02-24",
+"round": "r0"
+},
+"2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-363-184A1711~1": {
+"code": "O",
+"day": "2025-02-24",
+"round": "aud"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-015-184A1730~0": {
+"code": "D",
+"day": "2025-02-27",
+"round": "r0"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-015-184A1730~1": {
+"code": "O",
+"day": "2025-02-27",
+"round": "aud"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-035-184A1750~0": {
+"code": "D",
+"day": "2025-02-27",
+"round": "r0"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-054-184A1769~0": {
+"code": "O",
+"day": "2025-02-27",
+"round": "al1"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-055-184A1770~0": {
+"code": "F",
+"day": "2025-02-27",
+"rev": "dis1",
+"round": "r0",
+"was": "d"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-059-184A1774~0": {
+"code": "F",
+"day": "2025-02-27",
+"round": "r0"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-060-184A1775~0": {
+"code": "F",
+"day": "2025-02-27",
+"round": "al2"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-081-184A1796~0": {
+"code": "d",
+"day": "2025-02-27",
+"round": "aud"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-094-184A1809~0": {
+"audit": "X",
+"code": "X",
+"day": "2025-02-27",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-113-184A1828~0": {
+"code": "F",
+"day": "2025-02-27",
+"round": "r0"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-114-184A1829~1": {
+"code": "F",
+"day": "2025-02-27",
+"round": "r0"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-188-184A1903~0": {
+"code": "F",
+"day": "2025-02-27",
+"round": "r0"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-203-184A1918~0": {
+"code": "D",
+"day": "2025-02-27",
+"round": "r0"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-206-184A1921~2": {
+"code": "O",
+"day": "2025-02-27",
+"round": "al2"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-217-184A1932~0": {
+"code": "F",
+"day": "2025-02-27",
+"round": "r0"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-227-184A1943~0": {
+"code": "O",
+"day": "2025-02-27",
+"round": "al2"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-228-184A1944~0": {
+"code": "O",
+"day": "2025-02-27",
+"rev": "dis1",
+"round": "r0"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-238-184A1954~0": {
+"code": "F",
+"day": "2025-02-27",
+"round": "al2"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-265-184A1982~0": {
+"code": "O",
+"day": "2025-02-27",
+"round": "al2"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-267-184A1984~2": {
+"code": "f",
+"day": "2025-02-27",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-268-184A1985~0": {
+"code": "O",
+"day": "2025-02-27",
+"round": "al1"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-271-184A1988~0": {
+"code": "O",
+"day": "2025-02-27",
+"round": "al1"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-274-184A1991~0": {
+"code": "O",
+"day": "2025-02-27",
+"round": "al1"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-276-184A1993~1": {
+"code": "O",
+"day": "2025-02-27",
+"round": "al1"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-277-184A1994~0": {
+"code": "O",
+"day": "2025-02-27",
+"round": "al1"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-282-184A1999~0": {
+"code": "O",
+"day": "2025-02-27",
+"round": "al1"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-283-184A2000~0": {
+"code": "O",
+"day": "2025-02-27",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-291-184A2008~0": {
+"code": "O",
+"day": "2025-02-27",
+"round": "al2"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-292-184A2009~0": {
+"code": "O",
+"day": "2025-02-27",
+"round": "al2"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-293-184A2010~0": {
+"code": "O",
+"day": "2025-02-27",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-298-184A2015~1": {
+"code": "O",
+"day": "2025-02-27",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-299-184A2016~1": {
+"code": "f",
+"day": "2025-02-27",
+"round": "aud"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-305-184A2022~1": {
+"code": "O",
+"day": "2025-02-27",
+"round": "al2"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-306-184A2023~1": {
+"code": "O",
+"day": "2025-02-27",
+"round": "al2"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-310-184A2027~0": {
+"code": "O",
+"day": "2025-02-27",
+"round": "al2"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-326-184A2043~2": {
+"code": "F",
+"day": "2025-02-27",
+"round": "aud"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-330-184A2047~0": {
+"code": "f",
+"day": "2025-02-27",
+"round": "al1"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-365-184A2085~0": {
+"code": "f",
+"day": "2025-02-27",
+"round": "al2"
+},
+"2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-378-184A2099~1": {
+"code": "O",
+"day": "2025-02-27",
+"round": "aud"
+},
+"2025-2-27_C3_Beato__2025-2-27-Beato-NOAA-MMHSRP-24359-139-HR5_4710~0": {
+"audit": "O",
+"code": "O",
+"day": "2025-02-27",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-27_C3_Beato__2025-2-27-Beato-NOAA-MMHSRP-24359-145-HR5_4716~0": {
+"code": "D",
+"day": "2025-02-27",
+"round": "r0"
+},
+"2025-2-27_C3_Beato__2025-2-27-Beato-NOAA-MMHSRP-24359-153-HR5_4724~0": {
+"code": "O",
+"day": "2025-02-27",
+"round": "al1"
+},
+"2025-2-27_C3_Beato__2025-2-27-Beato-NOAA-MMHSRP-24359-156-HR5_4727~0": {
+"code": "D",
+"day": "2025-02-27",
+"round": "r0"
+},
+"2025-2-28_UH-MAUI__group_1__Big_bite_-_4__2025-2-28_Lyman_NOAA_MMHSRP-24359065-EGL_7083~0": {
+"code": "D",
+"day": "2025-02-28",
+"round": "r0"
+},
+"2025-2-28_UH-MAUI__group_1__Big_bite_-_4__2025-2-28_Lyman_NOAA_MMHSRP-24359066-EGL_7084~1": {
+"code": "O",
+"day": "2025-02-28",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-28_UH-MAUI__group_1__Mother_-_little_nick_-_5__2025-2-28_Lyman_NOAA_MMHSRP-24359046-EGL_7064~0": {
+"code": "F",
+"day": "2025-02-28",
+"round": "r0"
+},
+"2025-2-28_UH-MAUI__group_1__Mother_-_little_nick_-_5__2025-2-28_Lyman_NOAA_MMHSRP-24359085-EGL_7103~0": {
+"code": "d",
+"day": "2025-02-28",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-28_UH-MAUI__group_1__Mother_-_little_nick_-_5__2025-2-28_Lyman_NOAA_MMHSRP-24359113-EGL_7131~0": {
+"code": "F",
+"day": "2025-02-28",
+"round": "r0"
+},
+"2025-2-28_UH-MAUI__group_1__escort_-_flat_-_4__2025-2-28_Lyman_NOAA_MMHSRP-24359034-EGL_7052~0": {
+"code": "D",
+"day": "2025-02-28",
+"round": "r0"
+},
+"2025-2-28_UH-MAUI__group_1__escort_-_flat_-_4__2025-2-28_Lyman_NOAA_MMHSRP-24359116-EGL_7134~0": {
+"code": "D",
+"day": "2025-02-28",
+"round": "r0"
+},
+"2025-2-28_UH-MAUI__group_1__scratch_male__2025-2-28_Lyman_NOAA_MMHSRP-24359072-EGL_7090~0": {
+"code": "D",
+"day": "2025-02-28",
+"round": "r0"
+},
+"2025-2-28_UH-MAUI__group_1__scratch_male__2025-2-28_Lyman_NOAA_MMHSRP-24359075-EGL_7093~0": {
+"code": "D",
+"day": "2025-02-28",
+"round": "r0"
+},
+"2025-2-28_UH-MAUI__group_1__scratch_male__2025-2-28_Lyman_NOAA_MMHSRP-24359076-EGL_7094~0": {
+"code": "O",
+"day": "2025-02-28",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-28_UH_Maui_group_2__ESCORT-4_wh_flip__2025-2-28_Lyman_NOAA_MMHSRP-24359154-EGL_7172~0": {
+"code": "D",
+"day": "2025-02-28",
+"round": "r0"
+},
+"2025-2-28_UH_Maui_group_2__ESCORT-4_wh_flip__2025-2-28_Lyman_NOAA_MMHSRP-24359156-EGL_7174~0": {
+"code": "D",
+"day": "2025-02-28",
+"round": "r0"
+},
+"2025-2-28_UH_Maui_group_2__ESCORT-4_wh_flip__2025-2-28_Lyman_NOAA_MMHSRP-24359192-EGL_7211~0": {
+"code": "O",
+"day": "2025-02-28",
+"round": "aud"
+},
+"2025-2-28_UH_Maui_group_2__ESCORT-4_wh_flip__2025-2-28_Lyman_NOAA_MMHSRP-24359193-EGL_7212~0": {
+"code": "f",
+"day": "2025-02-28",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-2-28_UH_Maui_group_2__ESCORT-4_wh_flip__2025-2-28_Lyman_NOAA_MMHSRP-24359193-EGL_7212~1": {
+"code": "f",
+"day": "2025-02-28",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-2-28_UH_Maui_group_2__Mother_-_4__2025-2-28_Lyman_NOAA_MMHSRP-24359145-EGL_7163~0": {
+"code": "F",
+"day": "2025-02-28",
+"round": "r0"
+},
+"2025-2-28_UH_Maui_group_2__Mother_-_4__2025-2-28_Lyman_NOAA_MMHSRP-24359149-EGL_7167~0": {
+"code": "D",
+"day": "2025-02-28",
+"round": "r0"
+},
+"2025-2-28_UH_Maui_group_2__Mother_-_4__2025-2-28_Lyman_NOAA_MMHSRP-24359173-EGL_7192~0": {
+"code": "F",
+"day": "2025-02-28",
+"round": "r0"
+},
+"2025-2-28_UH_Maui_group_2__Mother_-_4__2025-2-28_Lyman_NOAA_MMHSRP-24359184-EGL_7203~0": {
+"code": "f",
+"day": "2025-02-28",
+"round": "al1"
+},
+"2025-2-28_oppies__Oppy_2__2025-2-28_Lyman_NOAA_MMHSRP-24359216-EGL_7235~0": {
+"code": "F",
+"day": "2025-02-28",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-213-184A9688~0": {
+"code": "F",
+"day": "2025-02-03",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-216-184A9691~0": {
+"code": "D",
+"day": "2025-02-03",
+"round": "al1"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-218-184A9693~0": {
+"code": "D",
+"day": "2025-02-03",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-225-184A9700~1": {
+"code": "f",
+"day": "2025-02-03",
+"round": "al1"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-228-184A9703~0": {
+"code": "D",
+"day": "2025-02-03",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-231-184A9706~0": {
+"code": "D",
+"day": "2025-02-03",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-253-184A9728~1": {
+"code": "O",
+"day": "2025-02-03",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-267-184A9742~0": {
+"code": "F",
+"day": "2025-02-03",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-268-184A9743~0": {
+"code": "F",
+"day": "2025-02-03",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-283-184A9758~1": {
+"code": "f",
+"day": "2025-02-03",
+"round": "aud"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-285-184A9760~0": {
+"code": "d",
+"day": "2025-02-03",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-304-184A9781~0": {
+"code": "D",
+"day": "2025-02-03",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-319-184A9796~0": {
+"code": "F",
+"day": "2025-02-03",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-349-184A9826~0": {
+"code": "F",
+"day": "2025-02-03",
+"round": "al1"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-353-184A9830~0": {
+"code": "O",
+"day": "2025-02-03",
+"round": "aud"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-382-184A9859~0": {
+"code": "F",
+"day": "2025-02-03",
+"round": "aud"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-390-184A9867~0": {
+"code": "d",
+"day": "2025-02-03",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-395-184A9872~0": {
+"code": "O",
+"day": "2025-02-03",
+"round": "al2"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-404-184A9881~0": {
+"code": "d",
+"day": "2025-02-03",
+"round": "al1"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-408-184A9885~0": {
+"code": "O",
+"day": "2025-02-03",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-409-184A9886~0": {
+"code": "O",
+"day": "2025-02-03",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-414-184A9891~0": {
+"code": "F",
+"day": "2025-02-03",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-423-184A9900~0": {
+"code": "O",
+"day": "2025-02-03",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-431-184A9908~0": {
+"code": "D",
+"day": "2025-02-03",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-432-184A9909~0": {
+"code": "D",
+"day": "2025-02-03",
+"round": "r0"
+},
+"2025-2-3_C1_Harvey__2025-2-3-Harvey-NOAA-MMHSRP-24359-437-184A9914~0": {
+"code": "F",
+"ctx": true,
+"day": "2025-02-03",
+"rev": "rev1",
+"round": "r0",
+"was": "f"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-000-184A2878~0": {
+"code": "D",
+"day": "2025-03-13",
+"round": "r0"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-011-184A2889~0": {
+"code": "D",
+"day": "2025-03-13",
+"round": "aud"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-027-184A2911~0": {
+"code": "F",
+"day": "2025-03-13",
+"round": "al2"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-028-184A2912~0": {
+"audit": "F",
+"code": "F",
+"day": "2025-03-13",
+"round": "r0"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-036-184A2920~0": {
+"code": "F",
+"day": "2025-03-13",
+"round": "al1"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-048-184A2933~0": {
+"code": "d",
+"day": "2025-03-13",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-049-184A2934~0": {
+"code": "D",
+"day": "2025-03-13",
+"round": "r0"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-062-184A2947~0": {
+"code": "F",
+"day": "2025-03-13",
+"round": "al2"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-090-184A2978~0": {
+"code": "d",
+"day": "2025-03-13",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-099-184A2988~0": {
+"code": "f",
+"day": "2025-03-13",
+"round": "al1"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-107-184A2996~0": {
+"code": "D",
+"day": "2025-03-13",
+"round": "r0"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-113-184A3002~0": {
+"code": "D",
+"day": "2025-03-13",
+"round": "r0"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-185-184A3074~0": {
+"code": "O",
+"day": "2025-03-13",
+"round": "al2"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-187-184A3076~0": {
+"code": "F",
+"day": "2025-03-13",
+"round": "r0"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-196-184A3085~0": {
+"code": "F",
+"day": "2025-03-13",
+"round": "r0"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-210-184A3099~0": {
+"code": "d",
+"day": "2025-03-13",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-224-184A3113~0": {
+"code": "F",
+"day": "2025-03-13",
+"round": "r0"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-243-184A3132~0": {
+"code": "f",
+"day": "2025-03-13",
+"round": "al1"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-249-184A3138~0": {
+"code": "f",
+"day": "2025-03-13",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-250-184A3139~0": {
+"code": "F",
+"day": "2025-03-13",
+"round": "aud"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-257-184A3146~0": {
+"code": "O",
+"day": "2025-03-13",
+"round": "al1"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-284-184A3173~0": {
+"code": "F",
+"day": "2025-03-13",
+"round": "al2"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-289-184A3178~0": {
+"code": "O",
+"day": "2025-03-13",
+"round": "al2"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-289-184A3178~1": {
+"code": "O",
+"day": "2025-03-13",
+"round": "aud"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-315-184A3204~0": {
+"code": "f",
+"day": "2025-03-13",
+"round": "al1"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-341-184A3230~0": {
+"code": "D",
+"day": "2025-03-13",
+"round": "r0"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-345-184A3234~0": {
+"code": "Fd",
+"day": "2025-03-13",
+"round": "al1"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-347-184A3236~0": {
+"code": "F",
+"day": "2025-03-13",
+"round": "r0"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-376-184A3265~0": {
+"code": "F",
+"day": "2025-03-13",
+"round": "al2"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-409-184A3298~0": {
+"code": "D",
+"day": "2025-03-13",
+"round": "aud"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-428-184A3317~0": {
+"code": "F",
+"day": "2025-03-13",
+"round": "aud"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-500-184A3389~0": {
+"code": "D",
+"day": "2025-03-13",
+"round": "r0"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-505-184A3394~0": {
+"code": "O",
+"day": "2025-03-13",
+"round": "al1"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-534-184A3423~0": {
+"code": "O",
+"day": "2025-03-13",
+"round": "al1"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-571-184A3460~0": {
+"code": "F",
+"day": "2025-03-13",
+"round": "aud"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-573-184A3462~0": {
+"code": "F",
+"day": "2025-03-13",
+"round": "r0"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-580-184A3469~0": {
+"code": "O",
+"day": "2025-03-13",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-587-184A3476~0": {
+"code": "F",
+"day": "2025-03-13",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-021-184A3503~0": {
+"code": "F",
+"day": "2025-03-14",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-025-184A3507~0": {
+"code": "F",
+"day": "2025-03-14",
+"round": "aud"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-025-184A3507~1": {
+"code": "f",
+"day": "2025-03-14",
+"round": "al1"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-031-184A3513~0": {
+"code": "D",
+"day": "2025-03-14",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-039-184A3522~0": {
+"code": "d",
+"day": "2025-03-14",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-055-184A3538~0": {
+"code": "O",
+"day": "2025-03-14",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-057-184A3540~0": {
+"code": "D",
+"day": "2025-03-14",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-060-184A3543~1": {
+"code": "X",
+"day": "2025-03-14",
+"round": "aud"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-073-184A3556~0": {
+"code": "O",
+"day": "2025-03-14",
+"round": "al1"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-082-184A3565~1": {
+"code": "O",
+"day": "2025-03-14",
+"round": "aud"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-128-184A3611~0": {
+"code": "D",
+"day": "2025-03-14",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-245-184A3729~0": {
+"code": "D",
+"day": "2025-03-14",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-247-184A3731~0": {
+"code": "O",
+"day": "2025-03-14",
+"round": "al1"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-256-184A3740~0": {
+"code": "F",
+"day": "2025-03-14",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-322-184A3807~0": {
+"code": "D",
+"day": "2025-03-14",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-336-184A3821~0": {
+"code": "O",
+"day": "2025-03-14",
+"round": "al1"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-340-184A3825~0": {
+"code": "D",
+"day": "2025-03-14",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-350-184A3835~0": {
+"code": "D",
+"day": "2025-03-14",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-350-184A3835~1": {
+"code": "f",
+"day": "2025-03-14",
+"round": "aud"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-365-184A3850~0": {
+"code": "D",
+"day": "2025-03-14",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-371-184A3856~0": {
+"code": "D",
+"day": "2025-03-14",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-390-184A3875~0": {
+"code": "D",
+"day": "2025-03-14",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-407-184A3892~0": {
+"code": "f",
+"day": "2025-03-14",
+"round": "aud"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-411-184A3896~0": {
+"code": "D",
+"day": "2025-03-14",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-451-184A3937~0": {
+"code": "D",
+"day": "2025-03-14",
+"round": "r0"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-463-184A3949~1": {
+"code": "O",
+"day": "2025-03-14",
+"round": "aud"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-500-184A3986~0": {
+"audit": "d",
+"code": "d",
+"day": "2025-03-14",
+"rev": "dis1",
+"round": "r0",
+"was": "O"
+},
+"2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-509-184A3995~0": {
+"code": "D",
+"day": "2025-03-14",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0008-184A4050~0": {
+"code": "F",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0087-184A4146~0": {
+"code": "D",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0090-184A4149~0": {
+"code": "D",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0116-184A4175~0": {
+"code": "O",
+"day": "2025-03-18",
+"round": "al2"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0144-184A4203~0": {
+"code": "D",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0145-184A4204~0": {
+"code": "D",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0176-184A4242~0": {
+"code": "D",
+"day": "2025-03-18",
+"round": "aud"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0190-184A4256~0": {
+"code": "D",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0203-184A4269~0": {
+"code": "D",
+"day": "2025-03-18",
+"round": "aud"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0219-184A4285~0": {
+"code": "F",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0292-184A4358~0": {
+"code": "F",
+"day": "2025-03-18",
+"round": "aud"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0330-184A4396~0": {
+"code": "d",
+"day": "2025-03-18",
+"round": "aud"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0333-184A4399~0": {
+"code": "f",
+"day": "2025-03-18",
+"round": "aud"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0343-184A4409~0": {
+"code": "D",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0365-184A4431~0": {
+"code": "D",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0381-184A4447~0": {
+"code": "O",
+"day": "2025-03-18",
+"round": "al1"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0452-184A4518~0": {
+"code": "F",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0462-184A4528~0": {
+"code": "d",
+"day": "2025-03-18",
+"round": "al2"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0491-184A4557~0": {
+"code": "D",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0598-184A4665~0": {
+"code": "f",
+"day": "2025-03-18",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0598-184A4665~1": {
+"code": "O",
+"day": "2025-03-18",
+"round": "al1"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0638-184A4705~0": {
+"code": "D",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0640-184A4707~0": {
+"code": "f",
+"day": "2025-03-18",
+"round": "al1"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0656-184A4723~0": {
+"code": "F",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0670-184A4737~0": {
+"code": "F",
+"day": "2025-03-18",
+"round": "al2"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0696-184A4763~0": {
+"code": "O",
+"day": "2025-03-18",
+"round": "al2"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0731-184A4798~0": {
+"code": "D",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0782-184A4849~0": {
+"code": "O",
+"day": "2025-03-18",
+"round": "aud"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0890-184A4957~0": {
+"code": "F",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0929-184A4996~0": {
+"code": "F",
+"day": "2025-03-18",
+"round": "aud"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0953-184A5020~0": {
+"code": "D",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0970-184A5037~0": {
+"code": "D",
+"day": "2025-03-18",
+"round": "r0"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-033-184A5158~0": {
+"code": "D",
+"day": "2025-03-20",
+"round": "r0"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-036-184A5161~0": {
+"code": "f",
+"day": "2025-03-20",
+"round": "al2"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-066-184A5191~0": {
+"code": "D",
+"day": "2025-03-20",
+"round": "r0"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-067-184A5192~0": {
+"code": "O",
+"day": "2025-03-20",
+"round": "al1"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-084-184A5209~0": {
+"code": "F",
+"day": "2025-03-20",
+"round": "r0"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-089-184A5214~0": {
+"code": "D",
+"day": "2025-03-20",
+"round": "aud"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-158-184A5284~0": {
+"code": "D",
+"day": "2025-03-20",
+"round": "r0"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-181-184A5307~0": {
+"code": "d",
+"day": "2025-03-20",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-192-184A5318~0": {
+"code": "F",
+"ctx": true,
+"day": "2025-03-20",
+"round": "r0",
+"was": "f"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-198-184A5324~0": {
+"code": "F",
+"ctx": true,
+"day": "2025-03-20",
+"rev": "rev1",
+"round": "r0",
+"was": "f"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-231-184A5357~0": {
+"code": "O",
+"day": "2025-03-20",
+"round": "al1"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-237-184A5363~0": {
+"code": "d",
+"day": "2025-03-20",
+"rev": "dis1",
+"round": "r0",
+"was": "O"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-283-184A5409~0": {
+"code": "O",
+"day": "2025-03-20",
+"round": "al2"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-285-184A5411~0": {
+"code": "D",
+"day": "2025-03-20",
+"round": "r0"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-296-184A5422~0": {
+"code": "O",
+"day": "2025-03-20",
+"round": "aud"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-310-184A5436~0": {
+"code": "D",
+"day": "2025-03-20",
+"round": "r0"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-324-184A5450~0": {
+"code": "O",
+"day": "2025-03-20",
+"round": "aud"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-324-184A5450~1": {
+"code": "O",
+"day": "2025-03-20",
+"round": "al1"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-327-184A5453~1": {
+"audit": "d",
+"code": "d",
+"day": "2025-03-20",
+"rev": "dis1",
+"round": "r0",
+"was": "O"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-341-184A5467~0": {
+"code": "O",
+"day": "2025-03-20",
+"round": "al2"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-342-184A5468~0": {
+"code": "O",
+"day": "2025-03-20",
+"round": "al1"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-353-184A5479~0": {
+"code": "O",
+"day": "2025-03-20",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-359-184A5485~0": {
+"code": "F",
+"day": "2025-03-20",
+"round": "r0"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-363-184A5489~0": {
+"code": "F",
+"ctx": true,
+"day": "2025-03-20",
+"round": "r0",
+"was": "f"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-370-184A5496~0": {
+"code": "D",
+"day": "2025-03-20",
+"round": "r0"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-393-184A5519~0": {
+"code": "D",
+"day": "2025-03-20",
+"round": "r0"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-417-184A5543~0": {
+"code": "D",
+"day": "2025-03-20",
+"round": "r0"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-420-184A5546~0": {
+"code": "F",
+"day": "2025-03-20",
+"round": "al2"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-423-184A5549~0": {
+"code": "F",
+"day": "2025-03-20",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-573-184A5699~0": {
+"code": "F",
+"day": "2025-03-20",
+"round": "al1"
+},
+"2025-3-20_C1_Harvey__2025-3-20-Harvey-NOAA-MMHSRP-24359-582-184A5708~0": {
+"code": "f",
+"day": "2025-03-20",
+"round": "al1"
+},
+"2025-3-20_C3_Beato__2025-3-20-Beato-NOAA-MMHSRP-24359-264-HR5_6857~0": {
+"code": "F",
+"day": "2025-03-20",
+"round": "al1"
+},
+"2025-3-20_C3_Beato__2025-3-20-Beato-NOAA-MMHSRP-24359-311-HR5_6904~0": {
+"code": "O",
+"day": "2025-03-20",
+"round": "al2"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-004-184A5740~0": {
+"code": "D",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-024-184A5760~0": {
+"code": "F",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-032-184A5768~0": {
+"code": "F",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-035-184A5771~0": {
+"code": "O",
+"day": "2025-03-21",
+"rev": "ctx_ev",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-039-184A5775~0": {
+"code": "Fd",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-040-184A5776~0": {
+"code": "F",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-073-184A5809~0": {
+"code": "D",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-082-184A5818~0": {
+"code": "F",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-109-184A5845~0": {
+"code": "D",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-119-184A5855~0": {
+"code": "F",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-132-184A5868~0": {
+"code": "D",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-140-184A5876~0": {
+"code": "D",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-144-184A5880~0": {
+"code": "D",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-145-184A5881~0": {
+"code": "D",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-173-184A5909~0": {
+"code": "D",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-232-184A5969~0": {
+"code": "F",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-267-184A6004~0": {
+"code": "F",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-271-184A6008~0": {
+"code": "d",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-337-184A6074~0": {
+"code": "F",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-360-184A6097~0": {
+"code": "D",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-384-184A6121~0": {
+"code": "F",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-413-184A6150~0": {
+"code": "D",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-461-184A6198~0": {
+"code": "O",
+"day": "2025-03-21",
+"rev": "ctx_ev",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-463-184A6200~0": {
+"code": "F",
+"day": "2025-03-21",
+"rev": "ctx_ev",
+"round": "ev",
+"was": "f"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-529-184A6266~0": {
+"code": "F",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-539-184A6276~1": {
+"code": "O",
+"day": "2025-03-21",
+"rev": "ctx_ev",
+"round": "ev",
+"was": "f"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-547-184A6284~0": {
+"code": "O",
+"day": "2025-03-21",
+"rev": "ctx_ev",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-575-184A6312~0": {
+"code": "F",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-583-184A6320~0": {
+"code": "F",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-612-184A6349~0": {
+"code": "F",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-693-184A6430~1": {
+"code": "O",
+"day": "2025-03-21",
+"rev": "ctx_ev",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-768-184A6505~0": {
+"code": "F",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-774-184A6511~1": {
+"code": "d",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-788-184A6525~1": {
+"code": "F",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-815-184A6552~0": {
+"code": "d",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-21_C1_Harvey__2025-3-21-Harvey-NOAA-MMHSRP-24359-823-184A6560~0": {
+"code": "d",
+"day": "2025-03-21",
+"round": "ev"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-008-184A6582~0": {
+"code": "D",
+"day": "2025-03-24",
+"round": "r0"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-073-184A6649~0": {
+"code": "D",
+"day": "2025-03-24",
+"round": "r0"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-077-184A6653~0": {
+"code": "F",
+"day": "2025-03-24",
+"round": "al2"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-088-184A6664~0": {
+"code": "F",
+"day": "2025-03-24",
+"round": "r0"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-112-184A6688~0": {
+"code": "F",
+"day": "2025-03-24",
+"round": "r0"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-115-184A6691~0": {
+"code": "F",
+"day": "2025-03-24",
+"round": "r0"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-115-184A6691~1": {
+"code": "O",
+"day": "2025-03-24",
+"round": "al2"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-122-184A6698~0": {
+"code": "F",
+"day": "2025-03-24",
+"round": "al2"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-135-184A6711~0": {
+"code": "F",
+"day": "2025-03-24",
+"round": "al1"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-171-184A6749~0": {
+"code": "O",
+"day": "2025-03-24",
+"round": "aud"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-215-184A6795~0": {
+"code": "O",
+"day": "2025-03-24",
+"round": "al1"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-220-184A6800~0": {
+"code": "O",
+"day": "2025-03-24",
+"round": "al2"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-230-184A6810~0": {
+"code": "F",
+"day": "2025-03-24",
+"round": "r0"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-245-184A6825~0": {
+"code": "D",
+"day": "2025-03-24",
+"round": "r0"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-254-184A6834~0": {
+"code": "f",
+"day": "2025-03-24",
+"round": "al2"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-254-184A6834~1": {
+"code": "f",
+"day": "2025-03-24",
+"round": "al2"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-271-184A6851~0": {
+"code": "F",
+"day": "2025-03-24",
+"round": "al2"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-286-184A6866~0": {
+"code": "D",
+"day": "2025-03-24",
+"round": "r0"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-295-184A6875~1": {
+"code": "f",
+"day": "2025-03-24",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-305-184A6885~1": {
+"code": "F",
+"day": "2025-03-24",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-310-184A6890~0": {
+"code": "D",
+"day": "2025-03-24",
+"round": "r0"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-313-184A6893~0": {
+"code": "D",
+"day": "2025-03-24",
+"round": "r0"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-346-184A6926~0": {
+"code": "D",
+"day": "2025-03-24",
+"round": "r0"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-354-184A6934~0": {
+"code": "O",
+"day": "2025-03-24",
+"round": "al2"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-410-184A6990~0": {
+"code": "D",
+"day": "2025-03-24",
+"round": "r0"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-422-184A7002~0": {
+"code": "O",
+"day": "2025-03-24",
+"round": "al2"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-429-184A7009~0": {
+"code": "d",
+"day": "2025-03-24",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-450-184A7030~0": {
+"code": "F",
+"day": "2025-03-24",
+"round": "r0"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-457-184A7037~0": {
+"code": "F",
+"day": "2025-03-24",
+"round": "al2"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-459-184A7039~0": {
+"code": "F",
+"day": "2025-03-24",
+"round": "r0"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-482-184A7062~0": {
+"code": "F",
+"day": "2025-03-24",
+"round": "al1"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-494-184A7074~0": {
+"code": "O",
+"day": "2025-03-24",
+"round": "al2"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-510-184A7090~0": {
+"code": "f",
+"day": "2025-03-24",
+"round": "al2"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-516-184A7096~0": {
+"code": "O",
+"day": "2025-03-24",
+"round": "al1"
+},
+"2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-562-184A7143~0": {
+"code": "D",
+"day": "2025-03-24",
+"round": "r0"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0032-184A7202~0": {
+"code": "D",
+"day": "2025-03-26",
+"round": "al1"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0033-184A7203~0": {
+"code": "F",
+"day": "2025-03-26",
+"round": "aud"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0059-184A7229~1": {
+"code": "D",
+"day": "2025-03-26",
+"round": "al2"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0152-184A7322~0": {
+"code": "d",
+"day": "2025-03-26",
+"round": "al2"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0345-184A7515~0": {
+"code": "D",
+"day": "2025-03-26",
+"round": "r0"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0511-184A7683~0": {
+"code": "df",
+"day": "2025-03-26",
+"round": "al2"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0513-184A7685~0": {
+"code": "F",
+"day": "2025-03-26",
+"round": "r0"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0523-184A7695~0": {
+"code": "F",
+"day": "2025-03-26",
+"round": "aud"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0531-184A7703~1": {
+"code": "D",
+"day": "2025-03-26",
+"round": "r0"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0534-184A7706~0": {
+"code": "F",
+"day": "2025-03-26",
+"round": "aud"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0537-184A7709~1": {
+"code": "F",
+"day": "2025-03-26",
+"round": "r0"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0554-184A7726~0": {
+"code": "F",
+"day": "2025-03-26",
+"round": "r0"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0761-184A7933~0": {
+"code": "F",
+"day": "2025-03-26",
+"round": "r0"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0799-184A7971~0": {
+"code": "O",
+"day": "2025-03-26",
+"round": "al1"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0801-184A7973~0": {
+"code": "f",
+"day": "2025-03-26",
+"round": "aud"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0806-184A7978~0": {
+"code": "F",
+"day": "2025-03-26",
+"round": "al2"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0842-184A8014~0": {
+"code": "F",
+"day": "2025-03-26",
+"round": "r0"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0870-184A8042~0": {
+"code": "O",
+"day": "2025-03-26",
+"round": "al1"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0872-184A8044~0": {
+"code": "O",
+"day": "2025-03-26",
+"round": "al1"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0887-184A8059~0": {
+"code": "X",
+"day": "2025-03-26",
+"round": "al1"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0887-184A8059~1": {
+"code": "X",
+"day": "2025-03-26",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0962-184A8134~0": {
+"code": "D",
+"day": "2025-03-26",
+"round": "r0"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0997-184A8169~0": {
+"code": "O",
+"day": "2025-03-26",
+"round": "al2"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0998-184A8170~0": {
+"code": "d",
+"day": "2025-03-26",
+"round": "al2"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-1004-184A8176~0": {
+"code": "d",
+"day": "2025-03-26",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-1023-184A8195~0": {
+"code": "O",
+"day": "2025-03-26",
+"round": "aud"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-1026-184A8198~0": {
+"code": "O",
+"day": "2025-03-26",
+"round": "al1"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-1098-184A8270~1": {
+"code": "d",
+"day": "2025-03-26",
+"round": "al2"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-1099-184A8271~1": {
+"code": "O",
+"day": "2025-03-26",
+"round": "al2"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-1239-184A8411~0": {
+"code": "F",
+"day": "2025-03-26",
+"round": "al2"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-1241-184A8413~0": {
+"code": "F",
+"day": "2025-03-26",
+"round": "al2"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-1276-184A8448~0": {
+"code": "D",
+"day": "2025-03-26",
+"round": "r0"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-1278-184A8450~0": {
+"code": "F",
+"day": "2025-03-26",
+"round": "al1"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-1325-184A8497~0": {
+"code": "d",
+"day": "2025-03-26",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-1340-184A8512~0": {
+"code": "F",
+"day": "2025-03-26",
+"round": "r0"
+},
+"2025-3-26_C3_Hum__2025-3-26-Hum-NOAA-MMHSRP-24359-049-HR5_8034~0": {
+"code": "D",
+"day": "2025-03-26",
+"round": "r0"
+},
+"2025-3-26_C3_Hum__2025-3-26-Hum-NOAA-MMHSRP-24359-067-HR5_8052~0": {
+"code": "F",
+"day": "2025-03-26",
+"round": "r0"
+},
+"2025-3-26_C3_Hum__2025-3-26-Hum-NOAA-MMHSRP-24359-090-HR5_8075~1": {
+"code": "O",
+"day": "2025-03-26",
+"round": "aud"
+},
+"2025-3-26_C3_Hum__2025-3-26-Hum-NOAA-MMHSRP-24359-103-HR5_8088~0": {
+"code": "D",
+"day": "2025-03-26",
+"round": "r0"
+},
+"2025-3-26_C3_Hum__2025-3-26-Hum-NOAA-MMHSRP-24359-108-HR5_8093~0": {
+"code": "f",
+"day": "2025-03-26",
+"round": "al2"
+},
+"2025-3-26_C3_Hum__2025-3-26-Hum-NOAA-MMHSRP-24359-139-HR5_8124~0": {
+"code": "f",
+"day": "2025-03-26",
+"round": "al2"
+},
+"2025-3-26_C3_Hum__2025-3-26-Hum-NOAA-MMHSRP-24359-230-HR5_8215~0": {
+"code": "D",
+"day": "2025-03-26",
+"round": "r0"
+},
+"2025-3-26_C3_Hum__2025-3-26-Hum-NOAA-MMHSRP-24359-246-HR5_8231~0": {
+"code": "F",
+"day": "2025-03-26",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-013-184A2130~0": {
+"code": "F",
+"day": "2025-03-03",
+"round": "aud"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-017-184A2134~0": {
+"code": "f",
+"day": "2025-03-03",
+"round": "al2"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-031-184A2148~0": {
+"code": "D",
+"day": "2025-03-03",
+"round": "aud"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-035-184A2152~0": {
+"code": "F",
+"day": "2025-03-03",
+"round": "al2"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-036-184A2153~0": {
+"code": "F",
+"day": "2025-03-03",
+"round": "r0"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-054-184A2171~0": {
+"code": "D",
+"day": "2025-03-03",
+"round": "r0"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-071-184A2188~0": {
+"code": "D",
+"day": "2025-03-03",
+"round": "aud"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-135-184A2256~0": {
+"code": "F",
+"day": "2025-03-03",
+"round": "r0"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-137-184A2258~0": {
+"code": "F",
+"day": "2025-03-03",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-137-184A2258~1": {
+"code": "F",
+"ctx": true,
+"day": "2025-03-03",
+"round": "r0",
+"was": "f"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-171-184A2292~0": {
+"code": "f",
+"day": "2025-03-03",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-185-184A2306~0": {
+"code": "d",
+"day": "2025-03-03",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-189-184A2310~0": {
+"code": "F",
+"day": "2025-03-03",
+"round": "r0"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-235-184A2356~0": {
+"code": "O",
+"day": "2025-03-03",
+"round": "al1"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-237-184A2358~0": {
+"code": "F",
+"day": "2025-03-03",
+"round": "al1"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-245-184A2366~0": {
+"code": "O",
+"day": "2025-03-03",
+"round": "al2"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-252-184A2373~0": {
+"code": "F",
+"day": "2025-03-03",
+"round": "r0"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-288-184A2409~0": {
+"code": "f",
+"day": "2025-03-03",
+"round": "al2"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-297-184A2419~0": {
+"code": "D",
+"day": "2025-03-03",
+"round": "r0"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-306-184A2428~0": {
+"code": "D",
+"day": "2025-03-03",
+"round": "r0"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-347-184A2470~0": {
+"code": "f",
+"day": "2025-03-03",
+"round": "al2"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-357-184A2480~0": {
+"code": "F",
+"day": "2025-03-03",
+"round": "r0"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-384-184A2507~0": {
+"code": "X",
+"day": "2025-03-03",
+"rev": "rev1",
+"round": "r0",
+"was": "d"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-388-184A2511~0": {
+"code": "O",
+"day": "2025-03-03",
+"round": "al1"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-404-184A2527~0": {
+"code": "d",
+"day": "2025-03-03",
+"round": "aud"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-405-184A2528~0": {
+"code": "d",
+"day": "2025-03-03",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-423-184A2546~2": {
+"code": "O",
+"day": "2025-03-03",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-426-184A2549~0": {
+"code": "Fd",
+"day": "2025-03-03",
+"round": "al1"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-428-184A2551~0": {
+"code": "F",
+"day": "2025-03-03",
+"round": "r0"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-436-184A2559~0": {
+"code": "F",
+"day": "2025-03-03",
+"round": "r0"
+},
+"2025-3-3_C1_Harvey__2025-3-3-Harvey-NOAA-MMHSRP-24359-452-184A2576~0": {
+"code": "F",
+"day": "2025-03-03",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-002-184A2582~0": {
+"code": "d",
+"day": "2025-03-06",
+"round": "al1"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-003-184A2583~0": {
+"code": "F",
+"day": "2025-03-06",
+"round": "al1"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-005-184A2585~0": {
+"code": "F",
+"day": "2025-03-06",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-013-184A2595~0": {
+"code": "D",
+"day": "2025-03-06",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-015-184A2597~0": {
+"code": "F",
+"day": "2025-03-06",
+"rev": "dis1",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-025-184A2607~0": {
+"code": "O",
+"day": "2025-03-06",
+"round": "aud"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-026-184A2608~0": {
+"code": "O",
+"day": "2025-03-06",
+"round": "al1"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-065-184A2647~0": {
+"code": "D",
+"day": "2025-03-06",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-066-184A2648~0": {
+"code": "O",
+"day": "2025-03-06",
+"round": "al1"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-073-184A2655~0": {
+"code": "O",
+"day": "2025-03-06",
+"round": "al2"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-083-184A2665~0": {
+"code": "F",
+"day": "2025-03-06",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-123-184A2705~0": {
+"code": "O",
+"day": "2025-03-06",
+"round": "al1"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-126-184A2708~0": {
+"code": "D",
+"day": "2025-03-06",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-152-184A2734~0": {
+"code": "D",
+"day": "2025-03-06",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-173-184A2755~0": {
+"audit": "O",
+"code": "O",
+"day": "2025-03-06",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-174-184A2756~0": {
+"code": "D",
+"day": "2025-03-06",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-200-184A2783~0": {
+"code": "D",
+"day": "2025-03-06",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-202-184A2785~0": {
+"code": "F",
+"day": "2025-03-06",
+"round": "al2"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-217-184A2800~0": {
+"code": "F",
+"day": "2025-03-06",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-219-184A2802~0": {
+"code": "F",
+"day": "2025-03-06",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-239-184A2822~0": {
+"code": "D",
+"day": "2025-03-06",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-248-184A2831~0": {
+"code": "F",
+"day": "2025-03-06",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-259-184A2844~0": {
+"code": "D",
+"day": "2025-03-06",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-260-184A2845~0": {
+"code": "D",
+"day": "2025-03-06",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-270-184A2855~0": {
+"code": "F",
+"day": "2025-03-06",
+"round": "r0"
+},
+"2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-274-184A2860~0": {
+"code": "D",
+"day": "2025-03-06",
+"round": "r0"
+},
+"2025-3-6_C3_Holm__2025-3-6-Holm-NOAA-MMHSRP-24359-687-HR5_5511~0": {
+"code": "d",
+"day": "2025-03-06",
+"round": "al1"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-004-HR5_8798~0": {
+"code": "D",
+"day": "2025-04-11",
+"round": "r0"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-007-HR5_8801~0": {
+"code": "d",
+"day": "2025-04-11",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-008-HR5_8802~0": {
+"code": "d",
+"day": "2025-04-11",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-009-HR5_8803~0": {
+"code": "F",
+"day": "2025-04-11",
+"round": "r0"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-011-HR5_8805~0": {
+"code": "f",
+"ctx": true,
+"day": "2025-04-11",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-015-HR5_8809~0": {
+"code": "D",
+"day": "2025-04-11",
+"round": "r0"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-019-HR5_8813~0": {
+"code": "D",
+"day": "2025-04-11",
+"round": "r0"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-020-HR5_8814~0": {
+"code": "df",
+"day": "2025-04-11",
+"rev": "rev1",
+"round": "r0",
+"was": "d"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-024-HR5_8818~0": {
+"code": "F",
+"day": "2025-04-11",
+"round": "r0"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-025-HR5_8819~1": {
+"code": "F",
+"ctx": true,
+"day": "2025-04-11",
+"round": "r0",
+"was": "f"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-031-HR5_8825~0": {
+"code": "D",
+"day": "2025-04-11",
+"round": "r0"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-035-HR5_8829~0": {
+"code": "O",
+"day": "2025-04-11",
+"round": "al1"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-037-HR5_8831~0": {
+"code": "d",
+"day": "2025-04-11",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-040-HR5_8834~0": {
+"code": "d",
+"day": "2025-04-11",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-042-HR5_8836~0": {
+"code": "D",
+"day": "2025-04-11",
+"round": "r0"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-043-HR5_8837~0": {
+"code": "d",
+"day": "2025-04-11",
+"round": "aud"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-045-HR5_8839~0": {
+"code": "D",
+"day": "2025-04-11",
+"round": "r0"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-048-HR5_8842~0": {
+"code": "D",
+"day": "2025-04-11",
+"round": "aud"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-049-HR5_8843~0": {
+"code": "D",
+"day": "2025-04-11",
+"round": "r0"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-050-HR5_8844~0": {
+"code": "d",
+"day": "2025-04-11",
+"rev": "dis1",
+"round": "r0",
+"was": "O"
+},
+"2025-4-11_C3_Lyman__2025-4-11-Lyman-NOAA-MMHSRP-24359-051-HR5_8845~0": {
+"code": "F",
+"day": "2025-04-11",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-002-184A8519~0": {
+"code": "D",
+"day": "2025-04-01",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-042-184A8559~0": {
+"code": "D",
+"day": "2025-04-01",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-084-184A8601~0": {
+"code": "D",
+"day": "2025-04-01",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-116-184A8634~0": {
+"code": "d",
+"day": "2025-04-01",
+"round": "aud"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-118-184A8636~0": {
+"code": "D",
+"day": "2025-04-01",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-124-184A8642~0": {
+"code": "F",
+"day": "2025-04-01",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-132-184A8650~0": {
+"code": "F",
+"day": "2025-04-01",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-162-184A8680~0": {
+"code": "O",
+"day": "2025-04-01",
+"round": "al2"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-177-184A8695~0": {
+"code": "D",
+"day": "2025-04-01",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-181-184A8699~0": {
+"code": "O",
+"day": "2025-04-01",
+"round": "aud"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-190-184A8708~0": {
+"code": "F",
+"day": "2025-04-01",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-267-184A8789~0": {
+"code": "F",
+"day": "2025-04-01",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-271-184A8793~0": {
+"code": "F",
+"day": "2025-04-01",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-276-184A8798~0": {
+"code": "D",
+"day": "2025-04-01",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-374-184A8896~0": {
+"code": "F",
+"day": "2025-04-01",
+"round": "al2"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-382-184A8904~1": {
+"code": "O",
+"day": "2025-04-01",
+"round": "al2"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-408-184A8930~0": {
+"code": "O",
+"day": "2025-04-01",
+"round": "al1"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-415-184A8937~1": {
+"code": "d",
+"day": "2025-04-01",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-496-184A9018~0": {
+"code": "F",
+"day": "2025-04-01",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-498-184A9020~0": {
+"code": "F",
+"day": "2025-04-01",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-522-184A9044~1": {
+"code": "O",
+"day": "2025-04-01",
+"round": "aud"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-523-184A9045~0": {
+"code": "Fd",
+"day": "2025-04-01",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-772-184A9294~0": {
+"audit": "F",
+"code": "F",
+"day": "2025-04-01",
+"round": "al1"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-784-184A9306~0": {
+"code": "F",
+"day": "2025-04-01",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-784-184A9306~1": {
+"code": "d",
+"day": "2025-04-01",
+"round": "aud"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-803-184A9325~1": {
+"code": "d",
+"day": "2025-04-01",
+"round": "al1"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-859-184A9381~0": {
+"code": "F",
+"day": "2025-04-01",
+"round": "r0"
+},
+"2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-860-184A9382~0": {
+"code": "F",
+"ctx": true,
+"day": "2025-04-01",
+"rev": "rev1",
+"round": "r0",
+"was": "f"
+},
+"2025-4-1_C3_Harvey__2025-4-1-Harvey-NOAA-MMHSRP-24359-007-HR5_8496~1": {
+"code": "O",
+"day": "2025-04-01",
+"round": "al2"
+},
+"2025-4-1_C3_Harvey__2025-4-1-Harvey-NOAA-MMHSRP-24359-234-HR5_8725~0": {
+"code": "F",
+"day": "2025-04-01",
+"round": "aud"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-006-184A9441~0": {
+"code": "D",
+"day": "2025-04-09",
+"round": "r0"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-007-184A9442~0": {
+"code": "F",
+"day": "2025-04-09",
+"round": "r0"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-008-184A9443~0": {
+"code": "F",
+"day": "2025-04-09",
+"round": "r0"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-009-184A9444~1": {
+"code": "F",
+"day": "2025-04-09",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-010-184A9445~1": {
+"code": "F",
+"day": "2025-04-09",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-011-184A9446~0": {
+"code": "f",
+"day": "2025-04-09",
+"round": "al2"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-020-184A9455~0": {
+"code": "F",
+"day": "2025-04-09",
+"round": "r0"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-023-184A9458~1": {
+"code": "f",
+"day": "2025-04-09",
+"rev": "rev1",
+"round": "r0",
+"was": "O"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-044-184A9479~0": {
+"code": "F",
+"ctx": true,
+"day": "2025-04-09",
+"round": "r0",
+"was": "f"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-045-184A9480~0": {
+"code": "O",
+"day": "2025-04-09",
+"round": "al1"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-051-184A9486~0": {
+"code": "D",
+"day": "2025-04-09",
+"rev": "rev1",
+"round": "r0",
+"was": "d"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-054-184A9489~0": {
+"code": "FD",
+"day": "2025-04-09",
+"rev": "dis1",
+"round": "r0"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-057-184A9492~0": {
+"code": "D",
+"day": "2025-04-09",
+"round": "r0"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-061-184A9496~0": {
+"code": "D",
+"day": "2025-04-09",
+"round": "r0"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-078-184A9513~0": {
+"code": "d",
+"day": "2025-04-09",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-085-184A9520~0": {
+"code": "D",
+"day": "2025-04-09",
+"round": "r0"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-098-184A9533~0": {
+"audit": "d",
+"code": "d",
+"day": "2025-04-09",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-102-184A9537~0": {
+"code": "D",
+"day": "2025-04-09",
+"round": "r0"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-103-184A9538~0": {
+"code": "D",
+"day": "2025-04-09",
+"round": "r0"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-111-184A9546~0": {
+"code": "d",
+"day": "2025-04-09",
+"rev": "rev1",
+"round": "r0"
+},
+"2025-4-9_C1_Lyman__2025-4-9-Lyman-NOAA-MMHSRP-24359-112-184A9547~0": {
+"code": "d",
+"day": "2025-04-09",
+"round": "al1"
+}
+}

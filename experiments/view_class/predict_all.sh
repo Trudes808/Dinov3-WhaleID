@@ -1,5 +1,5 @@
 #!/bin/bash
-# views.json for every day with view-class features
+# view_class.json for every day with view-class features
 cd /home/sat3737/NOAA_whales/Dinov3-WhaleID
 for d in experiments/days_all/*/; do
   [ -f "$d/safe/view_feat.npz" ] || continue

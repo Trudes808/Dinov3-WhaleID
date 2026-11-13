@@ -7,7 +7,7 @@ No mesh, no canonical map, no keypoints; "other" = neither (head, blow, a back w
 stock, a breach, a whale under water).
 
     python -m model_fine_tuning.cluster.view_class features --day-dir DAY     -> DAY/safe/view_feat.npz
-    python -m model_fine_tuning.cluster.view_class predict  --day-dir DAY     -> DAY/safe/views.json
+    python -m model_fine_tuning.cluster.view_class predict  --day-dir DAY     -> DAY/safe/view_class.json
     python -m model_fine_tuning.cluster.view_class fit      [--targets T.json] [--root experiments/days_all] [--out M.pkl]
     python -m model_fine_tuning.cluster.view_class report   [--split eval]    the saved model against the labels of a split
 
@@ -19,7 +19,8 @@ token of two crops of the instance box (x 1.15) cut from the day's 2560-px image
 = 4 x 768 numbers per instance, each block scaled to unit length. Head: standardise, PCA to 128, RBF SVM (C 4, balanced
 classes), one for the fluke and one for the fin; the decision value becomes a probability through a logistic fitted on
 out-of-fold scores of a random sample of instances (so P follows the real mix of photos). An instance shows the part
-when P >= 0.5; views.json keeps both probabilities per instance key.
+when P >= 0.5; view_class.json keeps both probabilities per instance key, and the box each was computed for (a reader
+skips an instance whose box has changed since: re-run features + predict after a day's instances are rebuilt).
 
 Labels (experiments/view_class, see its README): by-eye labels of random and of hard instances, the keypoints the
 researcher clicked on the Pairs / Bursts pages and the catalogue's fluke collection, all on the train + val days; the
@@ -121,7 +122,8 @@ def day_boxes(day_dir: Path) -> tuple[list, list]:
 def cmd_features(a) -> None:
     day_dir = Path(a.day_dir); t = time.time(); keys, boxes = day_boxes(day_dir)
     X = extract(lambda stem: day_dir / "images" / f"{stem}.jpg", boxes) if keys else np.zeros((0, 4 * 768), np.float16)
-    tmp = day_dir / "safe" / "view_feat.tmp.npz"; np.savez(tmp, keys=np.array(keys), X=X, blocks=np.array(BLOCKS)); tmp.replace(day_dir / "safe" / "view_feat.npz")
+    tmp = day_dir / "safe" / "view_feat.tmp.npz"; np.savez(tmp, keys=np.array(keys), X=X, blocks=np.array(BLOCKS), box=np.array([b for _, b in boxes], np.float32).reshape(-1, 4))
+    tmp.replace(day_dir / "safe" / "view_feat.npz")                                    # box = what the features were cut from: a reader can tell a stale file
     print(f"{day_dir.name}: {len(keys)} instances in {time.time() - t:.0f} s", flush=True)
 
 
@@ -234,16 +236,17 @@ def cmd_report(a) -> None:
 def cmd_predict(a) -> None:
     day_dir = Path(a.day_dir); model = load_model(Path(a.model)); keys, X = load_feat(day_dir); P = probability(model, X); thr = model["threshold"]
     views = {k: [round(float(p[0]), 3), round(float(p[1]), 3)] for k, p in zip(keys, P)}
+    z = np.load(day_dir / "safe" / "view_feat.npz"); box = {k: [round(float(v), 1) for v in b] for k, b in zip(keys, z["box"])} if "box" in z.files else {}
     counts = {"fluke": int((P[:, 0] >= thr).sum()), "dorsal": int(((P[:, 1] >= thr) & (P[:, 0] < thr)).sum()), "other": int(((P < thr).all(1)).sum())}
     out = day_dir / "safe" / a.out_name; tmp = out.with_suffix(".tmp.json")
-    tmp.write_text(json.dumps({"model": model["name"], "fitted": model["fitted"], "threshold": thr, "order": list(PARTS), "counts": counts, "views": views}, indent=0)); tmp.replace(out)
+    tmp.write_text(json.dumps({"model": model["name"], "fitted": model["fitted"], "threshold": thr, "order": list(PARTS), "counts": counts, "views": views, "box": box}, indent=0)); tmp.replace(out)
     print(f"{day_dir.name}: {len(keys)} instances -> fluke {counts['fluke']}, dorsal fin only {counts['dorsal']}, other {counts['other']} ({out.name})", flush=True)
 
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter); sub = ap.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("features"); p.add_argument("--day-dir", required=True); p.set_defaults(fn=cmd_features)
-    p = sub.add_parser("predict"); p.add_argument("--day-dir", required=True); p.add_argument("--model", default=str(MODEL)); p.add_argument("--out-name", default="views.json"); p.set_defaults(fn=cmd_predict)
+    p = sub.add_parser("predict"); p.add_argument("--day-dir", required=True); p.add_argument("--model", default=str(MODEL)); p.add_argument("--out-name", default="view_class.json"); p.set_defaults(fn=cmd_predict)
     p = sub.add_parser("fit"); p.add_argument("--targets", default=str(TARGETS)); p.add_argument("--root", default=str(REPO / "experiments" / "days_all")); p.add_argument("--out", default=str(MODEL))
     p.add_argument("--name", default="view_class_v2"); p.add_argument("--folds", type=int, default=8); p.set_defaults(fn=cmd_fit)
     p = sub.add_parser("report"); p.add_argument("--targets", default=str(TARGETS)); p.add_argument("--root", default=str(REPO / "experiments" / "days_all")); p.add_argument("--model", default=str(MODEL))
