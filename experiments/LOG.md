@@ -2236,3 +2236,346 @@ images stay on disk, untracked and ignored (.gitignore in each sheets folder). T
 credentials (`git push --force-with-lease origin main`); pull.ff=only is set in this repository so that a pull or
 Sync cannot merge the old commits back before that. The seven sheets of experiments/labeling_runs/2024-12-23 (whales,
 a drone, shoreline; no people) and docs/outline_pairs were left in.
+
+2026-11-13: Labeling Assistant, a "no" keeps the photo (user, while sorting 2025-01-15: "when I say no not that animal
+and it loads another animal I would like the left hand side to stay on the photo that I was last on rather than
+resetting"). After N the stack was set up again and its left pane went back to the opening frame (largest fluke / fin);
+now the frame shown before the no is kept (lab_animals.js stayOn, in the stack view and in the two-animal comparison
+from Review; the animal's photos are chosen again for that frame; a frame that left the unit falls back to the opening
+frame). The pane already keeps its zoom for a photo it shows. Built on a copy of frontend/, a new headless test
+(now tests/labeling_panes_e2e.py) fails on the old code at exactly these two points and passes on the new;
+labeling_e2e 78 checks pass on 2025-02-27 and 2025-01-02. Frontend only, no restart; an open tab needs a reload.
+
+2026-11-13, later: two more asks from the same sorting session. (1) "Sometimes when you select a new photo on the left
+the right then switches as well. We don't want that": setFrame() chose the animal's photos again for the part the new
+frame shows and went back to its first photo, so the right side jumped whenever the best comparable photo changed or
+the researcher had stepped through the animal's photos. Now another photo on the left (arrow keys, the strip) leaves
+the animal shown with the photo and the strip it has; the other animals' photos are still chosen for the frame on the
+left, and an animal gets that when it is brought up (lab_animals.js setRefs / staleAid, render()). (2) "Whatever photo
+for both left and right is being actively viewed there is a small arrow under that stack on the top grouped
+timeline": the day ribbon had one white arrow under the first photo of the stack in hand; it now carries a white arrow
+under the photo on the left and an arrow in the animal's colour (white edge) under its photo on the right, both
+following as the photos are stepped, drawn side by side when they would cover each other (labeling.js markRibbon(left,
+right, colour), called from render()). tests/labeling_panes_e2e.py (19 checks: right side stays, an animal brought up
+opens on its own photo, "no" keeps the left photo, the arrows; also in the two-animal comparison) fails on the old
+frame behaviour at two checks; labeling_e2e 78 checks pass on 2025-02-27 and 2025-01-02. Frontend only.
+
+2026-11-13, later still: stacks left in two, and unlinking (user, sorting 2025-01-15). Asked: why are the photos of
+13:52:26 and 13:52:27, 0.3 s apart and clearly one series, not one stack; a small option to add a photo to the
+previous / next stack; and a way to unlink a stack from the animal on the right while matching another one, back to
+the pool.
+Why not one stack: frames HR5_3321 (13:52:26.95) and HR5_3322 (13:52:27.25) of camera C3 are safe clusters 75 and 76.
+The tracker did not chain them because the whale's outline changed too much between the two shots (the fluke going
+under: mask box 2 063 px wide and 6 343 px of whale, then 601 px wide and 1 641 px), and the second stage gave the pair
+P 0.9935, under the 0.995 the strict tier needs (the bar that kept the labelled days free of wrong automatic joins).
+The four frames before them (cluster 74, 13:52:24.9-26.0) got 0.876 / 0.966 to the two. On the page the link scores
+are 0.95 (75-76), 0.89 (74-75), 0.94 (74-76): the second rides along as a run when the first is in hand, the four-frame
+stack falls just under the run's 0.90 when it comes first.
+Built (Whale-Review-Web frontend only): (1) the stack right before / after the unit on its camera, within 30 s, is
+shown faint at that end of the left strip ("＋ prev" / "＋ next", keys [ and ]); a click puts the stack in hand with it:
+an open neighbour becomes part of the unit from then on (lab_core.js joinStacks: a client-side "same" link, so either
+stack brings the other along; kept per day in the browser's localStorage by instance key; "yours ✕" takes them apart),
+a sorted neighbour takes the stack in hand to its animal as one undoable decision. The decision's log entry lists the
+pairs as `joined` (with `via: "stack"` for the second case): these are labels for the stack builder. Not offered
+beyond 30 s or for another whale of the same photo. No state field was added (the running server could not be
+restarted from this session), hence the browser storage for joins that are not sorted yet. (2) "↩ this stack out" is
+now "↩ unlink this stack" (U): the stack of the photo on the right goes back to the open stacks, is not offered for
+that animal again, and the stack in hand stays in hand on its photo (before, the page jumped to the stack taken out).
+tests/labeling_panes_e2e.py covers both (30 checks); the unlink check of labeling_e2e.py follows the new behaviour; 78
+checks pass on 2025-02-27 and 2025-01-02.
+
+2026-11-13, evening: every photo in sight, and "unlink this photo" (user, still sorting 2025-01-15). Two asks.
+(1) "Sometimes on the left when stacks get merged together they are still collapsed with a run tag between them ...
+always show all photos of that animal on both left and right ... we dont want any hidden photos." Nothing was
+collapsed: both strips of step 2 were one row that scrolled sideways with no visible scroll bar, 464 px wide on a
+1500 px window = five thumbnails. On the user's day the right strip held up to 20 photos (5 shown) and a run stack
+on the left sat past the edge behind its "run ✕" label. Now the strips wrap onto as many rows as it takes and the
+thumbnails get smaller when there are many (one row while >= 66 px wide, two rows down to 60, three down to 54, then
+more rows; past 40 % of the column down to 42 px and up to 62 %; a scroll bar, downward, only beyond that: a 74-photo
+animal fits a 1500 x 880 window, not a 1050 x 640 one). Each side is fitted by itself, so another animal on the right
+never resizes the left photo. The faint neighbour of a stack without a whale has its picture now.
+(2) "On left we should add a similar unlink this photo, for the ultra rare cases where the photo does not belong as
+part of the stack. In that case it separates that photo into its own stack." Built in the frontend only (the running
+server cannot be restarted from this session): "↩ unlink this photo" above the left photo (shift + U). The photo
+becomes a one-photo stack on the page (lab_core.js structure(): appended after the server's stacks, which keep their
+numbers and their order; placed beside its old stack). The record is the day's log on the server, which takes any
+action name with an empty patch: photo_out {key, head, child, stack_keys} / photo_back, and undo entries now carry
+the key; loadDay reads /log and rebuilds (photosOut), so it holds in every browser. This is also a label: a wrong join
+inside a safe cluster (P >= 0.995). What the server stores of the result is unchanged (the animal per instance key);
+to the server such a stack is one with photos of two animals, which it already handles. Choices: the one-photo stack
+gets NO scores (first version lent it its old stack's rows: once sorted, its new animal would have looked to the model
+like the whale it was just said not to be); it counts as "different" from its old stack, is looked past when a run or
+an ID series is followed, and never rides along. Found by the test: taking a stack's last photo out moved its end
+time, a re-sort by time then swapped it with another whale's stack of the same frames and cut its run, hence "the
+server's order never changes". Ways back: Z, "↩ back into its stack" when the photo is in hand (a stack that is
+sorted takes the photo to its animal), the faint thumbnail "↩ back" at the end of the old stack's strip.
+Checks: tests/labeling_panes_e2e.py 50 checks on 2025-02-27 (new: strips at two window sizes, the whole photo-out
+round trip incl. reload from the log); labeling_e2e.py 78 on 2025-02-27 and 2025-01-02; catalogue replay of the val
+days identical before / after (311 decisions, first choice 226 / 272, 455 looks). On 2025-01-02 two join checks of
+the pane test fail, on the files of this morning as well: that day's 956 hand-made links fill the run's limit of 8
+when a stack is joined, and "yours ✕" there also marks Pairs-page links. Not fixed. The help panel of the page was
+brought up to date (it still described "this stack out" as jumping to the stack).
+
+2026-11-14: look before adding, and "later" (user, sorting 2025-01-15). (1) "For the add to previous or next I want
+that to happen when you click the add button but not automatically if you click the photo. If you click the photo it
+should just make the photo the main and then if you agree you click the add." The faint photos at the ends of the
+left strip (now every photo of the neighbouring stack, not one) only LOOK: the photo goes to the left pane (dashed
+frame, "not added"), the right side stays, arrows step through that stack, esc or a click on an own photo goes back.
+Adding = the "＋ prev / ＋ next" label, a "＋ add to the stack in hand" button above the photo, or [ / ]; the photo
+looked at then stays on the screen. An answer pressed while looking (space, N, A, ...) is not taken: it only returns
+to the stack in hand (the photo on the left is not what the answer would be about).
+(2) "When a photo gets combined into a stack sometimes then if you hit later it seems to not bring up a new stack and
+shows the same photo again." Reproduced in the test before the fix: S put off the head stack only, so the stack put
+with it (or a run stack) was the next open stack in capture order and came up at once: unit [148 .. 154] -> next unit
+[149 .. 154]. S now puts off the whole unit on the screen (head + the stacks riding along, not those taken out with
+"run ✕"); when the open stacks come round again it starts with another unit when there is one.
+tests/labeling_panes_e2e.py: 58 checks on 2025-02-27 (8 new). Frontend only (lab_animals.js, labeling.css, help).
+
+2026-11-14, later: "can't tell" (user, sorting 2025-01-15): "On right side we need an additional cant tell added to
+yes, or no. This should allow you to keep filtering through the animal options that it could be, and still cause it
+to become its own animal if it doesnt match any, but then still allow it to be more heavily scrutinized during
+review." Built as a third answer (M) beside yes and no. For the question at hand it is a no (state `no`: the animal is
+not offered for that stack again, the next one comes, none left = a new animal). What it adds is a record of the two
+PHOTOS that were on the screen ("<animal's photo key>|<stack's photo key>"), not of animal ids: wherever the two
+photos are sorted later, Review lists their two animals first under "May be one whale" as "you could not tell" and
+marks both animals, until they are one animal or were compared and found different. Photo pairs survive merges,
+renumbering and removed animals without bookkeeping, which pairs of animal ids would not. A can't tell is excluded
+from "found different" (saidDifferent), so unlike a no it does not switch off the merge hint for the pair. Settled by:
+yes for that animal after all, a plain no for the same stack, N in the side-by-side comparison, a merge. In the
+comparison M keeps the pair listed and rules nothing out. Record = the day's server log (unsure_add / unsure_del on any
+entry, swapped by its undo; read at load), as for photo_out: no server field, no restart. These pairs are also labels
+of a kind the linker has none of (pairs a trained eye could not decide).
+Checks: tests/labeling_panes_e2e.py 68 on 2025-02-27 (10 new), labeling_e2e.py 78, catalogue replay of the val days
+unchanged (311 decisions, 226 / 272). The no button lost its "· not A06" text to make room (three answers in a row).
+
+2026-11-14, timeline clicks (user): "when viewing a stack on left and clicking a tile in the stack timeline at top
+that is already colored it brings that animals photos up on the right." Until now a click on a sorted photo's tick in
+step 2 looked for an open stack with that photo, found none and loaded the next task: the stack in hand was dropped.
+Now (lab_animals.js S.ribbonPick, called by the ribbon's click in labeling.js): the animal that photo is sorted to is
+selected on the right, on that very photo; the stack in hand and its photo stay. Grey ticks open their stack as
+before; a tick of an animal that cannot be held against the stack (another group) goes to its encounter as before; in
+the side-by-side comparison the same, except for the animal on the left. tests/labeling_panes_e2e.py: 72 checks
+(4 new) on 2025-02-27.
+
+2026-11-14: the user's second full day on the Labeling Assistant, 2025-01-15 (val day), against the catalogue.
+Record: experiments/labeling_runs/2025-01-15 (state_snapshot.json = the state at rev 222 with its log, day_min.json,
+compare.py -> compare.log; no photos). 166 photos, catalogue: 16 animals = G01 (competitive group of 6), G02 (single),
+G03 (mother, calf, escort), six lone animals O01-O06; the user: one encounter, 17 animals, 2 photos "no whale".
+- Photos: 155 of 163 (95.1 %) sit in an animal whose majority catalogue animal is theirs. Photo pairs: precision 0.924,
+  recall 0.637. The stack builder: 113 stacks, none holds two catalogue animals.
+- Splits (the loss in recall): O02 (33 photos) = three of her animals, O03 (20) = two, G02A01 (19) = 15 + 4 (the four
+  show neither fluke nor fin), the calf G03A02 = 8 + 4 inside the mother's animal. O02 and O03 are two whales
+  photographed in turns over 33 minutes (12:37-13:10); she made five animals for them in her first five decisions
+  (A, new animal), each from a fluke stack; the pieces show the flukes from different sides and partly against the
+  glare. By eye from the crops I cannot say who is right; the catalogue had the field context.
+- 8 photos in another whale's animal: 4 calf photos put with the mother's series by hand ("＋ next", 3 joins), 1 photo
+  through a join with a sorted neighbour, the only photos of G01A05 and G01A06 (two of them in two-whale frames), one
+  two-whale frame. Catalogue animals with one photo: 1 of 4 found (O06); O01's photo was marked "no whale".
+- Answers against the catalogue: 3 of 146 "no" were to the right animal, 4 of 45 "yes" to a wrong one. So the
+  answers are sound; what was missed were matches never made (new animal instead).
+- Effort: 201 decisions (146 no, 45 yes, 10 A) and about two hours of active time over three sittings (features were
+  being built in between); the catalogue replay needs 74. The 146 "no" sit on 24 stacks: 11 new animals were made by
+  saying no to every animal of the list (up to 15 in a row), because the day was one encounter with up to 19 animals.
+- Encounters: no cut was made. The model proposed none (threshold 0.35) but its four "possible" gaps, 13:43, 14:14,
+  14:45, 15:03 (P 0.32, 0.31, 0.26, 0.19; gaps of 15-22 min), are exactly the catalogue's four group changes of the
+  afternoon. No group type, no roles, no passer-by set, so the export's names do not line up with the catalogue's.
+- "Can't tell" (new that day): 36 answers, 35 between two different whales, 1 same. Review ended with 13 "you could not
+  tell" pairs, all two whales: used as a soft no while walking the list, it fills Review with pairs to clear.
+- The model at the end: one merge hint (A01-A04 = O02 / O03, two whales). The five true split pairs score 0.34, 0.25,
+  0.18, 0.17, 0.16; the most similar pairs of different whales 0.42, 0.39, 0.35 (pieces of O02 against O03: same
+  minutes, same light). No threshold separates them: on this day the model would not have repaired the splits.
+Found and fixed on the way: the "?" marks on animals in Review listed pairs that a plain no had settled (24 against
+the 13 rows above them); they now show the same pairs as the rows (lab_review.js).
+
+2026-11-14, the gaps the model is unsure about (user: "implement just the encounter cuts suggestion for now, to suggest
+possible gaps"; bigger changes wait for more days). Before a day is sorted, the amber gaps (0.15 <= P(new group) <
+0.35) that are not cut are put to the researcher: at the top of the Encounters step and again at the door of step 2,
+which sorts nothing until they are answered. Per gap: the last photo before, the first after, length, boat movement,
+deleted frames; "same group" / "new group"; one button answers all. Kept as `cuts_review` in the day's log with the
+gaps cut (`at`) and the gaps kept (`same`): the first labels of this kind for the boundary model. Asked once per day,
+only while nothing is sorted (a later cut does not move existing animals: a known limit, not touched).
+Measured first, on the 24 train + val days against the catalogue (a change = the catalogue's unit, group number or
+lone animals, differs across the gap; eval days not read): proposed gaps 68 of 100 right, amber gaps 25 of 88 (val
+days alone 7 of 14), below amber 30 of 347; of the 123 changes the proposals hold 68, the amber gaps 25, 30 are below
+both. So amber is right about one time in four: worth asking, wrong to cut automatically, and lowering the threshold
+to 0.15 would add three wrong cuts for each right one. 2025-01-15 (4 of 4) was the lucky end of that.
+tests: labeling_panes_e2e.py 81 checks (9 new), labeling_e2e.py 80 (2 new), both on 2025-02-27.
+Next day for the user: 2025-02-27 (val; 329 photos, 156 stacks, 17 animals in 5 groups + 2 lone; the page proposes
+6 cuts, 5 right, and asks about 3 gaps, 1 right; the replay needs 105 decisions), then 2025-03-14.
+
+2026-11-14, boat track after a cut (user: "when the new gaps get cut can you make sure the boat day track renumbers
+and draws appropriately?"). The map did redraw, but on 2025-02-27 the two encounters made by cutting the amber gaps
+hold only the 13 photos of 12:23-12:49 from the second camera, which has no GPS and no fix of the other camera within
+2 minutes: no positions, so the map went G06, G09, G10. And labels were printed on each other (G02 under G03) and on
+town names. Now (frontend): a photo without a position is placed by time on the straight line between the positions
+before and after it and drawn hollow (an estimate, said so under the map and in its tooltip; across that two-hour
+hole it only says "between here and there"); each label takes the first free place round its encounter's first
+position, with a thin line back when it moved, and keeps off the town names. tests/labeling_panes_e2e.py checks one
+label per encounter after a cut, none overlapping (82 checks); labeling_e2e.py 80.
+
+2026-11-14, evening: 2025-02-27 sorted by the user (val), and the three labelled days side by side
+(labeling_runs/2025-02-27: state snapshot + compare.log; labeling_runs/cross_day: analyze.py + one log per day,
+re-read from the page; 2025-01-15 now includes the merges done after the first comparison).
+| day | photos | catalogue / mine | photos right | pair precision / recall | min active |
+| 2024-12-23 (train) | 95 | 6 / 9 | 100 % | 1.000 / 0.872 | 48 |
+| 2025-01-15 (val) | 166 | 16 / 15 (+3 single-photo whales not found) | 95 % | 0.942 / 0.854 | 126 |
+| 2025-02-27 (val) | 329 | 17 / 39 | 98 % | 0.981 / 0.393 | 91 |
+2025-02-27: purity high, consolidation low: 23 extra animals (18 inside one of her encounters, 5 the same whale in
+another encounter: G01, a mother-calf pair, was met three times, 08:32 / 08:45 / 11:16, and the model's 08:45 cut at
+P 0.61 is not a change). The splits sit in the mother-calf groups: G01 MC 2 whales -> 8 animals, G04 MCE 3 -> 13,
+G03 MCE 3 -> 6. G04: 88 photos, 24 with two whales, 60 stacks of which 37 hold one photo. 28 new animals were made by
+answering no / can't tell to every animal of the list. "Can't tell" was used 80 times and was right to doubt here: 38
+of 82 pairs were one whale (2025-01-15: 1 of 36). Review then listed 54 such rows, 26 of them one whale; merging
+along those rows would have removed 15 of the 23 extra animals, but Review was used for one merge. Gaps: the
+"+ amber gaps" button was used (all three cut, one a change), not the gap question. Answers: 3 wrong yes of 56; of
+116 no, 43 to the right animal, 36 of them "can't tell". 2 impure stacks of the stack builder (both in G04).
+Across the days: precision 0.94-1.0 every day, the loss is always consolidation; it grows with mother-calf groups,
+two-whale frames and one-photo stacks; group types / roles were never entered (catalogue types MC, MCE, CG, Single,
+Pair, Singer would cap the animals per group). Proposals given to the user (none built; the user wants more days
+first): group budget from the type, mother-calf pair handling of two-whale frames, a "clear the doubts" pass at the
+end of Review, park instead of founding an animal when the list runs out, burst-level questions for one-photo stacks,
+"met again?" across encounters, and the amber button going through the gap question.
+
+2026-11-14, late: built the user's pick from the cross-day review: clear the doubts (with met again inside it),
+park instead of founding, mother-calf "sort both", bursts asked together (README "Five additions of 2026-11-14").
+Measured before choosing defaults (train + val days, private server, eval not read): neighbouring stacks on one
+camera <= 1 s apart with link 0.5-0.9 are the same whale 89 % (train, 207 pairs) / 97 % (val, 36); at <= 2 s 78 / 90 %;
+the run itself (link >= 0.9) 98 / 94 % -> BURST.gap 1 s. The catalogue labels whole photos, so the two whales of a
+frame always carry the same id: no measure for a companion rule, so "sort both" only asks the other whale next and
+tags, it does not reorder. Met again on 2025-02-27: cross-encounter animal pairs >= 0.30 alike: 5 of 17 one whale ->
+DOUBT.metAgain 0.30, asked, never applied. Results: val catalogue replay 311 -> 282 decisions (runs 118 -> 147 taken,
+9 -> 8 taken out), photos right 879 / 883 unchanged. On the user's finished 2025-02-27 the doubt pass asks 66 pairs,
+28 one whale; right answers would remove 17 of the 23 extra animals. Tests: panes 96 checks, e2e 80 (its "no to the
+only animal" check now expects parking).
+
+## 2026-11-16 — Model Interpretability page: why some part cut-outs look turned or cropped; PCA, t-SNE and UMAP for the fingerprint cloud
+Request (user): on the "Parts" tab "a bunch of those photos look strangely rotated or cropped? What is causing that?";
+on the fingerprints 3D view "what is calculating that? Should we try a Umap as well?". Measurements only, nothing on the
+page or in the pipeline was changed. Scripts in experiments/interpret_checks/ (chart_stats.py, fingerprint_dump.py,
+layout_compare.py); the example sheets stayed in the scratchpad (photos).
+The cut-outs. The tab shows the pipeline's real part charts (parts_hr/charts, cluster/parts.py), the input of the
+fingerprints, not a display effect. Each is a square cut from the full-resolution photo and turned to a standard pose:
+body and fin by the long axis of the whale's outline with the head direction from the body map (head to the right, a
+left-side view mirrored), the fluke by the long axis of the blade pixels (span level, tail stock on top, the whale's
+right tip on the right); the square is centred on the part and sized to its extent plus a margin (fin 45 % a side, fluke
+15 %, body 8 %). From the saved transform of every chart on eight days (2024-12-18, 2024-12-23, 2025-01-02, 2025-01-15,
+2025-02-27, 2025-03-14, 2025-03-18, 2025-03-21; 3 829 bodies, 2 508 fins, 1 232 flukes): turned upside down (over 120
+deg) 22 % of the bodies and 13 % of the fins, sideways (30 to 120 deg) 7 % and 4 %, tilted 10 to 30 deg 12 % and 10 %;
+mirrored 57 % and 59 %; more than a quarter of the tile outside the photo (black, the photo's own edge inside the tile)
+18 % of the bodies, 28 % of the fins, 15 % of the flukes. Flukes are shown tail stock up by design, so against the photo
+nearly all are upside down (56 % by the turn, 44 % by the extra vertical flip); 8 % are sideways. By eye on the sheets:
+the upside-down bodies are mostly fluke-up photos (a "head to the right" pose does not exist for them) and backs seen
+from behind; the upside-down "fins" are backs seen from behind and cut-outs of flukes or tail stocks the body map calls
+a fin; the sideways "flukes" on 2025-02-27 are raised pectoral fins; the black borders come from whales that fill the
+frame (the fin region the body map marks is as long as the visible back, so the square with its margin is larger than
+the photo). The part itself is wrong in about one cut-out in six (chart flags 0.84 against 0.97 for the view check,
+entry of 2026-11-12); the page marks those dashed and the matching leaves them out.
+Does it matter for matching. Dorsal-fin fingerprints the view check accepts, against the other stacks of the day,
+catalogue as truth: closest look-alike is the same animal for 0.79 of the upright cut-outs inside the photo (n 1 188),
+0.76 of those with more than a quarter outside the photo (n 489), 0.58 of those turned upside down or sideways (n 179,
+one accepted fin in ten); median best similarity to the own animal 0.79 / 0.80 / 0.68. The black borders cost little;
+the wrong turn goes with clearly worse matching, though the views that get turned wrong (from behind, far, in spray) are
+harder anyway, so this is an upper bound on what a fix would return. A fix would keep the photo's own "up" (whales at
+the surface are almost never rolled over), mirror by the heading only, and keep the square inside the photo; the charts
+and the fingerprints of every day would have to be made again. Offered, not built.
+The fingerprint cloud. Each accepted cut-out's 512-number fingerprint (cluster_v3/embeddings.npz, the pair-trained
+student) is laid out in 3D by the backend (Whale-Review-Web backend/interpret_models.py _layout), once per day and part,
+cached: "Main directions" = PCA to three components (the default), "Neighbourhoods" = t-SNE in 3D (cosine, perplexity at
+most 30, PCA start, fixed seed). The turning is the drawing only (20 s, then still). UMAP against these two, in a
+scratch install (umap-learn 0.6.0; the project environment was not changed), on the same eight days and three parts (24
+clouds, 6 740 points): share of a point's 10 closest look-alikes that are among its 10 closest in the picture: PCA 0.45,
+t-SNE 0.58, UMAP 0.66; of a point's 5 closest in the picture from other stacks, the share with its catalogue animal:
+0.40 / 0.47 / 0.53, and 0.53 is what the 512 numbers themselves give; rank correlation of the distances in the picture
+with the fingerprint distances: 0.73 / 0.47 / 0.60; another random start keeps 0.59 of a point's picture-neighbours with
+t-SNE and 0.84 with UMAP; a second or two per cloud for either. UMAP with 30 neighbours or a wider spread gives the same
+within 0.02. So UMAP is the better "Neighbourhoods" layout here on every count, PCA stays the honest one for large
+distances. Adding it needs umap-learn (with numba and llvmlite) in the shared environment and a backend restart:
+proposed to the user, not done.
+
+## 2026-11-16 evening — UMAP as the fingerprint cloud's neighbourhood layout; fin and body cut-outs re-made (never upside down or on their side, the square inside the photo)
+Request (user, after the entry above): "Yes please make those changes".
+Correction to the entry above first. chart_stats.py sampled a 512-px square of each chart, but the parts_hr charts are
+1536 px, so its "outside the photo" shares were those of the top-left ninth of each cut-out. Over the whole cut-out, on
+the same eight days: more than a quarter outside the photo 14 % of the bodies (not 18), 26 % of the fins (not 28), 9 %
+of the flukes (not 15); any part outside 36 % / 50 % / 28 %. Angles, mirroring and zoom were read from the transform and
+stand. The matching numbers split by "outside" in that entry used the wrong measure; with the right one, on the
+validation days, fins with a quarter or more outside the photo find their own animal first as often as those inside it
+(0.78 and 0.78). The script is fixed.
+UMAP. umap-learn 0.6.0 installed in .venv (with numba 0.68.1, llvmlite 0.50.0, pynndescent 0.7.0; pip freeze before and
+after differs by exactly these four). Whale-Review-Web backend/interpret_models.py: layout "umap" (cosine, 15
+neighbours, min_dist 0.1, fixed seed, the 0.5.x optimiser pinned with compatibility_layout=True because that is what
+was measured), the page's "Neighbourhoods" is now UMAP, "Main directions" stays PCA, the t-SNE still answers on the API;
+points fewer than 16 work (n_neighbors is capped), the same picture comes out when it is made again. All 28 days x 3
+parts are laid out and cached. tests/interpret_models_e2e.py updated, all checks pass; server restarted.
+The cut-outs. What the rule should be was measured before any day was touched, on the three validation days only, with
+the catalogue: experiments/interpret_checks/chart_variants.py cuts every used instance again from the RAW under each
+rule with the production code (1536 px, jpg, 512 to the network), embeds with the same student (pair_student_g) and
+keeps only fingerprints and transforms; the first rule reproduced the stored fingerprints (cosine >= 0.9999).
+chart_variants_score.py: "first" = the closest look-alike in another stack is the same catalogue animal (470 fin, 841
+body, 154 fluke queries; intervals from a bootstrap over stacks).
+  - Turn. The first rule ("axis": mirror by the flank, long axis level with the head on that side) gives first 0.789
+    for fins and 0.742 for bodies. Never turning more than needed: mirror by flank + level always (sd90) 0.800 / 0.765,
+    level up to 30 deg else the photo's own up (sd30) 0.798 / 0.766, no levelling at all (sd0) 0.781 / 0.767; mirror by
+    where the head points instead (hd90 / hd30 / hd0) 0.794 / 0.791 / 0.785 and 0.760 / 0.762 / 0.763. The cut-outs the
+    first rule turned upside down (36 fin, 166 body queries): 0.611 -> 0.750 (sd30; 0.778 with hd30) and 0.663 -> 0.735.
+    For bodies every variant is +2 points (sd30: 44 queries turned right, 24 wrong, sign test p 0.02); for fins all are
+    within noise overall (+0.9 for sd30, 90 % interval -0.4 to +2.2) and the gain sits in the upside-down ones.
+  - Which mirror rule. Without labels, inside stacks of three or more frames: a fin mirrored against its stack's
+    majority 3.0 % with "flank" and 7.0 % with "heading" (where the two disagree and the rest of the stack is unanimous
+    the flank is right 10 times in 12); bodies 14.5 % and 12.3 % (no difference). So the flank rule stays.
+  - Level limit. 30 against 90 is the same in every number; 30 is taken because then no cut-out lies on its side. No
+    levelling (the photo's own up throughout, what was first proposed) changes every cut-out and is not better (fins
+    0.781).
+  - Frame. Square moved into the photo ("shift") or also shrunk to fit ("fit"), on the first rule: fins 0.781 / 0.785
+    (from 0.789), bodies 0.753 / 0.765 (from 0.742; fit: 43 right, 24 wrong, p 0.03), flukes 0.688 / 0.675 (from 0.714;
+    3 right 7 wrong, 5 right 11 wrong). Shift alone leaves most of the black (18.5 % of fins still a quarter outside):
+    the black comes from squares larger than the photo, not from squares near its edge. So: fit for fins (neutral:
+    first -0.4, top five +1.8, pair AUC 0.898 -> 0.906) and bodies (better), flukes untouched.
+  - The rule taken: --pose up --mirror side --level-max 30 --frame fin=fit,body=fit. Validation days, production files:
+    fins 0.789 -> 0.785 (29 right, 31 wrong), top five 0.678 -> 0.696, AUC 0.898 -> 0.906; bodies 0.742 -> 0.773 (68
+    right, 42 wrong, p 0.017; interval +0.9 to +5.4), AUC 0.836 -> 0.841; flukes identical. 57 % of the fin and 59 % of
+    the body cut-outs change. No cut-out has a quarter outside the photo any more (fins 23 %, bodies 13 % before).
+  - End to end (Whale-Review-Web tests/labeling_replay.py --days val, WHALE_CUTOUTS=first against the default): first
+    choice right 198 / 243 = 0.815 -> 201 / 240 = 0.838, decisions 282 -> 279, looks 425 -> 417; by phase flukes 0.833 ->
+    0.861, dorsal fins 0.817 -> 0.839, the rest 0.796 -> 0.818.
+Built. cluster/parts.py: pose_turn (rule "axis" = before, "up"), frame_inside (pad / shift / fit), options --pose
+--level-max --mirror --frame; without them the output is the first rule's, byte for byte (a first run of the new
+options silently made the old cut-outs: extract_photo's own variable "pose", the camera pose record, shadowed the new
+argument; caught by parts_up_check.py because the new fingerprints equalled the old, the argument is now "rule").
+scripts/parts_up_all.sh writes DAY/parts_up (all three parts, the same instances and index as parts_hr) and
+DAY/cluster_up (channels.npz + embeddings.npz of the student); parts_hr and cluster_v3 are not touched: the safe
+clusters, the link scores and the pair tool were built from them and keep reading them.
+All days. scripts/parts_up_all.sh on the 28 days with parts_hr (about 45 min, 8 workers; 15 GB next to the 15 GB of
+parts_hr, /var/tmp is at 94 %). parts_up_check.py on every day: the same instances and parts, the same fingerprint
+keys, flukes unchanged (cosine > 0.999), 23 to 82 % of a day's fin fingerprints and 38 to 77 % of its body
+fingerprints changed (median cosine of a changed one 0.84 to 0.94). On the eight days of the entry above, from the
+saved transforms: fins turned under 10 deg 74 % -> 88 %, 10 to 30 deg 10 % -> 12 %, more than 30 deg 17 % -> none;
+bodies 59 % -> 84 %, 12 % -> 16 %, 29 % -> none; any part of the cut-out outside the photo fins 50 % -> 0.1 %, bodies
+36 % -> 0.3 %; flukes as they were (28 % with some part outside, 9 % with a quarter or more).
+Evaluation days, read once for this, after the rule was fixed (2024-12-18, 2024-12-26, 2025-02-19, 2025-03-21;
+parts_up_emb.py + chart_variants_score.py on the production files): fins first 0.614 -> 0.651 (982 queries; 80 turned
+right, 44 wrong, sign test p 0.002; 90 % interval +1.7 to +5.8 points), top five 0.518 -> 0.545, pair AUC 0.832 ->
+0.844; the fins the first rule turned upside down (103) 0.466 -> 0.573, those with a quarter or more outside the photo
+(168) 0.554 -> 0.661. Bodies first 0.554 -> 0.581 (2 064 queries; 186 right, 130 wrong, p 0.002; +1.1 to +4.3), the
+upside-down ones (512) 0.486 -> 0.559. Flukes identical (0.549). Do not tune the cut-out rule on these days again.
+The Labeling Assistant's replay (first choice right; decisions; looks), first set -> second set: validation 0.815 ->
+0.838; 282 -> 279; 425 -> 417. Evaluation 0.723 -> 0.728 (308 / 426 -> 308 / 423); 494 -> 491; 820 -> 814; top three
+0.962 -> 0.955. Training days 0.817 -> 0.810 (1 357 / 1 661 -> 1 331 / 1 644; dorsal-fin phase 0.852 -> 0.836); 1 909 ->
+1 892; 3 149 -> 3 172. So the page's ranking moves little: up on validation, flat on evaluation, slightly down on the
+21 days whose first-rule cut-outs the student was trained on (it has seen exactly those pictures; the re-made ones it
+has not). The fingerprint-level gain is clear on the days it never saw. The student was not retrained; training it on
+parts_up is the step that would bring the training days back and probably add to the rest.
+Web app (Whale-Review-Web). backend/labeling.py: WHALE_CUTOUTS (up, the default | first) and cutout_dirs(day folder)
+-> ("parts_up", "cluster_up") where a day has both, else ("parts_hr", "cluster_v3"); _embeddings reads that folder; the
+day payload carries "cutouts". backend/interpret.py: the Parts step's cut-outs, the tile cache (interp_cache/
+charts_parts_up) and the overview's fingerprint numbers come from the same folders; chart links carry v=<folder> so a
+browser never shows a cached first-rule tile. backend/interpret_models.py: the layout signature names the fingerprint
+folder, so all 168 layouts (28 days x 3 parts x PCA / UMAP) were made again. frontend/js/interp_step_parts.js: the
+wording says what the cut-outs now are. Instances, part flags, sides, the pair tool's region boxes and scores still
+come from parts_hr / cluster_v3. Tests: interpret_e2e (66 checks, two new: the folder the step names is the one a
+full cut-out is served from), interpret_models_e2e, labeling_e2e, labeling_panes_e2e, library_e2e, bursts_e2e all
+pass. Server restarted 20:55 with nobody on it (no state file written since 15:28, no open connection); the 11 343
+small tiles of the Parts walls were requested once so the first look is fast.
+Not done: retraining the student on the second set; flukes (their black borders stay: both framing changes measured
+worse, -2.6 and -3.9 points on 154 validation queries, not significant); the safe clusters and the link scores were
+not rebuilt (they would change cluster ids and need their own check).

@@ -256,6 +256,54 @@ eval days 71.7 % -> 75.1 %). For flukes it made no difference on the page and is
 A new day needs `view_class features`, `view_class predict` and `view_match embed` after `safe_clusters features` (they read `DAY/safe/photos.json`);
 Whale-Review-Web /labeling reads `view_class.json` when the day has one and falls back to the chart flags when not.
 
+## Part cut-outs, second set: never upside down, inside the photo (2026-11-16)
+
+The first rule for a fin or body cut-out (`cluster/parts.py`, `DAY/parts_hr`) turns the whale's long axis level with
+the head on the side the visible flank asks for. When the two disagree (a back seen from behind, a fluke-up dive, a
+wrong part) the cut-out comes out upside down (13 % of fins, 22 % of bodies on eight days), a steep axis lays it on its
+side (4 % / 7 %), and a whale that fills the frame gives a square larger than the photo (a quarter or more of the
+cut-out black for 26 % of fins and 14 % of bodies). The second set keeps the mirroring by flank, levels the back only
+when that takes a turn of at most 30 degrees and otherwise keeps the photo's own up, and keeps the fin and body squares
+inside the photo (shrunk when they are larger than the photo). Flukes are cut as before: tail stock on top, and both
+framing changes measured worse for them.
+
+    scripts/parts_up_all.sh [DAY ...]      # -> DAY/parts_up (parts.py --pose up --mirror side --level-max 30 --frame fin=fit,body=fit)
+                                           #    DAY/cluster_up (the student's fingerprints of them); a finished day is skipped
+    python experiments/interpret_checks/parts_up_check.py DAY [DAY ...]     # same instances, flukes unchanged, what changed
+
+`DAY/parts_hr` and `DAY/cluster_v3` stay: the safe clusters, the link scores and the pair tool were built from them.
+The Labeling Assistant's similarities and the Model Interpretability page read the second set where a day has it
+(Whale-Review-Web `WHALE_CUTOUTS=up`, the default; `first` = as before). The student network itself was trained on
+the first rule's cut-outs and was not retrained.
+
+Chosen on the three validation days with the catalogue, before any day was changed
+(`experiments/interpret_checks/chart_variants.py`, `chart_variants_score.py`; "first" = the closest look-alike in another
+stack is the same catalogue animal):
+
+| validation days | first rule | second set |
+|---|---|---|
+| dorsal fins, first (470 queries) | 0.789 | 0.785 |
+| dorsal fins the first rule turned upside down (36) | 0.611 | 0.694 (0.750 with the turn alone) |
+| bodies, first (841 queries) | 0.742 | 0.773 |
+| bodies the first rule turned upside down (166) | 0.663 | 0.717 |
+| Labeling Assistant replay, first choice right | 0.815 | 0.838 |
+| cut-outs with a quarter or more outside the photo | fins 23 %, bodies 13 % | none |
+
+On the validation days the fin numbers are within noise overall; the body gain is not (68 queries turned right, 42
+wrong). The evaluation days, read once after the rule was fixed, say the same more clearly:
+
+| evaluation days | first rule | second set |
+|---|---|---|
+| dorsal fins, first (982 queries) | 0.614 | 0.651 (80 turned right, 44 wrong) |
+| dorsal fins the first rule turned upside down (103) | 0.466 | 0.573 |
+| bodies, first (2 064 queries) | 0.554 | 0.581 (186 turned right, 130 wrong) |
+| Labeling Assistant replay, first choice right | 0.723 | 0.728 |
+
+On the 21 training days the replay goes from 0.817 to 0.810: the student has seen exactly the first rule's cut-outs
+of those days and not the re-made ones. Retraining it on `parts_up` is open. A new day needs
+`scripts/parts_up_all.sh DAY` after `parts_hr` exists, then a restart of the review server. The second set takes as
+much disk as the first (15 GB for the 28 days).
+
 ## Earlier work
 
 The classical-vision isolation and clustering code from the first iteration lives in git

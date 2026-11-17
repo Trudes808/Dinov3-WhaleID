@@ -3,6 +3,10 @@ flank, cut from the full-resolution RAW with the canonical map.
 
     python -m model_fine_tuning.cluster.parts --index INDEX_JSONL --canon-dir PRED --out PARTS [--size 512] [--workers 10]
 
+    --pose up --mirror side --level-max 30 --frame fin=fit,body=fit     the cut-outs of DAY/parts_up (2026-11-16): fins and
+        bodies are never turned upside down or on their side and their square stays inside the photo (pose_turn,
+        frame_inside); without these options the first rule (DAY/parts_hr), which the identity networks were trained on
+
 Per photo, up to three charts (jpg + npz with masks and view data):
   fin    the dorsal fin and its surround: mirrored to the right-flank view, head right, fin up,
          scaled to the fin box (chart.py), plus the fin silhouette isolated from the mask
@@ -60,6 +64,51 @@ def make_transform(centre_crop, extent_crop, angle_deg, target_deg, x0, y0, s, s
     return M, float(out_scale)
 
 
+def pose_turn(head_angle: float, side: int, pose: str = "axis", level_max: float = 30.0, mirror: str = "side") -> tuple[float, bool]:
+    """How a body / fin cut-out is turned: (rotation in degrees as cv2.getRotationMatrix2D takes it, mirrored).
+      axis   the first rule: mirror when the left flank shows (side < 0) and turn the whale's long axis level with the
+             head on that side. When head direction and flank disagree (a back seen from behind, a fluke-up dive, a
+             wrong part) the cut-out comes out upside down, and a steep axis lays it on its side.
+      up     never upside down or on its side: mirror by the flank that shows ("side", as before) or by where the
+             head points in the photo ("heading"), level the long axis only when that takes a turn of at most
+             level_max degrees, otherwise keep the photo's own up. Measured 2026-11-16 on the validation days with
+             the catalogue (experiments/interpret_checks/chart_variants.py): the cut-outs "axis" turned upside down
+             find their own animal first 0.75 of the time instead of 0.61 (fins) and 0.73 instead of 0.66 (bodies);
+             within a stack of frames "side" contradicts its neighbours less often than "heading" for fins (3 %
+             against 7 %)."""
+    if pose == "axis":
+        return head_angle - (0.0 if side >= 0 else 180.0), side < 0
+    mirrored = bool(np.cos(np.radians(head_angle)) < 0) if mirror == "heading" else side < 0
+    r = (head_angle - (180.0 if mirrored else 0.0) + 180.0) % 360.0 - 180.0
+    if abs(r) > 90.0:                                   # mirror by side with the head on the other side: level the axis, head left
+        r = (r + 360.0) % 360.0 - 180.0
+    return (r if abs(r) <= level_max else 0.0), mirrored
+
+
+def frame_inside(M: np.ndarray, size: int, W: int, H: int, frame: str = "pad") -> np.ndarray:
+    """Where the square is cut: "pad" as computed (what lies outside the photo is black), "shift" moved the least that
+    brings it inside the photo (still black where it is larger than the photo), "fit" also made smaller until it
+    fits (the part then fills more of the cut-out than its margin says)."""
+    if frame == "pad":
+        return M
+    M = M.astype(np.float64).copy()
+    for _ in range(2 if frame == "fit" else 1):
+        c = (np.linalg.inv(np.vstack([M, [0, 0, 1]])) @ np.array([[0, size, size, 0], [0, 0, size, size], [1, 1, 1, 1]], float))[:2]
+        lo, hi = c.min(1), c.max(1); k = min(W / (hi[0] - lo[0]), H / (hi[1] - lo[1]))
+        if frame == "fit" and k < 1.0:                 # zoom in about the centre of the cut-out, then look again
+            M = np.array([[1 / k, 0, (1 - 1 / k) * size / 2], [0, 1 / k, (1 - 1 / k) * size / 2]]) @ np.vstack([M, [0, 0, 1]])
+            frame = "shift"; continue
+        d = np.zeros(2)
+        for a, lim in ((0, W), (1, H)):
+            if hi[a] - lo[a] <= lim:
+                d[a] = -lo[a] if lo[a] < 0 else lim - hi[a] if hi[a] > lim else 0.0
+            else:
+                d[a] = -lo[a] if lo[a] > 0 else lim - hi[a] if hi[a] < lim else 0.0
+        M[:, 2] -= M[:, :2] @ d
+        break
+    return M
+
+
 def warp_masks(M, x0, y0, s, scale_full, size, *masks):
     crop_to_full = np.array([[scale_full / s, 0, x0 * scale_full], [0, scale_full / s, y0 * scale_full]], np.float64)
     M3 = (np.vstack([M, [0, 0, 1]]) @ np.vstack([crop_to_full, [0, 0, 1]]))[:2]
@@ -94,7 +143,7 @@ def split_instances(use: np.ndarray, min_frac: float = 0.1, min_px: int = 400, u
 
 
 def extract_photo(rec: dict, canon_dir: Path, out: Path, table: dict, size: int, fin_min_fraction: float = 0.0, fluke_min_fraction: float = 0.0,
-                  instances: bool = False, min_instance_frac: float = 0.1, only_parts: tuple = ("body", "fin", "fluke")) -> dict:
+                  instances: bool = False, min_instance_frac: float = 0.1, only_parts: tuple = ("body", "fin", "fluke"), rule: dict | None = None) -> dict:
     """fin_min_fraction / fluke_min_fraction: besides the 400-pixel minimum, the part must hold this share of the
     whale's pixels (a patch of mislabelled pixels on a back must not produce a fluke chart)."""
     stem = Path(rec["image"]).stem
@@ -116,7 +165,7 @@ def extract_photo(rec: dict, canon_dir: Path, out: Path, table: dict, size: int,
     inst_recs = []; main_parts = []
     for k, use in enumerate(masks):
         key = f"{stem}~{k}" if instances else stem
-        made = extract_instance(key, use, side, signed, u, profile, full, x0, y0, s, scale_full, out, size, fin_min_fraction, fluke_min_fraction, only_parts)
+        made = extract_instance(key, use, side, signed, u, profile, full, x0, y0, s, scale_full, out, size, fin_min_fraction, fluke_min_fraction, only_parts, rule)
         ys, xs = np.nonzero(use)
         bbox = [float(xs.min() / s + x0), float(ys.min() / s + y0), float((xs.max() + 1) / s + x0), float((ys.max() + 1) / s + y0)]   # 2560-px image
         inst_recs.append({"key": key, "parts": made, "area": int(use.sum()), "bbox_2560": [round(v, 1) for v in bbox]})
@@ -127,9 +176,13 @@ def extract_photo(rec: dict, canon_dir: Path, out: Path, table: dict, size: int,
 
 def extract_instance(stem: str, use: np.ndarray, side: np.ndarray, signed: np.ndarray, u: np.ndarray, profile: float, full: np.ndarray,
                      x0: float, y0: float, s: float, scale_full: float, out: Path, size: int, fin_min_fraction: float, fluke_min_fraction: float,
-                     only_parts: tuple = ("body", "fin", "fluke")) -> list[str]:
+                     only_parts: tuple = ("body", "fin", "fluke"), rule: dict | None = None) -> list[str]:
+    """rule: None = the first rule (pose_turn "axis", frame "pad"); else {"pose", "level_max", "mirror", "frame": {part: pad | shift | fit}}."""
     head_angle = body_axis_angle(use, signed)
     made = []
+    P = {"pose": "axis", "level_max": 30.0, "mirror": "side", "frame": {}, **(rule or {})}
+    FH, FW = full.shape[:2]
+    extra = {"head_angle": head_angle, "pose": P["pose"]} if rule else {}       # the first rule's files stay as they were
 
     def save(name, chart, masks: dict, meta: dict):
         cv2.imwrite(str(out / "charts" / f"{stem}__{name}.jpg"), cv2.cvtColor(chart, cv2.COLOR_RGB2BGR), [cv2.IMWRITE_JPEG_QUALITY, 92])
@@ -139,31 +192,31 @@ def extract_instance(stem: str, use: np.ndarray, side: np.ndarray, signed: np.nd
     # --- body: whole visible whale, right-flank view, head right
     ys, xs = np.nonzero(use)
     view_side = int(np.sign(side[use].sum())) if np.abs(side[use]).sum() else 0
-    target = 0.0 if view_side >= 0 else 180.0
     if "body" in only_parts:
-        M, sc = make_transform(((xs.min() + xs.max()) / 2, (ys.min() + ys.max()) / 2), max(np.ptp(xs), np.ptp(ys)) + 1.0, head_angle, target, x0, y0, s, scale_full, size, 0.08)
+        turn, mirrored = pose_turn(head_angle, view_side, P["pose"], P["level_max"], P["mirror"])
+        M, sc = make_transform(((xs.min() + xs.max()) / 2, (ys.min() + ys.max()) / 2), max(np.ptp(xs), np.ptp(ys)) + 1.0, turn, 0.0, x0, y0, s, scale_full, size, 0.08)
+        M = frame_inside(M, size, FW, FH, P["frame"].get("body", "pad")); sc = float(np.hypot(M[0, 0], M[0, 1]))
         chart = cv2.warpAffine(full, M, (size, size), flags=cv2.INTER_AREA if sc < 1 else cv2.INTER_CUBIC)
         (whale_c,) = warp_masks(M, x0, y0, s, scale_full, size, use)
-        mirrored = view_side < 0
         if mirrored:
             chart, whale_c = chart[:, ::-1].copy(), whale_c[:, ::-1].copy()
-        save("body", chart, {"whale": whale_c}, {"view_side": view_side, "mirrored": mirrored, "pixels": int(use.sum()), "M": M, "x0y0s": np.array([x0, y0, s]), "scale_full": scale_full})
+        save("body", chart, {"whale": whale_c}, {"view_side": view_side, "mirrored": mirrored, "pixels": int(use.sum()), "M": M, "x0y0s": np.array([x0, y0, s]), "scale_full": scale_full, **extra})
 
     # --- fin: as chart.py, then the silhouette
     fin = use & (u > 0.36) & (u < 0.54) & (signed[..., 2] > 0.9)
     if "fin" in only_parts and fin.sum() >= max(400, fin_min_fraction * use.sum()):
         fy, fx = np.nonzero(fin)
         fside = int(np.sign(side[fin].sum())) if np.abs(side[fin]).sum() else view_side
-        target = 0.0 if fside >= 0 else 180.0
-        M, sc = make_transform((fx.mean(), fy.mean()), max(np.ptp(fx), np.ptp(fy)) + 1.0, head_angle, target, x0, y0, s, scale_full, size, 0.45)
+        turn, mirrored = pose_turn(head_angle, fside, P["pose"], P["level_max"], P["mirror"])
+        M, sc = make_transform((fx.mean(), fy.mean()), max(np.ptp(fx), np.ptp(fy)) + 1.0, turn, 0.0, x0, y0, s, scale_full, size, 0.45)
+        M = frame_inside(M, size, FW, FH, P["frame"].get("fin", "pad")); sc = float(np.hypot(M[0, 0], M[0, 1]))
         chart = cv2.warpAffine(full, M, (size, size), flags=cv2.INTER_AREA if sc < 1 else cv2.INTER_CUBIC)
         whale_c, fin_c = warp_masks(M, x0, y0, s, scale_full, size, use, fin)
-        mirrored = fside < 0
         if mirrored:
             chart, whale_c, fin_c = chart[:, ::-1].copy(), whale_c[:, ::-1].copy(), fin_c[:, ::-1].copy()
         sil = isolate_fin(whale_c)
         save("fin", chart, {"whale": whale_c, "fin_band": fin_c, "silhouette": sil if sil is not None else np.zeros_like(whale_c)},
-             {"view_side": fside, "mirrored": mirrored, "pixels": int(fin.sum()), "M": M, "x0y0s": np.array([x0, y0, s]), "scale_full": scale_full})
+             {"view_side": fside, "mirrored": mirrored, "pixels": int(fin.sum()), "M": M, "x0y0s": np.array([x0, y0, s]), "scale_full": scale_full, **extra})
 
     # --- fluke: blades, span horizontal, peduncle up, whale's right tip on the image right
     fluke = use & (u < 0.12) & (np.abs(signed[..., 1]) > 0.5)
@@ -177,6 +230,7 @@ def extract_instance(stem: str, use: np.ndarray, side: np.ndarray, signed: np.nd
         right = span * (1.0 if c >= 0 else -1.0)
         angle = float(np.degrees(np.arctan2(right[1], right[0])))         # rotate so the right tip points to +x
         M, sc = make_transform((kx.mean(), ky.mean()), max(np.ptp(kx), np.ptp(ky)) + 1.0, angle, 0.0, x0, y0, s, scale_full, size, 0.15)
+        M = frame_inside(M, size, FW, FH, P["frame"].get("fluke", "pad")); sc = float(np.hypot(M[0, 0], M[0, 1]))
         chart = cv2.warpAffine(full, M, (size, size), flags=cv2.INTER_AREA if sc < 1 else cv2.INTER_CUBIC)
         whale_c, fluke_c = warp_masks(M, x0, y0, s, scale_full, size, use, fluke)
         # peduncle (increasing body fraction) should be at the top: if the body-fraction gradient points down, flip vertically
@@ -195,10 +249,10 @@ def extract_instance(stem: str, use: np.ndarray, side: np.ndarray, signed: np.nd
 
 
 def _worker(args):
-    rec, canon_dir, out, size, fin_min, fluke_min, instances, min_frac, only_parts = args
+    rec, canon_dir, out, size, fin_min, fluke_min, instances, min_frac, only_parts, rule = args
     table = geometry.load_folded_table(paths.FOLDED_TABLE)
     try:
-        return extract_photo(rec, Path(canon_dir), Path(out), table, size, fin_min, fluke_min, instances, min_frac, only_parts)
+        return extract_photo(rec, Path(canon_dir), Path(out), table, size, fin_min, fluke_min, instances, min_frac, only_parts, rule)
     except Exception as e:  # noqa: BLE001
         return {"stem": Path(rec["image"]).stem, "error": str(e), "parts": [], "instances": []}
 
@@ -216,7 +270,15 @@ def main(argv=None) -> int:
     p.add_argument("--min-instance-frac", type=float, default=0.1)
     p.add_argument("--update-multi", action="store_true", help="existing output: redo only the photos whose mask has several components, keep the rest")
     p.add_argument("--only-parts", default="body,fin,fluke", help="comma list of the chart types to cut (e.g. fin,fluke at native resolution)")
+    p.add_argument("--pose", default="axis", choices=["axis", "up"], help="how fin and body cut-outs are turned (pose_turn): axis = the first rule, up = never upside down or on its side")
+    p.add_argument("--level-max", type=float, default=30.0, help="--pose up: the long axis is levelled only when that takes at most this many degrees")
+    p.add_argument("--mirror", default="side", choices=["side", "heading"], help="--pose up: mirror by the flank that shows or by where the head points")
+    p.add_argument("--frame", default="", help='where the square is cut per part (frame_inside), e.g. "fin=fit,body=fit"; default pad = black outside the photo')
     args = p.parse_args(argv)
+    frame = dict(x.split("=") for x in args.frame.split(",") if x)
+    if any(k not in ("body", "fin", "fluke") or v not in ("pad", "shift", "fit") for k, v in frame.items()):
+        raise SystemExit("--frame: part=pad|shift|fit with part body, fin or fluke")
+    rule = None if args.pose == "axis" and not frame else {"pose": args.pose, "level_max": args.level_max, "mirror": args.mirror, "frame": frame}
     recs = [json.loads(l) for l in open(args.index)]
     keep_rows = {}
     if args.update_multi and (args.out / "index.jsonl").exists():
@@ -237,7 +299,8 @@ def main(argv=None) -> int:
         r["pose"] = poses.get(Path(r["image"]).stem)
     args.out.mkdir(parents=True, exist_ok=True); (args.out / "charts").mkdir(exist_ok=True)
     only = tuple(x for x in args.only_parts.split(",") if x)
-    jobs = [(r, str(args.canon_dir), str(args.out), args.size, args.fin_min_fraction, args.fluke_min_fraction, args.instances, args.min_instance_frac, only)
+    (args.out / "pose.json").write_text(json.dumps({"rule": rule or {"pose": "axis", "frame": {}}, "size": args.size}, indent=1))
+    jobs = [(r, str(args.canon_dir), str(args.out), args.size, args.fin_min_fraction, args.fluke_min_fraction, args.instances, args.min_instance_frac, only, rule)
             for r in recs if (args.canon_dir / f"{Path(r['image']).stem}_canon.npz").exists()]
     counts, errors, multi = {"body": 0, "fin": 0, "fluke": 0}, 0, 0
     with Pool(args.workers) as pool, open(args.out / "index.jsonl.tmp", "w") as handle:
