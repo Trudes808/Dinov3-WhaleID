@@ -166,6 +166,7 @@ def preview_tile(it: dict, size: int = 320) -> np.ndarray:
     ov[w == 0] = (0.55 * ov[w == 0] + [0, 0, 90]).astype(np.uint8)              # certain background: blue tint
     for c, col in COLS.items():
         ov[w == c] = col
+    ov[w == 6] = (0.5 * ov[w == 6] + [127, 70, 0]).astype(np.uint8)            # W3c: whale, not dorsal (orange tint)
     txt = []
     for i in range(1, MAX_INST + 1):
         m = (inst == i).astype(np.uint8)

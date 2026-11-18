@@ -4043,6 +4043,183 @@ Chain `experiments/seg_pair/pair.sh` (code `model_fine_tuning/seg_real/pair.py`)
   suspicion.
 - Expected: renders done 06:30-07:30, then about 2.5-3 h: results about 09:30-10:30 on 2026-11-18.
 
+## 2026-11-18 01:50 — overnight results read by me: point-based fin cut-outs do not help matching; W3b still paints the flank
+
+**Fin retrain test** (`/var/tmp/sat3737-parts-cache/pose_side/retrain_finP6_summary.txt`, done 01:41; validation
+days, first match; R0 = student retrained on today's cut-outs, RP6 = the same with point-based fin cut-outs at equal
+zoom, two seeds each, G = the live network):
+
+| Queries | R0 s0 | R0 s1 | RP6 s0 | RP6 s1 | G | RP6 - R0, mean over seeds |
+|---|---|---|---|---|---|---|
+| fin (470) | 0.811 | 0.804 | 0.798 | 0.770 | 0.785 | -0.023 [-0.051, +0.005] |
+| body (841) | 0.769 | 0.769 | 0.761 | 0.786 | 0.773 | +0.004 [-0.010, +0.018] |
+| fluke (154) | 0.682 | 0.727 | 0.688 | 0.760 | 0.714 | +0.019 [-0.013, +0.053] |
+
+Seed distance on fins: R0 -0.006, RP6 -0.028. Reading: point-based fin cut-outs do not improve identity matching,
+retrained or not; if anything slightly worse on fins, inside noise. Today's cut-outs stay. The point model keeps its
+value for what the user asked of it (comparing locations precisely on simple poses), not for the fingerprint crop.
+R0 against the live network on fins: +0.026 / +0.019 for the two seeds (was +2.6 points on one run): consistent, still
+small.
+
+**W3b** (full real triangle + the OLD render labels; `experiments/parts_weak/fin_definition_w3b.json`, done 23:29):
+the flank band is still there. 2025-03-18: triangle covered 1.0, lowest point -1.54 fin heights below the base line,
+connected region 8.0x the triangle (W3: -1.525, 7.6x; W2 seeds: +0.29 / +0.30, 0.81x / 0.97x). So the entry of about
+21:05 was wrong about the cause: it is not the widened render label. Suspected cause: the real-triangle term is
+one-sided (says where dorsal is, never where it stops). The agent is asked to find the cause in the code and to run
+W3c with a two-sided real label; the GPU is free until the mask pair chain starts at about 07:00.
+
+**State of the overnight jobs at 01:50:** paired render arm m2 complete (1 000 shots, 21:22 to about 01:40), arm m1
+at batch 3 of 37, chain alive; mask pair chain alive and waiting for the marker; no errors in the render log.
+
+## 2026-11-18 01:57 — part model: why the wide dorsal runs paint the flank, and W3c launched (subagent, reviewed here; nothing live)
+
+**Cause, from the code:** in `parts_weak/build.py` every whale pixel of a real photo starts as "ignore" and only the
+clicked shapes get a class; in `losses.py` nothing ever says "not dorsal" on body pixels of a real dorsal view. On the
+97 clicked training fins, the whale pixels from the base line down to 1.5 fin heights are 6.7 million "ignore" and 11
+"dorsal", against 1.5 million triangle pixels labelled dorsal. The positive has no boundary. W2 stayed small because
+its tip triangles sat on the blade, which looks distinct; the full triangle includes hump skin that looks like the
+back below it.
+
+**W3b's full row** (one seed) against W2's two seeds: region / triangle area 8.0 (.81 / .97), lowest point -1.54 (+.29
+/ +.30), finless backs called dorsal by eye 11 of 33 (5-7), by classifier 23.8 % (11.3-14.6 %), three-way call by
+classifier on whole photos .923 (.944 / .947). Unchanged: tail stock, dorsal views with no fin pixel, synthetic IoU.
+
+**W3c** = W3b with a two-sided real label (`build_tri2.py`, maps in `/var/tmp/sat3737-parts-cache/parts_weak/
+maps_tri2/`): inside the clicked triangle = dorsal; whale pixels in a window around the fin that are more than 0.2 fin
+heights below the base line, or more than 0.1 base beyond either base, = "certainly not dorsal" (13.5 million pixels
+on 97 fins), with the loss -log(1 - P(dorsal)) there. Chain `experiments/parts_weak/run_w3c.sh`, training since
+01:54, marker `/var/tmp/sat3737-parts-cache/parts_weak/w3c.done`, expected 04:00-04:30. One seed: only the fin shape
+will be claimed.
+
+## 2026-11-18 04:05 — part model: W3c (two-sided fin + hump label) removes the flank band; second seed ordered (subagent, reviewed here; nothing live)
+
+Question: does telling the model where the dorsal part ends (whale pixels well below the base line or beyond the two
+bases are "certainly not dorsal") give the user's wider dorsal part (fin + hump) without the band down the flank that
+W3 and W3b painted?
+
+Answer: yes for the shape, one seed. W3c fills the clicked triangle and stops at the back line. Every standing gain of
+W2 over the baselines is kept. Whether it also beats W2 anywhere else needs the second seed.
+
+Fin shape on the held-out clicks of 2025-03-18 (medians; the validation days have no clicks). Training day 2025-01-02
+agrees (lowest point -0.11, coverage 1.0, region 1.74 x, IoU .56).
+
+| | W2 s0 | W2 s1 | W3 | W3b | W3c |
+|---|---|---|---|---|---|
+| lowest painted point, fin heights (0 = back line) | +0.29 | +0.30 | -1.53 | -1.54 | -0.04 |
+| clicked triangle covered | .46 | .45 | 1.0 | 1.0 | .97 |
+| painted region over triangle area | .81 | .97 | 7.6 | 8.0 | 1.47 |
+| IoU with the triangle | .33 | .30 | .13 | .13 | .55 |
+| fin tip inside the region | .916 | .908 | .916 | .916 | .924 |
+| dorsal share of the whale in dorsal views (val, crops) | .030 | .031 | .42 | .53 | .068 |
+
+These rows are far outside both seed distances. My look at the sheet (12 fins, photo, a, W2, W3, W3b, W3c with the
+clicked triangle): W3c's region sits on the triangle in all 12, no band on any flank, hump slope included on the long
+low fins. Sheet: scratchpad `parts_weak/w3c_vs_w2_fins.jpg`.
+
+Standing measures on the validation days ("ns" = within one seed distance, the larger of a to s1 and W2 s0 to s1):
+
+| | a | s1 | W2 s0 | W2 s1 | W3c |
+|---|---|---|---|---|---|
+| dorsal views with no fin pixel, crops (n 473) | 43 | 31 | 1 | 1 | 2 ns |
+| fin region found (cut-outs) | .890 | .919 | .996 | .992 | .990 ns |
+| fluke covers a quarter (cut-outs) | .828 | .873 | .910 | .905 | .882 ns |
+| classifier-scored call, whole photo (n 828) | .837 | .859 | .944 | .947 | .941 ns |
+| by-eye call, whole photo (n 79) | .734 | .810 | .899 | .899 | .899 ns |
+| by-eye call, crops | .797 | .734 | .873 | .911 | .937 ns against W2 s1 |
+| finless backs called dorsal, by eye, crops (n 33) | 0 | 0 | 21 % | 15 % | 6 % (2 of 33) |
+| finless backs called dorsal, classifier, crops (n 151) | 3.3 % | 2.0 % | 14.6 % | 11.3 % | 9.3 % ns |
+| tail stock: body share in fluke views | 7.3 % | 7.2 % | 0.3 % | 0.3 % | 0.0 % |
+| fluke notch inside the fluke | | | .759 | .685 | .759 ns |
+
+Cost check for the not-dorsal term: synthetic IoU fluke / dorsal / body unchanged (.941 / .727 / .869); pectoral .679
+against .706 / .707 for W2 (W3b without the term had .687, so the full triangle may be the cause, not the term); head
+.682 (inside the baseline seed distance). Hump on finless backs is not painted (dorsal share in "other" views 0).
+
+Not solved by W3c: the tail stock is still painted fluke; finless backs called dorsal is lower but on 33 photos.
+
+Second seed (`parts_seg_r05_w3cs1`) ordered at 04:05 for four open readings: fewer finless backs called dorsal, the
+by-eye crop call, the fluke-quarter dip, the synthetic pectoral drop. It shares the GPU lock with five jobs of the
+other conversation and, from about 05:15, with the mask pair test.
+
+Files: `parts_weak/compare_w3c.json`, `fin_definition_w3c.json`, `finless_w3c.json`, `shares_w3c.json`,
+`detail_w3c_vs_{w2,w3b}.json`; label maps `/var/tmp/sat3737-parts-cache/parts_weak/maps_tri2/`; code
+`model_fine_tuning/parts_weak/build_tri2.py`, `losses.py`. Validation days and held-out clicks only.
+
+## 2026-11-18 05:38 — paired mirror set rendered; chain stopped on one stray label pixel; mask test restarted on the common shots (checked by me)
+
+Both arms rendered: `r06_pair_m2` (no mirror) done about 01:40, `r06_pair_m1` (mirror) done 05:15, 1,000 shots each at
+1280x853, same shot list. The factory chain then stopped at "qa_multi m2" (05:23), which also stopped the waiting mask
+chain before any training.
+
+- Cause: shot 000893 (three animals, one visible) fails `parts_in_instance`. Animal 3 has exactly one visible pixel, at
+  the bottom row of the frame (y 852, x 620), outside its own mesh. Same pixel in both arms. Asked the factory helper
+  whether this is a blended-pixel decode at the frame edge.
+- Checks run by hand at 05:36: qa_multi on m1 has the same single failure and nothing else (1,398 animals, lowest
+  share inside own mesh 0.9997); pairing check passes (shot-list lines identical 1000 / 1000, `instances/` and
+  `parts/` byte-identical 1000 / 1000, `r06_pair_check.json`).
+- Quality gate: 60 shots rejected in m2, 67 in m1 (the same 60 plus 7; the mirror changes the exposure numbers).
+- My look at eight pairs (calm to light seas, scratchpad `pair_look/pairs_my_look.jpg`): identical frames apart from
+  the dark mirrored whale under the animal in mode 1. The pair tests what it should.
+- Marker `data/renders/r06_pair.done` written by me with a note; the failure file is kept as
+  `r06_pair.qa_note_000893.txt`.
+
+Mask test restarted 05:37 (pid 2402901): shots accepted in both arms without 000893 = 932; after the run05 filter
+(whale shots need 800 visible pixels, flagged shots out) 811 pairs, 13 of them without a whale; split 690 train / 121
+val, one split for both arms (`seg_pair/split_pair.json`); `masks/` byte-identical 811 / 811. Any GPU step is retried
+once after ten minutes before the chain gives up. Eight trainings (arm A renders only, arm B fine-tune, two mirror
+modes, two seeds), about 2.5 h of GPU plus queue.
+
+GPU sharing: the other conversation (moonshot bench) announced about 13 more GPU hours today (six runs of 80 min, a
+fin model fine-tune of about 5 h). It offered to pause its long chain; I asked it to hold that chain until
+`seg_pair/pair.done` exists and to keep its short jobs interleaved. Also on the lock: the second W3c seed (trained
+05:20, scoring).
+
+Morning kit started 05:37 by the factory helper (new blade UVs, LOD check, 24 side views, flat-grey shots, khaki A / B
+/ C). No pilot.
+
+## 2026-11-18 05:53 — part model: W3c on two seeds: the fin + hump region holds, nothing else separates from W2 (numbers read by me from the score files)
+
+Second seed `parts_seg_r05_w3cs1` trained 05:20, scored 05:52. Rule for "separable" fixed by the helper before the
+second seed was scored: both W3c seeds on the same side of both W2 seeds, and the gap larger than the larger seed
+distance.
+
+Holds on both seeds (held-out clicks 2025-03-18, medians; training day 2025-01-02 agrees at -0.11 / -0.10, coverage
+1.0, 1.74 / 1.77 x, IoU .56 / .55):
+
+| | W2 s0 | W2 s1 | W3c s0 | W3c s1 |
+|---|---|---|---|---|
+| lowest painted point, fin heights (0 = back line) | +0.29 | +0.30 | -0.04 | -0.02 |
+| clicked triangle covered | .46 | .45 | .97 | .96 |
+| painted region over triangle area | .81 | .97 | 1.47 | 1.51 |
+| IoU with the triangle | .33 | .30 | .55 | .55 |
+
+Not separable from W2 (validation days):
+
+| | W2 s0 | W2 s1 | W3c s0 | W3c s1 |
+|---|---|---|---|---|
+| finless backs called dorsal, by eye, crops (n 33) | .212 | .152 | .061 | .152 |
+| finless backs called dorsal, classifier, crops (n 151) | .146 | .113 | .093 | .126 |
+| by-eye call, crops (n 79) | .873 | .911 | .937 | .911 |
+| by-eye call, whole photo (n 79) | .899 | .899 | .899 | .861 |
+| classifier-scored call, whole photo (n 828) | .944 | .947 | .941 | .949 |
+| fluke covers a quarter (cut-outs) | .909 | .905 | .882 | .928 |
+
+The one-seed hint of yesterday's entry (finless backs called dorsal down to 2 of 33) does not hold: the second seed
+has 5 of 33, the same as W2 s1. By-eye confusion, whole photo, "other" called dorsal: W2 6 / 6, W3c 4 / 8.
+
+Possible small cost: pectoral IoU on rendered whales .679 / .701 against .706 / .707 (W2) and .684 / .689
+(baselines). Both W3c seeds are lower than both W2 seeds, by 0.5 to 2.7 points; the W3c seeds differ by 2.2 points
+between themselves, so I do not call this established. It stays above or at the baselines.
+
+Reading: the two-sided label gives the dorsal part the user asked for (fin + hump, the clicked triangle down to the
+back line) at no measurable cost to the other calls. It does not fix the two standing W2 losses (finless backs called
+dorsal 6 to 15 %, tail stock painted fluke). W3c replaces W2 as the part-model candidate. Nothing live uses it.
+Whether the region should reach lower on the flank is still the user's open question; the label rule can move the
+lower bound in one place (`build_tri2.py`, 0.2 fin heights under the base line).
+
+Files: `parts_weak/w3c_two_seeds.txt`, `compare_w3c2.json`, `fin_definition_w3c2.json`, `finless_w3c2.json`,
+`shares_w3c2.json`.
+
 ## 2026-11-17 13:45 — run06 look, round 4 (ordered before the paste route was dropped): whale colour table, a paste preset, one dead setting (subagent in the factory repo; written by the earlier session tab)
 This round was ordered at 12:25 and reported at 13:44, after the user's 13:30 decision; its paste preset is moot, its
 colour work and its findings about the skin settings are not. It ran while factory round 5 was starting: both
@@ -4080,3 +4257,67 @@ and a blotchy two-tone where the white mask cuts in (000006).
 Hazard seen: run06_paste.json disappeared once during the round and was recreated, and run06_realism.json changed at
 13:40 while round 5 was starting; two agents were editing factory/ and regenerating the 44 skin maps
 (third_party_assets/humpback_4k/skins/*d.png) in the same hour. Old configs still give byte-identical shot lists.
+
+## 2026-11-18 06:20 — moonshot ("cluster a new day without the researcher"): sizing, learning curve, and a bench round of five matcher approaches (sizing / checks by me; one subagent per approach, every number below re-read by me from the result files)
+
+Everything under `experiments/moonshot_sizing/`. CPU unless said; train + val days only, no eval day read anywhere
+(`bench.py` refuses them). Score for a day = the catalogue's list of animals per group; an animal is "whole + clean"
+when all its safe clusters sit in one piece that holds no other animal.
+
+**Sizing (`size_levers.py A B C D`, part_a.log / part_bcd.log), 24 days, 379 animals, 115 groups.** Oracle rows (the
+catalogue joins same-animal cluster pairs under a condition): safe clusters as they are 9.53 pieces per animal, 16 %
+whole; perfect linking within 60 s 3.82, 34 %; within 15 min 1.45, 73 %; 60 s + perfect fluke matching 47 %; 60 s +
+perfect dorsal matching on any flank 70 %; all three 1.13, 90 %; leaving out pieces that show neither a fluke nor a
+fin 98 %. Today's evidence on the val days (52 animals): page P(same whale) merged down to the catalogue's count of
+animals per group = 9 whole + clean (doing nothing = 10); linker P >= 0.9 within 60 s = 73 joins, 0 wrong, 8.29 -> 7.38
+pieces per animal (perfect 3.08); same-group cluster pairs more than 60 s apart: dorsal view-match AUC 0.802, 58 of 824
+same pairs at precision 0.95; fluke 0.766 (see the caveat on fluke val days below). Reading: the long pole is the
+same / different evidence across gaps, fins on both flanks first; the merge rule and the count prior cannot carry a day.
+
+**Learning curve of the live fin / fluke match (`learning_curve.py`, 30 repetitions, 5 train days set aside each).**
+The view-match head (frozen DINOv3 view features, PCA 128, within-animal whitening, 32 LDA directions) refitted on 2 /
+5 / 10 / 16 days, scored on val + set-aside days: dorsal AUC 0.671 / 0.701 / 0.724 / 0.735, fluke 0.644 / 0.671 /
+0.684 / 0.693; no labels at all 0.683 / 0.674; pairs found at precision 0.95 stay at 1-3 %. Larger heads do not help
+(capacity.log). About +0.015 AUC per doubling of days and nothing at high precision: the representation is the limit.
+
+**Bench (`bench.py`; results/<name>__<part>.json; `summarize.py [prefix]` prints one line per result).** Pairs = safe
+clusters of one catalogue group, more than 60 s apart, both showing the part; cluster pair = best instance pair. 20
+fixed splits: 5 train days set aside, head on 5 / 10 / 16 of the others, read on val + set-aside days, paired with
+BASE (the live view features through the standard head) on the same pairs. BASE at 16 days: dorsal AUC 0.743, found at
+precision 0.95 / 0.90 2.6 / 6.9 %; fluke 0.695, 3.4 / 5.7 %. Caveats found during the round: (1) the 3 val days are in
+every split, so "up in k of 20" is correlated; (2) fluke VAL days alone are inflated by photo conditions (water colour
+alone scores 0.711 there, 0.515 on val + set-aside days; 146 same pairs), read val + set-aside; (3) candidates that
+cover only part of the pairs are compared with BASE on that easier subset; (4) ties were broken in favour of same-animal
+pairs in `at_precision` / `_ap` (fixed 06:00: different-animal pairs first; continuous scores unchanged, integer
+scores had been jittered by the agent that found it).
+
+| approach (folder) | dorsal: AUC, found at P 0.95 / 0.90, paired dAUC (up of 20) | fluke: same | verdict |
+|---|---|---|---|
+| BASE | 0.743, 2.6 / 6.9 % | 0.695, 3.4 / 5.7 % | reference |
+| `public_reid`: HW-b6 = Happywhale-2022 1st-place recipe EfficientNet-B6 1024 px (HF liu-peilin/happywhale_b6_pseudo_charm_round2_1024_v2; no licence stated), box crop, plain cosine, nothing fitted | **0.833, 20.6 / 34.9 %, +0.090 (20)**; val 0.876-0.901 against 0.802 | 0.675 (head), 7.0 / 10.7 %, -0.020 (4) | fins: yes |
+| `public_reid`: MiewID msv3 + BASE | 0.752, 7.4 / 13.7 %, +0.009 (17) | 0.702, 8.5 / 12.6 %, +0.007 (12) | small; MegaDescriptor worse than both |
+| `local_match`: ALIKED-n16 + LightGlue + homography inliers on the cut-outs, added to BASE as positive-only evidence | 0.751, 11.3 / 16.4 %, +0.008 (20) | **0.712, 13.8 / 19.2 %, +0.017 (20)** | flukes: yes; fins same flank only |
+| `pixels`: whale-weighted token pooling | 0.752, 3.6 / 8.5 %, +0.010 (19) | 0.708, 6.0 / 10.5 %, +0.013 (18) | small |
+| `pixels`: the same + 448-px zoom on fin + hump (all instances) | 0.764, 5.6 / 12.3 %, +0.021 (20) | 0.709, 6.2 / 11.6 %, +0.015 (18) | small |
+| `pixels`: greyscale / binarised pigment / CLAHE / water filled flat / 896-px box | -0.007 / -0.110 / -0.005 / -0.037 / -0.013 | -0.013 / -0.086 / +0.001 / -0.024 / -0.007 | no |
+| `aligned`: frozen tokens compared position by position in a keypoint frame | 0.706 against BASE 0.787 on the 57 % of pairs with a frame; learned cell head + BASE +0.012 (20) | 0.617 against 0.742 (34 %) | no; +-1 cell of shift changes nothing |
+
+No frozen representation gains faster with labelled days than BASE (all curves 5 -> 10 -> 16 are BASE's or flatter;
+HW-b6's lead needs no labels and a head fitted on our days adds nothing to it).
+
+**My checks of HW-b6 (`check_hw.py`, `check_hw_day.py`, `stack.py`; logs beside them).** Un-centred cosine, 24 days
+pooled: AUC 0.800 against the live fin match 0.728 (in-sample on the train days) and raw frozen features 0.640; ahead
+on 21 of 22 days; 2 038 of 11 546 same pairs at precision 0.95 against 176; same flank 0.847, opposite flanks 0.820,
+flank unknown 0.733; gaps of 1-60 min 0.81, over 1 h 0.735. Keypoint matching adds nothing on top of it for fins
+(found at precision 0.95 23.0 -> 23.2 %). Day level, start = perfect 60-s linking, joins inside catalogue groups above
+a leave-one-day-out threshold: fin joins at precision 0.95 3.82 -> 2.31 pieces per animal, whole + clean 34 -> 40 %
+(live matcher 35 %); fins + flukes (BASE + keypoints) 1.99 pieces, 42 % (val 46 %), 34 mixed pieces; perfect matchers
+90 %. Single / average / complete linkage and stopping at the catalogue's count all land at 41-42 %: the merge rule is
+not the lever, the precision of the score is. Co-occurrence cannot-links were not used.
+
+Open: (a) whether the Kaggle training photos include these Hawaiian whales (not checkable here); (b) high-inlier
+"different" pairs sit on a few clusters (2025-01-16 c8 / c98, 2025-01-20 c24, 2025-02-12 c191 / c193) that look like
+the same animal: catalogue slip or photo-level label on a two-whale frame, not verified; (c) still running: retraining
+the student lineage on 5 / 10 / 16 days x 2 seeds (`student_curve`, paused behind the mask pair test) and fine-tuning
+HW-b6 on 5 / 16 / 10 days x 2 seeds (`fin_tune`), the two tests of whether a TRAINED matcher is data-hungry. Caches
+(features, checkpoints) in `NOAA_whales/moonshot_cache/<name>/`, sheets in the session scratchpad only.

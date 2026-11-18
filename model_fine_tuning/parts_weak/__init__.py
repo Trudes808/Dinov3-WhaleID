@@ -32,6 +32,7 @@ assert not EVAL_DAYS & set(TRAIN_DAYS) and not VAL_DAYS & set(TRAIN_DAYS)
 # class ids of parts_seg.labels.CLASSES
 BG, FLUKE, FIN, PEC, HEAD, BODY = range(6)
 IGNORE = 255
+NOTFIN = 6                                          # weak-label value: whale, certainly not dorsal (W3c, build_tri2.py)
 MAX_INST = 8                                        # instances per photo carried into a crop (ids 1..8 of the instance map)
 OVERLAP = 254                                       # instance-map value where two instances' regions overlap
 

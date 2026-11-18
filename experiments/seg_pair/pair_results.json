@@ -1,0 +1,564 @@
+{
+ "renders": {
+  "r04": {
+   "m1": {
+    "dataset_iou": 0.895,
+    "mirror_side_meanP": 0.0627,
+    "mirror_side_share_whale": 0.0591,
+    "whale_lowest_10px_meanP": 0.719,
+    "under_water_zone_meanP": 0.0049
+   },
+   "m2": {
+    "dataset_iou": 0.8921,
+    "mirror_side_meanP": 0.0188,
+    "mirror_side_share_whale": 0.0165,
+    "whale_lowest_10px_meanP": 0.6168,
+    "under_water_zone_meanP": 0.0021
+   }
+  },
+  "r05": {
+   "m1": {
+    "dataset_iou": 0.8964,
+    "mirror_side_meanP": 0.079,
+    "mirror_side_share_whale": 0.0746,
+    "whale_lowest_10px_meanP": 0.7392,
+    "under_water_zone_meanP": 0.0034
+   },
+   "m2": {
+    "dataset_iou": 0.8842,
+    "mirror_side_meanP": 0.0233,
+    "mirror_side_share_whale": 0.0207,
+    "whale_lowest_10px_meanP": 0.6241,
+    "under_water_zone_meanP": 0.0009
+   }
+  },
+  "A_m1_s0": {
+   "m1": {
+    "dataset_iou": 0.9004,
+    "mirror_side_meanP": 0.0627,
+    "mirror_side_share_whale": 0.0592,
+    "whale_lowest_10px_meanP": 0.7185,
+    "under_water_zone_meanP": 0.0099
+   },
+   "m2": {
+    "dataset_iou": 0.8884,
+    "mirror_side_meanP": 0.0258,
+    "mirror_side_share_whale": 0.0237,
+    "whale_lowest_10px_meanP": 0.6335,
+    "under_water_zone_meanP": 0.0078
+   }
+  },
+  "A_m1_s1": {
+   "m1": {
+    "dataset_iou": 0.8969,
+    "mirror_side_meanP": 0.0546,
+    "mirror_side_share_whale": 0.0511,
+    "whale_lowest_10px_meanP": 0.688,
+    "under_water_zone_meanP": 0.0118
+   },
+   "m2": {
+    "dataset_iou": 0.8909,
+    "mirror_side_meanP": 0.0236,
+    "mirror_side_share_whale": 0.0213,
+    "whale_lowest_10px_meanP": 0.6004,
+    "under_water_zone_meanP": 0.0107
+   }
+  },
+  "A_m2_s0": {
+   "m1": {
+    "dataset_iou": 0.8185,
+    "mirror_side_meanP": 0.2587,
+    "mirror_side_share_whale": 0.2535,
+    "whale_lowest_10px_meanP": 0.8533,
+    "under_water_zone_meanP": 0.0445
+   },
+   "m2": {
+    "dataset_iou": 0.9257,
+    "mirror_side_meanP": 0.0403,
+    "mirror_side_share_whale": 0.0375,
+    "whale_lowest_10px_meanP": 0.7921,
+    "under_water_zone_meanP": 0.0091
+   }
+  },
+  "A_m2_s1": {
+   "m1": {
+    "dataset_iou": 0.7828,
+    "mirror_side_meanP": 0.2777,
+    "mirror_side_share_whale": 0.2741,
+    "whale_lowest_10px_meanP": 0.8624,
+    "under_water_zone_meanP": 0.0715
+   },
+   "m2": {
+    "dataset_iou": 0.9301,
+    "mirror_side_meanP": 0.0454,
+    "mirror_side_share_whale": 0.0427,
+    "whale_lowest_10px_meanP": 0.8111,
+    "under_water_zone_meanP": 0.0111
+   }
+  },
+  "B_m1_s0": {
+   "m1": {
+    "dataset_iou": 0.9163,
+    "mirror_side_meanP": 0.0609,
+    "mirror_side_share_whale": 0.0571,
+    "whale_lowest_10px_meanP": 0.7555,
+    "under_water_zone_meanP": 0.0075
+   },
+   "m2": {
+    "dataset_iou": 0.9013,
+    "mirror_side_meanP": 0.022,
+    "mirror_side_share_whale": 0.0197,
+    "whale_lowest_10px_meanP": 0.6391,
+    "under_water_zone_meanP": 0.0028
+   }
+  },
+  "B_m1_s1": {
+   "m1": {
+    "dataset_iou": 0.9193,
+    "mirror_side_meanP": 0.0663,
+    "mirror_side_share_whale": 0.0628,
+    "whale_lowest_10px_meanP": 0.763,
+    "under_water_zone_meanP": 0.0075
+   },
+   "m2": {
+    "dataset_iou": 0.9089,
+    "mirror_side_meanP": 0.0258,
+    "mirror_side_share_whale": 0.0237,
+    "whale_lowest_10px_meanP": 0.6589,
+    "under_water_zone_meanP": 0.0035
+   }
+  },
+  "B_m2_s0": {
+   "m1": {
+    "dataset_iou": 0.883,
+    "mirror_side_meanP": 0.2212,
+    "mirror_side_share_whale": 0.2169,
+    "whale_lowest_10px_meanP": 0.8787,
+    "under_water_zone_meanP": 0.0204
+   },
+   "m2": {
+    "dataset_iou": 0.9356,
+    "mirror_side_meanP": 0.0404,
+    "mirror_side_share_whale": 0.0376,
+    "whale_lowest_10px_meanP": 0.8239,
+    "under_water_zone_meanP": 0.006
+   }
+  },
+  "B_m2_s1": {
+   "m1": {
+    "dataset_iou": 0.8802,
+    "mirror_side_meanP": 0.2278,
+    "mirror_side_share_whale": 0.2241,
+    "whale_lowest_10px_meanP": 0.8851,
+    "under_water_zone_meanP": 0.0223
+   },
+   "m2": {
+    "dataset_iou": 0.9399,
+    "mirror_side_meanP": 0.0459,
+    "mirror_side_share_whale": 0.0431,
+    "whale_lowest_10px_meanP": 0.8351,
+    "under_water_zone_meanP": 0.0065
+   }
+  }
+ },
+ "real": {
+  "r04": {
+   "train | height fifth 1 (5 = bottom)": 0.9835,
+   "train | height fifth 2 (5 = bottom)": 0.9964,
+   "train | height fifth 3 (5 = bottom)": 0.9955,
+   "train | height fifth 4 (5 = bottom)": 0.992,
+   "train | height fifth 5 (5 = bottom)": 0.9464,
+   "train | 0-9 px above the lower edge": 0.9174,
+   "train | 0-9 px above the lower edge, share P >= 0.5": 0.9953,
+   "train | 10-19 px above the lower edge": 0.981,
+   "train | 10-19 px above the lower edge, share P >= 0.5": 0.9993,
+   "train | 20-39 px above the lower edge": 0.9875,
+   "train | 20-39 px above the lower edge, share P >= 0.5": 0.9994,
+   "train | below the lower edge +1..4 px, share P >= 0.5": 0.005,
+   "train | below the lower edge +5..12 px, share P >= 0.5": 0.0021,
+   "val | height fifth 1 (5 = bottom)": 0.9811,
+   "val | height fifth 2 (5 = bottom)": 0.9948,
+   "val | height fifth 3 (5 = bottom)": 0.9937,
+   "val | height fifth 4 (5 = bottom)": 0.9906,
+   "val | height fifth 5 (5 = bottom)": 0.9425,
+   "val | 0-9 px above the lower edge": 0.9024,
+   "val | 0-9 px above the lower edge, share P >= 0.5": 0.9906,
+   "val | 10-19 px above the lower edge": 0.9777,
+   "val | 10-19 px above the lower edge, share P >= 0.5": 0.9991,
+   "val | 20-39 px above the lower edge": 0.985,
+   "val | 20-39 px above the lower edge, share P >= 0.5": 0.9991,
+   "val | below the lower edge +1..4 px, share P >= 0.5": 0.0041,
+   "val | below the lower edge +5..12 px, share P >= 0.5": 0.0026,
+   "train | kept share of the r04 blob (mean over whales)": 0.9984,
+   "val | kept share of the r04 blob (mean over whales)": 0.9974
+  },
+  "r05": {
+   "train | height fifth 1 (5 = bottom)": 0.9606,
+   "train | height fifth 2 (5 = bottom)": 0.9761,
+   "train | height fifth 3 (5 = bottom)": 0.9542,
+   "train | height fifth 4 (5 = bottom)": 0.8934,
+   "train | height fifth 5 (5 = bottom)": 0.6782,
+   "train | 0-9 px above the lower edge": 0.6586,
+   "train | 0-9 px above the lower edge, share P >= 0.5": 0.6621,
+   "train | 10-19 px above the lower edge": 0.807,
+   "train | 10-19 px above the lower edge, share P >= 0.5": 0.8114,
+   "train | 20-39 px above the lower edge": 0.8826,
+   "train | 20-39 px above the lower edge, share P >= 0.5": 0.8878,
+   "train | below the lower edge +1..4 px, share P >= 0.5": 0.207,
+   "train | below the lower edge +5..12 px, share P >= 0.5": 0.0519,
+   "val | height fifth 1 (5 = bottom)": 0.9498,
+   "val | height fifth 2 (5 = bottom)": 0.971,
+   "val | height fifth 3 (5 = bottom)": 0.9633,
+   "val | height fifth 4 (5 = bottom)": 0.9312,
+   "val | height fifth 5 (5 = bottom)": 0.6934,
+   "val | 0-9 px above the lower edge": 0.5707,
+   "val | 0-9 px above the lower edge, share P >= 0.5": 0.5709,
+   "val | 10-19 px above the lower edge": 0.7745,
+   "val | 10-19 px above the lower edge, share P >= 0.5": 0.7781,
+   "val | 20-39 px above the lower edge": 0.8952,
+   "val | 20-39 px above the lower edge, share P >= 0.5": 0.9059,
+   "val | below the lower edge +1..4 px, share P >= 0.5": 0.1736,
+   "val | below the lower edge +5..12 px, share P >= 0.5": 0.0549,
+   "train | kept share of the r04 blob (mean over whales)": 0.9293,
+   "val | kept share of the r04 blob (mean over whales)": 0.9112
+  },
+  "A_m1_s0": {
+   "train | height fifth 1 (5 = bottom)": 0.9447,
+   "train | height fifth 2 (5 = bottom)": 0.9855,
+   "train | height fifth 3 (5 = bottom)": 0.979,
+   "train | height fifth 4 (5 = bottom)": 0.9621,
+   "train | height fifth 5 (5 = bottom)": 0.882,
+   "train | 0-9 px above the lower edge": 0.8529,
+   "train | 0-9 px above the lower edge, share P >= 0.5": 0.8574,
+   "train | 10-19 px above the lower edge": 0.9328,
+   "train | 10-19 px above the lower edge, share P >= 0.5": 0.9338,
+   "train | 20-39 px above the lower edge": 0.9523,
+   "train | 20-39 px above the lower edge, share P >= 0.5": 0.953,
+   "train | below the lower edge +1..4 px, share P >= 0.5": 0.4497,
+   "train | below the lower edge +5..12 px, share P >= 0.5": 0.2168,
+   "val | height fifth 1 (5 = bottom)": 0.9182,
+   "val | height fifth 2 (5 = bottom)": 0.9777,
+   "val | height fifth 3 (5 = bottom)": 0.9815,
+   "val | height fifth 4 (5 = bottom)": 0.9753,
+   "val | height fifth 5 (5 = bottom)": 0.9195,
+   "val | 0-9 px above the lower edge": 0.8479,
+   "val | 0-9 px above the lower edge, share P >= 0.5": 0.8551,
+   "val | 10-19 px above the lower edge": 0.9336,
+   "val | 10-19 px above the lower edge, share P >= 0.5": 0.936,
+   "val | 20-39 px above the lower edge": 0.9586,
+   "val | 20-39 px above the lower edge, share P >= 0.5": 0.9603,
+   "val | below the lower edge +1..4 px, share P >= 0.5": 0.4867,
+   "val | below the lower edge +5..12 px, share P >= 0.5": 0.2648,
+   "train | kept share of the r04 blob (mean over whales)": 0.9544,
+   "val | kept share of the r04 blob (mean over whales)": 0.9385
+  },
+  "A_m1_s1": {
+   "train | height fifth 1 (5 = bottom)": 0.9528,
+   "train | height fifth 2 (5 = bottom)": 0.989,
+   "train | height fifth 3 (5 = bottom)": 0.9856,
+   "train | height fifth 4 (5 = bottom)": 0.9709,
+   "train | height fifth 5 (5 = bottom)": 0.8882,
+   "train | 0-9 px above the lower edge": 0.843,
+   "train | 0-9 px above the lower edge, share P >= 0.5": 0.8471,
+   "train | 10-19 px above the lower edge": 0.9434,
+   "train | 10-19 px above the lower edge, share P >= 0.5": 0.9446,
+   "train | 20-39 px above the lower edge": 0.9631,
+   "train | 20-39 px above the lower edge, share P >= 0.5": 0.9641,
+   "train | below the lower edge +1..4 px, share P >= 0.5": 0.3992,
+   "train | below the lower edge +5..12 px, share P >= 0.5": 0.1851,
+   "val | height fifth 1 (5 = bottom)": 0.9234,
+   "val | height fifth 2 (5 = bottom)": 0.9784,
+   "val | height fifth 3 (5 = bottom)": 0.979,
+   "val | height fifth 4 (5 = bottom)": 0.9702,
+   "val | height fifth 5 (5 = bottom)": 0.897,
+   "val | 0-9 px above the lower edge": 0.7991,
+   "val | 0-9 px above the lower edge, share P >= 0.5": 0.803,
+   "val | 10-19 px above the lower edge": 0.929,
+   "val | 10-19 px above the lower edge, share P >= 0.5": 0.9306,
+   "val | 20-39 px above the lower edge": 0.9556,
+   "val | 20-39 px above the lower edge, share P >= 0.5": 0.9568,
+   "val | below the lower edge +1..4 px, share P >= 0.5": 0.4059,
+   "val | below the lower edge +5..12 px, share P >= 0.5": 0.1974,
+   "train | kept share of the r04 blob (mean over whales)": 0.9554,
+   "val | kept share of the r04 blob (mean over whales)": 0.9297
+  },
+  "A_m2_s0": {
+   "train | height fifth 1 (5 = bottom)": 0.9468,
+   "train | height fifth 2 (5 = bottom)": 0.9848,
+   "train | height fifth 3 (5 = bottom)": 0.9809,
+   "train | height fifth 4 (5 = bottom)": 0.9686,
+   "train | height fifth 5 (5 = bottom)": 0.9109,
+   "train | 0-9 px above the lower edge": 0.8907,
+   "train | 0-9 px above the lower edge, share P >= 0.5": 0.8963,
+   "train | 10-19 px above the lower edge": 0.9431,
+   "train | 10-19 px above the lower edge, share P >= 0.5": 0.9449,
+   "train | 20-39 px above the lower edge": 0.959,
+   "train | 20-39 px above the lower edge, share P >= 0.5": 0.9604,
+   "train | below the lower edge +1..4 px, share P >= 0.5": 0.5952,
+   "train | below the lower edge +5..12 px, share P >= 0.5": 0.3913,
+   "val | height fifth 1 (5 = bottom)": 0.9241,
+   "val | height fifth 2 (5 = bottom)": 0.9776,
+   "val | height fifth 3 (5 = bottom)": 0.9835,
+   "val | height fifth 4 (5 = bottom)": 0.9822,
+   "val | height fifth 5 (5 = bottom)": 0.9356,
+   "val | 0-9 px above the lower edge": 0.8807,
+   "val | 0-9 px above the lower edge, share P >= 0.5": 0.8876,
+   "val | 10-19 px above the lower edge": 0.9425,
+   "val | 10-19 px above the lower edge, share P >= 0.5": 0.9454,
+   "val | 20-39 px above the lower edge": 0.9633,
+   "val | 20-39 px above the lower edge, share P >= 0.5": 0.9648,
+   "val | below the lower edge +1..4 px, share P >= 0.5": 0.5935,
+   "val | below the lower edge +5..12 px, share P >= 0.5": 0.4049,
+   "train | kept share of the r04 blob (mean over whales)": 0.9594,
+   "val | kept share of the r04 blob (mean over whales)": 0.9419
+  },
+  "A_m2_s1": {
+   "train | height fifth 1 (5 = bottom)": 0.959,
+   "train | height fifth 2 (5 = bottom)": 0.99,
+   "train | height fifth 3 (5 = bottom)": 0.9884,
+   "train | height fifth 4 (5 = bottom)": 0.9809,
+   "train | height fifth 5 (5 = bottom)": 0.9431,
+   "train | 0-9 px above the lower edge": 0.9228,
+   "train | 0-9 px above the lower edge, share P >= 0.5": 0.9281,
+   "train | 10-19 px above the lower edge": 0.9618,
+   "train | 10-19 px above the lower edge, share P >= 0.5": 0.9636,
+   "train | 20-39 px above the lower edge": 0.9741,
+   "train | 20-39 px above the lower edge, share P >= 0.5": 0.9753,
+   "train | below the lower edge +1..4 px, share P >= 0.5": 0.6442,
+   "train | below the lower edge +5..12 px, share P >= 0.5": 0.4013,
+   "val | height fifth 1 (5 = bottom)": 0.9322,
+   "val | height fifth 2 (5 = bottom)": 0.9796,
+   "val | height fifth 3 (5 = bottom)": 0.9809,
+   "val | height fifth 4 (5 = bottom)": 0.9781,
+   "val | height fifth 5 (5 = bottom)": 0.9453,
+   "val | 0-9 px above the lower edge": 0.8851,
+   "val | 0-9 px above the lower edge, share P >= 0.5": 0.8913,
+   "val | 10-19 px above the lower edge": 0.9446,
+   "val | 10-19 px above the lower edge, share P >= 0.5": 0.9465,
+   "val | 20-39 px above the lower edge": 0.9661,
+   "val | 20-39 px above the lower edge, share P >= 0.5": 0.9672,
+   "val | below the lower edge +1..4 px, share P >= 0.5": 0.6224,
+   "val | below the lower edge +5..12 px, share P >= 0.5": 0.3896,
+   "train | kept share of the r04 blob (mean over whales)": 0.9717,
+   "val | kept share of the r04 blob (mean over whales)": 0.9498
+  },
+  "B_m1_s0": {
+   "train | height fifth 1 (5 = bottom)": 0.9577,
+   "train | height fifth 2 (5 = bottom)": 0.9864,
+   "train | height fifth 3 (5 = bottom)": 0.9798,
+   "train | height fifth 4 (5 = bottom)": 0.9547,
+   "train | height fifth 5 (5 = bottom)": 0.8415,
+   "train | 0-9 px above the lower edge": 0.8127,
+   "train | 0-9 px above the lower edge, share P >= 0.5": 0.8207,
+   "train | 10-19 px above the lower edge": 0.9109,
+   "train | 10-19 px above the lower edge, share P >= 0.5": 0.915,
+   "train | 20-39 px above the lower edge": 0.9452,
+   "train | 20-39 px above the lower edge, share P >= 0.5": 0.9477,
+   "train | below the lower edge +1..4 px, share P >= 0.5": 0.4032,
+   "train | below the lower edge +5..12 px, share P >= 0.5": 0.1784,
+   "val | height fifth 1 (5 = bottom)": 0.9438,
+   "val | height fifth 2 (5 = bottom)": 0.9761,
+   "val | height fifth 3 (5 = bottom)": 0.9775,
+   "val | height fifth 4 (5 = bottom)": 0.9702,
+   "val | height fifth 5 (5 = bottom)": 0.8666,
+   "val | 0-9 px above the lower edge": 0.7722,
+   "val | 0-9 px above the lower edge, share P >= 0.5": 0.7797,
+   "val | 10-19 px above the lower edge": 0.9014,
+   "val | 10-19 px above the lower edge, share P >= 0.5": 0.9056,
+   "val | 20-39 px above the lower edge": 0.9545,
+   "val | 20-39 px above the lower edge, share P >= 0.5": 0.9572,
+   "val | below the lower edge +1..4 px, share P >= 0.5": 0.3727,
+   "val | below the lower edge +5..12 px, share P >= 0.5": 0.1862,
+   "train | kept share of the r04 blob (mean over whales)": 0.9538,
+   "val | kept share of the r04 blob (mean over whales)": 0.9405
+  },
+  "B_m1_s1": {
+   "train | height fifth 1 (5 = bottom)": 0.9626,
+   "train | height fifth 2 (5 = bottom)": 0.986,
+   "train | height fifth 3 (5 = bottom)": 0.9773,
+   "train | height fifth 4 (5 = bottom)": 0.9434,
+   "train | height fifth 5 (5 = bottom)": 0.8327,
+   "train | 0-9 px above the lower edge": 0.8086,
+   "train | 0-9 px above the lower edge, share P >= 0.5": 0.8184,
+   "train | 10-19 px above the lower edge": 0.9114,
+   "train | 10-19 px above the lower edge, share P >= 0.5": 0.9163,
+   "train | 20-39 px above the lower edge": 0.9422,
+   "train | 20-39 px above the lower edge, share P >= 0.5": 0.9469,
+   "train | below the lower edge +1..4 px, share P >= 0.5": 0.3533,
+   "train | below the lower edge +5..12 px, share P >= 0.5": 0.1386,
+   "val | height fifth 1 (5 = bottom)": 0.9466,
+   "val | height fifth 2 (5 = bottom)": 0.9765,
+   "val | height fifth 3 (5 = bottom)": 0.9771,
+   "val | height fifth 4 (5 = bottom)": 0.9632,
+   "val | height fifth 5 (5 = bottom)": 0.8557,
+   "val | 0-9 px above the lower edge": 0.7401,
+   "val | 0-9 px above the lower edge, share P >= 0.5": 0.7487,
+   "val | 10-19 px above the lower edge": 0.9019,
+   "val | 10-19 px above the lower edge, share P >= 0.5": 0.9104,
+   "val | 20-39 px above the lower edge": 0.951,
+   "val | 20-39 px above the lower edge, share P >= 0.5": 0.9565,
+   "val | below the lower edge +1..4 px, share P >= 0.5": 0.3147,
+   "val | below the lower edge +5..12 px, share P >= 0.5": 0.1538,
+   "train | kept share of the r04 blob (mean over whales)": 0.9539,
+   "val | kept share of the r04 blob (mean over whales)": 0.9296
+  },
+  "B_m2_s0": {
+   "train | height fifth 1 (5 = bottom)": 0.9576,
+   "train | height fifth 2 (5 = bottom)": 0.9871,
+   "train | height fifth 3 (5 = bottom)": 0.984,
+   "train | height fifth 4 (5 = bottom)": 0.9679,
+   "train | height fifth 5 (5 = bottom)": 0.9124,
+   "train | 0-9 px above the lower edge": 0.9034,
+   "train | 0-9 px above the lower edge, share P >= 0.5": 0.9105,
+   "train | 10-19 px above the lower edge": 0.9482,
+   "train | 10-19 px above the lower edge, share P >= 0.5": 0.9501,
+   "train | 20-39 px above the lower edge": 0.962,
+   "train | 20-39 px above the lower edge, share P >= 0.5": 0.9637,
+   "train | below the lower edge +1..4 px, share P >= 0.5": 0.5894,
+   "train | below the lower edge +5..12 px, share P >= 0.5": 0.3519,
+   "val | height fifth 1 (5 = bottom)": 0.9452,
+   "val | height fifth 2 (5 = bottom)": 0.9828,
+   "val | height fifth 3 (5 = bottom)": 0.9875,
+   "val | height fifth 4 (5 = bottom)": 0.9854,
+   "val | height fifth 5 (5 = bottom)": 0.95,
+   "val | 0-9 px above the lower edge": 0.906,
+   "val | 0-9 px above the lower edge, share P >= 0.5": 0.916,
+   "val | 10-19 px above the lower edge": 0.9607,
+   "val | 10-19 px above the lower edge, share P >= 0.5": 0.9643,
+   "val | 20-39 px above the lower edge": 0.9722,
+   "val | 20-39 px above the lower edge, share P >= 0.5": 0.9741,
+   "val | below the lower edge +1..4 px, share P >= 0.5": 0.5812,
+   "val | below the lower edge +5..12 px, share P >= 0.5": 0.3575,
+   "train | kept share of the r04 blob (mean over whales)": 0.9689,
+   "val | kept share of the r04 blob (mean over whales)": 0.9642
+  },
+  "B_m2_s1": {
+   "train | height fifth 1 (5 = bottom)": 0.96,
+   "train | height fifth 2 (5 = bottom)": 0.9885,
+   "train | height fifth 3 (5 = bottom)": 0.9858,
+   "train | height fifth 4 (5 = bottom)": 0.9698,
+   "train | height fifth 5 (5 = bottom)": 0.9047,
+   "train | 0-9 px above the lower edge": 0.9,
+   "train | 0-9 px above the lower edge, share P >= 0.5": 0.9075,
+   "train | 10-19 px above the lower edge": 0.9502,
+   "train | 10-19 px above the lower edge, share P >= 0.5": 0.9524,
+   "train | 20-39 px above the lower edge": 0.9616,
+   "train | 20-39 px above the lower edge, share P >= 0.5": 0.9626,
+   "train | below the lower edge +1..4 px, share P >= 0.5": 0.5344,
+   "train | below the lower edge +5..12 px, share P >= 0.5": 0.272,
+   "val | height fifth 1 (5 = bottom)": 0.9456,
+   "val | height fifth 2 (5 = bottom)": 0.9826,
+   "val | height fifth 3 (5 = bottom)": 0.9854,
+   "val | height fifth 4 (5 = bottom)": 0.9818,
+   "val | height fifth 5 (5 = bottom)": 0.9379,
+   "val | 0-9 px above the lower edge": 0.8757,
+   "val | 0-9 px above the lower edge, share P >= 0.5": 0.8856,
+   "val | 10-19 px above the lower edge": 0.955,
+   "val | 10-19 px above the lower edge, share P >= 0.5": 0.958,
+   "val | 20-39 px above the lower edge": 0.9717,
+   "val | 20-39 px above the lower edge, share P >= 0.5": 0.9735,
+   "val | below the lower edge +1..4 px, share P >= 0.5": 0.49,
+   "val | below the lower edge +5..12 px, share P >= 0.5": 0.2696,
+   "train | kept share of the r04 blob (mean over whales)": 0.9706,
+   "val | kept share of the r04 blob (mean over whales)": 0.9592
+  }
+ },
+ "knn": {
+  "render_pool (m1 val)": {
+   "band below waterline (mirror side)": 1110,
+   "open water": 33555,
+   "under-water zone": 9352,
+   "whale skin": 7450
+  },
+  "all whale patches": {
+   "patches": 5729,
+   "nearest_10_shares": {
+    "band below waterline (mirror side)": 0.124,
+    "open water": 0.131,
+    "under-water zone": 0.083,
+    "whale skin": 0.662
+   }
+  },
+  "r05": {
+   "patches": 1131,
+   "nearest_10_shares": {
+    "band below waterline (mirror side)": 0.234,
+    "open water": 0.338,
+    "under-water zone": 0.254,
+    "whale skin": 0.174
+   }
+  },
+  "A_m1_s0": {
+   "patches": 650,
+   "nearest_10_shares": {
+    "band below waterline (mirror side)": 0.209,
+    "open water": 0.503,
+    "under-water zone": 0.258,
+    "whale skin": 0.03
+   }
+  },
+  "A_m1_s1": {
+   "patches": 555,
+   "nearest_10_shares": {
+    "band below waterline (mirror side)": 0.217,
+    "open water": 0.496,
+    "under-water zone": 0.265,
+    "whale skin": 0.022
+   }
+  },
+  "A_m2_s0": {
+   "patches": 577,
+   "nearest_10_shares": {
+    "band below waterline (mirror side)": 0.226,
+    "open water": 0.538,
+    "under-water zone": 0.205,
+    "whale skin": 0.03
+   }
+  },
+  "A_m2_s1": {
+   "patches": 361,
+   "nearest_10_shares": {
+    "band below waterline (mirror side)": 0.25,
+    "open water": 0.569,
+    "under-water zone": 0.165,
+    "whale skin": 0.016
+   }
+  },
+  "B_m1_s0": {
+   "patches": 800,
+   "nearest_10_shares": {
+    "band below waterline (mirror side)": 0.216,
+    "open water": 0.414,
+    "under-water zone": 0.293,
+    "whale skin": 0.077
+   }
+  },
+  "B_m1_s1": {
+   "patches": 694,
+   "nearest_10_shares": {
+    "band below waterline (mirror side)": 0.21,
+    "open water": 0.454,
+    "under-water zone": 0.295,
+    "whale skin": 0.041
+   }
+  },
+  "B_m2_s0": {
+   "patches": 583,
+   "nearest_10_shares": {
+    "band below waterline (mirror side)": 0.184,
+    "open water": 0.503,
+    "under-water zone": 0.294,
+    "whale skin": 0.019
+   }
+  },
+  "B_m2_s1": {
+   "patches": 540,
+   "nearest_10_shares": {
+    "band below waterline (mirror side)": 0.177,
+    "open water": 0.511,
+    "under-water zone": 0.298,
+    "whale skin": 0.014
+   }
+  }
+ }
+}

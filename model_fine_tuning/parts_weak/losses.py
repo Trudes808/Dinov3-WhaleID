@@ -3,6 +3,8 @@
   background   cross-entropy towards class 0 on the certain-background pixels (far water, labelled not-a-whale blobs,
                black padding), mean over those pixels
   points       cross-entropy towards the clicked class on the clicked fin triangles / fluke discs, mean over them
+  not dorsal   (W3c; only where the label map has the value NOTFIN = 6) -log(1 - p(dorsal)) on whale pixels that are
+               certainly not dorsal (below the clicked base line / beyond the clicked bases), mean over them
   forbid       per instance with a forbidden class set Z: q = sum of p over Z on the instance region; the mean of
                -log(1 - q) over the instance's k most violating pixels, k = max(32, 10 % of the region). Every pixel of
                the region must be free of Z, so this is a per-pixel truth; the top-k only keeps the many easy pixels from
@@ -20,7 +22,7 @@ from __future__ import annotations
 import torch
 import torch.nn.functional as F
 
-from . import FIN, FLUKE, MAX_INST
+from . import FIN, FLUKE, MAX_INST, NOTFIN
 
 EPS = 1e-4
 
@@ -40,6 +42,8 @@ def weak_loss(logits: torch.Tensor, weak: torch.Tensor, inst: torch.Tensor, cons
         l_pts = F.nll_loss(logp.permute(0, 2, 3, 1)[pts], weak[pts])
     else:
         l_pts = zero
+    nf = weak == NOTFIN
+    l_nf = -torch.log((1 - p[:, FIN]).clamp(min=EPS))[nf].mean() if nf.any() else None
     forb, need = [], []
     n_forb_px = 0.0
     for b in range(logits.shape[0]):
@@ -68,7 +72,9 @@ def weak_loss(logits: torch.Tensor, weak: torch.Tensor, inst: torch.Tensor, cons
     l_forb = torch.stack(forb).mean() if forb else zero
     l_need = torch.stack(need).mean() if need else zero
     total = l_bg + l_pts + l_forb + w_need * l_need
-    parts = {"w_bg": float(l_bg.item()), "w_pts": float(l_pts.item()), "w_forbid": float(l_forb.item()), "w_need": float(l_need.item()),
+    if l_nf is not None:
+        total = total + l_nf
+    parts = {"w_notfin": float(l_nf.item()) if l_nf is not None else 0.0, "w_bg": float(l_bg.item()), "w_pts": float(l_pts.item()), "w_forbid": float(l_forb.item()), "w_need": float(l_need.item()),
              "w_n_forbid": len(forb), "w_n_need": len(need), "w_forbid_px_over_half": n_forb_px}
     if whale is not None and w_whale > 0:
         wl = []

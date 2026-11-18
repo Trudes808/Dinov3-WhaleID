@@ -1,0 +1,98 @@
+{
+ "render_pool (m1 val)": {
+  "band below waterline (mirror side)": 1110,
+  "open water": 33555,
+  "under-water zone": 9352,
+  "whale skin": 7450
+ },
+ "all whale patches": {
+  "patches": 5729,
+  "nearest_10_shares": {
+   "band below waterline (mirror side)": 0.124,
+   "open water": 0.131,
+   "under-water zone": 0.083,
+   "whale skin": 0.662
+  }
+ },
+ "r05": {
+  "patches": 1131,
+  "nearest_10_shares": {
+   "band below waterline (mirror side)": 0.234,
+   "open water": 0.338,
+   "under-water zone": 0.254,
+   "whale skin": 0.174
+  }
+ },
+ "A_m1_s0": {
+  "patches": 650,
+  "nearest_10_shares": {
+   "band below waterline (mirror side)": 0.209,
+   "open water": 0.503,
+   "under-water zone": 0.258,
+   "whale skin": 0.03
+  }
+ },
+ "A_m1_s1": {
+  "patches": 555,
+  "nearest_10_shares": {
+   "band below waterline (mirror side)": 0.217,
+   "open water": 0.496,
+   "under-water zone": 0.265,
+   "whale skin": 0.022
+  }
+ },
+ "A_m2_s0": {
+  "patches": 577,
+  "nearest_10_shares": {
+   "band below waterline (mirror side)": 0.226,
+   "open water": 0.538,
+   "under-water zone": 0.205,
+   "whale skin": 0.03
+  }
+ },
+ "A_m2_s1": {
+  "patches": 361,
+  "nearest_10_shares": {
+   "band below waterline (mirror side)": 0.25,
+   "open water": 0.569,
+   "under-water zone": 0.165,
+   "whale skin": 0.016
+  }
+ },
+ "B_m1_s0": {
+  "patches": 800,
+  "nearest_10_shares": {
+   "band below waterline (mirror side)": 0.216,
+   "open water": 0.414,
+   "under-water zone": 0.293,
+   "whale skin": 0.077
+  }
+ },
+ "B_m1_s1": {
+  "patches": 694,
+  "nearest_10_shares": {
+   "band below waterline (mirror side)": 0.21,
+   "open water": 0.454,
+   "under-water zone": 0.295,
+   "whale skin": 0.041
+  }
+ },
+ "B_m2_s0": {
+  "patches": 583,
+  "nearest_10_shares": {
+   "band below waterline (mirror side)": 0.184,
+   "open water": 0.503,
+   "under-water zone": 0.294,
+   "whale skin": 0.019
+  }
+ },
+ "B_m2_s1": {
+  "patches": 540,
+  "nearest_10_shares": {
+   "band below waterline (mirror side)": 0.177,
+   "open water": 0.511,
+   "under-water zone": 0.298,
+   "whale skin": 0.014
+  }
+ }
+}

@@ -342,7 +342,7 @@ def at_precision(pos, neg, p):
     """Same pairs found before precision falls below p (best prefix of the ranking)."""
     v = np.concatenate([pos, neg])
     y = np.concatenate([np.ones(len(pos)), np.zeros(len(neg))])
-    o = np.argsort(-v, kind='stable')
+    o = np.lexsort((y, -v))                                       # ties: different-animal pairs first (2026-11-18; they were counted in favour before)
     tp = np.cumsum(y[o])
     prec = tp / np.arange(1, len(o) + 1)
     ok = np.where(prec >= p)[0]

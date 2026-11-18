@@ -1,0 +1,46 @@
+{
+ "task": "segmentation",
+ "variant": "seg_real",
+ "args": {
+  "name": "seg_pair_A_m2_s0",
+  "run_dir": "/home/sat3737/NOAA_whales/Whale-Image-Data-Factory/data/renders/r06_pair_m2",
+  "split": "experiments/seg_pair/split_pair.json",
+  "out_root": "/home/sat3737/NOAA_whales/Dinov3-WhaleID/experiments",
+  "init": null,
+  "real_p": 0.0,
+  "real_dir": null,
+  "paste_p": 0.0,
+  "rw_p": 0.0,
+  "unfreeze_blocks": 4,
+  "epochs": 30,
+  "batch_size": 8,
+  "crop": 512,
+  "lr_head": 0.0003,
+  "lr_backbone": 3e-05,
+  "layer_decay": 0.8,
+  "weight_decay": 0.05,
+  "warmup_steps": 200,
+  "dice_weight": 1.0,
+  "workers": 6,
+  "eval_every": 10,
+  "eval_batch": 4,
+  "max_val": null,
+  "max_steps": null,
+  "seed": 0
+ },
+ "model": {
+  "arch": "vitb16",
+  "unfreeze_blocks": 4,
+  "layers": null,
+  "decoder_width": 256
+ },
+ "train_synthetic": 690,
+ "train_real_centres": 0,
+ "real_photos": 0,
+ "val_images": 121,
+ "params": {
+  "total_M": 88.21,
+  "trainable_M": 30.9
+ },
+ "recipe": "experiments/seg_r05_ft4/config.json"
+}

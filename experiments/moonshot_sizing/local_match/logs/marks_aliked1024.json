@@ -1,0 +1,4560 @@
+[
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 11,
+"inl": 7,
+"in_a": 0.7142857142857143,
+"in_b": 0.8571428571428571,
+"all_a": 0.6363636363636364,
+"chance_a": 0.056207567124970145,
+"chance_b": 0.2815678779705822,
+"cue": [
+"barnacles"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 11,
+"inl": 5,
+"in_a": 1.0,
+"in_b": 0.8,
+"all_a": 0.8181818181818182,
+"chance_a": 0.4186828486615704,
+"chance_b": 0.1137367836425721,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 38,
+"inl": 26,
+"in_a": 0.9615384615384616,
+"in_b": 1.0,
+"all_a": 0.6842105263157895,
+"chance_a": 0.32936205946414043,
+"chance_b": 0.3139002108222066,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 60,
+"inl": 15,
+"in_a": 0.4666666666666667,
+"in_b": 0.6,
+"all_a": 0.45,
+"chance_a": 0.1630639494026704,
+"chance_b": 0.2989812671445907,
+"cue": [
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 465,
+"inl": 464,
+"in_a": 0.8943965517241379,
+"in_b": 0.8728448275862069,
+"all_a": 0.8924731182795699,
+"chance_a": 0.5759880059970015,
+"chance_b": 0.9087575996658468,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 527,
+"inl": 526,
+"in_a": 0.5722433460076045,
+"in_b": 0.6064638783269962,
+"all_a": 0.571157495256167,
+"chance_a": 0.36056774683384124,
+"chance_b": 0.39853281237540866,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 158,
+"inl": 50,
+"in_a": 0.14,
+"in_b": 0.08,
+"all_a": 0.2848101265822785,
+"chance_a": 0.32737193434107553,
+"chance_b": 0.06636596772851733,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 13,
+"inl": 5,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.01171568396951535,
+"chance_b": 0.03239757103888805,
+"cue": [
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 90,
+"inl": 52,
+"in_a": 0.5192307692307693,
+"in_b": 0.5576923076923077,
+"all_a": 0.4444444444444444,
+"chance_a": 0.07187869322096893,
+"chance_b": 0.06615566172847993,
+"cue": [
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 4,
+"inl": 3,
+"in_a": 0.3333333333333333,
+"in_b": 0.0,
+"all_a": 0.25,
+"chance_a": 0.033014814560203484,
+"chance_b": 0.04533812020632747,
+"cue": [
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 13,
+"inl": 4,
+"in_a": 1.0,
+"in_b": 0.5,
+"all_a": 0.7692307692307693,
+"chance_a": 0.42243720980022215,
+"chance_b": 0.14124410835448284,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 25,
+"inl": 11,
+"in_a": 0.5454545454545454,
+"in_b": 0.6363636363636364,
+"all_a": 0.44,
+"chance_a": 0.13114414461076293,
+"chance_b": 0.07040419207550638,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 47,
+"inl": 19,
+"in_a": 0.3684210526315789,
+"in_b": 0.3684210526315789,
+"all_a": 0.44680851063829785,
+"chance_a": 0.17242243287259365,
+"chance_b": 0.11042269573281786,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 22,
+"inl": 11,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.030330625607562264,
+"chance_b": 0.058350122165545026,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 132,
+"inl": 131,
+"in_a": 0.2595419847328244,
+"in_b": 0.25190839694656486,
+"all_a": 0.25757575757575757,
+"chance_a": 0.146754659684612,
+"chance_b": 0.10695227699957553,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 20,
+"inl": 12,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.02837911588138985,
+"chance_b": 0.017760987849228946,
+"cue": []
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 16,
+"inl": 6,
+"in_a": 0.5,
+"in_b": 0.5,
+"all_a": 0.25,
+"chance_a": 0.070116438435049,
+"chance_b": 0.10640836607546172,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 1,
+"inl": 0,
+"in_a": NaN,
+"in_b": NaN,
+"all_a": 0.0,
+"chance_a": 0.12082744126308688,
+"chance_b": 0.3000117100589406,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 54,
+"inl": 39,
+"in_a": 1.0,
+"in_b": 1.0,
+"all_a": 0.8703703703703703,
+"chance_a": 0.37184725507664895,
+"chance_b": 0.4033231287989707,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 33,
+"inl": 21,
+"in_a": 0.9047619047619048,
+"in_b": 0.9047619047619048,
+"all_a": 0.8181818181818182,
+"chance_a": 0.1173743289409468,
+"chance_b": 0.06112622868884323,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 25,
+"inl": 16,
+"in_a": 0.1875,
+"in_b": 0.3125,
+"all_a": 0.2,
+"chance_a": 0.03176542455711668,
+"chance_b": 0.01597104873562531,
+"cue": [
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 17,
+"inl": 8,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.058823529411764705,
+"chance_a": 0.03645825544705478,
+"chance_b": 0.02327909887359199,
+"cue": [
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 11,
+"inl": 6,
+"in_a": 0.3333333333333333,
+"in_b": 0.3333333333333333,
+"all_a": 0.45454545454545453,
+"chance_a": 0.0463653590291497,
+"chance_b": 0.10148101192877312,
+"cue": []
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 34,
+"inl": 19,
+"in_a": 0.7894736842105263,
+"in_b": 0.9473684210526315,
+"all_a": 0.7941176470588235,
+"chance_a": 0.17086908166507786,
+"chance_b": 0.3844238790406674,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 414,
+"inl": 301,
+"in_a": 0.5083056478405316,
+"in_b": 0.5548172757475083,
+"all_a": 0.37922705314009664,
+"chance_a": 0.17752411247226718,
+"chance_b": 0.2260265113802822,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 16,
+"inl": 9,
+"in_a": 1.0,
+"in_b": 1.0,
+"all_a": 1.0,
+"chance_a": 0.7967373037668566,
+"chance_b": 0.07479133919280923,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 91,
+"inl": 80,
+"in_a": 0.7875,
+"in_b": 0.7875,
+"all_a": 0.7912087912087912,
+"chance_a": 0.16786010326472323,
+"chance_b": 0.5616504231854321,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 263,
+"inl": 220,
+"in_a": 0.8545454545454545,
+"in_b": 0.8045454545454546,
+"all_a": 0.8174904942965779,
+"chance_a": 0.6212490382149269,
+"chance_b": 0.40449308589638217,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 232,
+"inl": 179,
+"in_a": 0.48044692737430167,
+"in_b": 0.39664804469273746,
+"all_a": 0.43103448275862066,
+"chance_a": 0.336303730299491,
+"chance_b": 0.10429437416003674,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 21,
+"inl": 5,
+"in_a": 0.6,
+"in_b": 0.8,
+"all_a": 0.8095238095238095,
+"chance_a": 0.10478771966633967,
+"chance_b": 0.2891542943419601,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 10,
+"inl": 5,
+"in_a": 0.6,
+"in_b": 0.6,
+"all_a": 0.4,
+"chance_a": 0.08509569836248894,
+"chance_b": 0.09163561784310374,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 27,
+"inl": 16,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.03539567421859958,
+"chance_b": 0.05097883426797609,
+"cue": [
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 42,
+"inl": 9,
+"in_a": 1.0,
+"in_b": 0.7777777777777778,
+"all_a": 0.3333333333333333,
+"chance_a": 0.15832901191792828,
+"chance_b": 0.13938590733494005,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 8,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.08445026781374794,
+"chance_b": 0.07225985207781484,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 12,
+"inl": 5,
+"in_a": 0.0,
+"in_b": 0.6,
+"all_a": 0.0,
+"chance_a": 0.0,
+"chance_b": 0.03120708198891371,
+"cue": []
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 15,
+"inl": 7,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.03552577149003061,
+"chance_b": 0.025492690236804963,
+"cue": []
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 11,
+"inl": 6,
+"in_a": 1.0,
+"in_b": 1.0,
+"all_a": 1.0,
+"chance_a": 0.11320113610622244,
+"chance_b": 0.10347683077956522,
+"cue": []
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 17,
+"inl": 8,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.10575263773554312,
+"chance_b": 0.14464653178082543,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 8,
+"inl": 6,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.045028694129526196,
+"chance_b": 0.03818480785794451,
+"cue": [
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 23,
+"inl": 15,
+"in_a": 0.7333333333333333,
+"in_b": 0.9333333333333333,
+"all_a": 0.5652173913043478,
+"chance_a": 0.09536631837203435,
+"chance_b": 0.10902798806073452,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 1,
+"inl": 0,
+"in_a": NaN,
+"in_b": NaN,
+"all_a": 0.0,
+"chance_a": 0.025190122493839853,
+"chance_b": 0.2794338037197779,
+"cue": [
+"barnacles"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 7,
+"inl": 5,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.14285714285714285,
+"chance_a": 0.17899109454576492,
+"chance_b": 0.06263562886020602,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 72,
+"inl": 35,
+"in_a": 0.6571428571428571,
+"in_b": 0.6285714285714286,
+"all_a": 0.375,
+"chance_a": 0.24046516211688185,
+"chance_b": 0.16425216643513924,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 26,
+"inl": 11,
+"in_a": 0.09090909090909091,
+"in_b": 0.6363636363636364,
+"all_a": 0.4230769230769231,
+"chance_a": 0.2999162091243853,
+"chance_b": 0.13183321565275558,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 104,
+"inl": 78,
+"in_a": 0.8461538461538461,
+"in_b": 0.7307692307692307,
+"all_a": 0.6346153846153846,
+"chance_a": 0.18014418967631649,
+"chance_b": 0.15131618217632664,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 341,
+"inl": 168,
+"in_a": 0.6547619047619048,
+"in_b": 0.7083333333333334,
+"all_a": 0.4868035190615836,
+"chance_a": 0.24730913642052565,
+"chance_b": 0.22068327592712048,
+"cue": []
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 66,
+"inl": 63,
+"in_a": 0.746031746031746,
+"in_b": 0.7142857142857143,
+"all_a": 0.7121212121212122,
+"chance_a": 0.12137458466706424,
+"chance_b": 0.5078125,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 342,
+"inl": 223,
+"in_a": 0.35874439461883406,
+"in_b": 0.31390134529147984,
+"all_a": 0.28654970760233917,
+"chance_a": 0.19501542344363432,
+"chance_b": 0.2441660619485926,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 22,
+"inl": 7,
+"in_a": 0.42857142857142855,
+"in_b": 0.8571428571428571,
+"all_a": 0.36363636363636365,
+"chance_a": 0.23755872130771874,
+"chance_b": 0.17329773395381867,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 6,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.09599199696813468,
+"chance_b": 0.0950086092584163,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 8,
+"inl": 2,
+"in_a": 0.0,
+"in_b": 1.0,
+"all_a": 0.0,
+"chance_a": 0.08360381578166129,
+"chance_b": 0.0914800822744623,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 1,
+"inl": 0,
+"in_a": NaN,
+"in_b": NaN,
+"all_a": 0.0,
+"chance_a": 0.07282187012798666,
+"chance_b": 0.030259535981124654,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 11,
+"inl": 5,
+"in_a": 1.0,
+"in_b": 1.0,
+"all_a": 0.5454545454545454,
+"chance_a": 0.09050825796303578,
+"chance_b": 0.2394623299037504,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 20,
+"inl": 11,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.1,
+"chance_a": 0.2887487553932957,
+"chance_b": 0.13521618177815434,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 29,
+"inl": 13,
+"in_a": 0.23076923076923078,
+"in_b": 0.15384615384615385,
+"all_a": 0.2413793103448276,
+"chance_a": 0.01179143011534587,
+"chance_b": 0.14613439608834708,
+"cue": []
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 18,
+"inl": 9,
+"in_a": 0.6666666666666666,
+"in_b": 0.6666666666666666,
+"all_a": 0.6111111111111112,
+"chance_a": 0.3318320933588793,
+"chance_b": 0.7960346399270738,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 99,
+"inl": 93,
+"in_a": 0.6881720430107527,
+"in_b": 0.6881720430107527,
+"all_a": 0.6565656565656566,
+"chance_a": 0.4317780984447651,
+"chance_b": 0.2689711313187468,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 20,
+"inl": 7,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.06594525478310286,
+"chance_b": 0.08295414407114214,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 40,
+"inl": 20,
+"in_a": 0.45,
+"in_b": 0.55,
+"all_a": 0.35,
+"chance_a": 0.1290842999509884,
+"chance_b": 0.11195286195286196,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 8,
+"inl": 3,
+"in_a": 1.0,
+"in_b": 0.0,
+"all_a": 0.875,
+"chance_a": 0.07907953169156237,
+"chance_b": 0.09202854407797406,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 281,
+"inl": 212,
+"in_a": 0.5566037735849056,
+"in_b": 0.41509433962264153,
+"all_a": 0.49110320284697506,
+"chance_a": 0.14058318400781922,
+"chance_b": 0.23292917278293243,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 643,
+"inl": 508,
+"in_a": 0.4330708661417323,
+"in_b": 0.5570866141732284,
+"all_a": 0.343701399688958,
+"chance_a": 0.23848451825597905,
+"chance_b": 0.2949960344347625,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 337,
+"inl": 337,
+"in_a": 0.3768545994065282,
+"in_b": 0.258160237388724,
+"all_a": 0.3768545994065282,
+"chance_a": 0.10403109350696597,
+"chance_b": 0.1556572255107736,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 14,
+"inl": 7,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.16279385128001472,
+"chance_b": 0.07410107532481058,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 19,
+"inl": 8,
+"in_a": 0.875,
+"in_b": 0.125,
+"all_a": 0.47368421052631576,
+"chance_a": 0.22979629320420772,
+"chance_b": 0.12168160437625992,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 8,
+"inl": 5,
+"in_a": 0.4,
+"in_b": 0.4,
+"all_a": 0.375,
+"chance_a": 0.15913396813965194,
+"chance_b": 0.5877879115782965,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 10,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.1,
+"chance_a": 0.6199721749884063,
+"chance_b": 0.36760660450156984,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 118,
+"inl": 88,
+"in_a": 0.7840909090909091,
+"in_b": 0.8181818181818182,
+"all_a": 0.6610169491525424,
+"chance_a": 0.3015674793682958,
+"chance_b": 0.48647574442487,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 24,
+"inl": 12,
+"in_a": 1.0,
+"in_b": 1.0,
+"all_a": 0.5833333333333334,
+"chance_a": 0.3223800111717441,
+"chance_b": 0.32519177023250284,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 28,
+"inl": 14,
+"in_a": 0.8571428571428571,
+"in_b": 0.07142857142857142,
+"all_a": 0.6785714285714286,
+"chance_a": 0.36024558482487956,
+"chance_b": 0.17015528870453317,
+"cue": []
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 13,
+"inl": 8,
+"in_a": 0.625,
+"in_b": 0.625,
+"all_a": 0.6153846153846154,
+"chance_a": 0.1921414504069575,
+"chance_b": 0.20782159017453136,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 141,
+"inl": 134,
+"in_a": 0.2462686567164179,
+"in_b": 0.2835820895522388,
+"all_a": 0.24113475177304963,
+"chance_a": 0.24075653050151152,
+"chance_b": 0.2398483388190795,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 421,
+"inl": 202,
+"in_a": 0.17326732673267325,
+"in_b": 0.20297029702970298,
+"all_a": 0.1496437054631829,
+"chance_a": 0.06668792369650507,
+"chance_b": 0.08476877931758306,
+"cue": [
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 177,
+"inl": 135,
+"in_a": 0.3851851851851852,
+"in_b": 0.37037037037037035,
+"all_a": 0.2994350282485876,
+"chance_a": 0.16552049622437973,
+"chance_b": 0.19582418292210307,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 238,
+"inl": 76,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.12605042016806722,
+"chance_a": 0.11212397876585972,
+"chance_b": 0.07604257257630348,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 339,
+"inl": 313,
+"in_a": 0.3035143769968051,
+"in_b": 0.2779552715654952,
+"all_a": 0.28023598820059,
+"chance_a": 0.2176143812425137,
+"chance_b": 0.08292573457032545,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 267,
+"inl": 218,
+"in_a": 0.22018348623853212,
+"in_b": 0.21100917431192662,
+"all_a": 0.1797752808988764,
+"chance_a": 0.035791547968385205,
+"chance_b": 0.10034817209649341,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 191,
+"inl": 85,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.2094240837696335,
+"chance_a": 0.1664874216777331,
+"chance_b": 0.1549711320802706,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 165,
+"inl": 103,
+"in_a": 0.2621359223300971,
+"in_b": 0.2912621359223301,
+"all_a": 0.296969696969697,
+"chance_a": 0.15378386870664443,
+"chance_b": 0.10310944376307626,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 227,
+"inl": 89,
+"in_a": 0.3258426966292135,
+"in_b": 0.29213483146067415,
+"all_a": 0.15418502202643172,
+"chance_a": 0.06923184043362292,
+"chance_b": 0.025225491645719356,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 243,
+"inl": 106,
+"in_a": 0.05660377358490566,
+"in_b": 0.04716981132075472,
+"all_a": 0.2222222222222222,
+"chance_a": 0.137347619307932,
+"chance_b": 0.1207821003829873,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 310,
+"inl": 153,
+"in_a": 0.24836601307189543,
+"in_b": 0.22875816993464052,
+"all_a": 0.13870967741935483,
+"chance_a": 0.04516733205185076,
+"chance_b": 0.08309573096902707,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 8,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.25,
+"chance_a": 0.22701082408461717,
+"chance_b": 0.23762578984320148,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 388,
+"inl": 305,
+"in_a": 0.16065573770491803,
+"in_b": 0.12786885245901639,
+"all_a": 0.14948453608247422,
+"chance_a": 0.048485929307700536,
+"chance_b": 0.073218973311944,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 15,
+"inl": 9,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.029990924201788647,
+"chance_b": 0.03556359252561784,
+"cue": []
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 312,
+"inl": 306,
+"in_a": 0.42483660130718953,
+"in_b": 0.4738562091503268,
+"all_a": 0.4166666666666667,
+"chance_a": 0.2090799306616995,
+"chance_b": 0.3742363080951342,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 14,
+"inl": 6,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.042537365881085136,
+"chance_b": 0.02704920926292008,
+"cue": []
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 13,
+"inl": 8,
+"in_a": 0.5,
+"in_b": 0.375,
+"all_a": 0.6153846153846154,
+"chance_a": 0.05335522878256326,
+"chance_b": 0.041026939141101906,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 26,
+"inl": 11,
+"in_a": 0.6363636363636364,
+"in_b": 0.45454545454545453,
+"all_a": 0.5384615384615384,
+"chance_a": 0.12845872899926955,
+"chance_b": 0.1388501213592233,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 68,
+"inl": 40,
+"in_a": 0.1,
+"in_b": 0.15,
+"all_a": 0.1323529411764706,
+"chance_a": 0.05479624284269916,
+"chance_b": 0.0206646294881589,
+"cue": [
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 117,
+"inl": 73,
+"in_a": 0.4520547945205479,
+"in_b": 0.4931506849315068,
+"all_a": 0.28205128205128205,
+"chance_a": 0.28856315522489007,
+"chance_b": 0.26276185641968364,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 191,
+"inl": 164,
+"in_a": 0.06097560975609756,
+"in_b": 0.10365853658536585,
+"all_a": 0.05235602094240838,
+"chance_a": 0.042735303774175566,
+"chance_b": 0.029891956782713086,
+"cue": [
+"barnacles",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 11,
+"inl": 6,
+"in_a": 0.8333333333333334,
+"in_b": 1.0,
+"all_a": 0.45454545454545453,
+"chance_a": 0.2567338203822596,
+"chance_b": 0.15800672564248236,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 9,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.08238927978201228,
+"chance_b": 0.06081915356483496,
+"cue": [
+"scars"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 6,
+"inl": 3,
+"in_a": 0.0,
+"in_b": 0.3333333333333333,
+"all_a": 0.0,
+"chance_a": 0.06947192072573027,
+"chance_b": 0.09093327586090776,
+"cue": [
+"barnacles"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 132,
+"inl": 26,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.015797513237144734,
+"chance_b": 0.02097399517940344,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 156,
+"inl": 77,
+"in_a": 0.15584415584415584,
+"in_b": 0.15584415584415584,
+"all_a": 0.19230769230769232,
+"chance_a": 0.13954990847421125,
+"chance_b": 0.1188929680881107,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 34,
+"inl": 28,
+"in_a": 0.0,
+"in_b": 1.0,
+"all_a": 0.0,
+"chance_a": 0.162684955671467,
+"chance_b": 0.2384439476862201,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 82,
+"inl": 33,
+"in_a": 0.5757575757575758,
+"in_b": 0.696969696969697,
+"all_a": 0.25609756097560976,
+"chance_a": 0.13269851461592702,
+"chance_b": 0.05254661792412531,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 119,
+"inl": 102,
+"in_a": 0.8431372549019608,
+"in_b": 0.7941176470588235,
+"all_a": 0.8403361344537815,
+"chance_a": 0.17562028270229527,
+"chance_b": 0.7144728699522047,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 24,
+"inl": 9,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.08333333333333333,
+"chance_a": 0.04534523702167313,
+"chance_b": 0.028855551378874345,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 242,
+"inl": 176,
+"in_a": 0.06818181818181818,
+"in_b": 0.0625,
+"all_a": 0.049586776859504134,
+"chance_a": 0.04511866235167206,
+"chance_b": 0.038117612965991185,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 82,
+"inl": 75,
+"in_a": 0.4266666666666667,
+"in_b": 0.38666666666666666,
+"all_a": 0.4268292682926829,
+"chance_a": 0.08669015163118395,
+"chance_b": 0.25589375523889357,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 26,
+"inl": 8,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.2692307692307692,
+"chance_a": 0.07580893430274448,
+"chance_b": 0.09819775611714585,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "?",
+"n": 16,
+"inl": 8,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.1875,
+"chance_a": 0.17445243949202627,
+"chance_b": 0.04423391048676903,
+"cue": []
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 56,
+"inl": 27,
+"in_a": 0.8148148148148148,
+"in_b": 0.8148148148148148,
+"all_a": 0.6785714285714286,
+"chance_a": 0.166189959562087,
+"chance_b": 0.4507927893365273,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 101,
+"inl": 46,
+"in_a": 0.45652173913043476,
+"in_b": 0.43478260869565216,
+"all_a": 0.2871287128712871,
+"chance_a": 0.23291416074357574,
+"chance_b": 0.1957540032070827,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 78,
+"inl": 34,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.24464087126586648,
+"chance_b": 0.0,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 11,
+"inl": 6,
+"in_a": 0.8333333333333334,
+"in_b": 0.8333333333333334,
+"all_a": 0.5454545454545454,
+"chance_a": 0.03816122977823393,
+"chance_b": 0.03387416007967425,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "?",
+"n": 39,
+"inl": 30,
+"in_a": 0.9,
+"in_b": 0.8,
+"all_a": 0.9230769230769231,
+"chance_a": 0.24760889180543025,
+"chance_b": 0.9014897329217555,
+"cue": [
+"fluke_shape",
+"barnacles"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 133,
+"inl": 33,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.01842185493482137,
+"chance_b": 0.014412302175637003,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 9,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.1111111111111111,
+"chance_a": 0.022703514085828398,
+"chance_b": 0.0262239586352412,
+"cue": [
+"barnacles"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 23,
+"inl": 8,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.025894149266074012,
+"chance_b": 0.02764633884745934,
+"cue": [
+"barnacles"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 312,
+"inl": 163,
+"in_a": 0.26993865030674846,
+"in_b": 0.27607361963190186,
+"all_a": 0.14102564102564102,
+"chance_a": 0.058894838826684996,
+"chance_b": 0.06958564080568114,
+"cue": [
+"fluke_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 69,
+"inl": 34,
+"in_a": 0.0,
+"in_b": 0.38235294117647056,
+"all_a": 0.0,
+"chance_a": 0.09590396943226415,
+"chance_b": 0.30822167800880684,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 49,
+"inl": 29,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.02040816326530612,
+"chance_a": 0.020628727085327248,
+"chance_b": 0.02079625420990663,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 2,
+"inl": 0,
+"in_a": NaN,
+"in_b": NaN,
+"all_a": 0.0,
+"chance_a": 0.09879988291540638,
+"chance_b": 0.5336140601882713,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 240,
+"inl": 69,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.15,
+"chance_a": 0.12607143601454088,
+"chance_b": 0.16700620091869597,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "?",
+"n": 59,
+"inl": 43,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.15111799867168474,
+"chance_b": 0.0,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 13,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.07692307692307693,
+"chance_a": 0.09669856210959805,
+"chance_b": 0.2139462275782524,
+"cue": [
+"fluke_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 19,
+"inl": 8,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.0,
+"chance_b": 0.028506369977517727,
+"cue": [
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 60,
+"inl": 51,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.02533125487139517,
+"chance_b": 0.0,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "?",
+"n": 33,
+"inl": 10,
+"in_a": 0.0,
+"in_b": 0.4,
+"all_a": 0.0,
+"chance_a": 0.13388617815023085,
+"chance_b": 0.5183983638062662,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 11,
+"inl": 4,
+"in_a": 0.25,
+"in_b": 0.0,
+"all_a": 0.18181818181818182,
+"chance_a": 0.10127515788626826,
+"chance_b": 0.05666516041572526,
+"cue": [
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 8,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.06065767589122899,
+"chance_b": 0.0,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 65,
+"inl": 57,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.04257238946764006,
+"chance_b": 0.0,
+"cue": [
+"barnacles"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "?",
+"n": 103,
+"inl": 90,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.041947437554062855,
+"chance_b": 0.0,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 143,
+"inl": 108,
+"in_a": 0.12962962962962962,
+"in_b": 0.12037037037037036,
+"all_a": 0.17482517482517482,
+"chance_a": 0.026379809895009907,
+"chance_b": 0.09657825816193344,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 48,
+"inl": 37,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.020833333333333332,
+"chance_a": 0.05690795318660526,
+"chance_b": 0.09552407753863569,
+"cue": [
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 7,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 1.0,
+"all_a": 0.0,
+"chance_a": 0.28345664589823466,
+"chance_b": 0.6926998025318781,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 106,
+"inl": 96,
+"in_a": 0.5729166666666666,
+"in_b": 0.6145833333333334,
+"all_a": 0.5377358490566038,
+"chance_a": 0.05993748850891708,
+"chance_b": 0.17191836199549854,
+"cue": [
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 34,
+"inl": 17,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.058823529411764705,
+"chance_a": 0.16136897968856212,
+"chance_b": 0.058646044352980264,
+"cue": [
+"scars"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "?",
+"n": 57,
+"inl": 38,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.0435599482143421,
+"chance_b": 0.0,
+"cue": [
+"barnacles"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 197,
+"inl": 91,
+"in_a": 0.0,
+"in_b": 0.01098901098901099,
+"all_a": 0.13705583756345177,
+"chance_a": 0.11189086098907229,
+"chance_b": 0.08807702557879755,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "?",
+"n": 30,
+"inl": 12,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.12186984699160179,
+"chance_b": 0.0,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 10,
+"inl": 4,
+"in_a": 0.25,
+"in_b": 0.5,
+"all_a": 0.1,
+"chance_a": 0.013766498997768616,
+"chance_b": 0.012430519751107092,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "?",
+"n": 8,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.03467358177832433,
+"chance_b": 0.0,
+"cue": [
+"barnacles"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 9,
+"inl": 2,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.0,
+"chance_b": 0.0,
+"cue": [
+"barnacles"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 167,
+"inl": 163,
+"in_a": 0.4539877300613497,
+"in_b": 0.4233128834355828,
+"all_a": 0.4491017964071856,
+"chance_a": 0.12198495720584421,
+"chance_b": 0.3982411569278874,
+"cue": [
+"barnacles",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 118,
+"inl": 83,
+"in_a": 0.3855421686746988,
+"in_b": 0.46987951807228917,
+"all_a": 0.2711864406779661,
+"chance_a": 0.11742073387958675,
+"chance_b": 0.041452490456007456,
+"cue": [
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 5,
+"inl": 3,
+"in_a": 0.0,
+"in_b": 1.0,
+"all_a": 0.0,
+"chance_a": 0.27797157221773944,
+"chance_b": 0.9684632696635698,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 43,
+"inl": 28,
+"in_a": 0.6785714285714286,
+"in_b": 0.25,
+"all_a": 0.4418604651162791,
+"chance_a": 0.061594451222019654,
+"chance_b": 0.019699563913615166,
+"cue": [
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 15,
+"inl": 5,
+"in_a": 0.0,
+"in_b": 0.2,
+"all_a": 0.0,
+"chance_a": 0.023878858474082703,
+"chance_b": 0.027867161398592785,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 65,
+"inl": 55,
+"in_a": 0.34545454545454546,
+"in_b": 0.41818181818181815,
+"all_a": 0.2923076923076923,
+"chance_a": 0.13040412447403707,
+"chance_b": 0.1315314835052554,
+"cue": [
+"barnacles"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 16,
+"inl": 7,
+"in_a": 0.7142857142857143,
+"in_b": 1.0,
+"all_a": 0.75,
+"chance_a": 0.07423627202959246,
+"chance_b": 0.8976300963791846,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 62,
+"inl": 23,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.016421690367127185,
+"chance_b": 0.020215221412084806,
+"cue": [
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 9,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.5,
+"all_a": 0.1111111111111111,
+"chance_a": 0.08597098258168522,
+"chance_b": 0.5444930129323036,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "?",
+"n": 13,
+"inl": 5,
+"in_a": 0.2,
+"in_b": 0.0,
+"all_a": 0.07692307692307693,
+"chance_a": 0.09847198641765705,
+"chance_b": 0.0,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 9,
+"inl": 5,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.09162683880578487,
+"chance_b": 0.029314917038544427,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 9,
+"inl": 5,
+"in_a": 0.0,
+"in_b": 0.4,
+"all_a": 0.1111111111111111,
+"chance_a": 0.07892445992040932,
+"chance_b": 0.6313563611414175,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 4,
+"inl": 4,
+"in_a": 0.25,
+"in_b": 0.0,
+"all_a": 0.25,
+"chance_a": 0.04863948780717447,
+"chance_b": 0.1725785250436523,
+"cue": [
+"scars"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 6,
+"inl": 4,
+"in_a": 0.5,
+"in_b": 0.75,
+"all_a": 0.3333333333333333,
+"chance_a": 0.04229195088676671,
+"chance_b": 0.027419843518865065,
+"cue": [
+"barnacles"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 8,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.125,
+"chance_a": 0.2955518906541058,
+"chance_b": 0.11584506605726753,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "?",
+"n": 141,
+"inl": 124,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.0,
+"chance_b": 0.0,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 34,
+"inl": 17,
+"in_a": 0.9411764705882353,
+"in_b": 0.0,
+"all_a": 0.6176470588235294,
+"chance_a": 0.15752611837504504,
+"chance_b": 0.05280844128568308,
+"cue": []
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 63,
+"inl": 39,
+"in_a": 0.48717948717948717,
+"in_b": 0.48717948717948717,
+"all_a": 0.38095238095238093,
+"chance_a": 0.1532379004771643,
+"chance_b": 0.4750892760523753,
+"cue": [
+"barnacles",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 31,
+"inl": 14,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.11021852559797489,
+"chance_b": 0.0,
+"cue": [
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 224,
+"inl": 173,
+"in_a": 0.5317919075144508,
+"in_b": 0.5838150289017341,
+"all_a": 0.41964285714285715,
+"chance_a": 0.2868935922612554,
+"chance_b": 0.34727233561311865,
+"cue": [
+"fluke_shape"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "?",
+"n": 9,
+"inl": 5,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.04812393372797325,
+"chance_b": 0.10190759107031525,
+"cue": [
+"fluke_shape",
+"barnacles"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 12,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.08333333333333333,
+"chance_a": 0.055591323296354994,
+"chance_b": 0.13650266050305154,
+"cue": [
+"fluke_shape",
+"barnacles"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "different",
+"n": 1,
+"inl": 0,
+"in_a": NaN,
+"in_b": NaN,
+"all_a": 0.0,
+"chance_a": 0.0,
+"chance_b": 0.02216844143272023,
+"cue": [
+"fluke_shape",
+"barnacles"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 130,
+"inl": 42,
+"in_a": 0.42857142857142855,
+"in_b": 0.35714285714285715,
+"all_a": 0.25384615384615383,
+"chance_a": 0.12755128810535704,
+"chance_b": 0.04973570150303607,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 29,
+"inl": 23,
+"in_a": 0.13043478260869565,
+"in_b": 0.21739130434782608,
+"all_a": 0.10344827586206896,
+"chance_a": 0.009218895806191311,
+"chance_b": 0.021112342830891532,
+"cue": []
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 20,
+"inl": 8,
+"in_a": 0.75,
+"in_b": 0.0,
+"all_a": 0.6,
+"chance_a": 0.5680328516149412,
+"chance_b": 0.09761093141717185,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 359,
+"inl": 123,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.12813370473537605,
+"chance_a": 0.14763768788019313,
+"chance_b": 0.11497611133458951,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 11,
+"inl": 8,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.0,
+"chance_b": 0.02015128883285599,
+"cue": []
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 124,
+"inl": 116,
+"in_a": 0.13793103448275862,
+"in_b": 0.12931034482758622,
+"all_a": 0.12903225806451613,
+"chance_a": 0.0812415418867595,
+"chance_b": 0.09211634955167947,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 41,
+"inl": 40,
+"in_a": 0.4,
+"in_b": 0.4,
+"all_a": 0.3902439024390244,
+"chance_a": 0.15791263405702327,
+"chance_b": 0.07758469369843778,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 36,
+"inl": 31,
+"in_a": 0.2903225806451613,
+"in_b": 0.3548387096774194,
+"all_a": 0.25,
+"chance_a": 0.12528555661079596,
+"chance_b": 0.021690585130471444,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 265,
+"inl": 199,
+"in_a": 0.06030150753768844,
+"in_b": 0.06030150753768844,
+"all_a": 0.06037735849056604,
+"chance_a": 0.045331291010328914,
+"chance_b": 0.01776296201777891,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 401,
+"inl": 246,
+"in_a": 0.028455284552845527,
+"in_b": 0.0,
+"all_a": 0.10224438902743142,
+"chance_a": 0.0376116077903543,
+"chance_b": 0.03195290059457812,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 203,
+"inl": 176,
+"in_a": 0.20454545454545456,
+"in_b": 0.13068181818181818,
+"all_a": 0.17733990147783252,
+"chance_a": 0.0612444841559093,
+"chance_b": 0.07354985818363828,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 254,
+"inl": 156,
+"in_a": 0.03205128205128205,
+"in_b": 0.019230769230769232,
+"all_a": 0.09448818897637795,
+"chance_a": 0.04172924802242916,
+"chance_b": 0.03149911625725932,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "?",
+"n": 287,
+"inl": 160,
+"in_a": 0.10625,
+"in_b": 0.05,
+"all_a": 0.26480836236933797,
+"chance_a": 0.20082519893188536,
+"chance_b": 0.23211649443027782,
+"cue": [
+"fluke_shape",
+"barnacles"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 373,
+"inl": 111,
+"in_a": 0.3063063063063063,
+"in_b": 0.23423423423423423,
+"all_a": 0.4101876675603217,
+"chance_a": 0.38744937679392916,
+"chance_b": 0.3621955374750906,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 260,
+"inl": 113,
+"in_a": 0.008849557522123894,
+"in_b": 0.008849557522123894,
+"all_a": 0.06923076923076923,
+"chance_a": 0.030708925502033288,
+"chance_b": 0.029411549252441195,
+"cue": []
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 284,
+"inl": 230,
+"in_a": 0.34347826086956523,
+"in_b": 0.3826086956521739,
+"all_a": 0.4084507042253521,
+"chance_a": 0.47716428084526247,
+"chance_b": 0.43429434073419493,
+"cue": [
+"fluke_shape",
+"barnacles",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 35,
+"inl": 21,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.05714285714285714,
+"chance_a": 0.48697811399203095,
+"chance_b": 0.16791703753938314,
+"cue": [
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 405,
+"inl": 189,
+"in_a": 0.0582010582010582,
+"in_b": 0.05291005291005291,
+"all_a": 0.07654320987654321,
+"chance_a": 0.03771640370093078,
+"chance_b": 0.0660286688298353,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 63,
+"inl": 22,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.015873015873015872,
+"chance_a": 0.11708898014584185,
+"chance_b": 0.10550174617647565,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 204,
+"inl": 77,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.1568627450980392,
+"chance_a": 0.10692937314545377,
+"chance_b": 0.0771827696013577,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 12,
+"inl": 5,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.4166666666666667,
+"chance_a": 0.2852246296976374,
+"chance_b": 0.10841850820255464,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 24,
+"inl": 9,
+"in_a": 0.8888888888888888,
+"in_b": 0.4444444444444444,
+"all_a": 0.4583333333333333,
+"chance_a": 0.17111499611499612,
+"chance_b": 0.10421830314585319,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "different",
+"n": 37,
+"inl": 8,
+"in_a": 1.0,
+"in_b": 1.0,
+"all_a": 0.40540540540540543,
+"chance_a": 0.09973914900069003,
+"chance_b": 0.09051374997845732,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "?",
+"n": 197,
+"inl": 55,
+"in_a": 0.2545454545454545,
+"in_b": 0.12727272727272726,
+"all_a": 0.2182741116751269,
+"chance_a": 0.11964041430525699,
+"chance_b": 0.046032272325375774,
+"cue": [
+"fluke_shape",
+"barnacles"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 203,
+"inl": 58,
+"in_a": 0.27586206896551724,
+"in_b": 0.46551724137931033,
+"all_a": 0.2512315270935961,
+"chance_a": 0.17268242994708896,
+"chance_b": 0.061647068855774124,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 312,
+"inl": 165,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.10576923076923077,
+"chance_a": 0.06603003519612403,
+"chance_b": 0.0657758157101587,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 3,
+"inl": 3,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.31758920539730134,
+"chance_b": 0.158397667764401,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 12,
+"inl": 8,
+"in_a": 0.25,
+"in_b": 0.25,
+"all_a": 0.16666666666666666,
+"chance_a": 0.04263405932158262,
+"chance_b": 0.05448352911826278,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 154,
+"inl": 130,
+"in_a": 0.8923076923076924,
+"in_b": 0.9538461538461539,
+"all_a": 0.8701298701298701,
+"chance_a": 0.6443843000475619,
+"chance_b": 0.2469245017001631,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 15,
+"inl": 6,
+"in_a": 0.16666666666666666,
+"in_b": 0.16666666666666666,
+"all_a": 0.13333333333333333,
+"chance_a": 0.06061115839056346,
+"chance_b": 0.10677601105927839,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "different",
+"n": 7,
+"inl": 3,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.2857142857142857,
+"chance_a": 0.1521419508598666,
+"chance_b": 0.15300334012995565,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "different",
+"n": 113,
+"inl": 94,
+"in_a": 0.48936170212765956,
+"in_b": 0.5425531914893617,
+"all_a": 0.4247787610619469,
+"chance_a": 0.17162135344314347,
+"chance_b": 0.2355435966429624,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "different",
+"n": 21,
+"inl": 8,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.04147505135511232,
+"chance_b": 0.02941480829927045,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 2,
+"inl": 0,
+"in_a": NaN,
+"in_b": NaN,
+"all_a": 0.0,
+"chance_a": 0.13829043854553413,
+"chance_b": 0.12724819636224047,
+"cue": [
+"fluke_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 383,
+"inl": 92,
+"in_a": 0.20652173913043478,
+"in_b": 0.15217391304347827,
+"all_a": 0.09921671018276762,
+"chance_a": 0.039995966271826736,
+"chance_b": 0.028361317242121754,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 7,
+"inl": 5,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.14285714285714285,
+"chance_a": 0.04192163750928802,
+"chance_b": 0.30115497566560706,
+"cue": [
+"fluke_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 10,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.25,
+"all_a": 0.0,
+"chance_a": 0.028206633802624573,
+"chance_b": 0.025095426020573203,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 25,
+"inl": 8,
+"in_a": 0.0,
+"in_b": 0.25,
+"all_a": 0.0,
+"chance_a": 0.044624788986400765,
+"chance_b": 0.07275952905757754,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 10,
+"inl": 5,
+"in_a": 1.0,
+"in_b": 0.8,
+"all_a": 0.6,
+"chance_a": 0.7314014018116981,
+"chance_b": 0.23342208066883974,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 11,
+"inl": 9,
+"in_a": 0.8888888888888888,
+"in_b": 1.0,
+"all_a": 0.9090909090909091,
+"chance_a": 0.44628155405865144,
+"chance_b": 0.20375237703031698,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 3,
+"inl": 3,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.10680680082920296,
+"chance_b": 0.022778052107422057,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 25,
+"inl": 5,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.08,
+"chance_a": 0.062273685238378104,
+"chance_b": 0.08571641069502807,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 18,
+"inl": 12,
+"in_a": 0.0,
+"in_b": 0.08333333333333333,
+"all_a": 0.0,
+"chance_a": 0.08410866704705568,
+"chance_b": 0.2690699514069386,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 74,
+"inl": 40,
+"in_a": 0.25,
+"in_b": 0.275,
+"all_a": 0.40540540540540543,
+"chance_a": 0.05419545409031741,
+"chance_b": 0.2737204607528797,
+"cue": []
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 6,
+"inl": 5,
+"in_a": 0.6,
+"in_b": 0.0,
+"all_a": 0.5,
+"chance_a": 0.15557895968638466,
+"chance_b": 0.1775834345158009,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 666,
+"inl": 220,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.03453453453453453,
+"chance_a": 0.032707387536112256,
+"chance_b": 0.023689904742955206,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 270,
+"inl": 117,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.09259259259259259,
+"chance_a": 0.03704886240007568,
+"chance_b": 0.05766976282802778,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 108,
+"inl": 53,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.037037037037037035,
+"chance_a": 0.03900355402363302,
+"chance_b": 0.06024444849121078,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 28,
+"inl": 12,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.10714285714285714,
+"chance_a": 0.11316459812476289,
+"chance_b": 0.2070046712027814,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 212,
+"inl": 159,
+"in_a": 0.33962264150943394,
+"in_b": 0.3081761006289308,
+"all_a": 0.30660377358490565,
+"chance_a": 0.1875273291020154,
+"chance_b": 0.08167330677290836,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 135,
+"inl": 35,
+"in_a": 0.37142857142857144,
+"in_b": 0.22857142857142856,
+"all_a": 0.5851851851851851,
+"chance_a": 0.42871846264270524,
+"chance_b": 0.34585505645133446,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 30,
+"inl": 21,
+"in_a": 0.6666666666666666,
+"in_b": 0.6666666666666666,
+"all_a": 0.6333333333333333,
+"chance_a": 0.40123927896496586,
+"chance_b": 0.3648267816649408,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 33,
+"inl": 11,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.030303030303030304,
+"chance_a": 0.08987358586641281,
+"chance_b": 0.10808913249791792,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 15,
+"inl": 5,
+"in_a": 1.0,
+"in_b": 1.0,
+"all_a": 0.5333333333333333,
+"chance_a": 0.08610027239932268,
+"chance_b": 0.25654238658179246,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 14,
+"inl": 6,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.07142857142857142,
+"chance_a": 0.15136890031474495,
+"chance_b": 0.14549302890852234,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 22,
+"inl": 15,
+"in_a": 1.0,
+"in_b": 1.0,
+"all_a": 0.8636363636363636,
+"chance_a": 0.16833951721385387,
+"chance_b": 0.18131135576134438,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 68,
+"inl": 37,
+"in_a": 0.7567567567567568,
+"in_b": 0.7027027027027027,
+"all_a": 0.6029411764705882,
+"chance_a": 0.21732700426973262,
+"chance_b": 0.160345398105983,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 11,
+"inl": 5,
+"in_a": 0.4,
+"in_b": 0.4,
+"all_a": 0.36363636363636365,
+"chance_a": 0.09785748578031296,
+"chance_b": 0.0982422156198055,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 34,
+"inl": 19,
+"in_a": 0.42105263157894735,
+"in_b": 0.42105263157894735,
+"all_a": 0.38235294117647056,
+"chance_a": 0.14891424780697113,
+"chance_b": 0.26151337036558586,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 26,
+"inl": 9,
+"in_a": 0.6666666666666666,
+"in_b": 1.0,
+"all_a": 0.34615384615384615,
+"chance_a": 0.09814100719424461,
+"chance_b": 0.369030044030044,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 151,
+"inl": 118,
+"in_a": 0.4406779661016949,
+"in_b": 0.3983050847457627,
+"all_a": 0.3973509933774834,
+"chance_a": 0.16886173271658958,
+"chance_b": 0.17967535265356588,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 58,
+"inl": 30,
+"in_a": 0.6333333333333333,
+"in_b": 0.7,
+"all_a": 0.3793103448275862,
+"chance_a": 0.1260130965576335,
+"chance_b": 0.17590125984435165,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 223,
+"inl": 103,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.1031390134529148,
+"chance_a": 0.0485594943142113,
+"chance_b": 0.02957596157793194,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 170,
+"inl": 92,
+"in_a": 1.0,
+"in_b": 1.0,
+"all_a": 1.0,
+"chance_a": 0.4223039283443452,
+"chance_b": 0.9840066425589372,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 24,
+"inl": 12,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.125,
+"chance_a": 0.2217612634279301,
+"chance_b": 0.30644046839770167,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 21,
+"inl": 14,
+"in_a": 0.5,
+"in_b": 0.5,
+"all_a": 0.38095238095238093,
+"chance_a": 0.12479739879822897,
+"chance_b": 0.1268392575582118,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 13,
+"inl": 7,
+"in_a": 1.0,
+"in_b": 1.0,
+"all_a": 0.6153846153846154,
+"chance_a": 0.27318606767601555,
+"chance_b": 0.06375424288580829,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 26,
+"inl": 12,
+"in_a": 0.75,
+"in_b": 1.0,
+"all_a": 0.6153846153846154,
+"chance_a": 0.3393001275809097,
+"chance_b": 0.32057473037267303,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 46,
+"inl": 20,
+"in_a": 0.25,
+"in_b": 0.25,
+"all_a": 0.34782608695652173,
+"chance_a": 0.11853817766197537,
+"chance_b": 0.15923810434242286,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 7,
+"inl": 4,
+"in_a": 1.0,
+"in_b": 0.75,
+"all_a": 1.0,
+"chance_a": 0.926764793152126,
+"chance_b": 0.23695925968331796,
+"cue": [
+"fluke_shape",
+"barnacles"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 15,
+"inl": 10,
+"in_a": 0.6,
+"in_b": 0.9,
+"all_a": 0.4666666666666667,
+"chance_a": 0.2312824452070918,
+"chance_b": 0.15412159303801293,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 23,
+"inl": 9,
+"in_a": 1.0,
+"in_b": 1.0,
+"all_a": 1.0,
+"chance_a": 0.8071613946665663,
+"chance_b": 0.5618440962561625,
+"cue": [
+"fluke_shape"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 27,
+"inl": 9,
+"in_a": 0.7777777777777778,
+"in_b": 0.6666666666666666,
+"all_a": 0.8888888888888888,
+"chance_a": 0.6593618889647771,
+"chance_b": 0.5576196040692879,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 42,
+"inl": 28,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.07142857142857142,
+"chance_a": 0.06852534488031808,
+"chance_b": 0.06866190346755718,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 0,
+"inl": 0,
+"in_a": NaN,
+"in_b": NaN,
+"all_a": NaN,
+"chance_a": 0.24457386711439916,
+"chance_b": 0.0,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 119,
+"inl": 36,
+"in_a": 0.3333333333333333,
+"in_b": 0.2777777777777778,
+"all_a": 0.23529411764705882,
+"chance_a": 0.06403121521741849,
+"chance_b": 0.11459845381331785,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 361,
+"inl": 107,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.15512465373961218,
+"chance_a": 0.1453795621260437,
+"chance_b": 0.0775780943070415,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 3,
+"inl": 3,
+"in_a": 0.6666666666666666,
+"in_b": 1.0,
+"all_a": 0.6666666666666666,
+"chance_a": 0.0779163221995892,
+"chance_b": 0.11597922819257526,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 9,
+"inl": 3,
+"in_a": 0.6666666666666666,
+"in_b": 0.3333333333333333,
+"all_a": 0.8888888888888888,
+"chance_a": 0.31775786898213726,
+"chance_b": 0.6971106742192721,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 59,
+"inl": 20,
+"in_a": 0.85,
+"in_b": 0.1,
+"all_a": 0.559322033898305,
+"chance_a": 0.21294136057131477,
+"chance_b": 0.10516209606077952,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 161,
+"inl": 33,
+"in_a": 0.5757575757575758,
+"in_b": 0.5757575757575758,
+"all_a": 0.45962732919254656,
+"chance_a": 0.30017342193710767,
+"chance_b": 0.2756888208571993,
+"cue": [
+"fluke_shape"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "?",
+"n": 0,
+"inl": 0,
+"in_a": NaN,
+"in_b": NaN,
+"all_a": NaN,
+"chance_a": 0.6041580957647942,
+"chance_b": 0.0,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "?",
+"n": 238,
+"inl": 169,
+"in_a": 0.378698224852071,
+"in_b": 0.3136094674556213,
+"all_a": 0.28991596638655465,
+"chance_a": 0.26441799677437294,
+"chance_b": 0.1671596487696096,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 337,
+"inl": 188,
+"in_a": 0.010638297872340425,
+"in_b": 0.0,
+"all_a": 0.09198813056379822,
+"chance_a": 0.03653251492455052,
+"chance_b": 0.03893306781605829,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 49,
+"inl": 33,
+"in_a": 0.6060606060606061,
+"in_b": 0.6060606060606061,
+"all_a": 0.5306122448979592,
+"chance_a": 0.1775884049043011,
+"chance_b": 0.055282667218885896,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 405,
+"inl": 305,
+"in_a": 0.38688524590163936,
+"in_b": 0.39672131147540984,
+"all_a": 0.40987654320987654,
+"chance_a": 0.3750552907062466,
+"chance_b": 0.43769289093452657,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 10,
+"inl": 6,
+"in_a": 1.0,
+"in_b": 1.0,
+"all_a": 0.6,
+"chance_a": 0.08199852925017116,
+"chance_b": 0.11323832612094162,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 38,
+"inl": 12,
+"in_a": 0.0,
+"in_b": 0.25,
+"all_a": 0.2631578947368421,
+"chance_a": 0.15861955808357034,
+"chance_b": 0.3026381314450207,
+"cue": [
+"fluke_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 246,
+"inl": 37,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.09349593495934959,
+"chance_a": 0.10223411318986056,
+"chance_b": 0.026525231924789217,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 25,
+"inl": 9,
+"in_a": 0.7777777777777778,
+"in_b": 0.3333333333333333,
+"all_a": 0.84,
+"chance_a": 0.4336431784107946,
+"chance_b": 0.30736087136873935,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 23,
+"inl": 7,
+"in_a": 0.5714285714285714,
+"in_b": 0.0,
+"all_a": 0.34782608695652173,
+"chance_a": 0.1558347125752235,
+"chance_b": 0.06803328489207451,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 27,
+"inl": 12,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.06765970263683908,
+"chance_b": 0.0547376278508354,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 69,
+"inl": 31,
+"in_a": 0.967741935483871,
+"in_b": 0.967741935483871,
+"all_a": 0.5942028985507246,
+"chance_a": 0.09984450491475537,
+"chance_b": 0.05208171756526182,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 5,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.25,
+"all_a": 0.0,
+"chance_a": 0.3184477904272249,
+"chance_b": 0.13027162531908715,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 187,
+"inl": 60,
+"in_a": 0.5166666666666667,
+"in_b": 0.2833333333333333,
+"all_a": 0.32620320855614976,
+"chance_a": 0.28129058827256315,
+"chance_b": 0.1472922656984987,
+"cue": [
+"dorsal_shape",
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 1,
+"inl": 0,
+"in_a": NaN,
+"in_b": NaN,
+"all_a": 1.0,
+"chance_a": 0.2644367308299148,
+"chance_b": 0.07904971966393345,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 16,
+"inl": 10,
+"in_a": 0.9,
+"in_b": 0.0,
+"all_a": 0.9375,
+"chance_a": 0.6275500802863987,
+"chance_b": 0.2254817649980015,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 90,
+"inl": 49,
+"in_a": 0.32653061224489793,
+"in_b": 0.40816326530612246,
+"all_a": 0.2222222222222222,
+"chance_a": 0.07003280011141473,
+"chance_b": 0.08376980743463962,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 15,
+"inl": 8,
+"in_a": 0.375,
+"in_b": 0.375,
+"all_a": 0.4,
+"chance_a": 0.07374338208478477,
+"chance_b": 0.02050087361677344,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 108,
+"inl": 19,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.06481481481481481,
+"chance_a": 0.045949869350624215,
+"chance_b": 0.047064138272026525,
+"cue": [
+"barnacles",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 23,
+"inl": 12,
+"in_a": 0.5,
+"in_b": 0.4166666666666667,
+"all_a": 0.5652173913043478,
+"chance_a": 0.15813770124882368,
+"chance_b": 0.10419205342493355,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 19,
+"inl": 9,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.04807644781283466,
+"chance_b": 0.034612377045806865,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 142,
+"inl": 56,
+"in_a": 0.9821428571428571,
+"in_b": 1.0,
+"all_a": 0.7887323943661971,
+"chance_a": 0.507806249678346,
+"chance_b": 0.5234329388036728,
+"cue": []
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 24,
+"inl": 10,
+"in_a": 0.8,
+"in_b": 1.0,
+"all_a": 0.4583333333333333,
+"chance_a": 0.2665926978503624,
+"chance_b": 0.3943096682126293,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "?",
+"n": 13,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.503832387500883,
+"chance_b": 0.6287744548511915,
+"cue": [
+"fluke_shape",
+"barnacles"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 396,
+"inl": 323,
+"in_a": 0.23219814241486067,
+"in_b": 0.3498452012383901,
+"all_a": 0.22474747474747475,
+"chance_a": 0.09642280534536754,
+"chance_b": 0.2032813781788351,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 133,
+"inl": 82,
+"in_a": 0.3048780487804878,
+"in_b": 0.3902439024390244,
+"all_a": 0.47368421052631576,
+"chance_a": 0.4635532365552513,
+"chance_b": 0.07826547645353403,
+"cue": []
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 12,
+"inl": 9,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.08333333333333333,
+"chance_a": 0.15253550626041493,
+"chance_b": 0.20475019477989873,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 17,
+"inl": 7,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.058823529411764705,
+"chance_a": 0.16837808628651219,
+"chance_b": 0.07841374847199252,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 20,
+"inl": 8,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.04249321361453331,
+"chance_b": 0.04676248222172318,
+"cue": [
+"dorsal_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 16,
+"inl": 9,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.11132948450231339,
+"chance_b": 0.06848298068871451,
+"cue": [
+"barnacles",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 104,
+"inl": 28,
+"in_a": 0.35714285714285715,
+"in_b": 0.32142857142857145,
+"all_a": 0.3942307692307692,
+"chance_a": 0.2008509598745954,
+"chance_b": 0.2863319309881737,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 146,
+"inl": 46,
+"in_a": 0.30434782608695654,
+"in_b": 0.34782608695652173,
+"all_a": 0.2328767123287671,
+"chance_a": 0.1089563693428483,
+"chance_b": 0.14722881392945014,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 235,
+"inl": 109,
+"in_a": 0.3761467889908257,
+"in_b": 0.3577981651376147,
+"all_a": 0.2425531914893617,
+"chance_a": 0.2363123993558776,
+"chance_b": 0.17571345205376304,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 110,
+"inl": 42,
+"in_a": 0.5714285714285714,
+"in_b": 0.6428571428571429,
+"all_a": 0.7181818181818181,
+"chance_a": 0.2735928903935675,
+"chance_b": 0.42787280628633034,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "same",
+"n": 11,
+"inl": 6,
+"in_a": 0.16666666666666666,
+"in_b": 0.3333333333333333,
+"all_a": 0.09090909090909091,
+"chance_a": 0.3880120208091318,
+"chance_b": 0.16472449770071368,
+"cue": [
+"fluke_shape",
+"barnacles",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 42,
+"inl": 33,
+"in_a": 0.2727272727272727,
+"in_b": 0.0,
+"all_a": 0.23809523809523808,
+"chance_a": 0.07442275164881272,
+"chance_b": 0.21829758925460133,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 5,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.25,
+"all_a": 0.0,
+"chance_a": 0.045603804103801396,
+"chance_b": 0.13434631991356805,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "?",
+"n": 10,
+"inl": 7,
+"in_a": 1.0,
+"in_b": 1.0,
+"all_a": 0.8,
+"chance_a": 0.15923063819243338,
+"chance_b": 0.11968241657029285,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "?",
+"n": 24,
+"inl": 12,
+"in_a": 0.5833333333333334,
+"in_b": 0.0,
+"all_a": 0.625,
+"chance_a": 0.9324620370926114,
+"chance_b": 0.2756174102878974,
+"cue": [
+"fluke_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "different",
+"n": 134,
+"inl": 109,
+"in_a": 0.5596330275229358,
+"in_b": 0.6146788990825688,
+"all_a": 0.4925373134328358,
+"chance_a": 0.296777500160164,
+"chance_b": 0.13533549783549784,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 38,
+"inl": 7,
+"in_a": 0.8571428571428571,
+"in_b": 0.8571428571428571,
+"all_a": 0.3684210526315789,
+"chance_a": 0.04252879125133069,
+"chance_b": 0.22351262380084488,
+"cue": [
+"barnacles",
+"scars"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "different",
+"n": 18,
+"inl": 10,
+"in_a": 0.2,
+"in_b": 0.2,
+"all_a": 0.16666666666666666,
+"chance_a": 0.0722902934180615,
+"chance_b": 0.09067253266089009,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 220,
+"inl": 55,
+"in_a": 0.09090909090909091,
+"in_b": 0.07272727272727272,
+"all_a": 0.1590909090909091,
+"chance_a": 0.14955164217804667,
+"chance_b": 0.0877111909750302,
+"cue": [
+"dorsal_shape"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "?",
+"n": 6,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.0,
+"chance_b": 0.0,
+"cue": [
+"fluke_shape"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "different",
+"n": 5,
+"inl": 4,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.25363427081153306,
+"chance_b": 0.08761975316956544,
+"cue": [
+"dorsal_shape",
+"scars"
+]
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "?",
+"n": 4,
+"inl": 3,
+"in_a": 1.0,
+"in_b": 0.0,
+"all_a": 0.75,
+"chance_a": 0.9443412678640183,
+"chance_b": 0.0,
+"cue": [
+"fluke_shape",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "different",
+"n": 20,
+"inl": 15,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.16481212042671253,
+"chance_b": 0.2874751263367357,
+"cue": []
+},
+{
+"part": "fluke",
+"verdict": "same",
+"catalog": "different",
+"n": 11,
+"inl": 5,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.18181818181818182,
+"chance_a": 0.2925835246886358,
+"chance_b": 0.16307118433322973,
+"cue": []
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "?",
+"n": 0,
+"inl": 0,
+"in_a": NaN,
+"in_b": NaN,
+"all_a": NaN,
+"chance_a": 0.5956048701728902,
+"chance_b": 0.0,
+"cue": [
+"scars",
+"pigmentation"
+]
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "same",
+"n": 56,
+"inl": 19,
+"in_a": 0.0,
+"in_b": 0.0,
+"all_a": 0.0,
+"chance_a": 0.03780605825994387,
+"chance_b": 0.0,
+"cue": []
+},
+{
+"part": "dorsal",
+"verdict": "same",
+"catalog": "?",
+"n": 341,
+"inl": 168,
+"in_a": 0.6547619047619048,
+"in_b": 0.7083333333333334,
+"all_a": 0.4868035190615836,
+"chance_a": 0.24730913642052565,
+"chance_b": 0.22068327592712048,
+"cue": []
+}
+]

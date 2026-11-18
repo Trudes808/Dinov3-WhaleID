@@ -30,6 +30,7 @@ from .predict import load_prob, resize_1280
 
 R = Path("/home/sat3737/NOAA_whales/Whale-Image-Data-Factory/data/renders")
 ARMS = {"m1": R / "r06_pair_m1", "m2": R / "r06_pair_m2"}
+DROP = {"000893"}
 OUT = C.REPO / "experiments" / "seg_pair"
 SPLIT = OUT / "split_pair.json"
 CK = Path("/var/tmp/sat3737-parts-cache/seg_pair")
@@ -43,15 +44,23 @@ def ckpt(name: str) -> Path:
 
 def cmd_split(a) -> None:
     from ..common.splits import filter_rows, load_manifest, make_split, summarize
-    rows = load_manifest(ARMS["m2"]); rows1 = {r["id"] for r in load_manifest(ARMS["m1"])}
-    assert {r["id"] for r in rows} == rows1, "the two arms have different shot ids"
-    keep = filter_rows(rows, 800, True); sp = make_split(keep, (0.85, 0.15, 0.0), 0)
+    rows = load_manifest(ARMS["m2"]); rows1 = {r["id"]: r for r in load_manifest(ARMS["m1"])}
+    assert {r["id"] for r in rows} == set(rows1), "the two arms have different shot ids"
+    # pairs only: accepted by the quality gate in BOTH arms ("rejected" in the manifests), minus 000893 (qa_multi
+    # parts_in_instance failure in both arms, r06_pair.qa_note_000893.txt); then the run05 filter (>= 800 visible px
+    # for whale shots, factory-flagged shots out)
+    common = [r for r in rows if not r.get("rejected") and not rows1[r["id"]].get("rejected") and r["id"] not in DROP]
+    keep = filter_rows(common, 800, True); sp = make_split(keep, (0.85, 0.15, 0.0), 0)
+    print(f"shots 1000 per arm; accepted in both arms {len(common)} (without {sorted(DROP)}); after the >= 800 px / flag filter {len(keep)}, "
+          f"of which no-whale shots {sum(r['negative'] for r in keep)}")
     OUT.mkdir(parents=True, exist_ok=True)
     SPLIT.write_text(json.dumps({"run_dir": str(ARMS["m2"]), "seed": 0, "fractions": [0.85, 0.15, 0.0], "strata": ["category"],
-                                 "note": "same ids for r06_pair_m1", "summary": summarize(keep, sp), **sp}, indent=1))
+                                 "note": "same ids for r06_pair_m1; shots accepted in both arms, 000893 dropped, >= 800 visible px",
+                                 "pairs": len(keep), "no_whale_shots": sum(r["negative"] for r in keep), "summary": summarize(keep, sp), **sp}, indent=1))
     same = diff = 0
-    for p in sorted((ARMS["m2"] / "dataset" / "masks").glob("*.png")):
-        q = ARMS["m1"] / "dataset" / "masks" / p.name
+    for r in keep:
+        p = ARMS["m2"] / "dataset" / r["mask"]
+        q = ARMS["m1"] / "dataset" / r["mask"]
         if q.exists() and hashlib.md5(p.read_bytes()).digest() == hashlib.md5(q.read_bytes()).digest():
             same += 1
         else:
@@ -64,7 +73,8 @@ def cmd_split(a) -> None:
 
 def cmd_pairsheet(a) -> None:
     from ..common.splits import load_manifest
-    rows = [r for r in load_manifest(ARMS["m2"]) if not r["negative"] and r["category"] in ("awash", "surface", "logging", "back_arch", "fluke_rollout", "blow", "blow_sliver")]
+    ids = set(json.loads(SPLIT.read_text())["train"]) | set(json.loads(SPLIT.read_text())["val"])
+    rows = [r for r in load_manifest(ARMS["m2"]) if r["id"] in ids and not r["negative"] and r["category"] in ("awash", "surface", "logging", "back_arch", "fluke_rollout", "blow", "blow_sliver")]
     head = [r for r in rows if (r.get("orientation") or {}).get("nose_toward_camera")]
     pool = head if len(head) >= 30 else rows
     pool = sorted(pool, key=lambda r: -r["through_water_pixels"] / max(r["through_water_pixels"] + r["visible_pixels"], 1))[:30]

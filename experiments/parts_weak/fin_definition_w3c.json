@@ -1,0 +1,1439 @@
+{
+ "frame": "along: back base 0 -> front base 1; up: base line 0 -> tip height 1",
+ "real": {
+  "2025-01-02": {
+   "n_fins": 98,
+   "clicks": {
+    "n": 98,
+    "painted": 0.908,
+    "base_over_height": {
+     "median": 3.116,
+     "q25": 2.229,
+     "q75": 3.767
+    },
+    "tip_along": {
+     "median": 0.123,
+     "q25": 0.031,
+     "q75": 0.198
+    },
+    "down": {
+     "median": 0.472,
+     "q25": 0.412,
+     "q75": 0.563
+    },
+    "front": {
+     "median": 0.295,
+     "q25": 0.247,
+     "q75": 0.358
+    },
+    "back": {
+     "median": 0.076,
+     "q25": 0.012,
+     "q75": 0.154
+    },
+    "length_over_base": {
+     "median": 0.29,
+     "q25": 0.233,
+     "q75": 0.357
+    },
+    "triangle_covered": {
+     "median": 0.179,
+     "q25": 0.13,
+     "q75": 0.22
+    },
+    "painted_outside_triangle": {
+     "median": 0.162,
+     "q25": 0.084,
+     "q75": 0.289
+    },
+    "iou_triangle": {
+     "median": 0.171,
+     "q25": 0.123,
+     "q75": 0.205
+    },
+    "comp_down": {
+     "median": 0.472,
+     "q25": 0.412,
+     "q75": 0.563
+    },
+    "comp_front": {
+     "median": 0.295,
+     "q25": 0.247,
+     "q75": 0.358
+    },
+    "comp_back": {
+     "median": 0.076,
+     "q25": 0.012,
+     "q75": 0.154
+    },
+    "comp_length_over_base": {
+     "median": 0.29,
+     "q25": 0.233,
+     "q75": 0.357
+    },
+    "comp_outside_triangle": {
+     "median": 0.162,
+     "q25": 0.084,
+     "q75": 0.289
+    },
+    "comp_iou_triangle": {
+     "median": 0.171,
+     "q25": 0.123,
+     "q75": 0.205
+    },
+    "comp_area_over_triangle": {
+     "median": 0.216,
+     "q25": 0.156,
+     "q75": 0.273
+    }
+   },
+   "parts_seg_r05_a": {
+    "n": 98,
+    "painted": 0.908,
+    "base_over_height": {
+     "median": 3.116,
+     "q25": 2.229,
+     "q75": 3.767
+    },
+    "tip_along": {
+     "median": 0.123,
+     "q25": 0.031,
+     "q75": 0.198
+    },
+    "down": {
+     "median": 0.472,
+     "q25": 0.412,
+     "q75": 0.563
+    },
+    "front": {
+     "median": 0.295,
+     "q25": 0.247,
+     "q75": 0.358
+    },
+    "back": {
+     "median": 0.076,
+     "q25": 0.012,
+     "q75": 0.154
+    },
+    "length_over_base": {
+     "median": 0.29,
+     "q25": 0.233,
+     "q75": 0.357
+    },
+    "triangle_covered": {
+     "median": 0.179,
+     "q25": 0.13,
+     "q75": 0.22
+    },
+    "painted_outside_triangle": {
+     "median": 0.162,
+     "q25": 0.084,
+     "q75": 0.289
+    },
+    "iou_triangle": {
+     "median": 0.171,
+     "q25": 0.123,
+     "q75": 0.205
+    },
+    "comp_down": {
+     "median": 0.472,
+     "q25": 0.412,
+     "q75": 0.563
+    },
+    "comp_front": {
+     "median": 0.295,
+     "q25": 0.247,
+     "q75": 0.358
+    },
+    "comp_back": {
+     "median": 0.076,
+     "q25": 0.012,
+     "q75": 0.154
+    },
+    "comp_length_over_base": {
+     "median": 0.29,
+     "q25": 0.233,
+     "q75": 0.357
+    },
+    "comp_outside_triangle": {
+     "median": 0.162,
+     "q25": 0.084,
+     "q75": 0.289
+    },
+    "comp_iou_triangle": {
+     "median": 0.171,
+     "q25": 0.123,
+     "q75": 0.205
+    },
+    "comp_area_over_triangle": {
+     "median": 0.216,
+     "q25": 0.156,
+     "q75": 0.273
+    }
+   },
+   "parts_seg_r05_s1": {
+    "n": 98,
+    "painted": 0.939,
+    "base_over_height": {
+     "median": 3.116,
+     "q25": 2.229,
+     "q75": 3.767
+    },
+    "tip_along": {
+     "median": 0.123,
+     "q25": 0.031,
+     "q75": 0.198
+    },
+    "down": {
+     "median": 0.467,
+     "q25": 0.417,
+     "q75": 0.541
+    },
+    "front": {
+     "median": 0.296,
+     "q25": 0.24,
+     "q75": 0.359
+    },
+    "back": {
+     "median": 0.08,
+     "q25": 0.018,
+     "q75": 0.153
+    },
+    "length_over_base": {
+     "median": 0.287,
+     "q25": 0.238,
+     "q75": 0.357
+    },
+    "triangle_covered": {
+     "median": 0.184,
+     "q25": 0.132,
+     "q75": 0.208
+    },
+    "painted_outside_triangle": {
+     "median": 0.17,
+     "q25": 0.093,
+     "q75": 0.278
+    },
+    "iou_triangle": {
+     "median": 0.172,
+     "q25": 0.126,
+     "q75": 0.199
+    },
+    "comp_down": {
+     "median": 0.468,
+     "q25": 0.412,
+     "q75": 0.547
+    },
+    "comp_front": {
+     "median": 0.296,
+     "q25": 0.24,
+     "q75": 0.359
+    },
+    "comp_back": {
+     "median": 0.08,
+     "q25": 0.018,
+     "q75": 0.153
+    },
+    "comp_length_over_base": {
+     "median": 0.287,
+     "q25": 0.236,
+     "q75": 0.355
+    },
+    "comp_outside_triangle": {
+     "median": 0.17,
+     "q25": 0.093,
+     "q75": 0.278
+    },
+    "comp_iou_triangle": {
+     "median": 0.172,
+     "q25": 0.126,
+     "q75": 0.199
+    },
+    "comp_area_over_triangle": {
+     "median": 0.214,
+     "q25": 0.154,
+     "q75": 0.273
+    }
+   },
+   "parts_seg_r05_w2": {
+    "n": 98,
+    "painted": 0.99,
+    "base_over_height": {
+     "median": 3.116,
+     "q25": 2.229,
+     "q75": 3.767
+    },
+    "tip_along": {
+     "median": 0.123,
+     "q25": 0.031,
+     "q75": 0.198
+    },
+    "down": {
+     "median": 0.242,
+     "q25": 0.17,
+     "q75": 0.319
+    },
+    "front": {
+     "median": 0.627,
+     "q25": 0.488,
+     "q75": 0.839
+    },
+    "back": {
+     "median": 0.031,
+     "q25": -0.03,
+     "q75": 0.104
+    },
+    "length_over_base": {
+     "median": 0.768,
+     "q25": 0.604,
+     "q75": 0.978
+    },
+    "triangle_covered": {
+     "median": 0.529,
+     "q25": 0.436,
+     "q75": 0.678
+    },
+    "painted_outside_triangle": {
+     "median": 0.442,
+     "q25": 0.342,
+     "q75": 0.503
+    },
+    "iou_triangle": {
+     "median": 0.372,
+     "q25": 0.316,
+     "q75": 0.445
+    },
+    "comp_down": {
+     "median": 0.242,
+     "q25": 0.17,
+     "q75": 0.319
+    },
+    "comp_front": {
+     "median": 0.627,
+     "q25": 0.488,
+     "q75": 0.839
+    },
+    "comp_back": {
+     "median": 0.031,
+     "q25": -0.028,
+     "q75": 0.104
+    },
+    "comp_length_over_base": {
+     "median": 0.768,
+     "q25": 0.598,
+     "q75": 0.959
+    },
+    "comp_outside_triangle": {
+     "median": 0.441,
+     "q25": 0.342,
+     "q75": 0.503
+    },
+    "comp_iou_triangle": {
+     "median": 0.361,
+     "q25": 0.316,
+     "q75": 0.445
+    },
+    "comp_area_over_triangle": {
+     "median": 0.953,
+     "q25": 0.706,
+     "q75": 1.215
+    }
+   },
+   "parts_seg_r05_w2s1": {
+    "n": 98,
+    "painted": 0.99,
+    "base_over_height": {
+     "median": 3.116,
+     "q25": 2.229,
+     "q75": 3.767
+    },
+    "tip_along": {
+     "median": 0.123,
+     "q25": 0.031,
+     "q75": 0.198
+    },
+    "down": {
+     "median": 0.221,
+     "q25": 0.146,
+     "q75": 0.295
+    },
+    "front": {
+     "median": 0.728,
+     "q25": 0.594,
+     "q75": 0.903
+    },
+    "back": {
+     "median": 0.012,
+     "q25": -0.032,
+     "q75": 0.092
+    },
+    "length_over_base": {
+     "median": 0.94,
+     "q25": 0.787,
+     "q75": 1.091
+    },
+    "triangle_covered": {
+     "median": 0.571,
+     "q25": 0.483,
+     "q75": 0.698
+    },
+    "painted_outside_triangle": {
+     "median": 0.526,
+     "q25": 0.453,
+     "q75": 0.586
+    },
+    "iou_triangle": {
+     "median": 0.337,
+     "q25": 0.302,
+     "q75": 0.403
+    },
+    "comp_down": {
+     "median": 0.224,
+     "q25": 0.153,
+     "q75": 0.295
+    },
+    "comp_front": {
+     "median": 0.728,
+     "q25": 0.592,
+     "q75": 0.903
+    },
+    "comp_back": {
+     "median": 0.013,
+     "q25": -0.032,
+     "q75": 0.092
+    },
+    "comp_length_over_base": {
+     "median": 0.931,
+     "q25": 0.746,
+     "q75": 1.08
+    },
+    "comp_outside_triangle": {
+     "median": 0.526,
+     "q25": 0.449,
+     "q75": 0.586
+    },
+    "comp_iou_triangle": {
+     "median": 0.338,
+     "q25": 0.307,
+     "q75": 0.404
+    },
+    "comp_area_over_triangle": {
+     "median": 1.197,
+     "q25": 0.944,
+     "q75": 1.539
+    }
+   },
+   "parts_seg_r05_w3": {
+    "n": 98,
+    "painted": 0.99,
+    "base_over_height": {
+     "median": 3.116,
+     "q25": 2.229,
+     "q75": 3.767
+    },
+    "tip_along": {
+     "median": 0.123,
+     "q25": 0.031,
+     "q75": 0.198
+    },
+    "down": {
+     "median": -0.549,
+     "q25": -0.553,
+     "q75": -0.543
+    },
+    "front": {
+     "median": 1.187,
+     "q25": 1.131,
+     "q75": 1.246
+    },
+    "back": {
+     "median": -0.317,
+     "q25": -0.378,
+     "q75": -0.234
+    },
+    "length_over_base": {
+     "median": 2.021,
+     "q25": 1.863,
+     "q75": 2.139
+    },
+    "triangle_covered": {
+     "median": 1.0,
+     "q25": 1.0,
+     "q75": 1.0
+    },
+    "painted_outside_triangle": {
+     "median": 0.736,
+     "q25": 0.717,
+     "q75": 0.754
+    },
+    "iou_triangle": {
+     "median": 0.264,
+     "q25": 0.246,
+     "q75": 0.283
+    },
+    "comp_down": {
+     "median": -1.733,
+     "q25": -2.005,
+     "q75": -1.468
+    },
+    "comp_front": {
+     "median": 1.412,
+     "q25": 1.305,
+     "q75": 1.606
+    },
+    "comp_back": {
+     "median": -0.533,
+     "q25": -0.832,
+     "q75": -0.326
+    },
+    "comp_length_over_base": {
+     "median": 2.634,
+     "q25": 2.323,
+     "q75": 3.082
+    },
+    "comp_outside_triangle": {
+     "median": 0.891,
+     "q25": 0.862,
+     "q75": 0.909
+    },
+    "comp_iou_triangle": {
+     "median": 0.109,
+     "q25": 0.091,
+     "q75": 0.138
+    },
+    "comp_area_over_triangle": {
+     "median": 9.133,
+     "q25": 7.26,
+     "q75": 11.011
+    }
+   },
+   "parts_seg_r05_w3b": {
+    "n": 98,
+    "painted": 0.99,
+    "base_over_height": {
+     "median": 3.116,
+     "q25": 2.229,
+     "q75": 3.767
+    },
+    "tip_along": {
+     "median": 0.123,
+     "q25": 0.031,
+     "q75": 0.198
+    },
+    "down": {
+     "median": -0.548,
+     "q25": -0.551,
+     "q75": -0.542
+    },
+    "front": {
+     "median": 1.216,
+     "q25": 1.132,
+     "q75": 1.272
+    },
+    "back": {
+     "median": -0.354,
+     "q25": -0.392,
+     "q75": -0.267
+    },
+    "length_over_base": {
+     "median": 2.081,
+     "q25": 1.904,
+     "q75": 2.172
+    },
+    "triangle_covered": {
+     "median": 1.0,
+     "q25": 1.0,
+     "q75": 1.0
+    },
+    "painted_outside_triangle": {
+     "median": 0.743,
+     "q25": 0.725,
+     "q75": 0.757
+    },
+    "iou_triangle": {
+     "median": 0.257,
+     "q25": 0.243,
+     "q75": 0.275
+    },
+    "comp_down": {
+     "median": -1.805,
+     "q25": -2.507,
+     "q75": -1.416
+    },
+    "comp_front": {
+     "median": 1.631,
+     "q25": 1.437,
+     "q75": 1.922
+    },
+    "comp_back": {
+     "median": -0.655,
+     "q25": -1.08,
+     "q75": -0.412
+    },
+    "comp_length_over_base": {
+     "median": 3.277,
+     "q25": 2.67,
+     "q75": 3.943
+    },
+    "comp_outside_triangle": {
+     "median": 0.903,
+     "q25": 0.865,
+     "q75": 0.925
+    },
+    "comp_iou_triangle": {
+     "median": 0.097,
+     "q25": 0.075,
+     "q75": 0.135
+    },
+    "comp_area_over_triangle": {
+     "median": 10.358,
+     "q25": 7.414,
+     "q75": 13.325
+    }
+   },
+   "parts_seg_r05_w3c": {
+    "n": 98,
+    "painted": 0.99,
+    "base_over_height": {
+     "median": 3.116,
+     "q25": 2.229,
+     "q75": 3.767
+    },
+    "tip_along": {
+     "median": 0.123,
+     "q25": 0.031,
+     "q75": 0.198
+    },
+    "down": {
+     "median": -0.107,
+     "q25": -0.157,
+     "q75": -0.039
+    },
+    "front": {
+     "median": 0.944,
+     "q25": 0.902,
+     "q75": 1.0
+    },
+    "back": {
+     "median": 0.005,
+     "q25": -0.05,
+     "q75": 0.04
+    },
+    "length_over_base": {
+     "median": 1.212,
+     "q25": 1.099,
+     "q75": 1.358
+    },
+    "triangle_covered": {
+     "median": 0.999,
+     "q25": 0.991,
+     "q75": 1.0
+    },
+    "painted_outside_triangle": {
+     "median": 0.431,
+     "q25": 0.391,
+     "q75": 0.505
+    },
+    "iou_triangle": {
+     "median": 0.563,
+     "q25": 0.494,
+     "q75": 0.603
+    },
+    "comp_down": {
+     "median": -0.107,
+     "q25": -0.157,
+     "q75": -0.039
+    },
+    "comp_front": {
+     "median": 0.944,
+     "q25": 0.902,
+     "q75": 1.0
+    },
+    "comp_back": {
+     "median": 0.005,
+     "q25": -0.05,
+     "q75": 0.04
+    },
+    "comp_length_over_base": {
+     "median": 1.196,
+     "q25": 1.09,
+     "q75": 1.314
+    },
+    "comp_outside_triangle": {
+     "median": 0.43,
+     "q25": 0.391,
+     "q75": 0.505
+    },
+    "comp_iou_triangle": {
+     "median": 0.563,
+     "q25": 0.494,
+     "q75": 0.604
+    },
+    "comp_area_over_triangle": {
+     "median": 1.741,
+     "q25": 1.607,
+     "q75": 2.002
+    }
+   }
+  },
+  "2025-03-18": {
+   "n_fins": 99,
+   "clicks": {
+    "n": 99,
+    "painted": 0.859,
+    "base_over_height": {
+     "median": 2.276,
+     "q25": 1.636,
+     "q75": 2.993
+    },
+    "tip_along": {
+     "median": 0.151,
+     "q25": 0.067,
+     "q75": 0.284
+    },
+    "down": {
+     "median": 0.527,
+     "q25": 0.461,
+     "q75": 0.637
+    },
+    "front": {
+     "median": 0.332,
+     "q25": 0.271,
+     "q75": 0.412
+    },
+    "back": {
+     "median": 0.097,
+     "q25": 0.048,
+     "q75": 0.174
+    },
+    "length_over_base": {
+     "median": 0.288,
+     "q25": 0.231,
+     "q75": 0.361
+    },
+    "triangle_covered": {
+     "median": 0.143,
+     "q25": 0.081,
+     "q75": 0.224
+    },
+    "painted_outside_triangle": {
+     "median": 0.243,
+     "q25": 0.153,
+     "q75": 0.418
+    },
+    "iou_triangle": {
+     "median": 0.132,
+     "q25": 0.076,
+     "q75": 0.21
+    },
+    "comp_down": {
+     "median": 0.527,
+     "q25": 0.461,
+     "q75": 0.637
+    },
+    "comp_front": {
+     "median": 0.332,
+     "q25": 0.271,
+     "q75": 0.412
+    },
+    "comp_back": {
+     "median": 0.097,
+     "q25": 0.048,
+     "q75": 0.174
+    },
+    "comp_length_over_base": {
+     "median": 0.282,
+     "q25": 0.228,
+     "q75": 0.361
+    },
+    "comp_outside_triangle": {
+     "median": 0.24,
+     "q25": 0.153,
+     "q75": 0.418
+    },
+    "comp_iou_triangle": {
+     "median": 0.132,
+     "q25": 0.076,
+     "q75": 0.21
+    },
+    "comp_area_over_triangle": {
+     "median": 0.179,
+     "q25": 0.129,
+     "q75": 0.267
+    }
+   },
+   "parts_seg_r05_a": {
+    "n": 99,
+    "painted": 0.859,
+    "base_over_height": {
+     "median": 2.276,
+     "q25": 1.636,
+     "q75": 2.993
+    },
+    "tip_along": {
+     "median": 0.151,
+     "q25": 0.067,
+     "q75": 0.284
+    },
+    "down": {
+     "median": 0.527,
+     "q25": 0.461,
+     "q75": 0.637
+    },
+    "front": {
+     "median": 0.332,
+     "q25": 0.271,
+     "q75": 0.412
+    },
+    "back": {
+     "median": 0.097,
+     "q25": 0.048,
+     "q75": 0.174
+    },
+    "length_over_base": {
+     "median": 0.288,
+     "q25": 0.231,
+     "q75": 0.361
+    },
+    "triangle_covered": {
+     "median": 0.143,
+     "q25": 0.081,
+     "q75": 0.224
+    },
+    "painted_outside_triangle": {
+     "median": 0.243,
+     "q25": 0.153,
+     "q75": 0.418
+    },
+    "iou_triangle": {
+     "median": 0.132,
+     "q25": 0.076,
+     "q75": 0.21
+    },
+    "comp_down": {
+     "median": 0.527,
+     "q25": 0.461,
+     "q75": 0.637
+    },
+    "comp_front": {
+     "median": 0.332,
+     "q25": 0.271,
+     "q75": 0.412
+    },
+    "comp_back": {
+     "median": 0.097,
+     "q25": 0.048,
+     "q75": 0.174
+    },
+    "comp_length_over_base": {
+     "median": 0.282,
+     "q25": 0.228,
+     "q75": 0.361
+    },
+    "comp_outside_triangle": {
+     "median": 0.24,
+     "q25": 0.153,
+     "q75": 0.418
+    },
+    "comp_iou_triangle": {
+     "median": 0.132,
+     "q25": 0.076,
+     "q75": 0.21
+    },
+    "comp_area_over_triangle": {
+     "median": 0.179,
+     "q25": 0.129,
+     "q75": 0.267
+    }
+   },
+   "parts_seg_r05_s1": {
+    "n": 99,
+    "painted": 0.838,
+    "base_over_height": {
+     "median": 2.276,
+     "q25": 1.636,
+     "q75": 2.993
+    },
+    "tip_along": {
+     "median": 0.151,
+     "q25": 0.067,
+     "q75": 0.284
+    },
+    "down": {
+     "median": 0.515,
+     "q25": 0.429,
+     "q75": 0.617
+    },
+    "front": {
+     "median": 0.342,
+     "q25": 0.266,
+     "q75": 0.411
+    },
+    "back": {
+     "median": 0.104,
+     "q25": 0.051,
+     "q75": 0.176
+    },
+    "length_over_base": {
+     "median": 0.276,
+     "q25": 0.229,
+     "q75": 0.385
+    },
+    "triangle_covered": {
+     "median": 0.151,
+     "q25": 0.094,
+     "q75": 0.217
+    },
+    "painted_outside_triangle": {
+     "median": 0.243,
+     "q25": 0.149,
+     "q75": 0.41
+    },
+    "iou_triangle": {
+     "median": 0.144,
+     "q25": 0.086,
+     "q75": 0.207
+    },
+    "comp_down": {
+     "median": 0.515,
+     "q25": 0.429,
+     "q75": 0.626
+    },
+    "comp_front": {
+     "median": 0.342,
+     "q25": 0.266,
+     "q75": 0.411
+    },
+    "comp_back": {
+     "median": 0.104,
+     "q25": 0.051,
+     "q75": 0.176
+    },
+    "comp_length_over_base": {
+     "median": 0.275,
+     "q25": 0.229,
+     "q75": 0.381
+    },
+    "comp_outside_triangle": {
+     "median": 0.243,
+     "q25": 0.149,
+     "q75": 0.41
+    },
+    "comp_iou_triangle": {
+     "median": 0.144,
+     "q25": 0.086,
+     "q75": 0.207
+    },
+    "comp_area_over_triangle": {
+     "median": 0.187,
+     "q25": 0.139,
+     "q75": 0.272
+    }
+   },
+   "parts_seg_r05_w2": {
+    "n": 99,
+    "painted": 1.0,
+    "base_over_height": {
+     "median": 2.276,
+     "q25": 1.636,
+     "q75": 2.993
+    },
+    "tip_along": {
+     "median": 0.151,
+     "q25": 0.067,
+     "q75": 0.284
+    },
+    "down": {
+     "median": 0.291,
+     "q25": 0.206,
+     "q75": 0.375
+    },
+    "front": {
+     "median": 0.574,
+     "q25": 0.493,
+     "q75": 0.802
+    },
+    "back": {
+     "median": 0.043,
+     "q25": -0.008,
+     "q75": 0.103
+    },
+    "length_over_base": {
+     "median": 0.725,
+     "q25": 0.568,
+     "q75": 0.876
+    },
+    "triangle_covered": {
+     "median": 0.46,
+     "q25": 0.344,
+     "q75": 0.569
+    },
+    "painted_outside_triangle": {
+     "median": 0.443,
+     "q25": 0.332,
+     "q75": 0.527
+    },
+    "iou_triangle": {
+     "median": 0.332,
+     "q25": 0.266,
+     "q75": 0.412
+    },
+    "comp_down": {
+     "median": 0.291,
+     "q25": 0.206,
+     "q75": 0.375
+    },
+    "comp_front": {
+     "median": 0.574,
+     "q25": 0.493,
+     "q75": 0.802
+    },
+    "comp_back": {
+     "median": 0.043,
+     "q25": -0.008,
+     "q75": 0.103
+    },
+    "comp_length_over_base": {
+     "median": 0.725,
+     "q25": 0.568,
+     "q75": 0.876
+    },
+    "comp_outside_triangle": {
+     "median": 0.44,
+     "q25": 0.332,
+     "q75": 0.527
+    },
+    "comp_iou_triangle": {
+     "median": 0.332,
+     "q25": 0.266,
+     "q75": 0.412
+    },
+    "comp_area_over_triangle": {
+     "median": 0.809,
+     "q25": 0.59,
+     "q75": 1.099
+    }
+   },
+   "parts_seg_r05_w2s1": {
+    "n": 99,
+    "painted": 1.0,
+    "base_over_height": {
+     "median": 2.276,
+     "q25": 1.636,
+     "q75": 2.993
+    },
+    "tip_along": {
+     "median": 0.151,
+     "q25": 0.067,
+     "q75": 0.284
+    },
+    "down": {
+     "median": 0.296,
+     "q25": 0.218,
+     "q75": 0.373
+    },
+    "front": {
+     "median": 0.685,
+     "q25": 0.517,
+     "q75": 0.887
+    },
+    "back": {
+     "median": 0.034,
+     "q25": -0.024,
+     "q75": 0.102
+    },
+    "length_over_base": {
+     "median": 0.846,
+     "q25": 0.675,
+     "q75": 0.998
+    },
+    "triangle_covered": {
+     "median": 0.446,
+     "q25": 0.349,
+     "q75": 0.558
+    },
+    "painted_outside_triangle": {
+     "median": 0.528,
+     "q25": 0.434,
+     "q75": 0.603
+    },
+    "iou_triangle": {
+     "median": 0.303,
+     "q25": 0.239,
+     "q75": 0.368
+    },
+    "comp_down": {
+     "median": 0.296,
+     "q25": 0.218,
+     "q75": 0.373
+    },
+    "comp_front": {
+     "median": 0.683,
+     "q25": 0.517,
+     "q75": 0.887
+    },
+    "comp_back": {
+     "median": 0.034,
+     "q25": -0.015,
+     "q75": 0.101
+    },
+    "comp_length_over_base": {
+     "median": 0.843,
+     "q25": 0.651,
+     "q75": 0.965
+    },
+    "comp_outside_triangle": {
+     "median": 0.528,
+     "q25": 0.434,
+     "q75": 0.603
+    },
+    "comp_iou_triangle": {
+     "median": 0.303,
+     "q25": 0.24,
+     "q75": 0.366
+    },
+    "comp_area_over_triangle": {
+     "median": 0.967,
+     "q25": 0.674,
+     "q75": 1.263
+    }
+   },
+   "parts_seg_r05_w3": {
+    "n": 99,
+    "painted": 1.0,
+    "base_over_height": {
+     "median": 2.276,
+     "q25": 1.636,
+     "q75": 2.993
+    },
+    "tip_along": {
+     "median": 0.151,
+     "q25": 0.067,
+     "q75": 0.284
+    },
+    "down": {
+     "median": -0.547,
+     "q25": -0.552,
+     "q75": -0.54
+    },
+    "front": {
+     "median": 1.144,
+     "q25": 1.079,
+     "q75": 1.203
+    },
+    "back": {
+     "median": -0.293,
+     "q25": -0.404,
+     "q75": -0.172
+    },
+    "length_over_base": {
+     "median": 1.909,
+     "q25": 1.692,
+     "q75": 2.085
+    },
+    "triangle_covered": {
+     "median": 1.0,
+     "q25": 1.0,
+     "q75": 1.0
+    },
+    "painted_outside_triangle": {
+     "median": 0.728,
+     "q25": 0.694,
+     "q75": 0.751
+    },
+    "iou_triangle": {
+     "median": 0.271,
+     "q25": 0.249,
+     "q75": 0.306
+    },
+    "comp_down": {
+     "median": -1.525,
+     "q25": -1.893,
+     "q75": -1.129
+    },
+    "comp_front": {
+     "median": 1.268,
+     "q25": 1.12,
+     "q75": 1.581
+    },
+    "comp_back": {
+     "median": -0.404,
+     "q25": -0.898,
+     "q75": -0.157
+    },
+    "comp_length_over_base": {
+     "median": 2.388,
+     "q25": 1.856,
+     "q75": 3.225
+    },
+    "comp_outside_triangle": {
+     "median": 0.868,
+     "q25": 0.822,
+     "q75": 0.894
+    },
+    "comp_iou_triangle": {
+     "median": 0.132,
+     "q25": 0.106,
+     "q75": 0.178
+    },
+    "comp_area_over_triangle": {
+     "median": 7.579,
+     "q25": 5.632,
+     "q75": 9.428
+    }
+   },
+   "parts_seg_r05_w3b": {
+    "n": 99,
+    "painted": 1.0,
+    "base_over_height": {
+     "median": 2.276,
+     "q25": 1.636,
+     "q75": 2.993
+    },
+    "tip_along": {
+     "median": 0.151,
+     "q25": 0.067,
+     "q75": 0.284
+    },
+    "down": {
+     "median": -0.548,
+     "q25": -0.552,
+     "q75": -0.531
+    },
+    "front": {
+     "median": 1.154,
+     "q25": 1.08,
+     "q75": 1.216
+    },
+    "back": {
+     "median": -0.332,
+     "q25": -0.4,
+     "q75": -0.209
+    },
+    "length_over_base": {
+     "median": 1.944,
+     "q25": 1.728,
+     "q75": 2.116
+    },
+    "triangle_covered": {
+     "median": 1.0,
+     "q25": 1.0,
+     "q75": 1.0
+    },
+    "painted_outside_triangle": {
+     "median": 0.726,
+     "q25": 0.707,
+     "q75": 0.752
+    },
+    "iou_triangle": {
+     "median": 0.274,
+     "q25": 0.248,
+     "q75": 0.293
+    },
+    "comp_down": {
+     "median": -1.54,
+     "q25": -2.065,
+     "q75": -0.964
+    },
+    "comp_front": {
+     "median": 1.519,
+     "q25": 1.194,
+     "q75": 1.825
+    },
+    "comp_back": {
+     "median": -0.508,
+     "q25": -1.117,
+     "q75": -0.191
+    },
+    "comp_length_over_base": {
+     "median": 3.057,
+     "q25": 2.204,
+     "q75": 3.815
+    },
+    "comp_outside_triangle": {
+     "median": 0.875,
+     "q25": 0.807,
+     "q75": 0.913
+    },
+    "comp_iou_triangle": {
+     "median": 0.125,
+     "q25": 0.087,
+     "q75": 0.193
+    },
+    "comp_area_over_triangle": {
+     "median": 7.978,
+     "q25": 5.183,
+     "q75": 11.447
+    }
+   },
+   "parts_seg_r05_w3c": {
+    "n": 99,
+    "painted": 1.0,
+    "base_over_height": {
+     "median": 2.276,
+     "q25": 1.636,
+     "q75": 2.993
+    },
+    "tip_along": {
+     "median": 0.151,
+     "q25": 0.067,
+     "q75": 0.284
+    },
+    "down": {
+     "median": -0.038,
+     "q25": -0.149,
+     "q75": 0.079
+    },
+    "front": {
+     "median": 0.932,
+     "q25": 0.825,
+     "q75": 1.026
+    },
+    "back": {
+     "median": 0.025,
+     "q25": -0.01,
+     "q75": 0.067
+    },
+    "length_over_base": {
+     "median": 1.109,
+     "q25": 0.987,
+     "q75": 1.27
+    },
+    "triangle_covered": {
+     "median": 0.969,
+     "q25": 0.79,
+     "q75": 1.0
+    },
+    "painted_outside_triangle": {
+     "median": 0.395,
+     "q25": 0.296,
+     "q75": 0.474
+    },
+    "iou_triangle": {
+     "median": 0.546,
+     "q25": 0.47,
+     "q75": 0.629
+    },
+    "comp_down": {
+     "median": -0.038,
+     "q25": -0.149,
+     "q75": 0.079
+    },
+    "comp_front": {
+     "median": 0.932,
+     "q25": 0.825,
+     "q75": 1.026
+    },
+    "comp_back": {
+     "median": 0.025,
+     "q25": -0.01,
+     "q75": 0.067
+    },
+    "comp_length_over_base": {
+     "median": 1.109,
+     "q25": 0.987,
+     "q75": 1.27
+    },
+    "comp_outside_triangle": {
+     "median": 0.395,
+     "q25": 0.296,
+     "q75": 0.474
+    },
+    "comp_iou_triangle": {
+     "median": 0.546,
+     "q25": 0.47,
+     "q75": 0.629
+    },
+    "comp_area_over_triangle": {
+     "median": 1.468,
+     "q25": 1.193,
+     "q75": 1.876
+    }
+   }
+  }
+ },
+ "render_label": {
+  "n": 400,
+  "painted": 1.0,
+  "base_over_height": {
+   "median": 1.491,
+   "q25": 1.035,
+   "q75": 2.054
+  },
+  "tip_along": {
+   "median": 0.174,
+   "q25": -0.284,
+   "q75": 0.571
+  },
+  "down": {
+   "median": -0.021,
+   "q25": -0.166,
+   "q75": 0.054
+  },
+  "front": {
+   "median": 0.872,
+   "q25": 0.832,
+   "q75": 0.933
+  },
+  "back": {
+   "median": 0.012,
+   "q25": -0.217,
+   "q75": 0.103
+  },
+  "length_over_base": {
+   "median": 1.319,
+   "q25": 1.109,
+   "q75": 1.576
+  },
+  "triangle_covered": {
+   "median": 0.94,
+   "q25": 0.818,
+   "q75": 0.98
+  },
+  "painted_outside_triangle": {
+   "median": 0.31,
+   "q25": 0.182,
+   "q75": 0.479
+  },
+  "iou_triangle": {
+   "median": 0.619,
+   "q25": 0.475,
+   "q75": 0.749
+  },
+  "comp_down": {
+   "median": -0.02,
+   "q25": -0.162,
+   "q75": 0.055
+  },
+  "comp_front": {
+   "median": 0.871,
+   "q25": 0.831,
+   "q75": 0.931
+  },
+  "comp_back": {
+   "median": 0.013,
+   "q25": -0.213,
+   "q75": 0.105
+  },
+  "comp_length_over_base": {
+   "median": 1.322,
+   "q25": 1.113,
+   "q75": 1.598
+  },
+  "comp_outside_triangle": {
+   "median": 0.31,
+   "q25": 0.182,
+   "q75": 0.48
+  },
+  "comp_iou_triangle": {
+   "median": 0.619,
+   "q25": 0.471,
+   "q75": 0.749
+  },
+  "comp_area_over_triangle": {
+   "median": 1.257,
+   "q25": 1.042,
+   "q75": 1.693
+  }
+ }
+}

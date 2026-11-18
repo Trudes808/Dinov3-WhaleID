@@ -1,0 +1,63 @@
+local_match (2026-11-18): learned local features + geometric verification on the part cut-outs, on the moonshot bench.
+No eval day read. Nothing trained (ALIKED-n16 + LightGlue weights as published); fusions fitted on train days only.
+
+PIPELINE
+  lm_feats.py   ALIKED-n16 (kornia, 1024-px copy of the 1536-px parts_up chart from the RAW), keypoints only on the whale
+                mask dilated 6 px (outline kept), top 1024 by score; fins also on the mirrored chart. Up to 3 instances per
+                cluster: largest part (pixels in the RAW crop) + 0.5 x log Laplacian sharpness. --fallback: flukes of clusters
+                with no cut-out get a square box crop of the 2560-px copy + canon mask (val only in the end).
+  lm_match.py   LightGlue (aliked weights), batched with padding masks (checked identical to single-pair calls after fixing
+                the softmax over padded columns), filter 0.1; RANSAC on CPU: similarity (scale 0.5-2, rotation <= 30 deg),
+                affine, homography (MAGSAC), thresholds 0.6 % / 1.2 % of the chart. Val days 3 x 3 instance pairs (+ mirror for
+                fins); train days 2 x 2, no mirror (GPU queue). Cluster pair = max over instance pairs; all bench numbers use
+                the first 2 picks per cluster on every day.
+  lm_geo.py     offline geometry from stored matches: interior-only matches (>= 15 px inside the mask), inlier 2-D spread.
+  lm_dense.py   EfficientLoFTR (HF zju-community/efficientloftr) at 640 px, matches kept on whale pixels, same RANSAC.
+  lm_score.py / lm_screen.py  scores -> bench; lm_fuse2.py  Platt(BASE) + positive isotonic local evidence (train-fitted);
+  lm_fuse.py    z-mean and logistic fusions; lm_viz.py top pairs (images in the scratchpad only); lm_marks.py researcher marks.
+
+VAL SCREEN (BASE fitted on the 21 train days; same pairs; logs/screen_val.log)
+  dorsal, 2 x 2, plain (2 940 of 2 960 pairs, 816 same):
+    hom12      AUC 0.587 AP 0.490 found at P 0.95 15.2 % at 0.90 18.1 %   | BASE 0.804 0.665 6.6 % 22.2 %
+    simconf6   AUC 0.582 AP 0.479            16.9 %         18.1 %
+    matches    AUC 0.581 (raw LightGlue count)  13.0 %      16.5 %
+    same flank hom12 0.695 (P90 42 %) | opposite flanks 0.558 (P90 1.6 %); mirror matching alone 0.49-0.52 (no signal)
+    interior-only (aff_int) 0.549, inlier spread 0.49-0.57: the outline matches carry most of the signal there is.
+  fluke, 2 x 2, cut-outs only (320 of 483 pairs): hom12 AUC 0.680 AP 0.661 P95 28.3 % P90 29.2 % | BASE 0.822 0.769 26.5 36.3
+        with box-crop fallback (483 pairs): hom12 0.653 / 22.6 % / 24.0 % | BASE 0.766 / 17.1 / 26.0
+  Fusion previews on val (calibration fitted on the other two val days; exploratory, chose the final fusion form):
+    z-mean, isotonic log-odds, Platt: AUC 0.75-0.77 (BASE 0.80); Platt(BASE) + positive isotonic local evidence:
+    dorsal 0.771-0.776, P95 14-20 %, P90 26-31 % (BASE 6.6 / 22.0); fluke 0.762-0.764, P90 22.6 (BASE 26.0).
+
+FULL PROTOCOL (bench, 20 repetitions; local scores on 19 of 21 train days for fins (2025-01-02, 2025-03-18 not matched:
+GPU queue) and 18 of 21 for flukes (2025-01-02, 2025-03-18, 2025-03-26 not matched; cut-outs only); val 2 x 2)
+  local alone, dorsal hom12 (25 975 of 50 929 pairs): AUC 0.581 vs BASE 0.754 (-0.173, up 0/20); P95 12.1 vs 2.7 % (+9.5,
+    20/20); P90 15.7 vs 8.2 % (+7.5, 20/20)                          results/local_match_aliked1024_hom12_plain__dorsal.json
+  local alone, fluke hom12 (6 240 of 16 617): AUC 0.652 vs 0.744 (-0.092, 0/20); P95 22.4 vs 7.0 % (+15.4, 19/20);
+    P90 25.7 vs 13.7 % (+11.9, 16/20)                                 results/local_match_aliked1024_hom12_nofb__fluke.json
+  fusion Platt(BASE) + positive isotonic local evidence, fitted on train days, coverage = all BASE pairs:
+    dorsal hom12 w 0.5: AUC 0.751 vs 0.743 (+0.008, 20/20), AP 0.589 vs 0.555 (+0.035, 20/20), P95 11.3 vs 2.6 % (+8.6,
+      20/20), P90 16.4 vs 6.9 % (+9.6, 20/20); val 0.808 / 0.693 / 18.4 % / 27.4 % vs 0.802 / 0.663 / 6.6 / 22.0;
+      val same flank 0.864 (P90 46.9 %) vs 0.844 (27.7 %), opposite flanks 0.801 (20.9 %) vs 0.801 (23.7 %)
+    dorsal simconf6 w 0.5: +0.009 AUC, P90 17.3 vs 6.9 %; same-flank gate: no better (+0.007, P90 15.8 %)
+    fluke hom12 w 1.0: AUC 0.712 vs 0.695 (+0.017, 20/20), AP 0.545 vs 0.489 (+0.056, 20/20), P95 13.8 vs 3.4 % (+10.4,
+      17/20), P90 19.2 vs 5.7 % (+13.4, 20/20); val 0.779 / 0.710 / 32.9 % / 37.7 % vs 0.766 / 0.673 / 17.1 / 26.0
+  caveat: the fusion FORM (positive-only evidence, Platt for BASE) was chosen after looking at the val days, which are in
+  every test set; the weights / calibrations themselves are fitted on train days only.
+
+FIXED RULE (no fitting; thresholds read off val, checked on train days, logs/rule.log)
+  dorsal hom12 >= 120: val 61 links 0 wrong (BASE finds 3 same pairs at precision 1.0); train 501 links 18 wrong (96.4 %)
+  fluke  hom12 >= 50 : val 28 links 0 wrong (BASE 16);                                 train 436 links 18 wrong (95.9 %)
+  The train "wrong" links sit on few clusters: dorsal 10 of 18 from 2025-01-16 c98 and 2025-01-20 c24, fluke 11 of 18 from
+  2025-01-16 c8 and 2025-02-12 c191/193; by eye (scratchpad train_*_wrong_top.jpg) these look like the same fin / fluke,
+  c98's frames hold two whales: probable catalogue / cluster-majority label issues, NOT verified.
+
+DENSE (EfficientLoFTR 640 px): 0-2 matches on whale pixels per pair (the part is a few coarse cells; matches land on
+  water), AUC 0.51; dropped. Peak 9.6 GB at batch 8.
+
+RESEARCHER MARKS (2025-01-02, logs/marks_aliked1024.log): 233 dorsal / 60 fluke marked photo pairs; share of the affine
+  inliers inside the marked boxes 0.33 / 0.33 against 0.16 / 0.24 for random whale pixels.
+
+FALSE MATCHES (scratchpad top_*_diff.jpg): long parallel bundles along the back line / fin outline against the water and
+  along the fluke trailing edge; a smooth contour fits any affine / homography, so geometric consistency does not reject
+  them. Water / glare matches are mostly removed by the mask.
