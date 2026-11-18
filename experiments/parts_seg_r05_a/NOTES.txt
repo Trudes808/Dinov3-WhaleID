@@ -1,0 +1,20 @@
+parts_seg_r05_a: per-pixel part segmentation (0 background, 1 fluke, 2 dorsal fin, 3 pectoral fin, 4 head, 5 body; 255 ignore)
+trained on run05 renders only (model_fine_tuning/splits/run05.json: 6 440 train / 1 379 val shots). Code: model_fine_tuning/parts_seg/.
+
+Labels: python -m model_fine_tuning.parts_seg.labels  -> /var/tmp/sat3737-parts-cache/run05/labels/<id>.png (10 000, 42 MB, 0 errors)
+
+Training ran in two phases on a GPU shared with other jobs (epochs took 145-380 s instead of the planned ~140 s):
+  phase1/  --init-from experiments/seg_r05_ft4/checkpoints/best.pt (binary whale segmentation; all but the output layer),
+           planned 21 epochs, stopped after 3 epochs (val score 0.801) to stay inside the 90-min budget; its last weights
+           are /var/tmp/sat3737-parts-cache/phase1_last.pt
+  ./       --init-weights phase1_last.pt --epochs 10 --eval-every 5 --warmup-steps 100 (fresh cosine schedule)
+           best = last = epoch 9: val fluke IoU 0.942, dorsal fin 0.734 (score = their mean 0.838)
+  GPU training time: ~17 min + ~36 min.
+
+Real photos (train + val days only; the four evaluation days were not read):
+  python -m model_fine_tuning.parts_seg.predict --checkpoint experiments/parts_seg_r05_a/checkpoints/best.pt --days train,val
+     -> experiments/days_all/<DAY>/parts_seg_r05_a/{full/<stem>.png, hr/<key>.png, instances.json}
+  python -m model_fine_tuning.parts_seg.predict --stats-only --days train,val      (instances.json from the saved maps)
+  python -m model_fine_tuning.parts_seg.evaluate_real --out experiments/parts_seg_r05_a/real_metrics.json --sheets <scratch dir>
+Files: val_metrics.json (synthetic validation, per class and per pose category), real_metrics.json (instance level against
+by-eye labels and the view classifier, baseline = parts_hr cut-out flags, breakdowns, researcher clicks).

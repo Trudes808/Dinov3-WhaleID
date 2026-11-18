@@ -1,0 +1,50 @@
+{
+ "fin_A": {
+  "n": 192,
+  "centre_off_median": 0.79,
+  "off_over_1": 0.354,
+  "off_over_half": 0.76,
+  "base_share_median": 0.173,
+  "base_share_q": [
+   0.129,
+   0.246
+  ],
+  "tip_inside": 0.99
+ },
+ "fin_finB": {
+  "n": 192,
+  "centre_off_median": 0.252,
+  "off_over_1": 0.026,
+  "off_over_half": 0.052,
+  "base_share_median": 0.246,
+  "base_share_q": [
+   0.194,
+   0.304
+  ],
+  "tip_inside": 0.984
+ },
+ "fin_finC": {
+  "n": 192,
+  "centre_off_median": 0.252,
+  "off_over_1": 0.026,
+  "off_over_half": 0.052,
+  "base_share_median": 0.493,
+  "base_share_q": [
+   0.388,
+   0.609
+  ],
+  "tip_inside": 0.969
+ },
+ "fluke_old": {
+  "n": 44,
+  "left_tip_on_right": 0.568,
+  "notch_above_tips": 0.886,
+  "consistent": 0.545
+ },
+ "fluke_v3": {
+  "n": 44,
+  "left_tip_on_right": 0.955,
+  "notch_above_tips": 0.727,
+  "consistent": 0.682
+ }
+}

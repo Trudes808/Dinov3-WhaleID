@@ -1,0 +1,170 @@
+{
+ "fin": {
+  "n": 470,
+  "stacks": 239,
+  "first": {
+   "R0": 0.811,
+   "R0s1": 0.804,
+   "RP6s0": 0.798,
+   "RP6s1": 0.77,
+   "G": 0.785
+  },
+  "RP6s0 - R0 (seed 0)": {
+   "change": -0.013,
+   "ci90": [
+    -0.045,
+    0.02
+   ],
+   "found": 32,
+   "lost": 38
+  },
+  "RP6s1 - R0s1 (seed 1)": {
+   "change": -0.034,
+   "ci90": [
+    -0.071,
+    0.002
+   ],
+   "found": 33,
+   "lost": 49
+  },
+  "R0s1 - R0 (seed noise)": {
+   "change": -0.006,
+   "ci90": [
+    -0.037,
+    0.025
+   ],
+   "found": 28,
+   "lost": 31
+  },
+  "RP6s1 - RP6s0 (seed noise)": {
+   "change": -0.028,
+   "ci90": [
+    -0.058,
+    0.002
+   ],
+   "found": 27,
+   "lost": 40
+  },
+  "mean over seeds RP6 - R0": {
+   "change": -0.023,
+   "ci90": [
+    -0.051,
+    0.005
+   ],
+   "found": 51,
+   "lost": 65
+  }
+ },
+ "body": {
+  "n": 841,
+  "stacks": 420,
+  "first": {
+   "R0": 0.769,
+   "R0s1": 0.769,
+   "RP6s0": 0.761,
+   "RP6s1": 0.786,
+   "G": 0.773
+  },
+  "RP6s0 - R0 (seed 0)": {
+   "change": -0.008,
+   "ci90": [
+    -0.03,
+    0.012
+   ],
+   "found": 39,
+   "lost": 46
+  },
+  "RP6s1 - R0s1 (seed 1)": {
+   "change": 0.017,
+   "ci90": [
+    -0.002,
+    0.035
+   ],
+   "found": 50,
+   "lost": 36
+  },
+  "R0s1 - R0 (seed noise)": {
+   "change": 0.0,
+   "ci90": [
+    -0.021,
+    0.02
+   ],
+   "found": 49,
+   "lost": 49
+  },
+  "RP6s1 - RP6s0 (seed noise)": {
+   "change": 0.025,
+   "ci90": [
+    0.0,
+    0.048
+   ],
+   "found": 64,
+   "lost": 43
+  },
+  "mean over seeds RP6 - R0": {
+   "change": 0.004,
+   "ci90": [
+    -0.01,
+    0.018
+   ],
+   "found": 71,
+   "lost": 65
+  }
+ },
+ "fluke": {
+  "n": 154,
+  "stacks": 75,
+  "first": {
+   "R0": 0.682,
+   "R0s1": 0.727,
+   "RP6s0": 0.688,
+   "RP6s1": 0.76,
+   "G": 0.714
+  },
+  "RP6s0 - R0 (seed 0)": {
+   "change": 0.006,
+   "ci90": [
+    -0.051,
+    0.064
+   ],
+   "found": 11,
+   "lost": 10
+  },
+  "RP6s1 - R0s1 (seed 1)": {
+   "change": 0.032,
+   "ci90": [
+    -0.008,
+    0.075
+   ],
+   "found": 11,
+   "lost": 6
+  },
+  "R0s1 - R0 (seed noise)": {
+   "change": 0.045,
+   "ci90": [
+    -0.033,
+    0.116
+   ],
+   "found": 18,
+   "lost": 11
+  },
+  "RP6s1 - RP6s0 (seed noise)": {
+   "change": 0.071,
+   "ci90": [
+    0.0,
+    0.148
+   ],
+   "found": 19,
+   "lost": 8
+  },
+  "mean over seeds RP6 - R0": {
+   "change": 0.019,
+   "ci90": [
+    -0.013,
+    0.053
+   ],
+   "found": 18,
+   "lost": 13
+  }
+ }
+}

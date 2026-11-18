@@ -1,0 +1,99 @@
+# AI by-eye labels of every r06r_test_r8 whale (96), blind (render + outline only). Same taxonomy and #S / #R fin marks as
+# labels_ai_r06r_test_r7.txt; 'pale' = the whale (or the blade) reads as a flat pale beige cut-out (appearance, not shape).
+# Format: <shot> <instance id> <CATEGORY> [attributes] [#S|#R]
+000000 1 F_edge pale
+000001 1 D_small #R
+000002 1 B_back
+000003 1 F_low s2 pale
+000003 2 D_small m
+000003 3 B_back m
+000005 1 P_pec
+000006 1 D_small pale #S
+000007 1 F_low
+000007 2 D_small #R
+000008 1 D_tip #S
+000009 1 D_tip h #R
+000010 1 B_back
+000011 1 F_low pale
+000012 2 D_small #R
+000013 1 D_small #S
+000014 1 B_back pale
+000015 1 F_up
+000016 1 D_small #R
+000017 1 D_small s1 #R
+000017 2 D_small s1 #R
+000017 3 B_back pale
+000018 1 P_pec
+000019 1 F_low pale
+000019 2 D_small #R
+000020 1 F_low pale
+000021 1 F_edge pale
+000022 1 D_tip s2 #S
+000023 1 D_small pale #S
+000023 2 D_tip h #R
+000024 1 B_back
+000025 1 D_tip #S
+000026 1 D_tip h #R
+000027 1 F_edge
+000028 1 F_low pale
+000029 1 B_back s2
+000030 1 D_small #R
+000032 1 D_small m #R
+000033 1 X_none s2 pale
+000034 1 F_up pale
+000035 1 F_edge pale
+000035 2 F_up pale
+000035 3 F_low pale
+000036 1 F_up
+000038 1 D_small #S
+000039 1 F_up pale
+000040 1 F_edge pale
+000041 1 D_tip h #R
+000042 1 D_small s1 #R
+000042 2 D_small #R
+000042 3 B_back
+000043 1 B_back
+000043 2 D_small #S
+000044 1 D_small #R
+000045 1 D_tip #S
+000046 1 D_small #R
+000047 1 D_small s1 #S
+000048 1 D_tip pale #S
+000049 1 D_tip s2 #S
+000050 1 P_pec s2 pale
+000051 1 B_back
+000052 1 F_low pale
+000052 2 D_small pale #R
+000053 1 B_back
+000054 1 D_small pale #R
+000054 2 D_small pale #S
+000056 1 F_edge
+000057 1 D_small #R
+000058 1 F_up
+000059 1 D_small #R
+000060 1 F_low pale
+000061 1 B_back e
+000061 2 H_head
+000062 1 D_small pale #S
+000063 1 F_low pale
+000064 1 F_edge
+000064 3 B_back
+000065 1 D_small s1 #R
+000065 2 D_small #R
+000065 3 D_tip #S
+000067 1 D_small pale #R
+000067 2 D_small #R
+000067 3 D_small pale #R
+000068 1 D_small pale #S
+000069 1 D_small #R
+000070 1 F_low pale
+000070 2 H_head pale
+000071 1 B_back
+000072 1 D_small s1 #R
+000073 1 P_pec pale
+000073 2 F_up pale
+000074 1 F_low pale
+000075 1 D_small #R
+000076 1 D_small #R
+000077 1 D_tip #S
+000078 1 D_small s1 #R

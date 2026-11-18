@@ -1,0 +1,89 @@
+part_gaps: why the part model cannot tell which part of a humpback a real photo shows (2026-11-17, subagent)
+Code model_fine_tuning/part_gaps/ (see its __init__.py). Small json here; pictures only in the scratchpad
+(/tmp/claude-1072903897/-home-sat3737-NOAA-whales/4fbba7ff-3ba5-4b50-9cb7-970c81250409/scratchpad/part_gaps/), caches in
+/var/tmp/sat3737-parts-cache/part_gaps/. The four evaluation days are never read (refused in code).
+
+Files
+  sample.json              609 real whale instances: 401 from the 21 training days, 208 from the 3 validation days,
+                           stratified by the view classifier's confident three-way answer (or "uncertain") x box size;
+                           weight = stratum size / sampled (population estimates). Not-whale instances excluded.
+  labels_ai.txt            AI labels (Claude subagent), one category + attributes per instance, typed from BLIND sheets
+                           (photo crop + instance outline, no model output). NOT the researcher's labels.
+  labels_ai_relook.txt     second looks, also blind: (1) every B_back / H_head re-asked "is a fin, or its end-on spike at
+                           the apex of an arched back, in view?" (16 changed); (2) the 58 instances whose label disagreed
+                           with the view classifier, adjudicated on larger tiles (5 changed, 17 marked ambiguous a / a2).
+  report_<model>_<variant>.json   the gap table and every breakdown (gap_table = the ranked rows).
+  nearest_<model>_<variant>.json  nearest renders (frozen DINOv3 ViT-B/16 whale tokens; silhouette IoU) per instance.
+  res_test_<model>.json    inference-resolution test (per-instance window at output caps 384 / 768 (live) / 1024).
+
+Taxonomy (common.CATS): F_up, F_low (rising low / rolling out), F_edge (side-on / single blade), F_tips; D_tall,
+D_small (small / stubby / low fin, often a long low back), D_tip (end-on spike from behind, far or partly submerged);
+B_back (no fin in view), P_pec, H_head, R_roll, X_none. Attributes s1 / s2 splash, m other whale, e photo edge,
+b blur, h hump, k hooked, w water sheeting, a / a2 still ambiguous after the second look.
+
+Rule: every model's fluke / fin / other call uses its own real-photo outputs and the rule re-chosen on the training days in
+evaluate_real's two-part family (as experiments/realwater/compare.py). Cost = share x error. Ranking on the training-day
+sample; validation-day numbers are the reported ones. Cause column: "view missing" = coverage in the training renders
+(run05) < 0.5; "model / label rule / resolution" = the model fails >= 25 % on >= 15 renders of the category;
+"appearance / shape" = covered and fine on renders, wrong on real; "minor" = real error < 12 %.
+
+Repeat after a factory round or for a new model (ONE command):
+  PYTHONPATH=. .venv/bin/python -m model_fine_tuning.part_gaps.run --model <name> \
+      [--renders <factory>/data/renders/<set>/dataset ...] [--score-renders] [--variant hr|full]
+Sheets: python -m model_fine_tuning.part_gaps.sheets failures|nearest --model <name>
+
+r06r_test_r6b (factory check with a hump, new fin shapes and pose weights from the real shares), added later the same day
+  - The factory's dorsal class is now fin + hump with the blade as a{k}_blade: render_eval.blade_only() moves the hump to
+    body for the truth (the r05 models learned the blade), keeps (fin+hump, blade) px per whale.
+  - labels_ai_r06r_test_r6b.txt: every r6b whale (75) by eye, blind; labels_ai_renders_sample.txt: 50 random run05 and
+    50 random run06-test whales, same taxonomy, for a comparable by-eye coverage column. #S = fin reads as a thin sharp
+    spike on a mound, #R = low, broad, rounded like the real small fins.
+  - The label-only mapping cannot tell a small fin from a tall one (it sees blade pixels only): D_small coverage from
+    labels is 0 everywhere by construction; read the by-eye column for D_small.
+  - nearest_r6b_summary.json: per real category, how often an r6b whale is the nearest / in the 3 nearest renders.
+Next check (r06r_test_r7), CPU, about 10 min for 80 shots:
+  PYTHONPATH=. .venv/bin/python -m model_fine_tuning.part_gaps.run --model parts_seg_r05_a \
+      --renders ../Whale-Image-Data-Factory/data/renders/r06r_test_r7/dataset --score-renders --nearest
+  then label scratchpad part_gaps/eye/r06r_test_r7/eye_*.jpg blind into labels_ai_r06r_test_r7.txt and re-run report.py.
+Noise arm: once /var/tmp/sat3737-parts-cache/realwater/s1.done exists:
+  PYTHONPATH=. .venv/bin/python -m model_fine_tuning.part_gaps.report      (s1 is in DEFAULT_ARMS; the paired table shows it)
+
+r06r_test_r7 + s1 (later the same day)
+  - labels_ai_r06r_test_r7.txt: every r7 whale (76), blind. Real-like fins (#R) as coverage of real D_small (0.32):
+    run05 0.31, run06 tests 0.19, r6b 0.42, r7 0.58.
+  - fin_shape.py / fin_shape.json: 3-point fin triangle (front, tip, back) from the researcher's clicks vs render keypoints.
+    r7 already matches real (height/chord median 0.38 vs 0.37, tip position 0.85 vs 0.87 of the chord) while by eye 25 of
+    39 r7 fins are still spikes: three points do not see bluntness / roundness. r7 meta fin_spec carries only
+    dorsal_height and dorsal_sweep_cm (no chord / rake / round / hump), and dorsal_height does not separate #R from #S.
+    So small-fin coverage cannot yet be computed from labels; the by-eye #R share stays the measure.
+  - nearest_checks_summary.json: r6b / r7 share of the 3 nearest renders of failing real cases.
+  - s1: report_parts_seg_r05_s1_{full,hr}.json = every arm against s1 (arm - s1 paired per category).
+
+r06r_test_r8 (generated blade from 196 real fin outlines; fin_spec.blade per animal)
+  - labels_ai_r06r_test_r8.txt (96 whales, blind; 'pale' = flat pale beige look). Real-like fins 31/96 -> 1.01 of real.
+  - fin_blade_r06r_test_r8.json: fin_spec.blade (broad / sharp / overhang / base_over_height) of every visible r8 fin
+    against the 196 real outlines (third_party_assets/humpback_4k/blade_templates.json, factory formulas).
+    fin_shape.blade_compare(<tag>) recomputes it for r9 and later.
+  - report.py CHECK_SETS are now found automatically (r06r_test_r6b, r7, r8, r9, ...).
+
+r06r_test_r9 (baked wet-skin material; blades = round 7)
+  - labels_ai_r06r_test_r9.txt (101 whales, blind; 'pale' = flat pale beige/grey look, 'white' = paper-white underside).
+  - nearest_r9_summary.json: best-match similarity of failing real small fins / low flukes, r9 vs r8 vs older renders.
+  - CHECK_SETS also picked up r06r_test_r9s (24 shots, not labelled by eye, not in the nearest pool).
+
+r06r_test_r10 (denser blade, skin maps with less white, Specular 0.18, wet roughness >= 0.32)
+  - labels_ai_r06r_test_r10.txt (116 whales, blind; new marks 'khaki' = matt khaki / beige sunlit side, cardboard look;
+    'ghost' = submerged body bright under a dark dome). Real-like fins 43/116 -> 1.15 of real.
+  - Eye vs part labels: 4 whales I called white pectorals are single pale fluke blades in the labels (r10 shots 000025,
+    000030, 000049, 000059); they are the nearest renders of failing real pectorals -> see the hand-back.
+  - nearest_r10_summary.json. CHECK_SETS also picked up r06r_test_r10s (and r10s2 when it has a manifest).
+
+pale = fluke? (pale_test.py, 2026-11-17 night; four models: baseline s0 / s1, W2 s0 / s1; CPU)
+  - r9 and r10 do NOT share shots (same ids, but only 7 of 80 have the same category and those differ in pose): no pairing.
+  - recolour on renders: darkening the fluke to the body's L* (40 whales) flips 0 calls in all four models; pixel shares
+    unchanged. Lightening r10 flukes (9) and pectoral edits (9 / 4) are too few to read.
+  - rendered flukes the models miss are mostly fluke_sinking fragments (tips / one blade), not dark ones; run05 flukes
+    (median L* 19) are never missed.
+  - real: dark fluke views are missed LESS (dark / mid / pale terciles 0.02 / 0.11 / 0.19, baseline); pectorals called
+    fluke 0.59 / 0.60 / 0.76 by tercile for the baseline (n 20 each: not significant), W2 reversed.
+  Numbers: pale_test.json.

@@ -1,0 +1,28 @@
+{
+ "mode": "rw_rs",
+ "p": 0.5,
+ "options": {
+  "real_water": true,
+  "real_scale": true,
+  "colour_match": true,
+  "band": 1.0,
+  "max_up": 4.0,
+  "min_scale": 0.33,
+  "jitter": 0.1
+ },
+ "plate_index": "real (plates.INDEX)",
+ "train_args": [
+  "--name",
+  "parts_seg_r05_rw",
+  "--init-weights",
+  "/var/tmp/sat3737-parts-cache/phase1_last.pt",
+  "--epochs",
+  "10",
+  "--eval-every",
+  "5",
+  "--warmup-steps",
+  "100",
+  "--workers",
+  "6"
+ ]
+}

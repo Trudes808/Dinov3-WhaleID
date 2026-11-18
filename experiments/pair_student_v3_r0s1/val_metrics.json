@@ -1,0 +1,23 @@
+{
+ "auc_student_body": 0.8129189623507806,
+ "pairs_body": 1452,
+ "auc_student_body_within_group": 0.7811109345200253,
+ "auc_student_fin": 0.8698025173611112,
+ "pairs_fin": 1056,
+ "auc_student_fin_within_group": 0.8215569690265487,
+ "auc_student_fluke": 0.860928809788654,
+ "pairs_fluke": 1284,
+ "auc_student_fluke_within_group": 0.8313652073732719,
+ "auc_student_mean": 0.8478834298335153,
+ "auc_student_within_group_mean": 0.8113443703066153,
+ "auc_reference_body": 0.7935548668503214,
+ "auc_reference_body_within_group": 0.7682109557109558,
+ "auc_reference_fin": 0.8667968749999999,
+ "auc_reference_fin_within_group": 0.8215339233038349,
+ "auc_reference_fluke": 0.8458773637374861,
+ "auc_reference_fluke_within_group": 0.8136880760368663,
+ "auc_reference_mean": 0.8354097018626024,
+ "auc_reference_within_group_mean": 0.8011443183505523,
+ "pairs": 3792,
+ "positives": 352
+}

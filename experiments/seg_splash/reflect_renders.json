@@ -1,0 +1,113 @@
+{
+ "frames": 40,
+ "rows": {
+  "glassy/calm | whale (inside, above edge) | -20..-11": {
+   "r04": 0.971,
+   "r05": 0.978,
+   "s0": 0.977,
+   "s5": 0.977
+  },
+  "glassy/calm | whale (inside, above edge) | -10..-4": {
+   "r04": 0.903,
+   "r05": 0.933,
+   "s0": 0.915,
+   "s5": 0.921
+  },
+  "glassy/calm | whale (inside, above edge) | -3..-1": {
+   "r04": 0.69,
+   "r05": 0.794,
+   "s0": 0.708,
+   "s5": 0.738
+  },
+  "glassy/calm | under-water zone (255) | 1..4": {
+   "r04": 0.092,
+   "r05": 0.088,
+   "s0": 0.08,
+   "s5": 0.083
+  },
+  "glassy/calm | water below edge (0) = mirror side | 1..4": {
+   "r04": 0.151,
+   "r05": 0.194,
+   "s0": 0.1,
+   "s5": 0.126
+  },
+  "glassy/calm | under-water zone (255) | 5..12": {
+   "r04": 0.016,
+   "r05": 0.021,
+   "s0": 0.019,
+   "s5": 0.021
+  },
+  "glassy/calm | water below edge (0) = mirror side | 5..12": {
+   "r04": 0.005,
+   "r05": 0.014,
+   "s0": 0.004,
+   "s5": 0.004
+  },
+  "glassy/calm | under-water zone (255) | 13..30": {
+   "r04": 0.0,
+   "r05": 0.0,
+   "s0": 0.0,
+   "s5": 0.0
+  },
+  "glassy/calm | water below edge (0) = mirror side | 13..30": {
+   "r04": 0.001,
+   "r05": 0.001,
+   "s0": 0.001,
+   "s5": 0.002
+  },
+  "light/moderate/rough | whale (inside, above edge) | -20..-11": {
+   "r04": 0.943,
+   "r05": 0.839,
+   "s0": 0.795,
+   "s5": 0.817
+  },
+  "light/moderate/rough | whale (inside, above edge) | -10..-4": {
+   "r04": 0.878,
+   "r05": 0.766,
+   "s0": 0.738,
+   "s5": 0.749
+  },
+  "light/moderate/rough | whale (inside, above edge) | -3..-1": {
+   "r04": 0.75,
+   "r05": 0.649,
+   "s0": 0.633,
+   "s5": 0.659
+  },
+  "light/moderate/rough | under-water zone (255) | 1..4": {
+   "r04": 0.428,
+   "r05": 0.454,
+   "s0": 0.43,
+   "s5": 0.455
+  },
+  "light/moderate/rough | water below edge (0) = mirror side | 1..4": {
+   "r04": 0.206,
+   "r05": 0.196,
+   "s0": 0.172,
+   "s5": 0.193
+  },
+  "light/moderate/rough | under-water zone (255) | 5..12": {
+   "r04": 0.233,
+   "r05": 0.209,
+   "s0": 0.203,
+   "s5": 0.21
+  },
+  "light/moderate/rough | water below edge (0) = mirror side | 5..12": {
+   "r04": 0.046,
+   "r05": 0.038,
+   "s0": 0.029,
+   "s5": 0.034
+  },
+  "light/moderate/rough | under-water zone (255) | 13..30": {
+   "r04": 0.073,
+   "r05": 0.06,
+   "s0": 0.056,
+   "s5": 0.058
+  },
+  "light/moderate/rough | water below edge (0) = mirror side | 13..30": {
+   "r04": 0.017,
+   "r05": 0.013,
+   "s0": 0.011,
+   "s5": 0.011
+  }
+ }
+}

@@ -1,0 +1,532 @@
+{
+ "note": "chosen from the baseline only (hr variant), before the new model was scored; seed 0",
+ "days": [
+  "2025-01-15",
+  "2025-02-27",
+  "2025-03-14",
+  "2025-03-18"
+ ],
+ "candidates": {
+  "01_stubby_fin_on_hump": 92,
+  "02_fluke_in_transition": 106,
+  "03_white_pectoral": 50,
+  "04_wake_at_body_end": 104,
+  "05_photo_border": 763
+ },
+ "picked": {
+  "01_stubby_fin_on_hump": [
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-068-184A1783~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-043-184A1758~0"
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-246-184A3730~0"
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-451-184A3937~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C3_Beato__2025-2-27-Beato-NOAA-MMHSRP-24359-156-HR5_4727~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-220-184A1936~0"
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-206-184A3690~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0861-184A4928~0"
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-449-184A3935~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0149-184A4208~0"
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-460-184A3946~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0646-184A4713~0"
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-486-184A3972~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0902-184A4969~0"
+   },
+   {
+    "day": "2025-01-15",
+    "key": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-079-HR5_3246~0"
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-326-184A3811~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-326-184A2043~1"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-011-184A1726~0"
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-355-184A3840~0"
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-454-184A3940~0"
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-027-184A3509~0"
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-459-184A3945~0"
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-146-184A3629~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0821-184A4888~0"
+   }
+  ],
+  "02_fluke_in_transition": [
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-055-184A1770~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-149-184A1864~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0320-184A4386~1"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-115-184A1830~0"
+   },
+   {
+    "day": "2025-01-15",
+    "key": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-187-HR5_3354~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0662-184A4729~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-1037-184A5104~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0261-184A4327~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-237-184A1953~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0277-184A4343~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0242-184A4308~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0384-184A4450~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0509-184A4575~0"
+   },
+   {
+    "day": "2025-01-15",
+    "key": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-068-HR5_3235~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0676-184A4743~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-236-184A1952~1"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0191-184A4257~0"
+   },
+   {
+    "day": "2025-01-15",
+    "key": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-191-HR5_3358~1"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0255-184A4321~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0006-184A4048~0"
+   },
+   {
+    "day": "2025-01-15",
+    "key": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-050-HR5_3217~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0786-184A4853~1"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0228-184A4294~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0655-184A4722~0"
+   }
+  ],
+  "03_white_pectoral": [
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-309-184A2026~1"
+   },
+   {
+    "day": "2025-01-15",
+    "key": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-139-HR5_3306~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-178-184A1893~1"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-284-184A2001~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-269-184A1986~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-282-184A1999~0"
+   },
+   {
+    "day": "2025-01-15",
+    "key": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-008-HR5_3175~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-207-184A1922~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0628-184A4695~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-259-184A1976~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-299-184A2016~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-300-184A2017~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-293-184A2010~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-1025-184A5092~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-224-184A1940~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-302-184A2019~1"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-274-184A1991~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-360-184A2080~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-272-184A1989~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-285-184A2002~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-278-184A1995~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-335-184A2053~0"
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-075-184A3558~1"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-123-184A1838~0"
+   }
+  ],
+  "04_wake_at_body_end": [
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-335-184A2053~0"
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-373-184A3858~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-015-184A1730~1"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-043-184A1758~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0645-184A4712~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-288-184A2005~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-184-184A1899~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0458-184A4524~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-285-184A2002~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-298-184A2015~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-317-184A2034~1"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-080-184A1795~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-315-184A2032~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0778-184A4845~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-1031-184A5098~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0860-184A4927~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0652-184A4719~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-306-184A2023~1"
+   },
+   {
+    "day": "2025-01-15",
+    "key": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-139-HR5_3306~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-262-184A1979~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-178-184A1893~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0174-184A4240~0"
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0213-184A4279~0"
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-044-184A1759~0"
+   }
+  ],
+  "05_photo_border": [
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-347-184A3832~0",
+    "padding_fluke_pec_px": 31962
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-279-184A3764~0",
+    "padding_fluke_pec_px": 12455
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-319-184A2036~0",
+    "padding_fluke_pec_px": 50550
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0206-184A4272~0",
+    "padding_fluke_pec_px": 119626
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0847-184A4914~0",
+    "padding_fluke_pec_px": 17195
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-269-184A3753~0",
+    "padding_fluke_pec_px": 61093
+   },
+   {
+    "day": "2025-01-15",
+    "key": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-223-HR5_3390~0",
+    "padding_fluke_pec_px": 20421
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-340-184A3825~0",
+    "padding_fluke_pec_px": 35052
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-349-184A3834~0",
+    "padding_fluke_pec_px": 38693
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0859-184A4926~0",
+    "padding_fluke_pec_px": 29715
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-056-184A1771~0",
+    "padding_fluke_pec_px": 110320
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-512-184A3998~0",
+    "padding_fluke_pec_px": 71018
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-455-184A3941~0",
+    "padding_fluke_pec_px": 17124
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0921-184A4988~0",
+    "padding_fluke_pec_px": 28831
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0550-184A4616~0",
+    "padding_fluke_pec_px": 31295
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-124-184A1839~0",
+    "padding_fluke_pec_px": 75402
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0494-184A4560~0",
+    "padding_fluke_pec_px": 16690
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-145-184A1860~0",
+    "padding_fluke_pec_px": 124
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0611-184A4678~0",
+    "padding_fluke_pec_px": 60861
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0507-184A4573~0",
+    "padding_fluke_pec_px": 63004
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-340-184A2060~0",
+    "padding_fluke_pec_px": 18965
+   },
+   {
+    "day": "2025-03-18",
+    "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0688-184A4755~0",
+    "padding_fluke_pec_px": 19879
+   },
+   {
+    "day": "2025-02-27",
+    "key": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-020-184A1735~0",
+    "padding_fluke_pec_px": 97185
+   },
+   {
+    "day": "2025-03-14",
+    "key": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-284-184A3769~0",
+    "padding_fluke_pec_px": 104
+   }
+  ]
+ }
+}

@@ -1,0 +1,608 @@
+{
+ "base": "parts_seg_r05_w3",
+ "arm": "parts_seg_r05_w3b",
+ "three_way_breakdown": {
+  "hr": {
+   "t_eye": {
+    "view": {
+     "dorsal": {
+      "n": 27,
+      "photos": 27,
+      "base_acc": 0.963,
+      "arm_acc": 1.0,
+      "diff": 0.037,
+      "ci95": [
+       0.0,
+       0.1111
+      ]
+     },
+     "fluke": {
+      "n": 19,
+      "photos": 19,
+      "base_acc": 0.8947,
+      "arm_acc": 0.8421,
+      "diff": -0.0526,
+      "ci95": [
+       -0.1579,
+       0.0
+      ]
+     },
+     "other": {
+      "n": 33,
+      "photos": 33,
+      "base_acc": 0.7576,
+      "arm_acc": 0.6364,
+      "diff": -0.1212,
+      "ci95": [
+       -0.2424,
+       -0.0303
+      ]
+     }
+    },
+    "size": {
+     "200-400 px": {
+      "n": 8,
+      "photos": 8,
+      "base_acc": 0.75,
+      "arm_acc": 0.625,
+      "diff": -0.125,
+      "ci95": [
+       -0.375,
+       0.0
+      ]
+     },
+     "400-800 px": {
+      "n": 26,
+      "photos": 25,
+      "base_acc": 0.7692,
+      "arm_acc": 0.7692,
+      "diff": 0.0,
+      "ci95": [
+       -0.1112,
+       0.1154
+      ]
+     },
+     "<200 px": {
+      "n": 1,
+      "photos": 1,
+      "base_acc": 1.0,
+      "arm_acc": 1.0,
+      "diff": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     ">=800 px": {
+      "n": 44,
+      "photos": 44,
+      "base_acc": 0.9318,
+      "arm_acc": 0.8636,
+      "diff": -0.0682,
+      "ci95": [
+       -0.1591,
+       0.0
+      ]
+     }
+    },
+    "whales_in_photo": {
+     "1": {
+      "n": 62,
+      "photos": 62,
+      "base_acc": 0.9032,
+      "arm_acc": 0.8387,
+      "diff": -0.0645,
+      "ci95": [
+       -0.1452,
+       0.0004
+      ]
+     },
+     ">=2": {
+      "n": 17,
+      "photos": 16,
+      "base_acc": 0.7059,
+      "arm_acc": 0.7059,
+      "diff": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    }
+   },
+   "t_vc": {
+    "view": {
+     "dorsal": {
+      "n": 473,
+      "photos": 467,
+      "base_acc": 0.9704,
+      "arm_acc": 0.9915,
+      "diff": 0.0211,
+      "ci95": [
+       0.0084,
+       0.036
+      ]
+     },
+     "fluke": {
+      "n": 204,
+      "photos": 188,
+      "base_acc": 0.9559,
+      "arm_acc": 0.9559,
+      "diff": 0.0,
+      "ci95": [
+       -0.0196,
+       0.0198
+      ]
+     },
+     "other": {
+      "n": 151,
+      "photos": 133,
+      "base_acc": 0.8344,
+      "arm_acc": 0.7483,
+      "diff": -0.0861,
+      "ci95": [
+       -0.1391,
+       -0.0338
+      ]
+     }
+    },
+    "size": {
+     "200-400 px": {
+      "n": 75,
+      "photos": 70,
+      "base_acc": 0.92,
+      "arm_acc": 0.92,
+      "diff": 0.0,
+      "ci95": [
+       -0.0526,
+       0.0541
+      ]
+     },
+     "400-800 px": {
+      "n": 240,
+      "photos": 226,
+      "base_acc": 0.9208,
+      "arm_acc": 0.9208,
+      "diff": 0.0,
+      "ci95": [
+       -0.0254,
+       0.0252
+      ]
+     },
+     "<200 px": {
+      "n": 19,
+      "photos": 18,
+      "base_acc": 0.8947,
+      "arm_acc": 1.0,
+      "diff": 0.1053,
+      "ci95": [
+       0.0,
+       0.2632
+      ]
+     },
+     ">=800 px": {
+      "n": 494,
+      "photos": 484,
+      "base_acc": 0.9575,
+      "arm_acc": 0.9474,
+      "diff": -0.0101,
+      "ci95": [
+       -0.0264,
+       0.006
+      ]
+     }
+    },
+    "whales_in_photo": {
+     "1": {
+      "n": 715,
+      "photos": 715,
+      "base_acc": 0.9524,
+      "arm_acc": 0.9483,
+      "diff": -0.0042,
+      "ci95": [
+       -0.0182,
+       0.0098
+      ]
+     },
+     ">=2": {
+      "n": 113,
+      "photos": 63,
+      "base_acc": 0.8761,
+      "arm_acc": 0.8761,
+      "diff": 0.0,
+      "ci95": [
+       -0.0435,
+       0.042
+      ]
+     }
+    }
+   }
+  },
+  "full": {
+   "t_eye": {
+    "view": {
+     "dorsal": {
+      "n": 27,
+      "photos": 27,
+      "base_acc": 1.0,
+      "arm_acc": 1.0,
+      "diff": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "fluke": {
+      "n": 19,
+      "photos": 19,
+      "base_acc": 0.8421,
+      "arm_acc": 0.8421,
+      "diff": 0.0,
+      "ci95": [
+       -0.1579,
+       0.1579
+      ]
+     },
+     "other": {
+      "n": 33,
+      "photos": 33,
+      "base_acc": 0.8182,
+      "arm_acc": 0.7879,
+      "diff": -0.0303,
+      "ci95": [
+       -0.0909,
+       0.0
+      ]
+     }
+    },
+    "size": {
+     "200-400 px": {
+      "n": 8,
+      "photos": 8,
+      "base_acc": 0.875,
+      "arm_acc": 0.875,
+      "diff": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "400-800 px": {
+      "n": 26,
+      "photos": 25,
+      "base_acc": 0.8462,
+      "arm_acc": 0.8462,
+      "diff": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "<200 px": {
+      "n": 1,
+      "photos": 1,
+      "base_acc": 1.0,
+      "arm_acc": 1.0,
+      "diff": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     ">=800 px": {
+      "n": 44,
+      "photos": 44,
+      "base_acc": 0.9091,
+      "arm_acc": 0.8864,
+      "diff": -0.0227,
+      "ci95": [
+       -0.1136,
+       0.0455
+      ]
+     }
+    },
+    "whales_in_photo": {
+     "1": {
+      "n": 62,
+      "photos": 62,
+      "base_acc": 0.9032,
+      "arm_acc": 0.8871,
+      "diff": -0.0161,
+      "ci95": [
+       -0.0806,
+       0.0323
+      ]
+     },
+     ">=2": {
+      "n": 17,
+      "photos": 16,
+      "base_acc": 0.8235,
+      "arm_acc": 0.8235,
+      "diff": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     }
+    }
+   },
+   "t_vc": {
+    "view": {
+     "dorsal": {
+      "n": 473,
+      "photos": 467,
+      "base_acc": 0.9704,
+      "arm_acc": 0.9767,
+      "diff": 0.0063,
+      "ci95": [
+       -0.0063,
+       0.019
+      ]
+     },
+     "fluke": {
+      "n": 204,
+      "photos": 188,
+      "base_acc": 0.9314,
+      "arm_acc": 0.9265,
+      "diff": -0.0049,
+      "ci95": [
+       -0.034,
+       0.0242
+      ]
+     },
+     "other": {
+      "n": 151,
+      "photos": 133,
+      "base_acc": 0.8013,
+      "arm_acc": 0.7483,
+      "diff": -0.053,
+      "ci95": [
+       -0.1042,
+       -0.0066
+      ]
+     }
+    },
+    "size": {
+     "200-400 px": {
+      "n": 75,
+      "photos": 70,
+      "base_acc": 0.88,
+      "arm_acc": 0.8667,
+      "diff": -0.0133,
+      "ci95": [
+       -0.0417,
+       0.0
+      ]
+     },
+     "400-800 px": {
+      "n": 240,
+      "photos": 226,
+      "base_acc": 0.9292,
+      "arm_acc": 0.9125,
+      "diff": -0.0167,
+      "ci95": [
+       -0.0462,
+       0.0123
+      ]
+     },
+     "<200 px": {
+      "n": 19,
+      "photos": 18,
+      "base_acc": 0.8421,
+      "arm_acc": 0.7895,
+      "diff": -0.0526,
+      "ci95": [
+       -0.1667,
+       0.0
+      ]
+     },
+     ">=800 px": {
+      "n": 494,
+      "photos": 484,
+      "base_acc": 0.9413,
+      "arm_acc": 0.9413,
+      "diff": 0.0,
+      "ci95": [
+       -0.0163,
+       0.0181
+      ]
+     }
+    },
+    "whales_in_photo": {
+     "1": {
+      "n": 715,
+      "photos": 715,
+      "base_acc": 0.9385,
+      "arm_acc": 0.9315,
+      "diff": -0.007,
+      "ci95": [
+       -0.0224,
+       0.007
+      ]
+     },
+     ">=2": {
+      "n": 113,
+      "photos": 63,
+      "base_acc": 0.8761,
+      "arm_acc": 0.8673,
+      "diff": -0.0088,
+      "ci95": [
+       -0.0273,
+       0.0
+      ]
+     }
+    }
+   }
+  }
+ },
+ "instance_measures": {
+  "hr": {
+   "dorsal_view_no_fin_px": {
+    "n": 473,
+    "photos": 467,
+    "base_acc": 0.0042,
+    "arm_acc": 0.0,
+    "diff": -0.0042,
+    "ci95": [
+     -0.0106,
+     0.0
+    ]
+   },
+   "fluke_view_no_fluke_px": {
+    "n": 204,
+    "photos": 188,
+    "base_acc": 0.0343,
+    "arm_acc": 0.0441,
+    "diff": 0.0098,
+    "ci95": [
+     0.0,
+     0.0248
+    ]
+   },
+   "cutout_fin_region": {
+    "n": 492,
+    "photos": 485,
+    "base_acc": 0.9939,
+    "arm_acc": 0.998,
+    "diff": 0.0041,
+    "ci95": [
+     -0.0041,
+     0.0122
+    ]
+   },
+   "cutout_fluke_quarter": {
+    "n": 221,
+    "photos": 201,
+    "base_acc": 0.9095,
+    "arm_acc": 0.8914,
+    "diff": -0.0181,
+    "ci95": [
+     -0.037,
+     -0.0044
+    ]
+   }
+  },
+  "full": {
+   "dorsal_view_no_fin_px": {
+    "n": 473,
+    "photos": 467,
+    "base_acc": 0.0021,
+    "arm_acc": 0.0042,
+    "diff": 0.0021,
+    "ci95": [
+     0.0,
+     0.0064
+    ]
+   },
+   "fluke_view_no_fluke_px": {
+    "n": 204,
+    "photos": 188,
+    "base_acc": 0.0637,
+    "arm_acc": 0.0637,
+    "diff": 0.0,
+    "ci95": [
+     -0.0242,
+     0.0243
+    ]
+   }
+  }
+ },
+ "clicks_2025_03_18_hr": {
+  "fin_tip_in_region": {
+   "n": 119,
+   "photos": 119,
+   "base_acc": 0.916,
+   "arm_acc": 0.916,
+   "diff": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ]
+  },
+  "fluke_notch_in_fluke": {
+   "n": 54,
+   "photos": 54,
+   "base_acc": 0.7593,
+   "arm_acc": 0.7407,
+   "diff": -0.0185,
+   "ci95": [
+    -0.0556,
+    0.0
+   ]
+  },
+  "fluke_tip_left_in_fluke": {
+   "n": 70,
+   "photos": 70,
+   "base_acc": 0.6143,
+   "arm_acc": 0.6,
+   "diff": -0.0143,
+   "ci95": [
+    -0.0429,
+    0.0
+   ]
+  },
+  "fluke_tip_right_in_fluke": {
+   "n": 66,
+   "photos": 66,
+   "base_acc": 0.7424,
+   "arm_acc": 0.7424,
+   "diff": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ]
+  },
+  "no_fin_px_near_instance": {
+   "n": 99,
+   "photos": 99,
+   "base_acc": 0.0,
+   "arm_acc": 0.0,
+   "diff": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ]
+  },
+  "tip_part_mostly_body": {
+   "n": 99,
+   "photos": 99,
+   "base_acc": 0.0,
+   "arm_acc": 0.0,
+   "diff": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ]
+  },
+  "tip_part_mostly_fin": {
+   "n": 99,
+   "photos": 99,
+   "base_acc": 1.0,
+   "arm_acc": 1.0,
+   "diff": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ]
+  },
+  "tip_part_mostly_head": {
+   "n": 99,
+   "photos": 99,
+   "base_acc": 0.0,
+   "arm_acc": 0.0,
+   "diff": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ]
+  },
+  "tip_part_classes": {
+   "parts_seg_r05_w3": {
+    "fin": 99
+   },
+   "parts_seg_r05_w3b": {
+    "fin": 99
+   }
+  }
+ }
+}

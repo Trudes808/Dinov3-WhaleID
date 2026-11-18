@@ -1,0 +1,684 @@
+{
+ "A": {
+  "fluke_tip_left": {
+   "n": 83,
+   "median": 0.997,
+   "p75": 1.016,
+   "within_010": 0.265,
+   "within_025": 0.289
+  },
+  "fluke_tip_right": {
+   "n": 83,
+   "median": 0.345,
+   "p75": 1.006,
+   "within_010": 0.422,
+   "within_025": 0.494
+  },
+  "fluke_notch": {
+   "n": 59,
+   "median": 0.06,
+   "p75": 0.103,
+   "within_010": 0.746,
+   "within_025": 0.898
+  },
+  "dorsal_fin_front": {
+   "n": 197,
+   "median": 0.71,
+   "p75": 0.774,
+   "within_010": 0.0,
+   "within_025": 0.015
+  },
+  "dorsal_fin_back": {
+   "n": 197,
+   "median": 0.235,
+   "p75": 0.379,
+   "within_010": 0.091,
+   "within_025": 0.533
+  },
+  "dorsal_fin_tip": {
+   "n": 197,
+   "median": 0.037,
+   "p75": 0.062,
+   "within_010": 0.888,
+   "within_025": 0.949
+  },
+  "fluke_tips_as_pair": {
+   "n": 83,
+   "median": 0.499,
+   "p75": 0.51,
+   "within_010": 0.301,
+   "within_025": 0.349
+  },
+  "fluke_left_right_swapped": 0.602,
+  "fluke_all_three_worst": {
+   "n": 59,
+   "median": 1.012,
+   "p75": 1.056,
+   "within_010": 0.119,
+   "within_025": 0.153
+  },
+  "fin_centre_off": {
+   "n": 197,
+   "median": 0.243,
+   "p75": 0.283,
+   "within_010": 0.0,
+   "within_025": 0.548,
+   "over_one_base": 0.03
+  },
+  "coverage_by_confidence": {
+   "fin_50": {
+    "n": 98,
+    "worst_point_median": 0.72,
+    "worst_within_025": 0.0
+   },
+   "fin_70": {
+    "n": 138,
+    "worst_point_median": 0.715,
+    "worst_within_025": 0.0
+   },
+   "fin_90": {
+    "n": 177,
+    "worst_point_median": 0.719,
+    "worst_within_025": 0.0
+   },
+   "fin_100": {
+    "n": 197,
+    "worst_point_median": 0.724,
+    "worst_within_025": 0.0
+   },
+   "fluke_50": {
+    "n": 30,
+    "worst_point_median": 1.009,
+    "worst_within_025": 0.3
+   },
+   "fluke_70": {
+    "n": 41,
+    "worst_point_median": 1.011,
+    "worst_within_025": 0.22
+   },
+   "fluke_90": {
+    "n": 53,
+    "worst_point_median": 1.011,
+    "worst_within_025": 0.17
+   },
+   "fluke_100": {
+    "n": 59,
+    "worst_point_median": 1.012,
+    "worst_within_025": 0.153
+   }
+  }
+ },
+ "Bx": {
+  "fluke_tip_left": {
+   "n": 83,
+   "median": 0.045,
+   "p75": 0.995,
+   "within_010": 0.53,
+   "within_025": 0.566
+  },
+  "fluke_tip_right": {
+   "n": 83,
+   "median": 0.017,
+   "p75": 0.099,
+   "within_010": 0.747,
+   "within_025": 0.771
+  },
+  "fluke_notch": {
+   "n": 59,
+   "median": 0.031,
+   "p75": 0.061,
+   "within_010": 0.898,
+   "within_025": 0.915
+  },
+  "dorsal_fin_front": {
+   "n": 197,
+   "median": 0.162,
+   "p75": 0.346,
+   "within_010": 0.315,
+   "within_025": 0.645
+  },
+  "dorsal_fin_back": {
+   "n": 197,
+   "median": 0.072,
+   "p75": 0.117,
+   "within_010": 0.701,
+   "within_025": 0.954
+  },
+  "dorsal_fin_tip": {
+   "n": 197,
+   "median": 0.031,
+   "p75": 0.049,
+   "within_010": 0.964,
+   "within_025": 0.985
+  },
+  "fluke_tips_as_pair": {
+   "n": 83,
+   "median": 0.494,
+   "p75": 0.504,
+   "within_010": 0.41,
+   "within_025": 0.446
+  },
+  "fluke_left_right_swapped": 0.241,
+  "fluke_all_three_worst": {
+   "n": 59,
+   "median": 0.244,
+   "p75": 1.002,
+   "within_010": 0.441,
+   "within_025": 0.508
+  },
+  "fin_centre_off": {
+   "n": 197,
+   "median": 0.066,
+   "p75": 0.123,
+   "within_010": 0.665,
+   "within_025": 0.939,
+   "over_one_base": 0.02
+  },
+  "coverage_by_confidence": {
+   "fin_50": {
+    "n": 98,
+    "worst_point_median": 0.149,
+    "worst_within_025": 0.724
+   },
+   "fin_70": {
+    "n": 138,
+    "worst_point_median": 0.151,
+    "worst_within_025": 0.71
+   },
+   "fin_90": {
+    "n": 177,
+    "worst_point_median": 0.168,
+    "worst_within_025": 0.638
+   },
+   "fin_100": {
+    "n": 197,
+    "worst_point_median": 0.172,
+    "worst_within_025": 0.619
+   },
+   "fluke_50": {
+    "n": 30,
+    "worst_point_median": 0.05,
+    "worst_within_025": 0.733
+   },
+   "fluke_70": {
+    "n": 41,
+    "worst_point_median": 0.083,
+    "worst_within_025": 0.634
+   },
+   "fluke_90": {
+    "n": 53,
+    "worst_point_median": 0.141,
+    "worst_within_025": 0.566
+   },
+   "fluke_100": {
+    "n": 59,
+    "worst_point_median": 0.244,
+    "worst_within_025": 0.508
+   }
+  }
+ },
+ "region_transfer": {
+  "fin|same_burst|click_aff3": {
+   "n": 113,
+   "median": 0.09,
+   "p75": 0.145,
+   "within_010": 0.558,
+   "within_025": 0.929
+  },
+  "fin|same_burst|click_robust": {
+   "n": 113,
+   "median": 0.09,
+   "p75": 0.145,
+   "within_010": 0.558,
+   "within_025": 0.929
+  },
+  "fin|same_burst|click_sim2": {
+   "n": 113,
+   "median": 0.118,
+   "p75": 0.192,
+   "within_010": 0.442,
+   "within_025": 0.832
+  },
+  "fin|same_burst|cutout": {
+   "n": 110,
+   "median": 0.231,
+   "p75": 0.525,
+   "within_010": 0.255,
+   "within_025": 0.555
+  },
+  "fin|same_burst|merged_A_aff3": {
+   "n": 113,
+   "median": 0.199,
+   "p75": 0.46,
+   "within_010": 0.336,
+   "within_025": 0.575
+  },
+  "fin|same_burst|merged_A_robust": {
+   "n": 113,
+   "median": 0.199,
+   "p75": 0.492,
+   "within_010": 0.336,
+   "within_025": 0.575
+  },
+  "fin|same_burst|merged_A_sim2": {
+   "n": 113,
+   "median": 0.141,
+   "p75": 0.386,
+   "within_010": 0.354,
+   "within_025": 0.664
+  },
+  "fin|same_burst|merged_Bx_aff3": {
+   "n": 113,
+   "median": 0.127,
+   "p75": 0.234,
+   "within_010": 0.381,
+   "within_025": 0.761
+  },
+  "fin|same_burst|merged_Bx_robust": {
+   "n": 113,
+   "median": 0.126,
+   "p75": 0.232,
+   "within_010": 0.389,
+   "within_025": 0.77
+  },
+  "fin|same_burst|merged_Bx_sim2": {
+   "n": 113,
+   "median": 0.146,
+   "p75": 0.297,
+   "within_010": 0.319,
+   "within_025": 0.726
+  },
+  "fin|same_burst|none": {
+   "n": 113,
+   "median": 1.89,
+   "p75": 3.036,
+   "within_010": 0.035,
+   "within_025": 0.062
+  },
+  "fin|other|click_aff3": {
+   "n": 112,
+   "median": 0.054,
+   "p75": 0.097,
+   "within_010": 0.777,
+   "within_025": 0.973
+  },
+  "fin|other|click_robust": {
+   "n": 112,
+   "median": 0.054,
+   "p75": 0.097,
+   "within_010": 0.777,
+   "within_025": 0.973
+  },
+  "fin|other|click_sim2": {
+   "n": 112,
+   "median": 0.065,
+   "p75": 0.135,
+   "within_010": 0.661,
+   "within_025": 0.893
+  },
+  "fin|other|cutout": {
+   "n": 108,
+   "median": 0.109,
+   "p75": 0.258,
+   "within_010": 0.444,
+   "within_025": 0.741
+  },
+  "fin|other|merged_A_aff3": {
+   "n": 112,
+   "median": 0.129,
+   "p75": 0.365,
+   "within_010": 0.393,
+   "within_025": 0.696
+  },
+  "fin|other|merged_A_robust": {
+   "n": 112,
+   "median": 0.129,
+   "p75": 0.365,
+   "within_010": 0.393,
+   "within_025": 0.696
+  },
+  "fin|other|merged_A_sim2": {
+   "n": 112,
+   "median": 0.112,
+   "p75": 0.251,
+   "within_010": 0.42,
+   "within_025": 0.75
+  },
+  "fin|other|merged_Bx_aff3": {
+   "n": 112,
+   "median": 0.11,
+   "p75": 0.261,
+   "within_010": 0.464,
+   "within_025": 0.732
+  },
+  "fin|other|merged_Bx_robust": {
+   "n": 112,
+   "median": 0.11,
+   "p75": 0.261,
+   "within_010": 0.464,
+   "within_025": 0.732
+  },
+  "fin|other|merged_Bx_sim2": {
+   "n": 112,
+   "median": 0.136,
+   "p75": 0.308,
+   "within_010": 0.393,
+   "within_025": 0.67
+  },
+  "fin|other|none": {
+   "n": 112,
+   "median": 0.651,
+   "p75": 1.069,
+   "within_010": 0.0,
+   "within_025": 0.071
+  },
+  "fin|all|click_aff3": {
+   "n": 225,
+   "median": 0.066,
+   "p75": 0.121,
+   "within_010": 0.667,
+   "within_025": 0.951
+  },
+  "fin|all|click_robust": {
+   "n": 225,
+   "median": 0.066,
+   "p75": 0.121,
+   "within_010": 0.667,
+   "within_025": 0.951
+  },
+  "fin|all|click_sim2": {
+   "n": 225,
+   "median": 0.088,
+   "p75": 0.162,
+   "within_010": 0.551,
+   "within_025": 0.862
+  },
+  "fin|all|cutout": {
+   "n": 218,
+   "median": 0.148,
+   "p75": 0.356,
+   "within_010": 0.349,
+   "within_025": 0.647
+  },
+  "fin|all|merged_A_aff3": {
+   "n": 225,
+   "median": 0.162,
+   "p75": 0.42,
+   "within_010": 0.364,
+   "within_025": 0.636
+  },
+  "fin|all|merged_A_robust": {
+   "n": 225,
+   "median": 0.162,
+   "p75": 0.429,
+   "within_010": 0.364,
+   "within_025": 0.636
+  },
+  "fin|all|merged_A_sim2": {
+   "n": 225,
+   "median": 0.125,
+   "p75": 0.281,
+   "within_010": 0.387,
+   "within_025": 0.707
+  },
+  "fin|all|merged_Bx_aff3": {
+   "n": 225,
+   "median": 0.121,
+   "p75": 0.251,
+   "within_010": 0.422,
+   "within_025": 0.747
+  },
+  "fin|all|merged_Bx_robust": {
+   "n": 225,
+   "median": 0.121,
+   "p75": 0.244,
+   "within_010": 0.427,
+   "within_025": 0.751
+  },
+  "fin|all|merged_Bx_sim2": {
+   "n": 225,
+   "median": 0.145,
+   "p75": 0.306,
+   "within_010": 0.356,
+   "within_025": 0.698
+  },
+  "fin|all|none": {
+   "n": 225,
+   "median": 1.056,
+   "p75": 2.231,
+   "within_010": 0.018,
+   "within_025": 0.067
+  },
+  "fluke|same_burst|click_aff3": {
+   "n": 15,
+   "median": 0.017,
+   "p75": 0.028,
+   "within_010": 0.867,
+   "within_025": 0.933
+  },
+  "fluke|same_burst|click_robust": {
+   "n": 15,
+   "median": 0.02,
+   "p75": 0.032,
+   "within_010": 0.867,
+   "within_025": 0.867
+  },
+  "fluke|same_burst|click_sim2": {
+   "n": 15,
+   "median": 0.015,
+   "p75": 0.031,
+   "within_010": 0.867,
+   "within_025": 0.933
+  },
+  "fluke|same_burst|cutout": {
+   "n": 15,
+   "median": 0.064,
+   "p75": 0.084,
+   "within_010": 0.8,
+   "within_025": 0.8
+  },
+  "fluke|same_burst|merged_A_aff3": {
+   "n": 15,
+   "median": 0.913,
+   "p75": 2.487,
+   "within_010": 0.133,
+   "within_025": 0.2
+  },
+  "fluke|same_burst|merged_A_robust": {
+   "n": 15,
+   "median": 0.987,
+   "p75": 20.252,
+   "within_010": 0.067,
+   "within_025": 0.2
+  },
+  "fluke|same_burst|merged_A_sim2": {
+   "n": 15,
+   "median": 0.987,
+   "p75": 7.631,
+   "within_010": 0.067,
+   "within_025": 0.2
+  },
+  "fluke|same_burst|merged_Bx_aff3": {
+   "n": 15,
+   "median": 0.381,
+   "p75": 0.783,
+   "within_010": 0.333,
+   "within_025": 0.4
+  },
+  "fluke|same_burst|merged_Bx_robust": {
+   "n": 15,
+   "median": 0.39,
+   "p75": 0.86,
+   "within_010": 0.267,
+   "within_025": 0.467
+  },
+  "fluke|same_burst|merged_Bx_sim2": {
+   "n": 15,
+   "median": 0.408,
+   "p75": 0.86,
+   "within_010": 0.267,
+   "within_025": 0.467
+  },
+  "fluke|same_burst|none": {
+   "n": 15,
+   "median": 0.175,
+   "p75": 0.367,
+   "within_010": 0.267,
+   "within_025": 0.533
+  },
+  "fluke|other|click_aff3": {
+   "n": 1,
+   "median": 0.026,
+   "p75": 0.026,
+   "within_010": 1.0,
+   "within_025": 1.0
+  },
+  "fluke|other|click_robust": {
+   "n": 1,
+   "median": 0.031,
+   "p75": 0.031,
+   "within_010": 1.0,
+   "within_025": 1.0
+  },
+  "fluke|other|click_sim2": {
+   "n": 1,
+   "median": 0.037,
+   "p75": 0.037,
+   "within_010": 1.0,
+   "within_025": 1.0
+  },
+  "fluke|other|cutout": {
+   "n": 1,
+   "median": 0.004,
+   "p75": 0.004,
+   "within_010": 1.0,
+   "within_025": 1.0
+  },
+  "fluke|other|merged_A_aff3": {
+   "n": 1,
+   "median": 0.394,
+   "p75": 0.394,
+   "within_010": 0.0,
+   "within_025": 0.0
+  },
+  "fluke|other|merged_A_robust": {
+   "n": 1,
+   "median": 0.398,
+   "p75": 0.398,
+   "within_010": 0.0,
+   "within_025": 0.0
+  },
+  "fluke|other|merged_A_sim2": {
+   "n": 1,
+   "median": 0.39,
+   "p75": 0.39,
+   "within_010": 0.0,
+   "within_025": 0.0
+  },
+  "fluke|other|merged_Bx_aff3": {
+   "n": 1,
+   "median": 0.176,
+   "p75": 0.176,
+   "within_010": 0.0,
+   "within_025": 1.0
+  },
+  "fluke|other|merged_Bx_robust": {
+   "n": 1,
+   "median": 0.123,
+   "p75": 0.123,
+   "within_010": 0.0,
+   "within_025": 1.0
+  },
+  "fluke|other|merged_Bx_sim2": {
+   "n": 1,
+   "median": 0.12,
+   "p75": 0.12,
+   "within_010": 0.0,
+   "within_025": 1.0
+  },
+  "fluke|other|none": {
+   "n": 1,
+   "median": 0.114,
+   "p75": 0.114,
+   "within_010": 0.0,
+   "within_025": 1.0
+  },
+  "fluke|all|click_aff3": {
+   "n": 16,
+   "median": 0.018,
+   "p75": 0.028,
+   "within_010": 0.875,
+   "within_025": 0.938
+  },
+  "fluke|all|click_robust": {
+   "n": 16,
+   "median": 0.02,
+   "p75": 0.033,
+   "within_010": 0.875,
+   "within_025": 0.875
+  },
+  "fluke|all|click_sim2": {
+   "n": 16,
+   "median": 0.018,
+   "p75": 0.036,
+   "within_010": 0.875,
+   "within_025": 0.938
+  },
+  "fluke|all|cutout": {
+   "n": 16,
+   "median": 0.063,
+   "p75": 0.078,
+   "within_010": 0.812,
+   "within_025": 0.812
+  },
+  "fluke|all|merged_A_aff3": {
+   "n": 16,
+   "median": 0.778,
+   "p75": 2.234,
+   "within_010": 0.125,
+   "within_025": 0.188
+  },
+  "fluke|all|merged_A_robust": {
+   "n": 16,
+   "median": 0.946,
+   "p75": 14.085,
+   "within_010": 0.062,
+   "within_025": 0.188
+  },
+  "fluke|all|merged_A_sim2": {
+   "n": 16,
+   "median": 0.946,
+   "p75": 7.329,
+   "within_010": 0.062,
+   "within_025": 0.188
+  },
+  "fluke|all|merged_Bx_aff3": {
+   "n": 16,
+   "median": 0.326,
+   "p75": 0.72,
+   "within_010": 0.312,
+   "within_025": 0.438
+  },
+  "fluke|all|merged_Bx_robust": {
+   "n": 16,
+   "median": 0.308,
+   "p75": 0.854,
+   "within_010": 0.25,
+   "within_025": 0.5
+  },
+  "fluke|all|merged_Bx_sim2": {
+   "n": 16,
+   "median": 0.306,
+   "p75": 0.854,
+   "within_010": 0.25,
+   "within_025": 0.5
+  },
+  "fluke|all|none": {
+   "n": 16,
+   "median": 0.165,
+   "p75": 0.365,
+   "within_010": 0.25,
+   "within_025": 0.562
+  }
+ }
+}

@@ -1,0 +1,505 @@
+{
+ "epoch": 2,
+ "iou": {
+  "background": 0.9980586537777161,
+  "fluke": 0.9278309876198206,
+  "dorsal_fin": 0.6737661408059418,
+  "pectoral_fin": 0.596161170692593,
+  "head": 0.6577570874486048,
+  "body": 0.8531271972877202,
+  "pixels": {
+   "background": 1169673728,
+   "fluke": 8332382,
+   "dorsal_fin": 477164,
+   "pectoral_fin": 408547,
+   "head": 2358514,
+   "body": 17480672
+  }
+ },
+ "coarse_iou": {
+  "background": 0.9980586537777161,
+  "fluke": 0.9278309876198206,
+  "dorsal_fin": 0.6737661408059418,
+  "other_whale": 0.8888405203434454,
+  "pixels": {
+   "background": 1169673728,
+   "fluke": 8332382,
+   "dorsal_fin": 477164,
+   "other_whale": 20247733
+  }
+ },
+ "confusion": [
+  [
+   1167922916,
+   180660,
+   8661,
+   30622,
+   150071,
+   1380798
+  ],
+  [
+   109582,
+   8004937,
+   65,
+   85508,
+   1093,
+   131197
+  ],
+  [
+   11129,
+   152,
+   380279,
+   248,
+   2998,
+   82358
+  ],
+  [
+   15042,
+   1930,
+   32,
+   356874,
+   19400,
+   15269
+  ],
+  [
+   44965,
+   338,
+   28,
+   38871,
+   1829158,
+   445154
+  ],
+  [
+   340223,
+   112119,
+   78458,
+   34824,
+   248826,
+   16666222
+  ]
+ ],
+ "by_category": {
+  "awash": {
+   "iou": {
+    "background": 0.9962286843148856,
+    "fluke": 0.0,
+    "dorsal_fin": 0.7088621418597939,
+    "pectoral_fin": 0.0,
+    "head": 0.5200869434867337,
+    "body": 0.7499373272769597,
+    "pixels": {
+     "background": 35245650,
+     "fluke": 0,
+     "dorsal_fin": 105649,
+     "pectoral_fin": 0,
+     "head": 19195,
+     "body": 537205
+    }
+   },
+   "coarse_iou": {
+    "background": 0.9962286843148856,
+    "fluke": 0.0,
+    "dorsal_fin": 0.7088621418597939,
+    "other_whale": 0.7602262161875987,
+    "pixels": {
+     "background": 35245650,
+     "fluke": 0,
+     "dorsal_fin": 105649,
+     "other_whale": 556400
+    }
+   }
+  },
+  "back_arch": {
+   "iou": {
+    "background": 0.997846519121098,
+    "fluke": 0.7914077628756414,
+    "dorsal_fin": 0.5530756478492278,
+    "pectoral_fin": 0.4145343196701431,
+    "head": 0.5766062474695568,
+    "body": 0.8920374841940073,
+    "pixels": {
+     "background": 205957732,
+     "fluke": 280137,
+     "dorsal_fin": 52115,
+     "pectoral_fin": 24263,
+     "head": 438398,
+     "body": 5230441
+    }
+   },
+   "coarse_iou": {
+    "background": 0.997846519121098,
+    "fluke": 0.7914077628756414,
+    "dorsal_fin": 0.5530756478492278,
+    "other_whale": 0.9235275048013079,
+    "pixels": {
+     "background": 205957732,
+     "fluke": 280137,
+     "dorsal_fin": 52115,
+     "other_whale": 5693102
+    }
+   }
+  },
+  "blow": {
+   "iou": {
+    "background": 0.9979423608011291,
+    "fluke": 0.0,
+    "dorsal_fin": 0.5678792098163781,
+    "pectoral_fin": 0.1650331373098105,
+    "head": 0.6868673972674754,
+    "body": 0.8176166238368163,
+    "pixels": {
+     "background": 64937071,
+     "fluke": 0,
+     "dorsal_fin": 18928,
+     "pectoral_fin": 9669,
+     "head": 439262,
+     "body": 1168660
+    }
+   },
+   "coarse_iou": {
+    "background": 0.9979423608011291,
+    "fluke": 0.0,
+    "dorsal_fin": 0.5678792098163781,
+    "other_whale": 0.9178911077401304,
+    "pixels": {
+     "background": 64937071,
+     "fluke": 0,
+     "dorsal_fin": 18928,
+     "other_whale": 1617591
+    }
+   }
+  },
+  "blow_sliver": {
+   "iou": {
+    "background": 0.9962892900973989,
+    "fluke": 0.006377551020408163,
+    "dorsal_fin": 0.6556052239460075,
+    "pectoral_fin": 0.6430777148739063,
+    "head": 0.5543439758182591,
+    "body": 0.8106807148426634,
+    "pixels": {
+     "background": 38706850,
+     "fluke": 21,
+     "dorsal_fin": 49403,
+     "pectoral_fin": 2612,
+     "head": 139367,
+     "body": 863130
+    }
+   },
+   "coarse_iou": {
+    "background": 0.9962892900973989,
+    "fluke": 0.006377551020408163,
+    "dorsal_fin": 0.6556052239460075,
+    "other_whale": 0.8593969187552122,
+    "pixels": {
+     "background": 38706850,
+     "fluke": 21,
+     "dorsal_fin": 49403,
+     "other_whale": 1005109
+    }
+   }
+  },
+  "breach": {
+   "iou": {
+    "background": 0.9989799229226786,
+    "fluke": 0.7166666666666667,
+    "dorsal_fin": 0.0,
+    "pectoral_fin": 0.5981983647915043,
+    "head": 0.822841997470032,
+    "body": 0.7530490877935692,
+    "pixels": {
+     "background": 26209307,
+     "fluke": 6464,
+     "dorsal_fin": 308,
+     "pectoral_fin": 58618,
+     "head": 204618,
+     "body": 151948
+    }
+   },
+   "coarse_iou": {
+    "background": 0.9989799229226786,
+    "fluke": 0.7166666666666667,
+    "dorsal_fin": 0.0,
+    "other_whale": 0.9409301412419592,
+    "pixels": {
+     "background": 26209307,
+     "fluke": 6464,
+     "dorsal_fin": 308,
+     "other_whale": 415184
+    }
+   }
+  },
+  "fluke_down": {
+   "iou": {
+    "background": 0.9988243679817139,
+    "fluke": 0.901632163820077,
+    "dorsal_fin": 0.0,
+    "pectoral_fin": 0.0,
+    "head": 0.0,
+    "body": 0.8525103064292849,
+    "pixels": {
+     "background": 101511836,
+     "fluke": 1743335,
+     "dorsal_fin": 69,
+     "pectoral_fin": 0,
+     "head": 4,
+     "body": 723023
+    }
+   },
+   "coarse_iou": {
+    "background": 0.9988243679817139,
+    "fluke": 0.901632163820077,
+    "dorsal_fin": 0.0,
+    "other_whale": 0.8156465790292866,
+    "pixels": {
+     "background": 101511836,
+     "fluke": 1743335,
+     "dorsal_fin": 69,
+     "other_whale": 723027
+    }
+   }
+  },
+  "fluke_edge": {
+   "iou": {
+    "background": 0.998917358217542,
+    "fluke": 0.934561178572831,
+    "dorsal_fin": 0.0,
+    "pectoral_fin": 0.0,
+    "head": 0.0,
+    "body": 0.7822520661546081,
+    "pixels": {
+     "background": 116004072,
+     "fluke": 2511588,
+     "dorsal_fin": 0,
+     "pectoral_fin": 0,
+     "head": 0,
+     "body": 468778
+    }
+   },
+   "coarse_iou": {
+    "background": 0.998917358217542,
+    "fluke": 0.934561178572831,
+    "dorsal_fin": 0.0,
+    "other_whale": 0.7818491050229341,
+    "pixels": {
+     "background": 116004072,
+     "fluke": 2511588,
+     "dorsal_fin": 0,
+     "other_whale": 468778
+    }
+   }
+  },
+  "fluke_up": {
+   "iou": {
+    "background": 0.9989996587728417,
+    "fluke": 0.967336023816261,
+    "dorsal_fin": 0.021701388888888888,
+    "pectoral_fin": 0.0,
+    "head": 0.0,
+    "body": 0.8690321030696435,
+    "pixels": {
+     "background": 143127423,
+     "fluke": 3655961,
+     "dorsal_fin": 1151,
+     "pectoral_fin": 0,
+     "head": 0,
+     "body": 794627
+    }
+   },
+   "coarse_iou": {
+    "background": 0.9989996587728417,
+    "fluke": 0.967336023816261,
+    "dorsal_fin": 0.021701388888888888,
+    "other_whale": 0.8658680391776032,
+    "pixels": {
+     "background": 143127423,
+     "fluke": 3655961,
+     "dorsal_fin": 1151,
+     "other_whale": 794627
+    }
+   }
+  },
+  "logging": {
+   "iou": {
+    "background": 0.9975049594348935,
+    "fluke": 0.6702059202059202,
+    "dorsal_fin": 0.7018834930234252,
+    "pectoral_fin": 0.0,
+    "head": 0.678165357427661,
+    "body": 0.8541652859231851,
+    "pixels": {
+     "background": 63140293,
+     "fluke": 2695,
+     "dorsal_fin": 24081,
+     "pectoral_fin": 652,
+     "head": 236991,
+     "body": 1262756
+    }
+   },
+   "coarse_iou": {
+    "background": 0.9975049594348935,
+    "fluke": 0.6702059202059202,
+    "dorsal_fin": 0.7018834930234252,
+    "other_whale": 0.9002768518689036,
+    "pixels": {
+     "background": 63140293,
+     "fluke": 2695,
+     "dorsal_fin": 24081,
+     "other_whale": 1500399
+    }
+   }
+  },
+  "pec_up": {
+   "iou": {
+    "background": 0.9986463153635445,
+    "fluke": 0.1444882363559781,
+    "dorsal_fin": 0.0,
+    "pectoral_fin": 0.6426692047210959,
+    "head": 0.562886476800376,
+    "body": 0.3407843585639149,
+    "pixels": {
+     "background": 20158844,
+     "fluke": 64668,
+     "dorsal_fin": 3,
+     "pectoral_fin": 176079,
+     "head": 56630,
+     "body": 43564
+    }
+   },
+   "coarse_iou": {
+    "background": 0.9986463153635445,
+    "fluke": 0.1444882363559781,
+    "dorsal_fin": 0.0,
+    "other_whale": 0.7669289897510981,
+    "pixels": {
+     "background": 20158844,
+     "fluke": 64668,
+     "dorsal_fin": 3,
+     "other_whale": 276273
+    }
+   }
+  },
+  "roll_belly": {
+   "iou": {
+    "background": 0.9986417211717434,
+    "fluke": 0.5473137854901808,
+    "dorsal_fin": 0.0,
+    "pectoral_fin": 0.7339570192715216,
+    "head": 0.00016564518800728838,
+    "body": 0.5450465101151369,
+    "pixels": {
+     "background": 9549050,
+     "fluke": 24107,
+     "dorsal_fin": 0,
+     "pectoral_fin": 122580,
+     "head": 16790,
+     "body": 50640
+    }
+   },
+   "coarse_iou": {
+    "background": 0.9986417211717434,
+    "fluke": 0.5473137854901808,
+    "dorsal_fin": 0.0,
+    "other_whale": 0.8980419356559782,
+    "pixels": {
+     "background": 9549050,
+     "fluke": 24107,
+     "dorsal_fin": 0,
+     "other_whale": 190010
+    }
+   }
+  },
+  "spyhop": {
+   "iou": {
+    "background": 0.9992618855029772,
+    "fluke": null,
+    "dorsal_fin": null,
+    "pectoral_fin": 0.6809419496166484,
+    "head": 0.9152058638171812,
+    "body": 0.2858481236662676,
+    "pixels": {
+     "background": 12420896,
+     "fluke": 0,
+     "dorsal_fin": 0,
+     "pectoral_fin": 13703,
+     "head": 230683,
+     "body": 18584
+    }
+   },
+   "coarse_iou": {
+    "background": 0.9992618855029772,
+    "fluke": null,
+    "dorsal_fin": null,
+    "other_whale": 0.9661464390809436,
+    "pixels": {
+     "background": 12420896,
+     "fluke": 0,
+     "dorsal_fin": 0,
+     "other_whale": 262970
+    }
+   }
+  },
+  "submerged": {
+   "iou": {
+    "background": 0.999989536863568,
+    "fluke": null,
+    "dorsal_fin": null,
+    "pectoral_fin": null,
+    "head": 0.0,
+    "body": 0.0,
+    "pixels": {
+     "background": 26569471,
+     "fluke": 0,
+     "dorsal_fin": 0,
+     "pectoral_fin": 0,
+     "head": 0,
+     "body": 0
+    }
+   },
+   "coarse_iou": {
+    "background": 0.999989536863568,
+    "fluke": null,
+    "dorsal_fin": null,
+    "other_whale": 0.0,
+    "pixels": {
+     "background": 26569471,
+     "fluke": 0,
+     "dorsal_fin": 0,
+     "other_whale": 0
+    }
+   }
+  },
+  "surface": {
+   "iou": {
+    "background": 0.9974034430378622,
+    "fluke": 0.7281055255504778,
+    "dorsal_fin": 0.6967193366766373,
+    "pectoral_fin": 0.03661513425549227,
+    "head": 0.5981910146306064,
+    "body": 0.8594684021446556,
+    "pixels": {
+     "background": 306135233,
+     "fluke": 43406,
+     "dorsal_fin": 225457,
+     "pectoral_fin": 371,
+     "head": 576576,
+     "body": 6167316
+    }
+   },
+   "coarse_iou": {
+    "background": 0.9974034430378622,
+    "fluke": 0.7281055255504778,
+    "dorsal_fin": 0.6967193366766373,
+    "other_whale": 0.886087855586284,
+    "pixels": {
+     "background": 306135233,
+     "fluke": 43406,
+     "dorsal_fin": 225457,
+     "other_whale": 6744263
+    }
+   }
+  }
+ },
+ "mean_iou_whale_classes": 0.7417285167709361,
+ "score": 0.8007985642128812
+}

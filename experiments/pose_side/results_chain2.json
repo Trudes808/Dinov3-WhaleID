@@ -1,0 +1,1259 @@
+{
+ "A2": {
+  "fluke_tip_left": {
+   "n": 83,
+   "median": 0.994,
+   "p75": 1.014,
+   "within_010": 0.217,
+   "within_025": 0.277
+  },
+  "fluke_tip_right": {
+   "n": 83,
+   "median": 0.637,
+   "p75": 1.025,
+   "within_010": 0.265,
+   "within_025": 0.325
+  },
+  "fluke_notch": {
+   "n": 59,
+   "median": 0.06,
+   "p75": 0.103,
+   "within_010": 0.746,
+   "within_025": 0.898
+  },
+  "dorsal_fin_front": {
+   "n": 197,
+   "median": 0.71,
+   "p75": 0.774,
+   "within_010": 0.0,
+   "within_025": 0.015
+  },
+  "dorsal_fin_back": {
+   "n": 197,
+   "median": 0.235,
+   "p75": 0.379,
+   "within_010": 0.091,
+   "within_025": 0.533
+  },
+  "dorsal_fin_tip": {
+   "n": 197,
+   "median": 0.037,
+   "p75": 0.062,
+   "within_010": 0.888,
+   "within_025": 0.949
+  },
+  "fluke_tips_as_pair": {
+   "n": 83,
+   "median": 0.181,
+   "p75": 0.317,
+   "within_010": 0.398,
+   "within_025": 0.566
+  },
+  "fluke_left_right_swapped": 0.614,
+  "fluke_all_three_worst": {
+   "n": 59,
+   "median": 1.006,
+   "p75": 1.087,
+   "within_010": 0.119,
+   "within_025": 0.22
+  },
+  "fin_centre_off": {
+   "n": 197,
+   "median": 0.243,
+   "p75": 0.283,
+   "within_010": 0.0,
+   "within_025": 0.548,
+   "over_one_base": 0.03
+  },
+  "coverage_by_confidence": {
+   "fin_50": {
+    "n": 98,
+    "worst_point_median": 0.72,
+    "worst_within_025": 0.0
+   },
+   "fin_70": {
+    "n": 138,
+    "worst_point_median": 0.715,
+    "worst_within_025": 0.0
+   },
+   "fin_90": {
+    "n": 177,
+    "worst_point_median": 0.719,
+    "worst_within_025": 0.0
+   },
+   "fin_100": {
+    "n": 197,
+    "worst_point_median": 0.724,
+    "worst_within_025": 0.0
+   },
+   "fluke_50": {
+    "n": 30,
+    "worst_point_median": 1.004,
+    "worst_within_025": 0.3
+   },
+   "fluke_70": {
+    "n": 41,
+    "worst_point_median": 1.006,
+    "worst_within_025": 0.268
+   },
+   "fluke_90": {
+    "n": 53,
+    "worst_point_median": 1.002,
+    "worst_within_025": 0.226
+   },
+   "fluke_100": {
+    "n": 59,
+    "worst_point_median": 1.006,
+    "worst_within_025": 0.22
+   }
+  }
+ },
+ "A2img": {
+  "fluke_tip_left": {
+   "n": 83,
+   "median": 0.11,
+   "p75": 0.537,
+   "within_010": 0.494,
+   "within_025": 0.614
+  },
+  "fluke_tip_right": {
+   "n": 83,
+   "median": 0.02,
+   "p75": 0.199,
+   "within_010": 0.675,
+   "within_025": 0.783
+  },
+  "fluke_notch": {
+   "n": 59,
+   "median": 0.06,
+   "p75": 0.103,
+   "within_010": 0.746,
+   "within_025": 0.898
+  },
+  "dorsal_fin_front": {
+   "n": 197,
+   "median": 0.71,
+   "p75": 0.774,
+   "within_010": 0.0,
+   "within_025": 0.015
+  },
+  "dorsal_fin_back": {
+   "n": 197,
+   "median": 0.235,
+   "p75": 0.379,
+   "within_010": 0.091,
+   "within_025": 0.533
+  },
+  "dorsal_fin_tip": {
+   "n": 197,
+   "median": 0.037,
+   "p75": 0.062,
+   "within_010": 0.888,
+   "within_025": 0.949
+  },
+  "fluke_tips_as_pair": {
+   "n": 83,
+   "median": 0.181,
+   "p75": 0.317,
+   "within_010": 0.398,
+   "within_025": 0.566
+  },
+  "fluke_left_right_swapped": 0.084,
+  "fluke_all_three_worst": {
+   "n": 59,
+   "median": 0.182,
+   "p75": 0.552,
+   "within_010": 0.373,
+   "within_025": 0.593
+  },
+  "fin_centre_off": {
+   "n": 197,
+   "median": 0.243,
+   "p75": 0.283,
+   "within_010": 0.0,
+   "within_025": 0.548,
+   "over_one_base": 0.03
+  },
+  "coverage_by_confidence": {
+   "fin_50": {
+    "n": 98,
+    "worst_point_median": 0.72,
+    "worst_within_025": 0.0
+   },
+   "fin_70": {
+    "n": 138,
+    "worst_point_median": 0.715,
+    "worst_within_025": 0.0
+   },
+   "fin_90": {
+    "n": 177,
+    "worst_point_median": 0.719,
+    "worst_within_025": 0.0
+   },
+   "fin_100": {
+    "n": 197,
+    "worst_point_median": 0.724,
+    "worst_within_025": 0.0
+   },
+   "fluke_50": {
+    "n": 30,
+    "worst_point_median": 0.08,
+    "worst_within_025": 0.7
+   },
+   "fluke_70": {
+    "n": 41,
+    "worst_point_median": 0.118,
+    "worst_within_025": 0.683
+   },
+   "fluke_90": {
+    "n": 53,
+    "worst_point_median": 0.171,
+    "worst_within_025": 0.585
+   },
+   "fluke_100": {
+    "n": 59,
+    "worst_point_median": 0.182,
+    "worst_within_025": 0.593
+   }
+  }
+ },
+ "Bx2": {
+  "fluke_tip_left": {
+   "n": 83,
+   "median": 0.035,
+   "p75": 0.607,
+   "within_010": 0.566,
+   "within_025": 0.639
+  },
+  "fluke_tip_right": {
+   "n": 83,
+   "median": 0.019,
+   "p75": 0.313,
+   "within_010": 0.687,
+   "within_025": 0.723
+  },
+  "fluke_notch": {
+   "n": 59,
+   "median": 0.031,
+   "p75": 0.061,
+   "within_010": 0.898,
+   "within_025": 0.915
+  },
+  "dorsal_fin_front": {
+   "n": 197,
+   "median": 0.157,
+   "p75": 0.346,
+   "within_010": 0.315,
+   "within_025": 0.645
+  },
+  "dorsal_fin_back": {
+   "n": 197,
+   "median": 0.072,
+   "p75": 0.117,
+   "within_010": 0.701,
+   "within_025": 0.954
+  },
+  "dorsal_fin_tip": {
+   "n": 197,
+   "median": 0.031,
+   "p75": 0.049,
+   "within_010": 0.964,
+   "within_025": 0.985
+  },
+  "fluke_tips_as_pair": {
+   "n": 83,
+   "median": 0.08,
+   "p75": 0.323,
+   "within_010": 0.506,
+   "within_025": 0.614
+  },
+  "fluke_left_right_swapped": 0.169,
+  "fluke_all_three_worst": {
+   "n": 59,
+   "median": 0.086,
+   "p75": 0.55,
+   "within_010": 0.525,
+   "within_025": 0.644
+  },
+  "fin_centre_off": {
+   "n": 197,
+   "median": 0.066,
+   "p75": 0.123,
+   "within_010": 0.665,
+   "within_025": 0.939,
+   "over_one_base": 0.02
+  },
+  "coverage_by_confidence": {
+   "fin_50": {
+    "n": 98,
+    "worst_point_median": 0.149,
+    "worst_within_025": 0.724
+   },
+   "fin_70": {
+    "n": 138,
+    "worst_point_median": 0.149,
+    "worst_within_025": 0.71
+   },
+   "fin_90": {
+    "n": 177,
+    "worst_point_median": 0.168,
+    "worst_within_025": 0.638
+   },
+   "fin_100": {
+    "n": 197,
+    "worst_point_median": 0.172,
+    "worst_within_025": 0.619
+   },
+   "fluke_50": {
+    "n": 30,
+    "worst_point_median": 0.05,
+    "worst_within_025": 0.767
+   },
+   "fluke_70": {
+    "n": 41,
+    "worst_point_median": 0.059,
+    "worst_within_025": 0.756
+   },
+   "fluke_90": {
+    "n": 53,
+    "worst_point_median": 0.063,
+    "worst_within_025": 0.717
+   },
+   "fluke_100": {
+    "n": 59,
+    "worst_point_median": 0.086,
+    "worst_within_025": 0.644
+   }
+  }
+ },
+ "Bx2img": {
+  "fluke_tip_left": {
+   "n": 83,
+   "median": 0.035,
+   "p75": 0.544,
+   "within_010": 0.566,
+   "within_025": 0.627
+  },
+  "fluke_tip_right": {
+   "n": 83,
+   "median": 0.018,
+   "p75": 0.293,
+   "within_010": 0.687,
+   "within_025": 0.735
+  },
+  "fluke_notch": {
+   "n": 59,
+   "median": 0.031,
+   "p75": 0.061,
+   "within_010": 0.898,
+   "within_025": 0.915
+  },
+  "dorsal_fin_front": {
+   "n": 197,
+   "median": 0.157,
+   "p75": 0.346,
+   "within_010": 0.315,
+   "within_025": 0.645
+  },
+  "dorsal_fin_back": {
+   "n": 197,
+   "median": 0.072,
+   "p75": 0.117,
+   "within_010": 0.701,
+   "within_025": 0.954
+  },
+  "dorsal_fin_tip": {
+   "n": 197,
+   "median": 0.031,
+   "p75": 0.049,
+   "within_010": 0.964,
+   "within_025": 0.985
+  },
+  "fluke_tips_as_pair": {
+   "n": 83,
+   "median": 0.08,
+   "p75": 0.323,
+   "within_010": 0.506,
+   "within_025": 0.614
+  },
+  "fluke_left_right_swapped": 0.157,
+  "fluke_all_three_worst": {
+   "n": 59,
+   "median": 0.069,
+   "p75": 0.524,
+   "within_010": 0.559,
+   "within_025": 0.661
+  },
+  "fin_centre_off": {
+   "n": 197,
+   "median": 0.066,
+   "p75": 0.123,
+   "within_010": 0.665,
+   "within_025": 0.939,
+   "over_one_base": 0.02
+  },
+  "coverage_by_confidence": {
+   "fin_50": {
+    "n": 98,
+    "worst_point_median": 0.149,
+    "worst_within_025": 0.724
+   },
+   "fin_70": {
+    "n": 138,
+    "worst_point_median": 0.149,
+    "worst_within_025": 0.71
+   },
+   "fin_90": {
+    "n": 177,
+    "worst_point_median": 0.168,
+    "worst_within_025": 0.638
+   },
+   "fin_100": {
+    "n": 197,
+    "worst_point_median": 0.172,
+    "worst_within_025": 0.619
+   },
+   "fluke_50": {
+    "n": 30,
+    "worst_point_median": 0.035,
+    "worst_within_025": 0.833
+   },
+   "fluke_70": {
+    "n": 41,
+    "worst_point_median": 0.046,
+    "worst_within_025": 0.805
+   },
+   "fluke_90": {
+    "n": 53,
+    "worst_point_median": 0.059,
+    "worst_within_025": 0.736
+   },
+   "fluke_100": {
+    "n": 59,
+    "worst_point_median": 0.069,
+    "worst_within_025": 0.661
+   }
+  }
+ },
+ "region_transfer": {
+  "fin|same_burst|click_aff3": {
+   "n": 113,
+   "median": 0.09,
+   "p75": 0.145,
+   "within_010": 0.558,
+   "within_025": 0.929
+  },
+  "fin|same_burst|click_robust": {
+   "n": 113,
+   "median": 0.09,
+   "p75": 0.145,
+   "within_010": 0.558,
+   "within_025": 0.929
+  },
+  "fin|same_burst|click_sim2": {
+   "n": 113,
+   "median": 0.118,
+   "p75": 0.192,
+   "within_010": 0.442,
+   "within_025": 0.832
+  },
+  "fin|same_burst|click_tb2": {
+   "n": 113,
+   "median": 0.087,
+   "p75": 0.155,
+   "within_010": 0.575,
+   "within_025": 0.858
+  },
+  "fin|same_burst|cutout": {
+   "n": 110,
+   "median": 0.231,
+   "p75": 0.525,
+   "within_010": 0.255,
+   "within_025": 0.555
+  },
+  "fin|same_burst|merged_A2_aff3": {
+   "n": 113,
+   "median": 0.199,
+   "p75": 0.46,
+   "within_010": 0.336,
+   "within_025": 0.575
+  },
+  "fin|same_burst|merged_A2_robust": {
+   "n": 113,
+   "median": 0.199,
+   "p75": 0.492,
+   "within_010": 0.336,
+   "within_025": 0.575
+  },
+  "fin|same_burst|merged_A2_sim2": {
+   "n": 113,
+   "median": 0.141,
+   "p75": 0.386,
+   "within_010": 0.354,
+   "within_025": 0.664
+  },
+  "fin|same_burst|merged_A2_tb2": {
+   "n": 113,
+   "median": 0.187,
+   "p75": 0.456,
+   "within_010": 0.31,
+   "within_025": 0.584
+  },
+  "fin|same_burst|merged_A2img_aff3": {
+   "n": 113,
+   "median": 0.199,
+   "p75": 0.46,
+   "within_010": 0.336,
+   "within_025": 0.575
+  },
+  "fin|same_burst|merged_A2img_robust": {
+   "n": 113,
+   "median": 0.199,
+   "p75": 0.492,
+   "within_010": 0.336,
+   "within_025": 0.575
+  },
+  "fin|same_burst|merged_A2img_sim2": {
+   "n": 113,
+   "median": 0.141,
+   "p75": 0.386,
+   "within_010": 0.354,
+   "within_025": 0.664
+  },
+  "fin|same_burst|merged_A2img_tb2": {
+   "n": 113,
+   "median": 0.187,
+   "p75": 0.456,
+   "within_010": 0.31,
+   "within_025": 0.584
+  },
+  "fin|same_burst|merged_Bx2_aff3": {
+   "n": 113,
+   "median": 0.127,
+   "p75": 0.234,
+   "within_010": 0.381,
+   "within_025": 0.761
+  },
+  "fin|same_burst|merged_Bx2_robust": {
+   "n": 113,
+   "median": 0.126,
+   "p75": 0.232,
+   "within_010": 0.389,
+   "within_025": 0.77
+  },
+  "fin|same_burst|merged_Bx2_sim2": {
+   "n": 113,
+   "median": 0.145,
+   "p75": 0.297,
+   "within_010": 0.319,
+   "within_025": 0.726
+  },
+  "fin|same_burst|merged_Bx2_tb2": {
+   "n": 113,
+   "median": 0.104,
+   "p75": 0.227,
+   "within_010": 0.478,
+   "within_025": 0.788
+  },
+  "fin|same_burst|merged_Bx2img_aff3": {
+   "n": 113,
+   "median": 0.127,
+   "p75": 0.234,
+   "within_010": 0.381,
+   "within_025": 0.761
+  },
+  "fin|same_burst|merged_Bx2img_robust": {
+   "n": 113,
+   "median": 0.126,
+   "p75": 0.232,
+   "within_010": 0.389,
+   "within_025": 0.77
+  },
+  "fin|same_burst|merged_Bx2img_sim2": {
+   "n": 113,
+   "median": 0.145,
+   "p75": 0.297,
+   "within_010": 0.319,
+   "within_025": 0.726
+  },
+  "fin|same_burst|merged_Bx2img_tb2": {
+   "n": 113,
+   "median": 0.104,
+   "p75": 0.227,
+   "within_010": 0.478,
+   "within_025": 0.788
+  },
+  "fin|same_burst|none": {
+   "n": 113,
+   "median": 1.89,
+   "p75": 3.036,
+   "within_010": 0.035,
+   "within_025": 0.062
+  },
+  "fin|other|click_aff3": {
+   "n": 112,
+   "median": 0.054,
+   "p75": 0.097,
+   "within_010": 0.777,
+   "within_025": 0.973
+  },
+  "fin|other|click_robust": {
+   "n": 112,
+   "median": 0.054,
+   "p75": 0.097,
+   "within_010": 0.777,
+   "within_025": 0.973
+  },
+  "fin|other|click_sim2": {
+   "n": 112,
+   "median": 0.065,
+   "p75": 0.135,
+   "within_010": 0.661,
+   "within_025": 0.893
+  },
+  "fin|other|click_tb2": {
+   "n": 112,
+   "median": 0.077,
+   "p75": 0.154,
+   "within_010": 0.625,
+   "within_025": 0.848
+  },
+  "fin|other|cutout": {
+   "n": 108,
+   "median": 0.109,
+   "p75": 0.258,
+   "within_010": 0.444,
+   "within_025": 0.741
+  },
+  "fin|other|merged_A2_aff3": {
+   "n": 112,
+   "median": 0.129,
+   "p75": 0.365,
+   "within_010": 0.393,
+   "within_025": 0.696
+  },
+  "fin|other|merged_A2_robust": {
+   "n": 112,
+   "median": 0.129,
+   "p75": 0.365,
+   "within_010": 0.393,
+   "within_025": 0.696
+  },
+  "fin|other|merged_A2_sim2": {
+   "n": 112,
+   "median": 0.114,
+   "p75": 0.251,
+   "within_010": 0.42,
+   "within_025": 0.75
+  },
+  "fin|other|merged_A2_tb2": {
+   "n": 112,
+   "median": 0.147,
+   "p75": 0.338,
+   "within_010": 0.366,
+   "within_025": 0.616
+  },
+  "fin|other|merged_A2img_aff3": {
+   "n": 112,
+   "median": 0.129,
+   "p75": 0.365,
+   "within_010": 0.393,
+   "within_025": 0.696
+  },
+  "fin|other|merged_A2img_robust": {
+   "n": 112,
+   "median": 0.129,
+   "p75": 0.365,
+   "within_010": 0.393,
+   "within_025": 0.696
+  },
+  "fin|other|merged_A2img_sim2": {
+   "n": 112,
+   "median": 0.114,
+   "p75": 0.251,
+   "within_010": 0.42,
+   "within_025": 0.75
+  },
+  "fin|other|merged_A2img_tb2": {
+   "n": 112,
+   "median": 0.147,
+   "p75": 0.338,
+   "within_010": 0.366,
+   "within_025": 0.616
+  },
+  "fin|other|merged_Bx2_aff3": {
+   "n": 112,
+   "median": 0.11,
+   "p75": 0.261,
+   "within_010": 0.464,
+   "within_025": 0.732
+  },
+  "fin|other|merged_Bx2_robust": {
+   "n": 112,
+   "median": 0.11,
+   "p75": 0.261,
+   "within_010": 0.464,
+   "within_025": 0.732
+  },
+  "fin|other|merged_Bx2_sim2": {
+   "n": 112,
+   "median": 0.136,
+   "p75": 0.308,
+   "within_010": 0.393,
+   "within_025": 0.67
+  },
+  "fin|other|merged_Bx2_tb2": {
+   "n": 112,
+   "median": 0.122,
+   "p75": 0.251,
+   "within_010": 0.42,
+   "within_025": 0.741
+  },
+  "fin|other|merged_Bx2img_aff3": {
+   "n": 112,
+   "median": 0.11,
+   "p75": 0.261,
+   "within_010": 0.464,
+   "within_025": 0.732
+  },
+  "fin|other|merged_Bx2img_robust": {
+   "n": 112,
+   "median": 0.11,
+   "p75": 0.261,
+   "within_010": 0.464,
+   "within_025": 0.732
+  },
+  "fin|other|merged_Bx2img_sim2": {
+   "n": 112,
+   "median": 0.136,
+   "p75": 0.308,
+   "within_010": 0.393,
+   "within_025": 0.67
+  },
+  "fin|other|merged_Bx2img_tb2": {
+   "n": 112,
+   "median": 0.122,
+   "p75": 0.251,
+   "within_010": 0.42,
+   "within_025": 0.741
+  },
+  "fin|other|none": {
+   "n": 112,
+   "median": 0.651,
+   "p75": 1.069,
+   "within_010": 0.0,
+   "within_025": 0.071
+  },
+  "fin|all|click_aff3": {
+   "n": 225,
+   "median": 0.066,
+   "p75": 0.121,
+   "within_010": 0.667,
+   "within_025": 0.951
+  },
+  "fin|all|click_robust": {
+   "n": 225,
+   "median": 0.066,
+   "p75": 0.121,
+   "within_010": 0.667,
+   "within_025": 0.951
+  },
+  "fin|all|click_sim2": {
+   "n": 225,
+   "median": 0.088,
+   "p75": 0.162,
+   "within_010": 0.551,
+   "within_025": 0.862
+  },
+  "fin|all|click_tb2": {
+   "n": 225,
+   "median": 0.083,
+   "p75": 0.155,
+   "within_010": 0.6,
+   "within_025": 0.853
+  },
+  "fin|all|cutout": {
+   "n": 218,
+   "median": 0.148,
+   "p75": 0.356,
+   "within_010": 0.349,
+   "within_025": 0.647
+  },
+  "fin|all|merged_A2_aff3": {
+   "n": 225,
+   "median": 0.165,
+   "p75": 0.42,
+   "within_010": 0.364,
+   "within_025": 0.636
+  },
+  "fin|all|merged_A2_robust": {
+   "n": 225,
+   "median": 0.165,
+   "p75": 0.429,
+   "within_010": 0.364,
+   "within_025": 0.636
+  },
+  "fin|all|merged_A2_sim2": {
+   "n": 225,
+   "median": 0.127,
+   "p75": 0.281,
+   "within_010": 0.387,
+   "within_025": 0.707
+  },
+  "fin|all|merged_A2_tb2": {
+   "n": 225,
+   "median": 0.177,
+   "p75": 0.394,
+   "within_010": 0.338,
+   "within_025": 0.6
+  },
+  "fin|all|merged_A2img_aff3": {
+   "n": 225,
+   "median": 0.165,
+   "p75": 0.42,
+   "within_010": 0.364,
+   "within_025": 0.636
+  },
+  "fin|all|merged_A2img_robust": {
+   "n": 225,
+   "median": 0.165,
+   "p75": 0.429,
+   "within_010": 0.364,
+   "within_025": 0.636
+  },
+  "fin|all|merged_A2img_sim2": {
+   "n": 225,
+   "median": 0.127,
+   "p75": 0.281,
+   "within_010": 0.387,
+   "within_025": 0.707
+  },
+  "fin|all|merged_A2img_tb2": {
+   "n": 225,
+   "median": 0.177,
+   "p75": 0.394,
+   "within_010": 0.338,
+   "within_025": 0.6
+  },
+  "fin|all|merged_Bx2_aff3": {
+   "n": 225,
+   "median": 0.121,
+   "p75": 0.251,
+   "within_010": 0.422,
+   "within_025": 0.747
+  },
+  "fin|all|merged_Bx2_robust": {
+   "n": 225,
+   "median": 0.121,
+   "p75": 0.244,
+   "within_010": 0.427,
+   "within_025": 0.751
+  },
+  "fin|all|merged_Bx2_sim2": {
+   "n": 225,
+   "median": 0.141,
+   "p75": 0.306,
+   "within_010": 0.356,
+   "within_025": 0.698
+  },
+  "fin|all|merged_Bx2_tb2": {
+   "n": 225,
+   "median": 0.113,
+   "p75": 0.236,
+   "within_010": 0.449,
+   "within_025": 0.764
+  },
+  "fin|all|merged_Bx2img_aff3": {
+   "n": 225,
+   "median": 0.121,
+   "p75": 0.251,
+   "within_010": 0.422,
+   "within_025": 0.747
+  },
+  "fin|all|merged_Bx2img_robust": {
+   "n": 225,
+   "median": 0.121,
+   "p75": 0.244,
+   "within_010": 0.427,
+   "within_025": 0.751
+  },
+  "fin|all|merged_Bx2img_sim2": {
+   "n": 225,
+   "median": 0.141,
+   "p75": 0.306,
+   "within_010": 0.356,
+   "within_025": 0.698
+  },
+  "fin|all|merged_Bx2img_tb2": {
+   "n": 225,
+   "median": 0.113,
+   "p75": 0.236,
+   "within_010": 0.449,
+   "within_025": 0.764
+  },
+  "fin|all|none": {
+   "n": 225,
+   "median": 1.056,
+   "p75": 2.231,
+   "within_010": 0.018,
+   "within_025": 0.067
+  },
+  "fluke|same_burst|click_aff3": {
+   "n": 15,
+   "median": 0.017,
+   "p75": 0.028,
+   "within_010": 0.867,
+   "within_025": 0.933
+  },
+  "fluke|same_burst|click_robust": {
+   "n": 15,
+   "median": 0.02,
+   "p75": 0.032,
+   "within_010": 0.867,
+   "within_025": 0.867
+  },
+  "fluke|same_burst|click_sim2": {
+   "n": 15,
+   "median": 0.015,
+   "p75": 0.031,
+   "within_010": 0.867,
+   "within_025": 0.933
+  },
+  "fluke|same_burst|cutout": {
+   "n": 15,
+   "median": 0.064,
+   "p75": 0.084,
+   "within_010": 0.8,
+   "within_025": 0.8
+  },
+  "fluke|same_burst|merged_A2_aff3": {
+   "n": 15,
+   "median": 0.531,
+   "p75": 0.881,
+   "within_010": 0.133,
+   "within_025": 0.2
+  },
+  "fluke|same_burst|merged_A2_robust": {
+   "n": 15,
+   "median": 0.466,
+   "p75": 0.874,
+   "within_010": 0.067,
+   "within_025": 0.2
+  },
+  "fluke|same_burst|merged_A2_sim2": {
+   "n": 15,
+   "median": 0.556,
+   "p75": 0.863,
+   "within_010": 0.133,
+   "within_025": 0.2
+  },
+  "fluke|same_burst|merged_A2img_aff3": {
+   "n": 15,
+   "median": 0.24,
+   "p75": 0.462,
+   "within_010": 0.4,
+   "within_025": 0.533
+  },
+  "fluke|same_burst|merged_A2img_robust": {
+   "n": 15,
+   "median": 0.274,
+   "p75": 0.458,
+   "within_010": 0.267,
+   "within_025": 0.467
+  },
+  "fluke|same_burst|merged_A2img_sim2": {
+   "n": 15,
+   "median": 0.272,
+   "p75": 0.455,
+   "within_010": 0.4,
+   "within_025": 0.467
+  },
+  "fluke|same_burst|merged_Bx2_aff3": {
+   "n": 15,
+   "median": 0.253,
+   "p75": 0.398,
+   "within_010": 0.4,
+   "within_025": 0.467
+  },
+  "fluke|same_burst|merged_Bx2_robust": {
+   "n": 15,
+   "median": 0.213,
+   "p75": 0.433,
+   "within_010": 0.4,
+   "within_025": 0.533
+  },
+  "fluke|same_burst|merged_Bx2_sim2": {
+   "n": 15,
+   "median": 0.203,
+   "p75": 0.429,
+   "within_010": 0.4,
+   "within_025": 0.533
+  },
+  "fluke|same_burst|merged_Bx2img_aff3": {
+   "n": 15,
+   "median": 0.253,
+   "p75": 0.398,
+   "within_010": 0.4,
+   "within_025": 0.467
+  },
+  "fluke|same_burst|merged_Bx2img_robust": {
+   "n": 15,
+   "median": 0.213,
+   "p75": 0.433,
+   "within_010": 0.4,
+   "within_025": 0.533
+  },
+  "fluke|same_burst|merged_Bx2img_sim2": {
+   "n": 15,
+   "median": 0.203,
+   "p75": 0.429,
+   "within_010": 0.4,
+   "within_025": 0.533
+  },
+  "fluke|same_burst|none": {
+   "n": 15,
+   "median": 0.175,
+   "p75": 0.367,
+   "within_010": 0.267,
+   "within_025": 0.533
+  },
+  "fluke|other|click_aff3": {
+   "n": 1,
+   "median": 0.026,
+   "p75": 0.026,
+   "within_010": 1.0,
+   "within_025": 1.0
+  },
+  "fluke|other|click_robust": {
+   "n": 1,
+   "median": 0.031,
+   "p75": 0.031,
+   "within_010": 1.0,
+   "within_025": 1.0
+  },
+  "fluke|other|click_sim2": {
+   "n": 1,
+   "median": 0.037,
+   "p75": 0.037,
+   "within_010": 1.0,
+   "within_025": 1.0
+  },
+  "fluke|other|cutout": {
+   "n": 1,
+   "median": 0.004,
+   "p75": 0.004,
+   "within_010": 1.0,
+   "within_025": 1.0
+  },
+  "fluke|other|merged_A2_aff3": {
+   "n": 1,
+   "median": 0.489,
+   "p75": 0.489,
+   "within_010": 0.0,
+   "within_025": 0.0
+  },
+  "fluke|other|merged_A2_robust": {
+   "n": 1,
+   "median": 0.369,
+   "p75": 0.369,
+   "within_010": 0.0,
+   "within_025": 0.0
+  },
+  "fluke|other|merged_A2_sim2": {
+   "n": 1,
+   "median": 0.361,
+   "p75": 0.361,
+   "within_010": 0.0,
+   "within_025": 0.0
+  },
+  "fluke|other|merged_A2img_aff3": {
+   "n": 1,
+   "median": 0.048,
+   "p75": 0.048,
+   "within_010": 1.0,
+   "within_025": 1.0
+  },
+  "fluke|other|merged_A2img_robust": {
+   "n": 1,
+   "median": 0.078,
+   "p75": 0.078,
+   "within_010": 1.0,
+   "within_025": 1.0
+  },
+  "fluke|other|merged_A2img_sim2": {
+   "n": 1,
+   "median": 0.071,
+   "p75": 0.071,
+   "within_010": 1.0,
+   "within_025": 1.0
+  },
+  "fluke|other|merged_Bx2_aff3": {
+   "n": 1,
+   "median": 0.109,
+   "p75": 0.109,
+   "within_010": 0.0,
+   "within_025": 1.0
+  },
+  "fluke|other|merged_Bx2_robust": {
+   "n": 1,
+   "median": 0.12,
+   "p75": 0.12,
+   "within_010": 0.0,
+   "within_025": 1.0
+  },
+  "fluke|other|merged_Bx2_sim2": {
+   "n": 1,
+   "median": 0.095,
+   "p75": 0.095,
+   "within_010": 1.0,
+   "within_025": 1.0
+  },
+  "fluke|other|merged_Bx2img_aff3": {
+   "n": 1,
+   "median": 0.109,
+   "p75": 0.109,
+   "within_010": 0.0,
+   "within_025": 1.0
+  },
+  "fluke|other|merged_Bx2img_robust": {
+   "n": 1,
+   "median": 0.12,
+   "p75": 0.12,
+   "within_010": 0.0,
+   "within_025": 1.0
+  },
+  "fluke|other|merged_Bx2img_sim2": {
+   "n": 1,
+   "median": 0.095,
+   "p75": 0.095,
+   "within_010": 1.0,
+   "within_025": 1.0
+  },
+  "fluke|other|none": {
+   "n": 1,
+   "median": 0.114,
+   "p75": 0.114,
+   "within_010": 0.0,
+   "within_025": 1.0
+  },
+  "fluke|all|click_aff3": {
+   "n": 16,
+   "median": 0.018,
+   "p75": 0.028,
+   "within_010": 0.875,
+   "within_025": 0.938
+  },
+  "fluke|all|click_robust": {
+   "n": 16,
+   "median": 0.02,
+   "p75": 0.033,
+   "within_010": 0.875,
+   "within_025": 0.875
+  },
+  "fluke|all|click_sim2": {
+   "n": 16,
+   "median": 0.018,
+   "p75": 0.036,
+   "within_010": 0.875,
+   "within_025": 0.938
+  },
+  "fluke|all|cutout": {
+   "n": 16,
+   "median": 0.063,
+   "p75": 0.078,
+   "within_010": 0.812,
+   "within_025": 0.812
+  },
+  "fluke|all|merged_A2_aff3": {
+   "n": 16,
+   "median": 0.529,
+   "p75": 0.857,
+   "within_010": 0.125,
+   "within_025": 0.188
+  },
+  "fluke|all|merged_A2_robust": {
+   "n": 16,
+   "median": 0.463,
+   "p75": 0.85,
+   "within_010": 0.062,
+   "within_025": 0.188
+  },
+  "fluke|all|merged_A2_sim2": {
+   "n": 16,
+   "median": 0.529,
+   "p75": 0.84,
+   "within_010": 0.125,
+   "within_025": 0.188
+  },
+  "fluke|all|merged_A2img_aff3": {
+   "n": 16,
+   "median": 0.23,
+   "p75": 0.45,
+   "within_010": 0.438,
+   "within_025": 0.562
+  },
+  "fluke|all|merged_A2img_robust": {
+   "n": 16,
+   "median": 0.207,
+   "p75": 0.457,
+   "within_010": 0.312,
+   "within_025": 0.5
+  },
+  "fluke|all|merged_A2img_sim2": {
+   "n": 16,
+   "median": 0.2,
+   "p75": 0.455,
+   "within_010": 0.438,
+   "within_025": 0.5
+  },
+  "fluke|all|merged_Bx2_aff3": {
+   "n": 16,
+   "median": 0.248,
+   "p75": 0.39,
+   "within_010": 0.375,
+   "within_025": 0.5
+  },
+  "fluke|all|merged_Bx2_robust": {
+   "n": 16,
+   "median": 0.199,
+   "p75": 0.424,
+   "within_010": 0.375,
+   "within_025": 0.562
+  },
+  "fluke|all|merged_Bx2_sim2": {
+   "n": 16,
+   "median": 0.163,
+   "p75": 0.419,
+   "within_010": 0.438,
+   "within_025": 0.562
+  },
+  "fluke|all|merged_Bx2img_aff3": {
+   "n": 16,
+   "median": 0.248,
+   "p75": 0.39,
+   "within_010": 0.375,
+   "within_025": 0.5
+  },
+  "fluke|all|merged_Bx2img_robust": {
+   "n": 16,
+   "median": 0.199,
+   "p75": 0.424,
+   "within_010": 0.375,
+   "within_025": 0.562
+  },
+  "fluke|all|merged_Bx2img_sim2": {
+   "n": 16,
+   "median": 0.163,
+   "p75": 0.419,
+   "within_010": 0.438,
+   "within_025": 0.562
+  },
+  "fluke|all|none": {
+   "n": 16,
+   "median": 0.165,
+   "p75": 0.365,
+   "within_010": 0.25,
+   "within_025": 0.562
+  }
+ }
+}

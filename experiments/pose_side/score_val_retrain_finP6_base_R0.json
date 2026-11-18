@@ -1,0 +1,593 @@
+{
+ "fin": {
+  "G": {
+   "n": 470,
+   "first": 0.7851063829787234,
+   "top5": 0.6961702127659576,
+   "auc": 0.9064180586126647,
+   "better": 15,
+   "worse": 27,
+   "p": 0.08842954698775429,
+   "lo": -0.052000472813238705,
+   "hi": -0.002040195388500255,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7851063829787234,
+     470
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7851063829787234,
+     470
+    ]
+   }
+  },
+  "R0": {
+   "n": 470,
+   "first": 0.8106382978723404,
+   "top5": 0.7004255319148935,
+   "auc": 0.9032659600552029,
+   "better": 0,
+   "worse": 0,
+   "p": 1.0,
+   "lo": 0.0,
+   "hi": 0.0,
+   "changed": 0.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.8106382978723404,
+     470
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.8106382978723404,
+     470
+    ]
+   }
+  },
+  "R0s1": {
+   "n": 470,
+   "first": 0.8042553191489362,
+   "top5": 0.693191489361702,
+   "auc": 0.8852501941485462,
+   "better": 28,
+   "worse": 31,
+   "p": 0.7948436539828609,
+   "lo": -0.03728891336270197,
+   "hi": 0.0243389812216706,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.8042553191489362,
+     470
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.8042553191489362,
+     470
+    ]
+   }
+  },
+  "RP6s0": {
+   "n": 470,
+   "first": 0.7978723404255319,
+   "top5": 0.66,
+   "auc": 0.8881952544981747,
+   "better": 32,
+   "worse": 38,
+   "p": 0.5504125118224712,
+   "lo": -0.04459549386823852,
+   "hi": 0.018305883832034204,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7978723404255319,
+     470
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7978723404255319,
+     470
+    ]
+   }
+  },
+  "RP6s1": {
+   "n": 470,
+   "first": 0.7702127659574468,
+   "top5": 0.6753191489361702,
+   "auc": 0.8815433854591674,
+   "better": 32,
+   "worse": 51,
+   "p": 0.04752488925653181,
+   "lo": -0.07507793846015232,
+   "hi": -0.007143594957078573,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7702127659574468,
+     470
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7702127659574468,
+     470
+    ]
+   }
+  }
+ },
+ "body": {
+  "G": {
+   "n": 841,
+   "first": 0.7728894173602854,
+   "top5": 0.6470868014268728,
+   "auc": 0.8411919850239234,
+   "better": 47,
+   "worse": 44,
+   "p": 0.834081039304942,
+   "lo": -0.016809719535783318,
+   "hi": 0.02419452472076855,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7728894173602854,
+     841
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7728894173602854,
+     841
+    ]
+   }
+  },
+  "R0": {
+   "n": 841,
+   "first": 0.7693222354340071,
+   "top5": 0.6511296076099882,
+   "auc": 0.8397882456155538,
+   "better": 0,
+   "worse": 0,
+   "p": 1.0,
+   "lo": 0.0,
+   "hi": 0.0,
+   "changed": 0.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7693222354340071,
+     841
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7693222354340071,
+     841
+    ]
+   }
+  },
+  "R0s1": {
+   "n": 841,
+   "first": 0.7693222354340071,
+   "top5": 0.6456599286563615,
+   "auc": 0.8324462048073609,
+   "better": 49,
+   "worse": 49,
+   "p": 1.0,
+   "lo": -0.0211802208486701,
+   "hi": 0.02033425822679766,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7693222354340071,
+     841
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7693222354340071,
+     841
+    ]
+   }
+  },
+  "RP6s0": {
+   "n": 841,
+   "first": 0.760998810939358,
+   "top5": 0.6428061831153388,
+   "auc": 0.8484233277599966,
+   "better": 39,
+   "worse": 46,
+   "p": 0.5154257318839004,
+   "lo": -0.02895580018517601,
+   "hi": 0.013974645399992014,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.760998810939358,
+     841
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.760998810939358,
+     841
+    ]
+   }
+  },
+  "RP6s1": {
+   "n": 841,
+   "first": 0.7859690844233056,
+   "top5": 0.6537455410225922,
+   "auc": 0.8359561231978785,
+   "better": 49,
+   "worse": 35,
+   "p": 0.15565646371399713,
+   "lo": -0.003556417969747716,
+   "hi": 0.03571616343698361,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7859690844233056,
+     841
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7859690844233056,
+     841
+    ]
+   }
+  }
+ },
+ "fluke": {
+  "G": {
+   "n": 154,
+   "first": 0.7142857142857143,
+   "top5": 0.5051948051948052,
+   "auc": 0.8582382261848366,
+   "better": 15,
+   "worse": 10,
+   "p": 0.42435622215270996,
+   "lo": -0.02924836601307184,
+   "hi": 0.08843537414965985,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7142857142857143,
+     154
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7142857142857143,
+     154
+    ]
+   }
+  },
+  "R0": {
+   "n": 154,
+   "first": 0.6818181818181818,
+   "top5": 0.5051948051948052,
+   "auc": 0.860791067508932,
+   "better": 0,
+   "worse": 0,
+   "p": 1.0,
+   "lo": 0.0,
+   "hi": 0.0,
+   "changed": 0.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.6818181818181818,
+     154
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.6818181818181818,
+     154
+    ]
+   }
+  },
+  "R0s1": {
+   "n": 154,
+   "first": 0.7272727272727273,
+   "top5": 0.5246753246753246,
+   "auc": 0.8471356501290009,
+   "better": 18,
+   "worse": 11,
+   "p": 0.26493089646101,
+   "lo": -0.027406707605101555,
+   "hi": 0.11921518236631416,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7272727272727273,
+     154
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7272727272727273,
+     154
+    ]
+   }
+  },
+  "RP6s0": {
+   "n": 154,
+   "first": 0.6883116883116883,
+   "top5": 0.474025974025974,
+   "auc": 0.8442698847390067,
+   "better": 11,
+   "worse": 10,
+   "p": 1.0,
+   "lo": -0.05097174587620446,
+   "hi": 0.06475754461365975,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.6883116883116883,
+     154
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.6883116883116883,
+     154
+    ]
+   }
+  },
+  "RP6s1": {
+   "n": 154,
+   "first": 0.7597402597402597,
+   "top5": 0.5415584415584415,
+   "auc": 0.8590429959176432,
+   "better": 19,
+   "worse": 7,
+   "p": 0.028959274291992188,
+   "lo": 0.014285714285714235,
+   "hi": 0.1428999144568007,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7597402597402597,
+     154
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7597402597402597,
+     154
+    ]
+   }
+  }
+ }
+}

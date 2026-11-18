@@ -1,0 +1,78 @@
+# AI by-eye labels of every r06r_test_r7 whale (76), blind (render + outline only); same taxonomy and #S / #R fin marks
+# as labels_ai_r06r_test_r6b.txt. Format: <shot> <instance id> <CATEGORY> [attributes] [#S|#R]
+000000 1 F_up
+000001 1 F_edge s2
+000003 1 D_small s1 #S
+000005 1 D_tip #S
+000006 1 F_edge
+000006 2 B_back
+000007 1 X_none s2
+000007 2 D_tip #S
+000008 1 F_low
+000009 1 D_small s1 #S
+000010 1 D_tall
+000011 1 D_small #S
+000012 1 D_small #S
+000013 1 F_low
+000013 2 D_small m #R
+000014 1 P_pec s1
+000015 1 D_tall
+000015 2 D_small s1 #S
+000016 1 D_small #R
+000018 1 F_low
+000019 1 D_small #S
+000021 2 D_tip #S
+000021 3 D_tip #R
+000023 1 B_back s1
+000025 1 D_tip #S
+000026 1 F_edge s1
+000027 1 D_small #S
+000028 1 D_small s1
+000028 2 B_back
+000028 3 D_small #R
+000029 1 D_small
+000030 1 D_small #S
+000032 1 D_small s1 #R
+000032 2 D_tall
+000032 3 F_up
+000034 1 F_edge
+000036 1 F_low
+000037 1 F_edge
+000038 1 D_small
+000039 1 D_small m
+000039 2 D_small #R
+000040 1 D_small s1 #S
+000045 1 D_small
+000047 1 X_none s2
+000047 2 D_small #S
+000048 1 D_tall
+000050 1 F_up
+000050 2 D_small s1 #S
+000051 1 D_small #R
+000052 1 D_small s1 #S
+000052 2 D_small #S
+000052 3 D_small #R
+000054 1 H_head
+000055 1 F_edge
+000056 1 F_up
+000057 1 D_tip s2
+000057 2 D_tip #S
+000059 1 D_small s1 #S
+000060 1 D_small #R
+000060 2 D_small m #R
+000062 1 D_small #R
+000065 1 D_small s1 #R
+000065 2 D_small s1 #R
+000066 1 P_pec s1
+000068 1 F_edge m
+000068 2 D_small #S
+000068 3 D_small #S
+000070 1 H_head
+000070 2 D_small s1
+000074 1 D_small #R
+000075 1 D_small #S
+000076 1 D_small #S
+000077 1 F_low
+000078 1 F_edge
+000079 1 D_small #S
+000079 2 D_small s1 #S

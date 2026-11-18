@@ -1,0 +1,42 @@
+{
+ "flukes": {
+  "n": 223,
+  "pixels": {
+   "partmap": 187,
+   "mask": 36
+  },
+  "stock": {
+   "partmap": 53,
+   "photo": 170
+  },
+  "stock_partmap_agrees_photo": {
+   "True": 48,
+   "False": 5
+  },
+  "joined_keys": {
+   "0": 193,
+   "2": 28,
+   "1": 2
+  },
+  "joined_cutouts": 16,
+  "det_positive": 1.0,
+  "stacks_ge3": 23,
+  "mirrored_vs_stack_majority": {
+   "old": 0.2584,
+   "v3": 0.0
+  },
+  "n_in_stacks": 89,
+  "v3_turned_vs_stack_majority": 0.0
+ },
+ "fins": {
+  "n": 493,
+  "src": {
+   "fin": 439,
+   "head": 47,
+   "A": 7
+  },
+  "capped": 1,
+  "head_checked_rejected": 2,
+  "no_head_patch": 5
+ }
+}

@@ -1,0 +1,184 @@
+{
+ "t0.5": {
+  "rows": {
+   "whale": {
+    "n": 199,
+    "pixel_share": 0.9081,
+    "ge30_n": 181
+   },
+   "whale (sure)": {
+    "n": 161,
+    "pixel_share": 0.9197,
+    "ge30_n": 154
+   },
+   "whale_splash": {
+    "n": 13,
+    "pixel_share": 0.4283,
+    "ge30_n": 9
+   },
+   "water": {
+    "n": 22,
+    "pixel_share": 0.1201,
+    "ge30_n": 2
+   },
+   "ALL non-whale": {
+    "n": 197,
+    "pixel_share": 0.0288,
+    "ge30_n": 9
+   },
+   "splash": {
+    "n": 18,
+    "pixel_share": 0.0099,
+    "ge30_n": 0
+   },
+   "wake": {
+    "n": 69,
+    "pixel_share": 0.0783,
+    "ge30_n": 2
+   },
+   "person": {
+    "n": 42,
+    "pixel_share": 0.0319,
+    "ge30_n": 1
+   },
+   "gear": {
+    "n": 83,
+    "pixel_share": 0.026,
+    "ge30_n": 1
+   },
+   "boat": {
+    "n": 11,
+    "pixel_share": 0.0,
+    "ge30_n": 0
+   },
+   "drone": {
+    "n": 9,
+    "pixel_share": 0.0,
+    "ge30_n": 0
+   },
+   "shore": {
+    "n": 16,
+    "pixel_share": 0.0,
+    "ge30_n": 0
+   },
+   "unclear": {
+    "n": 1,
+    "pixel_share": 0.0,
+    "ge30_n": 0
+   },
+   "other": {
+    "n": 1,
+    "pixel_share": 1.0,
+    "ge30_n": 1
+   },
+   "pole": {
+    "n": 5,
+    "pixel_share": 0.0,
+    "ge30_n": 0
+   },
+   "bird": {
+    "n": 4,
+    "pixel_share": 0.5724,
+    "ge30_n": 3
+   }
+  },
+  "view_kept": 0.9121,
+  "view_added": 0.0555,
+  "new_per_photo": 0.0139,
+  "photos": 287,
+  "proxy_flukes_one": "0/0",
+  "proxy_main_one": "0/0",
+  "proxy_others": {}
+ },
+ "h0.6_0.1": {
+  "rows": {
+   "whale": {
+    "n": 199,
+    "pixel_share": 0.9204,
+    "ge30_n": 182
+   },
+   "whale (sure)": {
+    "n": 161,
+    "pixel_share": 0.9312,
+    "ge30_n": 154
+   },
+   "whale_splash": {
+    "n": 13,
+    "pixel_share": 0.4496,
+    "ge30_n": 9
+   },
+   "water": {
+    "n": 22,
+    "pixel_share": 0.1505,
+    "ge30_n": 2
+   },
+   "ALL non-whale": {
+    "n": 197,
+    "pixel_share": 0.0296,
+    "ge30_n": 9
+   },
+   "splash": {
+    "n": 18,
+    "pixel_share": 0.0126,
+    "ge30_n": 0
+   },
+   "wake": {
+    "n": 69,
+    "pixel_share": 0.0869,
+    "ge30_n": 2
+   },
+   "person": {
+    "n": 42,
+    "pixel_share": 0.0322,
+    "ge30_n": 1
+   },
+   "gear": {
+    "n": 83,
+    "pixel_share": 0.0263,
+    "ge30_n": 1
+   },
+   "boat": {
+    "n": 11,
+    "pixel_share": 0.0,
+    "ge30_n": 0
+   },
+   "drone": {
+    "n": 9,
+    "pixel_share": 0.0,
+    "ge30_n": 0
+   },
+   "shore": {
+    "n": 16,
+    "pixel_share": 0.0,
+    "ge30_n": 0
+   },
+   "unclear": {
+    "n": 1,
+    "pixel_share": 0.0,
+    "ge30_n": 0
+   },
+   "other": {
+    "n": 1,
+    "pixel_share": 1.0,
+    "ge30_n": 1
+   },
+   "pole": {
+    "n": 5,
+    "pixel_share": 0.0,
+    "ge30_n": 0
+   },
+   "bird": {
+    "n": 4,
+    "pixel_share": 0.6076,
+    "ge30_n": 3
+   }
+  },
+  "view_kept": 0.9224,
+  "view_added": 0.0683,
+  "new_per_photo": 0.0139,
+  "photos": 287,
+  "proxy_flukes_one": "0/0",
+  "proxy_main_one": "0/0",
+  "proxy_others": {}
+ }
+}

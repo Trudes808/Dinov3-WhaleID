@@ -1,0 +1,2858 @@
+{
+ "r04": {
+  "val": {
+   "whale": {
+    "blobs": 199,
+    "pixel_share_whale": 0.9982,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 199,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9955
+   },
+   "whale (sure)": {
+    "blobs": 161,
+    "pixel_share_whale": 0.9984,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 161,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9968
+   },
+   "person": {
+    "blobs": 42,
+    "pixel_share_whale": 0.9974,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 42,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9891
+   },
+   "ALL non-whale": {
+    "blobs": 197,
+    "pixel_share_whale": 0.9964,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 197,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.983
+   },
+   "splash": {
+    "blobs": 18,
+    "pixel_share_whale": 0.9821,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 18,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9785
+   },
+   "wake": {
+    "blobs": 69,
+    "pixel_share_whale": 0.9839,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 69,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.979
+   },
+   "water": {
+    "blobs": 22,
+    "pixel_share_whale": 0.9892,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 22,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9825
+   },
+   "drone": {
+    "blobs": 9,
+    "pixel_share_whale": 0.9905,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 9,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9904
+   },
+   "shore": {
+    "blobs": 16,
+    "pixel_share_whale": 0.987,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 16,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9807
+   },
+   "boat": {
+    "blobs": 11,
+    "pixel_share_whale": 0.9976,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 11,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9813
+   },
+   "whale_splash": {
+    "blobs": 13,
+    "pixel_share_whale": 0.9976,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 13,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9907
+   },
+   "bird": {
+    "blobs": 4,
+    "pixel_share_whale": 0.9936,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 4,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9937
+   },
+   "unclear": {
+    "blobs": 1,
+    "pixel_share_whale": 0.9917,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9917
+   },
+   "other": {
+    "blobs": 1,
+    "pixel_share_whale": 0.9974,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9974
+   },
+   "pole": {
+    "blobs": 5,
+    "pixel_share_whale": 0.995,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 5,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9916
+   }
+  },
+  "train": {
+   "wake": {
+    "blobs": 262,
+    "pixel_share_whale": 0.9946,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 262,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9909
+   },
+   "ALL non-whale": {
+    "blobs": 673,
+    "pixel_share_whale": 0.9969,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 673,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9899
+   },
+   "splash": {
+    "blobs": 64,
+    "pixel_share_whale": 0.989,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 64,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9852
+   },
+   "whale": {
+    "blobs": 929,
+    "pixel_share_whale": 0.9989,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 929,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9969
+   },
+   "whale (sure)": {
+    "blobs": 781,
+    "pixel_share_whale": 0.999,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 781,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9977
+   },
+   "water": {
+    "blobs": 113,
+    "pixel_share_whale": 0.9942,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 113,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9898
+   },
+   "person": {
+    "blobs": 84,
+    "pixel_share_whale": 0.9977,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 84,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9905
+   },
+   "boat": {
+    "blobs": 31,
+    "pixel_share_whale": 0.9984,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 31,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9915
+   },
+   "pole": {
+    "blobs": 21,
+    "pixel_share_whale": 0.9956,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 21,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9915
+   },
+   "unclear": {
+    "blobs": 4,
+    "pixel_share_whale": 0.9982,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 4,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9967
+   },
+   "shore": {
+    "blobs": 52,
+    "pixel_share_whale": 0.9958,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 52,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.988
+   },
+   "whale_splash": {
+    "blobs": 29,
+    "pixel_share_whale": 0.9988,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 29,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9922
+   },
+   "drone": {
+    "blobs": 43,
+    "pixel_share_whale": 0.99,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 43,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9901
+   },
+   "other": {
+    "blobs": 3,
+    "pixel_share_whale": 0.9905,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9885
+   }
+  }
+ },
+ "r05": {
+  "val": {
+   "whale": {
+    "blobs": 199,
+    "pixel_share_whale": 0.9137,
+    "blobs_ge30": 0.9598,
+    "blobs_ge30_n": 191,
+    "blobs_ge50": 0.9347,
+    "mean_blob_share": 0.8776
+   },
+   "whale (sure)": {
+    "blobs": 161,
+    "pixel_share_whale": 0.9205,
+    "blobs_ge30": 0.9938,
+    "blobs_ge30_n": 160,
+    "blobs_ge50": 0.9689,
+    "mean_blob_share": 0.9175
+   },
+   "person": {
+    "blobs": 42,
+    "pixel_share_whale": 0.7,
+    "blobs_ge30": 0.9286,
+    "blobs_ge30_n": 39,
+    "blobs_ge50": 0.8333,
+    "mean_blob_share": 0.7654
+   },
+   "ALL non-whale": {
+    "blobs": 197,
+    "pixel_share_whale": 0.6127,
+    "blobs_ge30": 0.4315,
+    "blobs_ge30_n": 85,
+    "blobs_ge50": 0.3756,
+    "mean_blob_share": 0.3666
+   },
+   "splash": {
+    "blobs": 18,
+    "pixel_share_whale": 0.0712,
+    "blobs_ge30": 0.2222,
+    "blobs_ge30_n": 4,
+    "blobs_ge50": 0.1667,
+    "mean_blob_share": 0.1946
+   },
+   "wake": {
+    "blobs": 69,
+    "pixel_share_whale": 0.306,
+    "blobs_ge30": 0.2609,
+    "blobs_ge30_n": 18,
+    "blobs_ge50": 0.2319,
+    "mean_blob_share": 0.2236
+   },
+   "water": {
+    "blobs": 22,
+    "pixel_share_whale": 0.2573,
+    "blobs_ge30": 0.2273,
+    "blobs_ge30_n": 5,
+    "blobs_ge50": 0.1818,
+    "mean_blob_share": 0.1972
+   },
+   "drone": {
+    "blobs": 9,
+    "pixel_share_whale": 0.928,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 9,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9264
+   },
+   "shore": {
+    "blobs": 16,
+    "pixel_share_whale": 0.0399,
+    "blobs_ge30": 0.0625,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0461
+   },
+   "boat": {
+    "blobs": 11,
+    "pixel_share_whale": 0.3207,
+    "blobs_ge30": 0.1818,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.0909,
+    "mean_blob_share": 0.1035
+   },
+   "whale_splash": {
+    "blobs": 13,
+    "pixel_share_whale": 0.6014,
+    "blobs_ge30": 0.9231,
+    "blobs_ge30_n": 12,
+    "blobs_ge50": 0.8462,
+    "mean_blob_share": 0.7601
+   },
+   "bird": {
+    "blobs": 4,
+    "pixel_share_whale": 0.9654,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 4,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9464
+   },
+   "unclear": {
+    "blobs": 1,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 1,
+    "pixel_share_whale": 0.9974,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9974
+   },
+   "pole": {
+    "blobs": 5,
+    "pixel_share_whale": 0.3705,
+    "blobs_ge30": 0.4,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.2,
+    "mean_blob_share": 0.3619
+   }
+  },
+  "train": {
+   "wake": {
+    "blobs": 262,
+    "pixel_share_whale": 0.1843,
+    "blobs_ge30": 0.2061,
+    "blobs_ge30_n": 54,
+    "blobs_ge50": 0.1603,
+    "mean_blob_share": 0.1665
+   },
+   "ALL non-whale": {
+    "blobs": 673,
+    "pixel_share_whale": 0.3707,
+    "blobs_ge30": 0.3551,
+    "blobs_ge30_n": 239,
+    "blobs_ge50": 0.2897,
+    "mean_blob_share": 0.2852
+   },
+   "splash": {
+    "blobs": 64,
+    "pixel_share_whale": 0.2153,
+    "blobs_ge30": 0.3906,
+    "blobs_ge30_n": 25,
+    "blobs_ge50": 0.3438,
+    "mean_blob_share": 0.3353
+   },
+   "whale": {
+    "blobs": 929,
+    "pixel_share_whale": 0.8743,
+    "blobs_ge30": 0.9257,
+    "blobs_ge30_n": 860,
+    "blobs_ge50": 0.902,
+    "mean_blob_share": 0.8461
+   },
+   "whale (sure)": {
+    "blobs": 781,
+    "pixel_share_whale": 0.8907,
+    "blobs_ge30": 0.9731,
+    "blobs_ge30_n": 760,
+    "blobs_ge50": 0.9552,
+    "mean_blob_share": 0.8989
+   },
+   "water": {
+    "blobs": 113,
+    "pixel_share_whale": 0.1438,
+    "blobs_ge30": 0.177,
+    "blobs_ge30_n": 20,
+    "blobs_ge50": 0.1416,
+    "mean_blob_share": 0.1506
+   },
+   "person": {
+    "blobs": 84,
+    "pixel_share_whale": 0.5247,
+    "blobs_ge30": 0.8571,
+    "blobs_ge30_n": 72,
+    "blobs_ge50": 0.6548,
+    "mean_blob_share": 0.6045
+   },
+   "boat": {
+    "blobs": 31,
+    "pixel_share_whale": 0.3306,
+    "blobs_ge30": 0.3226,
+    "blobs_ge30_n": 10,
+    "blobs_ge50": 0.2258,
+    "mean_blob_share": 0.2299
+   },
+   "pole": {
+    "blobs": 21,
+    "pixel_share_whale": 0.1064,
+    "blobs_ge30": 0.4762,
+    "blobs_ge30_n": 10,
+    "blobs_ge50": 0.381,
+    "mean_blob_share": 0.379
+   },
+   "unclear": {
+    "blobs": 4,
+    "pixel_share_whale": 0.6401,
+    "blobs_ge30": 0.5,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.5,
+    "mean_blob_share": 0.4545
+   },
+   "shore": {
+    "blobs": 52,
+    "pixel_share_whale": 0.0857,
+    "blobs_ge30": 0.0385,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.0192,
+    "mean_blob_share": 0.0332
+   },
+   "whale_splash": {
+    "blobs": 29,
+    "pixel_share_whale": 0.4386,
+    "blobs_ge30": 0.7931,
+    "blobs_ge30_n": 23,
+    "blobs_ge50": 0.5862,
+    "mean_blob_share": 0.5551
+   },
+   "drone": {
+    "blobs": 43,
+    "pixel_share_whale": 0.9439,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 43,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9397
+   },
+   "other": {
+    "blobs": 3,
+    "pixel_share_whale": 0.5054,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.3333,
+    "mean_blob_share": 0.6181
+   }
+  }
+ },
+ "s1": {
+  "val": {
+   "whale": {
+    "blobs": 199,
+    "pixel_share_whale": 0.9493,
+    "blobs_ge30": 0.9196,
+    "blobs_ge30_n": 183,
+    "blobs_ge50": 0.8894,
+    "mean_blob_share": 0.87
+   },
+   "whale (sure)": {
+    "blobs": 161,
+    "pixel_share_whale": 0.9575,
+    "blobs_ge30": 0.9627,
+    "blobs_ge30_n": 155,
+    "blobs_ge50": 0.9441,
+    "mean_blob_share": 0.9274
+   },
+   "person": {
+    "blobs": 42,
+    "pixel_share_whale": 0.0327,
+    "blobs_ge30": 0.0238,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0126
+   },
+   "ALL non-whale": {
+    "blobs": 197,
+    "pixel_share_whale": 0.0312,
+    "blobs_ge30": 0.066,
+    "blobs_ge30_n": 13,
+    "blobs_ge50": 0.0508,
+    "mean_blob_share": 0.0493
+   },
+   "splash": {
+    "blobs": 18,
+    "pixel_share_whale": 0.0307,
+    "blobs_ge30": 0.1111,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.1111,
+    "mean_blob_share": 0.0782
+   },
+   "wake": {
+    "blobs": 69,
+    "pixel_share_whale": 0.1216,
+    "blobs_ge30": 0.087,
+    "blobs_ge30_n": 6,
+    "blobs_ge50": 0.058,
+    "mean_blob_share": 0.0593
+   },
+   "water": {
+    "blobs": 22,
+    "pixel_share_whale": 0.1784,
+    "blobs_ge30": 0.0909,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.0909,
+    "mean_blob_share": 0.0778
+   },
+   "drone": {
+    "blobs": 9,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "shore": {
+    "blobs": 16,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "boat": {
+    "blobs": 11,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 13,
+    "pixel_share_whale": 0.531,
+    "blobs_ge30": 0.6923,
+    "blobs_ge30_n": 9,
+    "blobs_ge50": 0.6154,
+    "mean_blob_share": 0.5312
+   },
+   "bird": {
+    "blobs": 4,
+    "pixel_share_whale": 0.3046,
+    "blobs_ge30": 0.25,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.25,
+    "mean_blob_share": 0.2457
+   },
+   "unclear": {
+    "blobs": 1,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 1,
+    "pixel_share_whale": 1.0,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 1.0
+   },
+   "pole": {
+    "blobs": 5,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   }
+  },
+  "train": {
+   "wake": {
+    "blobs": 262,
+    "pixel_share_whale": 0.0465,
+    "blobs_ge30": 0.0573,
+    "blobs_ge30_n": 15,
+    "blobs_ge50": 0.0382,
+    "mean_blob_share": 0.0447
+   },
+   "ALL non-whale": {
+    "blobs": 673,
+    "pixel_share_whale": 0.0148,
+    "blobs_ge30": 0.0416,
+    "blobs_ge30_n": 28,
+    "blobs_ge50": 0.0342,
+    "mean_blob_share": 0.0355
+   },
+   "splash": {
+    "blobs": 64,
+    "pixel_share_whale": 0.0814,
+    "blobs_ge30": 0.125,
+    "blobs_ge30_n": 8,
+    "blobs_ge50": 0.125,
+    "mean_blob_share": 0.1133
+   },
+   "whale": {
+    "blobs": 929,
+    "pixel_share_whale": 0.9532,
+    "blobs_ge30": 0.8999,
+    "blobs_ge30_n": 836,
+    "blobs_ge50": 0.8848,
+    "mean_blob_share": 0.8656
+   },
+   "whale (sure)": {
+    "blobs": 781,
+    "pixel_share_whale": 0.9751,
+    "blobs_ge30": 0.968,
+    "blobs_ge30_n": 756,
+    "blobs_ge50": 0.9616,
+    "mean_blob_share": 0.9422
+   },
+   "water": {
+    "blobs": 113,
+    "pixel_share_whale": 0.0741,
+    "blobs_ge30": 0.0265,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.0265,
+    "mean_blob_share": 0.0282
+   },
+   "person": {
+    "blobs": 84,
+    "pixel_share_whale": 0.0019,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0003
+   },
+   "boat": {
+    "blobs": 31,
+    "pixel_share_whale": 0.0706,
+    "blobs_ge30": 0.0323,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0323,
+    "mean_blob_share": 0.0222
+   },
+   "pole": {
+    "blobs": 21,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "unclear": {
+    "blobs": 4,
+    "pixel_share_whale": 0.5323,
+    "blobs_ge30": 0.5,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.5,
+    "mean_blob_share": 0.3212
+   },
+   "shore": {
+    "blobs": 52,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 29,
+    "pixel_share_whale": 0.7008,
+    "blobs_ge30": 0.5172,
+    "blobs_ge30_n": 15,
+    "blobs_ge50": 0.4138,
+    "mean_blob_share": 0.4035
+   },
+   "drone": {
+    "blobs": 43,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 3,
+    "pixel_share_whale": 0.1835,
+    "blobs_ge30": 0.3333,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.3333,
+    "mean_blob_share": 0.3333
+   }
+  }
+ },
+ "s2": {
+  "val": {
+   "whale": {
+    "blobs": 199,
+    "pixel_share_whale": 0.9474,
+    "blobs_ge30": 0.8995,
+    "blobs_ge30_n": 179,
+    "blobs_ge50": 0.8693,
+    "mean_blob_share": 0.8552
+   },
+   "whale (sure)": {
+    "blobs": 161,
+    "pixel_share_whale": 0.9558,
+    "blobs_ge30": 0.9503,
+    "blobs_ge30_n": 153,
+    "blobs_ge50": 0.9255,
+    "mean_blob_share": 0.9172
+   },
+   "person": {
+    "blobs": 42,
+    "pixel_share_whale": 0.0328,
+    "blobs_ge30": 0.0238,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0126
+   },
+   "ALL non-whale": {
+    "blobs": 197,
+    "pixel_share_whale": 0.0303,
+    "blobs_ge30": 0.0406,
+    "blobs_ge30_n": 8,
+    "blobs_ge50": 0.0305,
+    "mean_blob_share": 0.0317
+   },
+   "splash": {
+    "blobs": 18,
+    "pixel_share_whale": 0.0114,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0138
+   },
+   "wake": {
+    "blobs": 69,
+    "pixel_share_whale": 0.101,
+    "blobs_ge30": 0.058,
+    "blobs_ge30_n": 4,
+    "blobs_ge50": 0.0435,
+    "mean_blob_share": 0.0368
+   },
+   "water": {
+    "blobs": 22,
+    "pixel_share_whale": 0.1646,
+    "blobs_ge30": 0.0455,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0455,
+    "mean_blob_share": 0.043
+   },
+   "drone": {
+    "blobs": 9,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "shore": {
+    "blobs": 16,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "boat": {
+    "blobs": 11,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 13,
+    "pixel_share_whale": 0.5081,
+    "blobs_ge30": 0.6923,
+    "blobs_ge30_n": 9,
+    "blobs_ge50": 0.6154,
+    "mean_blob_share": 0.5201
+   },
+   "bird": {
+    "blobs": 4,
+    "pixel_share_whale": 0.3056,
+    "blobs_ge30": 0.25,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.25,
+    "mean_blob_share": 0.2466
+   },
+   "unclear": {
+    "blobs": 1,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 1,
+    "pixel_share_whale": 1.0,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 1.0
+   },
+   "pole": {
+    "blobs": 5,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   }
+  },
+  "train": {
+   "wake": {
+    "blobs": 262,
+    "pixel_share_whale": 0.028,
+    "blobs_ge30": 0.0267,
+    "blobs_ge30_n": 7,
+    "blobs_ge50": 0.0267,
+    "mean_blob_share": 0.0281
+   },
+   "ALL non-whale": {
+    "blobs": 673,
+    "pixel_share_whale": 0.0095,
+    "blobs_ge30": 0.0253,
+    "blobs_ge30_n": 17,
+    "blobs_ge50": 0.0208,
+    "mean_blob_share": 0.0231
+   },
+   "splash": {
+    "blobs": 64,
+    "pixel_share_whale": 0.0433,
+    "blobs_ge30": 0.0938,
+    "blobs_ge30_n": 6,
+    "blobs_ge50": 0.0625,
+    "mean_blob_share": 0.0798
+   },
+   "whale": {
+    "blobs": 929,
+    "pixel_share_whale": 0.9462,
+    "blobs_ge30": 0.8924,
+    "blobs_ge30_n": 829,
+    "blobs_ge50": 0.8762,
+    "mean_blob_share": 0.8538
+   },
+   "whale (sure)": {
+    "blobs": 781,
+    "pixel_share_whale": 0.969,
+    "blobs_ge30": 0.9654,
+    "blobs_ge30_n": 754,
+    "blobs_ge50": 0.9577,
+    "mean_blob_share": 0.9343
+   },
+   "water": {
+    "blobs": 113,
+    "pixel_share_whale": 0.0281,
+    "blobs_ge30": 0.0177,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.0088,
+    "mean_blob_share": 0.0134
+   },
+   "person": {
+    "blobs": 84,
+    "pixel_share_whale": 0.0006,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0001
+   },
+   "boat": {
+    "blobs": 31,
+    "pixel_share_whale": 0.0558,
+    "blobs_ge30": 0.0323,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0323,
+    "mean_blob_share": 0.0175
+   },
+   "pole": {
+    "blobs": 21,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "unclear": {
+    "blobs": 4,
+    "pixel_share_whale": 0.4872,
+    "blobs_ge30": 0.5,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.5,
+    "mean_blob_share": 0.3021
+   },
+   "shore": {
+    "blobs": 52,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 29,
+    "pixel_share_whale": 0.6905,
+    "blobs_ge30": 0.5172,
+    "blobs_ge30_n": 15,
+    "blobs_ge50": 0.4828,
+    "mean_blob_share": 0.4026
+   },
+   "drone": {
+    "blobs": 43,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 3,
+    "pixel_share_whale": 0.1833,
+    "blobs_ge30": 0.3333,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.3333,
+    "mean_blob_share": 0.333
+   }
+  }
+ },
+ "s4": {
+  "val": {
+   "whale": {
+    "blobs": 199,
+    "pixel_share_whale": 0.8996,
+    "blobs_ge30": 0.9095,
+    "blobs_ge30_n": 181,
+    "blobs_ge50": 0.8693,
+    "mean_blob_share": 0.8084
+   },
+   "whale (sure)": {
+    "blobs": 161,
+    "pixel_share_whale": 0.9113,
+    "blobs_ge30": 0.9503,
+    "blobs_ge30_n": 153,
+    "blobs_ge50": 0.9255,
+    "mean_blob_share": 0.8659
+   },
+   "person": {
+    "blobs": 42,
+    "pixel_share_whale": 0.0315,
+    "blobs_ge30": 0.0238,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0122
+   },
+   "ALL non-whale": {
+    "blobs": 197,
+    "pixel_share_whale": 0.0292,
+    "blobs_ge30": 0.0508,
+    "blobs_ge30_n": 10,
+    "blobs_ge50": 0.0355,
+    "mean_blob_share": 0.0362
+   },
+   "splash": {
+    "blobs": 18,
+    "pixel_share_whale": 0.0116,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0124
+   },
+   "wake": {
+    "blobs": 69,
+    "pixel_share_whale": 0.0998,
+    "blobs_ge30": 0.0435,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.029,
+    "mean_blob_share": 0.0314
+   },
+   "water": {
+    "blobs": 22,
+    "pixel_share_whale": 0.1219,
+    "blobs_ge30": 0.0909,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.0455,
+    "mean_blob_share": 0.0493
+   },
+   "drone": {
+    "blobs": 9,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "shore": {
+    "blobs": 16,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "boat": {
+    "blobs": 11,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 13,
+    "pixel_share_whale": 0.4018,
+    "blobs_ge30": 0.6154,
+    "blobs_ge30_n": 8,
+    "blobs_ge50": 0.4615,
+    "mean_blob_share": 0.4186
+   },
+   "bird": {
+    "blobs": 4,
+    "pixel_share_whale": 0.5383,
+    "blobs_ge30": 0.75,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.75,
+    "mean_blob_share": 0.5529
+   },
+   "unclear": {
+    "blobs": 1,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 1,
+    "pixel_share_whale": 0.9314,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9314
+   },
+   "pole": {
+    "blobs": 5,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   }
+  },
+  "train": {
+   "wake": {
+    "blobs": 262,
+    "pixel_share_whale": 0.0277,
+    "blobs_ge30": 0.0153,
+    "blobs_ge30_n": 4,
+    "blobs_ge50": 0.0076,
+    "mean_blob_share": 0.0146
+   },
+   "ALL non-whale": {
+    "blobs": 673,
+    "pixel_share_whale": 0.0105,
+    "blobs_ge30": 0.0178,
+    "blobs_ge30_n": 12,
+    "blobs_ge50": 0.0119,
+    "mean_blob_share": 0.0142
+   },
+   "splash": {
+    "blobs": 64,
+    "pixel_share_whale": 0.0278,
+    "blobs_ge30": 0.0625,
+    "blobs_ge30_n": 4,
+    "blobs_ge50": 0.0312,
+    "mean_blob_share": 0.0414
+   },
+   "whale": {
+    "blobs": 929,
+    "pixel_share_whale": 0.908,
+    "blobs_ge30": 0.8934,
+    "blobs_ge30_n": 830,
+    "blobs_ge50": 0.8687,
+    "mean_blob_share": 0.8014
+   },
+   "whale (sure)": {
+    "blobs": 781,
+    "pixel_share_whale": 0.9312,
+    "blobs_ge30": 0.9641,
+    "blobs_ge30_n": 753,
+    "blobs_ge50": 0.9501,
+    "mean_blob_share": 0.8801
+   },
+   "water": {
+    "blobs": 113,
+    "pixel_share_whale": 0.0485,
+    "blobs_ge30": 0.0265,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.0265,
+    "mean_blob_share": 0.02
+   },
+   "person": {
+    "blobs": 84,
+    "pixel_share_whale": 0.0021,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0004
+   },
+   "boat": {
+    "blobs": 31,
+    "pixel_share_whale": 0.0524,
+    "blobs_ge30": 0.0323,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0323,
+    "mean_blob_share": 0.0165
+   },
+   "pole": {
+    "blobs": 21,
+    "pixel_share_whale": 0.0017,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0031
+   },
+   "unclear": {
+    "blobs": 4,
+    "pixel_share_whale": 0.4754,
+    "blobs_ge30": 0.5,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.5,
+    "mean_blob_share": 0.2961
+   },
+   "shore": {
+    "blobs": 52,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 29,
+    "pixel_share_whale": 0.6497,
+    "blobs_ge30": 0.6207,
+    "blobs_ge30_n": 18,
+    "blobs_ge50": 0.3103,
+    "mean_blob_share": 0.3477
+   },
+   "drone": {
+    "blobs": 43,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 3,
+    "pixel_share_whale": 0.0398,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0723
+   }
+  }
+ },
+ "s3": {
+  "val": {
+   "whale": {
+    "blobs": 199,
+    "pixel_share_whale": 0.9494,
+    "blobs_ge30": 0.8995,
+    "blobs_ge30_n": 179,
+    "blobs_ge50": 0.8794,
+    "mean_blob_share": 0.8544
+   },
+   "whale (sure)": {
+    "blobs": 161,
+    "pixel_share_whale": 0.957,
+    "blobs_ge30": 0.9503,
+    "blobs_ge30_n": 153,
+    "blobs_ge50": 0.9379,
+    "mean_blob_share": 0.915
+   },
+   "person": {
+    "blobs": 42,
+    "pixel_share_whale": 0.0328,
+    "blobs_ge30": 0.0238,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0126
+   },
+   "ALL non-whale": {
+    "blobs": 197,
+    "pixel_share_whale": 0.0315,
+    "blobs_ge30": 0.0558,
+    "blobs_ge30_n": 11,
+    "blobs_ge50": 0.0457,
+    "mean_blob_share": 0.0443
+   },
+   "splash": {
+    "blobs": 18,
+    "pixel_share_whale": 0.0324,
+    "blobs_ge30": 0.0556,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0556,
+    "mean_blob_share": 0.0517
+   },
+   "wake": {
+    "blobs": 69,
+    "pixel_share_whale": 0.1147,
+    "blobs_ge30": 0.0435,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.0435,
+    "mean_blob_share": 0.0291
+   },
+   "water": {
+    "blobs": 22,
+    "pixel_share_whale": 0.1741,
+    "blobs_ge30": 0.0455,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0455,
+    "mean_blob_share": 0.0455
+   },
+   "drone": {
+    "blobs": 9,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "shore": {
+    "blobs": 16,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "boat": {
+    "blobs": 11,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 13,
+    "pixel_share_whale": 0.5295,
+    "blobs_ge30": 0.6923,
+    "blobs_ge30_n": 9,
+    "blobs_ge50": 0.6154,
+    "mean_blob_share": 0.5339
+   },
+   "bird": {
+    "blobs": 4,
+    "pixel_share_whale": 0.7977,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 4,
+    "blobs_ge50": 0.75,
+    "mean_blob_share": 0.8148
+   },
+   "unclear": {
+    "blobs": 1,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 1,
+    "pixel_share_whale": 1.0,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 1.0
+   },
+   "pole": {
+    "blobs": 5,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   }
+  },
+  "train": {
+   "wake": {
+    "blobs": 262,
+    "pixel_share_whale": 0.0301,
+    "blobs_ge30": 0.0305,
+    "blobs_ge30_n": 8,
+    "blobs_ge50": 0.0267,
+    "mean_blob_share": 0.0281
+   },
+   "ALL non-whale": {
+    "blobs": 673,
+    "pixel_share_whale": 0.0131,
+    "blobs_ge30": 0.0357,
+    "blobs_ge30_n": 24,
+    "blobs_ge50": 0.0282,
+    "mean_blob_share": 0.03
+   },
+   "splash": {
+    "blobs": 64,
+    "pixel_share_whale": 0.067,
+    "blobs_ge30": 0.125,
+    "blobs_ge30_n": 8,
+    "blobs_ge50": 0.0938,
+    "mean_blob_share": 0.1013
+   },
+   "whale": {
+    "blobs": 929,
+    "pixel_share_whale": 0.946,
+    "blobs_ge30": 0.8902,
+    "blobs_ge30_n": 827,
+    "blobs_ge50": 0.8751,
+    "mean_blob_share": 0.8548
+   },
+   "whale (sure)": {
+    "blobs": 781,
+    "pixel_share_whale": 0.9687,
+    "blobs_ge30": 0.9616,
+    "blobs_ge30_n": 751,
+    "blobs_ge50": 0.9539,
+    "mean_blob_share": 0.9333
+   },
+   "water": {
+    "blobs": 113,
+    "pixel_share_whale": 0.067,
+    "blobs_ge30": 0.0442,
+    "blobs_ge30_n": 5,
+    "blobs_ge50": 0.0354,
+    "mean_blob_share": 0.0372
+   },
+   "person": {
+    "blobs": 84,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "boat": {
+    "blobs": 31,
+    "pixel_share_whale": 0.079,
+    "blobs_ge30": 0.0323,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0323,
+    "mean_blob_share": 0.0248
+   },
+   "pole": {
+    "blobs": 21,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "unclear": {
+    "blobs": 4,
+    "pixel_share_whale": 0.4922,
+    "blobs_ge30": 0.5,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.5,
+    "mean_blob_share": 0.3031
+   },
+   "shore": {
+    "blobs": 52,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 29,
+    "pixel_share_whale": 0.7015,
+    "blobs_ge30": 0.5172,
+    "blobs_ge30_n": 15,
+    "blobs_ge50": 0.4483,
+    "mean_blob_share": 0.4049
+   },
+   "drone": {
+    "blobs": 43,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 3,
+    "pixel_share_whale": 0.1952,
+    "blobs_ge30": 0.6667,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.3333,
+    "mean_blob_share": 0.4581
+   }
+  }
+ },
+ "s0": {
+  "val": {
+   "whale": {
+    "blobs": 199,
+    "pixel_share_whale": 0.8764,
+    "blobs_ge30": 0.9447,
+    "blobs_ge30_n": 188,
+    "blobs_ge50": 0.9045,
+    "mean_blob_share": 0.8357
+   },
+   "whale (sure)": {
+    "blobs": 161,
+    "pixel_share_whale": 0.8841,
+    "blobs_ge30": 0.9752,
+    "blobs_ge30_n": 157,
+    "blobs_ge50": 0.9379,
+    "mean_blob_share": 0.8766
+   },
+   "person": {
+    "blobs": 42,
+    "pixel_share_whale": 0.6259,
+    "blobs_ge30": 0.8571,
+    "blobs_ge30_n": 36,
+    "blobs_ge50": 0.6905,
+    "mean_blob_share": 0.6732
+   },
+   "ALL non-whale": {
+    "blobs": 197,
+    "pixel_share_whale": 0.5327,
+    "blobs_ge30": 0.3604,
+    "blobs_ge30_n": 71,
+    "blobs_ge50": 0.2944,
+    "mean_blob_share": 0.2911
+   },
+   "splash": {
+    "blobs": 18,
+    "pixel_share_whale": 0.0451,
+    "blobs_ge30": 0.1667,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.1111,
+    "mean_blob_share": 0.1362
+   },
+   "wake": {
+    "blobs": 69,
+    "pixel_share_whale": 0.2347,
+    "blobs_ge30": 0.2029,
+    "blobs_ge30_n": 14,
+    "blobs_ge50": 0.1449,
+    "mean_blob_share": 0.1454
+   },
+   "water": {
+    "blobs": 22,
+    "pixel_share_whale": 0.0758,
+    "blobs_ge30": 0.0909,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.0909,
+    "mean_blob_share": 0.0982
+   },
+   "drone": {
+    "blobs": 9,
+    "pixel_share_whale": 0.9029,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 9,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9024
+   },
+   "shore": {
+    "blobs": 16,
+    "pixel_share_whale": 0.0023,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0161
+   },
+   "boat": {
+    "blobs": 11,
+    "pixel_share_whale": 0.2838,
+    "blobs_ge30": 0.0909,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0432
+   },
+   "whale_splash": {
+    "blobs": 13,
+    "pixel_share_whale": 0.5447,
+    "blobs_ge30": 0.9231,
+    "blobs_ge30_n": 12,
+    "blobs_ge50": 0.7692,
+    "mean_blob_share": 0.6757
+   },
+   "bird": {
+    "blobs": 4,
+    "pixel_share_whale": 0.951,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 4,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9307
+   },
+   "unclear": {
+    "blobs": 1,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 1,
+    "pixel_share_whale": 0.9974,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 0.9974
+   },
+   "pole": {
+    "blobs": 5,
+    "pixel_share_whale": 0.1093,
+    "blobs_ge30": 0.2,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.2,
+    "mean_blob_share": 0.1718
+   }
+  },
+  "train": {
+   "wake": {
+    "blobs": 262,
+    "pixel_share_whale": 0.1505,
+    "blobs_ge30": 0.1489,
+    "blobs_ge30_n": 39,
+    "blobs_ge50": 0.1145,
+    "mean_blob_share": 0.1224
+   },
+   "ALL non-whale": {
+    "blobs": 673,
+    "pixel_share_whale": 0.2432,
+    "blobs_ge30": 0.2704,
+    "blobs_ge30_n": 182,
+    "blobs_ge50": 0.208,
+    "mean_blob_share": 0.2161
+   },
+   "splash": {
+    "blobs": 64,
+    "pixel_share_whale": 0.1415,
+    "blobs_ge30": 0.2969,
+    "blobs_ge30_n": 19,
+    "blobs_ge50": 0.2188,
+    "mean_blob_share": 0.2315
+   },
+   "whale": {
+    "blobs": 929,
+    "pixel_share_whale": 0.8358,
+    "blobs_ge30": 0.9074,
+    "blobs_ge30_n": 843,
+    "blobs_ge50": 0.8773,
+    "mean_blob_share": 0.8032
+   },
+   "whale (sure)": {
+    "blobs": 781,
+    "pixel_share_whale": 0.8534,
+    "blobs_ge30": 0.9629,
+    "blobs_ge30_n": 752,
+    "blobs_ge50": 0.9385,
+    "mean_blob_share": 0.8615
+   },
+   "water": {
+    "blobs": 113,
+    "pixel_share_whale": 0.0668,
+    "blobs_ge30": 0.1504,
+    "blobs_ge30_n": 17,
+    "blobs_ge50": 0.0885,
+    "mean_blob_share": 0.1043
+   },
+   "person": {
+    "blobs": 84,
+    "pixel_share_whale": 0.3564,
+    "blobs_ge30": 0.5714,
+    "blobs_ge30_n": 48,
+    "blobs_ge50": 0.369,
+    "mean_blob_share": 0.3997
+   },
+   "boat": {
+    "blobs": 31,
+    "pixel_share_whale": 0.19,
+    "blobs_ge30": 0.1935,
+    "blobs_ge30_n": 6,
+    "blobs_ge50": 0.1613,
+    "mean_blob_share": 0.182
+   },
+   "pole": {
+    "blobs": 21,
+    "pixel_share_whale": 0.062,
+    "blobs_ge30": 0.381,
+    "blobs_ge30_n": 8,
+    "blobs_ge50": 0.3333,
+    "mean_blob_share": 0.2974
+   },
+   "unclear": {
+    "blobs": 4,
+    "pixel_share_whale": 0.4945,
+    "blobs_ge30": 0.5,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.25,
+    "mean_blob_share": 0.3371
+   },
+   "shore": {
+    "blobs": 52,
+    "pixel_share_whale": 0.0145,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0076
+   },
+   "whale_splash": {
+    "blobs": 29,
+    "pixel_share_whale": 0.3224,
+    "blobs_ge30": 0.6897,
+    "blobs_ge30_n": 20,
+    "blobs_ge50": 0.5517,
+    "mean_blob_share": 0.488
+   },
+   "drone": {
+    "blobs": 43,
+    "pixel_share_whale": 0.9265,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 43,
+    "blobs_ge50": 0.9767,
+    "mean_blob_share": 0.9224
+   },
+   "other": {
+    "blobs": 3,
+    "pixel_share_whale": 0.1746,
+    "blobs_ge30": 0.6667,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.3333,
+    "mean_blob_share": 0.4036
+   }
+  }
+ },
+ "s5": {
+  "val": {
+   "whale": {
+    "blobs": 199,
+    "pixel_share_whale": 0.9081,
+    "blobs_ge30": 0.9095,
+    "blobs_ge30_n": 181,
+    "blobs_ge50": 0.8794,
+    "mean_blob_share": 0.8218
+   },
+   "whale (sure)": {
+    "blobs": 161,
+    "pixel_share_whale": 0.9197,
+    "blobs_ge30": 0.9565,
+    "blobs_ge30_n": 154,
+    "blobs_ge50": 0.9255,
+    "mean_blob_share": 0.878
+   },
+   "person": {
+    "blobs": 42,
+    "pixel_share_whale": 0.0319,
+    "blobs_ge30": 0.0238,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0123
+   },
+   "ALL non-whale": {
+    "blobs": 197,
+    "pixel_share_whale": 0.0288,
+    "blobs_ge30": 0.0457,
+    "blobs_ge30_n": 9,
+    "blobs_ge50": 0.0355,
+    "mean_blob_share": 0.0355
+   },
+   "splash": {
+    "blobs": 18,
+    "pixel_share_whale": 0.0099,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0106
+   },
+   "wake": {
+    "blobs": 69,
+    "pixel_share_whale": 0.0783,
+    "blobs_ge30": 0.029,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.029,
+    "mean_blob_share": 0.0256
+   },
+   "water": {
+    "blobs": 22,
+    "pixel_share_whale": 0.1201,
+    "blobs_ge30": 0.0909,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.0455,
+    "mean_blob_share": 0.053
+   },
+   "drone": {
+    "blobs": 9,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "shore": {
+    "blobs": 16,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "boat": {
+    "blobs": 11,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 13,
+    "pixel_share_whale": 0.4283,
+    "blobs_ge30": 0.6923,
+    "blobs_ge30_n": 9,
+    "blobs_ge50": 0.4615,
+    "mean_blob_share": 0.4292
+   },
+   "bird": {
+    "blobs": 4,
+    "pixel_share_whale": 0.5724,
+    "blobs_ge30": 0.75,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.75,
+    "mean_blob_share": 0.5861
+   },
+   "unclear": {
+    "blobs": 1,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 1,
+    "pixel_share_whale": 1.0,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 1.0
+   },
+   "pole": {
+    "blobs": 5,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   }
+  },
+  "train": {
+   "wake": {
+    "blobs": 262,
+    "pixel_share_whale": 0.0286,
+    "blobs_ge30": 0.0191,
+    "blobs_ge30_n": 5,
+    "blobs_ge50": 0.0115,
+    "mean_blob_share": 0.0165
+   },
+   "ALL non-whale": {
+    "blobs": 673,
+    "pixel_share_whale": 0.0093,
+    "blobs_ge30": 0.0193,
+    "blobs_ge30_n": 13,
+    "blobs_ge50": 0.0134,
+    "mean_blob_share": 0.0162
+   },
+   "splash": {
+    "blobs": 64,
+    "pixel_share_whale": 0.0375,
+    "blobs_ge30": 0.0625,
+    "blobs_ge30_n": 4,
+    "blobs_ge50": 0.0469,
+    "mean_blob_share": 0.056
+   },
+   "whale": {
+    "blobs": 929,
+    "pixel_share_whale": 0.9171,
+    "blobs_ge30": 0.8945,
+    "blobs_ge30_n": 831,
+    "blobs_ge50": 0.8687,
+    "mean_blob_share": 0.8187
+   },
+   "whale (sure)": {
+    "blobs": 781,
+    "pixel_share_whale": 0.9401,
+    "blobs_ge30": 0.9654,
+    "blobs_ge30_n": 754,
+    "blobs_ge50": 0.9539,
+    "mean_blob_share": 0.9003
+   },
+   "water": {
+    "blobs": 113,
+    "pixel_share_whale": 0.0153,
+    "blobs_ge30": 0.0177,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.0088,
+    "mean_blob_share": 0.0148
+   },
+   "person": {
+    "blobs": 84,
+    "pixel_share_whale": 0.0015,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0003
+   },
+   "boat": {
+    "blobs": 31,
+    "pixel_share_whale": 0.0524,
+    "blobs_ge30": 0.0323,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0323,
+    "mean_blob_share": 0.0165
+   },
+   "pole": {
+    "blobs": 21,
+    "pixel_share_whale": 0.0011,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.002
+   },
+   "unclear": {
+    "blobs": 4,
+    "pixel_share_whale": 0.4787,
+    "blobs_ge30": 0.5,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.5,
+    "mean_blob_share": 0.2984
+   },
+   "shore": {
+    "blobs": 52,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 29,
+    "pixel_share_whale": 0.6523,
+    "blobs_ge30": 0.5862,
+    "blobs_ge30_n": 17,
+    "blobs_ge50": 0.3448,
+    "mean_blob_share": 0.3322
+   },
+   "drone": {
+    "blobs": 43,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 3,
+    "pixel_share_whale": 0.1379,
+    "blobs_ge30": 0.3333,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.3333,
+    "mean_blob_share": 0.2505
+   }
+  }
+ },
+ "s5h": {
+  "val": {
+   "whale": {
+    "blobs": 199,
+    "pixel_share_whale": 0.9204,
+    "blobs_ge30": 0.9146,
+    "blobs_ge30_n": 182,
+    "blobs_ge50": 0.8995,
+    "mean_blob_share": 0.839
+   },
+   "whale (sure)": {
+    "blobs": 161,
+    "pixel_share_whale": 0.9312,
+    "blobs_ge30": 0.9565,
+    "blobs_ge30_n": 154,
+    "blobs_ge50": 0.9379,
+    "mean_blob_share": 0.8914
+   },
+   "person": {
+    "blobs": 42,
+    "pixel_share_whale": 0.0322,
+    "blobs_ge30": 0.0238,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0124
+   },
+   "ALL non-whale": {
+    "blobs": 197,
+    "pixel_share_whale": 0.0296,
+    "blobs_ge30": 0.0457,
+    "blobs_ge30_n": 9,
+    "blobs_ge50": 0.0406,
+    "mean_blob_share": 0.0419
+   },
+   "splash": {
+    "blobs": 18,
+    "pixel_share_whale": 0.0126,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0134
+   },
+   "wake": {
+    "blobs": 69,
+    "pixel_share_whale": 0.0869,
+    "blobs_ge30": 0.029,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.029,
+    "mean_blob_share": 0.0325
+   },
+   "water": {
+    "blobs": 22,
+    "pixel_share_whale": 0.1505,
+    "blobs_ge30": 0.0909,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.0909,
+    "mean_blob_share": 0.0779
+   },
+   "drone": {
+    "blobs": 9,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "shore": {
+    "blobs": 16,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "boat": {
+    "blobs": 11,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 13,
+    "pixel_share_whale": 0.4496,
+    "blobs_ge30": 0.6923,
+    "blobs_ge30_n": 9,
+    "blobs_ge50": 0.4615,
+    "mean_blob_share": 0.464
+   },
+   "bird": {
+    "blobs": 4,
+    "pixel_share_whale": 0.6076,
+    "blobs_ge30": 0.75,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.75,
+    "mean_blob_share": 0.6327
+   },
+   "unclear": {
+    "blobs": 1,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 1,
+    "pixel_share_whale": 1.0,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 1.0
+   },
+   "pole": {
+    "blobs": 5,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   }
+  },
+  "train": {
+   "wake": {
+    "blobs": 262,
+    "pixel_share_whale": 0.0359,
+    "blobs_ge30": 0.0229,
+    "blobs_ge30_n": 6,
+    "blobs_ge50": 0.0229,
+    "mean_blob_share": 0.0221
+   },
+   "ALL non-whale": {
+    "blobs": 673,
+    "pixel_share_whale": 0.0108,
+    "blobs_ge30": 0.0238,
+    "blobs_ge30_n": 16,
+    "blobs_ge50": 0.0208,
+    "mean_blob_share": 0.0205
+   },
+   "splash": {
+    "blobs": 64,
+    "pixel_share_whale": 0.0443,
+    "blobs_ge30": 0.0781,
+    "blobs_ge30_n": 5,
+    "blobs_ge50": 0.0625,
+    "mean_blob_share": 0.0647
+   },
+   "whale": {
+    "blobs": 929,
+    "pixel_share_whale": 0.929,
+    "blobs_ge30": 0.8999,
+    "blobs_ge30_n": 836,
+    "blobs_ge50": 0.8816,
+    "mean_blob_share": 0.8373
+   },
+   "whale (sure)": {
+    "blobs": 781,
+    "pixel_share_whale": 0.9518,
+    "blobs_ge30": 0.9693,
+    "blobs_ge30_n": 757,
+    "blobs_ge50": 0.9603,
+    "mean_blob_share": 0.9161
+   },
+   "water": {
+    "blobs": 113,
+    "pixel_share_whale": 0.0236,
+    "blobs_ge30": 0.0265,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.0177,
+    "mean_blob_share": 0.0207
+   },
+   "person": {
+    "blobs": 84,
+    "pixel_share_whale": 0.0018,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0003
+   },
+   "boat": {
+    "blobs": 31,
+    "pixel_share_whale": 0.0563,
+    "blobs_ge30": 0.0323,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0323,
+    "mean_blob_share": 0.0177
+   },
+   "pole": {
+    "blobs": 21,
+    "pixel_share_whale": 0.0022,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.004
+   },
+   "unclear": {
+    "blobs": 4,
+    "pixel_share_whale": 0.5004,
+    "blobs_ge30": 0.5,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.5,
+    "mean_blob_share": 0.3086
+   },
+   "shore": {
+    "blobs": 52,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 29,
+    "pixel_share_whale": 0.6641,
+    "blobs_ge30": 0.5862,
+    "blobs_ge30_n": 17,
+    "blobs_ge50": 0.4138,
+    "mean_blob_share": 0.36
+   },
+   "drone": {
+    "blobs": 43,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 3,
+    "pixel_share_whale": 0.1555,
+    "blobs_ge30": 0.3333,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.3333,
+    "mean_blob_share": 0.2825
+   }
+  }
+ },
+ "s5b": {
+  "val": {
+   "whale": {
+    "blobs": 199,
+    "pixel_share_whale": 0.9152,
+    "blobs_ge30": 0.9246,
+    "blobs_ge30_n": 184,
+    "blobs_ge50": 0.8894,
+    "mean_blob_share": 0.8385
+   },
+   "whale (sure)": {
+    "blobs": 161,
+    "pixel_share_whale": 0.9261,
+    "blobs_ge30": 0.9752,
+    "blobs_ge30_n": 157,
+    "blobs_ge50": 0.9441,
+    "mean_blob_share": 0.897
+   },
+   "person": {
+    "blobs": 42,
+    "pixel_share_whale": 0.0321,
+    "blobs_ge30": 0.0238,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0125
+   },
+   "ALL non-whale": {
+    "blobs": 197,
+    "pixel_share_whale": 0.032,
+    "blobs_ge30": 0.0508,
+    "blobs_ge30_n": 10,
+    "blobs_ge50": 0.0406,
+    "mean_blob_share": 0.0413
+   },
+   "splash": {
+    "blobs": 18,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "wake": {
+    "blobs": 69,
+    "pixel_share_whale": 0.1531,
+    "blobs_ge30": 0.058,
+    "blobs_ge30_n": 4,
+    "blobs_ge50": 0.0435,
+    "mean_blob_share": 0.0376
+   },
+   "water": {
+    "blobs": 22,
+    "pixel_share_whale": 0.2236,
+    "blobs_ge30": 0.0909,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.0909,
+    "mean_blob_share": 0.0869
+   },
+   "drone": {
+    "blobs": 9,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "shore": {
+    "blobs": 16,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "boat": {
+    "blobs": 11,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 13,
+    "pixel_share_whale": 0.4349,
+    "blobs_ge30": 0.6923,
+    "blobs_ge30_n": 9,
+    "blobs_ge50": 0.4615,
+    "mean_blob_share": 0.4881
+   },
+   "bird": {
+    "blobs": 4,
+    "pixel_share_whale": 0.6289,
+    "blobs_ge30": 0.5,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.5,
+    "mean_blob_share": 0.5258
+   },
+   "unclear": {
+    "blobs": 1,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 1,
+    "pixel_share_whale": 1.0,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 1.0
+   },
+   "pole": {
+    "blobs": 5,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   }
+  },
+  "train": {
+   "wake": {
+    "blobs": 262,
+    "pixel_share_whale": 0.0492,
+    "blobs_ge30": 0.0458,
+    "blobs_ge30_n": 12,
+    "blobs_ge50": 0.0344,
+    "mean_blob_share": 0.0344
+   },
+   "ALL non-whale": {
+    "blobs": 673,
+    "pixel_share_whale": 0.0139,
+    "blobs_ge30": 0.0327,
+    "blobs_ge30_n": 22,
+    "blobs_ge50": 0.0238,
+    "mean_blob_share": 0.0249
+   },
+   "splash": {
+    "blobs": 64,
+    "pixel_share_whale": 0.0469,
+    "blobs_ge30": 0.0469,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.0312,
+    "mean_blob_share": 0.0424
+   },
+   "whale": {
+    "blobs": 929,
+    "pixel_share_whale": 0.9223,
+    "blobs_ge30": 0.902,
+    "blobs_ge30_n": 838,
+    "blobs_ge50": 0.8816,
+    "mean_blob_share": 0.8288
+   },
+   "whale (sure)": {
+    "blobs": 781,
+    "pixel_share_whale": 0.9451,
+    "blobs_ge30": 0.9718,
+    "blobs_ge30_n": 759,
+    "blobs_ge50": 0.9616,
+    "mean_blob_share": 0.9084
+   },
+   "water": {
+    "blobs": 113,
+    "pixel_share_whale": 0.0378,
+    "blobs_ge30": 0.0442,
+    "blobs_ge30_n": 5,
+    "blobs_ge50": 0.0265,
+    "mean_blob_share": 0.0313
+   },
+   "person": {
+    "blobs": 84,
+    "pixel_share_whale": 0.0027,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0005
+   },
+   "boat": {
+    "blobs": 31,
+    "pixel_share_whale": 0.0686,
+    "blobs_ge30": 0.0323,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0323,
+    "mean_blob_share": 0.0215
+   },
+   "pole": {
+    "blobs": 21,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "unclear": {
+    "blobs": 4,
+    "pixel_share_whale": 0.4332,
+    "blobs_ge30": 0.5,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.25,
+    "mean_blob_share": 0.2758
+   },
+   "shore": {
+    "blobs": 52,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 29,
+    "pixel_share_whale": 0.6766,
+    "blobs_ge30": 0.6207,
+    "blobs_ge30_n": 18,
+    "blobs_ge50": 0.3448,
+    "mean_blob_share": 0.385
+   },
+   "drone": {
+    "blobs": 43,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 3,
+    "pixel_share_whale": 0.1414,
+    "blobs_ge30": 0.3333,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.3333,
+    "mean_blob_share": 0.2568
+   }
+  }
+ },
+ "s6": {
+  "val": {
+   "whale": {
+    "blobs": 199,
+    "pixel_share_whale": 0.9289,
+    "blobs_ge30": 0.9095,
+    "blobs_ge30_n": 181,
+    "blobs_ge50": 0.8894,
+    "mean_blob_share": 0.8476
+   },
+   "whale (sure)": {
+    "blobs": 161,
+    "pixel_share_whale": 0.9382,
+    "blobs_ge30": 0.9565,
+    "blobs_ge30_n": 154,
+    "blobs_ge50": 0.9379,
+    "mean_blob_share": 0.9033
+   },
+   "person": {
+    "blobs": 42,
+    "pixel_share_whale": 0.0326,
+    "blobs_ge30": 0.0238,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0126
+   },
+   "ALL non-whale": {
+    "blobs": 197,
+    "pixel_share_whale": 0.0306,
+    "blobs_ge30": 0.0508,
+    "blobs_ge30_n": 10,
+    "blobs_ge50": 0.0406,
+    "mean_blob_share": 0.0399
+   },
+   "splash": {
+    "blobs": 18,
+    "pixel_share_whale": 0.0059,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0063
+   },
+   "wake": {
+    "blobs": 69,
+    "pixel_share_whale": 0.1075,
+    "blobs_ge30": 0.0435,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.0435,
+    "mean_blob_share": 0.033
+   },
+   "water": {
+    "blobs": 22,
+    "pixel_share_whale": 0.1691,
+    "blobs_ge30": 0.0909,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.0455,
+    "mean_blob_share": 0.0648
+   },
+   "drone": {
+    "blobs": 9,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "shore": {
+    "blobs": 16,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "boat": {
+    "blobs": 11,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 13,
+    "pixel_share_whale": 0.4649,
+    "blobs_ge30": 0.6923,
+    "blobs_ge30_n": 9,
+    "blobs_ge50": 0.4615,
+    "mean_blob_share": 0.4893
+   },
+   "bird": {
+    "blobs": 4,
+    "pixel_share_whale": 0.615,
+    "blobs_ge30": 0.75,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.75,
+    "mean_blob_share": 0.6305
+   },
+   "unclear": {
+    "blobs": 1,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 1,
+    "pixel_share_whale": 1.0,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 1.0
+   },
+   "pole": {
+    "blobs": 5,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   }
+  },
+  "train": {
+   "wake": {
+    "blobs": 262,
+    "pixel_share_whale": 0.0401,
+    "blobs_ge30": 0.0344,
+    "blobs_ge30_n": 9,
+    "blobs_ge50": 0.0229,
+    "mean_blob_share": 0.0271
+   },
+   "ALL non-whale": {
+    "blobs": 673,
+    "pixel_share_whale": 0.0146,
+    "blobs_ge30": 0.0297,
+    "blobs_ge30_n": 20,
+    "blobs_ge50": 0.0208,
+    "mean_blob_share": 0.0225
+   },
+   "splash": {
+    "blobs": 64,
+    "pixel_share_whale": 0.0432,
+    "blobs_ge30": 0.0938,
+    "blobs_ge30_n": 6,
+    "blobs_ge50": 0.0625,
+    "mean_blob_share": 0.0687
+   },
+   "whale": {
+    "blobs": 929,
+    "pixel_share_whale": 0.9364,
+    "blobs_ge30": 0.8988,
+    "blobs_ge30_n": 835,
+    "blobs_ge50": 0.887,
+    "mean_blob_share": 0.8476
+   },
+   "whale (sure)": {
+    "blobs": 781,
+    "pixel_share_whale": 0.9588,
+    "blobs_ge30": 0.968,
+    "blobs_ge30_n": 756,
+    "blobs_ge50": 0.9603,
+    "mean_blob_share": 0.9239
+   },
+   "water": {
+    "blobs": 113,
+    "pixel_share_whale": 0.0674,
+    "blobs_ge30": 0.0265,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.0177,
+    "mean_blob_share": 0.0173
+   },
+   "person": {
+    "blobs": 84,
+    "pixel_share_whale": 0.0025,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0004
+   },
+   "boat": {
+    "blobs": 31,
+    "pixel_share_whale": 0.0737,
+    "blobs_ge30": 0.0323,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0323,
+    "mean_blob_share": 0.0231
+   },
+   "pole": {
+    "blobs": 21,
+    "pixel_share_whale": 0.0002,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0004
+   },
+   "unclear": {
+    "blobs": 4,
+    "pixel_share_whale": 0.5111,
+    "blobs_ge30": 0.5,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.5,
+    "mean_blob_share": 0.3122
+   },
+   "shore": {
+    "blobs": 52,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 29,
+    "pixel_share_whale": 0.6778,
+    "blobs_ge30": 0.5517,
+    "blobs_ge30_n": 16,
+    "blobs_ge50": 0.3793,
+    "mean_blob_share": 0.3641
+   },
+   "drone": {
+    "blobs": 43,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 3,
+    "pixel_share_whale": 0.1672,
+    "blobs_ge30": 0.3333,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.3333,
+    "mean_blob_share": 0.3039
+   }
+  }
+ },
+ "s6h": {
+  "val": {
+   "whale": {
+    "blobs": 199,
+    "pixel_share_whale": 0.9385,
+    "blobs_ge30": 0.9095,
+    "blobs_ge30_n": 181,
+    "blobs_ge50": 0.8945,
+    "mean_blob_share": 0.8613
+   },
+   "whale (sure)": {
+    "blobs": 161,
+    "pixel_share_whale": 0.9473,
+    "blobs_ge30": 0.9565,
+    "blobs_ge30_n": 154,
+    "blobs_ge50": 0.9379,
+    "mean_blob_share": 0.9148
+   },
+   "person": {
+    "blobs": 42,
+    "pixel_share_whale": 0.033,
+    "blobs_ge30": 0.0238,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0128
+   },
+   "ALL non-whale": {
+    "blobs": 197,
+    "pixel_share_whale": 0.0313,
+    "blobs_ge30": 0.0508,
+    "blobs_ge30_n": 10,
+    "blobs_ge50": 0.0457,
+    "mean_blob_share": 0.0454
+   },
+   "splash": {
+    "blobs": 18,
+    "pixel_share_whale": 0.0084,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0089
+   },
+   "wake": {
+    "blobs": 69,
+    "pixel_share_whale": 0.1176,
+    "blobs_ge30": 0.0435,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.0435,
+    "mean_blob_share": 0.0398
+   },
+   "water": {
+    "blobs": 22,
+    "pixel_share_whale": 0.1753,
+    "blobs_ge30": 0.0909,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.0909,
+    "mean_blob_share": 0.0823
+   },
+   "drone": {
+    "blobs": 9,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "shore": {
+    "blobs": 16,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "boat": {
+    "blobs": 11,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 13,
+    "pixel_share_whale": 0.4773,
+    "blobs_ge30": 0.6923,
+    "blobs_ge30_n": 9,
+    "blobs_ge50": 0.4615,
+    "mean_blob_share": 0.5014
+   },
+   "bird": {
+    "blobs": 4,
+    "pixel_share_whale": 0.6475,
+    "blobs_ge30": 0.75,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.75,
+    "mean_blob_share": 0.673
+   },
+   "unclear": {
+    "blobs": 1,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 1,
+    "pixel_share_whale": 1.0,
+    "blobs_ge30": 1.0,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 1.0,
+    "mean_blob_share": 1.0
+   },
+   "pole": {
+    "blobs": 5,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   }
+  },
+  "train": {
+   "wake": {
+    "blobs": 262,
+    "pixel_share_whale": 0.0477,
+    "blobs_ge30": 0.0458,
+    "blobs_ge30_n": 12,
+    "blobs_ge50": 0.0344,
+    "mean_blob_share": 0.0336
+   },
+   "ALL non-whale": {
+    "blobs": 673,
+    "pixel_share_whale": 0.0164,
+    "blobs_ge30": 0.0342,
+    "blobs_ge30_n": 23,
+    "blobs_ge50": 0.0267,
+    "mean_blob_share": 0.0271
+   },
+   "splash": {
+    "blobs": 64,
+    "pixel_share_whale": 0.0487,
+    "blobs_ge30": 0.0938,
+    "blobs_ge30_n": 6,
+    "blobs_ge50": 0.0781,
+    "mean_blob_share": 0.079
+   },
+   "whale": {
+    "blobs": 929,
+    "pixel_share_whale": 0.9446,
+    "blobs_ge30": 0.9074,
+    "blobs_ge30_n": 843,
+    "blobs_ge50": 0.8945,
+    "mean_blob_share": 0.8617
+   },
+   "whale (sure)": {
+    "blobs": 781,
+    "pixel_share_whale": 0.9667,
+    "blobs_ge30": 0.9718,
+    "blobs_ge30_n": 759,
+    "blobs_ge50": 0.9654,
+    "mean_blob_share": 0.9346
+   },
+   "water": {
+    "blobs": 113,
+    "pixel_share_whale": 0.0833,
+    "blobs_ge30": 0.0265,
+    "blobs_ge30_n": 3,
+    "blobs_ge50": 0.0177,
+    "mean_blob_share": 0.023
+   },
+   "person": {
+    "blobs": 84,
+    "pixel_share_whale": 0.0031,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0005
+   },
+   "boat": {
+    "blobs": 31,
+    "pixel_share_whale": 0.0773,
+    "blobs_ge30": 0.0323,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.0323,
+    "mean_blob_share": 0.0243
+   },
+   "pole": {
+    "blobs": 21,
+    "pixel_share_whale": 0.0004,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0008
+   },
+   "unclear": {
+    "blobs": 4,
+    "pixel_share_whale": 0.5245,
+    "blobs_ge30": 0.5,
+    "blobs_ge30_n": 2,
+    "blobs_ge50": 0.5,
+    "mean_blob_share": 0.3187
+   },
+   "shore": {
+    "blobs": 52,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "whale_splash": {
+    "blobs": 29,
+    "pixel_share_whale": 0.6892,
+    "blobs_ge30": 0.6207,
+    "blobs_ge30_n": 18,
+    "blobs_ge50": 0.4483,
+    "mean_blob_share": 0.4138
+   },
+   "drone": {
+    "blobs": 43,
+    "pixel_share_whale": 0.0,
+    "blobs_ge30": 0.0,
+    "blobs_ge30_n": 0,
+    "blobs_ge50": 0.0,
+    "mean_blob_share": 0.0
+   },
+   "other": {
+    "blobs": 3,
+    "pixel_share_whale": 0.1756,
+    "blobs_ge30": 0.3333,
+    "blobs_ge30_n": 1,
+    "blobs_ge50": 0.3333,
+    "mean_blob_share": 0.3189
+   }
+  }
+ }
+}

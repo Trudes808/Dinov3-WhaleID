@@ -1,0 +1,122 @@
+{
+ "train": {
+  "fluke": {
+   "n": 3223,
+   "simple": 0.831,
+   "complex_reasons": {
+    "view not sure / other": 0.079,
+    "splash": 0.075,
+    "photo edge": 0.038,
+    "white on whale": 0.0
+   }
+  },
+  "dorsal": {
+   "n": 4159,
+   "simple": 0.761,
+   "complex_reasons": {
+    "photo edge": 0.153,
+    "view not sure / other": 0.048,
+    "splash": 0.04,
+    "white on whale": 0.021
+   }
+  },
+  "other": {
+   "n": 1170,
+   "simple": 0.0,
+   "complex_reasons": {
+    "view not sure / other": 1.0,
+    "photo edge": 0.221,
+    "splash": 0.19
+   }
+  },
+  "all": {
+   "n": 8552,
+   "simple": 0.684,
+   "complex_reasons": {
+    "view not sure / other": 0.19,
+    "photo edge": 0.119,
+    "splash": 0.074,
+    "white on whale": 0.01
+   }
+  },
+  "share_simple_by_splash_threshold": {
+   "0.1": 0.38,
+   "0.2": 0.57,
+   "0.4": 0.684,
+   "0.8": 0.714
+  }
+ },
+ "val": {
+  "fluke": {
+   "n": 221,
+   "simple": 0.769,
+   "complex_reasons": {
+    "splash": 0.113,
+    "view not sure / other": 0.077,
+    "photo edge": 0.068
+   }
+  },
+  "dorsal": {
+   "n": 501,
+   "simple": 0.721,
+   "complex_reasons": {
+    "photo edge": 0.172,
+    "splash": 0.078,
+    "view not sure / other": 0.046,
+    "white on whale": 0.022
+   }
+  },
+  "other": {
+   "n": 239,
+   "simple": 0.0,
+   "complex_reasons": {
+    "view not sure / other": 1.0,
+    "splash": 0.205,
+    "photo edge": 0.151
+   }
+  },
+  "all": {
+   "n": 961,
+   "simple": 0.553,
+   "complex_reasons": {
+    "view not sure / other": 0.29,
+    "photo edge": 0.143,
+    "splash": 0.118,
+    "white on whale": 0.011
+   }
+  },
+  "share_simple_by_splash_threshold": {
+   "0.1": 0.304,
+   "0.2": 0.467,
+   "0.4": 0.553,
+   "0.8": 0.597
+  }
+ },
+ "click_days_complete_clicks": {
+  "fluke": {
+   "simple": {
+    "n": 98,
+    "complete": 0.561
+   },
+   "complex": {
+    "n": 12,
+    "complete": 0.167
+   }
+  },
+  "dorsal": {
+   "simple": {
+    "n": 168,
+    "complete": 0.863
+   },
+   "complex": {
+    "n": 62,
+    "complete": 0.823
+   }
+  }
+ },
+ "rule": {
+  "splash": 0.4,
+  "white_on": 0.1,
+  "view_sure": 0.9
+ }
+}

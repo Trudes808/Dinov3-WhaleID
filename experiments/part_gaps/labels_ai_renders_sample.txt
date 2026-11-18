@@ -1,0 +1,102 @@
+# AI by-eye labels of 50 random whales from run05 and 50 from the run06 tests (final, check, r3, r4b, r5 pooled),
+# blind sheets (render + outline only); same taxonomy and #S / #R fin marks as labels_ai_r6b.txt. Format: <tag> <shot> <iid> <CATEGORY> ...
+run05 005672 1 F_edge
+run05 002649 1 D_small #R
+run05 006891 1 B_back
+run05 000853 1 D_small h #R
+run05 001277 1 F_up
+run05 009335 1 D_small #S
+run05 001654 1 F_edge
+run05 006388 1 D_tip
+run05 001025 1 B_back
+run05 008840 1 D_tall
+run05 003768 1 B_back
+run05 000662 1 F_edge
+run05 001513 1 B_back
+run05 007563 1 B_back
+run05 007294 1 D_small #S
+run05 001234 1 F_up
+run05 004219 1 F_up
+run05 001595 1 B_back
+run05 009598 1 F_edge
+run05 007407 1 H_head
+run05 001045 1 D_small #S
+run05 009849 1 H_head
+run05 002181 1 B_back
+run05 003916 1 D_small h #S
+run05 001091 1 D_small #S
+run05 006923 1 F_up
+run05 000879 1 B_back
+run05 003880 1 D_small #S
+run05 000824 1 H_head
+run05 009695 1 F_low
+run05 002343 1 D_small #S
+run05 005067 1 B_back
+run05 007312 1 F_up w
+run05 002536 1 D_tall
+run05 009421 1 D_small #R
+run05 002078 1 D_small #R
+run05 009945 1 R_roll
+run05 005405 1 D_small #S
+run05 009757 1 B_back
+run05 003173 1 X_none
+run05 001818 1 D_tall
+run05 009950 1 D_small #S
+run05 003297 1 D_small #R
+run05 006502 1 R_roll
+run05 001715 1 B_back
+run05 009542 1 D_small #S
+run05 001108 1 P_pec
+run05 009831 1 D_small
+run05 001053 1 D_small #S
+run05 003619 1 F_edge
+r06r_test_check 000391 1 D_tall
+r06r_test_r3 000041 1 D_small #S
+r06r_test_check 000144 2 B_back
+r06r_test_final 000246 2 R_roll
+r06r_test_check 000295 1 D_small s1 #R
+r06r_test_r5 000190 1 D_small #S
+r06r_test_check 000261 1 P_pec s2
+r06r_test_final 000284 1 B_back s1
+r06r_test_final 000237 1 X_none s2
+r06r_test_final 000201 1 F_low w
+r06r_test_final 000153 1 F_low w
+r06r_test_final 000198 2 X_none s2
+r06r_test_final 000069 1 P_pec s1
+r06r_test_r4b 000202 1 D_tip
+r06r_test_final 000237 2 D_small s2 #S
+r06r_test_r3 000031 2 D_small s1
+r06r_test_check 000381 1 B_back e
+r06r_test_final 000272 2 B_back
+r06r_test_check 000247 1 P_pec s2
+r06r_test_final 000228 1 F_up w
+r06r_test_final 000061 2 B_back s2 e
+r06r_test_final 000101 1 D_small
+r06r_test_r3 000019 1 D_small #R
+r06r_test_check 000120 1 F_edge s1
+r06r_test_final 000141 1 H_head s1
+r06r_test_final 000272 1 B_back s1
+r06r_test_final 000130 1 F_up
+r06r_test_check 000351 1 D_small h #S
+r06r_test_check 000132 1 R_roll
+r06r_test_final 000033 1 F_low w
+r06r_test_final 000066 1 F_up
+r06r_test_r4b 000009 1 P_pec s1
+r06r_test_r4b 000077 1 B_back
+r06r_test_final 000270 1 X_none s2
+r06r_test_final 000275 2 H_head
+r06r_test_r5 000085 1 D_small m
+r06r_test_check 000278 1 P_pec
+r06r_test_final 000060 1 D_small #R
+r06r_test_final 000079 2 D_small m
+r06r_test_final 000216 1 R_roll s1
+r06r_test_check 000303 2 P_pec
+r06r_test_final 000058 1 D_small #S
+r06r_test_final 000054 1 P_pec
+r06r_test_final 000245 1 D_small m #S
+r06r_test_r5 000063 1 H_head
+r06r_test_check 000227 3 F_low
+r06r_test_final 000226 2 F_low e
+r06r_test_check 000037 1 X_none s2
+r06r_test_final 000274 1 P_pec s2
+r06r_test_final 000018 1 D_small s1

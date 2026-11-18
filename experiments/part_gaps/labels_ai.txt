@@ -1,0 +1,611 @@
+# AI by-eye labels (Claude subagent, 2026-11-17), made on BLIND sheets (photo crop + instance outline, no model output).
+# Not the researcher's labels. Format: <sheet> <tile> <CATEGORY> [attributes]; see model_fine_tuning/part_gaps/common.py CATS / ATTRS.
+train_00 1 D_small h s1
+train_00 2 D_small e
+train_00 3 D_small h
+train_00 4 D_small h
+train_00 5 B_back s1
+train_00 6 D_small
+train_00 7 F_up
+train_00 8 D_small h
+train_00 9 P_pec s1
+train_00 10 F_low s1
+train_00 11 F_up
+train_00 12 X_none s2
+train_00 13 F_low w s1
+train_00 14 D_tip
+train_00 15 H_head s1
+train_00 16 D_small h s1
+train_00 17 P_pec s1
+train_00 18 D_tall h
+train_00 19 B_back
+train_00 20 D_tall s1
+train_01 1 D_small
+train_01 2 F_edge w
+train_01 3 B_back s2
+train_01 4 D_small h s1
+train_01 5 F_edge
+train_01 6 P_pec s1
+train_01 7 D_small h s1
+train_01 8 X_none
+train_01 9 P_pec s1
+train_01 10 R_roll s1
+train_01 11 D_small
+train_01 12 B_back s1
+train_01 13 D_tall k
+train_01 14 D_small s1
+train_01 15 B_back
+train_01 16 F_edge w s1
+train_01 17 F_edge w
+train_01 18 F_low w
+train_01 19 F_low w
+train_01 20 B_back
+train_02 1 D_small h
+train_02 2 D_small
+train_02 3 D_tall h
+train_02 4 F_low
+train_02 5 F_low
+train_02 6 B_back
+train_02 7 D_tall h
+train_02 8 D_small s1 b
+train_02 9 F_up
+train_02 10 D_tall h
+train_02 11 D_small
+train_02 12 D_small h
+train_02 13 B_back
+train_02 14 F_edge s1
+train_02 15 D_tip
+train_02 16 F_up
+train_02 17 B_back
+train_02 18 P_pec s1
+train_02 19 D_tall s1
+train_02 20 F_edge w
+train_03 1 D_small h e
+train_03 2 F_low w
+train_03 3 D_small h
+train_03 4 X_none s2
+train_03 5 D_tall h
+train_03 6 B_back s1
+train_03 7 D_tall k s1
+train_03 8 D_tall h
+train_03 9 B_back b
+train_03 10 D_small
+train_03 11 D_small h
+train_03 12 F_edge w
+train_03 13 P_pec b m
+train_03 14 F_up
+train_03 15 P_pec s1
+train_03 16 D_small h
+train_03 17 D_small h e
+train_03 18 F_up
+train_03 19 B_back s1
+train_03 20 D_small s1
+train_04 1 F_low w
+train_04 2 D_small h
+train_04 3 B_back m s1
+train_04 4 B_back
+train_04 5 B_back m s1
+train_04 6 D_small
+train_04 7 F_edge
+train_04 8 D_small s1
+train_04 9 F_low
+train_04 10 F_edge s1
+train_04 11 P_pec m
+train_04 12 F_low w
+train_04 13 F_low
+train_04 14 F_edge
+train_04 15 F_low
+train_04 16 D_small h s2
+train_04 17 B_back s1
+train_04 18 F_edge w
+train_04 19 B_back m
+train_04 20 B_back s1
+train_05 1 H_head s1
+train_05 2 D_small h
+train_05 3 D_tall h
+train_05 4 R_roll s1
+train_05 5 X_none s2 b
+train_05 6 P_pec s1
+train_05 7 B_back
+train_05 8 B_back m
+train_05 9 B_back
+train_05 10 D_small h
+train_05 11 B_back m
+train_05 12 B_back s1
+train_05 13 H_head s1
+train_05 14 F_up
+train_05 15 B_back
+train_05 16 P_pec
+train_05 17 F_edge
+train_05 18 D_small h
+train_05 19 D_small h
+train_05 20 F_edge w s1
+train_06 1 D_small h
+train_06 2 D_small h m
+train_06 3 D_tip
+train_06 4 P_pec
+train_06 5 D_small s1
+train_06 6 D_small h
+train_06 7 P_pec s1
+train_06 8 F_low w s1
+train_06 9 H_head s2
+train_06 10 P_pec
+train_06 11 F_low
+train_06 12 F_edge
+train_06 13 B_back b
+train_06 14 D_small h
+train_06 15 D_tall k
+train_06 16 D_small e
+train_06 17 D_small
+train_06 18 B_back
+train_06 19 B_back
+train_06 20 B_back
+train_07 1 B_back s1
+train_07 2 B_back s2
+train_07 3 D_small h
+train_07 4 D_tall k
+train_07 5 F_low w s1
+train_07 6 D_tall s1
+train_07 7 B_back b
+train_07 8 D_small s1
+train_07 9 D_small h s1
+train_07 10 D_small
+train_07 11 B_back s1
+train_07 12 B_back
+train_07 13 D_tall
+train_07 14 D_small h e
+train_07 15 D_small h
+train_07 16 P_pec
+train_07 17 D_small s1
+train_07 18 D_tall h
+train_07 19 B_back s1
+train_07 20 D_tall k
+train_08 1 P_pec s1
+train_08 2 D_small
+train_08 3 B_back
+train_08 4 D_tall h
+train_08 5 D_tall s1
+train_08 6 D_small h
+train_08 7 B_back s1
+train_08 8 D_small h
+train_08 9 F_edge
+train_08 10 F_low
+train_08 11 D_tall h
+train_08 12 D_small h
+train_08 13 F_edge w s1
+train_08 14 B_back
+train_08 15 B_back s1
+train_08 16 D_small e
+train_08 17 F_up w
+train_08 18 B_back
+train_08 19 D_small m
+train_08 20 D_small
+train_09 1 F_low
+train_09 2 F_edge w
+train_09 3 D_small h
+train_09 4 F_low
+train_09 5 F_low w s1
+train_09 6 F_low
+train_09 7 F_edge
+train_09 8 B_back m s1
+train_09 9 D_small s1
+train_09 10 F_edge
+train_09 11 D_tall h
+train_09 12 F_up b
+train_09 13 D_small s1
+train_09 14 F_low
+train_09 15 F_low b
+train_09 16 F_low w
+train_09 17 F_low w
+train_09 18 B_back
+train_09 19 F_low
+train_09 20 P_pec s1
+train_10 1 B_back s1
+train_10 2 B_back s1
+train_10 3 D_small h s1
+train_10 4 D_small
+train_10 5 P_pec
+train_10 6 D_tall e
+train_10 7 B_back s1
+train_10 8 D_tall h
+train_10 9 B_back
+train_10 10 D_small s1
+train_10 11 F_low
+train_10 12 F_edge s1
+train_10 13 B_back s1
+train_10 14 D_tall h s1
+train_10 15 D_small
+train_10 16 F_edge
+train_10 17 F_edge
+train_10 18 B_back
+train_10 19 D_small h
+train_10 20 D_small h
+train_11 1 D_small s1
+train_11 2 H_head
+train_11 3 B_back s1
+train_11 4 B_back
+train_11 5 F_edge s1 e
+train_11 6 X_none
+train_11 7 D_small
+train_11 8 F_edge s2
+train_11 9 D_small h
+train_11 10 F_edge s1
+train_11 11 F_low
+train_11 12 H_head s1 m
+train_11 13 F_low
+train_11 14 B_back s1
+train_11 15 F_low w
+train_11 16 F_up
+train_11 17 D_small h
+train_11 18 D_tall m
+train_11 19 B_back s1
+train_11 20 D_small h
+train_12 1 D_tall h
+train_12 2 F_edge w
+train_12 3 B_back s1
+train_12 4 F_edge s2
+train_12 5 P_pec s1
+train_12 6 F_low w
+train_12 7 D_small h
+train_12 8 D_tip h
+train_12 9 F_edge w s1
+train_12 10 F_low
+train_12 11 P_pec s1
+train_12 12 D_tip
+train_12 13 D_tip h
+train_12 14 D_small s1
+train_12 15 D_small
+train_12 16 F_low
+train_12 17 B_back
+train_12 18 F_edge
+train_12 19 D_small
+train_12 20 F_low b
+train_13 1 B_back
+train_13 2 F_up
+train_13 3 D_tall
+train_13 4 F_up w
+train_13 5 D_tip
+train_13 6 D_tip
+train_13 7 D_tall h
+train_13 8 D_small h
+train_13 9 D_small h
+train_13 10 F_low s1
+train_13 11 H_head s2
+train_13 12 F_low
+train_13 13 B_back
+train_13 14 D_small
+train_13 15 F_edge s1
+train_13 16 D_small h
+train_13 17 B_back s2 b
+train_13 18 D_tall h
+train_13 19 D_tip
+train_13 20 F_low w
+train_14 1 P_pec m
+train_14 2 F_low w
+train_14 3 F_edge w e
+train_14 4 F_edge s1 m
+train_14 5 B_back
+train_14 6 D_small
+train_14 7 D_tall
+train_14 8 F_edge w
+train_14 9 D_small b
+train_14 10 B_back
+train_14 11 F_edge
+train_14 12 P_pec m
+train_14 13 D_tall h
+train_14 14 D_tall
+train_14 15 B_back
+train_14 16 D_small h
+train_14 17 F_up w
+train_14 18 B_back s1
+train_14 19 F_low w s1
+train_14 20 F_up
+train_15 1 P_pec s1
+train_15 2 B_back s1 b
+train_15 3 F_low
+train_15 4 B_back m
+train_15 5 D_small
+train_15 6 B_back s1
+train_15 7 B_back s1 m
+train_15 8 D_tip e
+train_15 9 F_low w s1
+train_15 10 F_edge s1
+train_15 11 F_edge
+train_15 12 P_pec s1 b
+train_15 13 B_back
+train_15 14 B_back
+train_15 15 B_back s2
+train_15 16 F_edge w
+train_15 17 D_small
+train_15 18 F_low w
+train_15 19 D_small m
+train_15 20 F_up
+train_16 1 B_back s1
+train_16 2 X_none s2 b
+train_16 3 D_small
+train_16 4 B_back s1 m
+train_16 5 D_small h
+train_16 6 F_edge
+train_16 7 P_pec s1
+train_16 8 B_back s2
+train_16 9 D_tall h
+train_16 10 B_back s1
+train_16 11 P_pec s1
+train_16 12 P_pec s1
+train_16 13 F_edge w
+train_16 14 B_back
+train_16 15 D_tip
+train_16 16 D_tall b
+train_16 17 B_back e
+train_16 18 D_small h
+train_16 19 D_tip
+train_16 20 B_back e
+train_17 1 D_tall h s1
+train_17 2 F_low
+train_17 3 F_edge b
+train_17 4 B_back s1 e
+train_17 5 D_tall h
+train_17 6 D_small h
+train_17 7 B_back
+train_17 8 F_edge w
+train_17 9 B_back s1
+train_17 10 D_tip
+train_17 11 D_tip
+train_17 12 D_small h
+train_17 13 F_up w
+train_17 14 D_tip m
+train_17 15 F_low
+train_17 16 D_small
+train_17 17 D_small
+train_17 18 D_small
+train_17 19 D_small h
+train_17 20 F_low w
+train_18 1 D_tip
+train_18 2 F_edge s1
+train_18 3 D_small
+train_18 4 H_head s1
+train_18 5 P_pec
+train_18 6 F_up
+train_18 7 F_low w
+train_18 8 B_back s2
+train_18 9 F_up
+train_18 10 B_back s1
+train_18 11 F_low
+train_18 12 D_tip s1
+train_18 13 D_tall h
+train_18 14 H_head e
+train_18 15 D_small h
+train_18 16 D_small h s1
+train_18 17 D_small
+train_18 18 B_back
+train_18 19 B_back b
+train_18 20 D_tall h
+train_19 1 P_pec s1
+train_19 2 P_pec
+train_19 3 B_back s1
+train_19 4 B_back e
+train_19 5 D_small h m
+train_19 6 D_small
+train_19 7 D_small s1
+train_19 8 F_low s1
+train_19 9 P_pec s1
+train_19 10 H_head s1
+train_19 11 D_tall h s1
+train_19 12 F_edge w
+train_19 13 F_low w
+train_19 14 F_edge s1
+train_19 15 D_small
+train_19 16 F_up w
+train_19 17 D_tall b
+train_19 18 F_edge e
+train_19 19 F_edge
+train_19 20 F_up w
+train_20 1 F_up w
+val_00 1 P_pec b
+val_00 2 F_low w
+val_00 3 D_small b
+val_00 4 D_tip b
+val_00 5 F_up
+val_00 6 B_back m b
+val_00 7 F_up
+val_00 8 P_pec s1
+val_00 9 X_none s2
+val_00 10 D_small h
+val_00 11 B_back m
+val_00 12 P_pec m
+val_00 13 F_low
+val_00 14 P_pec m
+val_00 15 P_pec m
+val_00 16 F_edge
+val_00 17 D_tall
+val_00 18 F_up w
+val_00 19 D_tall h s1
+val_00 20 D_small h
+val_01 1 F_up w
+val_01 2 H_head
+val_01 3 P_pec s1
+val_01 4 D_tall
+val_01 5 D_tall h
+val_01 6 P_pec
+val_01 7 D_small
+val_01 8 F_low s1
+val_01 9 D_tall h
+val_01 10 B_back m e
+val_01 11 B_back s1 m
+val_01 12 D_small
+val_01 13 P_pec m
+val_01 14 F_low w
+val_01 15 B_back
+val_01 16 D_small
+val_01 17 P_pec s1
+val_01 18 D_tall h
+val_01 19 P_pec s2
+val_01 20 F_edge s1
+val_02 1 F_up
+val_02 2 B_back s1
+val_02 3 B_back
+val_02 4 D_small
+val_02 5 D_tall s1 b
+val_02 6 D_tall s1
+val_02 7 F_low b
+val_02 8 D_tip s1
+val_02 9 D_tip m
+val_02 10 D_small
+val_02 11 H_head s1 m
+val_02 12 P_pec s2
+val_02 13 F_edge
+val_02 14 D_small s2
+val_02 15 D_small
+val_02 16 D_small
+val_02 17 F_edge w
+val_02 18 F_low
+val_02 19 D_tall s1
+val_02 20 D_small h
+val_03 1 D_tall h s1
+val_03 2 D_small
+val_03 3 H_head
+val_03 4 P_pec s1
+val_03 5 D_small s1
+val_03 6 B_back s1
+val_03 7 H_head s1
+val_03 8 D_small
+val_03 9 D_small s1
+val_03 10 D_tall h
+val_03 11 F_edge e
+val_03 12 X_none b
+val_03 13 D_small
+val_03 14 D_small
+val_03 15 D_tall h s1
+val_03 16 D_small
+val_03 17 F_edge e
+val_03 18 D_small s1
+val_03 19 F_up w
+val_03 20 P_pec s1 e
+val_04 1 F_up
+val_04 2 D_small
+val_04 3 D_small s1
+val_04 4 D_tall s1
+val_04 5 P_pec
+val_04 6 B_back s1
+val_04 7 D_tall h m
+val_04 8 B_back s1
+val_04 9 H_head
+val_04 10 H_head s1
+val_04 11 F_low w
+val_04 12 D_small h
+val_04 13 P_pec m
+val_04 14 F_up
+val_04 15 F_low
+val_04 16 P_pec s1
+val_04 17 B_back
+val_04 18 D_small e
+val_04 19 F_edge
+val_04 20 F_low b
+val_05 1 P_pec
+val_05 2 F_edge s1
+val_05 3 P_pec s1
+val_05 4 D_small s1
+val_05 5 D_tall h s1
+val_05 6 H_head s2
+val_05 7 B_back
+val_05 8 D_small h
+val_05 9 P_pec s1
+val_05 10 D_tall h
+val_05 11 F_edge s1
+val_05 12 B_back m e
+val_05 13 B_back m s1
+val_05 14 D_small h b
+val_05 15 X_none b
+val_05 16 D_tip
+val_05 17 B_back s1
+val_05 18 B_back s1
+val_05 19 D_small h
+val_05 20 B_back s1
+val_06 1 F_edge
+val_06 2 D_small m
+val_06 3 X_none e
+val_06 4 D_small h
+val_06 5 H_head s1
+val_06 6 D_small h
+val_06 7 D_small s1
+val_06 8 B_back s1
+val_06 9 F_low w s1
+val_06 10 F_up
+val_06 11 F_up b
+val_06 12 B_back
+val_06 13 D_small h e
+val_06 14 D_small h s1
+val_06 15 F_low
+val_06 16 F_low e
+val_06 17 P_pec m s1
+val_06 18 D_small h
+val_06 19 H_head
+val_06 20 F_low
+val_07 1 F_low
+val_07 2 D_small h
+val_07 3 D_small h
+val_07 4 D_tall
+val_07 5 D_small
+val_07 6 B_back
+val_07 7 D_small
+val_07 8 D_small s1
+val_07 9 P_pec m
+val_07 10 B_back s1
+val_07 11 P_pec
+val_07 12 D_small h b
+val_07 13 D_tall h s1
+val_07 14 P_pec s1
+val_07 15 B_back
+val_07 16 B_back s1
+val_07 17 D_tall h
+val_07 18 B_back m e
+val_07 19 B_back s1
+val_07 20 R_roll
+val_08 1 F_low
+val_08 2 D_tall
+val_08 3 F_edge w
+val_08 4 F_low s1
+val_08 5 F_low
+val_08 6 B_back s1
+val_08 7 D_tall s1
+val_08 8 H_head s1
+val_08 9 D_small
+val_08 10 X_none b s1
+val_08 11 D_small h
+val_08 12 P_pec
+val_08 13 F_up w
+val_08 14 P_pec b
+val_08 15 F_low
+val_08 16 D_tall s2
+val_08 17 F_low s1
+val_08 18 F_edge
+val_08 19 B_back
+val_08 20 D_small h
+val_09 1 D_small h
+val_09 2 P_pec b
+val_09 3 B_back
+val_09 4 P_pec s1
+val_09 5 D_small s1
+val_09 6 D_small h
+val_09 7 F_up
+val_09 8 B_back m
+val_09 9 D_small h
+val_09 10 X_none
+val_09 11 B_back
+val_09 12 D_small h
+val_09 13 F_edge w
+val_09 14 B_back s1 m
+val_09 15 B_back s1
+val_09 16 F_low
+val_09 17 D_small m
+val_09 18 D_small h
+val_09 19 B_back s1
+val_09 20 D_tall h
+val_10 1 F_low w s1
+val_10 2 F_edge w
+val_10 3 D_small
+val_10 4 F_low s2
+val_10 5 D_small h
+val_10 6 P_pec
+val_10 7 F_edge b
+val_10 8 P_pec

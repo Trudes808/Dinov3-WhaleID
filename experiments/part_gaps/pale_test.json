@@ -1,0 +1,503 @@
+{
+ "real": {
+  "fluke views": {
+   "n": 165,
+   "tercile_L_bounds": [
+    21.808627450980392,
+    32.30901960784314
+   ],
+   "white_share_median_by_tercile": {
+    "dark": 0.004649857323291388,
+    "mid": 0.012268783405999682,
+    "pale": 0.03653884194760788
+   },
+   "models": {
+    "parts_seg_r05_a": {
+     "dark": {
+      "n": 55,
+      "called_fluke": 0.9842534370963358,
+      "error": 0.015746562903664107,
+      "k_fluke": 54,
+      "k_err": 1
+     },
+     "mid": {
+      "n": 55,
+      "called_fluke": 0.8948171832241679,
+      "error": 0.10518281677583194,
+      "k_fluke": 48,
+      "k_err": 7
+     },
+     "pale": {
+      "n": 55,
+      "called_fluke": 0.8064347201116421,
+      "error": 0.19356527988835792,
+      "k_fluke": 48,
+      "k_err": 7
+     }
+    },
+    "parts_seg_r05_s1": {
+     "dark": {
+      "n": 55,
+      "called_fluke": 0.9779694599003619,
+      "error": 0.02203054009963797,
+      "k_fluke": 52,
+      "k_err": 3
+     },
+     "mid": {
+      "n": 55,
+      "called_fluke": 0.9034024221255493,
+      "error": 0.09659757787445047,
+      "k_fluke": 49,
+      "k_err": 6
+     },
+     "pale": {
+      "n": 55,
+      "called_fluke": 0.8246021216433252,
+      "error": 0.17539787835667484,
+      "k_fluke": 48,
+      "k_err": 7
+     }
+    },
+    "parts_seg_r05_w2": {
+     "dark": {
+      "n": 55,
+      "called_fluke": 0.9842534370963358,
+      "error": 0.015746562903664107,
+      "k_fluke": 54,
+      "k_err": 1
+     },
+     "mid": {
+      "n": 55,
+      "called_fluke": 0.8799657253739882,
+      "error": 0.12003427462601164,
+      "k_fluke": 45,
+      "k_err": 10
+     },
+     "pale": {
+      "n": 55,
+      "called_fluke": 0.8852815949147536,
+      "error": 0.11471840508524653,
+      "k_fluke": 49,
+      "k_err": 6
+     }
+    },
+    "parts_seg_r05_w2s1": {
+     "dark": {
+      "n": 55,
+      "called_fluke": 0.9842534370963358,
+      "error": 0.015746562903664107,
+      "k_fluke": 54,
+      "k_err": 1
+     },
+     "mid": {
+      "n": 55,
+      "called_fluke": 0.8759683547772293,
+      "error": 0.12403164522277048,
+      "k_fluke": 47,
+      "k_err": 8
+     },
+     "pale": {
+      "n": 55,
+      "called_fluke": 0.8554502322745607,
+      "error": 0.1445497677254394,
+      "k_fluke": 48,
+      "k_err": 7
+     }
+    }
+   }
+  },
+  "pectorals": {
+   "n": 59,
+   "tercile_L_bounds": [
+    25.221176470588237,
+    42.22980392156863
+   ],
+   "white_share_median_by_tercile": {
+    "dark": 0.0062459092966288,
+    "mid": 0.02013054031841899,
+    "pale": 0.329658561894825
+   },
+   "models": {
+    "parts_seg_r05_a": {
+     "dark": {
+      "n": 20,
+      "called_fluke": 0.5938389928610387,
+      "error": 0.5938389928610387,
+      "k_fluke": 12,
+      "k_err": 12
+     },
+     "mid": {
+      "n": 19,
+      "called_fluke": 0.5967810090390999,
+      "error": 0.6461539937653673,
+      "k_fluke": 11,
+      "k_err": 12
+     },
+     "pale": {
+      "n": 20,
+      "called_fluke": 0.757360515548798,
+      "error": 0.757360515548798,
+      "k_fluke": 13,
+      "k_err": 13
+     }
+    },
+    "parts_seg_r05_s1": {
+     "dark": {
+      "n": 20,
+      "called_fluke": 0.6150466143957102,
+      "error": 0.6150466143957102,
+      "k_fluke": 13,
+      "k_err": 13
+     },
+     "mid": {
+      "n": 19,
+      "called_fluke": 0.7312355041427804,
+      "error": 0.7312355041427804,
+      "k_fluke": 14,
+      "k_err": 14
+     },
+     "pale": {
+      "n": 20,
+      "called_fluke": 0.8568054314249831,
+      "error": 0.8568054314249831,
+      "k_fluke": 15,
+      "k_err": 15
+     }
+    },
+    "parts_seg_r05_w2": {
+     "dark": {
+      "n": 20,
+      "called_fluke": 0.6451737343388635,
+      "error": 0.6451737343388635,
+      "k_fluke": 8,
+      "k_err": 8
+     },
+     "mid": {
+      "n": 19,
+      "called_fluke": 0.4709741866732274,
+      "error": 0.47766011168824274,
+      "k_fluke": 8,
+      "k_err": 9
+     },
+     "pale": {
+      "n": 20,
+      "called_fluke": 0.43320216879755535,
+      "error": 0.49051665794770083,
+      "k_fluke": 5,
+      "k_err": 6
+     }
+    },
+    "parts_seg_r05_w2s1": {
+     "dark": {
+      "n": 20,
+      "called_fluke": 0.661474494420415,
+      "error": 0.661474494420415,
+      "k_fluke": 9,
+      "k_err": 9
+     },
+     "mid": {
+      "n": 19,
+      "called_fluke": 0.4709741866732274,
+      "error": 0.4709741866732274,
+      "k_fluke": 8,
+      "k_err": 8
+     },
+     "pale": {
+      "n": 20,
+      "called_fluke": 0.43320216879755535,
+      "error": 0.43320216879755535,
+      "k_fluke": 5,
+      "k_err": 5
+     }
+    }
+   }
+  }
+ },
+ "recolour": {
+  "models": [
+   "parts_seg_r05_a",
+   "parts_seg_r05_s1",
+   "parts_seg_r05_w2",
+   "parts_seg_r05_w2s1"
+  ],
+  "n_whales": 150,
+  "groups": {
+   "fluke|darken": {
+    "n": 40,
+    "n_with_control": 40,
+    "L_part_median": 53.529411764705884,
+    "L_body_median": 18.823529411764707,
+    "dL_median": -24.117647058823533,
+    "models": {
+     "parts_seg_r05_a": {
+      "n": 40,
+      "fluke_called_orig": 1.0,
+      "fluke_called_part_edit": 1.0,
+      "flip_part": 0.0,
+      "n_control": 40,
+      "fluke_called_orig_ctrlset": 1.0,
+      "fluke_called_control_edit": 1.0,
+      "flip_control": 0.0,
+      "part_px_fluke_orig": 0.9726624204856844,
+      "part_px_fluke_part_edit": 0.9854599153618298,
+      "part_px_fluke_control_edit": 0.9780860010080871,
+      "part_px_fluke_mean_change_part": 0.004910608663939206,
+      "part_px_fluke_mean_change_control": 0.005909783477811087
+     },
+     "parts_seg_r05_s1": {
+      "n": 40,
+      "fluke_called_orig": 1.0,
+      "fluke_called_part_edit": 1.0,
+      "flip_part": 0.0,
+      "n_control": 40,
+      "fluke_called_orig_ctrlset": 1.0,
+      "fluke_called_control_edit": 1.0,
+      "flip_control": 0.0,
+      "part_px_fluke_orig": 0.97851694801891,
+      "part_px_fluke_part_edit": 0.9850548471165752,
+      "part_px_fluke_control_edit": 0.9835194006798427,
+      "part_px_fluke_mean_change_part": 0.005799093524476639,
+      "part_px_fluke_mean_change_control": -0.0006554168417045592
+     },
+     "parts_seg_r05_w2": {
+      "n": 40,
+      "fluke_called_orig": 1.0,
+      "fluke_called_part_edit": 1.0,
+      "flip_part": 0.0,
+      "n_control": 40,
+      "fluke_called_orig_ctrlset": 1.0,
+      "fluke_called_control_edit": 1.0,
+      "flip_control": 0.0,
+      "part_px_fluke_orig": 0.978015014831845,
+      "part_px_fluke_part_edit": 0.9944035010961452,
+      "part_px_fluke_control_edit": 0.9840695570656419,
+      "part_px_fluke_mean_change_part": 0.016320423095566014,
+      "part_px_fluke_mean_change_control": 0.006695160761516073
+     },
+     "parts_seg_r05_w2s1": {
+      "n": 40,
+      "fluke_called_orig": 1.0,
+      "fluke_called_part_edit": 1.0,
+      "flip_part": 0.0,
+      "n_control": 40,
+      "fluke_called_orig_ctrlset": 1.0,
+      "fluke_called_control_edit": 1.0,
+      "flip_control": 0.0,
+      "part_px_fluke_orig": 0.9815692300355506,
+      "part_px_fluke_part_edit": 0.9875216890482317,
+      "part_px_fluke_control_edit": 0.985232084227855,
+      "part_px_fluke_mean_change_part": 0.009415551377938572,
+      "part_px_fluke_mean_change_control": 0.004913819033438768
+     }
+    }
+   },
+   "fluke|lighten": {
+    "n": 9,
+    "n_with_control": 5,
+    "L_part_median": 20.0,
+    "L_body_median": 34.50980392156863,
+    "dL_median": 10.980392156862745,
+    "models": {
+     "parts_seg_r05_a": {
+      "n": 9,
+      "fluke_called_orig": 0.7777777777777778,
+      "fluke_called_part_edit": 0.8888888888888888,
+      "flip_part": 0.1111111111111111,
+      "n_control": 5,
+      "fluke_called_orig_ctrlset": 0.8,
+      "fluke_called_control_edit": 0.8,
+      "flip_control": 0.0,
+      "part_px_fluke_orig": 0.8832867185728324,
+      "part_px_fluke_part_edit": 0.9270541991080202,
+      "part_px_fluke_control_edit": 0.9468757342302794,
+      "part_px_fluke_mean_change_part": 0.0871399477727186,
+      "part_px_fluke_mean_change_control": -0.07921352549076358
+     },
+     "parts_seg_r05_s1": {
+      "n": 9,
+      "fluke_called_orig": 1.0,
+      "fluke_called_part_edit": 1.0,
+      "flip_part": 0.0,
+      "n_control": 5,
+      "fluke_called_orig_ctrlset": 1.0,
+      "fluke_called_control_edit": 1.0,
+      "flip_control": 0.0,
+      "part_px_fluke_orig": 0.9817107101784411,
+      "part_px_fluke_part_edit": 0.9666984060247072,
+      "part_px_fluke_control_edit": 0.9900717043574186,
+      "part_px_fluke_mean_change_part": 0.0587047749001718,
+      "part_px_fluke_mean_change_control": -0.06220390604443711
+     },
+     "parts_seg_r05_w2": {
+      "n": 9,
+      "fluke_called_orig": 0.8888888888888888,
+      "fluke_called_part_edit": 1.0,
+      "flip_part": 0.1111111111111111,
+      "n_control": 5,
+      "fluke_called_orig_ctrlset": 1.0,
+      "fluke_called_control_edit": 1.0,
+      "flip_control": 0.0,
+      "part_px_fluke_orig": 0.9720405109624445,
+      "part_px_fluke_part_edit": 0.9582734900597173,
+      "part_px_fluke_control_edit": 0.9716153904301157,
+      "part_px_fluke_mean_change_part": 0.0005597982637829771,
+      "part_px_fluke_mean_change_control": 0.0047035895970089945
+     },
+     "parts_seg_r05_w2s1": {
+      "n": 9,
+      "fluke_called_orig": 1.0,
+      "fluke_called_part_edit": 1.0,
+      "flip_part": 0.0,
+      "n_control": 5,
+      "fluke_called_orig_ctrlset": 1.0,
+      "fluke_called_control_edit": 1.0,
+      "flip_control": 0.0,
+      "part_px_fluke_orig": 0.9683649557789704,
+      "part_px_fluke_part_edit": 0.9662408646295769,
+      "part_px_fluke_control_edit": 0.978928363856703,
+      "part_px_fluke_mean_change_part": -0.00612672739615833,
+      "part_px_fluke_mean_change_control": 0.0007618080966963952
+     }
+    }
+   },
+   "pec|darken": {
+    "n": 9,
+    "n_with_control": 9,
+    "L_part_median": 57.254901960784316,
+    "L_body_median": 20.0,
+    "dL_median": -25.88235294117647,
+    "models": {
+     "parts_seg_r05_a": {
+      "n": 9,
+      "fluke_called_orig": 0.3333333333333333,
+      "fluke_called_part_edit": 0.3333333333333333,
+      "flip_part": 0.0,
+      "n_control": 9,
+      "fluke_called_orig_ctrlset": 0.3333333333333333,
+      "fluke_called_control_edit": 0.3333333333333333,
+      "flip_control": 0.0,
+      "part_px_fluke_orig": 0.0,
+      "part_px_fluke_part_edit": 0.0,
+      "part_px_fluke_control_edit": 0.0,
+      "part_px_fluke_mean_change_part": 0.001336257973426115,
+      "part_px_fluke_mean_change_control": 0.04416167664670659
+     },
+     "parts_seg_r05_s1": {
+      "n": 9,
+      "fluke_called_orig": 0.3333333333333333,
+      "fluke_called_part_edit": 0.3333333333333333,
+      "flip_part": 0.0,
+      "n_control": 9,
+      "fluke_called_orig_ctrlset": 0.3333333333333333,
+      "fluke_called_control_edit": 0.3333333333333333,
+      "flip_control": 0.0,
+      "part_px_fluke_orig": 0.0,
+      "part_px_fluke_part_edit": 0.0,
+      "part_px_fluke_control_edit": 0.0,
+      "part_px_fluke_mean_change_part": 0.0009104988473607116,
+      "part_px_fluke_mean_change_control": 0.0
+     },
+     "parts_seg_r05_w2": {
+      "n": 9,
+      "fluke_called_orig": 0.3333333333333333,
+      "fluke_called_part_edit": 0.4444444444444444,
+      "flip_part": 0.1111111111111111,
+      "n_control": 9,
+      "fluke_called_orig_ctrlset": 0.3333333333333333,
+      "fluke_called_control_edit": 0.3333333333333333,
+      "flip_control": 0.0,
+      "part_px_fluke_orig": 0.0,
+      "part_px_fluke_part_edit": 0.0,
+      "part_px_fluke_control_edit": 0.0,
+      "part_px_fluke_mean_change_part": 0.0011759708585308158,
+      "part_px_fluke_mean_change_control": 0.0
+     },
+     "parts_seg_r05_w2s1": {
+      "n": 9,
+      "fluke_called_orig": 0.3333333333333333,
+      "fluke_called_part_edit": 0.3333333333333333,
+      "flip_part": 0.0,
+      "n_control": 9,
+      "fluke_called_orig_ctrlset": 0.3333333333333333,
+      "fluke_called_control_edit": 0.3333333333333333,
+      "flip_control": 0.0,
+      "part_px_fluke_orig": 0.0,
+      "part_px_fluke_part_edit": 0.0,
+      "part_px_fluke_control_edit": 0.0,
+      "part_px_fluke_mean_change_part": 0.003930899836139873,
+      "part_px_fluke_mean_change_control": 0.0
+     }
+    }
+   },
+   "pec|lighten": {
+    "n": 4,
+    "n_with_control": 3,
+    "L_part_median": 22.94117647058824,
+    "L_body_median": 23.92156862745098,
+    "dL_median": 8.03921568627451,
+    "models": {
+     "parts_seg_r05_a": {
+      "n": 4,
+      "fluke_called_orig": 0.25,
+      "fluke_called_part_edit": 0.25,
+      "flip_part": 0.0,
+      "n_control": 3,
+      "fluke_called_orig_ctrlset": 0.3333333333333333,
+      "fluke_called_control_edit": 0.3333333333333333,
+      "flip_control": 0.0,
+      "part_px_fluke_orig": 0.013564731697586275,
+      "part_px_fluke_part_edit": 0.003291442250149611,
+      "part_px_fluke_control_edit": 0.04807500498703371,
+      "part_px_fluke_mean_change_part": 0.03343084838922933,
+      "part_px_fluke_mean_change_control": -0.0007214483847964014
+     },
+     "parts_seg_r05_s1": {
+      "n": 4,
+      "fluke_called_orig": 0.25,
+      "fluke_called_part_edit": 0.25,
+      "flip_part": 0.0,
+      "n_control": 3,
+      "fluke_called_orig_ctrlset": 0.3333333333333333,
+      "fluke_called_control_edit": 0.3333333333333333,
+      "flip_control": 0.0,
+      "part_px_fluke_orig": 0.0,
+      "part_px_fluke_part_edit": 0.0,
+      "part_px_fluke_control_edit": 0.0,
+      "part_px_fluke_mean_change_part": 0.09240128558310376,
+      "part_px_fluke_mean_change_control": 0.003928170594837262
+     },
+     "parts_seg_r05_w2": {
+      "n": 4,
+      "fluke_called_orig": 0.5,
+      "fluke_called_part_edit": 0.5,
+      "flip_part": 0.0,
+      "n_control": 3,
+      "fluke_called_orig_ctrlset": 0.6666666666666666,
+      "fluke_called_control_edit": 0.6666666666666666,
+      "flip_control": 0.0,
+      "part_px_fluke_orig": 0.0,
+      "part_px_fluke_part_edit": 0.0,
+      "part_px_fluke_control_edit": 0.0007979253939756633,
+      "part_px_fluke_mean_change_part": 0.22004132231404958,
+      "part_px_fluke_mean_change_control": 0.03985377229487996
+     },
+     "parts_seg_r05_w2s1": {
+      "n": 4,
+      "fluke_called_orig": 0.25,
+      "fluke_called_part_edit": 0.5,
+      "flip_part": 0.25,
+      "n_control": 3,
+      "fluke_called_orig_ctrlset": 0.3333333333333333,
+      "fluke_called_control_edit": 0.3333333333333333,
+      "flip_control": 0.0,
+      "part_px_fluke_orig": 0.0,
+      "part_px_fluke_part_edit": 0.0,
+      "part_px_fluke_control_edit": 0.0,
+      "part_px_fluke_mean_change_part": 0.11359810223446587,
+      "part_px_fluke_mean_change_control": 8.76011519551482e-05
+     }
+    }
+   }
+  }
+ }
+}

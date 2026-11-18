@@ -1,0 +1,890 @@
+{
+ "hr": {
+  "parts_seg_r05_a": {
+   "fluke": {
+    "n": 204,
+    "bg_median": 0.005,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.825,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.073,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "dorsal": {
+    "n": 473,
+    "bg_median": 0.033,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.007,
+    "body_median": 0.943,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "other": {
+    "n": 151,
+    "bg_median": 0.005,
+    "over_half_bg": 0.02,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.455,
+    "head_median": 0.005,
+    "pectoral_fin_median": 0.045
+   }
+  },
+  "parts_seg_r05_s1": {
+   "fluke": {
+    "n": 204,
+    "bg_median": 0.003,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.868,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.072,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "dorsal": {
+    "n": 473,
+    "bg_median": 0.019,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.008,
+    "body_median": 0.962,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "other": {
+    "n": 151,
+    "bg_median": 0.003,
+    "over_half_bg": 0.013,
+    "fluke_median": 0.006,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.421,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.005
+   }
+  },
+  "parts_seg_r05_w2": {
+   "fluke": {
+    "n": 204,
+    "bg_median": 0.0,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.99,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.003,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "dorsal": {
+    "n": 473,
+    "bg_median": 0.001,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.03,
+    "body_median": 0.966,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "other": {
+    "n": 151,
+    "bg_median": 0.0,
+    "over_half_bg": 0.02,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.464,
+    "head_median": 0.003,
+    "pectoral_fin_median": 0.135
+   }
+  },
+  "parts_seg_r05_w2s1": {
+   "fluke": {
+    "n": 204,
+    "bg_median": 0.0,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.978,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.003,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "dorsal": {
+    "n": 473,
+    "bg_median": 0.001,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.031,
+    "body_median": 0.965,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "other": {
+    "n": 151,
+    "bg_median": 0.0,
+    "over_half_bg": 0.02,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.501,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.186
+   }
+  },
+  "parts_seg_r05_w3": {
+   "fluke": {
+    "n": 204,
+    "bg_median": 0.0,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.991,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.001,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "dorsal": {
+    "n": 473,
+    "bg_median": 0.001,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.417,
+    "body_median": 0.574,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "other": {
+    "n": 151,
+    "bg_median": 0.0,
+    "over_half_bg": 0.02,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.36,
+    "head_median": 0.001,
+    "pectoral_fin_median": 0.189
+   }
+  },
+  "paired_over_half_bg": {
+   "parts_seg_r05_s1-parts_seg_r05_a": {
+    "fluke": {
+     "n": 204,
+     "photos": 188,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "dorsal": {
+     "n": 473,
+     "photos": 467,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "other": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.0199,
+     "arm_acc": 0.0132,
+     "diff": -0.0066,
+     "ci95": [
+      -0.0325,
+      0.0136
+     ]
+    }
+   },
+   "parts_seg_r05_w2-parts_seg_r05_a": {
+    "fluke": {
+     "n": 204,
+     "photos": 188,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "dorsal": {
+     "n": 473,
+     "photos": 467,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "other": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.0199,
+     "arm_acc": 0.0199,
+     "diff": 0.0,
+     "ci95": [
+      -0.0194,
+      0.0197
+     ]
+    }
+   },
+   "parts_seg_r05_w2s1-parts_seg_r05_a": {
+    "fluke": {
+     "n": 204,
+     "photos": 188,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "dorsal": {
+     "n": 473,
+     "photos": 467,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "other": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.0199,
+     "arm_acc": 0.0199,
+     "diff": 0.0,
+     "ci95": [
+      -0.0194,
+      0.0197
+     ]
+    }
+   },
+   "parts_seg_r05_w3-parts_seg_r05_a": {
+    "fluke": {
+     "n": 204,
+     "photos": 188,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "dorsal": {
+     "n": 473,
+     "photos": 467,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "other": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.0199,
+     "arm_acc": 0.0199,
+     "diff": 0.0,
+     "ci95": [
+      -0.0194,
+      0.0197
+     ]
+    }
+   },
+   "parts_seg_r05_a-parts_seg_r05_s1": {
+    "fluke": {
+     "n": 204,
+     "photos": 188,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "dorsal": {
+     "n": 473,
+     "photos": 467,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "other": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.0132,
+     "arm_acc": 0.0199,
+     "diff": 0.0066,
+     "ci95": [
+      -0.0136,
+      0.0325
+     ]
+    }
+   },
+   "parts_seg_r05_w2-parts_seg_r05_s1": {
+    "fluke": {
+     "n": 204,
+     "photos": 188,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "dorsal": {
+     "n": 473,
+     "photos": 467,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "other": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.0132,
+     "arm_acc": 0.0199,
+     "diff": 0.0066,
+     "ci95": [
+      0.0,
+      0.0207
+     ]
+    }
+   },
+   "parts_seg_r05_w2s1-parts_seg_r05_s1": {
+    "fluke": {
+     "n": 204,
+     "photos": 188,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "dorsal": {
+     "n": 473,
+     "photos": 467,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "other": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.0132,
+     "arm_acc": 0.0199,
+     "diff": 0.0066,
+     "ci95": [
+      0.0,
+      0.0207
+     ]
+    }
+   },
+   "parts_seg_r05_w3-parts_seg_r05_s1": {
+    "fluke": {
+     "n": 204,
+     "photos": 188,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "dorsal": {
+     "n": 473,
+     "photos": 467,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "other": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.0132,
+     "arm_acc": 0.0199,
+     "diff": 0.0066,
+     "ci95": [
+      0.0,
+      0.0207
+     ]
+    }
+   }
+  }
+ },
+ "full": {
+  "parts_seg_r05_a": {
+   "fluke": {
+    "n": 204,
+    "bg_median": 0.003,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.775,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.065,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "dorsal": {
+    "n": 473,
+    "bg_median": 0.041,
+    "over_half_bg": 0.002,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.006,
+    "body_median": 0.939,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "other": {
+    "n": 151,
+    "bg_median": 0.004,
+    "over_half_bg": 0.013,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.464,
+    "head_median": 0.001,
+    "pectoral_fin_median": 0.101
+   }
+  },
+  "parts_seg_r05_s1": {
+   "fluke": {
+    "n": 204,
+    "bg_median": 0.003,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.802,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.078,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "dorsal": {
+    "n": 473,
+    "bg_median": 0.027,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.006,
+    "body_median": 0.953,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "other": {
+    "n": 151,
+    "bg_median": 0.004,
+    "over_half_bg": 0.013,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.489,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.015
+   }
+  },
+  "parts_seg_r05_w2": {
+   "fluke": {
+    "n": 204,
+    "bg_median": 0.0,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.996,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.0,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "dorsal": {
+    "n": 473,
+    "bg_median": 0.0,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.034,
+    "body_median": 0.96,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "other": {
+    "n": 151,
+    "bg_median": 0.0,
+    "over_half_bg": 0.013,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.459,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.162
+   }
+  },
+  "parts_seg_r05_w2s1": {
+   "fluke": {
+    "n": 204,
+    "bg_median": 0.0,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.981,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.002,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "dorsal": {
+    "n": 473,
+    "bg_median": 0.0,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.034,
+    "body_median": 0.961,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "other": {
+    "n": 151,
+    "bg_median": 0.0,
+    "over_half_bg": 0.02,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.505,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.208
+   }
+  },
+  "parts_seg_r05_w3": {
+   "fluke": {
+    "n": 204,
+    "bg_median": 0.0,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.996,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.0,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "dorsal": {
+    "n": 473,
+    "bg_median": 0.0,
+    "over_half_bg": 0.0,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.505,
+    "body_median": 0.488,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.0
+   },
+   "other": {
+    "n": 151,
+    "bg_median": 0.0,
+    "over_half_bg": 0.013,
+    "fluke_median": 0.0,
+    "dorsal_fin_median": 0.0,
+    "body_median": 0.259,
+    "head_median": 0.0,
+    "pectoral_fin_median": 0.198
+   }
+  },
+  "paired_over_half_bg": {
+   "parts_seg_r05_s1-parts_seg_r05_a": {
+    "fluke": {
+     "n": 204,
+     "photos": 188,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "dorsal": {
+     "n": 473,
+     "photos": 467,
+     "base_acc": 0.0021,
+     "arm_acc": 0.0,
+     "diff": -0.0021,
+     "ci95": [
+      -0.0064,
+      0.0
+     ]
+    },
+    "other": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.0132,
+     "arm_acc": 0.0132,
+     "diff": 0.0,
+     "ci95": [
+      -0.0196,
+      0.0201
+     ]
+    }
+   },
+   "parts_seg_r05_w2-parts_seg_r05_a": {
+    "fluke": {
+     "n": 204,
+     "photos": 188,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "dorsal": {
+     "n": 473,
+     "photos": 467,
+     "base_acc": 0.0021,
+     "arm_acc": 0.0,
+     "diff": -0.0021,
+     "ci95": [
+      -0.0064,
+      0.0
+     ]
+    },
+    "other": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.0132,
+     "arm_acc": 0.0132,
+     "diff": 0.0,
+     "ci95": [
+      -0.0195,
+      0.02
+     ]
+    }
+   },
+   "parts_seg_r05_w2s1-parts_seg_r05_a": {
+    "fluke": {
+     "n": 204,
+     "photos": 188,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "dorsal": {
+     "n": 473,
+     "photos": 467,
+     "base_acc": 0.0021,
+     "arm_acc": 0.0,
+     "diff": -0.0021,
+     "ci95": [
+      -0.0064,
+      0.0
+     ]
+    },
+    "other": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.0132,
+     "arm_acc": 0.0199,
+     "diff": 0.0066,
+     "ci95": [
+      -0.0133,
+      0.0319
+     ]
+    }
+   },
+   "parts_seg_r05_w3-parts_seg_r05_a": {
+    "fluke": {
+     "n": 204,
+     "photos": 188,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "dorsal": {
+     "n": 473,
+     "photos": 467,
+     "base_acc": 0.0021,
+     "arm_acc": 0.0,
+     "diff": -0.0021,
+     "ci95": [
+      -0.0064,
+      0.0
+     ]
+    },
+    "other": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.0132,
+     "arm_acc": 0.0132,
+     "diff": 0.0,
+     "ci95": [
+      -0.0195,
+      0.02
+     ]
+    }
+   },
+   "parts_seg_r05_a-parts_seg_r05_s1": {
+    "fluke": {
+     "n": 204,
+     "photos": 188,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "dorsal": {
+     "n": 473,
+     "photos": 467,
+     "base_acc": 0.0,
+     "arm_acc": 0.0021,
+     "diff": 0.0021,
+     "ci95": [
+      0.0,
+      0.0064
+     ]
+    },
+    "other": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.0132,
+     "arm_acc": 0.0132,
+     "diff": 0.0,
+     "ci95": [
+      -0.0201,
+      0.0196
+     ]
+    }
+   },
+   "parts_seg_r05_w2-parts_seg_r05_s1": {
+    "fluke": {
+     "n": 204,
+     "photos": 188,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "dorsal": {
+     "n": 473,
+     "photos": 467,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "other": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.0132,
+     "arm_acc": 0.0132,
+     "diff": 0.0,
+     "ci95": [
+      -0.0199,
+      0.0199
+     ]
+    }
+   },
+   "parts_seg_r05_w2s1-parts_seg_r05_s1": {
+    "fluke": {
+     "n": 204,
+     "photos": 188,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "dorsal": {
+     "n": 473,
+     "photos": 467,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "other": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.0132,
+     "arm_acc": 0.0199,
+     "diff": 0.0066,
+     "ci95": [
+      -0.0137,
+      0.0321
+     ]
+    }
+   },
+   "parts_seg_r05_w3-parts_seg_r05_s1": {
+    "fluke": {
+     "n": 204,
+     "photos": 188,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "dorsal": {
+     "n": 473,
+     "photos": 467,
+     "base_acc": 0.0,
+     "arm_acc": 0.0,
+     "diff": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "other": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.0132,
+     "arm_acc": 0.0132,
+     "diff": 0.0,
+     "ci95": [
+      -0.0199,
+      0.0199
+     ]
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,1146 @@
+{
+ "ref": {
+  "per_day": {
+   "2025-01-15": {
+    "photos": 166,
+    "inst_0": 2,
+    "inst_1": 145,
+    "inst_2": 15,
+    "inst_3+": 4,
+    "instances": 188,
+    "rejected_nw": 15,
+    "rejected_gate": 23
+   },
+   "2025-02-27": {
+    "photos": 329,
+    "inst_0": 0,
+    "inst_1": 220,
+    "inst_2": 78,
+    "inst_3+": 31,
+    "instances": 473,
+    "rejected_nw": 12,
+    "rejected_gate": 104
+   },
+   "2025-03-14": {
+    "photos": 389,
+    "inst_0": 6,
+    "inst_1": 320,
+    "inst_2": 56,
+    "inst_3+": 7,
+    "instances": 455,
+    "rejected_nw": 109,
+    "rejected_gate": 73
+   },
+   "2025-01-02": {
+    "photos": 981,
+    "inst_0": 4,
+    "inst_1": 851,
+    "inst_2": 107,
+    "inst_3+": 19,
+    "instances": 1129,
+    "rejected_nw": 155,
+    "rejected_gate": 272
+   },
+   "2025-03-18": {
+    "photos": 754,
+    "inst_0": 1,
+    "inst_1": 619,
+    "inst_2": 114,
+    "inst_3+": 20,
+    "instances": 914,
+    "rejected_nw": 75,
+    "rejected_gate": 258
+   }
+  },
+  "val": {
+   "photos": 884,
+   "inst_0": 8,
+   "inst_1": 685,
+   "inst_2": 149,
+   "inst_3+": 42,
+   "instances": 1116,
+   "rejected_nw": 136,
+   "rejected_gate": 200,
+   "instances_per_photo": 1.262
+  },
+  "click_days": {
+   "photos": 1735,
+   "inst_0": 5,
+   "inst_1": 1470,
+   "inst_2": 221,
+   "inst_3+": 39,
+   "instances": 2043,
+   "rejected_nw": 230,
+   "rejected_gate": 530,
+   "instances_per_photo": 1.178
+  },
+  "clicks": {
+   "other_whales": 17,
+   "own": 13,
+   "fused": 4,
+   "none": 0,
+   "flukes_main": 83,
+   "flukes_main_one_instance": 65,
+   "flukes_all": 84,
+   "flukes_all_one_instance": 66,
+   "main_whales": 365,
+   "main_all_clicks_one_instance": 334
+  }
+ },
+ "r05": {
+  "per_day": {
+   "2025-01-15": {
+    "photos": 166,
+    "inst_0": 0,
+    "inst_1": 146,
+    "inst_2": 20,
+    "inst_3+": 0,
+    "instances": 186,
+    "rejected_nw": 44,
+    "rejected_gate": 12
+   },
+   "2025-02-27": {
+    "photos": 329,
+    "inst_0": 0,
+    "inst_1": 223,
+    "inst_2": 82,
+    "inst_3+": 24,
+    "instances": 465,
+    "rejected_nw": 13,
+    "rejected_gate": 52
+   },
+   "2025-03-14": {
+    "photos": 389,
+    "inst_0": 6,
+    "inst_1": 324,
+    "inst_2": 53,
+    "inst_3+": 6,
+    "instances": 449,
+    "rejected_nw": 73,
+    "rejected_gate": 51
+   },
+   "2025-01-02": {
+    "photos": 981,
+    "inst_0": 4,
+    "inst_1": 876,
+    "inst_2": 89,
+    "inst_3+": 12,
+    "instances": 1092,
+    "rejected_nw": 165,
+    "rejected_gate": 165
+   },
+   "2025-03-18": {
+    "photos": 754,
+    "inst_0": 0,
+    "inst_1": 635,
+    "inst_2": 101,
+    "inst_3+": 18,
+    "instances": 892,
+    "rejected_nw": 96,
+    "rejected_gate": 179
+   }
+  },
+  "val": {
+   "photos": 884,
+   "inst_0": 6,
+   "inst_1": 693,
+   "inst_2": 155,
+   "inst_3+": 30,
+   "instances": 1100,
+   "rejected_nw": 130,
+   "rejected_gate": 115,
+   "instances_per_photo": 1.244
+  },
+  "click_days": {
+   "photos": 1735,
+   "inst_0": 4,
+   "inst_1": 1511,
+   "inst_2": 190,
+   "inst_3+": 30,
+   "instances": 1984,
+   "rejected_nw": 261,
+   "rejected_gate": 344,
+   "instances_per_photo": 1.144
+  },
+  "clicks": {
+   "other_whales": 17,
+   "own": 12,
+   "fused": 5,
+   "none": 0,
+   "flukes_main": 83,
+   "flukes_main_one_instance": 65,
+   "flukes_all": 84,
+   "flukes_all_one_instance": 66,
+   "main_whales": 365,
+   "main_all_clicks_one_instance": 332
+  }
+ },
+ "s1": {
+  "per_day": {
+   "2025-01-15": {
+    "photos": 166,
+    "inst_0": 3,
+    "inst_1": 152,
+    "inst_2": 11,
+    "inst_3+": 0,
+    "instances": 174,
+    "rejected_nw": 0,
+    "rejected_gate": 1
+   },
+   "2025-02-27": {
+    "photos": 329,
+    "inst_0": 0,
+    "inst_1": 246,
+    "inst_2": 74,
+    "inst_3+": 9,
+    "instances": 423,
+    "rejected_nw": 0,
+    "rejected_gate": 10
+   },
+   "2025-03-14": {
+    "photos": 389,
+    "inst_0": 7,
+    "inst_1": 344,
+    "inst_2": 38,
+    "inst_3+": 0,
+    "instances": 420,
+    "rejected_nw": 0,
+    "rejected_gate": 3
+   },
+   "2025-01-02": {
+    "photos": 981,
+    "inst_0": 12,
+    "inst_1": 915,
+    "inst_2": 49,
+    "inst_3+": 5,
+    "instances": 1029,
+    "rejected_nw": 0,
+    "rejected_gate": 19
+   },
+   "2025-03-18": {
+    "photos": 754,
+    "inst_0": 1,
+    "inst_1": 698,
+    "inst_2": 51,
+    "inst_3+": 4,
+    "instances": 812,
+    "rejected_nw": 0,
+    "rejected_gate": 19
+   }
+  },
+  "val": {
+   "photos": 884,
+   "inst_0": 10,
+   "inst_1": 742,
+   "inst_2": 123,
+   "inst_3+": 9,
+   "instances": 1017,
+   "rejected_nw": 0,
+   "rejected_gate": 14,
+   "instances_per_photo": 1.15
+  },
+  "click_days": {
+   "photos": 1735,
+   "inst_0": 13,
+   "inst_1": 1613,
+   "inst_2": 100,
+   "inst_3+": 9,
+   "instances": 1841,
+   "rejected_nw": 0,
+   "rejected_gate": 38,
+   "instances_per_photo": 1.061
+  },
+  "clicks": {
+   "other_whales": 17,
+   "own": 10,
+   "fused": 7,
+   "none": 0,
+   "flukes_main": 83,
+   "flukes_main_one_instance": 66,
+   "flukes_all": 84,
+   "flukes_all_one_instance": 67,
+   "main_whales": 365,
+   "main_all_clicks_one_instance": 333
+  }
+ },
+ "s2": {
+  "per_day": {
+   "2025-01-15": {
+    "photos": 166,
+    "inst_0": 3,
+    "inst_1": 153,
+    "inst_2": 10,
+    "inst_3+": 0,
+    "instances": 173,
+    "rejected_nw": 0,
+    "rejected_gate": 1
+   },
+   "2025-02-27": {
+    "photos": 329,
+    "inst_0": 0,
+    "inst_1": 249,
+    "inst_2": 69,
+    "inst_3+": 11,
+    "instances": 422,
+    "rejected_nw": 0,
+    "rejected_gate": 8
+   },
+   "2025-03-14": {
+    "photos": 389,
+    "inst_0": 8,
+    "inst_1": 344,
+    "inst_2": 37,
+    "inst_3+": 0,
+    "instances": 418,
+    "rejected_nw": 0,
+    "rejected_gate": 3
+   },
+   "2025-01-02": {
+    "photos": 981,
+    "inst_0": 13,
+    "inst_1": 920,
+    "inst_2": 46,
+    "inst_3+": 2,
+    "instances": 1019,
+    "rejected_nw": 1,
+    "rejected_gate": 11
+   },
+   "2025-03-18": {
+    "photos": 754,
+    "inst_0": 1,
+    "inst_1": 695,
+    "inst_2": 54,
+    "inst_3+": 4,
+    "instances": 815,
+    "rejected_nw": 0,
+    "rejected_gate": 16
+   }
+  },
+  "val": {
+   "photos": 884,
+   "inst_0": 11,
+   "inst_1": 746,
+   "inst_2": 116,
+   "inst_3+": 11,
+   "instances": 1013,
+   "rejected_nw": 0,
+   "rejected_gate": 12,
+   "instances_per_photo": 1.146
+  },
+  "click_days": {
+   "photos": 1735,
+   "inst_0": 14,
+   "inst_1": 1615,
+   "inst_2": 100,
+   "inst_3+": 6,
+   "instances": 1834,
+   "rejected_nw": 1,
+   "rejected_gate": 27,
+   "instances_per_photo": 1.057
+  },
+  "clicks": {
+   "other_whales": 17,
+   "own": 9,
+   "fused": 6,
+   "none": 2,
+   "flukes_main": 83,
+   "flukes_main_one_instance": 66,
+   "flukes_all": 84,
+   "flukes_all_one_instance": 66,
+   "main_whales": 365,
+   "main_all_clicks_one_instance": 331
+  }
+ },
+ "s4": {
+  "per_day": {
+   "2025-01-15": {
+    "photos": 166,
+    "inst_0": 3,
+    "inst_1": 147,
+    "inst_2": 14,
+    "inst_3+": 2,
+    "instances": 181,
+    "rejected_nw": 0,
+    "rejected_gate": 1
+   },
+   "2025-02-27": {
+    "photos": 329,
+    "inst_0": 0,
+    "inst_1": 221,
+    "inst_2": 84,
+    "inst_3+": 24,
+    "instances": 466,
+    "rejected_nw": 0,
+    "rejected_gate": 23
+   },
+   "2025-03-14": {
+    "photos": 389,
+    "inst_0": 5,
+    "inst_1": 336,
+    "inst_2": 47,
+    "inst_3+": 1,
+    "instances": 433,
+    "rejected_nw": 1,
+    "rejected_gate": 9
+   },
+   "2025-01-02": {
+    "photos": 981,
+    "inst_0": 8,
+    "inst_1": 900,
+    "inst_2": 68,
+    "inst_3+": 5,
+    "instances": 1051,
+    "rejected_nw": 2,
+    "rejected_gate": 23
+   },
+   "2025-03-18": {
+    "photos": 754,
+    "inst_0": 1,
+    "inst_1": 686,
+    "inst_2": 61,
+    "inst_3+": 6,
+    "instances": 827,
+    "rejected_nw": 0,
+    "rejected_gate": 31
+   }
+  },
+  "val": {
+   "photos": 884,
+   "inst_0": 8,
+   "inst_1": 704,
+   "inst_2": 145,
+   "inst_3+": 27,
+   "instances": 1080,
+   "rejected_nw": 1,
+   "rejected_gate": 33,
+   "instances_per_photo": 1.222
+  },
+  "click_days": {
+   "photos": 1735,
+   "inst_0": 9,
+   "inst_1": 1586,
+   "inst_2": 129,
+   "inst_3+": 11,
+   "instances": 1878,
+   "rejected_nw": 2,
+   "rejected_gate": 54,
+   "instances_per_photo": 1.082
+  },
+  "clicks": {
+   "other_whales": 17,
+   "own": 12,
+   "fused": 4,
+   "none": 1,
+   "flukes_main": 83,
+   "flukes_main_one_instance": 60,
+   "flukes_all": 84,
+   "flukes_all_one_instance": 61,
+   "main_whales": 365,
+   "main_all_clicks_one_instance": 324
+  }
+ },
+ "s3": {
+  "per_day": {
+   "2025-01-15": {
+    "photos": 166,
+    "inst_0": 3,
+    "inst_1": 156,
+    "inst_2": 7,
+    "inst_3+": 0,
+    "instances": 170,
+    "rejected_nw": 0,
+    "rejected_gate": 0
+   },
+   "2025-02-27": {
+    "photos": 329,
+    "inst_0": 0,
+    "inst_1": 249,
+    "inst_2": 69,
+    "inst_3+": 11,
+    "instances": 421,
+    "rejected_nw": 0,
+    "rejected_gate": 9
+   },
+   "2025-03-14": {
+    "photos": 389,
+    "inst_0": 5,
+    "inst_1": 345,
+    "inst_2": 38,
+    "inst_3+": 1,
+    "instances": 425,
+    "rejected_nw": 1,
+    "rejected_gate": 6
+   },
+   "2025-01-02": {
+    "photos": 981,
+    "inst_0": 13,
+    "inst_1": 920,
+    "inst_2": 46,
+    "inst_3+": 2,
+    "instances": 1018,
+    "rejected_nw": 0,
+    "rejected_gate": 15
+   },
+   "2025-03-18": {
+    "photos": 754,
+    "inst_0": 1,
+    "inst_1": 698,
+    "inst_2": 52,
+    "inst_3+": 3,
+    "instances": 811,
+    "rejected_nw": 0,
+    "rejected_gate": 19
+   }
+  },
+  "val": {
+   "photos": 884,
+   "inst_0": 8,
+   "inst_1": 750,
+   "inst_2": 114,
+   "inst_3+": 12,
+   "instances": 1016,
+   "rejected_nw": 1,
+   "rejected_gate": 15,
+   "instances_per_photo": 1.149
+  },
+  "click_days": {
+   "photos": 1735,
+   "inst_0": 14,
+   "inst_1": 1618,
+   "inst_2": 98,
+   "inst_3+": 5,
+   "instances": 1829,
+   "rejected_nw": 0,
+   "rejected_gate": 34,
+   "instances_per_photo": 1.054
+  },
+  "clicks": {
+   "other_whales": 17,
+   "own": 10,
+   "fused": 5,
+   "none": 2,
+   "flukes_main": 83,
+   "flukes_main_one_instance": 67,
+   "flukes_all": 84,
+   "flukes_all_one_instance": 68,
+   "main_whales": 365,
+   "main_all_clicks_one_instance": 336
+  }
+ },
+ "s0": {
+  "per_day": {
+   "2025-01-15": {
+    "photos": 166,
+    "inst_0": 1,
+    "inst_1": 147,
+    "inst_2": 18,
+    "inst_3+": 0,
+    "instances": 183,
+    "rejected_nw": 40,
+    "rejected_gate": 19
+   },
+   "2025-02-27": {
+    "photos": 329,
+    "inst_0": 0,
+    "inst_1": 222,
+    "inst_2": 77,
+    "inst_3+": 30,
+    "instances": 472,
+    "rejected_nw": 12,
+    "rejected_gate": 45
+   },
+   "2025-03-14": {
+    "photos": 389,
+    "inst_0": 6,
+    "inst_1": 325,
+    "inst_2": 55,
+    "inst_3+": 3,
+    "instances": 444,
+    "rejected_nw": 87,
+    "rejected_gate": 45
+   },
+   "2025-01-02": {
+    "photos": 981,
+    "inst_0": 4,
+    "inst_1": 871,
+    "inst_2": 94,
+    "inst_3+": 12,
+    "instances": 1097,
+    "rejected_nw": 177,
+    "rejected_gate": 151
+   },
+   "2025-03-18": {
+    "photos": 754,
+    "inst_0": 0,
+    "inst_1": 642,
+    "inst_2": 95,
+    "inst_3+": 17,
+    "instances": 883,
+    "rejected_nw": 66,
+    "rejected_gate": 102
+   }
+  },
+  "val": {
+   "photos": 884,
+   "inst_0": 7,
+   "inst_1": 694,
+   "inst_2": 150,
+   "inst_3+": 33,
+   "instances": 1099,
+   "rejected_nw": 139,
+   "rejected_gate": 109,
+   "instances_per_photo": 1.243
+  },
+  "click_days": {
+   "photos": 1735,
+   "inst_0": 4,
+   "inst_1": 1513,
+   "inst_2": 189,
+   "inst_3+": 29,
+   "instances": 1980,
+   "rejected_nw": 243,
+   "rejected_gate": 253,
+   "instances_per_photo": 1.141
+  },
+  "clicks": {
+   "other_whales": 17,
+   "own": 13,
+   "fused": 4,
+   "none": 0,
+   "flukes_main": 83,
+   "flukes_main_one_instance": 65,
+   "flukes_all": 84,
+   "flukes_all_one_instance": 66,
+   "main_whales": 365,
+   "main_all_clicks_one_instance": 329
+  }
+ },
+ "s5": {
+  "per_day": {
+   "2025-01-15": {
+    "photos": 166,
+    "inst_0": 3,
+    "inst_1": 147,
+    "inst_2": 16,
+    "inst_3+": 0,
+    "instances": 179,
+    "rejected_nw": 0,
+    "rejected_gate": 0
+   },
+   "2025-02-27": {
+    "photos": 329,
+    "inst_0": 0,
+    "inst_1": 225,
+    "inst_2": 87,
+    "inst_3+": 17,
+    "instances": 451,
+    "rejected_nw": 0,
+    "rejected_gate": 17
+   },
+   "2025-03-14": {
+    "photos": 389,
+    "inst_0": 5,
+    "inst_1": 338,
+    "inst_2": 44,
+    "inst_3+": 2,
+    "instances": 432,
+    "rejected_nw": 1,
+    "rejected_gate": 7
+   },
+   "2025-01-02": {
+    "photos": 981,
+    "inst_0": 8,
+    "inst_1": 897,
+    "inst_2": 73,
+    "inst_3+": 3,
+    "instances": 1052,
+    "rejected_nw": 0,
+    "rejected_gate": 21
+   },
+   "2025-03-18": {
+    "photos": 754,
+    "inst_0": 1,
+    "inst_1": 685,
+    "inst_2": 61,
+    "inst_3+": 7,
+    "instances": 828,
+    "rejected_nw": 0,
+    "rejected_gate": 24
+   }
+  },
+  "val": {
+   "photos": 884,
+   "inst_0": 8,
+   "inst_1": 710,
+   "inst_2": 147,
+   "inst_3+": 19,
+   "instances": 1062,
+   "rejected_nw": 1,
+   "rejected_gate": 24,
+   "instances_per_photo": 1.201
+  },
+  "click_days": {
+   "photos": 1735,
+   "inst_0": 9,
+   "inst_1": 1582,
+   "inst_2": 134,
+   "inst_3+": 10,
+   "instances": 1880,
+   "rejected_nw": 0,
+   "rejected_gate": 45,
+   "instances_per_photo": 1.084
+  },
+  "clicks": {
+   "other_whales": 17,
+   "own": 13,
+   "fused": 3,
+   "none": 1,
+   "flukes_main": 83,
+   "flukes_main_one_instance": 60,
+   "flukes_all": 84,
+   "flukes_all_one_instance": 61,
+   "main_whales": 365,
+   "main_all_clicks_one_instance": 324
+  }
+ },
+ "s5_g0.35": {
+  "per_day": {
+   "2025-01-15": {
+    "photos": 166,
+    "inst_0": 3,
+    "inst_1": 147,
+    "inst_2": 16,
+    "inst_3+": 0,
+    "instances": 179,
+    "rejected_nw": 0,
+    "rejected_gate": 0
+   },
+   "2025-02-27": {
+    "photos": 329,
+    "inst_0": 0,
+    "inst_1": 228,
+    "inst_2": 84,
+    "inst_3+": 17,
+    "instances": 448,
+    "rejected_nw": 0,
+    "rejected_gate": 17
+   },
+   "2025-03-14": {
+    "photos": 389,
+    "inst_0": 5,
+    "inst_1": 340,
+    "inst_2": 42,
+    "inst_3+": 2,
+    "instances": 430,
+    "rejected_nw": 1,
+    "rejected_gate": 7
+   },
+   "2025-01-02": {
+    "photos": 981,
+    "inst_0": 8,
+    "inst_1": 900,
+    "inst_2": 70,
+    "inst_3+": 3,
+    "instances": 1049,
+    "rejected_nw": 0,
+    "rejected_gate": 21
+   },
+   "2025-03-18": {
+    "photos": 754,
+    "inst_0": 1,
+    "inst_1": 689,
+    "inst_2": 58,
+    "inst_3+": 6,
+    "instances": 823,
+    "rejected_nw": 0,
+    "rejected_gate": 24
+   }
+  },
+  "val": {
+   "photos": 884,
+   "inst_0": 8,
+   "inst_1": 715,
+   "inst_2": 142,
+   "inst_3+": 19,
+   "instances": 1057,
+   "rejected_nw": 1,
+   "rejected_gate": 24,
+   "instances_per_photo": 1.196
+  },
+  "click_days": {
+   "photos": 1735,
+   "inst_0": 9,
+   "inst_1": 1589,
+   "inst_2": 128,
+   "inst_3+": 9,
+   "instances": 1872,
+   "rejected_nw": 0,
+   "rejected_gate": 45,
+   "instances_per_photo": 1.079
+  },
+  "clicks": {
+   "other_whales": 17,
+   "own": 13,
+   "fused": 3,
+   "none": 1,
+   "flukes_main": 83,
+   "flukes_main_one_instance": 64,
+   "flukes_all": 84,
+   "flukes_all_one_instance": 65,
+   "main_whales": 365,
+   "main_all_clicks_one_instance": 329
+  }
+ },
+ "s5b": {
+  "per_day": {
+   "2025-01-15": {
+    "photos": 166,
+    "inst_0": 3,
+    "inst_1": 150,
+    "inst_2": 11,
+    "inst_3+": 2,
+    "instances": 178,
+    "rejected_nw": 0,
+    "rejected_gate": 0
+   },
+   "2025-02-27": {
+    "photos": 329,
+    "inst_0": 0,
+    "inst_1": 230,
+    "inst_2": 77,
+    "inst_3+": 22,
+    "instances": 455,
+    "rejected_nw": 0,
+    "rejected_gate": 14
+   },
+   "2025-03-14": {
+    "photos": 389,
+    "inst_0": 5,
+    "inst_1": 339,
+    "inst_2": 43,
+    "inst_3+": 2,
+    "instances": 432,
+    "rejected_nw": 1,
+    "rejected_gate": 8
+   },
+   "2025-01-02": {
+    "photos": 981,
+    "inst_0": 10,
+    "inst_1": 903,
+    "inst_2": 62,
+    "inst_3+": 6,
+    "instances": 1046,
+    "rejected_nw": 2,
+    "rejected_gate": 28
+   },
+   "2025-03-18": {
+    "photos": 754,
+    "inst_0": 1,
+    "inst_1": 683,
+    "inst_2": 62,
+    "inst_3+": 8,
+    "instances": 831,
+    "rejected_nw": 0,
+    "rejected_gate": 27
+   }
+  },
+  "val": {
+   "photos": 884,
+   "inst_0": 8,
+   "inst_1": 719,
+   "inst_2": 131,
+   "inst_3+": 26,
+   "instances": 1065,
+   "rejected_nw": 1,
+   "rejected_gate": 22,
+   "instances_per_photo": 1.205
+  },
+  "click_days": {
+   "photos": 1735,
+   "inst_0": 11,
+   "inst_1": 1586,
+   "inst_2": 124,
+   "inst_3+": 14,
+   "instances": 1877,
+   "rejected_nw": 2,
+   "rejected_gate": 55,
+   "instances_per_photo": 1.082
+  },
+  "clicks": {
+   "other_whales": 17,
+   "own": 11,
+   "fused": 5,
+   "none": 1,
+   "flukes_main": 83,
+   "flukes_main_one_instance": 63,
+   "flukes_all": 84,
+   "flukes_all_one_instance": 64,
+   "main_whales": 365,
+   "main_all_clicks_one_instance": 331
+  }
+ },
+ "s5_h0.6_0.1": {
+  "per_day": {
+   "2025-01-15": {
+    "photos": 166,
+    "inst_0": 3,
+    "inst_1": 149,
+    "inst_2": 13,
+    "inst_3+": 1,
+    "instances": 178,
+    "rejected_nw": 0,
+    "rejected_gate": 0
+   },
+   "2025-02-27": {
+    "photos": 329,
+    "inst_0": 0,
+    "inst_1": 223,
+    "inst_2": 86,
+    "inst_3+": 20,
+    "instances": 457,
+    "rejected_nw": 0,
+    "rejected_gate": 13
+   },
+   "2025-03-14": {
+    "photos": 389,
+    "inst_0": 5,
+    "inst_1": 337,
+    "inst_2": 47,
+    "inst_3+": 0,
+    "instances": 431,
+    "rejected_nw": 1,
+    "rejected_gate": 7
+   },
+   "2025-01-02": {
+    "photos": 981,
+    "inst_0": 8,
+    "inst_1": 901,
+    "inst_2": 70,
+    "inst_3+": 2,
+    "instances": 1047,
+    "rejected_nw": 0,
+    "rejected_gate": 21
+   },
+   "2025-03-18": {
+    "photos": 754,
+    "inst_0": 1,
+    "inst_1": 682,
+    "inst_2": 64,
+    "inst_3+": 7,
+    "instances": 831,
+    "rejected_nw": 0,
+    "rejected_gate": 26
+   }
+  },
+  "val": {
+   "photos": 884,
+   "inst_0": 8,
+   "inst_1": 709,
+   "inst_2": 146,
+   "inst_3+": 21,
+   "instances": 1066,
+   "rejected_nw": 1,
+   "rejected_gate": 20,
+   "instances_per_photo": 1.206
+  },
+  "click_days": {
+   "photos": 1735,
+   "inst_0": 9,
+   "inst_1": 1583,
+   "inst_2": 134,
+   "inst_3+": 9,
+   "instances": 1878,
+   "rejected_nw": 0,
+   "rejected_gate": 47,
+   "instances_per_photo": 1.082
+  },
+  "clicks": {
+   "other_whales": 17,
+   "own": 13,
+   "fused": 3,
+   "none": 1,
+   "flukes_main": 83,
+   "flukes_main_one_instance": 61,
+   "flukes_all": 84,
+   "flukes_all_one_instance": 62,
+   "main_whales": 365,
+   "main_all_clicks_one_instance": 329
+  }
+ },
+ "s5_h0.6_0.1_g0.35": {
+  "per_day": {
+   "2025-01-15": {
+    "photos": 166,
+    "inst_0": 3,
+    "inst_1": 150,
+    "inst_2": 12,
+    "inst_3+": 1,
+    "instances": 177,
+    "rejected_nw": 0,
+    "rejected_gate": 0
+   },
+   "2025-02-27": {
+    "photos": 329,
+    "inst_0": 0,
+    "inst_1": 225,
+    "inst_2": 84,
+    "inst_3+": 20,
+    "instances": 455,
+    "rejected_nw": 0,
+    "rejected_gate": 13
+   },
+   "2025-03-14": {
+    "photos": 389,
+    "inst_0": 5,
+    "inst_1": 338,
+    "inst_2": 46,
+    "inst_3+": 0,
+    "instances": 430,
+    "rejected_nw": 1,
+    "rejected_gate": 7
+   },
+   "2025-01-02": {
+    "photos": 981,
+    "inst_0": 8,
+    "inst_1": 904,
+    "inst_2": 67,
+    "inst_3+": 2,
+    "instances": 1044,
+    "rejected_nw": 0,
+    "rejected_gate": 21
+   },
+   "2025-03-18": {
+    "photos": 754,
+    "inst_0": 1,
+    "inst_1": 686,
+    "inst_2": 61,
+    "inst_3+": 6,
+    "instances": 826,
+    "rejected_nw": 0,
+    "rejected_gate": 26
+   }
+  },
+  "val": {
+   "photos": 884,
+   "inst_0": 8,
+   "inst_1": 713,
+   "inst_2": 142,
+   "inst_3+": 21,
+   "instances": 1062,
+   "rejected_nw": 1,
+   "rejected_gate": 20,
+   "instances_per_photo": 1.201
+  },
+  "click_days": {
+   "photos": 1735,
+   "inst_0": 9,
+   "inst_1": 1590,
+   "inst_2": 128,
+   "inst_3+": 8,
+   "instances": 1870,
+   "rejected_nw": 0,
+   "rejected_gate": 47,
+   "instances_per_photo": 1.078
+  },
+  "clicks": {
+   "other_whales": 17,
+   "own": 13,
+   "fused": 3,
+   "none": 1,
+   "flukes_main": 83,
+   "flukes_main_one_instance": 65,
+   "flukes_all": 84,
+   "flukes_all_one_instance": 66,
+   "main_whales": 365,
+   "main_all_clicks_one_instance": 333
+  }
+ },
+ "s6_h0.6_0.1_g0.35": {
+  "per_day": {
+   "2025-01-15": {
+    "photos": 166,
+    "inst_0": 3,
+    "inst_1": 150,
+    "inst_2": 12,
+    "inst_3+": 1,
+    "instances": 177,
+    "rejected_nw": 0,
+    "rejected_gate": 1
+   },
+   "2025-02-27": {
+    "photos": 329,
+    "inst_0": 0,
+    "inst_1": 230,
+    "inst_2": 85,
+    "inst_3+": 14,
+    "instances": 444,
+    "rejected_nw": 0,
+    "rejected_gate": 13
+   },
+   "2025-03-14": {
+    "photos": 389,
+    "inst_0": 4,
+    "inst_1": 341,
+    "inst_2": 43,
+    "inst_3+": 1,
+    "instances": 430,
+    "rejected_nw": 1,
+    "rejected_gate": 7
+   },
+   "2025-01-02": {
+    "photos": 981,
+    "inst_0": 8,
+    "inst_1": 901,
+    "inst_2": 69,
+    "inst_3+": 3,
+    "instances": 1048,
+    "rejected_nw": 0,
+    "rejected_gate": 11
+   },
+   "2025-03-18": {
+    "photos": 754,
+    "inst_0": 1,
+    "inst_1": 689,
+    "inst_2": 58,
+    "inst_3+": 6,
+    "instances": 823,
+    "rejected_nw": 0,
+    "rejected_gate": 26
+   }
+  },
+  "val": {
+   "photos": 884,
+   "inst_0": 7,
+   "inst_1": 721,
+   "inst_2": 140,
+   "inst_3+": 16,
+   "instances": 1051,
+   "rejected_nw": 1,
+   "rejected_gate": 21,
+   "instances_per_photo": 1.189
+  },
+  "click_days": {
+   "photos": 1735,
+   "inst_0": 9,
+   "inst_1": 1590,
+   "inst_2": 127,
+   "inst_3+": 9,
+   "instances": 1871,
+   "rejected_nw": 0,
+   "rejected_gate": 37,
+   "instances_per_photo": 1.078
+  },
+  "clicks": {
+   "other_whales": 17,
+   "own": 12,
+   "fused": 4,
+   "none": 1,
+   "flukes_main": 83,
+   "flukes_main_one_instance": 66,
+   "flukes_all": 84,
+   "flukes_all_one_instance": 67,
+   "main_whales": 365,
+   "main_all_clicks_one_instance": 337
+  }
+ }
+}

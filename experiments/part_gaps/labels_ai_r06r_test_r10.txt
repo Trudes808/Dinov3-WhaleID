@@ -1,0 +1,119 @@
+# AI by-eye labels of every r06r_test_r10 whale (116), blind (render + outline only). Same taxonomy and #S / #R fin marks;
+# 'pale' = flat pale beige / grey cut-out; 'white' = paper-white underside; 'khaki' = matt khaki / beige sunlit side, cardboard look;
+# 'ghost' = submerged body shows bright through the water below a dark dome. Format: <shot> <iid> <CATEGORY> ...
+000000 1 F_edge pale
+000001 1 D_small #R
+000002 1 D_tip #S
+000002 2 D_small s1 #R
+000003 1 F_low
+000004 1 D_small #R
+000005 1 B_back e
+000005 2 D_tip h #R
+000006 1 D_tip #R
+000007 1 P_pec pale
+000007 2 F_low
+000008 1 F_up
+000008 2 D_tip s1 #R
+000008 3 D_tip pale #S
+000009 1 X_none khaki
+000009 2 D_small #R
+000010 1 D_small #R
+000012 1 D_small #S
+000013 1 D_small #R
+000014 1 F_edge s1
+000015 1 F_low
+000016 1 D_small #R
+000017 1 F_low
+000018 1 F_up
+000019 1 F_up pale
+000020 1 F_low khaki
+000020 2 X_none khaki
+000020 3 D_small pale #R
+000021 1 D_tip s2 #R
+000022 1 D_small #S
+000023 1 X_none
+000023 2 H_head
+000023 3 B_back s1
+000024 1 D_tall
+000025 1 P_pec s1 white
+000025 2 D_small #R
+000026 1 D_small s1 #R
+000026 2 D_small #R
+000027 1 D_small pale #R
+000028 1 D_small s1 #R
+000029 1 F_up
+000029 2 B_back e
+000029 3 D_small #R
+000030 1 P_pec s1 white
+000030 2 H_head pale
+000030 3 D_tip pale #S
+000032 1 D_small #R
+000033 1 D_tall khaki #S
+000034 1 D_small #R
+000035 1 D_small #R
+000036 1 B_back m pale
+000036 2 D_small m #R
+000037 1 P_pec s1
+000038 1 D_tip khaki #R
+000039 1 P_pec m
+000039 2 F_up white
+000040 1 D_small #R
+000041 1 H_head ghost
+000041 2 H_head ghost
+000041 3 D_small m #R
+000042 1 B_back
+000043 1 H_head pale
+000044 1 X_none s2
+000044 2 D_small s1 #S
+000045 1 B_back
+000046 1 D_small s1 #R
+000046 2 D_tip h #R
+000047 1 D_small s1 #R
+000048 1 D_small #R
+000049 1 P_pec white
+000049 2 D_tip s2 #S
+000050 1 B_back
+000051 1 D_small #R
+000051 2 D_small #R
+000052 1 D_tip #S
+000054 1 F_low
+000055 1 F_low
+000055 2 D_small #R
+000056 1 F_edge s1 pale
+000056 2 H_head khaki
+000057 1 D_small khaki #R
+000057 2 F_edge khaki
+000058 1 F_low
+000059 1 P_pec white
+000061 1 D_tip #S
+000062 1 D_small #R
+000062 2 D_small #R
+000063 1 B_back m khaki
+000063 2 D_small khaki #R
+000063 3 P_pec khaki
+000064 1 R_roll
+000065 1 D_tip #R
+000066 1 F_edge s1
+000067 1 F_edge pale
+000067 2 D_small khaki #R
+000068 1 P_pec s2 pale
+000069 1 F_edge
+000069 2 B_back s2
+000069 3 X_none
+000070 1 D_small s1 #S
+000071 1 D_small #R
+000072 1 D_small #R
+000073 1 D_small #S
+000074 1 R_roll m
+000074 2 B_back m
+000074 3 P_pec e
+000075 1 D_tip #S
+000075 2 D_small #S
+000076 1 F_up
+000076 2 D_tip #R
+000076 3 D_small #R
+000077 1 R_roll khaki
+000077 2 B_back khaki
+000078 1 B_back khaki
+000079 1 D_small pale #R
+000079 2 F_up

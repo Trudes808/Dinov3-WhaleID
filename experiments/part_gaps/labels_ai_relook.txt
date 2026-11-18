@@ -1,0 +1,47 @@
+# Second look (AI, 2026-11-17), after the first gap table: every instance first labelled B_back was re-viewed on blind
+# sheets (photo + outline only) with one question: is a dorsal fin, or its end-on spike at the apex of an arched back
+# seen from behind, in view? Yes -> D_tip (end-on / partial) or D_small. The rule was tightened because the first pass
+# put the same view in B_back and D_tip inconsistently (seen on the failure sheet). Format: <key> <new code>
+2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359575-184A7110~0 D_tip s1
+2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590050-184A4520~0 D_tip
+2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590804-184A5278~0 D_tip
+2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-084-184A0339~1 D_tip
+2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-001-184A1334~0 D_tip b
+2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-010-184A1343~0 D_tip
+2025-2-24_C1_Harvey__2025-2-24-Harvey-NOAA-MMHSRP-24359-340-184A1688~0 D_tip
+2025-2-28_UH_Maui_group_2__Mother_-_4__2025-2-28_Lyman_NOAA_MMHSRP-24359184-EGL_7203~0 D_small
+2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-0755-184A7927~0 D_tip s1
+2025-3-26_C1_Smith__2025-3-26-Smith-NOAA-MMHSRP-24359-1057-184A8229~0 D_tip s1
+2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-273-184A2859~0 D_tip
+2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-049-184A8566~0 D_tip
+2025-3-6_C1_Harvey__2025-3-6-Harvey-NOAA-MMHSRP-24359-092-184A2674~0 D_small
+# Same question, asked of every instance first labelled H_head (blind sheet hh): the flat light hump seen from behind
+# with a spike at the apex is the fin end-on -> D_tip.
+2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-029-184A1744~0 D_tip
+2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-034-184A1749~0 D_tip
+2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-035-184A1750~0 D_tip
+# Blind adjudication (AI, larger tiles, photo + outline only) of the 58 sample instances whose AI label (D_small, P_pec,
+# B_back) disagrees with the view classifier's confident answer. Changed only where clear; 'a' / 'a2' mark the ones
+# that stay ambiguous (the report shows the error with and without them).
+2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-212-184A7875~0 D_small
+2025-1-20_C1_Harvey__2025-1-20-Harvey-NOAA-MMHSRP-24359-422-184A8087~0 D_small
+2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-069-184A1784~0 D_small
+2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-075-184A1790~1 D_small s1
+2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-123-184A1838~0 F_edge s1
+2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359530-184A7065~1 D_small m a
+2025-1-16_Harvey_C1__2025-1-16-Harvey_NOAA_MMHSRP-24359686-184A7228~0 D_small s1 a
+2025-1-23_Lyman_C1__2025-1-23-Lyman_NOAA_MMHSRP-24359524-184A8849~1 B_back s2 a
+2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590012-184A4482~1 D_small a
+2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590234-184A4705~0 D_small s1 b a
+2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-114-184A1829~0 D_small m a
+2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-115-184A1830~0 D_small a
+2025-3-13_C1_Harvey__2025-3-13-Harvey-NOAA-MMHSRP-24359-055-184A2940~1 D_small a
+2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-012-184A3494~0 D_small a
+2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0521-184A4587~0 D_small h s1 a
+2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-265-184A6845~0 B_back s1 a
+2025-3-24_C1_Harvey__2025-3-24-Harvey-NOAA-MMHSRP-24359-459-184A7039~0 B_back a
+2025-4-1_C1_Lyman__2025-4-1-Lyman-NOAA-MMHSRP-24359-215-184A8736~1 D_small a
+2025-4-1_C3_Harvey__2025-4-1-Harvey-NOAA-MMHSRP-24359-205-HR5_8694~1 D_small s1 a
+2025-2-12_C1_Harvey__2025-2-12-Harvey-NOAA-MMHSRP-24359-016-184A0267~0 P_pec m a2
+2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-134-184A1849~1 P_pec m s1 a2
+2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0245-184A4311~0 P_pec a2

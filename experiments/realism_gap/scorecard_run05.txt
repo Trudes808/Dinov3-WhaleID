@@ -1,0 +1,132 @@
+REALISM SCORE CARD  renders: /home/sat3737/NOAA_whales/Whale-Image-Data-Factory/data/renders/run05/dataset
+  real crops 1500 (24 days), render shots 1511 (238 batches)
+
+  HEADLINE  image AUC 1.0   patch AUC 1.0   coverage ratio 1.645
+            (not saturating: image d' 9.503  patch d' 7.377  Frechet crop ratio 12.34)
+
+  1. statistics, largest gaps first (KS 0 = same distribution, 1 = no overlap; SMD = render - real in pooled sd)
+    # statistic              unit                  real median [IQR]          render median [IQR]    KS    SMD
+    1 frame.aspect           W/H             1.50 [1.50, 1.50]           1.78 [1.78, 1.78]         1.00  13.10
+    2 frame.width_px         px              2560 [2560, 2560]           1280 [1280, 1280]         1.00 -58.24
+    3 frame.clip_hi          share          0.009 [0.006, 0.011]            0 [0, 0]               0.95  -1.58
+    4 band.clip_hi           share          0.014 [0.007, 0.026]            0 [0, 0]               0.91  -1.10
+    5 far.clip_hi            share          0.003 [4.9e-04, 0.006]          0 [0, 0]               0.90  -0.64
+    6 far.hue_deg            deg (Lab)      277.6 [275.8, 279.3]        258.7 [236.8, 265.5]       0.87  -1.07
+    7 far.coherence          0..1            0.79 [0.73, 0.82]           0.97 [0.94, 0.99]         0.87   1.81
+    8 far.vgrad_share        share           0.89 [0.86, 0.91]           0.98 [0.97, 0.99]         0.86   1.70
+    9 band.hue_deg           deg (Lab)      277.3 [275.4, 279.2]        261.5 [240.3, 268.0]       0.82  -0.96
+   10 frame.a_mean           a*              2.82 [1.38, 4.29]          -2.05 [-3.23, -0.68]       0.82  -2.10
+   11 far.a_mean             a*              3.06 [1.47, 4.67]          -2.05 [-3.40, -0.68]       0.81  -2.10
+   12 above.clip_hi          share          0.035 [6.0e-05, 0.099]          0 [0, 0]               0.81  -0.94
+   13 whale.clip_hi          share          0.003 [5.2e-04, 0.011]          0 [0, 0]               0.79  -0.40
+   14 band.a_mean            a*              2.87 [1.35, 4.37]          -1.51 [-3.02, -0.19]       0.75  -1.81
+   15 above.tex_medium       L*              0.44 [0.29, 0.63]           0.11 [0.090, 0.16]        0.71  -1.20
+   16 above.L_mean           L*              76.9 [72.6, 80.9]           47.4 [33.7, 62.3]         0.71  -1.98
+   17 frame.crush_lo         share              0 [0, 0]              1.7e-04 [0, 0.002]           0.69   0.62
+   18 frame.noise            grey level      1.22 [0.96, 1.47]           0.45 [0.30, 0.81]         0.68  -1.04
+   19 frame.L_p99            L*              88.9 [83.7, 92.8]           67.5 [50.5, 79.1]         0.67  -1.82
+   20 band.coherence         0..1            0.72 [0.66, 0.76]           0.90 [0.80, 0.95]         0.64   1.08
+   21 band.vgrad_share       share           0.86 [0.83, 0.88]           0.95 [0.90, 0.97]         0.64   0.99
+   22 above.hue_deg          deg (Lab)      274.2 [270.8, 277.0]        257.1 [245.4, 267.4]       0.63  -0.65
+   23 above.tex_fine         L*              0.31 [0.23, 0.43]           0.14 [0.099, 0.20]        0.59  -1.07
+   24 whale.crush_lo         share              0 [0, 0]                0.001 [0, 0.031]           0.58   0.71
+   25 crop.native_per_px     px/px           2.96 [1.71, 4.48]           0.81 [0.45, 1.46]         0.58  -1.56
+   26 whale.native_width_px  px             934.0 [530.0, 1432]         256.0 [141.0, 461.5]       0.57  -1.54
+   27 above.a_mean           a*              1.42 [0.28, 2.44]          -2.02 [-3.20, 0.012]       0.57  -1.36
+   28 crop.lapvar            L*^2           175.6 [77.3, 320.4]          21.8 [6.25, 59.9]         0.56  -1.24
+   29 far.b_mean             b*             -24.6 [-30.4, -16.3]        -11.6 [-16.2, -6.91]       0.56   1.41
+   30 far.C_mean             C*              25.0 [17.1, 30.9]           13.4 [9.95, 17.4]         0.56  -1.35
+   31 band.psd_slope         log-log        -2.18 [-2.73, -1.81]        -3.56 [-4.39, -2.88]       0.56  -1.25
+   32 far.crush_lo           share              0 [0, 0]              1.0e-05 [0, 5.7e-04]         0.55   0.50
+   33 far.foam               share          0.003 [2.1e-04, 0.011]          0 [0, 1.0e-04]         0.54  -0.48
+   34 frame.b_mean           b*             -23.1 [-28.5, -15.4]        -11.4 [-16.1, -6.87]       0.53   1.34
+   35 whale.S_hsv            0..1            0.29 [0.21, 0.37]           0.50 [0.37, 0.60]         0.53   1.32
+   36 band.b_mean            b*             -23.8 [-29.0, -15.9]        -12.1 [-17.1, -6.83]       0.50   1.28
+   37 band.crush_lo          share              0 [0, 0]                    0 [0, 0.001]           0.50   0.46
+   38 band.C_mean            C*              24.1 [16.3, 29.5]           13.9 [10.2, 18.2]         0.49  -1.17
+   39 frame.L_p01            L*              22.1 [14.9, 28.6]           6.82 [1.89, 16.5]         0.48  -1.15
+   40 above.L_std            L*              4.13 [3.17, 5.74]           7.14 [5.27, 8.77]         0.44   0.92
+   41 band.foam              share          0.024 [0.007, 0.052]        0.001 [0, 0.013]           0.44  -0.59
+   42 frame.above_share      share              0 [0, 0.099]             0.25 [0, 0.38]            0.44   0.98
+   43 above.b_mean           b*             -21.1 [-24.9, -15.6]        -11.5 [-18.0, -5.99]       0.43   0.95
+   44 frame.has_horizon      share              0 [0, 1.00]              1.00 [0, 1.00]            0.43   0.94
+   45 far.L_mean             L*              52.0 [44.2, 63.4]           37.5 [25.0, 52.0]         0.42  -1.11
+   46 band.L_mean            L*              53.4 [46.4, 63.3]           40.7 [27.5, 54.8]         0.42  -1.00
+   47 whale.lapvar           L*^2           146.7 [56.9, 321.4]          27.9 [7.12, 84.7]         0.42  -0.83
+   48 whale.L_mean           L*              32.9 [23.9, 42.9]           16.7 [8.15, 31.3]         0.41  -0.81
+   49 whale.b_mean           b*             -10.3 [-13.8, -7.55]        -5.23 [-11.6, -1.63]       0.41   0.68
+   50 frame.L_mean           L*              54.0 [47.2, 62.8]           41.1 [28.3, 54.9]         0.40  -1.00
+   51 above.C_mean           C*              21.2 [16.0, 25.1]           13.0 [8.09, 19.0]         0.39  -0.95
+   52 whale.a_mean           a*              2.34 [1.40, 3.34]           1.06 [0.50, 1.90]         0.39  -0.71
+   53 above.S_hsv            0..1            0.26 [0.20, 0.30]           0.29 [0.18, 0.43]         0.37   0.55
+   54 band.tex_fine          L*              2.52 [2.00, 2.96]           1.75 [1.15, 2.55]         0.35  -0.60
+   55 above.tex_coarse       L*              0.43 [0.25, 0.67]           0.20 [0.12, 0.44]         0.35  -0.54
+   56 whale.hue_deg          deg (Lab)      282.2 [279.0, 285.9]        278.1 [271.0, 285.7]       0.30  -0.52
+   57 whale.len_share        share           0.37 [0.21, 0.56]           0.20 [0.11, 0.36]         0.29  -0.70
+   58 whale.edge_width       crop px         1.59 [1.10, 1.98]           2.01 [1.39, 2.81]         0.28   0.60
+   59 above.vgrad_share      share           0.92 [0.82, 0.97]           0.81 [0.66, 0.92]         0.28  -0.64
+   60 whale.C_mean           C*              11.1 [8.54, 14.6]           8.34 [5.96, 12.8]         0.27  -0.40
+   61 above.coherence        0..1            0.84 [0.64, 0.95]           0.64 [0.34, 0.85]         0.27  -0.64
+   62 whale.tex_fine         L*              1.83 [1.38, 2.38]           1.35 [0.85, 2.03]         0.27  -0.55
+   63 whale.area_share       share          0.025 [0.010, 0.054]        0.010 [0.003, 0.029]       0.27  -0.43
+   64 far.tex_fine           L*              1.79 [1.49, 2.09]           1.51 [1.03, 2.06]         0.24  -0.30
+   65 whale.psd_slope        log-log        -2.19 [-2.94, -1.70]        -2.78 [-4.30, -1.84]       0.23  -0.41
+   66 far.tex_coarse         L*              2.08 [1.71, 2.45]           1.78 [1.24, 2.60]         0.23  -0.06
+   67 frame.lapvar           L*^2            58.4 [40.9, 81.7]           45.7 [25.9, 73.0]         0.22  -0.33
+   68 whale.L_std            L*              13.3 [10.5, 17.1]           12.5 [7.47, 18.8]         0.21  -0.08
+   69 far.tex_medium         L*              2.17 [1.83, 2.55]           2.00 [1.38, 2.72]         0.19  -0.05
+   70 above.psd_slope        log-log        -1.31 [-2.26, -0.53]        -1.12 [-1.69, -0.66]       0.19   0.33
+   71 whale.spec_share       share          0.063 [0.034, 0.11]         0.062 [0.014, 0.14]        0.19   0.10
+   72 whale.hi_spread        L*              28.2 [20.7, 39.1]           28.0 [14.6, 44.6]         0.17  -0.01
+   73 band.tex_medium        L*              2.68 [2.26, 3.06]           2.54 [1.87, 3.35]         0.17   0.02
+   74 frame.L_std            L*              13.5 [11.6, 15.8]           12.6 [10.1, 15.2]         0.17  -0.26
+   75 whale.tex_coarse       L*              1.95 [1.37, 2.87]           2.12 [1.06, 3.48]         0.16   0.11
+   76 whale.tex_medium       L*              1.95 [1.47, 2.68]           1.94 [1.17, 2.78]         0.15  -0.06
+   77 whale.height_share     share           0.16 [0.095, 0.24]          0.12 [0.075, 0.23]        0.14  -0.08
+   78 band.tex_coarse        L*              2.67 [2.19, 3.14]           2.62 [1.88, 3.38]         0.13   0.04
+   79 whale.cy               0..1            0.50 [0.46, 0.55]           0.49 [0.43, 0.56]         0.12  -0.16
+   80 far.psd_slope          log-log        -2.78 [-3.23, -2.40]        -2.86 [-3.57, -2.33]       0.12  -0.12
+   81 band.L_std             L*              13.4 [11.1, 15.5]           13.3 [9.81, 16.9]         0.12   0.04
+   82 whale.vgrad_share      share           0.67 [0.55, 0.77]           0.71 [0.60, 0.80]         0.11   0.24
+   83 whale.coherence        0..1            0.43 [0.27, 0.59]           0.50 [0.33, 0.64]         0.11   0.25
+   84 band.S_hsv             0..1            0.39 [0.26, 0.48]           0.38 [0.30, 0.47]         0.10   0.17
+   85 far.S_hsv              0..1            0.41 [0.26, 0.50]           0.39 [0.29, 0.48]         0.09   0.06
+   86 whale.dL_vs_band       L*             -23.8 [-34.8, -13.4]        -26.0 [-37.1, -17.1]       0.09  -0.12
+   87 far.L_std              L*              10.1 [8.52, 11.7]           9.94 [7.87, 12.4]         0.09   0.04
+   88 whale.cx               0..1            0.49 [0.44, 0.54]           0.50 [0.44, 0.56]         0.06   0.09
+   89 above.crush_lo         share              0 [0, 0]                    0 [0, 0]               0.02   0.08
+
+  2. learned gap (frozen DINOv3 ViT-B/16; folds hold out whole real days and render batches; 0.5 = cannot tell apart)
+     image_crop         AUC 1.000  accuracy 0.999  d' 9.503
+     image_frame        AUC 1.000  accuracy 1.000  d' 9.722
+     image_whale_only   AUC 1.000  accuracy 0.999  d' 7.74
+     patch probe per region (AUC over patches of that region; mean P(render) on real / on render patches):
+       all     AUC 1.0    d' 7.377  n real 148872 n render 169652
+       whale   AUC 0.9999 d' 6.834  n real  45905 n render  46017   P(render) real 0.005  render 0.995
+       band    AUC 1.0    d' 8.069  n real  47929 n render  48352   P(render) real 0.003  render 0.998
+       far     AUC 1.0    d' 7.72   n real  46998 n render  47789   P(render) real 0.004  render 0.998
+       above   AUC 1.0    d' 7.366  n real   8040 n render  27494   P(render) real 0.006  render 0.998
+     Frechet DINO distance, 64 PCs, fixed n (real half A vs real half B = floor | real half A vs renders; ratio 1.0 = as close as real days are to each other):
+       crop         real-real     1.10  real-render    13.57  ratio  12.34  (n 300)
+       whale        real-real     1.95  real-render    15.78  ratio   8.08  (n 300)
+       frame        real-real     1.15  real-render    13.43  ratio  11.69  (n 300)
+       patch_whale  real-real     0.96  real-render    14.60  ratio  15.18  (n 3000)
+       patch_band   real-real     0.84  real-render    15.80  ratio  18.69  (n 3000)
+       patch_far    real-real     1.14  real-render    14.55  ratio  12.80  (n 3000)
+       patch_above  real-real     4.39  real-render    14.43  ratio   3.28  (n 3000)
+     coverage: real->render 0.6  real->real(other days) 0.3647  ratio 1.645  real crops uncovered 98%
+               render->real 0.555  render->render(other batches) 0.2854  renders far from all real 67%
+
+  3. coverage per hard situation (median cosine distance of the instance's whale tokens to its 3 nearest renders / to its 3 nearest real crops of other days)
+     easy fluke view                      n  60  to renders 0.533  to real 0.281  ratio 1.90  uncovered 100%
+     A fluke, no fluke cut-out            n  60  to renders 0.695  to real 0.368  ratio 1.89  uncovered 100%
+     E fills the frame                    n  60  to renders 0.647  to real 0.382  ratio 1.69  uncovered 100%
+     G no fin showing, fin cut-out made   n  60  to renders 0.696  to real 0.416  ratio 1.67  uncovered 100%
+     easy fin view                        n  60  to renders 0.619  to real 0.377  ratio 1.64  uncovered 100%
+     D fin view, head and flank at odds   n  60  to renders 0.633  to real 0.388  ratio 1.63  uncovered 98%
+     H another whale marked               n  15  to renders 0.674  to real 0.422  ratio 1.60  uncovered 100%
+     B fluke in two pieces                n  60  to renders 0.542  to real 0.366  ratio 1.48  uncovered 100%
+     C neither fluke nor fin              n  60  to renders 0.600  to real 0.431  ratio 1.39  uncovered 93%
+     F small and far                      n  60  to renders 0.544  to real 0.421  ratio 1.29  uncovered 83%
+
+written: /tmp/claude-1072903897/-home-sat3737-NOAA-whales/4fbba7ff-3ba5-4b50-9cb7-970c81250409/scratchpad/realism_gap/scorecard_render_run05_dataset_b6e1fe51.json  (79s)

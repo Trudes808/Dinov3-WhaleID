@@ -1,0 +1,338 @@
+{
+ "r04": {
+  "views_train": {
+   "photos": 504,
+   "median_iou": 0.9979,
+   "mean_iou": 0.9972,
+   "iou_lt_0.8": 0.0,
+   "iou_lt_0.5": 0.0,
+   "mean_kept": 0.9984,
+   "kept_lt_0.9": 0.0
+  },
+  "views_val": {
+   "photos": 77,
+   "median_iou": 0.9978,
+   "mean_iou": 0.9967,
+   "iou_lt_0.8": 0.0,
+   "iou_lt_0.5": 0.0,
+   "mean_kept": 0.9974,
+   "kept_lt_0.9": 0.0
+  },
+  "clicks_train_days": {
+   "main_points": 994,
+   "main_points_in_mask": 0.9819,
+   "main_whales_all_points_in": 0.9562,
+   "other_whales": 17,
+   "other_points_in_mask": 0.9792,
+   "other_whales_all_points_in": 0.9412
+  }
+ },
+ "r05": {
+  "views_train": {
+   "photos": 504,
+   "median_iou": 0.9112,
+   "mean_iou": 0.8712,
+   "iou_lt_0.8": 0.1647,
+   "iou_lt_0.5": 0.0278,
+   "mean_kept": 0.9293,
+   "kept_lt_0.9": 0.2242
+  },
+  "views_val": {
+   "photos": 77,
+   "median_iou": 0.9054,
+   "mean_iou": 0.8527,
+   "iou_lt_0.8": 0.1948,
+   "iou_lt_0.5": 0.0649,
+   "mean_kept": 0.9112,
+   "kept_lt_0.9": 0.2597
+  },
+  "clicks_train_days": {
+   "main_points": 994,
+   "main_points_in_mask": 0.9829,
+   "main_whales_all_points_in": 0.9616,
+   "other_whales": 17,
+   "other_points_in_mask": 1.0,
+   "other_whales_all_points_in": 1.0
+  }
+ },
+ "s1": {
+  "views_train": {
+   "photos": 504,
+   "median_iou": 0.8425,
+   "mean_iou": 0.8069,
+   "iou_lt_0.8": 0.3591,
+   "iou_lt_0.5": 0.0278,
+   "mean_kept": 0.9685,
+   "kept_lt_0.9": 0.0635
+  },
+  "views_val": {
+   "photos": 77,
+   "median_iou": 0.8561,
+   "mean_iou": 0.8095,
+   "iou_lt_0.8": 0.3377,
+   "iou_lt_0.5": 0.0649,
+   "mean_kept": 0.9456,
+   "kept_lt_0.9": 0.1429
+  },
+  "clicks_train_days": {
+   "main_points": 994,
+   "main_points_in_mask": 0.9829,
+   "main_whales_all_points_in": 0.9589,
+   "other_whales": 17,
+   "other_points_in_mask": 0.9375,
+   "other_whales_all_points_in": 0.8824
+  }
+ },
+ "s2": {
+  "views_train": {
+   "photos": 504,
+   "median_iou": 0.8249,
+   "mean_iou": 0.7876,
+   "iou_lt_0.8": 0.4246,
+   "iou_lt_0.5": 0.0437,
+   "mean_kept": 0.9655,
+   "kept_lt_0.9": 0.0774
+  },
+  "views_val": {
+   "photos": 77,
+   "median_iou": 0.8461,
+   "mean_iou": 0.8009,
+   "iou_lt_0.8": 0.4026,
+   "iou_lt_0.5": 0.0779,
+   "mean_kept": 0.9485,
+   "kept_lt_0.9": 0.1299
+  },
+  "clicks_train_days": {
+   "main_points": 994,
+   "main_points_in_mask": 0.9809,
+   "main_whales_all_points_in": 0.9534,
+   "other_whales": 17,
+   "other_points_in_mask": 0.8125,
+   "other_whales_all_points_in": 0.7647
+  }
+ },
+ "s4": {
+  "views_train": {
+   "photos": 504,
+   "median_iou": 0.9355,
+   "mean_iou": 0.8863,
+   "iou_lt_0.8": 0.1508,
+   "iou_lt_0.5": 0.0337,
+   "mean_kept": 0.9179,
+   "kept_lt_0.9": 0.2262
+  },
+  "views_val": {
+   "photos": 77,
+   "median_iou": 0.924,
+   "mean_iou": 0.8501,
+   "iou_lt_0.8": 0.2078,
+   "iou_lt_0.5": 0.0649,
+   "mean_kept": 0.8923,
+   "kept_lt_0.9": 0.3117
+  },
+  "clicks_train_days": {
+   "main_points": 994,
+   "main_points_in_mask": 0.9779,
+   "main_whales_all_points_in": 0.9479,
+   "other_whales": 17,
+   "other_points_in_mask": 0.9167,
+   "other_whales_all_points_in": 0.8824
+  }
+ },
+ "s3": {
+  "views_train": {
+   "photos": 504,
+   "median_iou": 0.8695,
+   "mean_iou": 0.8301,
+   "iou_lt_0.8": 0.2817,
+   "iou_lt_0.5": 0.0357,
+   "mean_kept": 0.9652,
+   "kept_lt_0.9": 0.0754
+  },
+  "views_val": {
+   "photos": 77,
+   "median_iou": 0.8875,
+   "mean_iou": 0.8244,
+   "iou_lt_0.8": 0.2857,
+   "iou_lt_0.5": 0.0649,
+   "mean_kept": 0.9496,
+   "kept_lt_0.9": 0.1169
+  },
+  "clicks_train_days": {
+   "main_points": 994,
+   "main_points_in_mask": 0.9839,
+   "main_whales_all_points_in": 0.9616,
+   "other_whales": 17,
+   "other_points_in_mask": 0.875,
+   "other_whales_all_points_in": 0.8824
+  }
+ },
+ "s0": {
+  "views_train": {
+   "photos": 504,
+   "median_iou": 0.9011,
+   "mean_iou": 0.856,
+   "iou_lt_0.8": 0.2103,
+   "iou_lt_0.5": 0.0357,
+   "mean_kept": 0.9001,
+   "kept_lt_0.9": 0.3294
+  },
+  "views_val": {
+   "photos": 77,
+   "median_iou": 0.8673,
+   "mean_iou": 0.8308,
+   "iou_lt_0.8": 0.2597,
+   "iou_lt_0.5": 0.0649,
+   "mean_kept": 0.8726,
+   "kept_lt_0.9": 0.4675
+  },
+  "clicks_train_days": {
+   "main_points": 994,
+   "main_points_in_mask": 0.9809,
+   "main_whales_all_points_in": 0.9562,
+   "other_whales": 17,
+   "other_points_in_mask": 1.0,
+   "other_whales_all_points_in": 1.0
+  }
+ },
+ "s5": {
+  "views_train": {
+   "photos": 504,
+   "median_iou": 0.9209,
+   "mean_iou": 0.8784,
+   "iou_lt_0.8": 0.1587,
+   "iou_lt_0.5": 0.0298,
+   "mean_kept": 0.9326,
+   "kept_lt_0.9": 0.1786
+  },
+  "views_val": {
+   "photos": 77,
+   "median_iou": 0.9173,
+   "mean_iou": 0.8555,
+   "iou_lt_0.8": 0.1948,
+   "iou_lt_0.5": 0.0649,
+   "mean_kept": 0.9097,
+   "kept_lt_0.9": 0.2208
+  },
+  "clicks_train_days": {
+   "main_points": 994,
+   "main_points_in_mask": 0.9779,
+   "main_whales_all_points_in": 0.9479,
+   "other_whales": 17,
+   "other_points_in_mask": 0.9375,
+   "other_whales_all_points_in": 0.9412
+  }
+ },
+ "s5h": {
+  "views_train": {
+   "photos": 504,
+   "median_iou": 0.9116,
+   "mean_iou": 0.8722,
+   "iou_lt_0.8": 0.1647,
+   "iou_lt_0.5": 0.0238,
+   "mean_kept": 0.9433,
+   "kept_lt_0.9": 0.1548
+  },
+  "views_val": {
+   "photos": 77,
+   "median_iou": 0.909,
+   "mean_iou": 0.851,
+   "iou_lt_0.8": 0.1948,
+   "iou_lt_0.5": 0.0519,
+   "mean_kept": 0.9208,
+   "kept_lt_0.9": 0.1818
+  },
+  "clicks_train_days": {
+   "main_points": 994,
+   "main_points_in_mask": 0.9789,
+   "main_whales_all_points_in": 0.9507,
+   "other_whales": 17,
+   "other_points_in_mask": 0.9375,
+   "other_whales_all_points_in": 0.9412
+  }
+ },
+ "s5b": {
+  "views_train": {
+   "photos": 504,
+   "median_iou": 0.9222,
+   "mean_iou": 0.8861,
+   "iou_lt_0.8": 0.1409,
+   "iou_lt_0.5": 0.0218,
+   "mean_kept": 0.9366,
+   "kept_lt_0.9": 0.1766
+  },
+  "views_val": {
+   "photos": 77,
+   "median_iou": 0.9119,
+   "mean_iou": 0.8577,
+   "iou_lt_0.8": 0.1948,
+   "iou_lt_0.5": 0.0519,
+   "mean_kept": 0.9139,
+   "kept_lt_0.9": 0.2338
+  },
+  "clicks_train_days": {
+   "main_points": 994,
+   "main_points_in_mask": 0.9779,
+   "main_whales_all_points_in": 0.9479,
+   "other_whales": 17,
+   "other_points_in_mask": 0.9375,
+   "other_whales_all_points_in": 0.9412
+  }
+ },
+ "s6": {
+  "views_train": {
+   "photos": 504,
+   "median_iou": 0.9115,
+   "mean_iou": 0.876,
+   "iou_lt_0.8": 0.1508,
+   "iou_lt_0.5": 0.0218,
+   "mean_kept": 0.9524,
+   "kept_lt_0.9": 0.129
+  },
+  "views_val": {
+   "photos": 77,
+   "median_iou": 0.9142,
+   "mean_iou": 0.8521,
+   "iou_lt_0.8": 0.1688,
+   "iou_lt_0.5": 0.0519,
+   "mean_kept": 0.9269,
+   "kept_lt_0.9": 0.1818
+  },
+  "clicks_train_days": {
+   "main_points": 994,
+   "main_points_in_mask": 0.9809,
+   "main_whales_all_points_in": 0.9562,
+   "other_whales": 17,
+   "other_points_in_mask": 0.9375,
+   "other_whales_all_points_in": 0.9412
+  }
+ },
+ "s6h": {
+  "views_train": {
+   "photos": 504,
+   "median_iou": 0.898,
+   "mean_iou": 0.8631,
+   "iou_lt_0.8": 0.1806,
+   "iou_lt_0.5": 0.0198,
+   "mean_kept": 0.9594,
+   "kept_lt_0.9": 0.1012
+  },
+  "views_val": {
+   "photos": 77,
+   "median_iou": 0.9001,
+   "mean_iou": 0.8502,
+   "iou_lt_0.8": 0.1818,
+   "iou_lt_0.5": 0.0519,
+   "mean_kept": 0.9375,
+   "kept_lt_0.9": 0.1818
+  },
+  "clicks_train_days": {
+   "main_points": 994,
+   "main_points_in_mask": 0.9829,
+   "main_whales_all_points_in": 0.9589,
+   "other_whales": 17,
+   "other_points_in_mask": 0.9375,
+   "other_whales_all_points_in": 0.9412
+  }
+ }
+}

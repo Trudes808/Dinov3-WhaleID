@@ -1,0 +1,6309 @@
+{
+ "models": [
+  "parts_seg_r05_a",
+  "parts_seg_r05_sc",
+  "parts_seg_r05_rw",
+  "parts_seg_r05_s1"
+ ],
+ "rule_note": "rules re-chosen here on the training days for every model in the same family; the real_metrics.json numbers (evaluate_real's own choice) are under 'own_json'",
+ "families": {
+  "two_part": {
+   "full": {
+    "summary": {
+     "parts_seg_r05_a": {
+      "rule": [
+       0.005,
+       0.0,
+       0.0005
+      ],
+      "val_eye": 0.7342,
+      "val_eye_n": 79,
+      "val_clf": 0.837,
+      "val_clf_n": 828,
+      "val_clf_by_size": {
+       "200-400 px": {
+        "n": 75,
+        "acc": 0.8
+       },
+       "400-800 px": {
+        "n": 240,
+        "acc": 0.896
+       },
+       "<200 px": {
+        "n": 19,
+        "acc": 0.632
+       },
+       ">=800 px": {
+        "n": 494,
+        "acc": 0.822
+       }
+      }
+     },
+     "parts_seg_r05_sc": {
+      "rule": [
+       0.05,
+       1.0,
+       0.001
+      ],
+      "val_eye": 0.7975,
+      "val_eye_n": 79,
+      "val_clf": 0.8575,
+      "val_clf_n": 828,
+      "val_clf_by_size": {
+       "200-400 px": {
+        "n": 75,
+        "acc": 0.893
+       },
+       "400-800 px": {
+        "n": 240,
+        "acc": 0.887
+       },
+       "<200 px": {
+        "n": 19,
+        "acc": 0.789
+       },
+       ">=800 px": {
+        "n": 494,
+        "acc": 0.84
+       }
+      }
+     },
+     "parts_seg_r05_rw": {
+      "rule": [
+       0.05,
+       2.0,
+       0.0005
+      ],
+      "val_eye": 0.7975,
+      "val_eye_n": 79,
+      "val_clf": 0.8563,
+      "val_clf_n": 828,
+      "val_clf_by_size": {
+       "200-400 px": {
+        "n": 75,
+        "acc": 0.827
+       },
+       "400-800 px": {
+        "n": 240,
+        "acc": 0.875
+       },
+       "<200 px": {
+        "n": 19,
+        "acc": 0.842
+       },
+       ">=800 px": {
+        "n": 494,
+        "acc": 0.852
+       }
+      }
+     },
+     "parts_seg_r05_s1": {
+      "rule": [
+       0.12,
+       0.5,
+       0.0005
+      ],
+      "val_eye": 0.8101,
+      "val_eye_n": 79,
+      "val_clf": 0.8587,
+      "val_clf_n": 828,
+      "val_clf_by_size": {
+       "200-400 px": {
+        "n": 75,
+        "acc": 0.853
+       },
+       "400-800 px": {
+        "n": 240,
+        "acc": 0.871
+       },
+       "<200 px": {
+        "n": 19,
+        "acc": 0.737
+       },
+       ">=800 px": {
+        "n": 494,
+        "acc": 0.858
+       }
+      }
+     }
+    },
+    "paired_val_vs_base": {
+     "parts_seg_r05_sc": {
+      "t_eye": {
+       "n_instances": 79,
+       "n_photos": 78,
+       "diff": 0.0633,
+       "ci95": [
+        0.0127,
+        0.125
+       ],
+       "base_acc": 0.7342,
+       "arm_acc": 0.7975
+      },
+      "t_vc": {
+       "n_instances": 828,
+       "n_photos": 778,
+       "diff": 0.0205,
+       "ci95": [
+        0.0012,
+        0.0386
+       ],
+       "base_acc": 0.837,
+       "arm_acc": 0.8575
+      }
+     },
+     "parts_seg_r05_rw": {
+      "t_eye": {
+       "n_instances": 79,
+       "n_photos": 78,
+       "diff": 0.0633,
+       "ci95": [
+        0.0,
+        0.1282
+       ],
+       "base_acc": 0.7342,
+       "arm_acc": 0.7975
+      },
+      "t_vc": {
+       "n_instances": 828,
+       "n_photos": 778,
+       "diff": 0.0193,
+       "ci95": [
+        0.0012,
+        0.0382
+       ],
+       "base_acc": 0.837,
+       "arm_acc": 0.8563
+      }
+     },
+     "parts_seg_r05_s1": {
+      "t_eye": {
+       "n_instances": 79,
+       "n_photos": 78,
+       "diff": 0.0759,
+       "ci95": [
+        0.0247,
+        0.1392
+       ],
+       "base_acc": 0.7342,
+       "arm_acc": 0.8101
+      },
+      "t_vc": {
+       "n_instances": 828,
+       "n_photos": 778,
+       "diff": 0.0217,
+       "ci95": [
+        0.0024,
+        0.0413
+       ],
+       "base_acc": 0.837,
+       "arm_acc": 0.8587
+      }
+     }
+    },
+    "groups_vs_base": {
+     "parts_seg_r05_sc": {
+      "t_vc_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 75,
+         "n_photos": 70,
+         "diff": 0.0933,
+         "ci95": [
+          0.0267,
+          0.1711
+         ],
+         "base_acc": 0.8,
+         "arm_acc": 0.8933
+        },
+        "400-800 px": {
+         "n_instances": 240,
+         "n_photos": 226,
+         "diff": -0.0083,
+         "ci95": [
+          -0.0372,
+          0.0209
+         ],
+         "base_acc": 0.8958,
+         "arm_acc": 0.8875
+        },
+        "<200 px": {
+         "n_instances": 19,
+         "n_photos": 18,
+         "diff": 0.1579,
+         "ci95": [
+          0.0,
+          0.3333
+         ],
+         "base_acc": 0.6316,
+         "arm_acc": 0.7895
+        },
+        ">=800 px": {
+         "n_instances": 494,
+         "n_photos": 484,
+         "diff": 0.0182,
+         "ci95": [
+          -0.006,
+          0.0426
+         ],
+         "base_acc": 0.8219,
+         "arm_acc": 0.8401
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 473,
+         "n_photos": 467,
+         "diff": 0.0486,
+         "ci95": [
+          0.027,
+          0.0717
+         ],
+         "base_acc": 0.8541,
+         "arm_acc": 0.9027
+        },
+        "fluke": {
+         "n_instances": 204,
+         "n_photos": 188,
+         "diff": -0.0294,
+         "ci95": [
+          -0.0631,
+          0.0
+         ],
+         "base_acc": 0.9167,
+         "arm_acc": 0.8873
+        },
+        "other": {
+         "n_instances": 151,
+         "n_photos": 133,
+         "diff": 0.0,
+         "ci95": [
+          -0.0596,
+          0.0581
+         ],
+         "base_acc": 0.6755,
+         "arm_acc": 0.6755
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 715,
+         "n_photos": 715,
+         "diff": 0.0196,
+         "ci95": [
+          0.0,
+          0.0392
+         ],
+         "base_acc": 0.8517,
+         "arm_acc": 0.8713
+        },
+        ">=2": {
+         "n_instances": 113,
+         "n_photos": 63,
+         "diff": 0.0265,
+         "ci95": [
+          -0.0351,
+          0.0893
+         ],
+         "base_acc": 0.7434,
+         "arm_acc": 0.7699
+        }
+       }
+      },
+      "t_vc_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 840,
+         "n_photos": 782,
+         "diff": 0.0202,
+         "ci95": [
+          -0.0024,
+          0.0428
+         ],
+         "base_acc": 0.8333,
+         "arm_acc": 0.8536
+        },
+        "400-800 px": {
+         "n_instances": 2173,
+         "n_photos": 2070,
+         "diff": 0.017,
+         "ci95": [
+          0.0065,
+          0.0277
+         ],
+         "base_acc": 0.8702,
+         "arm_acc": 0.8873
+        },
+        "<200 px": {
+         "n_instances": 274,
+         "n_photos": 253,
+         "diff": 0.0255,
+         "ci95": [
+          -0.0177,
+          0.0679
+         ],
+         "base_acc": 0.708,
+         "arm_acc": 0.7336
+        },
+        ">=800 px": {
+         "n_instances": 5093,
+         "n_photos": 5051,
+         "diff": 0.0263,
+         "ci95": [
+          0.0203,
+          0.0328
+         ],
+         "base_acc": 0.851,
+         "arm_acc": 0.8773
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 4415,
+         "n_photos": 4373,
+         "diff": 0.0498,
+         "ci95": [
+          0.0426,
+          0.0574
+         ],
+         "base_acc": 0.8535,
+         "arm_acc": 0.9033
+        },
+        "fluke": {
+         "n_instances": 3157,
+         "n_photos": 2945,
+         "diff": -0.0041,
+         "ci95": [
+          -0.012,
+          0.0038
+         ],
+         "base_acc": 0.891,
+         "arm_acc": 0.8869
+        },
+        "other": {
+         "n_instances": 808,
+         "n_photos": 759,
+         "diff": -0.0149,
+         "ci95": [
+          -0.0399,
+          0.0099
+         ],
+         "base_acc": 0.6658,
+         "arm_acc": 0.651
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 7505,
+         "n_photos": 7505,
+         "diff": 0.0262,
+         "ci95": [
+          0.0205,
+          0.0321
+         ],
+         "base_acc": 0.8533,
+         "arm_acc": 0.8795
+        },
+        ">=2": {
+         "n_instances": 875,
+         "n_photos": 502,
+         "diff": -0.0023,
+         "ci95": [
+          -0.023,
+          0.017
+         ],
+         "base_acc": 0.8171,
+         "arm_acc": 0.8149
+        }
+       }
+      },
+      "t_eye_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 8,
+         "n_photos": 8,
+         "diff": 0.125,
+         "ci95": [
+          0.0,
+          0.375
+         ],
+         "base_acc": 0.75,
+         "arm_acc": 0.875
+        },
+        "400-800 px": {
+         "n_instances": 26,
+         "n_photos": 25,
+         "diff": 0.0385,
+         "ci95": [
+          0.0,
+          0.12
+         ],
+         "base_acc": 0.8462,
+         "arm_acc": 0.8846
+        },
+        "<200 px": {
+         "n_instances": 1,
+         "n_photos": 1,
+         "diff": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "base_acc": 0.0,
+         "arm_acc": 1.0
+        },
+        ">=800 px": {
+         "n_instances": 44,
+         "n_photos": 44,
+         "diff": 0.0455,
+         "ci95": [
+          0.0,
+          0.1136
+         ],
+         "base_acc": 0.6818,
+         "arm_acc": 0.7273
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 27,
+         "n_photos": 27,
+         "diff": 0.0741,
+         "ci95": [
+          0.0,
+          0.1852
+         ],
+         "base_acc": 0.7778,
+         "arm_acc": 0.8519
+        },
+        "fluke": {
+         "n_instances": 19,
+         "n_photos": 19,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 0.7895,
+         "arm_acc": 0.7895
+        },
+        "other": {
+         "n_instances": 33,
+         "n_photos": 33,
+         "diff": 0.0909,
+         "ci95": [
+          0.0,
+          0.2121
+         ],
+         "base_acc": 0.6667,
+         "arm_acc": 0.7576
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 62,
+         "n_photos": 62,
+         "diff": 0.0484,
+         "ci95": [
+          0.0,
+          0.1129
+         ],
+         "base_acc": 0.7742,
+         "arm_acc": 0.8226
+        },
+        ">=2": {
+         "n_instances": 17,
+         "n_photos": 16,
+         "diff": 0.1176,
+         "ci95": [
+          0.0,
+          0.2941
+         ],
+         "base_acc": 0.5882,
+         "arm_acc": 0.7059
+        }
+       }
+      },
+      "t_eye_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 86,
+         "n_photos": 85,
+         "diff": 0.0233,
+         "ci95": [
+          -0.0353,
+          0.093
+         ],
+         "base_acc": 0.7907,
+         "arm_acc": 0.814
+        },
+        "400-800 px": {
+         "n_instances": 164,
+         "n_photos": 161,
+         "diff": 0.0305,
+         "ci95": [
+          0.0,
+          0.0671
+         ],
+         "base_acc": 0.811,
+         "arm_acc": 0.8415
+        },
+        "<200 px": {
+         "n_instances": 23,
+         "n_photos": 23,
+         "diff": 0.0435,
+         "ci95": [
+          -0.087,
+          0.2174
+         ],
+         "base_acc": 0.4783,
+         "arm_acc": 0.5217
+        },
+        ">=800 px": {
+         "n_instances": 333,
+         "n_photos": 331,
+         "diff": 0.0511,
+         "ci95": [
+          0.0269,
+          0.0755
+         ],
+         "base_acc": 0.7598,
+         "arm_acc": 0.8108
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 212,
+         "n_photos": 212,
+         "diff": 0.0802,
+         "ci95": [
+          0.0425,
+          0.1226
+         ],
+         "base_acc": 0.816,
+         "arm_acc": 0.8962
+        },
+        "fluke": {
+         "n_instances": 232,
+         "n_photos": 231,
+         "diff": 0.0086,
+         "ci95": [
+          -0.013,
+          0.0303
+         ],
+         "base_acc": 0.8319,
+         "arm_acc": 0.8405
+        },
+        "other": {
+         "n_instances": 162,
+         "n_photos": 160,
+         "diff": 0.037,
+         "ci95": [
+          0.0,
+          0.0802
+         ],
+         "base_acc": 0.6111,
+         "arm_acc": 0.6481
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 510,
+         "n_photos": 510,
+         "diff": 0.0392,
+         "ci95": [
+          0.0176,
+          0.0608
+         ],
+         "base_acc": 0.7745,
+         "arm_acc": 0.8137
+        },
+        ">=2": {
+         "n_instances": 96,
+         "n_photos": 89,
+         "diff": 0.0521,
+         "ci95": [
+          0.0,
+          0.1146
+         ],
+         "base_acc": 0.7292,
+         "arm_acc": 0.7812
+        }
+       }
+      }
+     },
+     "parts_seg_r05_rw": {
+      "t_vc_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 75,
+         "n_photos": 70,
+         "diff": 0.0267,
+         "ci95": [
+          -0.0411,
+          0.1053
+         ],
+         "base_acc": 0.8,
+         "arm_acc": 0.8267
+        },
+        "400-800 px": {
+         "n_instances": 240,
+         "n_photos": 226,
+         "diff": -0.0208,
+         "ci95": [
+          -0.0546,
+          0.0124
+         ],
+         "base_acc": 0.8958,
+         "arm_acc": 0.875
+        },
+        "<200 px": {
+         "n_instances": 19,
+         "n_photos": 18,
+         "diff": 0.2105,
+         "ci95": [
+          0.0556,
+          0.3812
+         ],
+         "base_acc": 0.6316,
+         "arm_acc": 0.8421
+        },
+        ">=800 px": {
+         "n_instances": 494,
+         "n_photos": 484,
+         "diff": 0.0304,
+         "ci95": [
+          0.006,
+          0.0549
+         ],
+         "base_acc": 0.8219,
+         "arm_acc": 0.8522
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 473,
+         "n_photos": 467,
+         "diff": 0.0275,
+         "ci95": [
+          0.0062,
+          0.0507
+         ],
+         "base_acc": 0.8541,
+         "arm_acc": 0.8816
+        },
+        "fluke": {
+         "n_instances": 204,
+         "n_photos": 188,
+         "diff": -0.0147,
+         "ci95": [
+          -0.0455,
+          0.0192
+         ],
+         "base_acc": 0.9167,
+         "arm_acc": 0.902
+        },
+        "other": {
+         "n_instances": 151,
+         "n_photos": 133,
+         "diff": 0.0397,
+         "ci95": [
+          -0.02,
+          0.1042
+         ],
+         "base_acc": 0.6755,
+         "arm_acc": 0.7152
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 715,
+         "n_photos": 715,
+         "diff": 0.0196,
+         "ci95": [
+          0.0,
+          0.0406
+         ],
+         "base_acc": 0.8517,
+         "arm_acc": 0.8713
+        },
+        ">=2": {
+         "n_instances": 113,
+         "n_photos": 63,
+         "diff": 0.0177,
+         "ci95": [
+          -0.0513,
+          0.0862
+         ],
+         "base_acc": 0.7434,
+         "arm_acc": 0.7611
+        }
+       }
+      },
+      "t_vc_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 840,
+         "n_photos": 782,
+         "diff": 0.0369,
+         "ci95": [
+          0.0156,
+          0.0585
+         ],
+         "base_acc": 0.8333,
+         "arm_acc": 0.8702
+        },
+        "400-800 px": {
+         "n_instances": 2173,
+         "n_photos": 2070,
+         "diff": 0.0074,
+         "ci95": [
+          -0.0046,
+          0.0198
+         ],
+         "base_acc": 0.8702,
+         "arm_acc": 0.8776
+        },
+        "<200 px": {
+         "n_instances": 274,
+         "n_photos": 253,
+         "diff": 0.0657,
+         "ci95": [
+          0.0219,
+          0.1127
+         ],
+         "base_acc": 0.708,
+         "arm_acc": 0.7737
+        },
+        ">=800 px": {
+         "n_instances": 5093,
+         "n_photos": 5051,
+         "diff": 0.0232,
+         "ci95": [
+          0.0165,
+          0.0296
+         ],
+         "base_acc": 0.851,
+         "arm_acc": 0.8741
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 4415,
+         "n_photos": 4373,
+         "diff": 0.0349,
+         "ci95": [
+          0.0272,
+          0.0425
+         ],
+         "base_acc": 0.8535,
+         "arm_acc": 0.8883
+        },
+        "fluke": {
+         "n_instances": 3157,
+         "n_photos": 2945,
+         "diff": -0.0054,
+         "ci95": [
+          -0.0133,
+          0.0022
+         ],
+         "base_acc": 0.891,
+         "arm_acc": 0.8857
+        },
+        "other": {
+         "n_instances": 808,
+         "n_photos": 759,
+         "diff": 0.0569,
+         "ci95": [
+          0.0295,
+          0.0842
+         ],
+         "base_acc": 0.6658,
+         "arm_acc": 0.7228
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 7505,
+         "n_photos": 7505,
+         "diff": 0.0235,
+         "ci95": [
+          0.0175,
+          0.0297
+         ],
+         "base_acc": 0.8533,
+         "arm_acc": 0.8767
+        },
+        ">=2": {
+         "n_instances": 875,
+         "n_photos": 502,
+         "diff": 0.008,
+         "ci95": [
+          -0.0143,
+          0.0287
+         ],
+         "base_acc": 0.8171,
+         "arm_acc": 0.8251
+        }
+       }
+      },
+      "t_eye_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 8,
+         "n_photos": 8,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 0.75,
+         "arm_acc": 0.75
+        },
+        "400-800 px": {
+         "n_instances": 26,
+         "n_photos": 25,
+         "diff": 0.0385,
+         "ci95": [
+          -0.08,
+          0.16
+         ],
+         "base_acc": 0.8462,
+         "arm_acc": 0.8846
+        },
+        "<200 px": {
+         "n_instances": 1,
+         "n_photos": 1,
+         "diff": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "base_acc": 0.0,
+         "arm_acc": 1.0
+        },
+        ">=800 px": {
+         "n_instances": 44,
+         "n_photos": 44,
+         "diff": 0.0682,
+         "ci95": [
+          0.0,
+          0.1591
+         ],
+         "base_acc": 0.6818,
+         "arm_acc": 0.75
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 27,
+         "n_photos": 27,
+         "diff": 0.037,
+         "ci95": [
+          -0.0741,
+          0.1481
+         ],
+         "base_acc": 0.7778,
+         "arm_acc": 0.8148
+        },
+        "fluke": {
+         "n_instances": 19,
+         "n_photos": 19,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 0.7895,
+         "arm_acc": 0.7895
+        },
+        "other": {
+         "n_instances": 33,
+         "n_photos": 33,
+         "diff": 0.1212,
+         "ci95": [
+          0.0303,
+          0.2424
+         ],
+         "base_acc": 0.6667,
+         "arm_acc": 0.7879
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 62,
+         "n_photos": 62,
+         "diff": 0.0484,
+         "ci95": [
+          -0.0161,
+          0.1129
+         ],
+         "base_acc": 0.7742,
+         "arm_acc": 0.8226
+        },
+        ">=2": {
+         "n_instances": 17,
+         "n_photos": 16,
+         "diff": 0.1176,
+         "ci95": [
+          0.0,
+          0.2941
+         ],
+         "base_acc": 0.5882,
+         "arm_acc": 0.7059
+        }
+       }
+      },
+      "t_eye_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 86,
+         "n_photos": 85,
+         "diff": 0.0814,
+         "ci95": [
+          0.0349,
+          0.1412
+         ],
+         "base_acc": 0.7907,
+         "arm_acc": 0.8721
+        },
+        "400-800 px": {
+         "n_instances": 164,
+         "n_photos": 161,
+         "diff": 0.0061,
+         "ci95": [
+          -0.0427,
+          0.0549
+         ],
+         "base_acc": 0.811,
+         "arm_acc": 0.8171
+        },
+        "<200 px": {
+         "n_instances": 23,
+         "n_photos": 23,
+         "diff": 0.087,
+         "ci95": [
+          -0.1304,
+          0.3478
+         ],
+         "base_acc": 0.4783,
+         "arm_acc": 0.5652
+        },
+        ">=800 px": {
+         "n_instances": 333,
+         "n_photos": 331,
+         "diff": 0.0511,
+         "ci95": [
+          0.018,
+          0.0831
+         ],
+         "base_acc": 0.7598,
+         "arm_acc": 0.8108
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 212,
+         "n_photos": 212,
+         "diff": 0.0519,
+         "ci95": [
+          0.0094,
+          0.0943
+         ],
+         "base_acc": 0.816,
+         "arm_acc": 0.8679
+        },
+        "fluke": {
+         "n_instances": 232,
+         "n_photos": 231,
+         "diff": 0.0043,
+         "ci95": [
+          -0.0302,
+          0.0386
+         ],
+         "base_acc": 0.8319,
+         "arm_acc": 0.8362
+        },
+        "other": {
+         "n_instances": 162,
+         "n_photos": 160,
+         "diff": 0.0926,
+         "ci95": [
+          0.0309,
+          0.1543
+         ],
+         "base_acc": 0.6111,
+         "arm_acc": 0.7037
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 510,
+         "n_photos": 510,
+         "diff": 0.0392,
+         "ci95": [
+          0.0118,
+          0.0667
+         ],
+         "base_acc": 0.7745,
+         "arm_acc": 0.8137
+        },
+        ">=2": {
+         "n_instances": 96,
+         "n_photos": 89,
+         "diff": 0.0729,
+         "ci95": [
+          0.0098,
+          0.14
+         ],
+         "base_acc": 0.7292,
+         "arm_acc": 0.8021
+        }
+       }
+      }
+     },
+     "parts_seg_r05_s1": {
+      "t_vc_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 75,
+         "n_photos": 70,
+         "diff": 0.0533,
+         "ci95": [
+          -0.0133,
+          0.1268
+         ],
+         "base_acc": 0.8,
+         "arm_acc": 0.8533
+        },
+        "400-800 px": {
+         "n_instances": 240,
+         "n_photos": 226,
+         "diff": -0.025,
+         "ci95": [
+          -0.0546,
+          0.0
+         ],
+         "base_acc": 0.8958,
+         "arm_acc": 0.8708
+        },
+        "<200 px": {
+         "n_instances": 19,
+         "n_photos": 18,
+         "diff": 0.1053,
+         "ci95": [
+          -0.1111,
+          0.3
+         ],
+         "base_acc": 0.6316,
+         "arm_acc": 0.7368
+        },
+        ">=800 px": {
+         "n_instances": 494,
+         "n_photos": 484,
+         "diff": 0.0364,
+         "ci95": [
+          0.0121,
+          0.0621
+         ],
+         "base_acc": 0.8219,
+         "arm_acc": 0.8583
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 473,
+         "n_photos": 467,
+         "diff": 0.0402,
+         "ci95": [
+          0.0191,
+          0.0611
+         ],
+         "base_acc": 0.8541,
+         "arm_acc": 0.8943
+        },
+        "fluke": {
+         "n_instances": 204,
+         "n_photos": 188,
+         "diff": -0.0588,
+         "ci95": [
+          -0.0957,
+          -0.0245
+         ],
+         "base_acc": 0.9167,
+         "arm_acc": 0.8578
+        },
+        "other": {
+         "n_instances": 151,
+         "n_photos": 133,
+         "diff": 0.0728,
+         "ci95": [
+          0.0135,
+          0.1313
+         ],
+         "base_acc": 0.6755,
+         "arm_acc": 0.7483
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 715,
+         "n_photos": 715,
+         "diff": 0.021,
+         "ci95": [
+          0.0014,
+          0.0406
+         ],
+         "base_acc": 0.8517,
+         "arm_acc": 0.8727
+        },
+        ">=2": {
+         "n_instances": 113,
+         "n_photos": 63,
+         "diff": 0.0265,
+         "ci95": [
+          -0.0351,
+          0.0877
+         ],
+         "base_acc": 0.7434,
+         "arm_acc": 0.7699
+        }
+       }
+      },
+      "t_vc_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 840,
+         "n_photos": 782,
+         "diff": -0.0131,
+         "ci95": [
+          -0.037,
+          0.0097
+         ],
+         "base_acc": 0.8333,
+         "arm_acc": 0.8202
+        },
+        "400-800 px": {
+         "n_instances": 2173,
+         "n_photos": 2070,
+         "diff": -0.0087,
+         "ci95": [
+          -0.0203,
+          0.0028
+         ],
+         "base_acc": 0.8702,
+         "arm_acc": 0.8615
+        },
+        "<200 px": {
+         "n_instances": 274,
+         "n_photos": 253,
+         "diff": 0.0255,
+         "ci95": [
+          -0.0221,
+          0.075
+         ],
+         "base_acc": 0.708,
+         "arm_acc": 0.7336
+        },
+        ">=800 px": {
+         "n_instances": 5093,
+         "n_photos": 5051,
+         "diff": 0.0151,
+         "ci95": [
+          0.0075,
+          0.0228
+         ],
+         "base_acc": 0.851,
+         "arm_acc": 0.8661
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 4415,
+         "n_photos": 4373,
+         "diff": 0.0378,
+         "ci95": [
+          0.0299,
+          0.0455
+         ],
+         "base_acc": 0.8535,
+         "arm_acc": 0.8913
+        },
+        "fluke": {
+         "n_instances": 3157,
+         "n_photos": 2945,
+         "diff": -0.0447,
+         "ci95": [
+          -0.0541,
+          -0.0357
+         ],
+         "base_acc": 0.891,
+         "arm_acc": 0.8464
+        },
+        "other": {
+         "n_instances": 808,
+         "n_photos": 759,
+         "diff": 0.0347,
+         "ci95": [
+          0.005,
+          0.0635
+         ],
+         "base_acc": 0.6658,
+         "arm_acc": 0.7005
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 7505,
+         "n_photos": 7505,
+         "diff": 0.0127,
+         "ci95": [
+          0.0067,
+          0.0192
+         ],
+         "base_acc": 0.8533,
+         "arm_acc": 0.866
+        },
+        ">=2": {
+         "n_instances": 875,
+         "n_photos": 502,
+         "diff": -0.0469,
+         "ci95": [
+          -0.0709,
+          -0.0239
+         ],
+         "base_acc": 0.8171,
+         "arm_acc": 0.7703
+        }
+       }
+      },
+      "t_eye_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 8,
+         "n_photos": 8,
+         "diff": 0.125,
+         "ci95": [
+          0.0,
+          0.375
+         ],
+         "base_acc": 0.75,
+         "arm_acc": 0.875
+        },
+        "400-800 px": {
+         "n_instances": 26,
+         "n_photos": 25,
+         "diff": 0.0385,
+         "ci95": [
+          0.0,
+          0.12
+         ],
+         "base_acc": 0.8462,
+         "arm_acc": 0.8846
+        },
+        "<200 px": {
+         "n_instances": 1,
+         "n_photos": 1,
+         "diff": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "base_acc": 0.0,
+         "arm_acc": 1.0
+        },
+        ">=800 px": {
+         "n_instances": 44,
+         "n_photos": 44,
+         "diff": 0.0682,
+         "ci95": [
+          0.0,
+          0.1591
+         ],
+         "base_acc": 0.6818,
+         "arm_acc": 0.75
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 27,
+         "n_photos": 27,
+         "diff": 0.0741,
+         "ci95": [
+          0.0,
+          0.1852
+         ],
+         "base_acc": 0.7778,
+         "arm_acc": 0.8519
+        },
+        "fluke": {
+         "n_instances": 19,
+         "n_photos": 19,
+         "diff": 0.0526,
+         "ci95": [
+          0.0,
+          0.1579
+         ],
+         "base_acc": 0.7895,
+         "arm_acc": 0.8421
+        },
+        "other": {
+         "n_instances": 33,
+         "n_photos": 33,
+         "diff": 0.0909,
+         "ci95": [
+          0.0,
+          0.2121
+         ],
+         "base_acc": 0.6667,
+         "arm_acc": 0.7576
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 62,
+         "n_photos": 62,
+         "diff": 0.0645,
+         "ci95": [
+          0.0161,
+          0.129
+         ],
+         "base_acc": 0.7742,
+         "arm_acc": 0.8387
+        },
+        ">=2": {
+         "n_instances": 17,
+         "n_photos": 16,
+         "diff": 0.1176,
+         "ci95": [
+          0.0,
+          0.2941
+         ],
+         "base_acc": 0.5882,
+         "arm_acc": 0.7059
+        }
+       }
+      },
+      "t_eye_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 86,
+         "n_photos": 85,
+         "diff": -0.0349,
+         "ci95": [
+          -0.1059,
+          0.0449
+         ],
+         "base_acc": 0.7907,
+         "arm_acc": 0.7558
+        },
+        "400-800 px": {
+         "n_instances": 164,
+         "n_photos": 161,
+         "diff": 0.0061,
+         "ci95": [
+          -0.037,
+          0.0539
+         ],
+         "base_acc": 0.811,
+         "arm_acc": 0.8171
+        },
+        "<200 px": {
+         "n_instances": 23,
+         "n_photos": 23,
+         "diff": 0.1304,
+         "ci95": [
+          0.0,
+          0.2609
+         ],
+         "base_acc": 0.4783,
+         "arm_acc": 0.6087
+        },
+        ">=800 px": {
+         "n_instances": 333,
+         "n_photos": 331,
+         "diff": 0.042,
+         "ci95": [
+          0.006,
+          0.0776
+         ],
+         "base_acc": 0.7598,
+         "arm_acc": 0.8018
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 212,
+         "n_photos": 212,
+         "diff": 0.0566,
+         "ci95": [
+          0.0142,
+          0.0991
+         ],
+         "base_acc": 0.816,
+         "arm_acc": 0.8726
+        },
+        "fluke": {
+         "n_instances": 232,
+         "n_photos": 231,
+         "diff": -0.0474,
+         "ci95": [
+          -0.0867,
+          -0.0086
+         ],
+         "base_acc": 0.8319,
+         "arm_acc": 0.7845
+        },
+        "other": {
+         "n_instances": 162,
+         "n_photos": 160,
+         "diff": 0.0864,
+         "ci95": [
+          0.0309,
+          0.1463
+         ],
+         "base_acc": 0.6111,
+         "arm_acc": 0.6975
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 510,
+         "n_photos": 510,
+         "diff": 0.0235,
+         "ci95": [
+          -0.0039,
+          0.0529
+         ],
+         "base_acc": 0.7745,
+         "arm_acc": 0.798
+        },
+        ">=2": {
+         "n_instances": 96,
+         "n_photos": 89,
+         "diff": 0.0312,
+         "ci95": [
+          -0.0385,
+          0.1064
+         ],
+         "base_acc": 0.7292,
+         "arm_acc": 0.7604
+        }
+       }
+      }
+     }
+    }
+   },
+   "hr": {
+    "summary": {
+     "parts_seg_r05_a": {
+      "rule": [
+       0.03,
+       1.0,
+       0.0005
+      ],
+      "val_eye": 0.7975,
+      "val_eye_n": 79,
+      "val_clf": 0.8575,
+      "val_clf_n": 828,
+      "val_clf_by_size": {
+       "200-400 px": {
+        "n": 75,
+        "acc": 0.84
+       },
+       "400-800 px": {
+        "n": 240,
+        "acc": 0.858
+       },
+       "<200 px": {
+        "n": 19,
+        "acc": 0.842
+       },
+       ">=800 px": {
+        "n": 494,
+        "acc": 0.86
+       }
+      }
+     },
+     "parts_seg_r05_sc": {
+      "rule": [
+       0.05,
+       2.0,
+       0.0005
+      ],
+      "val_eye": 0.7848,
+      "val_eye_n": 79,
+      "val_clf": 0.8647,
+      "val_clf_n": 828,
+      "val_clf_by_size": {
+       "200-400 px": {
+        "n": 75,
+        "acc": 0.853
+       },
+       "400-800 px": {
+        "n": 240,
+        "acc": 0.887
+       },
+       "<200 px": {
+        "n": 19,
+        "acc": 0.895
+       },
+       ">=800 px": {
+        "n": 494,
+        "acc": 0.854
+       }
+      }
+     },
+     "parts_seg_r05_rw": {
+      "rule": [
+       0.02,
+       2.0,
+       0.0005
+      ],
+      "val_eye": 0.7215,
+      "val_eye_n": 79,
+      "val_clf": 0.8442,
+      "val_clf_n": 828,
+      "val_clf_by_size": {
+       "200-400 px": {
+        "n": 75,
+        "acc": 0.867
+       },
+       "400-800 px": {
+        "n": 240,
+        "acc": 0.863
+       },
+       "<200 px": {
+        "n": 19,
+        "acc": 0.789
+       },
+       ">=800 px": {
+        "n": 494,
+        "acc": 0.834
+       }
+      }
+     },
+     "parts_seg_r05_s1": {
+      "rule": [
+       0.12,
+       0.5,
+       0.001
+      ],
+      "val_eye": 0.7342,
+      "val_eye_n": 79,
+      "val_clf": 0.8502,
+      "val_clf_n": 828,
+      "val_clf_by_size": {
+       "200-400 px": {
+        "n": 75,
+        "acc": 0.813
+       },
+       "400-800 px": {
+        "n": 240,
+        "acc": 0.858
+       },
+       "<200 px": {
+        "n": 19,
+        "acc": 0.789
+       },
+       ">=800 px": {
+        "n": 494,
+        "acc": 0.854
+       }
+      }
+     }
+    },
+    "paired_val_vs_base": {
+     "parts_seg_r05_sc": {
+      "t_eye": {
+       "n_instances": 79,
+       "n_photos": 78,
+       "diff": -0.0127,
+       "ci95": [
+        -0.0769,
+        0.0513
+       ],
+       "base_acc": 0.7975,
+       "arm_acc": 0.7848
+      },
+      "t_vc": {
+       "n_instances": 828,
+       "n_photos": 778,
+       "diff": 0.0072,
+       "ci95": [
+        -0.0096,
+        0.0228
+       ],
+       "base_acc": 0.8575,
+       "arm_acc": 0.8647
+      }
+     },
+     "parts_seg_r05_rw": {
+      "t_eye": {
+       "n_instances": 79,
+       "n_photos": 78,
+       "diff": -0.0759,
+       "ci95": [
+        -0.1646,
+        0.0125
+       ],
+       "base_acc": 0.7975,
+       "arm_acc": 0.7215
+      },
+      "t_vc": {
+       "n_instances": 828,
+       "n_photos": 778,
+       "diff": -0.0133,
+       "ci95": [
+        -0.0316,
+        0.006
+       ],
+       "base_acc": 0.8575,
+       "arm_acc": 0.8442
+      }
+     },
+     "parts_seg_r05_s1": {
+      "t_eye": {
+       "n_instances": 79,
+       "n_photos": 78,
+       "diff": -0.0633,
+       "ci95": [
+        -0.1282,
+        0.0
+       ],
+       "base_acc": 0.7975,
+       "arm_acc": 0.7342
+      },
+      "t_vc": {
+       "n_instances": 828,
+       "n_photos": 778,
+       "diff": -0.0072,
+       "ci95": [
+        -0.0249,
+        0.0105
+       ],
+       "base_acc": 0.8575,
+       "arm_acc": 0.8502
+      }
+     }
+    },
+    "groups_vs_base": {
+     "parts_seg_r05_sc": {
+      "t_vc_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 75,
+         "n_photos": 70,
+         "diff": 0.0133,
+         "ci95": [
+          -0.0534,
+          0.0811
+         ],
+         "base_acc": 0.84,
+         "arm_acc": 0.8533
+        },
+        "400-800 px": {
+         "n_instances": 240,
+         "n_photos": 226,
+         "diff": 0.0292,
+         "ci95": [
+          0.0,
+          0.0622
+         ],
+         "base_acc": 0.8583,
+         "arm_acc": 0.8875
+        },
+        "<200 px": {
+         "n_instances": 19,
+         "n_photos": 18,
+         "diff": 0.0526,
+         "ci95": [
+          0.0,
+          0.1667
+         ],
+         "base_acc": 0.8421,
+         "arm_acc": 0.8947
+        },
+        ">=800 px": {
+         "n_instances": 494,
+         "n_photos": 484,
+         "diff": -0.0061,
+         "ci95": [
+          -0.0247,
+          0.0122
+         ],
+         "base_acc": 0.8603,
+         "arm_acc": 0.8543
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 473,
+         "n_photos": 467,
+         "diff": 0.0275,
+         "ci95": [
+          0.0105,
+          0.0464
+         ],
+         "base_acc": 0.8858,
+         "arm_acc": 0.9133
+        },
+        "fluke": {
+         "n_instances": 204,
+         "n_photos": 188,
+         "diff": 0.0294,
+         "ci95": [
+          0.005,
+          0.0585
+         ],
+         "base_acc": 0.902,
+         "arm_acc": 0.9314
+        },
+        "other": {
+         "n_instances": 151,
+         "n_photos": 133,
+         "diff": -0.0861,
+         "ci95": [
+          -0.1419,
+          -0.0336
+         ],
+         "base_acc": 0.7086,
+         "arm_acc": 0.6225
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 715,
+         "n_photos": 715,
+         "diff": 0.0056,
+         "ci95": [
+          -0.0084,
+          0.021
+         ],
+         "base_acc": 0.8783,
+         "arm_acc": 0.8839
+        },
+        ">=2": {
+         "n_instances": 113,
+         "n_photos": 63,
+         "diff": 0.0177,
+         "ci95": [
+          -0.0431,
+          0.0811
+         ],
+         "base_acc": 0.7257,
+         "arm_acc": 0.7434
+        }
+       }
+      },
+      "t_vc_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 840,
+         "n_photos": 782,
+         "diff": 0.0179,
+         "ci95": [
+          0.0,
+          0.0365
+         ],
+         "base_acc": 0.8655,
+         "arm_acc": 0.8833
+        },
+        "400-800 px": {
+         "n_instances": 2173,
+         "n_photos": 2070,
+         "diff": 0.0239,
+         "ci95": [
+          0.0138,
+          0.034
+         ],
+         "base_acc": 0.8675,
+         "arm_acc": 0.8914
+        },
+        "<200 px": {
+         "n_instances": 274,
+         "n_photos": 253,
+         "diff": -0.0109,
+         "ci95": [
+          -0.0399,
+          0.0182
+         ],
+         "base_acc": 0.8285,
+         "arm_acc": 0.8175
+        },
+        ">=800 px": {
+         "n_instances": 5093,
+         "n_photos": 5051,
+         "diff": 0.0177,
+         "ci95": [
+          0.0121,
+          0.0238
+         ],
+         "base_acc": 0.8773,
+         "arm_acc": 0.895
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 4415,
+         "n_photos": 4373,
+         "diff": 0.029,
+         "ci95": [
+          0.0225,
+          0.0355
+         ],
+         "base_acc": 0.8831,
+         "arm_acc": 0.9121
+        },
+        "fluke": {
+         "n_instances": 3157,
+         "n_photos": 2945,
+         "diff": 0.032,
+         "ci95": [
+          0.0249,
+          0.0395
+         ],
+         "base_acc": 0.898,
+         "arm_acc": 0.93
+        },
+        "other": {
+         "n_instances": 808,
+         "n_photos": 759,
+         "diff": -0.0928,
+         "ci95": [
+          -0.1182,
+          -0.0689
+         ],
+         "base_acc": 0.7092,
+         "arm_acc": 0.6163
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 7505,
+         "n_photos": 7505,
+         "diff": 0.0171,
+         "ci95": [
+          0.0123,
+          0.0223
+         ],
+         "base_acc": 0.8807,
+         "arm_acc": 0.8978
+        },
+        ">=2": {
+         "n_instances": 875,
+         "n_photos": 502,
+         "diff": 0.0297,
+         "ci95": [
+          0.0114,
+          0.0491
+         ],
+         "base_acc": 0.7966,
+         "arm_acc": 0.8263
+        }
+       }
+      },
+      "t_eye_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 8,
+         "n_photos": 8,
+         "diff": -0.125,
+         "ci95": [
+          -0.375,
+          0.0
+         ],
+         "base_acc": 0.75,
+         "arm_acc": 0.625
+        },
+        "400-800 px": {
+         "n_instances": 26,
+         "n_photos": 25,
+         "diff": 0.0385,
+         "ci95": [
+          -0.08,
+          0.16
+         ],
+         "base_acc": 0.8077,
+         "arm_acc": 0.8462
+        },
+        "<200 px": {
+         "n_instances": 1,
+         "n_photos": 1,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 1.0,
+         "arm_acc": 1.0
+        },
+        ">=800 px": {
+         "n_instances": 44,
+         "n_photos": 44,
+         "diff": -0.0227,
+         "ci95": [
+          -0.1136,
+          0.0455
+         ],
+         "base_acc": 0.7955,
+         "arm_acc": 0.7727
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 27,
+         "n_photos": 27,
+         "diff": -0.037,
+         "ci95": [
+          -0.1491,
+          0.0741
+         ],
+         "base_acc": 0.8889,
+         "arm_acc": 0.8519
+        },
+        "fluke": {
+         "n_instances": 19,
+         "n_photos": 19,
+         "diff": 0.0526,
+         "ci95": [
+          0.0,
+          0.1579
+         ],
+         "base_acc": 0.7895,
+         "arm_acc": 0.8421
+        },
+        "other": {
+         "n_instances": 33,
+         "n_photos": 33,
+         "diff": -0.0303,
+         "ci95": [
+          -0.1212,
+          0.0606
+         ],
+         "base_acc": 0.7273,
+         "arm_acc": 0.697
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 62,
+         "n_photos": 62,
+         "diff": -0.0323,
+         "ci95": [
+          -0.0968,
+          0.0323
+         ],
+         "base_acc": 0.871,
+         "arm_acc": 0.8387
+        },
+        ">=2": {
+         "n_instances": 17,
+         "n_photos": 16,
+         "diff": 0.0588,
+         "ci95": [
+          -0.125,
+          0.2632
+         ],
+         "base_acc": 0.5294,
+         "arm_acc": 0.5882
+        }
+       }
+      },
+      "t_eye_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 86,
+         "n_photos": 85,
+         "diff": 0.0116,
+         "ci95": [
+          -0.0581,
+          0.0814
+         ],
+         "base_acc": 0.7674,
+         "arm_acc": 0.7791
+        },
+        "400-800 px": {
+         "n_instances": 164,
+         "n_photos": 161,
+         "diff": 0.0183,
+         "ci95": [
+          -0.0244,
+          0.0617
+         ],
+         "base_acc": 0.8171,
+         "arm_acc": 0.8354
+        },
+        "<200 px": {
+         "n_instances": 23,
+         "n_photos": 23,
+         "diff": -0.087,
+         "ci95": [
+          -0.2174,
+          0.0
+         ],
+         "base_acc": 0.6957,
+         "arm_acc": 0.6087
+        },
+        ">=800 px": {
+         "n_instances": 333,
+         "n_photos": 331,
+         "diff": 0.03,
+         "ci95": [
+          -0.003,
+          0.0601
+         ],
+         "base_acc": 0.8228,
+         "arm_acc": 0.8529
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 212,
+         "n_photos": 212,
+         "diff": 0.0236,
+         "ci95": [
+          -0.0142,
+          0.0566
+         ],
+         "base_acc": 0.8726,
+         "arm_acc": 0.8962
+        },
+        "fluke": {
+         "n_instances": 232,
+         "n_photos": 231,
+         "diff": 0.0733,
+         "ci95": [
+          0.0388,
+          0.1121
+         ],
+         "base_acc": 0.8362,
+         "arm_acc": 0.9095
+        },
+        "other": {
+         "n_instances": 162,
+         "n_photos": 160,
+         "diff": -0.0617,
+         "ci95": [
+          -0.1125,
+          -0.0123
+         ],
+         "base_acc": 0.6852,
+         "arm_acc": 0.6235
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 510,
+         "n_photos": 510,
+         "diff": 0.0157,
+         "ci95": [
+          -0.0098,
+          0.0392
+         ],
+         "base_acc": 0.8255,
+         "arm_acc": 0.8412
+        },
+        ">=2": {
+         "n_instances": 96,
+         "n_photos": 89,
+         "diff": 0.0417,
+         "ci95": [
+          -0.0303,
+          0.1134
+         ],
+         "base_acc": 0.7188,
+         "arm_acc": 0.7604
+        }
+       }
+      }
+     },
+     "parts_seg_r05_rw": {
+      "t_vc_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 75,
+         "n_photos": 70,
+         "diff": 0.0267,
+         "ci95": [
+          -0.0405,
+          0.0933
+         ],
+         "base_acc": 0.84,
+         "arm_acc": 0.8667
+        },
+        "400-800 px": {
+         "n_instances": 240,
+         "n_photos": 226,
+         "diff": 0.0042,
+         "ci95": [
+          -0.03,
+          0.0395
+         ],
+         "base_acc": 0.8583,
+         "arm_acc": 0.8625
+        },
+        "<200 px": {
+         "n_instances": 19,
+         "n_photos": 18,
+         "diff": -0.0526,
+         "ci95": [
+          -0.2222,
+          0.1111
+         ],
+         "base_acc": 0.8421,
+         "arm_acc": 0.7895
+        },
+        ">=800 px": {
+         "n_instances": 494,
+         "n_photos": 484,
+         "diff": -0.0263,
+         "ci95": [
+          -0.0502,
+          -0.004
+         ],
+         "base_acc": 0.8603,
+         "arm_acc": 0.834
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 473,
+         "n_photos": 467,
+         "diff": 0.0021,
+         "ci95": [
+          -0.0189,
+          0.0232
+         ],
+         "base_acc": 0.8858,
+         "arm_acc": 0.8879
+        },
+        "fluke": {
+         "n_instances": 204,
+         "n_photos": 188,
+         "diff": 0.0245,
+         "ci95": [
+          -0.0049,
+          0.0591
+         ],
+         "base_acc": 0.902,
+         "arm_acc": 0.9265
+        },
+        "other": {
+         "n_instances": 151,
+         "n_photos": 133,
+         "diff": -0.1126,
+         "ci95": [
+          -0.1806,
+          -0.049
+         ],
+         "base_acc": 0.7086,
+         "arm_acc": 0.596
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 715,
+         "n_photos": 715,
+         "diff": -0.014,
+         "ci95": [
+          -0.0336,
+          0.0042
+         ],
+         "base_acc": 0.8783,
+         "arm_acc": 0.8643
+        },
+        ">=2": {
+         "n_instances": 113,
+         "n_photos": 63,
+         "diff": -0.0088,
+         "ci95": [
+          -0.0702,
+          0.0531
+         ],
+         "base_acc": 0.7257,
+         "arm_acc": 0.7168
+        }
+       }
+      },
+      "t_vc_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 840,
+         "n_photos": 782,
+         "diff": 0.025,
+         "ci95": [
+          0.0036,
+          0.0457
+         ],
+         "base_acc": 0.8655,
+         "arm_acc": 0.8905
+        },
+        "400-800 px": {
+         "n_instances": 2173,
+         "n_photos": 2070,
+         "diff": 0.0212,
+         "ci95": [
+          0.0107,
+          0.0317
+         ],
+         "base_acc": 0.8675,
+         "arm_acc": 0.8886
+        },
+        "<200 px": {
+         "n_instances": 274,
+         "n_photos": 253,
+         "diff": 0.0182,
+         "ci95": [
+          -0.0141,
+          0.0485
+         ],
+         "base_acc": 0.8285,
+         "arm_acc": 0.8467
+        },
+        ">=800 px": {
+         "n_instances": 5093,
+         "n_photos": 5051,
+         "diff": 0.0033,
+         "ci95": [
+          -0.0029,
+          0.0102
+         ],
+         "base_acc": 0.8773,
+         "arm_acc": 0.8806
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 4415,
+         "n_photos": 4373,
+         "diff": 0.0054,
+         "ci95": [
+          -0.0009,
+          0.0123
+         ],
+         "base_acc": 0.8831,
+         "arm_acc": 0.8886
+        },
+        "fluke": {
+         "n_instances": 3157,
+         "n_photos": 2945,
+         "diff": 0.0361,
+         "ci95": [
+          0.0287,
+          0.0439
+         ],
+         "base_acc": 0.898,
+         "arm_acc": 0.9341
+        },
+        "other": {
+         "n_instances": 808,
+         "n_photos": 759,
+         "diff": -0.0606,
+         "ci95": [
+          -0.0886,
+          -0.0322
+         ],
+         "base_acc": 0.7092,
+         "arm_acc": 0.6485
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 7505,
+         "n_photos": 7505,
+         "diff": 0.0079,
+         "ci95": [
+          0.0027,
+          0.0133
+         ],
+         "base_acc": 0.8807,
+         "arm_acc": 0.8886
+        },
+        ">=2": {
+         "n_instances": 875,
+         "n_photos": 502,
+         "diff": 0.0343,
+         "ci95": [
+          0.0136,
+          0.056
+         ],
+         "base_acc": 0.7966,
+         "arm_acc": 0.8309
+        }
+       }
+      },
+      "t_eye_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 8,
+         "n_photos": 8,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 0.75,
+         "arm_acc": 0.75
+        },
+        "400-800 px": {
+         "n_instances": 26,
+         "n_photos": 25,
+         "diff": -0.0385,
+         "ci95": [
+          -0.1852,
+          0.08
+         ],
+         "base_acc": 0.8077,
+         "arm_acc": 0.7692
+        },
+        "<200 px": {
+         "n_instances": 1,
+         "n_photos": 1,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 1.0,
+         "arm_acc": 1.0
+        },
+        ">=800 px": {
+         "n_instances": 44,
+         "n_photos": 44,
+         "diff": -0.1136,
+         "ci95": [
+          -0.25,
+          0.0006
+         ],
+         "base_acc": 0.7955,
+         "arm_acc": 0.6818
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 27,
+         "n_photos": 27,
+         "diff": -0.1111,
+         "ci95": [
+          -0.2593,
+          0.037
+         ],
+         "base_acc": 0.8889,
+         "arm_acc": 0.7778
+        },
+        "fluke": {
+         "n_instances": 19,
+         "n_photos": 19,
+         "diff": 0.0526,
+         "ci95": [
+          0.0,
+          0.1579
+         ],
+         "base_acc": 0.7895,
+         "arm_acc": 0.8421
+        },
+        "other": {
+         "n_instances": 33,
+         "n_photos": 33,
+         "diff": -0.1212,
+         "ci95": [
+          -0.2727,
+          0.0
+         ],
+         "base_acc": 0.7273,
+         "arm_acc": 0.6061
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 62,
+         "n_photos": 62,
+         "diff": -0.0968,
+         "ci95": [
+          -0.1935,
+          0.0
+         ],
+         "base_acc": 0.871,
+         "arm_acc": 0.7742
+        },
+        ">=2": {
+         "n_instances": 17,
+         "n_photos": 16,
+         "diff": 0.0,
+         "ci95": [
+          -0.1765,
+          0.1765
+         ],
+         "base_acc": 0.5294,
+         "arm_acc": 0.5294
+        }
+       }
+      },
+      "t_eye_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 86,
+         "n_photos": 85,
+         "diff": 0.0465,
+         "ci95": [
+          -0.0233,
+          0.1163
+         ],
+         "base_acc": 0.7674,
+         "arm_acc": 0.814
+        },
+        "400-800 px": {
+         "n_instances": 164,
+         "n_photos": 161,
+         "diff": 0.0488,
+         "ci95": [
+          0.006,
+          0.0988
+         ],
+         "base_acc": 0.8171,
+         "arm_acc": 0.8659
+        },
+        "<200 px": {
+         "n_instances": 23,
+         "n_photos": 23,
+         "diff": 0.0435,
+         "ci95": [
+          0.0,
+          0.1304
+         ],
+         "base_acc": 0.6957,
+         "arm_acc": 0.7391
+        },
+        ">=800 px": {
+         "n_instances": 333,
+         "n_photos": 331,
+         "diff": -0.009,
+         "ci95": [
+          -0.0449,
+          0.0269
+         ],
+         "base_acc": 0.8228,
+         "arm_acc": 0.8138
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 212,
+         "n_photos": 212,
+         "diff": 0.0047,
+         "ci95": [
+          -0.0377,
+          0.0472
+         ],
+         "base_acc": 0.8726,
+         "arm_acc": 0.8774
+        },
+        "fluke": {
+         "n_instances": 232,
+         "n_photos": 231,
+         "diff": 0.069,
+         "ci95": [
+          0.0345,
+          0.1039
+         ],
+         "base_acc": 0.8362,
+         "arm_acc": 0.9052
+        },
+        "other": {
+         "n_instances": 162,
+         "n_photos": 160,
+         "diff": -0.0432,
+         "ci95": [
+          -0.105,
+          0.0184
+         ],
+         "base_acc": 0.6852,
+         "arm_acc": 0.642
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 510,
+         "n_photos": 510,
+         "diff": 0.0118,
+         "ci95": [
+          -0.0157,
+          0.0412
+         ],
+         "base_acc": 0.8255,
+         "arm_acc": 0.8373
+        },
+        ">=2": {
+         "n_instances": 96,
+         "n_photos": 89,
+         "diff": 0.0417,
+         "ci95": [
+          -0.0306,
+          0.1089
+         ],
+         "base_acc": 0.7188,
+         "arm_acc": 0.7604
+        }
+       }
+      }
+     },
+     "parts_seg_r05_s1": {
+      "t_vc_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 75,
+         "n_photos": 70,
+         "diff": -0.0267,
+         "ci95": [
+          -0.0822,
+          0.0144
+         ],
+         "base_acc": 0.84,
+         "arm_acc": 0.8133
+        },
+        "400-800 px": {
+         "n_instances": 240,
+         "n_photos": 226,
+         "diff": 0.0,
+         "ci95": [
+          -0.0329,
+          0.0299
+         ],
+         "base_acc": 0.8583,
+         "arm_acc": 0.8583
+        },
+        "<200 px": {
+         "n_instances": 19,
+         "n_photos": 18,
+         "diff": -0.0526,
+         "ci95": [
+          -0.1667,
+          0.0
+         ],
+         "base_acc": 0.8421,
+         "arm_acc": 0.7895
+        },
+        ">=800 px": {
+         "n_instances": 494,
+         "n_photos": 484,
+         "diff": -0.0061,
+         "ci95": [
+          -0.0266,
+          0.0143
+         ],
+         "base_acc": 0.8603,
+         "arm_acc": 0.8543
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 473,
+         "n_photos": 467,
+         "diff": 0.0127,
+         "ci95": [
+          -0.0042,
+          0.0318
+         ],
+         "base_acc": 0.8858,
+         "arm_acc": 0.8985
+        },
+        "fluke": {
+         "n_instances": 204,
+         "n_photos": 188,
+         "diff": 0.0049,
+         "ci95": [
+          -0.0248,
+          0.0348
+         ],
+         "base_acc": 0.902,
+         "arm_acc": 0.9069
+        },
+        "other": {
+         "n_instances": 151,
+         "n_photos": 133,
+         "diff": -0.0861,
+         "ci95": [
+          -0.1503,
+          -0.027
+         ],
+         "base_acc": 0.7086,
+         "arm_acc": 0.6225
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 715,
+         "n_photos": 715,
+         "diff": -0.0014,
+         "ci95": [
+          -0.0196,
+          0.0168
+         ],
+         "base_acc": 0.8783,
+         "arm_acc": 0.8769
+        },
+        ">=2": {
+         "n_instances": 113,
+         "n_photos": 63,
+         "diff": -0.0442,
+         "ci95": [
+          -0.1071,
+          0.0089
+         ],
+         "base_acc": 0.7257,
+         "arm_acc": 0.6814
+        }
+       }
+      },
+      "t_vc_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 840,
+         "n_photos": 782,
+         "diff": -0.0107,
+         "ci95": [
+          -0.0312,
+          0.0107
+         ],
+         "base_acc": 0.8655,
+         "arm_acc": 0.8548
+        },
+        "400-800 px": {
+         "n_instances": 2173,
+         "n_photos": 2070,
+         "diff": 0.0133,
+         "ci95": [
+          0.0028,
+          0.0239
+         ],
+         "base_acc": 0.8675,
+         "arm_acc": 0.8808
+        },
+        "<200 px": {
+         "n_instances": 274,
+         "n_photos": 253,
+         "diff": -0.0073,
+         "ci95": [
+          -0.0396,
+          0.0253
+         ],
+         "base_acc": 0.8285,
+         "arm_acc": 0.8212
+        },
+        ">=800 px": {
+         "n_instances": 5093,
+         "n_photos": 5051,
+         "diff": 0.0063,
+         "ci95": [
+          -0.0002,
+          0.013
+         ],
+         "base_acc": 0.8773,
+         "arm_acc": 0.8836
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 4415,
+         "n_photos": 4373,
+         "diff": 0.0127,
+         "ci95": [
+          0.0054,
+          0.0201
+         ],
+         "base_acc": 0.8831,
+         "arm_acc": 0.8958
+        },
+        "fluke": {
+         "n_instances": 3157,
+         "n_photos": 2945,
+         "diff": 0.0117,
+         "ci95": [
+          0.0041,
+          0.0197
+         ],
+         "base_acc": 0.898,
+         "arm_acc": 0.9097
+        },
+        "other": {
+         "n_instances": 808,
+         "n_photos": 759,
+         "diff": -0.0532,
+         "ci95": [
+          -0.0805,
+          -0.0251
+         ],
+         "base_acc": 0.7092,
+         "arm_acc": 0.6559
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 7505,
+         "n_photos": 7505,
+         "diff": 0.0041,
+         "ci95": [
+          -0.0015,
+          0.01
+         ],
+         "base_acc": 0.8807,
+         "arm_acc": 0.8849
+        },
+        ">=2": {
+         "n_instances": 875,
+         "n_photos": 502,
+         "diff": 0.0217,
+         "ci95": [
+          0.0012,
+          0.0425
+         ],
+         "base_acc": 0.7966,
+         "arm_acc": 0.8183
+        }
+       }
+      },
+      "t_eye_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 8,
+         "n_photos": 8,
+         "diff": -0.125,
+         "ci95": [
+          -0.375,
+          0.0
+         ],
+         "base_acc": 0.75,
+         "arm_acc": 0.625
+        },
+        "400-800 px": {
+         "n_instances": 26,
+         "n_photos": 25,
+         "diff": -0.0769,
+         "ci95": [
+          -0.1923,
+          0.0
+         ],
+         "base_acc": 0.8077,
+         "arm_acc": 0.7308
+        },
+        "<200 px": {
+         "n_instances": 1,
+         "n_photos": 1,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 1.0,
+         "arm_acc": 1.0
+        },
+        ">=800 px": {
+         "n_instances": 44,
+         "n_photos": 44,
+         "diff": -0.0455,
+         "ci95": [
+          -0.1364,
+          0.0455
+         ],
+         "base_acc": 0.7955,
+         "arm_acc": 0.75
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 27,
+         "n_photos": 27,
+         "diff": 0.0,
+         "ci95": [
+          -0.1111,
+          0.1111
+         ],
+         "base_acc": 0.8889,
+         "arm_acc": 0.8889
+        },
+        "fluke": {
+         "n_instances": 19,
+         "n_photos": 19,
+         "diff": -0.0526,
+         "ci95": [
+          -0.1579,
+          0.0
+         ],
+         "base_acc": 0.7895,
+         "arm_acc": 0.7368
+        },
+        "other": {
+         "n_instances": 33,
+         "n_photos": 33,
+         "diff": -0.1212,
+         "ci95": [
+          -0.2424,
+          -0.0303
+         ],
+         "base_acc": 0.7273,
+         "arm_acc": 0.6061
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 62,
+         "n_photos": 62,
+         "diff": -0.0645,
+         "ci95": [
+          -0.1452,
+          0.0161
+         ],
+         "base_acc": 0.871,
+         "arm_acc": 0.8065
+        },
+        ">=2": {
+         "n_instances": 17,
+         "n_photos": 16,
+         "diff": -0.0588,
+         "ci95": [
+          -0.1875,
+          0.0
+         ],
+         "base_acc": 0.5294,
+         "arm_acc": 0.4706
+        }
+       }
+      },
+      "t_eye_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 86,
+         "n_photos": 85,
+         "diff": -0.0349,
+         "ci95": [
+          -0.1059,
+          0.0353
+         ],
+         "base_acc": 0.7674,
+         "arm_acc": 0.7326
+        },
+        "400-800 px": {
+         "n_instances": 164,
+         "n_photos": 161,
+         "diff": 0.0061,
+         "ci95": [
+          -0.0368,
+          0.0488
+         ],
+         "base_acc": 0.8171,
+         "arm_acc": 0.8232
+        },
+        "<200 px": {
+         "n_instances": 23,
+         "n_photos": 23,
+         "diff": -0.0435,
+         "ci95": [
+          -0.1739,
+          0.087
+         ],
+         "base_acc": 0.6957,
+         "arm_acc": 0.6522
+        },
+        ">=800 px": {
+         "n_instances": 333,
+         "n_photos": 331,
+         "diff": -0.006,
+         "ci95": [
+          -0.0357,
+          0.0241
+         ],
+         "base_acc": 0.8228,
+         "arm_acc": 0.8168
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 212,
+         "n_photos": 212,
+         "diff": 0.0047,
+         "ci95": [
+          -0.033,
+          0.0425
+         ],
+         "base_acc": 0.8726,
+         "arm_acc": 0.8774
+        },
+        "fluke": {
+         "n_instances": 232,
+         "n_photos": 231,
+         "diff": 0.0129,
+         "ci95": [
+          -0.0215,
+          0.0472
+         ],
+         "base_acc": 0.8362,
+         "arm_acc": 0.8491
+        },
+        "other": {
+         "n_instances": 162,
+         "n_photos": 160,
+         "diff": -0.0556,
+         "ci95": [
+          -0.1118,
+          0.0002
+         ],
+         "base_acc": 0.6852,
+         "arm_acc": 0.6296
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 510,
+         "n_photos": 510,
+         "diff": -0.0157,
+         "ci95": [
+          -0.0431,
+          0.0098
+         ],
+         "base_acc": 0.8255,
+         "arm_acc": 0.8098
+        },
+        ">=2": {
+         "n_instances": 96,
+         "n_photos": 89,
+         "diff": 0.0312,
+         "ci95": [
+          -0.0108,
+          0.0808
+         ],
+         "base_acc": 0.7188,
+         "arm_acc": 0.75
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "single": {
+   "full": {
+    "summary": {
+     "parts_seg_r05_a": {
+      "rule": [
+       0.005,
+       0.0,
+       0.0005
+      ],
+      "val_eye": 0.7342,
+      "val_eye_n": 79,
+      "val_clf": 0.837,
+      "val_clf_n": 828,
+      "val_clf_by_size": {
+       "200-400 px": {
+        "n": 75,
+        "acc": 0.8
+       },
+       "400-800 px": {
+        "n": 240,
+        "acc": 0.896
+       },
+       "<200 px": {
+        "n": 19,
+        "acc": 0.632
+       },
+       ">=800 px": {
+        "n": 494,
+        "acc": 0.822
+       }
+      }
+     },
+     "parts_seg_r05_sc": {
+      "rule": [
+       0.05,
+       0.0,
+       0.001
+      ],
+      "val_eye": 0.7848,
+      "val_eye_n": 79,
+      "val_clf": 0.8539,
+      "val_clf_n": 828,
+      "val_clf_by_size": {
+       "200-400 px": {
+        "n": 75,
+        "acc": 0.88
+       },
+       "400-800 px": {
+        "n": 240,
+        "acc": 0.883
+       },
+       "<200 px": {
+        "n": 19,
+        "acc": 0.789
+       },
+       ">=800 px": {
+        "n": 494,
+        "acc": 0.838
+       }
+      }
+     },
+     "parts_seg_r05_rw": {
+      "rule": [
+       0.05,
+       0.0,
+       0.0005
+      ],
+      "val_eye": 0.7595,
+      "val_eye_n": 79,
+      "val_clf": 0.843,
+      "val_clf_n": 828,
+      "val_clf_by_size": {
+       "200-400 px": {
+        "n": 75,
+        "acc": 0.813
+       },
+       "400-800 px": {
+        "n": 240,
+        "acc": 0.875
+       },
+       "<200 px": {
+        "n": 19,
+        "acc": 0.842
+       },
+       ">=800 px": {
+        "n": 494,
+        "acc": 0.832
+       }
+      }
+     },
+     "parts_seg_r05_s1": {
+      "rule": [
+       0.12,
+       0.0,
+       0.0005
+      ],
+      "val_eye": 0.7848,
+      "val_eye_n": 79,
+      "val_clf": 0.8539,
+      "val_clf_n": 828,
+      "val_clf_by_size": {
+       "200-400 px": {
+        "n": 75,
+        "acc": 0.84
+       },
+       "400-800 px": {
+        "n": 240,
+        "acc": 0.867
+       },
+       "<200 px": {
+        "n": 19,
+        "acc": 0.737
+       },
+       ">=800 px": {
+        "n": 494,
+        "acc": 0.854
+       }
+      }
+     }
+    },
+    "paired_val_vs_base": {
+     "parts_seg_r05_sc": {
+      "t_eye": {
+       "n_instances": 79,
+       "n_photos": 78,
+       "diff": 0.0506,
+       "ci95": [
+        0.0125,
+        0.1026
+       ],
+       "base_acc": 0.7342,
+       "arm_acc": 0.7848
+      },
+      "t_vc": {
+       "n_instances": 828,
+       "n_photos": 778,
+       "diff": 0.0169,
+       "ci95": [
+        -0.0012,
+        0.0349
+       ],
+       "base_acc": 0.837,
+       "arm_acc": 0.8539
+      }
+     },
+     "parts_seg_r05_rw": {
+      "t_eye": {
+       "n_instances": 79,
+       "n_photos": 78,
+       "diff": 0.0253,
+       "ci95": [
+        -0.0385,
+        0.1
+       ],
+       "base_acc": 0.7342,
+       "arm_acc": 0.7595
+      },
+      "t_vc": {
+       "n_instances": 828,
+       "n_photos": 778,
+       "diff": 0.006,
+       "ci95": [
+        -0.0132,
+        0.0251
+       ],
+       "base_acc": 0.837,
+       "arm_acc": 0.843
+      }
+     },
+     "parts_seg_r05_s1": {
+      "t_eye": {
+       "n_instances": 79,
+       "n_photos": 78,
+       "diff": 0.0506,
+       "ci95": [
+        0.0125,
+        0.1026
+       ],
+       "base_acc": 0.7342,
+       "arm_acc": 0.7848
+      },
+      "t_vc": {
+       "n_instances": 828,
+       "n_photos": 778,
+       "diff": 0.0169,
+       "ci95": [
+        -0.0024,
+        0.0351
+       ],
+       "base_acc": 0.837,
+       "arm_acc": 0.8539
+      }
+     }
+    },
+    "groups_vs_base": {
+     "parts_seg_r05_sc": {
+      "t_vc_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 75,
+         "n_photos": 70,
+         "diff": 0.08,
+         "ci95": [
+          0.0135,
+          0.1558
+         ],
+         "base_acc": 0.8,
+         "arm_acc": 0.88
+        },
+        "400-800 px": {
+         "n_instances": 240,
+         "n_photos": 226,
+         "diff": -0.0125,
+         "ci95": [
+          -0.0412,
+          0.0127
+         ],
+         "base_acc": 0.8958,
+         "arm_acc": 0.8833
+        },
+        "<200 px": {
+         "n_instances": 19,
+         "n_photos": 18,
+         "diff": 0.1579,
+         "ci95": [
+          0.0,
+          0.3333
+         ],
+         "base_acc": 0.6316,
+         "arm_acc": 0.7895
+        },
+        ">=800 px": {
+         "n_instances": 494,
+         "n_photos": 484,
+         "diff": 0.0162,
+         "ci95": [
+          -0.0061,
+          0.0406
+         ],
+         "base_acc": 0.8219,
+         "arm_acc": 0.8381
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 473,
+         "n_photos": 467,
+         "diff": 0.0486,
+         "ci95": [
+          0.027,
+          0.0717
+         ],
+         "base_acc": 0.8541,
+         "arm_acc": 0.9027
+        },
+        "fluke": {
+         "n_instances": 204,
+         "n_photos": 188,
+         "diff": -0.0098,
+         "ci95": [
+          -0.0398,
+          0.0197
+         ],
+         "base_acc": 0.9167,
+         "arm_acc": 0.9069
+        },
+        "other": {
+         "n_instances": 151,
+         "n_photos": 133,
+         "diff": -0.0464,
+         "ci95": [
+          -0.1049,
+          0.0067
+         ],
+         "base_acc": 0.6755,
+         "arm_acc": 0.6291
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 715,
+         "n_photos": 715,
+         "diff": 0.0154,
+         "ci95": [
+          -0.0042,
+          0.035
+         ],
+         "base_acc": 0.8517,
+         "arm_acc": 0.8671
+        },
+        ">=2": {
+         "n_instances": 113,
+         "n_photos": 63,
+         "diff": 0.0265,
+         "ci95": [
+          -0.0191,
+          0.0804
+         ],
+         "base_acc": 0.7434,
+         "arm_acc": 0.7699
+        }
+       }
+      },
+      "t_vc_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 840,
+         "n_photos": 782,
+         "diff": 0.0286,
+         "ci95": [
+          0.0083,
+          0.049
+         ],
+         "base_acc": 0.8333,
+         "arm_acc": 0.8619
+        },
+        "400-800 px": {
+         "n_instances": 2173,
+         "n_photos": 2070,
+         "diff": 0.0193,
+         "ci95": [
+          0.0092,
+          0.0295
+         ],
+         "base_acc": 0.8702,
+         "arm_acc": 0.8896
+        },
+        "<200 px": {
+         "n_instances": 274,
+         "n_photos": 253,
+         "diff": 0.0365,
+         "ci95": [
+          -0.0071,
+          0.0797
+         ],
+         "base_acc": 0.708,
+         "arm_acc": 0.7445
+        },
+        ">=800 px": {
+         "n_instances": 5093,
+         "n_photos": 5051,
+         "diff": 0.0259,
+         "ci95": [
+          0.02,
+          0.0322
+         ],
+         "base_acc": 0.851,
+         "arm_acc": 0.8769
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 4415,
+         "n_photos": 4373,
+         "diff": 0.0489,
+         "ci95": [
+          0.0418,
+          0.0565
+         ],
+         "base_acc": 0.8535,
+         "arm_acc": 0.9024
+        },
+        "fluke": {
+         "n_instances": 3157,
+         "n_photos": 2945,
+         "diff": 0.0067,
+         "ci95": [
+          -0.0003,
+          0.0137
+         ],
+         "base_acc": 0.891,
+         "arm_acc": 0.8977
+        },
+        "other": {
+         "n_instances": 808,
+         "n_photos": 759,
+         "diff": -0.0359,
+         "ci95": [
+          -0.0613,
+          -0.0112
+         ],
+         "base_acc": 0.6658,
+         "arm_acc": 0.63
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 7505,
+         "n_photos": 7505,
+         "diff": 0.0269,
+         "ci95": [
+          0.0213,
+          0.0326
+         ],
+         "base_acc": 0.8533,
+         "arm_acc": 0.8802
+        },
+        ">=2": {
+         "n_instances": 875,
+         "n_photos": 502,
+         "diff": 0.0069,
+         "ci95": [
+          -0.0114,
+          0.0248
+         ],
+         "base_acc": 0.8171,
+         "arm_acc": 0.824
+        }
+       }
+      },
+      "t_eye_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 8,
+         "n_photos": 8,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 0.75,
+         "arm_acc": 0.75
+        },
+        "400-800 px": {
+         "n_instances": 26,
+         "n_photos": 25,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 0.8462,
+         "arm_acc": 0.8462
+        },
+        "<200 px": {
+         "n_instances": 1,
+         "n_photos": 1,
+         "diff": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "base_acc": 0.0,
+         "arm_acc": 1.0
+        },
+        ">=800 px": {
+         "n_instances": 44,
+         "n_photos": 44,
+         "diff": 0.0682,
+         "ci95": [
+          0.0,
+          0.1364
+         ],
+         "base_acc": 0.6818,
+         "arm_acc": 0.75
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 27,
+         "n_photos": 27,
+         "diff": 0.0741,
+         "ci95": [
+          0.0,
+          0.1852
+         ],
+         "base_acc": 0.7778,
+         "arm_acc": 0.8519
+        },
+        "fluke": {
+         "n_instances": 19,
+         "n_photos": 19,
+         "diff": 0.0526,
+         "ci95": [
+          0.0,
+          0.1579
+         ],
+         "base_acc": 0.7895,
+         "arm_acc": 0.8421
+        },
+        "other": {
+         "n_instances": 33,
+         "n_photos": 33,
+         "diff": 0.0303,
+         "ci95": [
+          0.0,
+          0.0909
+         ],
+         "base_acc": 0.6667,
+         "arm_acc": 0.697
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 62,
+         "n_photos": 62,
+         "diff": 0.0484,
+         "ci95": [
+          0.0,
+          0.0968
+         ],
+         "base_acc": 0.7742,
+         "arm_acc": 0.8226
+        },
+        ">=2": {
+         "n_instances": 17,
+         "n_photos": 16,
+         "diff": 0.0588,
+         "ci95": [
+          0.0,
+          0.1875
+         ],
+         "base_acc": 0.5882,
+         "arm_acc": 0.6471
+        }
+       }
+      },
+      "t_eye_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 86,
+         "n_photos": 85,
+         "diff": 0.0233,
+         "ci95": [
+          -0.0353,
+          0.0899
+         ],
+         "base_acc": 0.7907,
+         "arm_acc": 0.814
+        },
+        "400-800 px": {
+         "n_instances": 164,
+         "n_photos": 161,
+         "diff": 0.0183,
+         "ci95": [
+          -0.0126,
+          0.0549
+         ],
+         "base_acc": 0.811,
+         "arm_acc": 0.8293
+        },
+        "<200 px": {
+         "n_instances": 23,
+         "n_photos": 23,
+         "diff": 0.0435,
+         "ci95": [
+          -0.087,
+          0.2174
+         ],
+         "base_acc": 0.4783,
+         "arm_acc": 0.5217
+        },
+        ">=800 px": {
+         "n_instances": 333,
+         "n_photos": 331,
+         "diff": 0.039,
+         "ci95": [
+          0.012,
+          0.0661
+         ],
+         "base_acc": 0.7598,
+         "arm_acc": 0.7988
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 212,
+         "n_photos": 212,
+         "diff": 0.0755,
+         "ci95": [
+          0.0376,
+          0.1179
+         ],
+         "base_acc": 0.816,
+         "arm_acc": 0.8915
+        },
+        "fluke": {
+         "n_instances": 232,
+         "n_photos": 231,
+         "diff": 0.0172,
+         "ci95": [
+          -0.0087,
+          0.0431
+         ],
+         "base_acc": 0.8319,
+         "arm_acc": 0.8491
+        },
+        "other": {
+         "n_instances": 162,
+         "n_photos": 160,
+         "diff": -0.0062,
+         "ci95": [
+          -0.0429,
+          0.0307
+         ],
+         "base_acc": 0.6111,
+         "arm_acc": 0.6049
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 510,
+         "n_photos": 510,
+         "diff": 0.0314,
+         "ci95": [
+          0.0098,
+          0.0529
+         ],
+         "base_acc": 0.7745,
+         "arm_acc": 0.8059
+        },
+        ">=2": {
+         "n_instances": 96,
+         "n_photos": 89,
+         "diff": 0.0312,
+         "ci95": [
+          -0.0208,
+          0.0851
+         ],
+         "base_acc": 0.7292,
+         "arm_acc": 0.7604
+        }
+       }
+      }
+     },
+     "parts_seg_r05_rw": {
+      "t_vc_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 75,
+         "n_photos": 70,
+         "diff": 0.0133,
+         "ci95": [
+          -0.0694,
+          0.1026
+         ],
+         "base_acc": 0.8,
+         "arm_acc": 0.8133
+        },
+        "400-800 px": {
+         "n_instances": 240,
+         "n_photos": 226,
+         "diff": -0.0208,
+         "ci95": [
+          -0.0531,
+          0.0084
+         ],
+         "base_acc": 0.8958,
+         "arm_acc": 0.875
+        },
+        "<200 px": {
+         "n_instances": 19,
+         "n_photos": 18,
+         "diff": 0.2105,
+         "ci95": [
+          0.0556,
+          0.3812
+         ],
+         "base_acc": 0.6316,
+         "arm_acc": 0.8421
+        },
+        ">=800 px": {
+         "n_instances": 494,
+         "n_photos": 484,
+         "diff": 0.0101,
+         "ci95": [
+          -0.0142,
+          0.0345
+         ],
+         "base_acc": 0.8219,
+         "arm_acc": 0.832
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 473,
+         "n_photos": 467,
+         "diff": 0.0275,
+         "ci95": [
+          0.0062,
+          0.0507
+         ],
+         "base_acc": 0.8541,
+         "arm_acc": 0.8816
+        },
+        "fluke": {
+         "n_instances": 204,
+         "n_photos": 188,
+         "diff": 0.0147,
+         "ci95": [
+          -0.0146,
+          0.0441
+         ],
+         "base_acc": 0.9167,
+         "arm_acc": 0.9314
+        },
+        "other": {
+         "n_instances": 151,
+         "n_photos": 133,
+         "diff": -0.0728,
+         "ci95": [
+          -0.1382,
+          -0.0066
+         ],
+         "base_acc": 0.6755,
+         "arm_acc": 0.6026
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 715,
+         "n_photos": 715,
+         "diff": 0.0112,
+         "ci95": [
+          -0.0098,
+          0.0308
+         ],
+         "base_acc": 0.8517,
+         "arm_acc": 0.8629
+        },
+        ">=2": {
+         "n_instances": 113,
+         "n_photos": 63,
+         "diff": -0.0265,
+         "ci95": [
+          -0.0957,
+          0.0439
+         ],
+         "base_acc": 0.7434,
+         "arm_acc": 0.7168
+        }
+       }
+      },
+      "t_vc_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 840,
+         "n_photos": 782,
+         "diff": 0.0357,
+         "ci95": [
+          0.014,
+          0.0577
+         ],
+         "base_acc": 0.8333,
+         "arm_acc": 0.869
+        },
+        "400-800 px": {
+         "n_instances": 2173,
+         "n_photos": 2070,
+         "diff": 0.0092,
+         "ci95": [
+          -0.0023,
+          0.0211
+         ],
+         "base_acc": 0.8702,
+         "arm_acc": 0.8794
+        },
+        "<200 px": {
+         "n_instances": 274,
+         "n_photos": 253,
+         "diff": 0.0803,
+         "ci95": [
+          0.0393,
+          0.125
+         ],
+         "base_acc": 0.708,
+         "arm_acc": 0.7883
+        },
+        ">=800 px": {
+         "n_instances": 5093,
+         "n_photos": 5051,
+         "diff": 0.0212,
+         "ci95": [
+          0.0149,
+          0.0275
+         ],
+         "base_acc": 0.851,
+         "arm_acc": 0.8722
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 4415,
+         "n_photos": 4373,
+         "diff": 0.0349,
+         "ci95": [
+          0.0272,
+          0.0425
+         ],
+         "base_acc": 0.8535,
+         "arm_acc": 0.8883
+        },
+        "fluke": {
+         "n_instances": 3157,
+         "n_photos": 2945,
+         "diff": 0.0082,
+         "ci95": [
+          0.0009,
+          0.0155
+         ],
+         "base_acc": 0.891,
+         "arm_acc": 0.8993
+        },
+        "other": {
+         "n_instances": 808,
+         "n_photos": 759,
+         "diff": 0.0,
+         "ci95": [
+          -0.0285,
+          0.0308
+         ],
+         "base_acc": 0.6658,
+         "arm_acc": 0.6658
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 7505,
+         "n_photos": 7505,
+         "diff": 0.0227,
+         "ci95": [
+          0.0169,
+          0.0288
+         ],
+         "base_acc": 0.8533,
+         "arm_acc": 0.8759
+        },
+        ">=2": {
+         "n_instances": 875,
+         "n_photos": 502,
+         "diff": 0.0114,
+         "ci95": [
+          -0.0092,
+          0.0308
+         ],
+         "base_acc": 0.8171,
+         "arm_acc": 0.8286
+        }
+       }
+      },
+      "t_eye_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 8,
+         "n_photos": 8,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 0.75,
+         "arm_acc": 0.75
+        },
+        "400-800 px": {
+         "n_instances": 26,
+         "n_photos": 25,
+         "diff": 0.0,
+         "ci95": [
+          -0.1154,
+          0.1111
+         ],
+         "base_acc": 0.8462,
+         "arm_acc": 0.8462
+        },
+        "<200 px": {
+         "n_instances": 1,
+         "n_photos": 1,
+         "diff": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "base_acc": 0.0,
+         "arm_acc": 1.0
+        },
+        ">=800 px": {
+         "n_instances": 44,
+         "n_photos": 44,
+         "diff": 0.0227,
+         "ci95": [
+          -0.0682,
+          0.1136
+         ],
+         "base_acc": 0.6818,
+         "arm_acc": 0.7045
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 27,
+         "n_photos": 27,
+         "diff": 0.037,
+         "ci95": [
+          -0.0741,
+          0.1481
+         ],
+         "base_acc": 0.7778,
+         "arm_acc": 0.8148
+        },
+        "fluke": {
+         "n_instances": 19,
+         "n_photos": 19,
+         "diff": 0.0526,
+         "ci95": [
+          0.0,
+          0.1579
+         ],
+         "base_acc": 0.7895,
+         "arm_acc": 0.8421
+        },
+        "other": {
+         "n_instances": 33,
+         "n_photos": 33,
+         "diff": 0.0,
+         "ci95": [
+          -0.1212,
+          0.1212
+         ],
+         "base_acc": 0.6667,
+         "arm_acc": 0.6667
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 62,
+         "n_photos": 62,
+         "diff": 0.0161,
+         "ci95": [
+          -0.0645,
+          0.0968
+         ],
+         "base_acc": 0.7742,
+         "arm_acc": 0.7903
+        },
+        ">=2": {
+         "n_instances": 17,
+         "n_photos": 16,
+         "diff": 0.0588,
+         "ci95": [
+          0.0,
+          0.1875
+         ],
+         "base_acc": 0.5882,
+         "arm_acc": 0.6471
+        }
+       }
+      },
+      "t_eye_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 86,
+         "n_photos": 85,
+         "diff": 0.0581,
+         "ci95": [
+          -0.0116,
+          0.1264
+         ],
+         "base_acc": 0.7907,
+         "arm_acc": 0.8488
+        },
+        "400-800 px": {
+         "n_instances": 164,
+         "n_photos": 161,
+         "diff": -0.0061,
+         "ci95": [
+          -0.0491,
+          0.037
+         ],
+         "base_acc": 0.811,
+         "arm_acc": 0.8049
+        },
+        "<200 px": {
+         "n_instances": 23,
+         "n_photos": 23,
+         "diff": 0.1304,
+         "ci95": [
+          -0.087,
+          0.3478
+         ],
+         "base_acc": 0.4783,
+         "arm_acc": 0.6087
+        },
+        ">=800 px": {
+         "n_instances": 333,
+         "n_photos": 331,
+         "diff": 0.03,
+         "ci95": [
+          -0.003,
+          0.0631
+         ],
+         "base_acc": 0.7598,
+         "arm_acc": 0.7898
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 212,
+         "n_photos": 212,
+         "diff": 0.0519,
+         "ci95": [
+          0.0094,
+          0.0943
+         ],
+         "base_acc": 0.816,
+         "arm_acc": 0.8679
+        },
+        "fluke": {
+         "n_instances": 232,
+         "n_photos": 231,
+         "diff": 0.0172,
+         "ci95": [
+          -0.013,
+          0.0476
+         ],
+         "base_acc": 0.8319,
+         "arm_acc": 0.8491
+        },
+        "other": {
+         "n_instances": 162,
+         "n_photos": 160,
+         "diff": 0.0123,
+         "ci95": [
+          -0.0494,
+          0.0779
+         ],
+         "base_acc": 0.6111,
+         "arm_acc": 0.6235
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 510,
+         "n_photos": 510,
+         "diff": 0.0255,
+         "ci95": [
+          -0.002,
+          0.0529
+         ],
+         "base_acc": 0.7745,
+         "arm_acc": 0.8
+        },
+        ">=2": {
+         "n_instances": 96,
+         "n_photos": 89,
+         "diff": 0.0417,
+         "ci95": [
+          -0.0208,
+          0.1042
+         ],
+         "base_acc": 0.7292,
+         "arm_acc": 0.7708
+        }
+       }
+      }
+     },
+     "parts_seg_r05_s1": {
+      "t_vc_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 75,
+         "n_photos": 70,
+         "diff": 0.04,
+         "ci95": [
+          -0.0263,
+          0.1096
+         ],
+         "base_acc": 0.8,
+         "arm_acc": 0.84
+        },
+        "400-800 px": {
+         "n_instances": 240,
+         "n_photos": 226,
+         "diff": -0.0292,
+         "ci95": [
+          -0.0581,
+          -0.0042
+         ],
+         "base_acc": 0.8958,
+         "arm_acc": 0.8667
+        },
+        "<200 px": {
+         "n_instances": 19,
+         "n_photos": 18,
+         "diff": 0.1053,
+         "ci95": [
+          -0.1111,
+          0.3
+         ],
+         "base_acc": 0.6316,
+         "arm_acc": 0.7368
+        },
+        ">=800 px": {
+         "n_instances": 494,
+         "n_photos": 484,
+         "diff": 0.0324,
+         "ci95": [
+          0.0099,
+          0.0567
+         ],
+         "base_acc": 0.8219,
+         "arm_acc": 0.8543
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 473,
+         "n_photos": 467,
+         "diff": 0.0402,
+         "ci95": [
+          0.0191,
+          0.0611
+         ],
+         "base_acc": 0.8541,
+         "arm_acc": 0.8943
+        },
+        "fluke": {
+         "n_instances": 204,
+         "n_photos": 188,
+         "diff": -0.0588,
+         "ci95": [
+          -0.0957,
+          -0.0245
+         ],
+         "base_acc": 0.9167,
+         "arm_acc": 0.8578
+        },
+        "other": {
+         "n_instances": 151,
+         "n_photos": 133,
+         "diff": 0.0464,
+         "ci95": [
+          -0.0067,
+          0.0994
+         ],
+         "base_acc": 0.6755,
+         "arm_acc": 0.7219
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 715,
+         "n_photos": 715,
+         "diff": 0.0196,
+         "ci95": [
+          0.0,
+          0.0392
+         ],
+         "base_acc": 0.8517,
+         "arm_acc": 0.8713
+        },
+        ">=2": {
+         "n_instances": 113,
+         "n_photos": 63,
+         "diff": 0.0,
+         "ci95": [
+          -0.055,
+          0.0541
+         ],
+         "base_acc": 0.7434,
+         "arm_acc": 0.7434
+        }
+       }
+      },
+      "t_vc_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 840,
+         "n_photos": 782,
+         "diff": -0.0071,
+         "ci95": [
+          -0.0298,
+          0.0145
+         ],
+         "base_acc": 0.8333,
+         "arm_acc": 0.8262
+        },
+        "400-800 px": {
+         "n_instances": 2173,
+         "n_photos": 2070,
+         "diff": -0.0087,
+         "ci95": [
+          -0.0199,
+          0.0028
+         ],
+         "base_acc": 0.8702,
+         "arm_acc": 0.8615
+        },
+        "<200 px": {
+         "n_instances": 274,
+         "n_photos": 253,
+         "diff": 0.0255,
+         "ci95": [
+          -0.0221,
+          0.075
+         ],
+         "base_acc": 0.708,
+         "arm_acc": 0.7336
+        },
+        ">=800 px": {
+         "n_instances": 5093,
+         "n_photos": 5051,
+         "diff": 0.0153,
+         "ci95": [
+          0.008,
+          0.0231
+         ],
+         "base_acc": 0.851,
+         "arm_acc": 0.8663
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 4415,
+         "n_photos": 4373,
+         "diff": 0.0378,
+         "ci95": [
+          0.0299,
+          0.0455
+         ],
+         "base_acc": 0.8535,
+         "arm_acc": 0.8913
+        },
+        "fluke": {
+         "n_instances": 3157,
+         "n_photos": 2945,
+         "diff": -0.0399,
+         "ci95": [
+          -0.0489,
+          -0.0312
+         ],
+         "base_acc": 0.891,
+         "arm_acc": 0.8511
+        },
+        "other": {
+         "n_instances": 808,
+         "n_photos": 759,
+         "diff": 0.0235,
+         "ci95": [
+          -0.0051,
+          0.0517
+         ],
+         "base_acc": 0.6658,
+         "arm_acc": 0.6894
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 7505,
+         "n_photos": 7505,
+         "diff": 0.0129,
+         "ci95": [
+          0.0068,
+          0.0196
+         ],
+         "base_acc": 0.8533,
+         "arm_acc": 0.8662
+        },
+        ">=2": {
+         "n_instances": 875,
+         "n_photos": 502,
+         "diff": -0.0423,
+         "ci95": [
+          -0.0644,
+          -0.0209
+         ],
+         "base_acc": 0.8171,
+         "arm_acc": 0.7749
+        }
+       }
+      },
+      "t_eye_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 8,
+         "n_photos": 8,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 0.75,
+         "arm_acc": 0.75
+        },
+        "400-800 px": {
+         "n_instances": 26,
+         "n_photos": 25,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 0.8462,
+         "arm_acc": 0.8462
+        },
+        "<200 px": {
+         "n_instances": 1,
+         "n_photos": 1,
+         "diff": 1.0,
+         "ci95": [
+          1.0,
+          1.0
+         ],
+         "base_acc": 0.0,
+         "arm_acc": 1.0
+        },
+        ">=800 px": {
+         "n_instances": 44,
+         "n_photos": 44,
+         "diff": 0.0682,
+         "ci95": [
+          0.0,
+          0.1591
+         ],
+         "base_acc": 0.6818,
+         "arm_acc": 0.75
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 27,
+         "n_photos": 27,
+         "diff": 0.0741,
+         "ci95": [
+          0.0,
+          0.1852
+         ],
+         "base_acc": 0.7778,
+         "arm_acc": 0.8519
+        },
+        "fluke": {
+         "n_instances": 19,
+         "n_photos": 19,
+         "diff": 0.0526,
+         "ci95": [
+          0.0,
+          0.1579
+         ],
+         "base_acc": 0.7895,
+         "arm_acc": 0.8421
+        },
+        "other": {
+         "n_instances": 33,
+         "n_photos": 33,
+         "diff": 0.0303,
+         "ci95": [
+          0.0,
+          0.0909
+         ],
+         "base_acc": 0.6667,
+         "arm_acc": 0.697
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 62,
+         "n_photos": 62,
+         "diff": 0.0484,
+         "ci95": [
+          0.0,
+          0.1129
+         ],
+         "base_acc": 0.7742,
+         "arm_acc": 0.8226
+        },
+        ">=2": {
+         "n_instances": 17,
+         "n_photos": 16,
+         "diff": 0.0588,
+         "ci95": [
+          0.0,
+          0.1875
+         ],
+         "base_acc": 0.5882,
+         "arm_acc": 0.6471
+        }
+       }
+      },
+      "t_eye_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 86,
+         "n_photos": 85,
+         "diff": -0.0349,
+         "ci95": [
+          -0.1001,
+          0.0349
+         ],
+         "base_acc": 0.7907,
+         "arm_acc": 0.7558
+        },
+        "400-800 px": {
+         "n_instances": 164,
+         "n_photos": 161,
+         "diff": 0.0,
+         "ci95": [
+          -0.0429,
+          0.0429
+         ],
+         "base_acc": 0.811,
+         "arm_acc": 0.811
+        },
+        "<200 px": {
+         "n_instances": 23,
+         "n_photos": 23,
+         "diff": 0.1304,
+         "ci95": [
+          0.0,
+          0.2609
+         ],
+         "base_acc": 0.4783,
+         "arm_acc": 0.6087
+        },
+        ">=800 px": {
+         "n_instances": 333,
+         "n_photos": 331,
+         "diff": 0.036,
+         "ci95": [
+          0.0,
+          0.0716
+         ],
+         "base_acc": 0.7598,
+         "arm_acc": 0.7958
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 212,
+         "n_photos": 212,
+         "diff": 0.0566,
+         "ci95": [
+          0.0142,
+          0.0991
+         ],
+         "base_acc": 0.816,
+         "arm_acc": 0.8726
+        },
+        "fluke": {
+         "n_instances": 232,
+         "n_photos": 231,
+         "diff": -0.0431,
+         "ci95": [
+          -0.0823,
+          -0.0043
+         ],
+         "base_acc": 0.8319,
+         "arm_acc": 0.7888
+        },
+        "other": {
+         "n_instances": 162,
+         "n_photos": 160,
+         "diff": 0.0617,
+         "ci95": [
+          0.0123,
+          0.1159
+         ],
+         "base_acc": 0.6111,
+         "arm_acc": 0.6728
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 510,
+         "n_photos": 510,
+         "diff": 0.0176,
+         "ci95": [
+          -0.0098,
+          0.0471
+         ],
+         "base_acc": 0.7745,
+         "arm_acc": 0.7922
+        },
+        ">=2": {
+         "n_instances": 96,
+         "n_photos": 89,
+         "diff": 0.0312,
+         "ci95": [
+          -0.0319,
+          0.101
+         ],
+         "base_acc": 0.7292,
+         "arm_acc": 0.7604
+        }
+       }
+      }
+     }
+    }
+   },
+   "hr": {
+    "summary": {
+     "parts_seg_r05_a": {
+      "rule": [
+       0.03,
+       0.0,
+       0.0005
+      ],
+      "val_eye": 0.7722,
+      "val_eye_n": 79,
+      "val_clf": 0.849,
+      "val_clf_n": 828,
+      "val_clf_by_size": {
+       "200-400 px": {
+        "n": 75,
+        "acc": 0.84
+       },
+       "400-800 px": {
+        "n": 240,
+        "acc": 0.858
+       },
+       "<200 px": {
+        "n": 19,
+        "acc": 0.789
+       },
+       ">=800 px": {
+        "n": 494,
+        "acc": 0.848
+       }
+      }
+     },
+     "parts_seg_r05_sc": {
+      "rule": [
+       0.12,
+       0.0,
+       0.0005
+      ],
+      "val_eye": 0.7848,
+      "val_eye_n": 79,
+      "val_clf": 0.8623,
+      "val_clf_n": 828,
+      "val_clf_by_size": {
+       "200-400 px": {
+        "n": 75,
+        "acc": 0.867
+       },
+       "400-800 px": {
+        "n": 240,
+        "acc": 0.887
+       },
+       "<200 px": {
+        "n": 19,
+        "acc": 0.842
+       },
+       ">=800 px": {
+        "n": 494,
+        "acc": 0.85
+       }
+      }
+     },
+     "parts_seg_r05_rw": {
+      "rule": [
+       0.05,
+       0.0,
+       0.0005
+      ],
+      "val_eye": 0.7089,
+      "val_eye_n": 79,
+      "val_clf": 0.8357,
+      "val_clf_n": 828,
+      "val_clf_by_size": {
+       "200-400 px": {
+        "n": 75,
+        "acc": 0.867
+       },
+       "400-800 px": {
+        "n": 240,
+        "acc": 0.871
+       },
+       "<200 px": {
+        "n": 19,
+        "acc": 0.789
+       },
+       ">=800 px": {
+        "n": 494,
+        "acc": 0.816
+       }
+      }
+     },
+     "parts_seg_r05_s1": {
+      "rule": [
+       0.12,
+       0.0,
+       0.001
+      ],
+      "val_eye": 0.7342,
+      "val_eye_n": 79,
+      "val_clf": 0.8514,
+      "val_clf_n": 828,
+      "val_clf_by_size": {
+       "200-400 px": {
+        "n": 75,
+        "acc": 0.813
+       },
+       "400-800 px": {
+        "n": 240,
+        "acc": 0.863
+       },
+       "<200 px": {
+        "n": 19,
+        "acc": 0.789
+       },
+       ">=800 px": {
+        "n": 494,
+        "acc": 0.854
+       }
+      }
+     }
+    },
+    "paired_val_vs_base": {
+     "parts_seg_r05_sc": {
+      "t_eye": {
+       "n_instances": 79,
+       "n_photos": 78,
+       "diff": 0.0127,
+       "ci95": [
+        -0.0385,
+        0.0641
+       ],
+       "base_acc": 0.7722,
+       "arm_acc": 0.7848
+      },
+      "t_vc": {
+       "n_instances": 828,
+       "n_photos": 778,
+       "diff": 0.0133,
+       "ci95": [
+        -0.0024,
+        0.0286
+       ],
+       "base_acc": 0.849,
+       "arm_acc": 0.8623
+      }
+     },
+     "parts_seg_r05_rw": {
+      "t_eye": {
+       "n_instances": 79,
+       "n_photos": 78,
+       "diff": -0.0633,
+       "ci95": [
+        -0.141,
+        0.0128
+       ],
+       "base_acc": 0.7722,
+       "arm_acc": 0.7089
+      },
+      "t_vc": {
+       "n_instances": 828,
+       "n_photos": 778,
+       "diff": -0.0133,
+       "ci95": [
+        -0.0324,
+        0.0048
+       ],
+       "base_acc": 0.849,
+       "arm_acc": 0.8357
+      }
+     },
+     "parts_seg_r05_s1": {
+      "t_eye": {
+       "n_instances": 79,
+       "n_photos": 78,
+       "diff": -0.038,
+       "ci95": [
+        -0.0897,
+        0.0127
+       ],
+       "base_acc": 0.7722,
+       "arm_acc": 0.7342
+      },
+      "t_vc": {
+       "n_instances": 828,
+       "n_photos": 778,
+       "diff": 0.0024,
+       "ci95": [
+        -0.0133,
+        0.0182
+       ],
+       "base_acc": 0.849,
+       "arm_acc": 0.8514
+      }
+     }
+    },
+    "groups_vs_base": {
+     "parts_seg_r05_sc": {
+      "t_vc_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 75,
+         "n_photos": 70,
+         "diff": 0.0267,
+         "ci95": [
+          -0.0375,
+          0.0921
+         ],
+         "base_acc": 0.84,
+         "arm_acc": 0.8667
+        },
+        "400-800 px": {
+         "n_instances": 240,
+         "n_photos": 226,
+         "diff": 0.0292,
+         "ci95": [
+          0.0041,
+          0.0579
+         ],
+         "base_acc": 0.8583,
+         "arm_acc": 0.8875
+        },
+        "<200 px": {
+         "n_instances": 19,
+         "n_photos": 18,
+         "diff": 0.0526,
+         "ci95": [
+          0.0,
+          0.1667
+         ],
+         "base_acc": 0.7895,
+         "arm_acc": 0.8421
+        },
+        ">=800 px": {
+         "n_instances": 494,
+         "n_photos": 484,
+         "diff": 0.002,
+         "ci95": [
+          -0.0182,
+          0.0223
+         ],
+         "base_acc": 0.8482,
+         "arm_acc": 0.8502
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 473,
+         "n_photos": 467,
+         "diff": 0.0317,
+         "ci95": [
+          0.0148,
+          0.0506
+         ],
+         "base_acc": 0.8858,
+         "arm_acc": 0.9175
+        },
+        "fluke": {
+         "n_instances": 204,
+         "n_photos": 188,
+         "diff": 0.0,
+         "ci95": [
+          -0.0145,
+          0.0145
+         ],
+         "base_acc": 0.9265,
+         "arm_acc": 0.9265
+        },
+        "other": {
+         "n_instances": 151,
+         "n_photos": 133,
+         "diff": -0.0265,
+         "ci95": [
+          -0.089,
+          0.0329
+         ],
+         "base_acc": 0.6291,
+         "arm_acc": 0.6026
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 715,
+         "n_photos": 715,
+         "diff": 0.0112,
+         "ci95": [
+          -0.0056,
+          0.028
+         ],
+         "base_acc": 0.8727,
+         "arm_acc": 0.8839
+        },
+        ">=2": {
+         "n_instances": 113,
+         "n_photos": 63,
+         "diff": 0.0265,
+         "ci95": [
+          -0.0175,
+          0.0756
+         ],
+         "base_acc": 0.6991,
+         "arm_acc": 0.7257
+        }
+       }
+      },
+      "t_vc_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 840,
+         "n_photos": 782,
+         "diff": 0.0179,
+         "ci95": [
+          0.0,
+          0.0362
+         ],
+         "base_acc": 0.8667,
+         "arm_acc": 0.8845
+        },
+        "400-800 px": {
+         "n_instances": 2173,
+         "n_photos": 2070,
+         "diff": 0.0262,
+         "ci95": [
+          0.0171,
+          0.0354
+         ],
+         "base_acc": 0.867,
+         "arm_acc": 0.8932
+        },
+        "<200 px": {
+         "n_instances": 274,
+         "n_photos": 253,
+         "diff": -0.0255,
+         "ci95": [
+          -0.0549,
+          0.0036
+         ],
+         "base_acc": 0.8467,
+         "arm_acc": 0.8212
+        },
+        ">=800 px": {
+         "n_instances": 5093,
+         "n_photos": 5051,
+         "diff": 0.0177,
+         "ci95": [
+          0.0118,
+          0.0241
+         ],
+         "base_acc": 0.8757,
+         "arm_acc": 0.8934
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 4415,
+         "n_photos": 4373,
+         "diff": 0.0378,
+         "ci95": [
+          0.0314,
+          0.0446
+         ],
+         "base_acc": 0.8827,
+         "arm_acc": 0.9205
+        },
+        "fluke": {
+         "n_instances": 3157,
+         "n_photos": 2945,
+         "diff": 0.0076,
+         "ci95": [
+          0.001,
+          0.0143
+         ],
+         "base_acc": 0.9107,
+         "arm_acc": 0.9183
+        },
+        "other": {
+         "n_instances": 808,
+         "n_photos": 759,
+         "diff": -0.0446,
+         "ci95": [
+          -0.0714,
+          -0.0187
+         ],
+         "base_acc": 0.6584,
+         "arm_acc": 0.6139
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 7505,
+         "n_photos": 7505,
+         "diff": 0.0177,
+         "ci95": [
+          0.0127,
+          0.0227
+         ],
+         "base_acc": 0.8787,
+         "arm_acc": 0.8965
+        },
+        ">=2": {
+         "n_instances": 875,
+         "n_photos": 502,
+         "diff": 0.0251,
+         "ci95": [
+          0.0079,
+          0.0426
+         ],
+         "base_acc": 0.8103,
+         "arm_acc": 0.8354
+        }
+       }
+      },
+      "t_eye_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 8,
+         "n_photos": 8,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 0.75,
+         "arm_acc": 0.75
+        },
+        "400-800 px": {
+         "n_instances": 26,
+         "n_photos": 25,
+         "diff": 0.0385,
+         "ci95": [
+          0.0,
+          0.12
+         ],
+         "base_acc": 0.8077,
+         "arm_acc": 0.8462
+        },
+        "<200 px": {
+         "n_instances": 1,
+         "n_photos": 1,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 1.0,
+         "arm_acc": 1.0
+        },
+        ">=800 px": {
+         "n_instances": 44,
+         "n_photos": 44,
+         "diff": 0.0,
+         "ci95": [
+          -0.0909,
+          0.0909
+         ],
+         "base_acc": 0.75,
+         "arm_acc": 0.75
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 27,
+         "n_photos": 27,
+         "diff": 0.0,
+         "ci95": [
+          -0.1111,
+          0.1111
+         ],
+         "base_acc": 0.8889,
+         "arm_acc": 0.8889
+        },
+        "fluke": {
+         "n_instances": 19,
+         "n_photos": 19,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 0.8421,
+         "arm_acc": 0.8421
+        },
+        "other": {
+         "n_instances": 33,
+         "n_photos": 33,
+         "diff": 0.0303,
+         "ci95": [
+          -0.0606,
+          0.1212
+         ],
+         "base_acc": 0.6364,
+         "arm_acc": 0.6667
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 62,
+         "n_photos": 62,
+         "diff": 0.0161,
+         "ci95": [
+          -0.0484,
+          0.0806
+         ],
+         "base_acc": 0.8387,
+         "arm_acc": 0.8548
+        },
+        ">=2": {
+         "n_instances": 17,
+         "n_photos": 16,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 0.5294,
+         "arm_acc": 0.5294
+        }
+       }
+      },
+      "t_eye_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 86,
+         "n_photos": 85,
+         "diff": 0.0116,
+         "ci95": [
+          -0.0353,
+          0.0588
+         ],
+         "base_acc": 0.7674,
+         "arm_acc": 0.7791
+        },
+        "400-800 px": {
+         "n_instances": 164,
+         "n_photos": 161,
+         "diff": 0.0366,
+         "ci95": [
+          -0.0061,
+          0.0798
+         ],
+         "base_acc": 0.8049,
+         "arm_acc": 0.8415
+        },
+        "<200 px": {
+         "n_instances": 23,
+         "n_photos": 23,
+         "diff": -0.087,
+         "ci95": [
+          -0.2174,
+          0.0
+         ],
+         "base_acc": 0.6957,
+         "arm_acc": 0.6087
+        },
+        ">=800 px": {
+         "n_instances": 333,
+         "n_photos": 331,
+         "diff": 0.012,
+         "ci95": [
+          -0.0181,
+          0.0422
+         ],
+         "base_acc": 0.8108,
+         "arm_acc": 0.8228
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 212,
+         "n_photos": 212,
+         "diff": 0.0283,
+         "ci95": [
+          -0.0094,
+          0.066
+         ],
+         "base_acc": 0.8726,
+         "arm_acc": 0.9009
+        },
+        "fluke": {
+         "n_instances": 232,
+         "n_photos": 231,
+         "diff": 0.0345,
+         "ci95": [
+          0.0086,
+          0.0647
+         ],
+         "base_acc": 0.8448,
+         "arm_acc": 0.8793
+        },
+        "other": {
+         "n_instances": 162,
+         "n_photos": 160,
+         "diff": -0.0309,
+         "ci95": [
+          -0.0864,
+          0.0245
+         ],
+         "base_acc": 0.6358,
+         "arm_acc": 0.6049
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 510,
+         "n_photos": 510,
+         "diff": 0.0196,
+         "ci95": [
+          -0.0059,
+          0.0431
+         ],
+         "base_acc": 0.8137,
+         "arm_acc": 0.8333
+        },
+        ">=2": {
+         "n_instances": 96,
+         "n_photos": 89,
+         "diff": -0.0104,
+         "ci95": [
+          -0.0638,
+          0.0421
+         ],
+         "base_acc": 0.7188,
+         "arm_acc": 0.7083
+        }
+       }
+      }
+     },
+     "parts_seg_r05_rw": {
+      "t_vc_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 75,
+         "n_photos": 70,
+         "diff": 0.0267,
+         "ci95": [
+          -0.0405,
+          0.0933
+         ],
+         "base_acc": 0.84,
+         "arm_acc": 0.8667
+        },
+        "400-800 px": {
+         "n_instances": 240,
+         "n_photos": 226,
+         "diff": 0.0125,
+         "ci95": [
+          -0.0169,
+          0.0451
+         ],
+         "base_acc": 0.8583,
+         "arm_acc": 0.8708
+        },
+        "<200 px": {
+         "n_instances": 19,
+         "n_photos": 18,
+         "diff": 0.0,
+         "ci95": [
+          -0.1579,
+          0.1579
+         ],
+         "base_acc": 0.7895,
+         "arm_acc": 0.7895
+        },
+        ">=800 px": {
+         "n_instances": 494,
+         "n_photos": 484,
+         "diff": -0.0324,
+         "ci95": [
+          -0.0586,
+          -0.008
+         ],
+         "base_acc": 0.8482,
+         "arm_acc": 0.8158
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 473,
+         "n_photos": 467,
+         "diff": 0.0063,
+         "ci95": [
+          -0.0147,
+          0.0275
+         ],
+         "base_acc": 0.8858,
+         "arm_acc": 0.8922
+        },
+        "fluke": {
+         "n_instances": 204,
+         "n_photos": 188,
+         "diff": 0.0147,
+         "ci95": [
+          -0.005,
+          0.0441
+         ],
+         "base_acc": 0.9265,
+         "arm_acc": 0.9412
+        },
+        "other": {
+         "n_instances": 151,
+         "n_photos": 133,
+         "diff": -0.1126,
+         "ci95": [
+          -0.18,
+          -0.0461
+         ],
+         "base_acc": 0.6291,
+         "arm_acc": 0.5166
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 715,
+         "n_photos": 715,
+         "diff": -0.014,
+         "ci95": [
+          -0.0322,
+          0.0042
+         ],
+         "base_acc": 0.8727,
+         "arm_acc": 0.8587
+        },
+        ">=2": {
+         "n_instances": 113,
+         "n_photos": 63,
+         "diff": -0.0088,
+         "ci95": [
+          -0.0648,
+          0.055
+         ],
+         "base_acc": 0.6991,
+         "arm_acc": 0.6903
+        }
+       }
+      },
+      "t_vc_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 840,
+         "n_photos": 782,
+         "diff": 0.0202,
+         "ci95": [
+          0.0012,
+          0.04
+         ],
+         "base_acc": 0.8667,
+         "arm_acc": 0.8869
+        },
+        "400-800 px": {
+         "n_instances": 2173,
+         "n_photos": 2070,
+         "diff": 0.0207,
+         "ci95": [
+          0.0114,
+          0.0299
+         ],
+         "base_acc": 0.867,
+         "arm_acc": 0.8877
+        },
+        "<200 px": {
+         "n_instances": 274,
+         "n_photos": 253,
+         "diff": 0.0073,
+         "ci95": [
+          -0.0187,
+          0.0333
+         ],
+         "base_acc": 0.8467,
+         "arm_acc": 0.854
+        },
+        ">=800 px": {
+         "n_instances": 5093,
+         "n_photos": 5051,
+         "diff": 0.0024,
+         "ci95": [
+          -0.0039,
+          0.0088
+         ],
+         "base_acc": 0.8757,
+         "arm_acc": 0.8781
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 4415,
+         "n_photos": 4373,
+         "diff": 0.0106,
+         "ci95": [
+          0.0041,
+          0.0174
+         ],
+         "base_acc": 0.8827,
+         "arm_acc": 0.8933
+        },
+        "fluke": {
+         "n_instances": 3157,
+         "n_photos": 2945,
+         "diff": 0.0228,
+         "ci95": [
+          0.016,
+          0.0301
+         ],
+         "base_acc": 0.9107,
+         "arm_acc": 0.9335
+        },
+        "other": {
+         "n_instances": 808,
+         "n_photos": 759,
+         "diff": -0.0532,
+         "ci95": [
+          -0.0809,
+          -0.0257
+         ],
+         "base_acc": 0.6584,
+         "arm_acc": 0.6052
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 7505,
+         "n_photos": 7505,
+         "diff": 0.0077,
+         "ci95": [
+          0.0021,
+          0.0133
+         ],
+         "base_acc": 0.8787,
+         "arm_acc": 0.8865
+        },
+        ">=2": {
+         "n_instances": 875,
+         "n_photos": 502,
+         "diff": 0.0206,
+         "ci95": [
+          0.0011,
+          0.0413
+         ],
+         "base_acc": 0.8103,
+         "arm_acc": 0.8309
+        }
+       }
+      },
+      "t_eye_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 8,
+         "n_photos": 8,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 0.75,
+         "arm_acc": 0.75
+        },
+        "400-800 px": {
+         "n_instances": 26,
+         "n_photos": 25,
+         "diff": 0.0,
+         "ci95": [
+          -0.1154,
+          0.1111
+         ],
+         "base_acc": 0.8077,
+         "arm_acc": 0.8077
+        },
+        "<200 px": {
+         "n_instances": 1,
+         "n_photos": 1,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 1.0,
+         "arm_acc": 1.0
+        },
+        ">=800 px": {
+         "n_instances": 44,
+         "n_photos": 44,
+         "diff": -0.1136,
+         "ci95": [
+          -0.25,
+          0.0006
+         ],
+         "base_acc": 0.75,
+         "arm_acc": 0.6364
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 27,
+         "n_photos": 27,
+         "diff": -0.1111,
+         "ci95": [
+          -0.2593,
+          0.037
+         ],
+         "base_acc": 0.8889,
+         "arm_acc": 0.7778
+        },
+        "fluke": {
+         "n_instances": 19,
+         "n_photos": 19,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 0.8421,
+         "arm_acc": 0.8421
+        },
+        "other": {
+         "n_instances": 33,
+         "n_photos": 33,
+         "diff": -0.0606,
+         "ci95": [
+          -0.2121,
+          0.0909
+         ],
+         "base_acc": 0.6364,
+         "arm_acc": 0.5758
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 62,
+         "n_photos": 62,
+         "diff": -0.0806,
+         "ci95": [
+          -0.1774,
+          0.0
+         ],
+         "base_acc": 0.8387,
+         "arm_acc": 0.7581
+        },
+        ">=2": {
+         "n_instances": 17,
+         "n_photos": 16,
+         "diff": 0.0,
+         "ci95": [
+          -0.1765,
+          0.1765
+         ],
+         "base_acc": 0.5294,
+         "arm_acc": 0.5294
+        }
+       }
+      },
+      "t_eye_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 86,
+         "n_photos": 85,
+         "diff": 0.0233,
+         "ci95": [
+          -0.0471,
+          0.0931
+         ],
+         "base_acc": 0.7674,
+         "arm_acc": 0.7907
+        },
+        "400-800 px": {
+         "n_instances": 164,
+         "n_photos": 161,
+         "diff": 0.0305,
+         "ci95": [
+          -0.0182,
+          0.0793
+         ],
+         "base_acc": 0.8049,
+         "arm_acc": 0.8354
+        },
+        "<200 px": {
+         "n_instances": 23,
+         "n_photos": 23,
+         "diff": 0.0,
+         "ci95": [
+          -0.1304,
+          0.1304
+         ],
+         "base_acc": 0.6957,
+         "arm_acc": 0.6957
+        },
+        ">=800 px": {
+         "n_instances": 333,
+         "n_photos": 331,
+         "diff": -0.021,
+         "ci95": [
+          -0.0572,
+          0.015
+         ],
+         "base_acc": 0.8108,
+         "arm_acc": 0.7898
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 212,
+         "n_photos": 212,
+         "diff": 0.0094,
+         "ci95": [
+          -0.033,
+          0.0519
+         ],
+         "base_acc": 0.8726,
+         "arm_acc": 0.8821
+        },
+        "fluke": {
+         "n_instances": 232,
+         "n_photos": 231,
+         "diff": 0.0517,
+         "ci95": [
+          0.0215,
+          0.0866
+         ],
+         "base_acc": 0.8448,
+         "arm_acc": 0.8966
+        },
+        "other": {
+         "n_instances": 162,
+         "n_photos": 160,
+         "diff": -0.0864,
+         "ci95": [
+          -0.1481,
+          -0.0186
+         ],
+         "base_acc": 0.6358,
+         "arm_acc": 0.5494
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 510,
+         "n_photos": 510,
+         "diff": 0.002,
+         "ci95": [
+          -0.0235,
+          0.0314
+         ],
+         "base_acc": 0.8137,
+         "arm_acc": 0.8157
+        },
+        ">=2": {
+         "n_instances": 96,
+         "n_photos": 89,
+         "diff": -0.0104,
+         "ci95": [
+          -0.0833,
+          0.0612
+         ],
+         "base_acc": 0.7188,
+         "arm_acc": 0.7083
+        }
+       }
+      }
+     },
+     "parts_seg_r05_s1": {
+      "t_vc_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 75,
+         "n_photos": 70,
+         "diff": -0.0267,
+         "ci95": [
+          -0.0822,
+          0.0144
+         ],
+         "base_acc": 0.84,
+         "arm_acc": 0.8133
+        },
+        "400-800 px": {
+         "n_instances": 240,
+         "n_photos": 226,
+         "diff": 0.0042,
+         "ci95": [
+          -0.021,
+          0.0299
+         ],
+         "base_acc": 0.8583,
+         "arm_acc": 0.8625
+        },
+        "<200 px": {
+         "n_instances": 19,
+         "n_photos": 18,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 0.7895,
+         "arm_acc": 0.7895
+        },
+        ">=800 px": {
+         "n_instances": 494,
+         "n_photos": 484,
+         "diff": 0.0061,
+         "ci95": [
+          -0.0142,
+          0.0263
+         ],
+         "base_acc": 0.8482,
+         "arm_acc": 0.8543
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 473,
+         "n_photos": 467,
+         "diff": 0.0127,
+         "ci95": [
+          -0.0042,
+          0.0318
+         ],
+         "base_acc": 0.8858,
+         "arm_acc": 0.8985
+        },
+        "fluke": {
+         "n_instances": 204,
+         "n_photos": 188,
+         "diff": -0.0147,
+         "ci95": [
+          -0.0354,
+          0.005
+         ],
+         "base_acc": 0.9265,
+         "arm_acc": 0.9118
+        },
+        "other": {
+         "n_instances": 151,
+         "n_photos": 133,
+         "diff": -0.0066,
+         "ci95": [
+          -0.06,
+          0.048
+         ],
+         "base_acc": 0.6291,
+         "arm_acc": 0.6225
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 715,
+         "n_photos": 715,
+         "diff": 0.0042,
+         "ci95": [
+          -0.014,
+          0.021
+         ],
+         "base_acc": 0.8727,
+         "arm_acc": 0.8769
+        },
+        ">=2": {
+         "n_instances": 113,
+         "n_photos": 63,
+         "diff": -0.0088,
+         "ci95": [
+          -0.0413,
+          0.0182
+         ],
+         "base_acc": 0.6991,
+         "arm_acc": 0.6903
+        }
+       }
+      },
+      "t_vc_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 840,
+         "n_photos": 782,
+         "diff": -0.0071,
+         "ci95": [
+          -0.027,
+          0.0131
+         ],
+         "base_acc": 0.8667,
+         "arm_acc": 0.8595
+        },
+        "400-800 px": {
+         "n_instances": 2173,
+         "n_photos": 2070,
+         "diff": 0.0152,
+         "ci95": [
+          0.0055,
+          0.0247
+         ],
+         "base_acc": 0.867,
+         "arm_acc": 0.8822
+        },
+        "<200 px": {
+         "n_instances": 274,
+         "n_photos": 253,
+         "diff": -0.0219,
+         "ci95": [
+          -0.0482,
+          0.0038
+         ],
+         "base_acc": 0.8467,
+         "arm_acc": 0.8248
+        },
+        ">=800 px": {
+         "n_instances": 5093,
+         "n_photos": 5051,
+         "diff": 0.0081,
+         "ci95": [
+          0.0016,
+          0.0145
+         ],
+         "base_acc": 0.8757,
+         "arm_acc": 0.8838
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 4415,
+         "n_photos": 4373,
+         "diff": 0.0131,
+         "ci95": [
+          0.0057,
+          0.0204
+         ],
+         "base_acc": 0.8827,
+         "arm_acc": 0.8958
+        },
+        "fluke": {
+         "n_instances": 3157,
+         "n_photos": 2945,
+         "diff": 0.0032,
+         "ci95": [
+          -0.0035,
+          0.0104
+         ],
+         "base_acc": 0.9107,
+         "arm_acc": 0.9138
+        },
+        "other": {
+         "n_instances": 808,
+         "n_photos": 759,
+         "diff": -0.0074,
+         "ci95": [
+          -0.0325,
+          0.0175
+         ],
+         "base_acc": 0.6584,
+         "arm_acc": 0.651
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 7505,
+         "n_photos": 7505,
+         "diff": 0.0057,
+         "ci95": [
+          0.0001,
+          0.0116
+         ],
+         "base_acc": 0.8787,
+         "arm_acc": 0.8845
+        },
+        ">=2": {
+         "n_instances": 875,
+         "n_photos": 502,
+         "diff": 0.0217,
+         "ci95": [
+          0.0046,
+          0.0386
+         ],
+         "base_acc": 0.8103,
+         "arm_acc": 0.832
+        }
+       }
+      },
+      "t_eye_val": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 8,
+         "n_photos": 8,
+         "diff": -0.125,
+         "ci95": [
+          -0.375,
+          0.0
+         ],
+         "base_acc": 0.75,
+         "arm_acc": 0.625
+        },
+        "400-800 px": {
+         "n_instances": 26,
+         "n_photos": 25,
+         "diff": -0.0769,
+         "ci95": [
+          -0.1923,
+          0.0
+         ],
+         "base_acc": 0.8077,
+         "arm_acc": 0.7308
+        },
+        "<200 px": {
+         "n_instances": 1,
+         "n_photos": 1,
+         "diff": 0.0,
+         "ci95": [
+          0.0,
+          0.0
+         ],
+         "base_acc": 1.0,
+         "arm_acc": 1.0
+        },
+        ">=800 px": {
+         "n_instances": 44,
+         "n_photos": 44,
+         "diff": 0.0,
+         "ci95": [
+          -0.0682,
+          0.0682
+         ],
+         "base_acc": 0.75,
+         "arm_acc": 0.75
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 27,
+         "n_photos": 27,
+         "diff": 0.0,
+         "ci95": [
+          -0.1111,
+          0.1111
+         ],
+         "base_acc": 0.8889,
+         "arm_acc": 0.8889
+        },
+        "fluke": {
+         "n_instances": 19,
+         "n_photos": 19,
+         "diff": -0.1053,
+         "ci95": [
+          -0.2632,
+          0.0
+         ],
+         "base_acc": 0.8421,
+         "arm_acc": 0.7368
+        },
+        "other": {
+         "n_instances": 33,
+         "n_photos": 33,
+         "diff": -0.0303,
+         "ci95": [
+          -0.0909,
+          0.0
+         ],
+         "base_acc": 0.6364,
+         "arm_acc": 0.6061
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 62,
+         "n_photos": 62,
+         "diff": -0.0323,
+         "ci95": [
+          -0.0968,
+          0.0323
+         ],
+         "base_acc": 0.8387,
+         "arm_acc": 0.8065
+        },
+        ">=2": {
+         "n_instances": 17,
+         "n_photos": 16,
+         "diff": -0.0588,
+         "ci95": [
+          -0.1875,
+          0.0
+         ],
+         "base_acc": 0.5294,
+         "arm_acc": 0.4706
+        }
+       }
+      },
+      "t_eye_all": {
+       "size": {
+        "200-400 px": {
+         "n_instances": 86,
+         "n_photos": 85,
+         "diff": -0.0349,
+         "ci95": [
+          -0.1059,
+          0.0353
+         ],
+         "base_acc": 0.7674,
+         "arm_acc": 0.7326
+        },
+        "400-800 px": {
+         "n_instances": 164,
+         "n_photos": 161,
+         "diff": 0.0122,
+         "ci95": [
+          -0.0364,
+          0.0556
+         ],
+         "base_acc": 0.8049,
+         "arm_acc": 0.8171
+        },
+        "<200 px": {
+         "n_instances": 23,
+         "n_photos": 23,
+         "diff": -0.0435,
+         "ci95": [
+          -0.1739,
+          0.087
+         ],
+         "base_acc": 0.6957,
+         "arm_acc": 0.6522
+        },
+        ">=800 px": {
+         "n_instances": 333,
+         "n_photos": 331,
+         "diff": 0.006,
+         "ci95": [
+          -0.021,
+          0.0357
+         ],
+         "base_acc": 0.8108,
+         "arm_acc": 0.8168
+        }
+       },
+       "truth_view": {
+        "dorsal": {
+         "n_instances": 212,
+         "n_photos": 212,
+         "diff": 0.0047,
+         "ci95": [
+          -0.033,
+          0.0425
+         ],
+         "base_acc": 0.8726,
+         "arm_acc": 0.8774
+        },
+        "fluke": {
+         "n_instances": 232,
+         "n_photos": 231,
+         "diff": 0.0043,
+         "ci95": [
+          -0.0302,
+          0.0388
+         ],
+         "base_acc": 0.8448,
+         "arm_acc": 0.8491
+        },
+        "other": {
+         "n_instances": 162,
+         "n_photos": 160,
+         "diff": -0.0123,
+         "ci95": [
+          -0.0679,
+          0.0437
+         ],
+         "base_acc": 0.6358,
+         "arm_acc": 0.6235
+        }
+       },
+       "whales_in_photo": {
+        "1": {
+         "n_instances": 510,
+         "n_photos": 510,
+         "diff": -0.0059,
+         "ci95": [
+          -0.0333,
+          0.0196
+         ],
+         "base_acc": 0.8137,
+         "arm_acc": 0.8078
+        },
+        ">=2": {
+         "n_instances": 96,
+         "n_photos": 89,
+         "diff": 0.0312,
+         "ci95": [
+          -0.0106,
+          0.0825
+         ],
+         "base_acc": 0.7188,
+         "arm_acc": 0.75
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "own_json": {
+  "full": {
+   "parts_seg_r05_a": {
+    "rule": [
+     0.005,
+     0.0,
+     0.0005
+    ],
+    "val_eye": 0.7341772151898734,
+    "val_eye_n": 79,
+    "val_clf": 0.8369565217391305,
+    "val_clf_n": 828,
+    "train_eye": 0.7722960151802657,
+    "train_clf": 0.8509004237288136,
+    "cutout_flags_val_eye": 0.7341772151898734,
+    "cutout_flags_val_clf": 0.856280193236715,
+    "clicks_fin_tip_in_largest_fin_region": 0.883,
+    "clicks_fin_tip_in_any_fin_px": 0.906,
+    "clicks_fin_tip_within_quarter_base": 0.972,
+    "clicks_fluke_notch_in": 0.55,
+    "clicks_fluke_all_three": 0.265,
+    "by_size_val_clf": {
+     "200-400 px": 0.8,
+     "400-800 px": 0.896,
+     "<200 px": 0.632,
+     ">=800 px": 0.822
+    },
+    "by_truth_val_clf": {
+     "dorsal": 0.854,
+     "fluke": 0.917,
+     "other": 0.675
+    },
+    "by_instances_val_clf": {
+     "1": 0.852,
+     ">=2": 0.743
+    },
+    "by_group_val_clf": {
+     "CG": 0.856,
+     "MC": 0.839,
+     "MCE": 0.796,
+     "O": 0.899,
+     "Single": 0.882,
+     "no catalogue id": 1.0
+    }
+   },
+   "parts_seg_r05_sc": {
+    "rule": [
+     0.05,
+     1.0,
+     0.001
+    ],
+    "val_eye": 0.7974683544303798,
+    "val_eye_n": 79,
+    "val_clf": 0.857487922705314,
+    "val_clf_n": 828,
+    "train_eye": 0.8102466793168881,
+    "train_clf": 0.8744703389830508,
+    "cutout_flags_val_eye": 0.7341772151898734,
+    "cutout_flags_val_clf": 0.856280193236715,
+    "clicks_fin_tip_in_largest_fin_region": 0.939,
+    "clicks_fin_tip_in_any_fin_px": 0.956,
+    "clicks_fin_tip_within_quarter_base": 0.983,
+    "clicks_fluke_notch_in": 0.593,
+    "clicks_fluke_all_three": 0.277,
+    "by_size_val_clf": {
+     "200-400 px": 0.893,
+     "400-800 px": 0.887,
+     "<200 px": 0.789,
+     ">=800 px": 0.84
+    },
+    "by_truth_val_clf": {
+     "dorsal": 0.903,
+     "fluke": 0.887,
+     "other": 0.675
+    },
+    "by_instances_val_clf": {
+     "1": 0.871,
+     ">=2": 0.77
+    },
+    "by_group_val_clf": {
+     "CG": 0.86,
+     "MC": 0.866,
+     "MCE": 0.825,
+     "O": 0.937,
+     "Single": 0.882,
+     "no catalogue id": 1.0
+    }
+   },
+   "parts_seg_r05_rw": {
+    "rule": [
+     0.05,
+     2.0,
+     0.0005
+    ],
+    "val_eye": 0.7974683544303798,
+    "val_eye_n": 79,
+    "val_clf": 0.856280193236715,
+    "val_clf_n": 828,
+    "train_eye": 0.8140417457305503,
+    "train_clf": 0.8730137711864406,
+    "cutout_flags_val_eye": 0.7341772151898734,
+    "cutout_flags_val_clf": 0.856280193236715,
+    "clicks_fin_tip_in_largest_fin_region": 0.946,
+    "clicks_fin_tip_in_any_fin_px": 0.939,
+    "clicks_fin_tip_within_quarter_base": 0.983,
+    "clicks_fluke_notch_in": 0.567,
+    "clicks_fluke_all_three": 0.301,
+    "by_size_val_clf": {
+     "200-400 px": 0.827,
+     "400-800 px": 0.875,
+     "<200 px": 0.842,
+     ">=800 px": 0.852
+    },
+    "by_truth_val_clf": {
+     "dorsal": 0.882,
+     "fluke": 0.902,
+     "other": 0.715
+    },
+    "by_instances_val_clf": {
+     "1": 0.871,
+     ">=2": 0.761
+    },
+    "by_group_val_clf": {
+     "CG": 0.878,
+     "MC": 0.876,
+     "MCE": 0.799,
+     "O": 0.911,
+     "Single": 0.941,
+     "no catalogue id": 1.0
+    }
+   },
+   "parts_seg_r05_s1": {
+    "rule": [
+     0.12,
+     0.5,
+     0.0005
+    ],
+    "val_eye": 0.810126582278481,
+    "val_eye_n": 79,
+    "val_clf": 0.8586956521739131,
+    "val_clf_n": 828,
+    "train_eye": 0.7893738140417458,
+    "train_clf": 0.855667372881356,
+    "cutout_flags_val_eye": 0.7341772151898734,
+    "cutout_flags_val_clf": 0.856280193236715,
+    "clicks_fin_tip_in_largest_fin_region": 0.963,
+    "clicks_fin_tip_in_any_fin_px": 0.974,
+    "clicks_fin_tip_within_quarter_base": 0.983,
+    "clicks_fluke_notch_in": 0.536,
+    "clicks_fluke_all_three": 0.229,
+    "by_size_val_clf": {
+     "200-400 px": 0.853,
+     "400-800 px": 0.871,
+     "<200 px": 0.737,
+     ">=800 px": 0.858
+    },
+    "by_truth_val_clf": {
+     "dorsal": 0.894,
+     "fluke": 0.858,
+     "other": 0.748
+    },
+    "by_instances_val_clf": {
+     "1": 0.873,
+     ">=2": 0.77
+    },
+    "by_group_val_clf": {
+     "CG": 0.889,
+     "MC": 0.844,
+     "MCE": 0.836,
+     "O": 0.861,
+     "Single": 0.882,
+     "no catalogue id": 1.0
+    }
+   }
+  },
+  "hr": {
+   "parts_seg_r05_a": {
+    "rule": [
+     0.03,
+     1.0,
+     0.0005
+    ],
+    "val_eye": 0.7974683544303798,
+    "val_eye_n": 79,
+    "val_clf": 0.857487922705314,
+    "val_clf_n": 828,
+    "train_eye": 0.8102466793168881,
+    "train_clf": 0.8735434322033898,
+    "cutout_flags_val_eye": 0.7341772151898734,
+    "cutout_flags_val_clf": 0.856280193236715,
+    "clicks_fin_tip_in_largest_fin_region": 0.924,
+    "clicks_fin_tip_in_any_fin_px": 0.908,
+    "clicks_fin_tip_within_quarter_base": 0.978,
+    "clicks_fluke_notch_in": 0.656,
+    "clicks_fluke_all_three": 0.301,
+    "by_size_val_clf": {
+     "200-400 px": 0.84,
+     "400-800 px": 0.858,
+     "<200 px": 0.842,
+     ">=800 px": 0.86
+    },
+    "by_truth_val_clf": {
+     "dorsal": 0.886,
+     "fluke": 0.902,
+     "other": 0.709
+    },
+    "by_instances_val_clf": {
+     "1": 0.878,
+     ">=2": 0.726
+    },
+    "by_group_val_clf": {
+     "CG": 0.882,
+     "MC": 0.849,
+     "MCE": 0.821,
+     "O": 0.899,
+     "Single": 0.941,
+     "no catalogue id": 1.0
+    }
+   },
+   "parts_seg_r05_sc": {
+    "rule": [
+     0.05,
+     2.0,
+     0.0005
+    ],
+    "val_eye": 0.7848101265822784,
+    "val_eye_n": 79,
+    "val_clf": 0.8647342995169082,
+    "val_clf_n": 828,
+    "train_eye": 0.8349146110056926,
+    "train_clf": 0.8931408898305084,
+    "cutout_flags_val_eye": 0.7341772151898734,
+    "cutout_flags_val_clf": 0.856280193236715,
+    "clicks_fin_tip_in_largest_fin_region": 0.947,
+    "clicks_fin_tip_in_any_fin_px": 0.934,
+    "clicks_fin_tip_within_quarter_base": 0.973,
+    "clicks_fluke_notch_in": 0.698,
+    "clicks_fluke_all_three": 0.349,
+    "by_size_val_clf": {
+     "200-400 px": 0.853,
+     "400-800 px": 0.887,
+     "<200 px": 0.895,
+     ">=800 px": 0.854
+    },
+    "by_truth_val_clf": {
+     "dorsal": 0.913,
+     "fluke": 0.931,
+     "other": 0.623
+    },
+    "by_instances_val_clf": {
+     "1": 0.884,
+     ">=2": 0.743
+    },
+    "by_group_val_clf": {
+     "CG": 0.875,
+     "MC": 0.887,
+     "MCE": 0.814,
+     "O": 0.937,
+     "Single": 0.941,
+     "no catalogue id": 1.0
+    }
+   },
+   "parts_seg_r05_rw": {
+    "rule": [
+     0.02,
+     2.0,
+     0.0005
+    ],
+    "val_eye": 0.7215189873417721,
+    "val_eye_n": 79,
+    "val_clf": 0.8442028985507246,
+    "val_clf_n": 828,
+    "train_eye": 0.8406072106261859,
+    "train_clf": 0.8867849576271186,
+    "cutout_flags_val_eye": 0.7341772151898734,
+    "cutout_flags_val_clf": 0.856280193236715,
+    "clicks_fin_tip_in_largest_fin_region": 0.938,
+    "clicks_fin_tip_in_any_fin_px": 0.931,
+    "clicks_fin_tip_within_quarter_base": 0.973,
+    "clicks_fluke_notch_in": 0.689,
+    "clicks_fluke_all_three": 0.313,
+    "by_size_val_clf": {
+     "200-400 px": 0.867,
+     "400-800 px": 0.863,
+     "<200 px": 0.789,
+     ">=800 px": 0.834
+    },
+    "by_truth_val_clf": {
+     "dorsal": 0.888,
+     "fluke": 0.926,
+     "other": 0.596
+    },
+    "by_instances_val_clf": {
+     "1": 0.864,
+     ">=2": 0.717
+    },
+    "by_group_val_clf": {
+     "CG": 0.875,
+     "MC": 0.86,
+     "MCE": 0.781,
+     "O": 0.899,
+     "Single": 0.941,
+     "no catalogue id": 1.0
+    }
+   },
+   "parts_seg_r05_s1": {
+    "rule": [
+     0.12,
+     0.5,
+     0.001
+    ],
+    "val_eye": 0.7341772151898734,
+    "val_eye_n": 79,
+    "val_clf": 0.8502415458937198,
+    "val_clf_n": 828,
+    "train_eye": 0.8102466793168881,
+    "train_clf": 0.880958686440678,
+    "cutout_flags_val_eye": 0.7341772151898734,
+    "cutout_flags_val_clf": 0.856280193236715,
+    "clicks_fin_tip_in_largest_fin_region": 0.964,
+    "clicks_fin_tip_in_any_fin_px": 0.97,
+    "clicks_fin_tip_within_quarter_base": 0.983,
+    "clicks_fluke_notch_in": 0.661,
+    "clicks_fluke_all_three": 0.313,
+    "by_size_val_clf": {
+     "200-400 px": 0.813,
+     "400-800 px": 0.858,
+     "<200 px": 0.789,
+     ">=800 px": 0.854
+    },
+    "by_truth_val_clf": {
+     "dorsal": 0.899,
+     "fluke": 0.907,
+     "other": 0.623
+    },
+    "by_instances_val_clf": {
+     "1": 0.877,
+     ">=2": 0.681
+    },
+    "by_group_val_clf": {
+     "CG": 0.878,
+     "MC": 0.892,
+     "MCE": 0.796,
+     "O": 0.848,
+     "Single": 0.824,
+     "no catalogue id": 1.0
+    }
+   }
+  }
+ }
+}

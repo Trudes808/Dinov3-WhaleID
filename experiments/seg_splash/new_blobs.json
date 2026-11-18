@@ -1,0 +1,4923 @@
+{
+"r05": {
+"per_day": {
+"2025-01-15": {
+"photos": 166,
+"new_blobs": 73
+},
+"2025-02-27": {
+"photos": 329,
+"new_blobs": 101
+},
+"2025-03-14": {
+"photos": 389,
+"new_blobs": 112
+}
+},
+"photos": 884,
+"new_blobs": 286,
+"per_photo": 0.3235,
+"area_px": 271663,
+"sizes": {
+"1k-10k": 70,
+"300-1k": 215,
+"10k+": 1
+},
+"sample": [
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-109-184A3592",
+"b": 5,
+"area": 3304,
+"bbox": [
+1642,
+705,
+1800,
+740
+],
+"tile": 1,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-522-184A4008",
+"b": 2,
+"area": 346,
+"bbox": [
+2001,
+1249,
+2039,
+1271
+],
+"tile": 2,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-236-184A1952",
+"b": 3,
+"area": 935,
+"bbox": [
+927,
+770,
+1004,
+798
+],
+"tile": 3,
+"label": "wake",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-114-184A3597",
+"b": 6,
+"area": 323,
+"bbox": [
+2104,
+674,
+2133,
+691
+],
+"tile": 4,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-350-184A3835",
+"b": 3,
+"area": 693,
+"bbox": [
+433,
+1002,
+476,
+1038
+],
+"tile": 5,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-288-184A2005",
+"b": 3,
+"area": 3729,
+"bbox": [
+1536,
+957,
+1664,
+1022
+],
+"tile": 6,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-143-184A1858",
+"b": 2,
+"area": 2681,
+"bbox": [
+534,
+901,
+630,
+959
+],
+"tile": 7,
+"label": "wake",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-216-184A3700",
+"b": 3,
+"area": 773,
+"bbox": [
+2439,
+227,
+2521,
+247
+],
+"tile": 8,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-129-HR5_3296",
+"b": 12,
+"area": 987,
+"bbox": [
+1490,
+215,
+1539,
+271
+],
+"tile": 9,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-130-HR5_3297",
+"b": 22,
+"area": 315,
+"bbox": [
+1287,
+104,
+1316,
+127
+],
+"tile": 10,
+"label": "person",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-270-184A1987",
+"b": 3,
+"area": 672,
+"bbox": [
+1782,
+1025,
+1819,
+1053
+],
+"tile": 11,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-348-184A3833",
+"b": 3,
+"area": 628,
+"bbox": [
+593,
+969,
+643,
+986
+],
+"tile": 12,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-188-184A1903",
+"b": 2,
+"area": 445,
+"bbox": [
+1447,
+889,
+1470,
+938
+],
+"tile": 13,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-251-184A3735",
+"b": 2,
+"area": 309,
+"bbox": [
+289,
+904,
+315,
+921
+],
+"tile": 14,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-123-184A1838",
+"b": 2,
+"area": 2240,
+"bbox": [
+2346,
+765,
+2440,
+846
+],
+"tile": 15,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-196-184A1911",
+"b": 2,
+"area": 2230,
+"bbox": [
+1836,
+744,
+2010,
+784
+],
+"tile": 16,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-202-184A3686",
+"b": 5,
+"area": 319,
+"bbox": [
+547,
+1025,
+576,
+1038
+],
+"tile": 17,
+"label": "wake",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-339-184A3824",
+"b": 4,
+"area": 461,
+"bbox": [
+335,
+1069,
+368,
+1095
+],
+"tile": 18,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-338-184A2056",
+"b": 2,
+"area": 1320,
+"bbox": [
+491,
+1166,
+631,
+1191
+],
+"tile": 19,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-348-184A3833",
+"b": 4,
+"area": 462,
+"bbox": [
+369,
+949,
+435,
+965
+],
+"tile": 20,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-129-184A1844",
+"b": 2,
+"area": 550,
+"bbox": [
+526,
+1073,
+590,
+1092
+],
+"tile": 21,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-130-HR5_3297",
+"b": 14,
+"area": 976,
+"bbox": [
+2318,
+155,
+2375,
+186
+],
+"tile": 22,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-177-184A3660",
+"b": 2,
+"area": 744,
+"bbox": [
+2049,
+1046,
+2111,
+1079
+],
+"tile": 23,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-112-184A3595",
+"b": 5,
+"area": 303,
+"bbox": [
+1804,
+1630,
+1822,
+1653
+],
+"tile": 24,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-276-184A1993",
+"b": 4,
+"area": 800,
+"bbox": [
+1291,
+352,
+1308,
+452
+],
+"tile": 25,
+"label": "pole",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-496-184A3982",
+"b": 2,
+"area": 1860,
+"bbox": [
+1515,
+980,
+1702,
+999
+],
+"tile": 26,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-124-HR5_3291",
+"b": 11,
+"area": 845,
+"bbox": [
+864,
+436,
+896,
+485
+],
+"tile": 27,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-452-184A3938",
+"b": 2,
+"area": 610,
+"bbox": [
+808,
+944,
+879,
+969
+],
+"tile": 28,
+"label": "wake",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-252-184A3736",
+"b": 3,
+"area": 817,
+"bbox": [
+1673,
+925,
+1712,
+991
+],
+"tile": 29,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-036-184A1751",
+"b": 3,
+"area": 409,
+"bbox": [
+1218,
+352,
+1250,
+368
+],
+"tile": 30,
+"label": "drone",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-169-HR5_3336",
+"b": 7,
+"area": 426,
+"bbox": [
+1987,
+1016,
+2013,
+1041
+],
+"tile": 31,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-276-184A1993",
+"b": 7,
+"area": 474,
+"bbox": [
+2228,
+449,
+2261,
+476
+],
+"tile": 32,
+"label": "shore",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-341-184A2061",
+"b": 2,
+"area": 2296,
+"bbox": [
+2446,
+736,
+2560,
+763
+],
+"tile": 33,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-124-HR5_3291",
+"b": 12,
+"area": 659,
+"bbox": [
+1672,
+662,
+1692,
+704
+],
+"tile": 34,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-172-184A3655",
+"b": 4,
+"area": 1219,
+"bbox": [
+1205,
+778,
+1283,
+812
+],
+"tile": 35,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-165-HR5_3332",
+"b": 2,
+"area": 377,
+"bbox": [
+1606,
+994,
+1653,
+1008
+],
+"tile": 36,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-321-184A2038",
+"b": 3,
+"area": 412,
+"bbox": [
+390,
+882,
+435,
+896
+],
+"tile": 37,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-340-184A2060",
+"b": 2,
+"area": 316,
+"bbox": [
+554,
+961,
+609,
+969
+],
+"tile": 38,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-502-184A3988",
+"b": 6,
+"area": 344,
+"bbox": [
+1041,
+931,
+1083,
+951
+],
+"tile": 39,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-335-184A3820",
+"b": 3,
+"area": 1237,
+"bbox": [
+509,
+932,
+611,
+953
+],
+"tile": 40,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-134-184A1849",
+"b": 5,
+"area": 490,
+"bbox": [
+622,
+1130,
+655,
+1166
+],
+"tile": 41,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-130-HR5_3297",
+"b": 10,
+"area": 1582,
+"bbox": [
+2424,
+183,
+2495,
+235
+],
+"tile": 42,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-302-184A2019",
+"b": 4,
+"area": 3563,
+"bbox": [
+847,
+931,
+1076,
+955
+],
+"tile": 43,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-124-HR5_3291",
+"b": 24,
+"area": 328,
+"bbox": [
+1612,
+295,
+1634,
+329
+],
+"tile": 44,
+"label": "pole",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-078-184A3561",
+"b": 4,
+"area": 367,
+"bbox": [
+1304,
+1636,
+1337,
+1662
+],
+"tile": 45,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-131-HR5_3298",
+"b": 22,
+"area": 359,
+"bbox": [
+1408,
+0,
+1437,
+26
+],
+"tile": 46,
+"label": "person",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-125-184A1840",
+"b": 7,
+"area": 458,
+"bbox": [
+1949,
+953,
+1982,
+990
+],
+"tile": 47,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-130-HR5_3297",
+"b": 6,
+"area": 2480,
+"bbox": [
+1402,
+96,
+1481,
+183
+],
+"tile": 48,
+"label": "boat",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-294-184A2011",
+"b": 5,
+"area": 615,
+"bbox": [
+1354,
+938,
+1425,
+956
+],
+"tile": 49,
+"label": "wake",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-131-HR5_3298",
+"b": 17,
+"area": 500,
+"bbox": [
+846,
+256,
+884,
+282
+],
+"tile": 50,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-103-184A3586",
+"b": 2,
+"area": 542,
+"bbox": [
+714,
+741,
+763,
+760
+],
+"tile": 51,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-033-184A3515",
+"b": 4,
+"area": 305,
+"bbox": [
+1539,
+1412,
+1574,
+1428
+],
+"tile": 52,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-338-184A2056",
+"b": 4,
+"area": 490,
+"bbox": [
+780,
+1190,
+832,
+1202
+],
+"tile": 53,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-466-184A3952",
+"b": 2,
+"area": 978,
+"bbox": [
+398,
+1070,
+488,
+1087
+],
+"tile": 54,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-410-184A3895",
+"b": 6,
+"area": 410,
+"bbox": [
+1144,
+864,
+1173,
+893
+],
+"tile": 55,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-283-184A2000",
+"b": 6,
+"area": 451,
+"bbox": [
+1105,
+1291,
+1141,
+1310
+],
+"tile": 56,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-016-184A1731",
+"b": 3,
+"area": 437,
+"bbox": [
+1258,
+811,
+1350,
+822
+],
+"tile": 57,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-267-184A1984",
+"b": 4,
+"area": 879,
+"bbox": [
+279,
+18,
+319,
+65
+],
+"tile": 58,
+"label": "shore",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-504-184A3990",
+"b": 2,
+"area": 2442,
+"bbox": [
+645,
+953,
+873,
+973
+],
+"tile": 59,
+"label": "wake",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-129-HR5_3296",
+"b": 8,
+"area": 1644,
+"bbox": [
+1900,
+276,
+1953,
+346
+],
+"tile": 60,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-338-184A2056",
+"b": 3,
+"area": 757,
+"bbox": [
+917,
+1186,
+966,
+1212
+],
+"tile": 61,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-083-184A3566",
+"b": 3,
+"area": 807,
+"bbox": [
+1323,
+895,
+1421,
+913
+],
+"tile": 62,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-124-184A1839",
+"b": 3,
+"area": 3159,
+"bbox": [
+2386,
+757,
+2465,
+860
+],
+"tile": 63,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-124-HR5_3291",
+"b": 8,
+"area": 1611,
+"bbox": [
+1609,
+193,
+1645,
+252
+],
+"tile": 64,
+"label": "pole",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-131-HR5_3298",
+"b": 25,
+"area": 318,
+"bbox": [
+1618,
+116,
+1651,
+132
+],
+"tile": 65,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-085-184A3568",
+"b": 4,
+"area": 778,
+"bbox": [
+529,
+929,
+580,
+952
+],
+"tile": 66,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-124-HR5_3291",
+"b": 19,
+"area": 475,
+"bbox": [
+1705,
+674,
+1727,
+703
+],
+"tile": 67,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-275-184A1992",
+"b": 3,
+"area": 683,
+"bbox": [
+1702,
+347,
+1751,
+375
+],
+"tile": 68,
+"label": "shore",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-277-184A1994",
+"b": 5,
+"area": 398,
+"bbox": [
+185,
+291,
+211,
+319
+],
+"tile": 69,
+"label": "shore",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-126-184A1841",
+"b": 5,
+"area": 552,
+"bbox": [
+2150,
+1177,
+2189,
+1203
+],
+"tile": 70,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-130-HR5_3297",
+"b": 5,
+"area": 2595,
+"bbox": [
+1789,
+188,
+1843,
+279
+],
+"tile": 71,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-168-HR5_3335",
+"b": 2,
+"area": 633,
+"bbox": [
+679,
+1198,
+724,
+1232
+],
+"tile": 72,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-126-184A3609",
+"b": 2,
+"area": 554,
+"bbox": [
+602,
+1010,
+638,
+1041
+],
+"tile": 73,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-281-184A1998",
+"b": 4,
+"area": 1675,
+"bbox": [
+1018,
+1117,
+1164,
+1140
+],
+"tile": 74,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-055-HR5_3222",
+"b": 3,
+"area": 796,
+"bbox": [
+920,
+729,
+984,
+759
+],
+"tile": 75,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-076-184A3559",
+"b": 3,
+"area": 11214,
+"bbox": [
+605,
+2363,
+791,
+2560
+],
+"tile": 76,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-286-184A3771",
+"b": 2,
+"area": 492,
+"bbox": [
+1641,
+977,
+1693,
+994
+],
+"tile": 77,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-131-184A1846",
+"b": 4,
+"area": 340,
+"bbox": [
+1888,
+652,
+1907,
+686
+],
+"tile": 78,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-276-184A1993",
+"b": 10,
+"area": 340,
+"bbox": [
+2125,
+437,
+2148,
+463
+],
+"tile": 79,
+"label": "boat",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-129-HR5_3296",
+"b": 3,
+"area": 2464,
+"bbox": [
+1526,
+194,
+1624,
+294
+],
+"tile": 80,
+"label": "boat",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-169-HR5_3336",
+"b": 4,
+"area": 528,
+"bbox": [
+1937,
+1116,
+1967,
+1156
+],
+"tile": 81,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-094-184A3577",
+"b": 8,
+"area": 1029,
+"bbox": [
+341,
+885,
+424,
+914
+],
+"tile": 82,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-336-184A3821",
+"b": 3,
+"area": 459,
+"bbox": [
+2246,
+730,
+2327,
+740
+],
+"tile": 83,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-037-184A3520",
+"b": 2,
+"area": 904,
+"bbox": [
+2309,
+920,
+2409,
+933
+],
+"tile": 84,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-453-184A3939",
+"b": 2,
+"area": 464,
+"bbox": [
+705,
+1112,
+732,
+1148
+],
+"tile": 85,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-276-184A1993",
+"b": 8,
+"area": 375,
+"bbox": [
+1330,
+377,
+1356,
+406
+],
+"tile": 86,
+"label": "shore",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-275-184A1992",
+"b": 7,
+"area": 354,
+"bbox": [
+154,
+304,
+180,
+344
+],
+"tile": 87,
+"label": "shore",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-446-184A3932",
+"b": 2,
+"area": 353,
+"bbox": [
+433,
+1186,
+512,
+1200
+],
+"tile": 88,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-208-HR5_3375",
+"b": 2,
+"area": 337,
+"bbox": [
+100,
+961,
+152,
+979
+],
+"tile": 89,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-365-184A2085",
+"b": 2,
+"area": 454,
+"bbox": [
+575,
+1101,
+639,
+1113
+],
+"tile": 90,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-130-HR5_3297",
+"b": 17,
+"area": 467,
+"bbox": [
+1398,
+222,
+1427,
+248
+],
+"tile": 91,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-410-184A3895",
+"b": 3,
+"area": 702,
+"bbox": [
+1010,
+883,
+1085,
+904
+],
+"tile": 92,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-295-184A2012",
+"b": 4,
+"area": 415,
+"bbox": [
+1401,
+1099,
+1441,
+1119
+],
+"tile": 93,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-456-184A3942",
+"b": 4,
+"area": 490,
+"bbox": [
+1035,
+1287,
+1104,
+1297
+],
+"tile": 94,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-125-184A1840",
+"b": 8,
+"area": 312,
+"bbox": [
+1254,
+957,
+1275,
+985
+],
+"tile": 95,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-503-184A3989",
+"b": 2,
+"area": 1329,
+"bbox": [
+842,
+1204,
+980,
+1225
+],
+"tile": 96,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-013-184A1728",
+"b": 3,
+"area": 466,
+"bbox": [
+2411,
+926,
+2462,
+940
+],
+"tile": 97,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-481-184A3967",
+"b": 2,
+"area": 1232,
+"bbox": [
+1034,
+711,
+1119,
+738
+],
+"tile": 98,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-131-HR5_3298",
+"b": 26,
+"area": 300,
+"bbox": [
+2223,
+131,
+2234,
+168
+],
+"tile": 99,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-166-HR5_3333",
+"b": 2,
+"area": 410,
+"bbox": [
+1055,
+620,
+1106,
+638
+],
+"tile": 100,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-276-184A1993",
+"b": 3,
+"area": 993,
+"bbox": [
+381,
+346,
+437,
+405
+],
+"tile": 101,
+"label": "shore",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-182-184A3666",
+"b": 2,
+"area": 895,
+"bbox": [
+1666,
+901,
+1734,
+929
+],
+"tile": 102,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-453-184A3939",
+"b": 3,
+"area": 358,
+"bbox": [
+616,
+1089,
+667,
+1104
+],
+"tile": 103,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-130-HR5_3297",
+"b": 16,
+"area": 633,
+"bbox": [
+1690,
+234,
+1718,
+280
+],
+"tile": 104,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-044-184A3527",
+"b": 2,
+"area": 3466,
+"bbox": [
+615,
+959,
+835,
+986
+],
+"tile": 105,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-069-184A1784",
+"b": 2,
+"area": 438,
+"bbox": [
+1409,
+759,
+1476,
+768
+],
+"tile": 106,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-278-184A1995",
+"b": 3,
+"area": 757,
+"bbox": [
+456,
+1401,
+543,
+1428
+],
+"tile": 107,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-128-HR5_3295",
+"b": 4,
+"area": 693,
+"bbox": [
+1860,
+91,
+1883,
+162
+],
+"tile": 108,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-081-184A3564",
+"b": 5,
+"area": 720,
+"bbox": [
+1043,
+963,
+1125,
+981
+],
+"tile": 109,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-147-184A3630",
+"b": 2,
+"area": 575,
+"bbox": [
+1588,
+821,
+1648,
+839
+],
+"tile": 110,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-250-184A1966",
+"b": 2,
+"area": 388,
+"bbox": [
+1266,
+1151,
+1290,
+1177
+],
+"tile": 111,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-124-HR5_3291",
+"b": 10,
+"area": 955,
+"bbox": [
+1552,
+397,
+1598,
+431
+],
+"tile": 112,
+"label": "boat",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-034-184A1749",
+"b": 3,
+"area": 413,
+"bbox": [
+737,
+1466,
+810,
+1475
+],
+"tile": 113,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-131-HR5_3298",
+"b": 18,
+"area": 460,
+"bbox": [
+1344,
+25,
+1375,
+56
+],
+"tile": 114,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-318-184A2035",
+"b": 4,
+"area": 421,
+"bbox": [
+634,
+942,
+670,
+959
+],
+"tile": 115,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-091-HR5_3258",
+"b": 2,
+"area": 870,
+"bbox": [
+322,
+1310,
+400,
+1329
+],
+"tile": 116,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-123-184A1838",
+"b": 4,
+"area": 594,
+"bbox": [
+2329,
+944,
+2364,
+1005
+],
+"tile": 117,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-105-HR5_3272",
+"b": 2,
+"area": 2011,
+"bbox": [
+1695,
+785,
+1748,
+858
+],
+"tile": 118,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-348-184A3833",
+"b": 2,
+"area": 752,
+"bbox": [
+658,
+976,
+730,
+1000
+],
+"tile": 119,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-130-184A1845",
+"b": 2,
+"area": 414,
+"bbox": [
+1641,
+1017,
+1664,
+1061
+],
+"tile": 120,
+"label": "splash",
+"sure": true
+}
+],
+"labels": {
+"labelled": 120,
+"counts": {
+"wake": 33,
+"splash": 31,
+"water": 15,
+"boat": 12,
+"person": 12,
+"shore": 7,
+"whale": 6,
+"pole": 3,
+"drone": 1
+},
+"whale_share": 0.05,
+"note": "AI by-eye labels by a labelling sub-agent (LABEL_GUIDE.md, blind sheets), not the researcher's",
+"nonwhale_new_per_photo": 0.3073
+}
+},
+"s1": {
+"per_day": {
+"2025-01-15": {
+"photos": 166,
+"new_blobs": 1
+},
+"2025-02-27": {
+"photos": 329,
+"new_blobs": 2
+},
+"2025-03-14": {
+"photos": 389,
+"new_blobs": 1
+}
+},
+"photos": 884,
+"new_blobs": 4,
+"per_photo": 0.0045,
+"area_px": 5310,
+"sizes": {
+"1k-10k": 2,
+"300-1k": 2
+},
+"sample": [
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-347-184A2067",
+"b": 2,
+"area": 722,
+"bbox": [
+1537,
+798,
+1574,
+826
+],
+"tile": 1,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-091-HR5_3258",
+"b": 2,
+"area": 2679,
+"bbox": [
+318,
+1309,
+412,
+1349
+],
+"tile": 2,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-288-184A2005",
+"b": 2,
+"area": 1053,
+"bbox": [
+1594,
+990,
+1652,
+1022
+],
+"tile": 3,
+"label": "whale_splash",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-200-184A3684",
+"b": 3,
+"area": 856,
+"bbox": [
+1748,
+869,
+1810,
+888
+],
+"tile": 4,
+"label": "wake",
+"sure": false
+}
+],
+"labels": {
+"labelled": 4,
+"counts": {
+"wake": 2,
+"whale": 1,
+"whale_splash": 1
+},
+"whale_share": 0.5,
+"note": "AI by-eye labels by the coordinating agent (blind sheets nb_s1_001), not the researcher's",
+"nonwhale_new_per_photo": 0.0022
+}
+},
+"s2": {
+"per_day": {
+"2025-01-15": {
+"photos": 166,
+"new_blobs": 1
+},
+"2025-02-27": {
+"photos": 329,
+"new_blobs": 1
+},
+"2025-03-14": {
+"photos": 389,
+"new_blobs": 1
+}
+},
+"photos": 884,
+"new_blobs": 3,
+"per_photo": 0.0034,
+"area_px": 6892,
+"sizes": {
+"1k-10k": 3
+},
+"sample": [
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-091-HR5_3258",
+"b": 2,
+"area": 2060,
+"bbox": [
+321,
+1309,
+408,
+1342
+],
+"tile": 1,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-332-184A3817",
+"b": 2,
+"area": 2959,
+"bbox": [
+2267,
+916,
+2340,
+989
+],
+"tile": 2,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-288-184A2005",
+"b": 2,
+"area": 1873,
+"bbox": [
+1595,
+979,
+1659,
+1024
+],
+"tile": 3,
+"label": "whale_splash",
+"sure": false
+}
+],
+"labels": {
+"labelled": 3,
+"counts": {
+"whale": 2,
+"whale_splash": 1
+},
+"whale_share": 1.0,
+"note": "AI by-eye labels by the coordinating agent (blind sheets nb_s2_001), not the researcher's",
+"nonwhale_new_per_photo": 0.0
+}
+},
+"s4": {
+"per_day": {
+"2025-01-15": {
+"photos": 166,
+"new_blobs": 1
+},
+"2025-02-27": {
+"photos": 329,
+"new_blobs": 10
+},
+"2025-03-14": {
+"photos": 389,
+"new_blobs": 0
+}
+},
+"photos": 884,
+"new_blobs": 11,
+"per_photo": 0.0124,
+"area_px": 14497,
+"sizes": {
+"1k-10k": 6,
+"300-1k": 5
+},
+"sample": [
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-299-184A2016",
+"b": 4,
+"area": 2407,
+"bbox": [
+1245,
+1170,
+1364,
+1200
+],
+"tile": 1,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-299-184A2016",
+"b": 5,
+"area": 442,
+"bbox": [
+1420,
+1163,
+1469,
+1175
+],
+"tile": 2,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-016-184A1731",
+"b": 3,
+"area": 981,
+"bbox": [
+1257,
+810,
+1367,
+822
+],
+"tile": 3,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-027-184A1742",
+"b": 2,
+"area": 517,
+"bbox": [
+1746,
+1036,
+1819,
+1046
+],
+"tile": 4,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-234-184A1950",
+"b": 2,
+"area": 1531,
+"bbox": [
+1183,
+897,
+1274,
+921
+],
+"tile": 5,
+"label": "whale_splash",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-037-184A1752",
+"b": 5,
+"area": 865,
+"bbox": [
+574,
+1503,
+702,
+1518
+],
+"tile": 6,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-287-184A2004",
+"b": 3,
+"area": 1782,
+"bbox": [
+755,
+973,
+870,
+1024
+],
+"tile": 7,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-040-184A1755",
+"b": 2,
+"area": 1683,
+"bbox": [
+672,
+966,
+754,
+996
+],
+"tile": 8,
+"label": "wake",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-091-HR5_3258",
+"b": 2,
+"area": 1607,
+"bbox": [
+317,
+1310,
+409,
+1336
+],
+"tile": 9,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-338-184A2056",
+"b": 2,
+"area": 636,
+"bbox": [
+519,
+1168,
+604,
+1179
+],
+"tile": 10,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-287-184A2004",
+"b": 2,
+"area": 2046,
+"bbox": [
+870,
+934,
+999,
+993
+],
+"tile": 11,
+"label": "whale",
+"sure": true
+}
+],
+"labels": {
+"labelled": 11,
+"counts": {
+"whale": 6,
+"water": 2,
+"wake": 2,
+"whale_splash": 1
+},
+"whale_share": 0.636,
+"note": "AI by-eye labels by the coordinating agent (blind sheets nb_s4_001), not the researcher's",
+"nonwhale_new_per_photo": 0.0045
+}
+},
+"s3": {
+"per_day": {
+"2025-01-15": {
+"photos": 166,
+"new_blobs": 1
+},
+"2025-02-27": {
+"photos": 329,
+"new_blobs": 3
+},
+"2025-03-14": {
+"photos": 389,
+"new_blobs": 1
+}
+},
+"photos": 884,
+"new_blobs": 5,
+"per_photo": 0.0057,
+"area_px": 7529,
+"sizes": {
+"300-1k": 2,
+"1k-10k": 3
+},
+"sample": [
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-234-184A1950",
+"b": 2,
+"area": 1603,
+"bbox": [
+1199,
+897,
+1277,
+924
+],
+"tile": 1,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-215-184A1930",
+"b": 2,
+"area": 3644,
+"bbox": [
+1263,
+929,
+1382,
+977
+],
+"tile": 2,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-091-HR5_3258",
+"b": 2,
+"area": 499,
+"bbox": [
+351,
+1312,
+401,
+1326
+],
+"tile": 3,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-332-184A3817",
+"b": 2,
+"area": 1404,
+"bbox": [
+2279,
+956,
+2331,
+991
+],
+"tile": 4,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-288-184A2005",
+"b": 3,
+"area": 379,
+"bbox": [
+1621,
+997,
+1652,
+1015
+],
+"tile": 5,
+"label": "whale",
+"sure": false
+}
+],
+"labels": {
+"labelled": 5,
+"counts": {
+"whale": 4,
+"splash": 1
+},
+"whale_share": 0.8,
+"note": "AI by-eye labels by the coordinating agent (blind sheets nb_s3_001), not the researcher's",
+"nonwhale_new_per_photo": 0.0011
+}
+},
+"s0": {
+"per_day": {
+"2025-01-15": {
+"photos": 166,
+"new_blobs": 70
+},
+"2025-02-27": {
+"photos": 329,
+"new_blobs": 92
+},
+"2025-03-14": {
+"photos": 389,
+"new_blobs": 66
+}
+},
+"photos": 884,
+"new_blobs": 228,
+"per_photo": 0.2579,
+"area_px": 208514,
+"sizes": {
+"300-1k": 170,
+"10k+": 1,
+"1k-10k": 57
+},
+"sample": [
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-320-184A2037",
+"b": 4,
+"area": 439,
+"bbox": [
+193,
+1002,
+258,
+1022
+],
+"tile": 1,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-160-184A1875",
+"b": 2,
+"area": 342,
+"bbox": [
+169,
+743,
+230,
+759
+],
+"tile": 2,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-126-184A1841",
+"b": 6,
+"area": 342,
+"bbox": [
+2112,
+1164,
+2134,
+1192
+],
+"tile": 3,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-383-184A3868",
+"b": 3,
+"area": 368,
+"bbox": [
+2358,
+1212,
+2406,
+1226
+],
+"tile": 4,
+"label": "wake",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-128-HR5_3295",
+"b": 13,
+"area": 325,
+"bbox": [
+2374,
+107,
+2395,
+140
+],
+"tile": 5,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-111-184A3594",
+"b": 8,
+"area": 576,
+"bbox": [
+1742,
+1662,
+1777,
+1691
+],
+"tile": 6,
+"label": "person",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-130-HR5_3297",
+"b": 17,
+"area": 522,
+"bbox": [
+1434,
+290,
+1464,
+326
+],
+"tile": 7,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-077-184A3560",
+"b": 3,
+"area": 519,
+"bbox": [
+1098,
+1528,
+1134,
+1561
+],
+"tile": 8,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-275-184A1992",
+"b": 6,
+"area": 403,
+"bbox": [
+1821,
+410,
+1853,
+430
+],
+"tile": 9,
+"label": "shore",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-082-184A3565",
+"b": 4,
+"area": 668,
+"bbox": [
+968,
+1471,
+996,
+1525
+],
+"tile": 10,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-134-184A1849",
+"b": 8,
+"area": 363,
+"bbox": [
+1010,
+1100,
+1043,
+1120
+],
+"tile": 11,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-131-HR5_3298",
+"b": 14,
+"area": 923,
+"bbox": [
+2117,
+105,
+2161,
+153
+],
+"tile": 12,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-330-184A2047",
+"b": 8,
+"area": 458,
+"bbox": [
+791,
+1080,
+833,
+1111
+],
+"tile": 13,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-006-184A1721",
+"b": 3,
+"area": 313,
+"bbox": [
+970,
+992,
+1024,
+1001
+],
+"tile": 14,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-453-184A3939",
+"b": 3,
+"area": 309,
+"bbox": [
+707,
+1113,
+728,
+1144
+],
+"tile": 15,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-224-184A3708",
+"b": 3,
+"area": 456,
+"bbox": [
+353,
+812,
+401,
+827
+],
+"tile": 16,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-126-184A1841",
+"b": 7,
+"area": 307,
+"bbox": [
+2154,
+1179,
+2186,
+1200
+],
+"tile": 17,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-114-184A3597",
+"b": 5,
+"area": 442,
+"bbox": [
+2190,
+680,
+2237,
+696
+],
+"tile": 18,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-076-184A3559",
+"b": 8,
+"area": 314,
+"bbox": [
+688,
+2507,
+713,
+2555
+],
+"tile": 19,
+"label": "person",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-277-184A1994",
+"b": 5,
+"area": 380,
+"bbox": [
+1250,
+482,
+1269,
+511
+],
+"tile": 20,
+"label": "shore",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-293-184A2010",
+"b": 3,
+"area": 323,
+"bbox": [
+348,
+1193,
+402,
+1207
+],
+"tile": 21,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-207-184A3691",
+"b": 3,
+"area": 4920,
+"bbox": [
+966,
+912,
+1158,
+956
+],
+"tile": 22,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-359-184A3844",
+"b": 3,
+"area": 1717,
+"bbox": [
+408,
+849,
+517,
+880
+],
+"tile": 23,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-083-184A3566",
+"b": 2,
+"area": 1443,
+"bbox": [
+1280,
+895,
+1420,
+915
+],
+"tile": 24,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-193-184A1908",
+"b": 2,
+"area": 437,
+"bbox": [
+1750,
+1023,
+1809,
+1039
+],
+"tile": 25,
+"label": "wake",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-121-184A3604",
+"b": 2,
+"area": 354,
+"bbox": [
+2372,
+1001,
+2402,
+1026
+],
+"tile": 26,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-081-184A3564",
+"b": 4,
+"area": 594,
+"bbox": [
+1052,
+964,
+1127,
+980
+],
+"tile": 27,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-277-184A1994",
+"b": 3,
+"area": 591,
+"bbox": [
+1959,
+387,
+1976,
+437
+],
+"tile": 28,
+"label": "pole",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-323-184A2040",
+"b": 3,
+"area": 430,
+"bbox": [
+1249,
+910,
+1299,
+922
+],
+"tile": 29,
+"label": "wake",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-143-184A1858",
+"b": 2,
+"area": 824,
+"bbox": [
+566,
+907,
+627,
+937
+],
+"tile": 30,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-137-HR5_3304",
+"b": 2,
+"area": 322,
+"bbox": [
+1720,
+1042,
+1748,
+1071
+],
+"tile": 31,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-130-HR5_3297",
+"b": 25,
+"area": 311,
+"bbox": [
+1226,
+110,
+1246,
+149
+],
+"tile": 32,
+"label": "boat",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-165-HR5_3332",
+"b": 2,
+"area": 663,
+"bbox": [
+1605,
+994,
+1664,
+1014
+],
+"tile": 33,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-129-HR5_3296",
+"b": 8,
+"area": 1330,
+"bbox": [
+1471,
+215,
+1535,
+267
+],
+"tile": 34,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-129-HR5_3296",
+"b": 16,
+"area": 393,
+"bbox": [
+1349,
+203,
+1374,
+242
+],
+"tile": 35,
+"label": "boat",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-184-HR5_3351",
+"b": 2,
+"area": 3227,
+"bbox": [
+517,
+944,
+798,
+969
+],
+"tile": 36,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-039-184A3522",
+"b": 3,
+"area": 1154,
+"bbox": [
+378,
+781,
+511,
+798
+],
+"tile": 37,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-131-HR5_3298",
+"b": 17,
+"area": 806,
+"bbox": [
+1418,
+42,
+1462,
+102
+],
+"tile": 38,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-276-184A1993",
+"b": 3,
+"area": 878,
+"bbox": [
+382,
+343,
+431,
+400
+],
+"tile": 39,
+"label": "shore",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-338-184A2056",
+"b": 3,
+"area": 418,
+"bbox": [
+781,
+1189,
+829,
+1202
+],
+"tile": 40,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-126-184A1841",
+"b": 5,
+"area": 366,
+"bbox": [
+2122,
+950,
+2144,
+977
+],
+"tile": 41,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-134-184A1849",
+"b": 5,
+"area": 787,
+"bbox": [
+619,
+1128,
+657,
+1170
+],
+"tile": 42,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-271-184A1988",
+"b": 3,
+"area": 355,
+"bbox": [
+864,
+1168,
+897,
+1185
+],
+"tile": 43,
+"label": "wake",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-044-184A3527",
+"b": 2,
+"area": 2522,
+"bbox": [
+614,
+936,
+825,
+986
+],
+"tile": 44,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-107-HR5_3274",
+"b": 3,
+"area": 896,
+"bbox": [
+1354,
+834,
+1415,
+884
+],
+"tile": 45,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-130-HR5_3297",
+"b": 15,
+"area": 592,
+"bbox": [
+2218,
+209,
+2237,
+272
+],
+"tile": 46,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-241-184A1957",
+"b": 2,
+"area": 343,
+"bbox": [
+1951,
+668,
+2008,
+680
+],
+"tile": 47,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-057-184A3540",
+"b": 2,
+"area": 572,
+"bbox": [
+1652,
+745,
+1700,
+764
+],
+"tile": 48,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-131-HR5_3298",
+"b": 27,
+"area": 319,
+"bbox": [
+1165,
+233,
+1189,
+256
+],
+"tile": 49,
+"label": "boat",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-130-HR5_3297",
+"b": 23,
+"area": 327,
+"bbox": [
+866,
+297,
+913,
+312
+],
+"tile": 50,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-234-184A1950",
+"b": 2,
+"area": 2142,
+"bbox": [
+1183,
+884,
+1274,
+921
+],
+"tile": 51,
+"label": "whale_splash",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-131-HR5_3298",
+"b": 8,
+"area": 1586,
+"bbox": [
+2352,
+74,
+2425,
+123
+],
+"tile": 52,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-124-HR5_3291",
+"b": 16,
+"area": 606,
+"bbox": [
+1672,
+662,
+1692,
+706
+],
+"tile": 53,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-330-184A2047",
+"b": 7,
+"area": 529,
+"bbox": [
+1537,
+744,
+1566,
+780
+],
+"tile": 54,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-283-184A2000",
+"b": 3,
+"area": 715,
+"bbox": [
+772,
+811,
+847,
+864
+],
+"tile": 55,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-127-184A1842",
+"b": 3,
+"area": 487,
+"bbox": [
+1488,
+1260,
+1519,
+1299
+],
+"tile": 56,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-332-184A3817",
+"b": 2,
+"area": 410,
+"bbox": [
+2271,
+913,
+2307,
+938
+],
+"tile": 57,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-129-184A1844",
+"b": 2,
+"area": 489,
+"bbox": [
+245,
+891,
+293,
+920
+],
+"tile": 58,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-084-HR5_3251",
+"b": 2,
+"area": 903,
+"bbox": [
+1442,
+1017,
+1494,
+1055
+],
+"tile": 59,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-130-HR5_3297",
+"b": 14,
+"area": 720,
+"bbox": [
+1368,
+119,
+1410,
+172
+],
+"tile": 60,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-368-184A2089",
+"b": 2,
+"area": 2029,
+"bbox": [
+476,
+1002,
+585,
+1028
+],
+"tile": 61,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-046-184A1761",
+"b": 3,
+"area": 532,
+"bbox": [
+1654,
+978,
+1702,
+996
+],
+"tile": 62,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-188-184A1903",
+"b": 2,
+"area": 382,
+"bbox": [
+1448,
+891,
+1471,
+938
+],
+"tile": 63,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-125-184A1840",
+"b": 9,
+"area": 315,
+"bbox": [
+2365,
+1031,
+2384,
+1055
+],
+"tile": 64,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-124-HR5_3291",
+"b": 14,
+"area": 676,
+"bbox": [
+753,
+708,
+776,
+772
+],
+"tile": 65,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-148-184A3631",
+"b": 2,
+"area": 949,
+"bbox": [
+760,
+968,
+865,
+982
+],
+"tile": 66,
+"label": "wake",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-009-184A1724",
+"b": 2,
+"area": 607,
+"bbox": [
+1248,
+915,
+1313,
+933
+],
+"tile": 67,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-184-184A1899",
+"b": 2,
+"area": 538,
+"bbox": [
+1709,
+1013,
+1790,
+1028
+],
+"tile": 68,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-089-184A3572",
+"b": 4,
+"area": 930,
+"bbox": [
+1588,
+633,
+1654,
+664
+],
+"tile": 69,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-085-184A3568",
+"b": 4,
+"area": 451,
+"bbox": [
+362,
+991,
+425,
+1006
+],
+"tile": 70,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-124-HR5_3291",
+"b": 11,
+"area": 1313,
+"bbox": [
+1536,
+396,
+1599,
+433
+],
+"tile": 71,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-204-HR5_3371",
+"b": 3,
+"area": 472,
+"bbox": [
+1041,
+1569,
+1094,
+1583
+],
+"tile": 72,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-105-HR5_3272",
+"b": 2,
+"area": 1080,
+"bbox": [
+1696,
+797,
+1736,
+853
+],
+"tile": 73,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-103-184A3586",
+"b": 2,
+"area": 1316,
+"bbox": [
+711,
+741,
+771,
+776
+],
+"tile": 74,
+"label": "whale_splash",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-172-184A3655",
+"b": 4,
+"area": 705,
+"bbox": [
+1240,
+746,
+1294,
+768
+],
+"tile": 75,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-124-HR5_3291",
+"b": 15,
+"area": 659,
+"bbox": [
+904,
+540,
+952,
+592
+],
+"tile": 76,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-124-HR5_3291",
+"b": 2,
+"area": 3770,
+"bbox": [
+1749,
+577,
+1869,
+645
+],
+"tile": 77,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-131-HR5_3298",
+"b": 22,
+"area": 625,
+"bbox": [
+1560,
+178,
+1598,
+237
+],
+"tile": 78,
+"label": "boat",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-228-184A1944",
+"b": 2,
+"area": 2157,
+"bbox": [
+1791,
+904,
+1958,
+924
+],
+"tile": 79,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-128-HR5_3295",
+"b": 4,
+"area": 764,
+"bbox": [
+2449,
+21,
+2488,
+59
+],
+"tile": 80,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-252-184A3736",
+"b": 3,
+"area": 1285,
+"bbox": [
+1668,
+962,
+1726,
+1034
+],
+"tile": 81,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-129-HR5_3296",
+"b": 5,
+"area": 2638,
+"bbox": [
+1526,
+194,
+1623,
+294
+],
+"tile": 82,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-410-184A3895",
+"b": 4,
+"area": 1076,
+"bbox": [
+1151,
+880,
+1242,
+927
+],
+"tile": 83,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-130-HR5_3297",
+"b": 9,
+"area": 1593,
+"bbox": [
+2424,
+166,
+2494,
+237
+],
+"tile": 84,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-091-HR5_3258",
+"b": 2,
+"area": 788,
+"bbox": [
+322,
+1310,
+398,
+1328
+],
+"tile": 85,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-330-184A2047",
+"b": 5,
+"area": 1011,
+"bbox": [
+734,
+1017,
+790,
+1070
+],
+"tile": 86,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-339-184A3824",
+"b": 2,
+"area": 472,
+"bbox": [
+336,
+1069,
+370,
+1092
+],
+"tile": 87,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-130-HR5_3297",
+"b": 22,
+"area": 377,
+"bbox": [
+1441,
+6,
+1492,
+23
+],
+"tile": 88,
+"label": "boat",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-110-184A3593",
+"b": 8,
+"area": 509,
+"bbox": [
+1751,
+1648,
+1783,
+1669
+],
+"tile": 89,
+"label": "person",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-183-184A1898",
+"b": 2,
+"area": 1003,
+"bbox": [
+681,
+1053,
+775,
+1073
+],
+"tile": 90,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-075-184A3558",
+"b": 5,
+"area": 2357,
+"bbox": [
+658,
+2425,
+718,
+2501
+],
+"tile": 91,
+"label": "person",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-124-HR5_3291",
+"b": 17,
+"area": 605,
+"bbox": [
+954,
+553,
+983,
+610
+],
+"tile": 92,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-071-184A1786",
+"b": 2,
+"area": 362,
+"bbox": [
+1713,
+925,
+1756,
+942
+],
+"tile": 93,
+"label": "other",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-130-HR5_3297",
+"b": 19,
+"area": 475,
+"bbox": [
+2314,
+154,
+2339,
+179
+],
+"tile": 94,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-496-184A3982",
+"b": 3,
+"area": 858,
+"bbox": [
+1522,
+980,
+1663,
+992
+],
+"tile": 95,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-131-HR5_3298",
+"b": 6,
+"area": 1905,
+"bbox": [
+1452,
+37,
+1533,
+109
+],
+"tile": 96,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-262-184A1979",
+"b": 3,
+"area": 575,
+"bbox": [
+1501,
+875,
+1544,
+898
+],
+"tile": 97,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-123-184A1838",
+"b": 3,
+"area": 1494,
+"bbox": [
+2347,
+763,
+2434,
+823
+],
+"tile": 98,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-348-184A3833",
+"b": 2,
+"area": 661,
+"bbox": [
+660,
+976,
+722,
+998
+],
+"tile": 99,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-183-HR5_3350",
+"b": 2,
+"area": 1983,
+"bbox": [
+286,
+893,
+467,
+920
+],
+"tile": 100,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-131-HR5_3298",
+"b": 26,
+"area": 346,
+"bbox": [
+1407,
+0,
+1437,
+24
+],
+"tile": 101,
+"label": "person",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-196-184A1911",
+"b": 3,
+"area": 611,
+"bbox": [
+1917,
+746,
+1978,
+776
+],
+"tile": 102,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-258-184A3742",
+"b": 2,
+"area": 414,
+"bbox": [
+1322,
+952,
+1342,
+990
+],
+"tile": 103,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-131-HR5_3298",
+"b": 20,
+"area": 648,
+"bbox": [
+1615,
+115,
+1663,
+138
+],
+"tile": 104,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-037-184A1752",
+"b": 4,
+"area": 1671,
+"bbox": [
+529,
+1503,
+700,
+1527
+],
+"tile": 105,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-125-184A1840",
+"b": 6,
+"area": 604,
+"bbox": [
+1119,
+886,
+1170,
+908
+],
+"tile": 106,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-338-184A2056",
+"b": 2,
+"area": 1643,
+"bbox": [
+481,
+1166,
+630,
+1190
+],
+"tile": 107,
+"label": "whale_splash",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-129-HR5_3296",
+"b": 9,
+"area": 1308,
+"bbox": [
+1501,
+304,
+1548,
+356
+],
+"tile": 108,
+"label": "boat",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-503-184A3989",
+"b": 2,
+"area": 975,
+"bbox": [
+848,
+1205,
+967,
+1223
+],
+"tile": 109,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-277-184A1994",
+"b": 2,
+"area": 657,
+"bbox": [
+845,
+336,
+873,
+382
+],
+"tile": 110,
+"label": "shore",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-348-184A3833",
+"b": 3,
+"area": 489,
+"bbox": [
+592,
+969,
+639,
+983
+],
+"tile": 111,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-204-HR5_3371",
+"b": 2,
+"area": 566,
+"bbox": [
+936,
+1561,
+1017,
+1575
+],
+"tile": 112,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-113-184A3596",
+"b": 7,
+"area": 746,
+"bbox": [
+1767,
+1570,
+1817,
+1626
+],
+"tile": 113,
+"label": "person",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-091-184A3574",
+"b": 5,
+"area": 354,
+"bbox": [
+976,
+1481,
+997,
+1520
+],
+"tile": 114,
+"label": "person",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-131-HR5_3298",
+"b": 16,
+"area": 824,
+"bbox": [
+1482,
+194,
+1518,
+260
+],
+"tile": 115,
+"label": "person",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-125-184A1840",
+"b": 7,
+"area": 503,
+"bbox": [
+2406,
+918,
+2430,
+951
+],
+"tile": 116,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-221-HR5_3388",
+"b": 2,
+"area": 641,
+"bbox": [
+2326,
+931,
+2399,
+944
+],
+"tile": 117,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-184-184A1899",
+"b": 3,
+"area": 342,
+"bbox": [
+1649,
+1018,
+1706,
+1026
+],
+"tile": 118,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-504-184A3990",
+"b": 3,
+"area": 723,
+"bbox": [
+764,
+958,
+840,
+973
+],
+"tile": 119,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-125-184A1840",
+"b": 10,
+"area": 304,
+"bbox": [
+1952,
+956,
+1982,
+987
+],
+"tile": 120,
+"label": "splash",
+"sure": true
+}
+],
+"labels": {
+"labelled": 120,
+"counts": {
+"wake": 28,
+"splash": 25,
+"person": 21,
+"boat": 16,
+"water": 15,
+"whale": 6,
+"shore": 4,
+"whale_splash": 3,
+"pole": 1,
+"other": 1
+},
+"whale_share": 0.075,
+"note": "AI by-eye labels by a labelling sub-agent (LABEL_GUIDE.md, blind sheets), not the researcher's",
+"nonwhale_new_per_photo": 0.2386
+}
+},
+"s5": {
+"per_day": {
+"2025-01-15": {
+"photos": 166,
+"new_blobs": 1
+},
+"2025-02-27": {
+"photos": 329,
+"new_blobs": 6
+},
+"2025-03-14": {
+"photos": 389,
+"new_blobs": 1
+}
+},
+"photos": 884,
+"new_blobs": 8,
+"per_photo": 0.009,
+"area_px": 13006,
+"sizes": {
+"1k-10k": 5,
+"300-1k": 3
+},
+"sample": [
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-228-184A1944",
+"b": 2,
+"area": 3087,
+"bbox": [
+1701,
+887,
+1913,
+918
+],
+"tile": 1,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-027-184A1742",
+"b": 2,
+"area": 911,
+"bbox": [
+1740,
+1036,
+1852,
+1048
+],
+"tile": 2,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-234-184A1950",
+"b": 2,
+"area": 1753,
+"bbox": [
+1183,
+896,
+1275,
+923
+],
+"tile": 3,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-034-184A1749",
+"b": 2,
+"area": 329,
+"bbox": [
+736,
+1467,
+786,
+1475
+],
+"tile": 4,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-091-HR5_3258",
+"b": 2,
+"area": 1782,
+"bbox": [
+315,
+1310,
+413,
+1339
+],
+"tile": 5,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-040-184A1755",
+"b": 2,
+"area": 2194,
+"bbox": [
+669,
+964,
+760,
+1000
+],
+"tile": 6,
+"label": "wake",
+"sure": true
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-037-184A3520",
+"b": 4,
+"area": 2076,
+"bbox": [
+1931,
+869,
+2153,
+906
+],
+"tile": 7,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-338-184A2056",
+"b": 2,
+"area": 874,
+"bbox": [
+520,
+1167,
+607,
+1181
+],
+"tile": 8,
+"label": "whale",
+"sure": false
+}
+],
+"labels": {
+"labelled": 8,
+"counts": {
+"whale": 7,
+"wake": 1
+},
+"whale_share": 0.875,
+"note": "AI by-eye labels by the coordinating agent (blind sheets nb_s5_001), not the researcher's",
+"nonwhale_new_per_photo": 0.0011
+}
+},
+"s5b": {
+"per_day": {
+"2025-01-15": {
+"photos": 166,
+"new_blobs": 0
+},
+"2025-02-27": {
+"photos": 329,
+"new_blobs": 9
+},
+"2025-03-14": {
+"photos": 389,
+"new_blobs": 3
+}
+},
+"photos": 884,
+"new_blobs": 12,
+"per_photo": 0.0136,
+"area_px": 19528,
+"sizes": {
+"300-1k": 8,
+"1k-10k": 4
+},
+"sample": [
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-037-184A1752",
+"b": 2,
+"area": 355,
+"bbox": [
+1747,
+1483,
+1840,
+1488
+],
+"tile": 1,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-148-184A3631",
+"b": 2,
+"area": 323,
+"bbox": [
+786,
+968,
+846,
+977
+],
+"tile": 2,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C3_Beato__2025-2-27-Beato-NOAA-MMHSRP-24359-154-HR5_4725",
+"b": 2,
+"area": 406,
+"bbox": [
+506,
+964,
+544,
+982
+],
+"tile": 3,
+"label": "wake",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-234-184A1950",
+"b": 2,
+"area": 2143,
+"bbox": [
+1179,
+894,
+1278,
+923
+],
+"tile": 4,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-286-184A3771",
+"b": 2,
+"area": 407,
+"bbox": [
+1659,
+977,
+1690,
+996
+],
+"tile": 5,
+"label": "splash",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-040-184A1755",
+"b": 2,
+"area": 2487,
+"bbox": [
+625,
+963,
+775,
+991
+],
+"tile": 6,
+"label": "wake",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-044-184A1759",
+"b": 4,
+"area": 476,
+"bbox": [
+1383,
+1146,
+1429,
+1161
+],
+"tile": 7,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-294-184A2011",
+"b": 4,
+"area": 3123,
+"bbox": [
+1568,
+761,
+1691,
+794
+],
+"tile": 8,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-047-184A1762",
+"b": 3,
+"area": 323,
+"bbox": [
+1670,
+893,
+1694,
+915
+],
+"tile": 9,
+"label": "splash",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-034-184A1749",
+"b": 2,
+"area": 600,
+"bbox": [
+725,
+1465,
+801,
+1477
+],
+"tile": 10,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-507-184A3993",
+"b": 2,
+"area": 388,
+"bbox": [
+1429,
+961,
+1466,
+975
+],
+"tile": 11,
+"label": "wake",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-287-184A2004",
+"b": 2,
+"area": 8497,
+"bbox": [
+736,
+938,
+973,
+1050
+],
+"tile": 12,
+"label": "whale",
+"sure": true
+}
+],
+"labels": {
+"labelled": 12,
+"counts": {
+"wake": 4,
+"whale": 4,
+"water": 2,
+"splash": 2
+},
+"whale_share": 0.333,
+"note": "AI by-eye labels (sub-agents, LABEL_GUIDE.md), blind to the model and to scores",
+"nonwhale_new_per_photo": 0.0091
+}
+},
+"s5_h0.6_0.1_g0.35": {
+"per_day": {
+"2025-01-15": {
+"photos": 166,
+"new_blobs": 2
+},
+"2025-02-27": {
+"photos": 329,
+"new_blobs": 7
+},
+"2025-03-14": {
+"photos": 389,
+"new_blobs": 0
+}
+},
+"photos": 884,
+"new_blobs": 9,
+"per_photo": 0.0102,
+"area_px": 16112,
+"sizes": {
+"1k-10k": 6,
+"300-1k": 3
+},
+"sample": [
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-234-184A1950",
+"b": 2,
+"area": 2124,
+"bbox": [
+1180,
+895,
+1278,
+925
+],
+"tile": 1,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-040-184A1755",
+"b": 2,
+"area": 3028,
+"bbox": [
+662,
+963,
+782,
+1001
+],
+"tile": 2,
+"label": "wake",
+"sure": true
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-091-HR5_3258",
+"b": 3,
+"area": 392,
+"bbox": [
+490,
+1352,
+528,
+1370
+],
+"tile": 3,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-027-184A1742",
+"b": 2,
+"area": 1468,
+"bbox": [
+1694,
+1035,
+1858,
+1049
+],
+"tile": 4,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-034-184A1749",
+"b": 2,
+"area": 504,
+"bbox": [
+716,
+1465,
+790,
+1477
+],
+"tile": 5,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-007-184A1722",
+"b": 2,
+"area": 484,
+"bbox": [
+1858,
+1089,
+1952,
+1097
+],
+"tile": 6,
+"label": "water",
+"sure": false
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-091-HR5_3258",
+"b": 2,
+"area": 2096,
+"bbox": [
+308,
+1308,
+414,
+1342
+],
+"tile": 7,
+"label": "whale",
+"sure": true
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-338-184A2056",
+"b": 2,
+"area": 1128,
+"bbox": [
+516,
+1167,
+610,
+1183
+],
+"tile": 8,
+"label": "whale",
+"sure": false
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-228-184A1944",
+"b": 2,
+"area": 4888,
+"bbox": [
+1668,
+883,
+1928,
+921
+],
+"tile": 9,
+"label": "whale",
+"sure": true
+}
+],
+"labels": {
+"labelled": 9,
+"counts": {
+"whale": 7,
+"wake": 1,
+"water": 1
+},
+"whale_share": 0.778,
+"note": "AI by-eye labels (sub-agents, LABEL_GUIDE.md), blind to the model and to scores",
+"nonwhale_new_per_photo": 0.0023
+}
+},
+"s6_h0.6_0.1_g0.35": {
+"per_day": {
+"2025-01-15": {
+"photos": 166,
+"new_blobs": 3
+},
+"2025-02-27": {
+"photos": 329,
+"new_blobs": 8
+},
+"2025-03-14": {
+"photos": 389,
+"new_blobs": 2
+}
+},
+"photos": 884,
+"new_blobs": 13,
+"per_photo": 0.0147,
+"area_px": 11160,
+"sizes": {
+"1k-10k": 3,
+"300-1k": 10
+},
+"sample": [
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-091-HR5_3258",
+"b": 3,
+"area": 472,
+"bbox": [
+488,
+1352,
+530,
+1370
+],
+"tile": 1
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-338-184A2056",
+"b": 2,
+"area": 456,
+"bbox": [
+534,
+1167,
+598,
+1179
+],
+"tile": 2
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-288-184A2005",
+"b": 3,
+"area": 496,
+"bbox": [
+1614,
+995,
+1648,
+1023
+],
+"tile": 3
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-034-184A1749",
+"b": 2,
+"area": 368,
+"bbox": [
+728,
+1467,
+784,
+1477
+],
+"tile": 4
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-332-184A3817",
+"b": 2,
+"area": 544,
+"bbox": [
+2270,
+911,
+2308,
+939
+],
+"tile": 5
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-168-HR5_3335",
+"b": 2,
+"area": 564,
+"bbox": [
+672,
+1200,
+712,
+1240
+],
+"tile": 6
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-016-184A1731",
+"b": 3,
+"area": 720,
+"bbox": [
+1256,
+809,
+1344,
+823
+],
+"tile": 7
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-183-184A1898",
+"b": 2,
+"area": 372,
+"bbox": [
+704,
+1053,
+756,
+1065
+],
+"tile": 8
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-234-184A1950",
+"b": 2,
+"area": 2132,
+"bbox": [
+1182,
+895,
+1278,
+925
+],
+"tile": 9
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-027-184A1742",
+"b": 2,
+"area": 1104,
+"bbox": [
+1716,
+1035,
+1848,
+1047
+],
+"tile": 10
+},
+{
+"day": "2025-01-15",
+"stem": "2025-1-15_C3_Lyman__2025-1-15-Lyman-NOAA-MMHSRP-24359-091-HR5_3258",
+"b": 2,
+"area": 2808,
+"bbox": [
+304,
+1308,
+416,
+1344
+],
+"tile": 11
+},
+{
+"day": "2025-03-14",
+"stem": "2025-3-14_C1_Harvey__2025-3-14-Harvey-NOAA-MMHSRP-24359-384-184A3869",
+"b": 2,
+"area": 320,
+"bbox": [
+720,
+1005,
+762,
+1017
+],
+"tile": 12
+},
+{
+"day": "2025-02-27",
+"stem": "2025-2-27_C1_Harvey__2025-2-27-Harvey-NOAA-MMHSRP-24359-040-184A1755",
+"b": 2,
+"area": 804,
+"bbox": [
+674,
+965,
+714,
+991
+],
+"tile": 13
+}
+]
+}
+}

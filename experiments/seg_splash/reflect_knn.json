@@ -1,0 +1,28 @@
+{
+ "real whale pixels S5 keeps": {
+  "patches": 3961,
+  "nearest_10_shares": {
+   "band below waterline (mirror side)": 0.06,
+   "open water": 0.063,
+   "under-water zone": 0.074,
+   "whale skin": 0.803
+  },
+  "mean_top1_cosine": 0.722
+ },
+ "real whale pixels S5 drops": {
+  "patches": 1292,
+  "nearest_10_shares": {
+   "band below waterline (mirror side)": 0.236,
+   "open water": 0.243,
+   "under-water zone": 0.167,
+   "whale skin": 0.354
+  },
+  "mean_top1_cosine": 0.697
+ },
+ "render_patches": {
+  "band below waterline (mirror side)": 785,
+  "open water": 36758,
+  "under-water zone": 10551,
+  "whale skin": 5358
+ }
+}

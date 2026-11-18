@@ -1,0 +1,85 @@
+{
+ "n_render_fins": 61,
+ "n_real_outlines": 196,
+ "metrics": {
+  "broad": {
+   "real_q25_50_75": [
+    0.66,
+    0.84,
+    1.2
+   ],
+   "render_q25_50_75": [
+    0.64,
+    0.83,
+    1.25
+   ],
+   "ks": 0.13
+  },
+  "sharp": {
+   "real_q25_50_75": [
+    0.62,
+    0.7,
+    0.74
+   ],
+   "render_q25_50_75": [
+    0.59,
+    0.63,
+    0.73
+   ],
+   "ks": 0.29
+  },
+  "overhang": {
+   "real_q25_50_75": [
+    0.05,
+    0.22,
+    0.43
+   ],
+   "render_q25_50_75": [
+    0.12,
+    0.25,
+    0.45
+   ],
+   "ks": 0.18
+  },
+  "base_over_height": {
+   "real_q25_50_75": [
+    1.9,
+    2.7,
+    3.52
+   ],
+   "render_q25_50_75": [
+    2.26,
+    3.02,
+    3.67
+   ],
+   "ks": 0.19
+  }
+ },
+ "share_inside_real_10_90_all_metrics": {
+  "render": 0.54,
+  "real": 0.48
+ },
+ "by_eye_mark": {
+  "R": {
+   "n": 30,
+   "broad_median": 0.83,
+   "sharp_median": 0.61,
+   "overhang_median": 0.32,
+   "inside_real_range": 0.53
+  },
+  "-": {
+   "n": 15,
+   "broad_median": 0.89,
+   "sharp_median": 0.68,
+   "overhang_median": 0.12,
+   "inside_real_range": 0.53
+  },
+  "S": {
+   "n": 16,
+   "broad_median": 0.76,
+   "sharp_median": 0.62,
+   "overhang_median": 0.41,
+   "inside_real_range": 0.56
+  }
+ }
+}

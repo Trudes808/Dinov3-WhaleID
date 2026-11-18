@@ -1,0 +1,78 @@
+# AI by-eye labels of every r06r_test_r6b whale (75; blind: render + outline only, no labels, no model output), real taxonomy.
+# '#S' = the fin reads as a thin sharp spike / blade on a mound; '#R' = the fin reads like the real small fins (low, broad, rounded).
+# Format: <shot> <instance id> <CATEGORY> [attributes] [#S|#R]
+000000 1 B_back
+000003 1 B_back s1
+000004 1 D_small #R
+000004 2 D_small #S
+000007 1 D_tip #S
+000007 2 B_back
+000007 3 D_tip #S
+000008 1 D_small #R
+000009 1 D_small s1
+000010 1 F_low
+000010 2 D_small m s1
+000011 1 F_edge
+000011 3 D_small h #R
+000013 1 F_edge s1
+000014 1 F_low
+000015 1 D_small h s1 #S
+000016 1 D_tip s1 #S
+000016 2 D_tip h #R
+000017 1 D_tip #S
+000018 1 B_back s1
+000019 1 D_small h #S
+000019 2 D_small h #R
+000019 3 D_tip #S
+000020 1 D_small
+000020 2 D_small m #S
+000021 1 D_tip #S
+000021 2 D_small h #S
+000021 3 D_tip #S
+000022 1 D_small h #R
+000026 1 B_back
+000027 1 B_back m
+000027 2 D_small m
+000028 1 D_small m s1 #R
+000029 1 H_head
+000030 1 D_tip s1 #S
+000030 2 D_tip #S
+000031 1 D_small s1
+000031 3 D_small
+000032 1 D_tip
+000032 2 D_tip #S
+000033 1 D_small h #S
+000037 1 P_pec s2
+000038 1 F_up
+000039 1 F_edge s1
+000040 1 D_small #R
+000041 1 D_small
+000041 2 B_back s1
+000041 3 F_low
+000042 1 H_head
+000043 1 D_tip #S
+000044 1 D_small h #S
+000048 1 D_small s1 #S
+000049 1 B_back s1
+000053 1 F_edge
+000054 1 D_small #S
+000055 1 B_back s1
+000057 1 F_up w
+000058 1 F_low
+000058 2 D_small m
+000061 1 D_tip #S
+000063 1 F_up
+000064 1 B_back s1
+000064 2 D_small #R
+000065 1 D_small #R
+000066 1 D_small h #S
+000068 1 D_small s1
+000069 1 X_none
+000070 1 R_roll s1
+000071 1 D_small s1 #S
+000072 1 B_back
+000074 1 D_small s1 #S
+000074 2 D_tip
+000075 1 B_back
+000077 1 D_tip #S
+000078 1 D_small h #S

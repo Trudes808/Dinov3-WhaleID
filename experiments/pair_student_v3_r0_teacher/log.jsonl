@@ -1,0 +1,141 @@
+{"event": "train", "epoch": 0, "step": 25, "loss": 1.2692061471939087, "pair_acc": 0.8884848785400391, "seconds": 29.7, "elapsed_s": 35.2}
+{"event": "train", "epoch": 0, "step": 50, "loss": 1.0963062143325806, "pair_acc": 0.8800000190734864, "seconds": 56.7, "elapsed_s": 62.2}
+{"event": "train", "epoch": 0, "step": 75, "loss": 0.7845264232158661, "pair_acc": 0.7751515400409699, "seconds": 82.7, "elapsed_s": 88.2}
+{"event": "train", "epoch": 0, "step": 100, "loss": 1.0675165271759033, "pair_acc": 0.7066666901111602, "seconds": 108.5, "elapsed_s": 114.0}
+{"event": "train", "epoch": 0, "step": 125, "loss": 1.0703606152534484, "pair_acc": 0.7060606336593628, "seconds": 133.7, "elapsed_s": 139.2}
+{"event": "train", "epoch": 0, "step": 150, "loss": 0.776555290222168, "pair_acc": 0.7866666889190674, "seconds": 159.3, "elapsed_s": 164.8}
+{"event": "train", "epoch": 0, "step": 175, "loss": 0.8162135314941407, "pair_acc": 0.8212121510505677, "seconds": 183.2, "elapsed_s": 188.7}
+{"event": "train", "epoch": 0, "step": 200, "loss": 0.7861628973484039, "pair_acc": 0.8006060767173767, "seconds": 210.6, "elapsed_s": 216.1}
+{"event": "train", "epoch": 0, "step": 225, "loss": 0.8178976285457611, "pair_acc": 0.8212121462821961, "seconds": 237.1, "elapsed_s": 242.6}
+{"event": "train", "epoch": 0, "step": 250, "loss": 0.8255179738998413, "pair_acc": 0.8187878966331482, "seconds": 266.5, "elapsed_s": 272.0}
+{"event": "train", "epoch": 0, "step": 275, "loss": 0.7398833179473877, "pair_acc": 0.8127272963523865, "seconds": 292.8, "elapsed_s": 298.3}
+{"event": "train", "epoch": 0, "step": 300, "loss": 0.9557992219924927, "pair_acc": 0.7878788065910339, "seconds": 318.8, "elapsed_s": 324.3}
+{"event": "epoch", "epoch": 0, "step": 300, "loss": 0.9171621490518252, "seconds": 318.8, "elapsed_s": 324.3}
+{"event": "val", "epoch": 0, "step": 300, "auc_teacher_body": 0.7930083144368858, "pairs_body": 1386, "auc_teacher_body_within_group": 0.7592211944729931, "auc_teacher_fin": 0.8813705234159779, "pairs_fin": 1452, "auc_teacher_fin_within_group": 0.8235801896516182, "auc_teacher_fluke": 0.8655023923444976, "pairs_fluke": 975, "auc_teacher_fluke_within_group": 0.7863050483351235, "auc_teacher_mean": 0.8466270767324536, "auc_teacher_within_group_mean": 0.7897021441532449, "auc_reference_body": 0.792535903250189, "auc_reference_body_within_group": 0.758693045563549, "auc_reference_fin": 0.8805153810835629, "auc_reference_fin_within_group": 0.8223433312719027, "auc_reference_fluke": 0.864976076555024, "auc_reference_fluke_within_group": 0.7853383458646617, "auc_reference_mean": 0.8460091202962586, "auc_reference_within_group_mean": 0.7887915742333712, "pairs": 3813, "positives": 353, "elapsed_s": 422.8}
+{"event": "train", "epoch": 1, "step": 325, "loss": 1.0407418131828308, "pair_acc": 0.6006060785055161, "seconds": 25.5, "elapsed_s": 451.0}
+{"event": "train", "epoch": 1, "step": 350, "loss": 0.9623740255832672, "pair_acc": 0.8218182015419007, "seconds": 53.3, "elapsed_s": 478.8}
+{"event": "train", "epoch": 1, "step": 375, "loss": 0.8987309789657593, "pair_acc": 0.7290909266471863, "seconds": 83.0, "elapsed_s": 508.5}
+{"event": "train", "epoch": 1, "step": 400, "loss": 0.5638633239269256, "pair_acc": 0.8509091138839722, "seconds": 112.6, "elapsed_s": 538.1}
+{"event": "train", "epoch": 1, "step": 425, "loss": 0.7806747603416443, "pair_acc": 0.775151538848877, "seconds": 141.9, "elapsed_s": 567.4}
+{"event": "train", "epoch": 1, "step": 450, "loss": 0.8529176902770996, "pair_acc": 0.805454568862915, "seconds": 161.9, "elapsed_s": 587.4}
+{"event": "train", "epoch": 1, "step": 475, "loss": 1.0149925327301026, "pair_acc": 0.7654545736312867, "seconds": 184.0, "elapsed_s": 609.5}
+{"event": "train", "epoch": 1, "step": 500, "loss": 0.6707537364959717, "pair_acc": 0.8254545736312866, "seconds": 210.1, "elapsed_s": 635.5}
+{"event": "train", "epoch": 1, "step": 525, "loss": 0.9181608128547668, "pair_acc": 0.7521212363243103, "seconds": 238.8, "elapsed_s": 664.3}
+{"event": "train", "epoch": 1, "step": 550, "loss": 0.8381395912170411, "pair_acc": 0.7927272987365722, "seconds": 265.5, "elapsed_s": 691.0}
+{"event": "train", "epoch": 1, "step": 575, "loss": 0.6457624745368957, "pair_acc": 0.882294409275055, "seconds": 288.3, "elapsed_s": 713.8}
+{"event": "train", "epoch": 1, "step": 600, "loss": 0.5104520678520202, "pair_acc": 0.8533333611488342, "seconds": 314.3, "elapsed_s": 739.8}
+{"event": "epoch", "epoch": 1, "step": 600, "loss": 0.8081303173303604, "seconds": 314.3, "elapsed_s": 739.8}
+{"event": "val", "epoch": 1, "step": 600, "auc_teacher_body": 0.7868608227604768, "pairs_body": 1122, "auc_teacher_body_within_group": 0.748235294117647, "auc_teacher_fin": 0.859314738292011, "pairs_fin": 1452, "auc_teacher_fin_within_group": 0.7992808149058148, "auc_teacher_fluke": 0.8461142766698322, "pairs_fluke": 1197, "auc_teacher_fluke_within_group": 0.7890409966681153, "auc_teacher_mean": 0.8307632792407733, "auc_teacher_within_group_mean": 0.7788523685638591, "auc_reference_body": 0.7860918877354863, "auc_reference_body_within_group": 0.7445833333333334, "auc_reference_fin": 0.8598599632690541, "auc_reference_fin_within_group": 0.7996391277641277, "auc_reference_fluke": 0.8470402025957581, "auc_reference_fluke_within_group": 0.7891858612197595, "auc_reference_mean": 0.8309973512000995, "auc_reference_within_group_mean": 0.7778027741057402, "pairs": 3771, "positives": 351, "elapsed_s": 833.9}
+{"event": "train", "epoch": 2, "step": 625, "loss": 0.9285754847526551, "pair_acc": 0.8006060862541199, "seconds": 35.0, "elapsed_s": 870.4}
+{"event": "train", "epoch": 2, "step": 650, "loss": 0.8948276996612549, "pair_acc": 0.8260606217384339, "seconds": 64.4, "elapsed_s": 899.9}
+{"event": "train", "epoch": 2, "step": 675, "loss": 1.031739842891693, "pair_acc": 0.6909091079235077, "seconds": 92.6, "elapsed_s": 928.0}
+{"event": "train", "epoch": 2, "step": 700, "loss": 0.8431451559066773, "pair_acc": 0.8533333516120911, "seconds": 128.7, "elapsed_s": 964.2}
+{"event": "train", "epoch": 2, "step": 725, "loss": 0.8016420781612397, "pair_acc": 0.7484848666191101, "seconds": 156.8, "elapsed_s": 992.2}
+{"event": "train", "epoch": 2, "step": 750, "loss": 1.0333345437049866, "pair_acc": 0.7903030538558959, "seconds": 188.7, "elapsed_s": 1024.1}
+{"event": "train", "epoch": 2, "step": 775, "loss": 0.9554054856300354, "pair_acc": 0.6466666889190674, "seconds": 221.8, "elapsed_s": 1057.2}
+{"event": "train", "epoch": 2, "step": 800, "loss": 0.8760718727111816, "pair_acc": 0.8151515436172485, "seconds": 253.6, "elapsed_s": 1089.1}
+{"event": "train", "epoch": 2, "step": 825, "loss": 0.5745788598060608, "pair_acc": 0.8284848713874817, "seconds": 284.0, "elapsed_s": 1119.4}
+{"event": "train", "epoch": 2, "step": 850, "loss": 0.5827879136800767, "pair_acc": 0.8866666960716247, "seconds": 313.8, "elapsed_s": 1149.3}
+{"event": "train", "epoch": 2, "step": 875, "loss": 1.0415820288658142, "pair_acc": 0.724242446422577, "seconds": 346.6, "elapsed_s": 1182.0}
+{"event": "train", "epoch": 2, "step": 900, "loss": 0.6997393214702606, "pair_acc": 0.8309091091156006, "seconds": 380.8, "elapsed_s": 1216.3}
+{"event": "epoch", "epoch": 2, "step": 900, "loss": 0.8552858572701613, "seconds": 380.8, "elapsed_s": 1216.3}
+{"event": "val", "epoch": 2, "step": 900, "auc_teacher_body": 0.8242214532871972, "pairs_body": 1122, "auc_teacher_body_within_group": 0.7727410551849605, "auc_teacher_fin": 0.8410178886369364, "pairs_fin": 1386, "auc_teacher_fin_within_group": 0.7741553808067569, "auc_teacher_fluke": 0.7922942130568267, "pairs_fluke": 1254, "auc_teacher_fluke_within_group": 0.7279411764705882, "auc_teacher_mean": 0.8191778516603202, "auc_teacher_within_group_mean": 0.7582792041541019, "auc_reference_body": 0.8249038831218762, "auc_reference_body_within_group": 0.7731453406104709, "auc_reference_fin": 0.8383597883597883, "auc_reference_fin_within_group": 0.7716615698267074, "auc_reference_fluke": 0.7878120836471065, "auc_reference_fluke_within_group": 0.7229387656702024, "auc_reference_mean": 0.8170252517095905, "auc_reference_within_group_mean": 0.7559152253691269, "pairs": 3762, "positives": 350, "elapsed_s": 1316.2}
+{"event": "train", "epoch": 3, "step": 925, "loss": 0.6995987224578858, "pair_acc": 0.809696991443634, "seconds": 31.7, "elapsed_s": 1349.7}
+{"event": "train", "epoch": 3, "step": 950, "loss": 0.8493752288818359, "pair_acc": 0.7757576036453248, "seconds": 67.0, "elapsed_s": 1385.1}
+{"event": "train", "epoch": 3, "step": 975, "loss": 0.9438431000709534, "pair_acc": 0.6721212339401245, "seconds": 92.4, "elapsed_s": 1410.4}
+{"event": "train", "epoch": 3, "step": 1000, "loss": 0.9534148573875427, "pair_acc": 0.7321212327480316, "seconds": 115.8, "elapsed_s": 1433.9}
+{"event": "train", "epoch": 3, "step": 1025, "loss": 0.6110788649320602, "pair_acc": 0.8284848713874817, "seconds": 134.8, "elapsed_s": 1452.8}
+{"event": "train", "epoch": 3, "step": 1050, "loss": 0.7965378212928772, "pair_acc": 0.8812121534347535, "seconds": 153.2, "elapsed_s": 1471.2}
+{"event": "train", "epoch": 3, "step": 1075, "loss": 1.3416233277320861, "pair_acc": 0.5703030431270599, "seconds": 171.7, "elapsed_s": 1489.7}
+{"event": "train", "epoch": 3, "step": 1100, "loss": 0.8269499230384827, "pair_acc": 0.7921212315559387, "seconds": 190.2, "elapsed_s": 1508.3}
+{"event": "train", "epoch": 3, "step": 1125, "loss": 0.7986266255378723, "pair_acc": 0.8169697284698486, "seconds": 208.7, "elapsed_s": 1526.8}
+{"event": "train", "epoch": 3, "step": 1150, "loss": 0.9665326189994812, "pair_acc": 0.6987879014015198, "seconds": 227.2, "elapsed_s": 1545.3}
+{"event": "train", "epoch": 3, "step": 1175, "loss": 1.1080437409877777, "pair_acc": 0.6430303227901458, "seconds": 245.7, "elapsed_s": 1563.7}
+{"event": "train", "epoch": 3, "step": 1200, "loss": 0.7567777860164643, "pair_acc": 0.8127272963523865, "seconds": 266.9, "elapsed_s": 1584.9}
+{"event": "epoch", "epoch": 3, "step": 1200, "loss": 0.8877002181112766, "seconds": 266.9, "elapsed_s": 1584.9}
+{"event": "val", "epoch": 3, "step": 1200, "auc_teacher_body": 0.7674162257495591, "pairs_body": 1386, "auc_teacher_body_within_group": 0.691566235547717, "auc_teacher_fin": 0.863503086419753, "pairs_fin": 792, "auc_teacher_fin_within_group": 0.8100845410628019, "auc_teacher_fluke": 0.8231563021298056, "pairs_fluke": 1533, "auc_teacher_fluke_within_group": 0.7575503355704698, "auc_teacher_mean": 0.8180252047663726, "auc_teacher_within_group_mean": 0.753067037393663, "auc_reference_body": 0.7676933736457546, "auc_reference_body_within_group": 0.691468253968254, "auc_reference_fin": 0.8640046296296297, "auc_reference_fin_within_group": 0.8097322866344606, "auc_reference_fluke": 0.8218906389416922, "auc_reference_fluke_within_group": 0.759659635666347, "auc_reference_mean": 0.8178628807390256, "auc_reference_within_group_mean": 0.7536200587563538, "pairs": 3711, "positives": 347, "elapsed_s": 1646.1}
+{"event": "train", "epoch": 4, "step": 1225, "loss": 0.9245841825008392, "pair_acc": 0.7236363816261292, "seconds": 19.2, "elapsed_s": 1666.7}
+{"event": "train", "epoch": 4, "step": 1250, "loss": 0.7914190983772278, "pair_acc": 0.8600000262260437, "seconds": 37.7, "elapsed_s": 1685.2}
+{"event": "train", "epoch": 4, "step": 1275, "loss": 0.74851078748703, "pair_acc": 0.7551515352725983, "seconds": 56.3, "elapsed_s": 1703.7}
+{"event": "train", "epoch": 4, "step": 1300, "loss": 0.5631338202953339, "pair_acc": 0.8787879109382629, "seconds": 74.7, "elapsed_s": 1722.2}
+{"event": "train", "epoch": 4, "step": 1325, "loss": 0.9302750325202942, "pair_acc": 0.7642424464225769, "seconds": 95.9, "elapsed_s": 1743.4}
+{"event": "train", "epoch": 4, "step": 1350, "loss": 0.9718656325340271, "pair_acc": 0.725454568862915, "seconds": 119.0, "elapsed_s": 1766.5}
+{"event": "train", "epoch": 4, "step": 1375, "loss": 0.6871619921922684, "pair_acc": 0.8400000309944153, "seconds": 142.9, "elapsed_s": 1790.4}
+{"event": "train", "epoch": 4, "step": 1400, "loss": 1.0769909644126892, "pair_acc": 0.8224242687225342, "seconds": 165.6, "elapsed_s": 1813.0}
+{"event": "train", "epoch": 4, "step": 1425, "loss": 0.6619193089008332, "pair_acc": 0.8684848761558532, "seconds": 189.8, "elapsed_s": 1837.2}
+{"event": "train", "epoch": 4, "step": 1450, "loss": 0.8949795496463776, "pair_acc": 0.7769697165489197, "seconds": 208.2, "elapsed_s": 1855.7}
+{"event": "train", "epoch": 4, "step": 1475, "loss": 0.6829304695129395, "pair_acc": 0.8587879109382629, "seconds": 226.5, "elapsed_s": 1874.0}
+{"event": "train", "epoch": 4, "step": 1500, "loss": 0.7595500671863555, "pair_acc": 0.8030303192138671, "seconds": 245.0, "elapsed_s": 1892.5}
+{"event": "epoch", "epoch": 4, "step": 1500, "loss": 0.807776742130518, "seconds": 245.0, "elapsed_s": 1892.5}
+{"event": "val", "epoch": 4, "step": 1500, "auc_teacher_body": 0.7850781053162005, "pairs_body": 1386, "auc_teacher_body_within_group": 0.6803540426587302, "auc_teacher_fin": 0.8363464187327823, "pairs_fin": 1452, "auc_teacher_fin_within_group": 0.7666366906474821, "auc_teacher_fluke": 0.8321044374719857, "pairs_fluke": 1017, "auc_teacher_fluke_within_group": 0.7544182621502209, "auc_teacher_mean": 0.817842987173656, "auc_teacher_within_group_mean": 0.7338029984854777, "auc_reference_body": 0.7927437641723355, "auc_reference_body_within_group": 0.6804005456349207, "auc_reference_fin": 0.8424758953168043, "auc_reference_fin_within_group": 0.77648790058862, "auc_reference_fluke": 0.8240251008516359, "auc_reference_fluke_within_group": 0.7678834420366084, "auc_reference_mean": 0.8197482534469254, "auc_reference_within_group_mean": 0.7415906294200497, "pairs": 3855, "positives": 355, "elapsed_s": 1955.4}
+{"event": "train", "epoch": 5, "step": 1525, "loss": 0.7675436341762543, "pair_acc": 0.8090909218788147, "seconds": 20.2, "elapsed_s": 1977.1}
+{"event": "train", "epoch": 5, "step": 1550, "loss": 0.9699959099292755, "pair_acc": 0.754545476436615, "seconds": 38.5, "elapsed_s": 1995.5}
+{"event": "train", "epoch": 5, "step": 1575, "loss": 0.7982207655906677, "pair_acc": 0.7242424476146698, "seconds": 57.1, "elapsed_s": 2014.1}
+{"event": "train", "epoch": 5, "step": 1600, "loss": 0.8598428320884705, "pair_acc": 0.842424259185791, "seconds": 75.6, "elapsed_s": 2032.5}
+{"event": "train", "epoch": 5, "step": 1625, "loss": 0.930393443107605, "pair_acc": 0.7418182015419006, "seconds": 97.8, "elapsed_s": 2054.8}
+{"event": "train", "epoch": 5, "step": 1650, "loss": 0.9358386492729187, "pair_acc": 0.687878806591034, "seconds": 116.6, "elapsed_s": 2073.5}
+{"event": "train", "epoch": 5, "step": 1675, "loss": 0.6737385547161102, "pair_acc": 0.8242424488067627, "seconds": 135.0, "elapsed_s": 2091.9}
+{"event": "train", "epoch": 5, "step": 1700, "loss": 0.9200763511657715, "pair_acc": 0.7393939590454102, "seconds": 153.4, "elapsed_s": 2110.4}
+{"event": "train", "epoch": 5, "step": 1725, "loss": 0.8479896986484527, "pair_acc": 0.802424259185791, "seconds": 171.8, "elapsed_s": 2128.8}
+{"event": "train", "epoch": 5, "step": 1750, "loss": 0.8751060986518859, "pair_acc": 0.7406060886383057, "seconds": 190.2, "elapsed_s": 2147.2}
+{"event": "train", "epoch": 5, "step": 1775, "loss": 0.6593121039867401, "pair_acc": 0.8830303406715393, "seconds": 208.6, "elapsed_s": 2165.6}
+{"event": "train", "epoch": 5, "step": 1800, "loss": 0.6504750943183899, "pair_acc": 0.8369697284698486, "seconds": 226.9, "elapsed_s": 2183.9}
+{"event": "epoch", "epoch": 5, "step": 1800, "loss": 0.8240444279710452, "seconds": 226.9, "elapsed_s": 2183.9}
+{"event": "val", "epoch": 5, "step": 1800, "auc_teacher_body": 0.7630509641873278, "pairs_body": 1452, "auc_teacher_body_within_group": 0.7146046558298215, "auc_teacher_fin": 0.838684099978996, "pairs_fin": 1518, "auc_teacher_fin_within_group": 0.8097706113830501, "auc_teacher_fluke": 0.8337148962148963, "pairs_fluke": 864, "auc_teacher_fluke_within_group": 0.7757173382173382, "auc_teacher_mean": 0.8118166534604067, "auc_teacher_within_group_mean": 0.7666975351434032, "auc_reference_body": 0.7763544536271809, "auc_reference_body_within_group": 0.7158463776841261, "auc_reference_fin": 0.8573461457676957, "auc_reference_fin_within_group": 0.8189605528361648, "auc_reference_fluke": 0.8194139194139194, "auc_reference_fluke_within_group": 0.774114774114774, "auc_reference_mean": 0.817704839602932, "auc_reference_within_group_mean": 0.7696405682116882, "pairs": 3834, "positives": 354, "elapsed_s": 2243.1}
+{"event": "train", "epoch": 6, "step": 1825, "loss": 0.9446750998497009, "pair_acc": 0.7327272891998291, "seconds": 19.0, "elapsed_s": 2263.6}
+{"event": "train", "epoch": 6, "step": 1850, "loss": 0.714102931022644, "pair_acc": 0.8042424488067627, "seconds": 37.4, "elapsed_s": 2281.9}
+{"event": "train", "epoch": 6, "step": 1875, "loss": 0.7499555230140686, "pair_acc": 0.8096969938278198, "seconds": 55.7, "elapsed_s": 2300.2}
+{"event": "train", "epoch": 6, "step": 1900, "loss": 1.0086350798606873, "pair_acc": 0.6963636612892151, "seconds": 74.1, "elapsed_s": 2318.6}
+{"event": "train", "epoch": 6, "step": 1925, "loss": 1.2641278338432311, "pair_acc": 0.6866666889190673, "seconds": 92.4, "elapsed_s": 2337.0}
+{"event": "train", "epoch": 6, "step": 1950, "loss": 0.9771434795856476, "pair_acc": 0.7460606288909912, "seconds": 110.8, "elapsed_s": 2355.3}
+{"event": "train", "epoch": 6, "step": 1975, "loss": 0.9724243998527526, "pair_acc": 0.79575758934021, "seconds": 129.2, "elapsed_s": 2373.7}
+{"event": "train", "epoch": 6, "step": 2000, "loss": 0.8975327849388123, "pair_acc": 0.8400000238418579, "seconds": 147.6, "elapsed_s": 2392.1}
+{"event": "train", "epoch": 6, "step": 2025, "loss": 0.9419241297245026, "pair_acc": 0.6181818354129791, "seconds": 165.9, "elapsed_s": 2410.4}
+{"event": "train", "epoch": 6, "step": 2050, "loss": 0.6224178373813629, "pair_acc": 0.8218182134628296, "seconds": 184.2, "elapsed_s": 2428.8}
+{"event": "train", "epoch": 6, "step": 2075, "loss": 0.7692617046833038, "pair_acc": 0.8769697237014771, "seconds": 202.6, "elapsed_s": 2447.1}
+{"event": "train", "epoch": 6, "step": 2100, "loss": 0.7507736086845398, "pair_acc": 0.8163636708259583, "seconds": 226.7, "elapsed_s": 2471.3}
+{"event": "epoch", "epoch": 6, "step": 2100, "loss": 0.8844145343701044, "seconds": 226.7, "elapsed_s": 2471.3}
+{"event": "val", "epoch": 6, "step": 2100, "auc_teacher_body": 0.813820018365473, "pairs_body": 1452, "auc_teacher_body_within_group": 0.756370523415978, "auc_teacher_fin": 0.8576341647770219, "pairs_fin": 1386, "auc_teacher_fin_within_group": 0.7833621351766513, "auc_teacher_fluke": 0.8501851851851852, "pairs_fluke": 996, "auc_teacher_fluke_within_group": 0.7512019230769231, "auc_teacher_mean": 0.8405464561092266, "auc_teacher_within_group_mean": 0.7636448605565175, "auc_reference_body": 0.8156852617079889, "auc_reference_body_within_group": 0.7556950625132444, "auc_reference_fin": 0.8548122952884858, "auc_reference_fin_within_group": 0.7737935227854582, "auc_reference_fluke": 0.8487847222222222, "auc_reference_fluke_within_group": 0.7592147435897436, "auc_reference_mean": 0.8397607597395657, "auc_reference_within_group_mean": 0.7629011096294821, "pairs": 3834, "positives": 354, "elapsed_s": 2544.3}
+{"event": "train", "epoch": 7, "step": 2125, "loss": 1.0043292713165284, "pair_acc": 0.7951515388488769, "seconds": 33.0, "elapsed_s": 2578.3}
+{"event": "train", "epoch": 7, "step": 2150, "loss": 0.8840200197696686, "pair_acc": 0.8103030467033386, "seconds": 63.0, "elapsed_s": 2608.3}
+{"event": "train", "epoch": 7, "step": 2175, "loss": 1.0538199734687805, "pair_acc": 0.6260606193542481, "seconds": 93.7, "elapsed_s": 2639.0}
+{"event": "train", "epoch": 7, "step": 2200, "loss": 0.9350580620765686, "pair_acc": 0.7745454812049866, "seconds": 124.6, "elapsed_s": 2669.9}
+{"event": "train", "epoch": 7, "step": 2225, "loss": 0.888307683467865, "pair_acc": 0.7678788018226623, "seconds": 154.6, "elapsed_s": 2699.9}
+{"event": "train", "epoch": 7, "step": 2250, "loss": 0.8812771797180176, "pair_acc": 0.844848518371582, "seconds": 185.0, "elapsed_s": 2730.3}
+{"event": "train", "epoch": 7, "step": 2275, "loss": 0.7733986055850983, "pair_acc": 0.7478788185119629, "seconds": 216.2, "elapsed_s": 2761.5}
+{"event": "train", "epoch": 7, "step": 2300, "loss": 0.8128469634056091, "pair_acc": 0.8072727489471435, "seconds": 246.1, "elapsed_s": 2791.5}
+{"event": "train", "epoch": 7, "step": 2325, "loss": 0.9509501230716705, "pair_acc": 0.7618181943893433, "seconds": 275.8, "elapsed_s": 2821.1}
+{"event": "train", "epoch": 7, "step": 2350, "loss": 0.851250548362732, "pair_acc": 0.7321212339401245, "seconds": 307.8, "elapsed_s": 2853.1}
+{"event": "train", "epoch": 7, "step": 2375, "loss": 0.7824967336654663, "pair_acc": 0.8321212363243103, "seconds": 333.6, "elapsed_s": 2878.9}
+{"event": "train", "epoch": 7, "step": 2400, "loss": 0.9473105263710022, "pair_acc": 0.7072727620601654, "seconds": 351.9, "elapsed_s": 2897.2}
+{"event": "epoch", "epoch": 7, "step": 2400, "loss": 0.8970888075232506, "seconds": 351.9, "elapsed_s": 2897.2}
+{"event": "val", "epoch": 7, "step": 2400, "auc_teacher_body": 0.7786319444444445, "pairs_body": 1320, "auc_teacher_body_within_group": 0.7174731182795699, "auc_teacher_fin": 0.8670617283950617, "pairs_fin": 990, "auc_teacher_fin_within_group": 0.8140972222222222, "auc_teacher_fluke": 0.8741796554552912, "pairs_fluke": 1410, "auc_teacher_fluke_within_group": 0.8025636802810715, "auc_teacher_mean": 0.8399577760982657, "auc_teacher_within_group_mean": 0.7780446735942879, "auc_reference_body": 0.76975, "auc_reference_body_within_group": 0.7099462365591398, "auc_reference_fin": 0.8708888888888889, "auc_reference_fin_within_group": 0.8194791666666666, "auc_reference_fluke": 0.8685340898733023, "auc_reference_fluke_within_group": 0.8119510320597276, "auc_reference_mean": 0.8363909929207304, "auc_reference_within_group_mean": 0.7804588117618447, "pairs": 3720, "positives": 348, "elapsed_s": 2947.1}
+{"event": "train", "epoch": 8, "step": 2425, "loss": 0.8208013999462128, "pair_acc": 0.838787921667099, "seconds": 26.7, "elapsed_s": 2974.7}
+{"event": "train", "epoch": 8, "step": 2450, "loss": 0.8517973339557647, "pair_acc": 0.7309091186523438, "seconds": 48.6, "elapsed_s": 2996.6}
+{"event": "train", "epoch": 8, "step": 2475, "loss": 0.9549003171920777, "pair_acc": 0.7630303311347961, "seconds": 77.3, "elapsed_s": 3025.3}
+{"event": "train", "epoch": 8, "step": 2500, "loss": 0.8341498780250549, "pair_acc": 0.8727272963523864, "seconds": 105.5, "elapsed_s": 3053.5}
+{"event": "train", "epoch": 8, "step": 2525, "loss": 0.7821144092082978, "pair_acc": 0.7896969890594483, "seconds": 133.7, "elapsed_s": 3081.8}
+{"event": "train", "epoch": 8, "step": 2550, "loss": 0.5631729805469513, "pair_acc": 0.8551515364646911, "seconds": 161.9, "elapsed_s": 3109.9}
+{"event": "train", "epoch": 8, "step": 2575, "loss": 0.8451966345310211, "pair_acc": 0.8212121462821961, "seconds": 190.0, "elapsed_s": 3138.0}
+{"event": "train", "epoch": 8, "step": 2600, "loss": 0.5810732877254486, "pair_acc": 0.8715151882171631, "seconds": 217.9, "elapsed_s": 3166.0}
+{"event": "train", "epoch": 8, "step": 2625, "loss": 0.6545613515377045, "pair_acc": 0.7806060910224915, "seconds": 247.3, "elapsed_s": 3195.4}
+{"event": "train", "epoch": 8, "step": 2650, "loss": 0.9217399251461029, "pair_acc": 0.82242427110672, "seconds": 282.0, "elapsed_s": 3230.1}
+{"event": "train", "epoch": 8, "step": 2675, "loss": 0.8402451276779175, "pair_acc": 0.8133333587646484, "seconds": 316.9, "elapsed_s": 3264.9}
+{"event": "train", "epoch": 8, "step": 2700, "loss": 1.0010269689559936, "pair_acc": 0.7484848642349243, "seconds": 351.3, "elapsed_s": 3299.3}
+{"event": "epoch", "epoch": 8, "step": 2700, "loss": 0.8042316345373789, "seconds": 351.3, "elapsed_s": 3299.3}
+{"event": "val", "epoch": 8, "step": 2700, "auc_teacher_body": 0.7802126200274349, "pairs_body": 1188, "auc_teacher_body_within_group": 0.705167774612219, "auc_teacher_fin": 0.8507116620752985, "pairs_fin": 1452, "auc_teacher_fin_within_group": 0.809295788069373, "auc_teacher_fluke": 0.8675309065934066, "pairs_fluke": 1152, "auc_teacher_fluke_within_group": 0.7804017857142858, "auc_teacher_mean": 0.8328183962320467, "auc_teacher_within_group_mean": 0.7649551161319593, "auc_reference_body": 0.7816615226337448, "auc_reference_body_within_group": 0.7051677746122189, "auc_reference_fin": 0.8532311753902664, "auc_reference_fin_within_group": 0.8122022107871163, "auc_reference_fluke": 0.8586538461538462, "auc_reference_fluke_within_group": 0.7788392857142856, "auc_reference_mean": 0.8311821813926192, "auc_reference_within_group_mean": 0.7654030903712069, "pairs": 3792, "positives": 352, "elapsed_s": 3377.1}
+{"event": "train", "epoch": 9, "step": 2725, "loss": 0.8549637842178345, "pair_acc": 0.7733333587646485, "seconds": 27.9, "elapsed_s": 3406.2}
+{"event": "train", "epoch": 9, "step": 2750, "loss": 0.9811599922180175, "pair_acc": 0.7654545617103576, "seconds": 63.1, "elapsed_s": 3441.4}
+{"event": "train", "epoch": 9, "step": 2775, "loss": 0.7193016111850739, "pair_acc": 0.8806060791015625, "seconds": 99.1, "elapsed_s": 3477.4}
+{"event": "train", "epoch": 9, "step": 2800, "loss": 0.7396431910991669, "pair_acc": 0.8557576084136963, "seconds": 133.2, "elapsed_s": 3511.5}
+{"event": "train", "epoch": 9, "step": 2825, "loss": 0.8506350135803222, "pair_acc": 0.7757576012611389, "seconds": 167.5, "elapsed_s": 3545.8}
+{"event": "train", "epoch": 9, "step": 2850, "loss": 0.7871387386322022, "pair_acc": 0.7563636541366577, "seconds": 201.6, "elapsed_s": 3579.9}
+{"event": "train", "epoch": 9, "step": 2875, "loss": 0.896142202615738, "pair_acc": 0.8078788137435913, "seconds": 236.1, "elapsed_s": 3614.4}
+{"event": "train", "epoch": 9, "step": 2900, "loss": 0.7579960477352142, "pair_acc": 0.7872727489471436, "seconds": 269.2, "elapsed_s": 3647.6}
+{"event": "train", "epoch": 9, "step": 2925, "loss": 0.7018645429611206, "pair_acc": 0.7527272868156433, "seconds": 302.6, "elapsed_s": 3680.9}
+{"event": "train", "epoch": 9, "step": 2950, "loss": 1.0080208349227906, "pair_acc": 0.7060606169700623, "seconds": 335.9, "elapsed_s": 3714.2}
+{"event": "train", "epoch": 9, "step": 2975, "loss": 0.623678811788559, "pair_acc": 0.8236363863945008, "seconds": 370.5, "elapsed_s": 3748.9}
+{"event": "train", "epoch": 9, "step": 3000, "loss": 0.8803622531890869, "pair_acc": 0.7557575964927673, "seconds": 401.7, "elapsed_s": 3780.0}
+{"event": "epoch", "epoch": 9, "step": 3000, "loss": 0.8167422520120938, "seconds": 401.7, "elapsed_s": 3780.0}
+{"event": "val", "epoch": 9, "step": 3000, "auc_teacher_body": 0.7942091368227732, "pairs_body": 1452, "auc_teacher_body_within_group": 0.767350074168256, "auc_teacher_fin": 0.8691080729166667, "pairs_fin": 1056, "auc_teacher_fin_within_group": 0.8249216445427728, "auc_teacher_fluke": 0.8550194660734148, "pairs_fluke": 1284, "auc_teacher_fluke_within_group": 0.8128240207373272, "auc_teacher_mean": 0.8394455586042849, "auc_teacher_within_group_mean": 0.8016985798161187, "auc_reference_body": 0.7935548668503214, "auc_reference_body_within_group": 0.7682109557109558, "auc_reference_fin": 0.8667968749999999, "auc_reference_fin_within_group": 0.8215339233038349, "auc_reference_fluke": 0.8458773637374861, "auc_reference_fluke_within_group": 0.8136880760368663, "auc_reference_mean": 0.8354097018626024, "auc_reference_within_group_mean": 0.8011443183505523, "pairs": 3792, "positives": 352, "elapsed_s": 3856.8}
+{"event": "done", "best_val_auc": 0.8466270767324536, "elapsed_s": 3858.0}

@@ -1,0 +1,1642 @@
+{
+ "instances": 9520,
+ "days": [
+  "2024-12-23",
+  "2025-01-02",
+  "2025-01-08",
+  "2025-01-16",
+  "2025-01-17",
+  "2025-01-20",
+  "2025-01-23",
+  "2025-02-03",
+  "2025-02-12",
+  "2025-02-24",
+  "2025-02-28",
+  "2025-03-03",
+  "2025-03-06",
+  "2025-03-13",
+  "2025-03-18",
+  "2025-03-20",
+  "2025-03-24",
+  "2025-03-26",
+  "2025-04-01",
+  "2025-04-09",
+  "2025-04-11",
+  "2025-01-15",
+  "2025-02-27",
+  "2025-03-14"
+ ],
+ "truth_counts": {
+  "train": {
+   "instances": 8558,
+   "eye_confident": 527,
+   "eye_confident_r0": 321,
+   "eye_marginal": 116,
+   "vc_confident": 7552
+  },
+  "val": {
+   "instances": 962,
+   "eye_confident": 79,
+   "eye_confident_r0": 46,
+   "eye_marginal": 15,
+   "vc_confident": 828
+  }
+ },
+ "variants": {
+  "full": {
+   "rule": {
+    "fluke_share_min": 0.0005,
+    "fluke_over_pectoral_min": 0.0,
+    "fin_share_min": 0.01,
+    "text": "fluke if fluke share >= a and >= b x pectoral share, else dorsal if fin share >= c, else other (shares of the instance's pixels incl. predicted background)",
+    "chosen_on": "train days, mean of by-eye and classifier three-way accuracy"
+   },
+   "train": {
+    "eye": {
+     "ours": {
+      "n": 527,
+      "acc": 0.8975332068311196,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        204,
+        2,
+        7
+       ],
+       [
+        0,
+        180,
+        5
+       ],
+       [
+        8,
+        32,
+        89
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 527,
+      "acc": 0.6451612903225806,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        123,
+        59,
+        31
+       ],
+       [
+        14,
+        168,
+        3
+       ],
+       [
+        33,
+        47,
+        49
+       ]
+      ]
+     }
+    },
+    "eye_random_r0": {
+     "ours": {
+      "n": 321,
+      "acc": 0.9532710280373832,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        135,
+        1,
+        2
+       ],
+       [
+        0,
+        153,
+        5
+       ],
+       [
+        2,
+        5,
+        18
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 321,
+      "acc": 0.8785046728971962,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        112,
+        18,
+        8
+       ],
+       [
+        0,
+        158,
+        0
+       ],
+       [
+        6,
+        7,
+        12
+       ]
+      ]
+     }
+    },
+    "classifier": {
+     "ours": {
+      "n": 7552,
+      "acc": 0.9458421610169492,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        2832,
+        16,
+        105
+       ],
+       [
+        1,
+        3872,
+        69
+       ],
+       [
+        15,
+        203,
+        439
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 7552,
+      "acc": 0.8502383474576272,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        2384,
+        380,
+        189
+       ],
+       [
+        89,
+        3832,
+        21
+       ],
+       [
+        95,
+        357,
+        205
+       ]
+      ]
+     }
+    },
+    "eye_marginal": {
+     "n": 116,
+     "marginal_fluke_called_fluke": "26/54",
+     "marginal_fin_called_fin_or_fluke": "49/65",
+     "baseline_marginal_fluke_called_fluke": "22/54"
+    }
+   },
+   "val": {
+    "eye": {
+     "ours": {
+      "n": 79,
+      "acc": 0.8987341772151899,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        17,
+        0,
+        2
+       ],
+       [
+        0,
+        27,
+        0
+       ],
+       [
+        0,
+        6,
+        27
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 79,
+      "acc": 0.7341772151898734,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        10,
+        6,
+        3
+       ],
+       [
+        0,
+        26,
+        1
+       ],
+       [
+        3,
+        8,
+        22
+       ]
+      ]
+     }
+    },
+    "eye_random_r0": {
+     "ours": {
+      "n": 46,
+      "acc": 0.9565217391304348,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        13,
+        0,
+        0
+       ],
+       [
+        0,
+        26,
+        0
+       ],
+       [
+        0,
+        2,
+        5
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 46,
+      "acc": 0.8478260869565217,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        9,
+        4,
+        0
+       ],
+       [
+        0,
+        26,
+        0
+       ],
+       [
+        0,
+        3,
+        4
+       ]
+      ]
+     }
+    },
+    "classifier": {
+     "ours": {
+      "n": 828,
+      "acc": 0.9444444444444444,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        195,
+        1,
+        8
+       ],
+       [
+        0,
+        461,
+        12
+       ],
+       [
+        0,
+        25,
+        126
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 828,
+      "acc": 0.856280193236715,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        177,
+        19,
+        8
+       ],
+       [
+        9,
+        460,
+        4
+       ],
+       [
+        23,
+        56,
+        72
+       ]
+      ]
+     }
+    },
+    "eye_marginal": {
+     "n": 15,
+     "marginal_fluke_called_fluke": "4/11",
+     "marginal_fin_called_fin_or_fluke": "4/4",
+     "baseline_marginal_fluke_called_fluke": "5/11"
+    }
+   },
+   "all": {
+    "eye": {
+     "ours": {
+      "n": 606,
+      "acc": 0.8976897689768977,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        221,
+        2,
+        9
+       ],
+       [
+        0,
+        207,
+        5
+       ],
+       [
+        8,
+        38,
+        116
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 606,
+      "acc": 0.6567656765676567,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        133,
+        65,
+        34
+       ],
+       [
+        14,
+        194,
+        4
+       ],
+       [
+        36,
+        55,
+        71
+       ]
+      ]
+     }
+    },
+    "eye_random_r0": {
+     "ours": {
+      "n": 367,
+      "acc": 0.9536784741144414,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        148,
+        1,
+        2
+       ],
+       [
+        0,
+        179,
+        5
+       ],
+       [
+        2,
+        7,
+        23
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 367,
+      "acc": 0.8746594005449592,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        121,
+        22,
+        8
+       ],
+       [
+        0,
+        184,
+        0
+       ],
+       [
+        6,
+        10,
+        16
+       ]
+      ]
+     }
+    },
+    "classifier": {
+     "ours": {
+      "n": 8380,
+      "acc": 0.9457040572792362,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        3027,
+        17,
+        113
+       ],
+       [
+        1,
+        4333,
+        81
+       ],
+       [
+        15,
+        228,
+        565
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 8380,
+      "acc": 0.850835322195704,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        2561,
+        399,
+        197
+       ],
+       [
+        98,
+        4292,
+        25
+       ],
+       [
+        118,
+        413,
+        277
+       ]
+      ]
+     }
+    },
+    "eye_marginal": {
+     "n": 131,
+     "marginal_fluke_called_fluke": "30/65",
+     "marginal_fin_called_fin_or_fluke": "53/69",
+     "baseline_marginal_fluke_called_fluke": "27/65"
+    }
+   },
+   "breakdown_val_classifier": {
+    "by_truth": {
+     "dorsal": {
+      "n": 473,
+      "ours_acc": 0.975,
+      "baseline_acc": 0.973
+     },
+     "fluke": {
+      "n": 204,
+      "ours_acc": 0.956,
+      "baseline_acc": 0.868
+     },
+     "other": {
+      "n": 151,
+      "ours_acc": 0.834,
+      "baseline_acc": 0.477
+     }
+    },
+    "by_size": {
+     "200-400 px": {
+      "n": 75,
+      "ours_acc": 0.893,
+      "baseline_acc": 0.707
+     },
+     "400-800 px": {
+      "n": 240,
+      "ours_acc": 0.946,
+      "baseline_acc": 0.85
+     },
+     "<200 px": {
+      "n": 19,
+      "ours_acc": 0.842,
+      "baseline_acc": 0.789
+     },
+     ">=800 px": {
+      "n": 494,
+      "ours_acc": 0.955,
+      "baseline_acc": 0.885
+     }
+    },
+    "by_instances_in_photo": {
+     "1": {
+      "n": 715,
+      "ours_acc": 0.952,
+      "baseline_acc": 0.874
+     },
+     ">=2": {
+      "n": 113,
+      "ours_acc": 0.894,
+      "baseline_acc": 0.743
+     }
+    },
+    "by_group_type": {
+     "CG": {
+      "n": 271,
+      "ours_acc": 0.948,
+      "baseline_acc": 0.893
+     },
+     "MC": {
+      "n": 186,
+      "ours_acc": 0.903,
+      "baseline_acc": 0.909
+     },
+     "MCE": {
+      "n": 274,
+      "ours_acc": 0.96,
+      "baseline_acc": 0.803
+     },
+     "O": {
+      "n": 79,
+      "ours_acc": 0.962,
+      "baseline_acc": 0.823
+     },
+     "Single": {
+      "n": 17,
+      "ours_acc": 1.0,
+      "baseline_acc": 0.706
+     },
+     "no catalogue id": {
+      "n": 1,
+      "ours_acc": 1.0,
+      "baseline_acc": 1.0
+     }
+    }
+   },
+   "breakdown_all_classifier": {
+    "by_truth": {
+     "dorsal": {
+      "n": 4415,
+      "ours_acc": 0.981,
+      "baseline_acc": 0.972
+     },
+     "fluke": {
+      "n": 3157,
+      "ours_acc": 0.959,
+      "baseline_acc": 0.811
+     },
+     "other": {
+      "n": 808,
+      "ours_acc": 0.699,
+      "baseline_acc": 0.343
+     }
+    },
+    "by_size": {
+     "200-400 px": {
+      "n": 840,
+      "ours_acc": 0.94,
+      "baseline_acc": 0.812
+     },
+     "400-800 px": {
+      "n": 2173,
+      "ours_acc": 0.957,
+      "baseline_acc": 0.861
+     },
+     "<200 px": {
+      "n": 274,
+      "ours_acc": 0.872,
+      "baseline_acc": 0.712
+     },
+     ">=800 px": {
+      "n": 5093,
+      "ours_acc": 0.946,
+      "baseline_acc": 0.861
+     }
+    },
+    "by_instances_in_photo": {
+     "1": {
+      "n": 7505,
+      "ours_acc": 0.948,
+      "baseline_acc": 0.856
+     },
+     ">=2": {
+      "n": 875,
+      "ours_acc": 0.926,
+      "baseline_acc": 0.802
+     }
+    },
+    "by_group_type": {
+     "& 4 MCE": {
+      "n": 220,
+      "ours_acc": 0.914,
+      "baseline_acc": 0.795
+     },
+     "?": {
+      "n": 59,
+      "ours_acc": 0.932,
+      "baseline_acc": 0.864
+     },
+     "CG": {
+      "n": 4312,
+      "ours_acc": 0.945,
+      "baseline_acc": 0.852
+     },
+     "MC": {
+      "n": 612,
+      "ours_acc": 0.931,
+      "baseline_acc": 0.858
+     },
+     "MCE": {
+      "n": 1849,
+      "ours_acc": 0.942,
+      "baseline_acc": 0.84
+     },
+     "MYE": {
+      "n": 32,
+      "ours_acc": 0.875,
+      "baseline_acc": 0.781
+     },
+     "O": {
+      "n": 436,
+      "ours_acc": 0.963,
+      "baseline_acc": 0.856
+     },
+     "Pair": {
+      "n": 567,
+      "ours_acc": 0.963,
+      "baseline_acc": 0.882
+     },
+     "Seperated Calf": {
+      "n": 8,
+      "ours_acc": 1.0,
+      "baseline_acc": 1.0
+     },
+     "Singer": {
+      "n": 165,
+      "ours_acc": 0.976,
+      "baseline_acc": 0.867
+     },
+     "Single": {
+      "n": 55,
+      "ours_acc": 1.0,
+      "baseline_acc": 0.818
+     },
+     "Trio": {
+      "n": 63,
+      "ours_acc": 1.0,
+      "baseline_acc": 0.921
+     },
+     "no catalogue id": {
+      "n": 2,
+      "ours_acc": 1.0,
+      "baseline_acc": 1.0
+     }
+    }
+   },
+   "breakdown_all_eye": {
+    "by_truth": {
+     "dorsal": {
+      "n": 212,
+      "ours_acc": 0.976,
+      "baseline_acc": 0.915
+     },
+     "fluke": {
+      "n": 232,
+      "ours_acc": 0.953,
+      "baseline_acc": 0.573
+     },
+     "other": {
+      "n": 162,
+      "ours_acc": 0.716,
+      "baseline_acc": 0.438
+     }
+    },
+    "by_size": {
+     "200-400 px": {
+      "n": 86,
+      "ours_acc": 0.884,
+      "baseline_acc": 0.605
+     },
+     "400-800 px": {
+      "n": 164,
+      "ours_acc": 0.902,
+      "baseline_acc": 0.713
+     },
+     "<200 px": {
+      "n": 23,
+      "ours_acc": 0.87,
+      "baseline_acc": 0.435
+     },
+     ">=800 px": {
+      "n": 333,
+      "ours_acc": 0.901,
+      "baseline_acc": 0.658
+     }
+    },
+    "by_instances_in_photo": {
+     "1": {
+      "n": 510,
+      "ours_acc": 0.904,
+      "baseline_acc": 0.659
+     },
+     ">=2": {
+      "n": 96,
+      "ours_acc": 0.865,
+      "baseline_acc": 0.646
+     }
+    },
+    "by_group_type": {
+     "& 4 MCE": {
+      "n": 16,
+      "ours_acc": 0.875,
+      "baseline_acc": 0.5
+     },
+     "?": {
+      "n": 15,
+      "ours_acc": 1.0,
+      "baseline_acc": 0.867
+     },
+     "CG": {
+      "n": 278,
+      "ours_acc": 0.874,
+      "baseline_acc": 0.64
+     },
+     "MC": {
+      "n": 53,
+      "ours_acc": 0.962,
+      "baseline_acc": 0.774
+     },
+     "MCE": {
+      "n": 140,
+      "ours_acc": 0.893,
+      "baseline_acc": 0.664
+     },
+     "MYE": {
+      "n": 3,
+      "ours_acc": 1.0,
+      "baseline_acc": 1.0
+     },
+     "O": {
+      "n": 35,
+      "ours_acc": 0.971,
+      "baseline_acc": 0.571
+     },
+     "Pair": {
+      "n": 45,
+      "ours_acc": 0.867,
+      "baseline_acc": 0.644
+     },
+     "Singer": {
+      "n": 15,
+      "ours_acc": 0.933,
+      "baseline_acc": 0.6
+     },
+     "Single": {
+      "n": 4,
+      "ours_acc": 1.0,
+      "baseline_acc": 0.5
+     },
+     "Trio": {
+      "n": 2,
+      "ours_acc": 1.0,
+      "baseline_acc": 1.0
+     }
+    }
+   },
+   "clicks": {
+    "fin_tip_in_largest_fin_region": {
+     "n": 233,
+     "with_region": 222,
+     "within": 0.955,
+     "within_of_all": 0.91
+    },
+    "fin_tip_in_any_fin_pixel": {
+     "n": 233,
+     "with_region": 229,
+     "within": 0.991,
+     "within_of_all": 0.974
+    },
+    "fin_tip_in_any_fin_pixel_0px": {
+     "n": 233,
+     "with_region": 229,
+     "within": 0.978,
+     "within_of_all": 0.961
+    },
+    "fin_region_extent_over_base": {
+     "n": 197,
+     "median": 0.745,
+     "q25": 0.593,
+     "q75": 1.001
+    },
+    "fin_centroid_off_over_base": {
+     "n": 197,
+     "median": 0.149,
+     "over_1": 0.015,
+     "over_0.5": 0.025
+    },
+    "fin_tip_within_quarter_base": 0.985,
+    "fluke_notch_in_fluke": {
+     "n": 70,
+     "with_region": 58,
+     "within": 0.776,
+     "within_of_all": 0.643
+    },
+    "fluke_tip_left_in_fluke": {
+     "n": 95,
+     "with_region": 84,
+     "within": 0.631,
+     "within_of_all": 0.558
+    },
+    "fluke_tip_right_in_fluke": {
+     "n": 93,
+     "with_region": 81,
+     "within": 0.79,
+     "within_of_all": 0.688
+    },
+    "fluke_all_three_points_in": 0.398,
+    "fluke_photos_with_both_tips": 83
+   }
+  },
+  "hr": {
+   "rule": {
+    "fluke_share_min": 0.0005,
+    "fluke_over_pectoral_min": 0.0,
+    "fin_share_min": 0.01,
+    "text": "fluke if fluke share >= a and >= b x pectoral share, else dorsal if fin share >= c, else other (shares of the instance's pixels incl. predicted background)",
+    "chosen_on": "train days, mean of by-eye and classifier three-way accuracy"
+   },
+   "train": {
+    "eye": {
+     "ours": {
+      "n": 527,
+      "acc": 0.9070208728652751,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        208,
+        2,
+        3
+       ],
+       [
+        0,
+        180,
+        5
+       ],
+       [
+        6,
+        33,
+        90
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 527,
+      "acc": 0.6451612903225806,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        123,
+        59,
+        31
+       ],
+       [
+        14,
+        168,
+        3
+       ],
+       [
+        33,
+        47,
+        49
+       ]
+      ]
+     }
+    },
+    "eye_random_r0": {
+     "ours": {
+      "n": 321,
+      "acc": 0.9626168224299065,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        136,
+        0,
+        2
+       ],
+       [
+        0,
+        153,
+        5
+       ],
+       [
+        1,
+        4,
+        20
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 321,
+      "acc": 0.8785046728971962,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        112,
+        18,
+        8
+       ],
+       [
+        0,
+        158,
+        0
+       ],
+       [
+        6,
+        7,
+        12
+       ]
+      ]
+     }
+    },
+    "classifier": {
+     "ours": {
+      "n": 7552,
+      "acc": 0.9573622881355932,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        2900,
+        8,
+        45
+       ],
+       [
+        2,
+        3897,
+        43
+       ],
+       [
+        11,
+        213,
+        433
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 7552,
+      "acc": 0.8502383474576272,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        2384,
+        380,
+        189
+       ],
+       [
+        89,
+        3832,
+        21
+       ],
+       [
+        95,
+        357,
+        205
+       ]
+      ]
+     }
+    },
+    "eye_marginal": {
+     "n": 116,
+     "marginal_fluke_called_fluke": "26/54",
+     "marginal_fin_called_fin_or_fluke": "56/65",
+     "baseline_marginal_fluke_called_fluke": "22/54"
+    }
+   },
+   "val": {
+    "eye": {
+     "ours": {
+      "n": 79,
+      "acc": 0.8734177215189873,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        18,
+        0,
+        1
+       ],
+       [
+        0,
+        26,
+        1
+       ],
+       [
+        1,
+        7,
+        25
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 79,
+      "acc": 0.7341772151898734,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        10,
+        6,
+        3
+       ],
+       [
+        0,
+        26,
+        1
+       ],
+       [
+        3,
+        8,
+        22
+       ]
+      ]
+     }
+    },
+    "eye_random_r0": {
+     "ours": {
+      "n": 46,
+      "acc": 0.9347826086956522,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        13,
+        0,
+        0
+       ],
+       [
+        0,
+        25,
+        1
+       ],
+       [
+        0,
+        2,
+        5
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 46,
+      "acc": 0.8478260869565217,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        9,
+        4,
+        0
+       ],
+       [
+        0,
+        26,
+        0
+       ],
+       [
+        0,
+        3,
+        4
+       ]
+      ]
+     }
+    },
+    "classifier": {
+     "ours": {
+      "n": 828,
+      "acc": 0.9504830917874396,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        198,
+        1,
+        5
+       ],
+       [
+        3,
+        462,
+        8
+       ],
+       [
+        2,
+        22,
+        127
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 828,
+      "acc": 0.856280193236715,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        177,
+        19,
+        8
+       ],
+       [
+        9,
+        460,
+        4
+       ],
+       [
+        23,
+        56,
+        72
+       ]
+      ]
+     }
+    },
+    "eye_marginal": {
+     "n": 15,
+     "marginal_fluke_called_fluke": "4/11",
+     "marginal_fin_called_fin_or_fluke": "4/4",
+     "baseline_marginal_fluke_called_fluke": "5/11"
+    }
+   },
+   "all": {
+    "eye": {
+     "ours": {
+      "n": 606,
+      "acc": 0.9026402640264026,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        226,
+        2,
+        4
+       ],
+       [
+        0,
+        206,
+        6
+       ],
+       [
+        7,
+        40,
+        115
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 606,
+      "acc": 0.6567656765676567,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        133,
+        65,
+        34
+       ],
+       [
+        14,
+        194,
+        4
+       ],
+       [
+        36,
+        55,
+        71
+       ]
+      ]
+     }
+    },
+    "eye_random_r0": {
+     "ours": {
+      "n": 367,
+      "acc": 0.9591280653950953,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        149,
+        0,
+        2
+       ],
+       [
+        0,
+        178,
+        6
+       ],
+       [
+        1,
+        6,
+        25
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 367,
+      "acc": 0.8746594005449592,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        121,
+        22,
+        8
+       ],
+       [
+        0,
+        184,
+        0
+       ],
+       [
+        6,
+        10,
+        16
+       ]
+      ]
+     }
+    },
+    "classifier": {
+     "ours": {
+      "n": 8380,
+      "acc": 0.9566825775656325,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        3098,
+        9,
+        50
+       ],
+       [
+        5,
+        4359,
+        51
+       ],
+       [
+        13,
+        235,
+        560
+       ]
+      ]
+     },
+     "baseline": {
+      "n": 8380,
+      "acc": 0.850835322195704,
+      "matrix_rows_true_fluke_dorsal_other": [
+       [
+        2561,
+        399,
+        197
+       ],
+       [
+        98,
+        4292,
+        25
+       ],
+       [
+        118,
+        413,
+        277
+       ]
+      ]
+     }
+    },
+    "eye_marginal": {
+     "n": 131,
+     "marginal_fluke_called_fluke": "30/65",
+     "marginal_fin_called_fin_or_fluke": "60/69",
+     "baseline_marginal_fluke_called_fluke": "27/65"
+    }
+   },
+   "breakdown_val_classifier": {
+    "by_truth": {
+     "dorsal": {
+      "n": 473,
+      "ours_acc": 0.977,
+      "baseline_acc": 0.973
+     },
+     "fluke": {
+      "n": 204,
+      "ours_acc": 0.971,
+      "baseline_acc": 0.868
+     },
+     "other": {
+      "n": 151,
+      "ours_acc": 0.841,
+      "baseline_acc": 0.477
+     }
+    },
+    "by_size": {
+     "200-400 px": {
+      "n": 75,
+      "ours_acc": 0.947,
+      "baseline_acc": 0.707
+     },
+     "400-800 px": {
+      "n": 240,
+      "ours_acc": 0.942,
+      "baseline_acc": 0.85
+     },
+     "<200 px": {
+      "n": 19,
+      "ours_acc": 0.947,
+      "baseline_acc": 0.789
+     },
+     ">=800 px": {
+      "n": 494,
+      "ours_acc": 0.955,
+      "baseline_acc": 0.885
+     }
+    },
+    "by_instances_in_photo": {
+     "1": {
+      "n": 715,
+      "ours_acc": 0.955,
+      "baseline_acc": 0.874
+     },
+     ">=2": {
+      "n": 113,
+      "ours_acc": 0.92,
+      "baseline_acc": 0.743
+     }
+    },
+    "by_group_type": {
+     "CG": {
+      "n": 271,
+      "ours_acc": 0.952,
+      "baseline_acc": 0.893
+     },
+     "MC": {
+      "n": 186,
+      "ours_acc": 0.919,
+      "baseline_acc": 0.909
+     },
+     "MCE": {
+      "n": 274,
+      "ours_acc": 0.956,
+      "baseline_acc": 0.803
+     },
+     "O": {
+      "n": 79,
+      "ours_acc": 0.987,
+      "baseline_acc": 0.823
+     },
+     "Single": {
+      "n": 17,
+      "ours_acc": 1.0,
+      "baseline_acc": 0.706
+     },
+     "no catalogue id": {
+      "n": 1,
+      "ours_acc": 1.0,
+      "baseline_acc": 1.0
+     }
+    }
+   },
+   "breakdown_all_classifier": {
+    "by_truth": {
+     "dorsal": {
+      "n": 4415,
+      "ours_acc": 0.987,
+      "baseline_acc": 0.972
+     },
+     "fluke": {
+      "n": 3157,
+      "ours_acc": 0.981,
+      "baseline_acc": 0.811
+     },
+     "other": {
+      "n": 808,
+      "ours_acc": 0.693,
+      "baseline_acc": 0.343
+     }
+    },
+    "by_size": {
+     "200-400 px": {
+      "n": 840,
+      "ours_acc": 0.971,
+      "baseline_acc": 0.812
+     },
+     "400-800 px": {
+      "n": 2173,
+      "ours_acc": 0.963,
+      "baseline_acc": 0.861
+     },
+     "<200 px": {
+      "n": 274,
+      "ours_acc": 0.909,
+      "baseline_acc": 0.712
+     },
+     ">=800 px": {
+      "n": 5093,
+      "ours_acc": 0.954,
+      "baseline_acc": 0.861
+     }
+    },
+    "by_instances_in_photo": {
+     "1": {
+      "n": 7505,
+      "ours_acc": 0.958,
+      "baseline_acc": 0.856
+     },
+     ">=2": {
+      "n": 875,
+      "ours_acc": 0.943,
+      "baseline_acc": 0.802
+     }
+    },
+    "by_group_type": {
+     "& 4 MCE": {
+      "n": 220,
+      "ours_acc": 0.918,
+      "baseline_acc": 0.795
+     },
+     "?": {
+      "n": 59,
+      "ours_acc": 0.966,
+      "baseline_acc": 0.864
+     },
+     "CG": {
+      "n": 4312,
+      "ours_acc": 0.955,
+      "baseline_acc": 0.852
+     },
+     "MC": {
+      "n": 612,
+      "ours_acc": 0.928,
+      "baseline_acc": 0.858
+     },
+     "MCE": {
+      "n": 1849,
+      "ours_acc": 0.957,
+      "baseline_acc": 0.84
+     },
+     "MYE": {
+      "n": 32,
+      "ours_acc": 0.906,
+      "baseline_acc": 0.781
+     },
+     "O": {
+      "n": 436,
+      "ours_acc": 0.989,
+      "baseline_acc": 0.856
+     },
+     "Pair": {
+      "n": 567,
+      "ours_acc": 0.97,
+      "baseline_acc": 0.882
+     },
+     "Seperated Calf": {
+      "n": 8,
+      "ours_acc": 1.0,
+      "baseline_acc": 1.0
+     },
+     "Singer": {
+      "n": 165,
+      "ours_acc": 0.988,
+      "baseline_acc": 0.867
+     },
+     "Single": {
+      "n": 55,
+      "ours_acc": 1.0,
+      "baseline_acc": 0.818
+     },
+     "Trio": {
+      "n": 63,
+      "ours_acc": 1.0,
+      "baseline_acc": 0.921
+     },
+     "no catalogue id": {
+      "n": 2,
+      "ours_acc": 1.0,
+      "baseline_acc": 1.0
+     }
+    }
+   },
+   "breakdown_all_eye": {
+    "by_truth": {
+     "dorsal": {
+      "n": 212,
+      "ours_acc": 0.972,
+      "baseline_acc": 0.915
+     },
+     "fluke": {
+      "n": 232,
+      "ours_acc": 0.974,
+      "baseline_acc": 0.573
+     },
+     "other": {
+      "n": 162,
+      "ours_acc": 0.71,
+      "baseline_acc": 0.438
+     }
+    },
+    "by_size": {
+     "200-400 px": {
+      "n": 86,
+      "ours_acc": 0.93,
+      "baseline_acc": 0.605
+     },
+     "400-800 px": {
+      "n": 164,
+      "ours_acc": 0.933,
+      "baseline_acc": 0.713
+     },
+     "<200 px": {
+      "n": 23,
+      "ours_acc": 0.783,
+      "baseline_acc": 0.435
+     },
+     ">=800 px": {
+      "n": 333,
+      "ours_acc": 0.889,
+      "baseline_acc": 0.658
+     }
+    },
+    "by_instances_in_photo": {
+     "1": {
+      "n": 510,
+      "ours_acc": 0.904,
+      "baseline_acc": 0.659
+     },
+     ">=2": {
+      "n": 96,
+      "ours_acc": 0.896,
+      "baseline_acc": 0.646
+     }
+    },
+    "by_group_type": {
+     "& 4 MCE": {
+      "n": 16,
+      "ours_acc": 0.75,
+      "baseline_acc": 0.5
+     },
+     "?": {
+      "n": 15,
+      "ours_acc": 0.933,
+      "baseline_acc": 0.867
+     },
+     "CG": {
+      "n": 278,
+      "ours_acc": 0.888,
+      "baseline_acc": 0.64
+     },
+     "MC": {
+      "n": 53,
+      "ours_acc": 0.887,
+      "baseline_acc": 0.774
+     },
+     "MCE": {
+      "n": 140,
+      "ours_acc": 0.907,
+      "baseline_acc": 0.664
+     },
+     "MYE": {
+      "n": 3,
+      "ours_acc": 1.0,
+      "baseline_acc": 1.0
+     },
+     "O": {
+      "n": 35,
+      "ours_acc": 1.0,
+      "baseline_acc": 0.571
+     },
+     "Pair": {
+      "n": 45,
+      "ours_acc": 0.933,
+      "baseline_acc": 0.644
+     },
+     "Singer": {
+      "n": 15,
+      "ours_acc": 0.933,
+      "baseline_acc": 0.6
+     },
+     "Single": {
+      "n": 4,
+      "ours_acc": 1.0,
+      "baseline_acc": 0.5
+     },
+     "Trio": {
+      "n": 2,
+      "ours_acc": 1.0,
+      "baseline_acc": 1.0
+     }
+    }
+   },
+   "clicks": {
+    "fin_tip_in_largest_fin_region": {
+     "n": 233,
+     "with_region": 221,
+     "within": 0.973,
+     "within_of_all": 0.923
+    },
+    "fin_tip_in_any_fin_pixel": {
+     "n": 233,
+     "with_region": 226,
+     "within": 0.996,
+     "within_of_all": 0.966
+    },
+    "fin_tip_in_any_fin_pixel_0px": {
+     "n": 233,
+     "with_region": 226,
+     "within": 0.978,
+     "within_of_all": 0.948
+    },
+    "fin_region_extent_over_base": {
+     "n": 197,
+     "median": 0.7,
+     "q25": 0.556,
+     "q75": 0.858
+    },
+    "fin_centroid_off_over_base": {
+     "n": 197,
+     "median": 0.155,
+     "over_1": 0.015,
+     "over_0.5": 0.015
+    },
+    "fin_tip_within_quarter_base": 0.985,
+    "fluke_notch_in_fluke": {
+     "n": 70,
+     "with_region": 62,
+     "within": 0.823,
+     "within_of_all": 0.729
+    },
+    "fluke_tip_left_in_fluke": {
+     "n": 95,
+     "with_region": 89,
+     "within": 0.64,
+     "within_of_all": 0.6
+    },
+    "fluke_tip_right_in_fluke": {
+     "n": 93,
+     "with_region": 86,
+     "within": 0.779,
+     "within_of_all": 0.72
+    },
+    "fluke_all_three_points_in": 0.434,
+    "fluke_photos_with_both_tips": 83
+   }
+  }
+ },
+ "better_variant_on_val": "full"
+}

@@ -1,0 +1,134 @@
+{
+ "blobs": 781,
+ "pixels_by_thickness": [
+  31082,
+  929294,
+  4044374,
+  6507501,
+  17866183
+ ],
+ "pixels_by_height": [
+  5994990,
+  5835529,
+  5814888,
+  5762839,
+  5970188
+ ],
+ "s5": {
+  "dropped_share": 0.0446,
+  "dropped_rate_by_thickness": {
+   "<6 px": 0.5615,
+   "6-10": 0.2386,
+   "10-20": 0.1238,
+   "20-40": 0.052,
+   ">=40": 0.013
+  },
+  "dropped_rate_by_height": {
+   "top 20 %": 0.0294,
+   "20-40": 0.0182,
+   "40-60": 0.0174,
+   "60-80": 0.0298,
+   "bottom 20 %": 0.1265
+  },
+  "dropped_pixels_by_thickness_share": {
+   "<6 px": 0.0133,
+   "6-10": 0.1692,
+   "10-20": 0.382,
+   "20-40": 0.258,
+   ">=40": 0.1775
+  },
+  "dropped_pixels_by_height_share": {
+   "top 20 %": 0.1344,
+   "20-40": 0.0809,
+   "40-60": 0.0772,
+   "60-80": 0.1312,
+   "bottom 20 %": 0.5763
+  }
+ },
+ "s6": {
+  "dropped_share": 0.031,
+  "dropped_rate_by_thickness": {
+   "<6 px": 0.4689,
+   "6-10": 0.1756,
+   "10-20": 0.0892,
+   "20-40": 0.0356,
+   ">=40": 0.0079
+  },
+  "dropped_rate_by_height": {
+   "top 20 %": 0.0233,
+   "20-40": 0.0158,
+   "40-60": 0.0137,
+   "60-80": 0.0202,
+   "bottom 20 %": 0.0808
+  },
+  "dropped_pixels_by_thickness_share": {
+   "<6 px": 0.016,
+   "6-10": 0.1792,
+   "10-20": 0.396,
+   "20-40": 0.2547,
+   ">=40": 0.154
+  },
+  "dropped_pixels_by_height_share": {
+   "top 20 %": 0.1535,
+   "20-40": 0.1012,
+   "40-60": 0.0878,
+   "60-80": 0.128,
+   "bottom 20 %": 0.5295
+  }
+ },
+ "s1": {
+  "dropped_share": 0.0207,
+  "dropped_rate_by_thickness": {
+   "<6 px": 0.3825,
+   "6-10": 0.1147,
+   "10-20": 0.0577,
+   "20-40": 0.0246,
+   ">=40": 0.0053
+  },
+  "dropped_rate_by_height": {
+   "top 20 %": 0.015,
+   "20-40": 0.0117,
+   "40-60": 0.0103,
+   "60-80": 0.014,
+   "bottom 20 %": 0.0516
+  },
+  "dropped_pixels_by_thickness_share": {
+   "<6 px": 0.0196,
+   "6-10": 0.1756,
+   "10-20": 0.3845,
+   "20-40": 0.2636,
+   ">=40": 0.1566
+  },
+  "dropped_pixels_by_height_share": {
+   "top 20 %": 0.1477,
+   "20-40": 0.1128,
+   "40-60": 0.0986,
+   "60-80": 0.1331,
+   "bottom 20 %": 0.5077
+  }
+ },
+ "s5_label_on_these_pixels": {
+  "positive_share_by_thickness": {
+   "<6 px": 0.3513,
+   "6-10": 0.1538,
+   "10-20": 1.0,
+   "20-40": 1.0,
+   ">=40": 1.0
+  },
+  "ignore_share_by_thickness": {
+   "<6 px": 0.6487,
+   "6-10": 0.8462,
+   "10-20": 0.0,
+   "20-40": 0.0,
+   ">=40": 0.0
+  }
+ },
+ "ring_negatives_within_8px_per_positive": {
+  "thin blobs (median thickness < 10 px)": 2.688,
+  "thick blobs (>= 20 px)": 0.121,
+  "thin, below the lower edge only": 0.96,
+  "thick, below the lower edge only": 0.05,
+  "n_thin": 18,
+  "n_thick": 568
+ }
+}

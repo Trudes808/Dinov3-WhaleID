@@ -1,0 +1,62 @@
+{
+ "n_real_per_batch": 2,
+ "lambda_real": 1.0,
+ "w_need": 0.5,
+ "p_hr": 0.6,
+ "pool_weights": {
+  "fluke": 0.25,
+  "fin": 0.25,
+  "other": 0.25,
+  "nw": 0.15,
+  "clicks": 0.1
+ },
+ "pool_sizes": {
+  "fluke": 2628,
+  "fin": 3556,
+  "other": 975,
+  "nw": 509,
+  "clicks": 114
+ },
+ "index": "/var/tmp/sat3737-parts-cache/parts_weak/index.json",
+ "index_summary": {
+  "photos": 7207,
+  "errors": 0,
+  "instances": 7724,
+  "forbid_fluke": 4513,
+  "forbid_fin": 2589,
+  "present_fluke": 2628,
+  "present_fin": 3562,
+  "from_eye": 559,
+  "from_vc": 6600,
+  "skipped": 169,
+  "clicked_instances": 161,
+  "click_shapes": 133,
+  "nw_blobs_background": 509,
+  "nw_blobs_ignore": 260,
+  "mean_bg_frac": 0.857,
+  "seconds": 245
+ },
+ "train_args": [
+  "--name",
+  "parts_seg_r05_w1",
+  "--out-root",
+  "experiments",
+  "--init-weights",
+  "/var/tmp/sat3737-parts-cache/phase1_last.pt",
+  "--epochs",
+  "10",
+  "--eval-every",
+  "5",
+  "--warmup-steps",
+  "100",
+  "--batch-size",
+  "8",
+  "--crop",
+  "512",
+  "--seed",
+  "0",
+  "--workers",
+  "5"
+ ],
+ "code": "model_fine_tuning/parts_weak (build.py, data.py, losses.py, train.py)"
+}

@@ -1,0 +1,2515 @@
+{
+ "renders": "/home/sat3737/NOAA_whales/Whale-Image-Data-Factory/data/renders/run05/dataset",
+ "render_cache": "render_run05_dataset_e5b544cc",
+ "n_real": 1500,
+ "n_render": 1511,
+ "n_real_days": 24,
+ "n_render_groups": 238,
+ "created": "2026-11-17 00:48",
+ "headline": {
+  "image_auc": 1.0,
+  "patch_auc": 1.0,
+  "coverage_ratio": 1.645,
+  "image_dprime": 9.503,
+  "patch_dprime": 7.377,
+  "fd_crop_ratio": 12.34
+ },
+ "learned": {
+  "image_crop": {
+   "auc": 1.0,
+   "acc": 0.999,
+   "dprime": 9.503
+  },
+  "image_frame": {
+   "auc": 1.0,
+   "acc": 1.0,
+   "dprime": 9.722
+  },
+  "image_whale_only": {
+   "auc": 1.0,
+   "acc": 0.9987,
+   "dprime": 7.74
+  },
+  "patch": {
+   "all": {
+    "auc": 1.0,
+    "dprime": 7.377,
+    "acc": 0.9991,
+    "n_real": 148872,
+    "n_render": 169652
+   },
+   "whale": {
+    "auc": 0.9999,
+    "dprime": 6.834,
+    "acc": 0.9986,
+    "n_real": 45905,
+    "n_render": 46017,
+    "real_mean_p_render": 0.005,
+    "render_mean_p_render": 0.995
+   },
+   "band": {
+    "auc": 1.0,
+    "dprime": 8.069,
+    "acc": 0.9992,
+    "n_real": 47929,
+    "n_render": 48352,
+    "real_mean_p_render": 0.003,
+    "render_mean_p_render": 0.998
+   },
+   "far": {
+    "auc": 1.0,
+    "dprime": 7.72,
+    "acc": 0.9992,
+    "n_real": 46998,
+    "n_render": 47789,
+    "real_mean_p_render": 0.004,
+    "render_mean_p_render": 0.998
+   },
+   "above": {
+    "auc": 1.0,
+    "dprime": 7.366,
+    "acc": 1.0,
+    "n_real": 8040,
+    "n_render": 27494,
+    "real_mean_p_render": 0.006,
+    "render_mean_p_render": 0.998
+   }
+  },
+  "frechet": {
+   "crop": {
+    "fd_real_real": 1.1,
+    "fd_real_render": 13.574,
+    "fd_ratio": 12.34,
+    "n": 300,
+    "comparable": true
+   },
+   "whale": {
+    "fd_real_real": 1.953,
+    "fd_real_render": 15.776,
+    "fd_ratio": 8.08,
+    "n": 300,
+    "comparable": true
+   },
+   "frame": {
+    "fd_real_real": 1.149,
+    "fd_real_render": 13.433,
+    "fd_ratio": 11.69,
+    "n": 300,
+    "comparable": true
+   },
+   "patch_whale": {
+    "fd_real_real": 0.962,
+    "fd_real_render": 14.6,
+    "fd_ratio": 15.18,
+    "n": 3000,
+    "comparable": true
+   },
+   "patch_band": {
+    "fd_real_real": 0.845,
+    "fd_real_render": 15.8,
+    "fd_ratio": 18.69,
+    "n": 3000,
+    "comparable": true
+   },
+   "patch_far": {
+    "fd_real_real": 1.137,
+    "fd_real_render": 14.551,
+    "fd_ratio": 12.8,
+    "n": 3000,
+    "comparable": true
+   },
+   "patch_above": {
+    "fd_real_real": 4.393,
+    "fd_real_render": 14.431,
+    "fd_ratio": 3.28,
+    "n": 3000,
+    "comparable": true
+   }
+  },
+  "coverage": {
+   "real_to_render_median": 0.6,
+   "real_to_real_other_day_median": 0.3647,
+   "coverage_ratio": 1.645,
+   "real_uncovered_share": 0.979,
+   "render_to_real_median": 0.555,
+   "render_to_render_other_batch_median": 0.2854,
+   "render_isolation_ratio": 1.945,
+   "render_far_share": 0.668,
+   "note": "cosine distance (mean of 3 nearest) between whale-region mean DINOv3 tokens, centred on the real mean; coverage_ratio = median real->render / median real->real (other days); real_uncovered_share = share of real crops whose nearest renders are farther than their nearest real crops of other days; render_far_share = share of renders farther from any real crop than 95 % of real crops are from other days"
+  }
+ },
+ "scenarios": {
+  "A fluke, no fluke cut-out": {
+   "n": 60,
+   "to_render_median": 0.6948,
+   "to_real_median": 0.3682,
+   "ratio": 1.887,
+   "uncovered_share": 1.0
+  },
+  "B fluke in two pieces": {
+   "n": 60,
+   "to_render_median": 0.5425,
+   "to_real_median": 0.3662,
+   "ratio": 1.481,
+   "uncovered_share": 1.0
+  },
+  "C neither fluke nor fin": {
+   "n": 60,
+   "to_render_median": 0.6002,
+   "to_real_median": 0.4311,
+   "ratio": 1.392,
+   "uncovered_share": 0.933
+  },
+  "D fin view, head and flank at odds": {
+   "n": 60,
+   "to_render_median": 0.6328,
+   "to_real_median": 0.3876,
+   "ratio": 1.633,
+   "uncovered_share": 0.983
+  },
+  "E fills the frame": {
+   "n": 60,
+   "to_render_median": 0.6467,
+   "to_real_median": 0.382,
+   "ratio": 1.693,
+   "uncovered_share": 1.0
+  },
+  "F small and far": {
+   "n": 60,
+   "to_render_median": 0.5444,
+   "to_real_median": 0.4213,
+   "ratio": 1.292,
+   "uncovered_share": 0.833
+  },
+  "G no fin showing, fin cut-out made": {
+   "n": 60,
+   "to_render_median": 0.6955,
+   "to_real_median": 0.4158,
+   "ratio": 1.673,
+   "uncovered_share": 1.0
+  },
+  "H another whale marked": {
+   "n": 15,
+   "to_render_median": 0.674,
+   "to_real_median": 0.4217,
+   "ratio": 1.598,
+   "uncovered_share": 1.0
+  },
+  "easy fin view": {
+   "n": 60,
+   "to_render_median": 0.619,
+   "to_real_median": 0.3769,
+   "ratio": 1.642,
+   "uncovered_share": 1.0
+  },
+  "easy fluke view": {
+   "n": 60,
+   "to_render_median": 0.5326,
+   "to_real_median": 0.2806,
+   "ratio": 1.898,
+   "uncovered_share": 1.0
+  }
+ },
+ "render_by_category": {
+  "awash": {
+   "n": 58,
+   "d_median": 0.5877,
+   "p_render_median": 1.0
+  },
+  "back_arch": {
+   "n": 267,
+   "d_median": 0.5999,
+   "p_render_median": 1.0
+  },
+  "blow": {
+   "n": 86,
+   "d_median": 0.5646,
+   "p_render_median": 1.0
+  },
+  "blow_sliver": {
+   "n": 59,
+   "d_median": 0.5656,
+   "p_render_median": 1.0
+  },
+  "breach": {
+   "n": 31,
+   "d_median": 0.4658,
+   "p_render_median": 1.0
+  },
+  "fluke_down": {
+   "n": 123,
+   "d_median": 0.5424,
+   "p_render_median": 1.0
+  },
+  "fluke_edge": {
+   "n": 138,
+   "d_median": 0.5116,
+   "p_render_median": 1.0
+  },
+  "fluke_up": {
+   "n": 172,
+   "d_median": 0.4824,
+   "p_render_median": 1.0
+  },
+  "logging": {
+   "n": 88,
+   "d_median": 0.5437,
+   "p_render_median": 1.0
+  },
+  "pec_up": {
+   "n": 25,
+   "d_median": 0.5031,
+   "p_render_median": 1.0
+  },
+  "roll_belly": {
+   "n": 20,
+   "d_median": 0.4996,
+   "p_render_median": 1.0
+  },
+  "spyhop": {
+   "n": 20,
+   "d_median": 0.4696,
+   "p_render_median": 1.0
+  },
+  "surface": {
+   "n": 424,
+   "d_median": 0.5877,
+   "p_render_median": 1.0
+  }
+ },
+ "stats": [
+  {
+   "stat": "frame.aspect",
+   "what": "frame aspect ratio W/H",
+   "unit": "W/H",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 1.0,
+   "p": 0.0,
+   "smd": 13.103,
+   "real_q": [
+    1.49795,
+    1.49795,
+    1.49795
+   ],
+   "render_q": [
+    1.77778,
+    1.77778,
+    1.77778
+   ],
+   "real_mean": 1.49697,
+   "render_mean": 1.77778,
+   "rank": 1
+  },
+  {
+   "stat": "frame.width_px",
+   "what": "native frame width",
+   "unit": "px",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 1.0,
+   "p": 0.0,
+   "smd": -58.241,
+   "real_q": [
+    2560.0,
+    2560.0,
+    2560.0
+   ],
+   "render_q": [
+    1280.0,
+    1280.0,
+    1280.0
+   ],
+   "real_mean": 2558.86533,
+   "render_mean": 1280.0,
+   "rank": 2
+  },
+  {
+   "stat": "frame.clip_hi",
+   "what": "frame clipped highlights",
+   "unit": "share",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.9509,
+   "p": 0.0,
+   "smd": -1.577,
+   "real_q": [
+    0.00635,
+    0.00863,
+    0.0114
+   ],
+   "render_q": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "real_mean": 0.01066,
+   "render_mean": 0.00017,
+   "rank": 3
+  },
+  {
+   "stat": "band.clip_hi",
+   "what": "clipped highlights (any channel >= 250), water band around the whale (crop)",
+   "unit": "share",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.9084,
+   "p": 0.0,
+   "smd": -1.105,
+   "real_q": [
+    0.0068,
+    0.01435,
+    0.0262
+   ],
+   "render_q": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "real_mean": 0.02009,
+   "render_mean": 0.00098,
+   "rank": 4
+  },
+  {
+   "stat": "far.clip_hi",
+   "what": "clipped highlights (any channel >= 250), far water (frame)",
+   "unit": "share",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.9015,
+   "p": 0.0,
+   "smd": -0.641,
+   "real_q": [
+    0.00049,
+    0.00273,
+    0.00627
+   ],
+   "render_q": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "real_mean": 0.00464,
+   "render_mean": 5e-05,
+   "rank": 5
+  },
+  {
+   "stat": "far.hue_deg",
+   "what": "hue angle of the mean colour, far water (frame)",
+   "unit": "deg (Lab)",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.8717,
+   "p": 0.0,
+   "smd": -1.066,
+   "real_q": [
+    275.81379,
+    277.56226,
+    279.28829
+   ],
+   "render_q": [
+    236.75017,
+    258.67247,
+    265.54748
+   ],
+   "real_mean": 277.23099,
+   "render_mean": 239.69158,
+   "rank": 6
+  },
+  {
+   "stat": "far.coherence",
+   "what": "anisotropy: structure-tensor coherence (0 isotropic, 1 = one direction), far water (frame)",
+   "unit": "0..1",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.8674,
+   "p": 0.0,
+   "smd": 1.808,
+   "real_q": [
+    0.72992,
+    0.785,
+    0.82237
+   ],
+   "render_q": [
+    0.94406,
+    0.96929,
+    0.98552
+   ],
+   "real_mean": 0.76587,
+   "render_mean": 0.94434,
+   "rank": 7
+  },
+  {
+   "stat": "far.vgrad_share",
+   "what": "anisotropy: vertical-gradient energy share (0.5 isotropic, 1 = horizontal stripes), far water (frame)",
+   "unit": "share",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.8634,
+   "p": 0.0,
+   "smd": 1.695,
+   "real_q": [
+    0.86418,
+    0.89134,
+    0.91021
+   ],
+   "render_q": [
+    0.97019,
+    0.98234,
+    0.99028
+   ],
+   "real_mean": 0.88158,
+   "render_mean": 0.96929,
+   "rank": 8
+  },
+  {
+   "stat": "band.hue_deg",
+   "what": "hue angle of the mean colour, water band around the whale (crop)",
+   "unit": "deg (Lab)",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.8179,
+   "p": 0.0,
+   "smd": -0.961,
+   "real_q": [
+    275.40094,
+    277.2597,
+    279.18898
+   ],
+   "render_q": [
+    240.32787,
+    261.48043,
+    268.01091
+   ],
+   "real_mean": 276.53715,
+   "render_mean": 240.94049,
+   "rank": 9
+  },
+  {
+   "stat": "frame.a_mean",
+   "what": "frame green/red cast",
+   "unit": "a*",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.8162,
+   "p": 0.0,
+   "smd": -2.104,
+   "real_q": [
+    1.37734,
+    2.81834,
+    4.28531
+   ],
+   "render_q": [
+    -3.22891,
+    -2.05109,
+    -0.67777
+   ],
+   "real_mean": 2.96909,
+   "render_mean": -2.17055,
+   "rank": 10
+  },
+  {
+   "stat": "far.a_mean",
+   "what": "green(-)/red(+) cast, far water (frame)",
+   "unit": "a*",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.8136,
+   "p": 0.0,
+   "smd": -2.099,
+   "real_q": [
+    1.46542,
+    3.05649,
+    4.67159
+   ],
+   "render_q": [
+    -3.39645,
+    -2.04507,
+    -0.67944
+   ],
+   "real_mean": 3.23243,
+   "render_mean": -2.39817,
+   "rank": 11
+  },
+  {
+   "stat": "above.clip_hi",
+   "what": "clipped highlights (any channel >= 250), sky / land above the horizon (frame)",
+   "unit": "share",
+   "n_real": 482,
+   "n_render": 1126,
+   "share_real": 0.321,
+   "share_render": 0.745,
+   "ks": 0.8071,
+   "p": 2.5429815220273716e-223,
+   "smd": -0.94,
+   "real_q": [
+    6e-05,
+    0.03474,
+    0.09934
+   ],
+   "render_q": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "real_mean": 0.07646,
+   "render_mean": 0.0,
+   "rank": 12
+  },
+  {
+   "stat": "whale.clip_hi",
+   "what": "clipped highlights (any channel >= 250), whale (crop)",
+   "unit": "share",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.7872,
+   "p": 0.0,
+   "smd": -0.399,
+   "real_q": [
+    0.00052,
+    0.00312,
+    0.01123
+   ],
+   "render_q": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "real_mean": 0.01642,
+   "render_mean": 0.00144,
+   "rank": 13
+  },
+  {
+   "stat": "band.a_mean",
+   "what": "green(-)/red(+) cast, water band around the whale (crop)",
+   "unit": "a*",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.7502,
+   "p": 0.0,
+   "smd": -1.812,
+   "real_q": [
+    1.35474,
+    2.86775,
+    4.37385
+   ],
+   "render_q": [
+    -3.02219,
+    -1.5117,
+    -0.19184
+   ],
+   "real_mean": 2.98562,
+   "render_mean": -2.13915,
+   "rank": 14
+  },
+  {
+   "stat": "above.tex_medium",
+   "what": "texture energy, medium scale (RMS band-pass L*), sky / land above the horizon (frame)",
+   "unit": "L*",
+   "n_real": 482,
+   "n_render": 1123,
+   "share_real": 0.321,
+   "share_render": 0.743,
+   "ks": 0.714,
+   "p": 1.8142065977987923e-167,
+   "smd": -1.197,
+   "real_q": [
+    0.28949,
+    0.44322,
+    0.62955
+   ],
+   "render_q": [
+    0.08964,
+    0.11316,
+    0.16084
+   ],
+   "real_mean": 0.5358,
+   "render_mean": 0.16697,
+   "rank": 15
+  },
+  {
+   "stat": "above.L_mean",
+   "what": "brightness, sky / land above the horizon (frame)",
+   "unit": "L*",
+   "n_real": 482,
+   "n_render": 1126,
+   "share_real": 0.321,
+   "share_render": 0.745,
+   "ks": 0.7091,
+   "p": 6.805837001374583e-165,
+   "smd": -1.983,
+   "real_q": [
+    72.60181,
+    76.86671,
+    80.90266
+   ],
+   "render_q": [
+    33.73232,
+    47.42316,
+    62.30025
+   ],
+   "real_mean": 75.35248,
+   "render_mean": 48.16892,
+   "rank": 16
+  },
+  {
+   "stat": "frame.crush_lo",
+   "what": "frame crushed shadows",
+   "unit": "share",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.6862,
+   "p": 0.0,
+   "smd": 0.622,
+   "real_q": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "render_q": [
+    0.0,
+    0.00017,
+    0.00206
+   ],
+   "real_mean": 1e-05,
+   "render_mean": 0.0023,
+   "rank": 17
+  },
+  {
+   "stat": "frame.noise",
+   "what": "noise level: Immerkaer sigma on flat areas (frame at 1280, grey 0-255)",
+   "unit": "grey levels",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.6848,
+   "p": 0.0,
+   "smd": -1.044,
+   "real_q": [
+    0.95862,
+    1.21522,
+    1.47105
+   ],
+   "render_q": [
+    0.30019,
+    0.45375,
+    0.81079
+   ],
+   "real_mean": 1.26933,
+   "render_mean": 0.69108,
+   "rank": 18
+  },
+  {
+   "stat": "frame.L_p99",
+   "what": "frame 99th percentile L* (how bright the brightest parts are)",
+   "unit": "L*",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.6738,
+   "p": 1.5e-323,
+   "smd": -1.819,
+   "real_q": [
+    83.67004,
+    88.93433,
+    92.76276
+   ],
+   "render_q": [
+    50.49438,
+    67.49268,
+    79.11682
+   ],
+   "real_mean": 87.97759,
+   "render_mean": 64.71169,
+   "rank": 19
+  },
+  {
+   "stat": "band.coherence",
+   "what": "anisotropy: structure-tensor coherence (0 isotropic, 1 = one direction), water band around the whale (crop)",
+   "unit": "0..1",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.6395,
+   "p": 7.773957083846666e-290,
+   "smd": 1.081,
+   "real_q": [
+    0.65693,
+    0.7187,
+    0.76235
+   ],
+   "render_q": [
+    0.79799,
+    0.90195,
+    0.95352
+   ],
+   "real_mean": 0.70042,
+   "render_mean": 0.84492,
+   "rank": 20
+  },
+  {
+   "stat": "band.vgrad_share",
+   "what": "anisotropy: vertical-gradient energy share (0.5 isotropic, 1 = horizontal stripes), water band around the whale (crop)",
+   "unit": "share",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.636,
+   "p": 1.4887658803822416e-286,
+   "smd": 0.988,
+   "real_q": [
+    0.82743,
+    0.85773,
+    0.88016
+   ],
+   "render_q": [
+    0.89625,
+    0.94959,
+    0.97438
+   ],
+   "real_mean": 0.84885,
+   "render_mean": 0.91885,
+   "rank": 21
+  },
+  {
+   "stat": "above.hue_deg",
+   "what": "hue angle of the mean colour, sky / land above the horizon (frame)",
+   "unit": "deg (Lab)",
+   "n_real": 482,
+   "n_render": 1126,
+   "share_real": 0.321,
+   "share_render": 0.745,
+   "ks": 0.6331,
+   "p": 3.354940481725349e-128,
+   "smd": -0.649,
+   "real_q": [
+    270.84828,
+    274.17368,
+    276.97562
+   ],
+   "render_q": [
+    245.4421,
+    257.10035,
+    267.38372
+   ],
+   "real_mean": 268.29535,
+   "render_mean": 239.89478,
+   "rank": 22
+  },
+  {
+   "stat": "above.tex_fine",
+   "what": "texture energy, fine scale (RMS band-pass L*), sky / land above the horizon (frame)",
+   "unit": "L*",
+   "n_real": 482,
+   "n_render": 1125,
+   "share_real": 0.321,
+   "share_render": 0.745,
+   "ks": 0.5931,
+   "p": 2.712154654861141e-111,
+   "smd": -1.072,
+   "real_q": [
+    0.22772,
+    0.31126,
+    0.42597
+   ],
+   "render_q": [
+    0.09925,
+    0.13748,
+    0.20088
+   ],
+   "real_mean": 0.38322,
+   "render_mean": 0.1671,
+   "rank": 23
+  },
+  {
+   "stat": "whale.crush_lo",
+   "what": "crushed shadows (all channels <= 8), whale (crop)",
+   "unit": "share",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.5842,
+   "p": 1.794646083842346e-238,
+   "smd": 0.707,
+   "real_q": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "render_q": [
+    0.0,
+    0.00138,
+    0.03114
+   ],
+   "real_mean": 0.00019,
+   "render_mean": 0.02717,
+   "rank": 24
+  },
+  {
+   "stat": "crop.native_per_px",
+   "what": "native pixels per crop pixel (<1 = the crop was upscaled)",
+   "unit": "px/px",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.581,
+   "p": 5.968772527432865e-236,
+   "smd": -1.562,
+   "real_q": [
+    1.71406,
+    2.95625,
+    4.48359
+   ],
+   "render_q": [
+    0.45312,
+    0.80625,
+    1.45625
+   ],
+   "real_mean": 3.21366,
+   "render_mean": 1.02318,
+   "rank": 25
+  },
+  {
+   "stat": "whale.native_width_px",
+   "what": "whale box width in native pixels (detail available)",
+   "unit": "px",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.573,
+   "p": 4.6532400736469126e-229,
+   "smd": -1.543,
+   "real_q": [
+    530.0,
+    934.0,
+    1432.5
+   ],
+   "render_q": [
+    141.0,
+    256.0,
+    461.5
+   ],
+   "real_mean": 1021.92547,
+   "render_mean": 323.72336,
+   "rank": 26
+  },
+  {
+   "stat": "above.a_mean",
+   "what": "green(-)/red(+) cast, sky / land above the horizon (frame)",
+   "unit": "a*",
+   "n_real": 482,
+   "n_render": 1126,
+   "share_real": 0.321,
+   "share_render": 0.745,
+   "ks": 0.5709,
+   "p": 1.5207485784525127e-102,
+   "smd": -1.359,
+   "real_q": [
+    0.27925,
+    1.42055,
+    2.43822
+   ],
+   "render_q": [
+    -3.19672,
+    -2.0243,
+    0.01196
+   ],
+   "real_mean": 1.40436,
+   "render_mean": -1.53589,
+   "rank": 27
+  },
+  {
+   "stat": "crop.lapvar",
+   "what": "sharpness of the whole crop: variance of the Laplacian of L*",
+   "unit": "L*^2",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.5598,
+   "p": 6.126774106651533e-218,
+   "smd": -1.235,
+   "real_q": [
+    77.33537,
+    175.63486,
+    320.4372
+   ],
+   "render_q": [
+    6.25163,
+    21.77452,
+    59.92736
+   ],
+   "real_mean": 221.45549,
+   "render_mean": 47.11035,
+   "rank": 28
+  },
+  {
+   "stat": "far.b_mean",
+   "what": "blue(-)/yellow(+) cast, far water (frame)",
+   "unit": "b*",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.5594,
+   "p": 2.0450597545268085e-217,
+   "smd": 1.413,
+   "real_q": [
+    -30.42932,
+    -24.5605,
+    -16.30316
+   ],
+   "render_q": [
+    -16.17984,
+    -11.58683,
+    -6.91087
+   ],
+   "real_mean": -23.20985,
+   "render_mean": -10.64023,
+   "rank": 29
+  },
+  {
+   "stat": "far.C_mean",
+   "what": "colourfulness (chroma), far water (frame)",
+   "unit": "C*",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.5594,
+   "p": 2.0201808049593456e-217,
+   "smd": -1.35,
+   "real_q": [
+    17.08837,
+    24.9889,
+    30.86373
+   ],
+   "render_q": [
+    9.95399,
+    13.43714,
+    17.42734
+   ],
+   "real_mean": 23.80736,
+   "render_mean": 13.78393,
+   "rank": 30
+  },
+  {
+   "stat": "band.psd_slope",
+   "what": "power-spectrum slope of L* (64 px patches; steeper = smoother), water band around the whale (crop)",
+   "unit": "log-log",
+   "n_real": 991,
+   "n_render": 1164,
+   "share_real": 0.661,
+   "share_render": 0.77,
+   "ks": 0.557,
+   "p": 1.9007089942714533e-153,
+   "smd": -1.253,
+   "real_q": [
+    -2.73099,
+    -2.18233,
+    -1.80621
+   ],
+   "render_q": [
+    -4.39009,
+    -3.56322,
+    -2.87941
+   ],
+   "real_mean": -2.4036,
+   "render_mean": -3.6487,
+   "rank": 31
+  },
+  {
+   "stat": "far.crush_lo",
+   "what": "crushed shadows (all channels <= 8), far water (frame)",
+   "unit": "share",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.5473,
+   "p": 1.179885244007415e-207,
+   "smd": 0.5,
+   "real_q": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "render_q": [
+    0.0,
+    1e-05,
+    0.00057
+   ],
+   "real_mean": 0.0,
+   "render_mean": 0.00133,
+   "rank": 32
+  },
+  {
+   "stat": "far.foam",
+   "what": "whitecap / foam: bright (L*>=max(70, median+20)) low-chroma (C*<=12) water, far water (frame)",
+   "unit": "share",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.544,
+   "p": 5.407153948864032e-205,
+   "smd": -0.481,
+   "real_q": [
+    0.00021,
+    0.00257,
+    0.01118
+   ],
+   "render_q": [
+    0.0,
+    0.0,
+    0.0001
+   ],
+   "real_mean": 0.01016,
+   "render_mean": 0.00207,
+   "rank": 33
+  },
+  {
+   "stat": "frame.b_mean",
+   "what": "frame blue/yellow cast",
+   "unit": "b*",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.5283,
+   "p": 1.460340165585409e-192,
+   "smd": 1.338,
+   "real_q": [
+    -28.51494,
+    -23.06189,
+    -15.41407
+   ],
+   "render_q": [
+    -16.05175,
+    -11.37048,
+    -6.87471
+   ],
+   "real_mean": -22.01714,
+   "render_mean": -10.41805,
+   "rank": 34
+  },
+  {
+   "stat": "whale.S_hsv",
+   "what": "HSV saturation, whale (crop)",
+   "unit": "0..1",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.5281,
+   "p": 2.273535294286721e-192,
+   "smd": 1.322,
+   "real_q": [
+    0.20685,
+    0.28929,
+    0.36596
+   ],
+   "render_q": [
+    0.36592,
+    0.50481,
+    0.6018
+   ],
+   "real_mean": 0.29171,
+   "render_mean": 0.47417,
+   "rank": 35
+  },
+  {
+   "stat": "band.b_mean",
+   "what": "blue(-)/yellow(+) cast, water band around the whale (crop)",
+   "unit": "b*",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.4979,
+   "p": 5.2197656809410974e-170,
+   "smd": 1.276,
+   "real_q": [
+    -28.97326,
+    -23.76333,
+    -15.90693
+   ],
+   "render_q": [
+    -17.10794,
+    -12.09009,
+    -6.82728
+   ],
+   "real_mean": -22.24598,
+   "render_mean": -11.07854,
+   "rank": 36
+  },
+  {
+   "stat": "band.crush_lo",
+   "what": "crushed shadows (all channels <= 8), water band around the whale (crop)",
+   "unit": "share",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.4957,
+   "p": 1.708258366892555e-168,
+   "smd": 0.458,
+   "real_q": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "render_q": [
+    0.0,
+    0.0,
+    0.00121
+   ],
+   "real_mean": 0.0,
+   "render_mean": 0.0022,
+   "rank": 37
+  },
+  {
+   "stat": "band.C_mean",
+   "what": "colourfulness (chroma), water band around the whale (crop)",
+   "unit": "C*",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.4863,
+   "p": 6.586434507134323e-162,
+   "smd": -1.167,
+   "real_q": [
+    16.33175,
+    24.13542,
+    29.49584
+   ],
+   "render_q": [
+    10.15689,
+    13.8841,
+    18.16753
+   ],
+   "real_mean": 22.76597,
+   "render_mean": 14.28632,
+   "rank": 38
+  },
+  {
+   "stat": "frame.L_p01",
+   "what": "frame 1st percentile L* (how dark the darkest parts are)",
+   "unit": "L*",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.4824,
+   "p": 3.5624553274727294e-159,
+   "smd": -1.151,
+   "real_q": [
+    14.91852,
+    22.13135,
+    28.57819
+   ],
+   "render_q": [
+    1.89209,
+    6.82373,
+    16.54358
+   ],
+   "real_mean": 22.67267,
+   "render_mean": 10.3575,
+   "rank": 39
+  },
+  {
+   "stat": "above.L_std",
+   "what": "contrast (sd of L*), sky / land above the horizon (frame)",
+   "unit": "L*",
+   "n_real": 482,
+   "n_render": 1126,
+   "share_real": 0.321,
+   "share_render": 0.745,
+   "ks": 0.4449,
+   "p": 9.381041458978278e-61,
+   "smd": 0.917,
+   "real_q": [
+    3.17013,
+    4.12855,
+    5.74379
+   ],
+   "render_q": [
+    5.26791,
+    7.13717,
+    8.76668
+   ],
+   "real_mean": 4.75001,
+   "render_mean": 7.11992,
+   "rank": 40
+  },
+  {
+   "stat": "band.foam",
+   "what": "whitecap / foam: bright (L*>=max(70, median+20)) low-chroma (C*<=12) water, band (crop)",
+   "unit": "share",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.4372,
+   "p": 8.665289648707365e-130,
+   "smd": -0.592,
+   "real_q": [
+    0.00744,
+    0.02441,
+    0.0524
+   ],
+   "render_q": [
+    0.0,
+    0.00118,
+    0.01269
+   ],
+   "real_mean": 0.03831,
+   "render_mean": 0.01481,
+   "rank": 41
+  },
+  {
+   "stat": "frame.above_share",
+   "what": "share of the frame above the horizon",
+   "unit": "share",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.436,
+   "p": 4.5705419374297146e-129,
+   "smd": 0.977,
+   "real_q": [
+    0.0,
+    0.0,
+    0.09894
+   ],
+   "render_q": [
+    0.0,
+    0.24722,
+    0.38095
+   ],
+   "real_mean": 0.07274,
+   "render_mean": 0.23075,
+   "rank": 42
+  },
+  {
+   "stat": "above.b_mean",
+   "what": "blue(-)/yellow(+) cast, sky / land above the horizon (frame)",
+   "unit": "b*",
+   "n_real": 482,
+   "n_render": 1126,
+   "share_real": 0.321,
+   "share_render": 0.745,
+   "ks": 0.4292,
+   "p": 1.8959999914007754e-56,
+   "smd": 0.951,
+   "real_q": [
+    -24.92078,
+    -21.10181,
+    -15.64254
+   ],
+   "render_q": [
+    -18.03177,
+    -11.47722,
+    -5.98813
+   ],
+   "real_mean": -19.25297,
+   "render_mean": -10.69682,
+   "rank": 43
+  },
+  {
+   "stat": "frame.has_horizon",
+   "what": "horizon in frame (renders: camera geometry; real: line finder)",
+   "unit": "share",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.4259,
+   "p": 5.5661770834879895e-123,
+   "smd": 0.944,
+   "real_q": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "render_q": [
+    0.0,
+    1.0,
+    1.0
+   ],
+   "real_mean": 0.32133,
+   "render_mean": 0.74719,
+   "rank": 44
+  },
+  {
+   "stat": "far.L_mean",
+   "what": "brightness, far water (frame)",
+   "unit": "L*",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.4205,
+   "p": 7.838510487459291e-120,
+   "smd": -1.108,
+   "real_q": [
+    44.20625,
+    52.02065,
+    63.36292
+   ],
+   "render_q": [
+    24.97132,
+    37.46229,
+    51.97626
+   ],
+   "real_mean": 53.89243,
+   "render_mean": 38.38676,
+   "rank": 45
+  },
+  {
+   "stat": "band.L_mean",
+   "what": "brightness, water band around the whale (crop)",
+   "unit": "L*",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.4185,
+   "p": 1.198013460288498e-118,
+   "smd": -0.998,
+   "real_q": [
+    46.37858,
+    53.35557,
+    63.34853
+   ],
+   "render_q": [
+    27.54399,
+    40.73327,
+    54.8327
+   ],
+   "real_mean": 54.91512,
+   "render_mean": 41.22061,
+   "rank": 46
+  },
+  {
+   "stat": "whale.lapvar",
+   "what": "sharpness on the whale: variance of the Laplacian of L* (crop)",
+   "unit": "L*^2",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.4178,
+   "p": 3.275873883842089e-118,
+   "smd": -0.828,
+   "real_q": [
+    56.88838,
+    146.66171,
+    321.38581
+   ],
+   "render_q": [
+    7.11711,
+    27.91696,
+    84.69448
+   ],
+   "real_mean": 241.21308,
+   "render_mean": 65.41562,
+   "rank": 47
+  },
+  {
+   "stat": "whale.L_mean",
+   "what": "brightness, whale (crop)",
+   "unit": "L*",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.4149,
+   "p": 1.7160963893603397e-116,
+   "smd": -0.811,
+   "real_q": [
+    23.9464,
+    32.85894,
+    42.91883
+   ],
+   "render_q": [
+    8.15387,
+    16.67143,
+    31.31573
+   ],
+   "real_mean": 34.08247,
+   "render_mean": 21.61628,
+   "rank": 48
+  },
+  {
+   "stat": "whale.b_mean",
+   "what": "blue(-)/yellow(+) cast, whale (crop)",
+   "unit": "b*",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.4099,
+   "p": 1.1868095488234541e-113,
+   "smd": 0.678,
+   "real_q": [
+    -13.76925,
+    -10.34561,
+    -7.54799
+   ],
+   "render_q": [
+    -11.55044,
+    -5.2288,
+    -1.62703
+   ],
+   "real_mean": -10.99853,
+   "render_mean": -6.60072,
+   "rank": 49
+  },
+  {
+   "stat": "frame.L_mean",
+   "what": "frame brightness",
+   "unit": "L*",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.3961,
+   "p": 5.975041675048811e-106,
+   "smd": -1.002,
+   "real_q": [
+    47.22452,
+    53.99719,
+    62.83827
+   ],
+   "render_q": [
+    28.32202,
+    41.13135,
+    54.86964
+   ],
+   "real_mean": 54.95977,
+   "render_mean": 41.71413,
+   "rank": 50
+  },
+  {
+   "stat": "above.C_mean",
+   "what": "colourfulness (chroma), sky / land above the horizon (frame)",
+   "unit": "C*",
+   "n_real": 482,
+   "n_render": 1126,
+   "share_real": 0.321,
+   "share_render": 0.745,
+   "ks": 0.3934,
+   "p": 3.24883245523357e-47,
+   "smd": -0.953,
+   "real_q": [
+    15.99247,
+    21.24489,
+    25.1454
+   ],
+   "render_q": [
+    8.09084,
+    12.96133,
+    18.9554
+   ],
+   "real_mean": 19.99226,
+   "render_mean": 13.65898,
+   "rank": 51
+  },
+  {
+   "stat": "whale.a_mean",
+   "what": "green(-)/red(+) cast, whale (crop)",
+   "unit": "a*",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.3855,
+   "p": 3.237067695402934e-100,
+   "smd": -0.712,
+   "real_q": [
+    1.4008,
+    2.3372,
+    3.3411
+   ],
+   "render_q": [
+    0.50255,
+    1.05836,
+    1.901
+   ],
+   "real_mean": 2.38443,
+   "render_mean": 1.28372,
+   "rank": 52
+  },
+  {
+   "stat": "above.S_hsv",
+   "what": "HSV saturation, sky / land above the horizon (frame)",
+   "unit": "0..1",
+   "n_real": 482,
+   "n_render": 1126,
+   "share_real": 0.321,
+   "share_render": 0.745,
+   "ks": 0.3715,
+   "p": 5.1038941056366234e-42,
+   "smd": 0.547,
+   "real_q": [
+    0.19517,
+    0.2607,
+    0.29733
+   ],
+   "render_q": [
+    0.18089,
+    0.29158,
+    0.43344
+   ],
+   "real_mean": 0.243,
+   "render_mean": 0.31268,
+   "rank": 53
+  },
+  {
+   "stat": "band.tex_fine",
+   "what": "texture energy, fine scale (RMS band-pass L*), water band around the whale (crop)",
+   "unit": "L*",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.3502,
+   "p": 2.1624794998064593e-82,
+   "smd": -0.601,
+   "real_q": [
+    2.00292,
+    2.51999,
+    2.95585
+   ],
+   "render_q": [
+    1.15373,
+    1.74555,
+    2.55264
+   ],
+   "real_mean": 2.47122,
+   "render_mean": 1.93046,
+   "rank": 54
+  },
+  {
+   "stat": "above.tex_coarse",
+   "what": "texture energy, coarse scale (RMS band-pass L*), sky / land above the horizon (frame)",
+   "unit": "L*",
+   "n_real": 482,
+   "n_render": 1116,
+   "share_real": 0.321,
+   "share_render": 0.739,
+   "ks": 0.3484,
+   "p": 8.11882731501418e-37,
+   "smd": -0.544,
+   "real_q": [
+    0.25487,
+    0.42566,
+    0.66906
+   ],
+   "render_q": [
+    0.1224,
+    0.1989,
+    0.4434
+   ],
+   "real_mean": 0.53976,
+   "render_mean": 0.32648,
+   "rank": 55
+  },
+  {
+   "stat": "whale.hue_deg",
+   "what": "hue angle of the mean colour, whale (crop)",
+   "unit": "deg (Lab)",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.3035,
+   "p": 1.1213378200068961e-61,
+   "smd": -0.518,
+   "real_q": [
+    278.97794,
+    282.15239,
+    285.8671
+   ],
+   "render_q": [
+    271.03906,
+    278.11972,
+    285.71759
+   ],
+   "real_mean": 281.96376,
+   "render_mean": 252.433,
+   "rank": 56
+  },
+  {
+   "stat": "whale.len_share",
+   "what": "whale length: mask box width / frame width",
+   "unit": "share",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.2931,
+   "p": 1.6042148887774473e-57,
+   "smd": -0.705,
+   "real_q": [
+    0.20703,
+    0.36504,
+    0.56045
+   ],
+   "render_q": [
+    0.11016,
+    0.2,
+    0.36055
+   ],
+   "real_mean": 0.39942,
+   "render_mean": 0.25291,
+   "rank": 57
+  },
+  {
+   "stat": "whale.edge_width",
+   "what": "outline softness: L* step across the outline / peak gradient at the outline",
+   "unit": "crop px",
+   "n_real": 1367,
+   "n_render": 1408,
+   "share_real": 0.911,
+   "share_render": 0.932,
+   "ks": 0.2837,
+   "p": 1.125696431326185e-49,
+   "smd": 0.602,
+   "real_q": [
+    1.10142,
+    1.59095,
+    1.98196
+   ],
+   "render_q": [
+    1.39076,
+    2.0127,
+    2.80559
+   ],
+   "real_mean": 1.62914,
+   "render_mean": 2.33947,
+   "rank": 58
+  },
+  {
+   "stat": "above.vgrad_share",
+   "what": "anisotropy: vertical-gradient energy share (0.5 isotropic, 1 = horizontal stripes), sky / land above the horizon (frame)",
+   "unit": "share",
+   "n_real": 482,
+   "n_render": 1122,
+   "share_real": 0.321,
+   "share_render": 0.743,
+   "ks": 0.2812,
+   "p": 5.411682089442214e-24,
+   "smd": -0.639,
+   "real_q": [
+    0.81733,
+    0.91791,
+    0.97124
+   ],
+   "render_q": [
+    0.66191,
+    0.81077,
+    0.92181
+   ],
+   "real_mean": 0.87423,
+   "render_mean": 0.78741,
+   "rank": 59
+  },
+  {
+   "stat": "whale.C_mean",
+   "what": "colourfulness (chroma), whale (crop)",
+   "unit": "C*",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.2743,
+   "p": 2.549497256063106e-50,
+   "smd": -0.397,
+   "real_q": [
+    8.53633,
+    11.09177,
+    14.5955
+   ],
+   "render_q": [
+    5.95902,
+    8.34012,
+    12.75996
+   ],
+   "real_mean": 11.97167,
+   "render_mean": 9.93243,
+   "rank": 60
+  },
+  {
+   "stat": "above.coherence",
+   "what": "anisotropy: structure-tensor coherence (0 isotropic, 1 = one direction), sky / land above the horizon (frame)",
+   "unit": "0..1",
+   "n_real": 482,
+   "n_render": 1122,
+   "share_real": 0.321,
+   "share_render": 0.743,
+   "ks": 0.2737,
+   "p": 9.592721902262635e-23,
+   "smd": -0.639,
+   "real_q": [
+    0.64166,
+    0.83914,
+    0.94536
+   ],
+   "render_q": [
+    0.33573,
+    0.64037,
+    0.85464
+   ],
+   "real_mean": 0.7568,
+   "render_mean": 0.58683,
+   "rank": 61
+  },
+  {
+   "stat": "whale.tex_fine",
+   "what": "texture energy, fine scale (RMS band-pass L*), whale (crop)",
+   "unit": "L*",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.2716,
+   "p": 2.4133675273522928e-49,
+   "smd": -0.554,
+   "real_q": [
+    1.38064,
+    1.83237,
+    2.38149
+   ],
+   "render_q": [
+    0.85154,
+    1.35213,
+    2.03303
+   ],
+   "real_mean": 1.93186,
+   "render_mean": 1.49363,
+   "rank": 62
+  },
+  {
+   "stat": "whale.area_share",
+   "what": "whale visible area / frame area",
+   "unit": "share",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.2688,
+   "p": 2.4362310337162973e-48,
+   "smd": -0.428,
+   "real_q": [
+    0.00957,
+    0.02525,
+    0.05412
+   ],
+   "render_q": [
+    0.00345,
+    0.00957,
+    0.02901
+   ],
+   "real_mean": 0.04149,
+   "render_mean": 0.02358,
+   "rank": 63
+  },
+  {
+   "stat": "far.tex_fine",
+   "what": "texture energy, fine scale (RMS band-pass L*), far water (frame)",
+   "unit": "L*",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.2424,
+   "p": 2.495095181563298e-39,
+   "smd": -0.301,
+   "real_q": [
+    1.48577,
+    1.7935,
+    2.08756
+   ],
+   "render_q": [
+    1.03361,
+    1.51313,
+    2.05909
+   ],
+   "real_mean": 1.77436,
+   "render_mean": 1.58428,
+   "rank": 64
+  },
+  {
+   "stat": "whale.psd_slope",
+   "what": "power-spectrum slope of L* (64 px patches; steeper = smoother), whale (crop)",
+   "unit": "log-log",
+   "n_real": 355,
+   "n_render": 376,
+   "share_real": 0.237,
+   "share_render": 0.249,
+   "ks": 0.2345,
+   "p": 2.6159912100112244e-09,
+   "smd": -0.406,
+   "real_q": [
+    -2.93899,
+    -2.19138,
+    -1.70116
+   ],
+   "render_q": [
+    -4.29999,
+    -2.78491,
+    -1.8365
+   ],
+   "real_mean": -2.43908,
+   "render_mean": -2.9587,
+   "rank": 65
+  },
+  {
+   "stat": "far.tex_coarse",
+   "what": "texture energy, coarse scale (RMS band-pass L*), far water (frame)",
+   "unit": "L*",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.2291,
+   "p": 3.7996066381569195e-35,
+   "smd": -0.058,
+   "real_q": [
+    1.70699,
+    2.07777,
+    2.44662
+   ],
+   "render_q": [
+    1.23664,
+    1.78399,
+    2.6042
+   ],
+   "real_mean": 2.0796,
+   "render_mean": 2.02975,
+   "rank": 66
+  },
+  {
+   "stat": "frame.lapvar",
+   "what": "sharpness of the frame: variance of the Laplacian of L* (frame at 1280)",
+   "unit": "L*^2",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.2177,
+   "p": 9.6331952415233e-32,
+   "smd": -0.325,
+   "real_q": [
+    40.855,
+    58.40968,
+    81.72234
+   ],
+   "render_q": [
+    25.93504,
+    45.72598,
+    73.02509
+   ],
+   "real_mean": 64.37984,
+   "render_mean": 53.37171,
+   "rank": 67
+  },
+  {
+   "stat": "whale.L_std",
+   "what": "contrast (sd of L*), whale (crop)",
+   "unit": "L*",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.2058,
+   "p": 2.253105912083805e-28,
+   "smd": -0.08,
+   "real_q": [
+    10.529,
+    13.31917,
+    17.09978
+   ],
+   "render_q": [
+    7.46727,
+    12.50153,
+    18.75125
+   ],
+   "real_mean": 14.15726,
+   "render_mean": 13.63196,
+   "rank": 68
+  },
+  {
+   "stat": "far.tex_medium",
+   "what": "texture energy, medium scale (RMS band-pass L*), far water (frame)",
+   "unit": "L*",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.1888,
+   "p": 5.978309472879942e-24,
+   "smd": -0.05,
+   "real_q": [
+    1.82534,
+    2.17289,
+    2.55012
+   ],
+   "render_q": [
+    1.38363,
+    1.99967,
+    2.71921
+   ],
+   "real_mean": 2.17385,
+   "render_mean": 2.13218,
+   "rank": 69
+  },
+  {
+   "stat": "above.psd_slope",
+   "what": "power-spectrum slope of L* (64 px patches; steeper = smoother), sky / land above the horizon (frame)",
+   "unit": "log-log",
+   "n_real": 439,
+   "n_render": 1054,
+   "share_real": 0.293,
+   "share_render": 0.698,
+   "ks": 0.187,
+   "p": 5.815939754511502e-10,
+   "smd": 0.329,
+   "real_q": [
+    -2.25942,
+    -1.30795,
+    -0.52908
+   ],
+   "render_q": [
+    -1.68889,
+    -1.11603,
+    -0.6588
+   ],
+   "real_mean": -1.47466,
+   "render_mean": -1.18544,
+   "rank": 70
+  },
+  {
+   "stat": "whale.spec_share",
+   "what": "specular highlights on the whale: L* >= whale median + 25",
+   "unit": "share",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.1861,
+   "p": 2.904373341556474e-23,
+   "smd": 0.098,
+   "real_q": [
+    0.03445,
+    0.06316,
+    0.1101
+   ],
+   "render_q": [
+    0.014,
+    0.06157,
+    0.13977
+   ],
+   "real_mean": 0.08248,
+   "render_mean": 0.09042,
+   "rank": 71
+  },
+  {
+   "stat": "whale.hi_spread",
+   "what": "highlight spread on the whale: L* p95 - p50",
+   "unit": "L*",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.1738,
+   "p": 2.4534498500909562e-20,
+   "smd": -0.011,
+   "real_q": [
+    20.69923,
+    28.24707,
+    39.1275
+   ],
+   "render_q": [
+    14.64813,
+    27.95654,
+    44.63242
+   ],
+   "real_mean": 30.9299,
+   "render_mean": 30.74868,
+   "rank": 72
+  },
+  {
+   "stat": "band.tex_medium",
+   "what": "texture energy, medium scale (RMS band-pass L*), water band around the whale (crop)",
+   "unit": "L*",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.1675,
+   "p": 6.588894182321065e-19,
+   "smd": 0.019,
+   "real_q": [
+    2.25534,
+    2.68366,
+    3.06371
+   ],
+   "render_q": [
+    1.86558,
+    2.53525,
+    3.35031
+   ],
+   "real_mean": 2.6641,
+   "render_mean": 2.6814,
+   "rank": 73
+  },
+  {
+   "stat": "frame.L_std",
+   "what": "frame contrast (sd of L*)",
+   "unit": "L*",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.1666,
+   "p": 9.99126886139013e-19,
+   "smd": -0.255,
+   "real_q": [
+    11.59862,
+    13.47711,
+    15.80473
+   ],
+   "render_q": [
+    10.14237,
+    12.62181,
+    15.1699
+   ],
+   "real_mean": 13.85717,
+   "render_mean": 12.93181,
+   "rank": 74
+  },
+  {
+   "stat": "whale.tex_coarse",
+   "what": "texture energy, coarse scale (RMS band-pass L*), whale (crop)",
+   "unit": "L*",
+   "n_real": 1462,
+   "n_render": 1489,
+   "share_real": 0.975,
+   "share_render": 0.985,
+   "ks": 0.1587,
+   "p": 1.0664037136744726e-16,
+   "smd": 0.108,
+   "real_q": [
+    1.36931,
+    1.94839,
+    2.86729
+   ],
+   "render_q": [
+    1.05884,
+    2.11542,
+    3.48364
+   ],
+   "real_mean": 2.26305,
+   "render_mean": 2.41997,
+   "rank": 75
+  },
+  {
+   "stat": "whale.tex_medium",
+   "what": "texture energy, medium scale (RMS band-pass L*), whale (crop)",
+   "unit": "L*",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.1456,
+   "p": 2.2417753040646798e-14,
+   "smd": -0.064,
+   "real_q": [
+    1.47392,
+    1.94876,
+    2.68259
+   ],
+   "render_q": [
+    1.17196,
+    1.94024,
+    2.77699
+   ],
+   "real_mean": 2.13818,
+   "render_mean": 2.07196,
+   "rank": 76
+  },
+  {
+   "stat": "whale.height_share",
+   "what": "whale mask box height / frame height",
+   "unit": "share",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.1409,
+   "p": 1.6742024901836338e-13,
+   "smd": -0.083,
+   "real_q": [
+    0.09538,
+    0.15857,
+    0.23888
+   ],
+   "render_q": [
+    0.075,
+    0.12361,
+    0.225
+   ],
+   "real_mean": 0.18114,
+   "render_mean": 0.17054,
+   "rank": 77
+  },
+  {
+   "stat": "band.tex_coarse",
+   "what": "texture energy, coarse scale (RMS band-pass L*), water band around the whale (crop)",
+   "unit": "L*",
+   "n_real": 1497,
+   "n_render": 1511,
+   "share_real": 0.998,
+   "share_render": 1.0,
+   "ks": 0.1259,
+   "p": 7.434503848725615e-11,
+   "smd": 0.037,
+   "real_q": [
+    2.19054,
+    2.66599,
+    3.14181
+   ],
+   "render_q": [
+    1.87787,
+    2.61583,
+    3.3814
+   ],
+   "real_mean": 2.67995,
+   "render_mean": 2.71476,
+   "rank": 78
+  },
+  {
+   "stat": "whale.cy",
+   "what": "whale centre y / frame height",
+   "unit": "0..1",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.124,
+   "p": 1.4851484784947905e-10,
+   "smd": -0.163,
+   "real_q": [
+    0.45992,
+    0.5019,
+    0.54769
+   ],
+   "render_q": [
+    0.43021,
+    0.49375,
+    0.55556
+   ],
+   "real_mean": 0.50789,
+   "render_mean": 0.49489,
+   "rank": 79
+  },
+  {
+   "stat": "far.psd_slope",
+   "what": "power-spectrum slope of L* (64 px patches; steeper = smoother), far water (frame)",
+   "unit": "log-log",
+   "n_real": 1499,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.1217,
+   "p": 3.58035609146541e-10,
+   "smd": -0.122,
+   "real_q": [
+    -3.23251,
+    -2.78388,
+    -2.3985
+   ],
+   "render_q": [
+    -3.5715,
+    -2.85815,
+    -2.33148
+   ],
+   "real_mean": -2.8452,
+   "render_mean": -2.94447,
+   "rank": 80
+  },
+  {
+   "stat": "band.L_std",
+   "what": "contrast (sd of L*), water band around the whale (crop)",
+   "unit": "L*",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.1152,
+   "p": 3.728982894602351e-09,
+   "smd": 0.035,
+   "real_q": [
+    11.10737,
+    13.39932,
+    15.5449
+   ],
+   "render_q": [
+    9.81305,
+    13.2928,
+    16.87993
+   ],
+   "real_mean": 13.50435,
+   "render_mean": 13.65292,
+   "rank": 81
+  },
+  {
+   "stat": "whale.vgrad_share",
+   "what": "anisotropy: vertical-gradient energy share (0.5 isotropic, 1 = horizontal stripes), whale (crop)",
+   "unit": "share",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.1116,
+   "p": 1.2547175933876022e-08,
+   "smd": 0.245,
+   "real_q": [
+    0.54753,
+    0.66796,
+    0.77096
+   ],
+   "render_q": [
+    0.60432,
+    0.70858,
+    0.79968
+   ],
+   "real_mean": 0.64923,
+   "render_mean": 0.68762,
+   "rank": 82
+  },
+  {
+   "stat": "whale.coherence",
+   "what": "anisotropy: structure-tensor coherence (0 isotropic, 1 = one direction), whale (crop)",
+   "unit": "0..1",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.1111,
+   "p": 1.4815319395153969e-08,
+   "smd": 0.248,
+   "real_q": [
+    0.26569,
+    0.43021,
+    0.59191
+   ],
+   "render_q": [
+    0.32704,
+    0.49585,
+    0.63894
+   ],
+   "real_mean": 0.43238,
+   "render_mean": 0.48366,
+   "rank": 83
+  },
+  {
+   "stat": "band.S_hsv",
+   "what": "HSV saturation, water band around the whale (crop)",
+   "unit": "0..1",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.097,
+   "p": 1.280020891867412e-06,
+   "smd": 0.169,
+   "real_q": [
+    0.25688,
+    0.39463,
+    0.47555
+   ],
+   "render_q": [
+    0.2955,
+    0.38338,
+    0.475
+   ],
+   "real_mean": 0.36066,
+   "render_mean": 0.38341,
+   "rank": 84
+  },
+  {
+   "stat": "far.S_hsv",
+   "what": "HSV saturation, far water (frame)",
+   "unit": "0..1",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.0949,
+   "p": 2.2943795244030355e-06,
+   "smd": 0.064,
+   "real_q": [
+    0.26093,
+    0.41109,
+    0.50027
+   ],
+   "render_q": [
+    0.29071,
+    0.38958,
+    0.47573
+   ],
+   "real_mean": 0.37611,
+   "render_mean": 0.38533,
+   "rank": 85
+  },
+  {
+   "stat": "whale.dL_vs_band",
+   "what": "whale darker than the water around it: median L* whale - median L* band (silhouette)",
+   "unit": "L*",
+   "n_real": 1498,
+   "n_render": 1511,
+   "share_real": 0.999,
+   "share_render": 1.0,
+   "ks": 0.0901,
+   "p": 9.010327375086692e-06,
+   "smd": -0.117,
+   "real_q": [
+    -34.77478,
+    -23.7793,
+    -13.38654
+   ],
+   "render_q": [
+    -37.09106,
+    -26.04065,
+    -17.05627
+   ],
+   "real_mean": -24.11956,
+   "render_mean": -26.2035,
+   "rank": 86
+  },
+  {
+   "stat": "far.L_std",
+   "what": "contrast (sd of L*), far water (frame)",
+   "unit": "L*",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.0858,
+   "p": 2.8205406620879473e-05,
+   "smd": 0.037,
+   "real_q": [
+    8.521,
+    10.14412,
+    11.65088
+   ],
+   "render_q": [
+    7.86523,
+    9.94174,
+    12.39683
+   ],
+   "real_mean": 10.22657,
+   "render_mean": 10.34335,
+   "rank": 87
+  },
+  {
+   "stat": "whale.cx",
+   "what": "whale centre x / frame width",
+   "unit": "0..1",
+   "n_real": 1500,
+   "n_render": 1511,
+   "share_real": 1.0,
+   "share_render": 1.0,
+   "ks": 0.0647,
+   "p": 0.003444315663342904,
+   "smd": 0.086,
+   "real_q": [
+    0.43887,
+    0.48945,
+    0.54277
+   ],
+   "render_q": [
+    0.43594,
+    0.49727,
+    0.55937
+   ],
+   "real_mean": 0.4904,
+   "render_mean": 0.49761,
+   "rank": 88
+  },
+  {
+   "stat": "above.crush_lo",
+   "what": "crushed shadows (all channels <= 8), sky / land above the horizon (frame)",
+   "unit": "share",
+   "n_real": 482,
+   "n_render": 1126,
+   "share_real": 0.321,
+   "share_render": 0.745,
+   "ks": 0.024,
+   "p": 0.9869448937350013,
+   "smd": 0.076,
+   "real_q": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "render_q": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "real_mean": 0.0,
+   "render_mean": 3e-05,
+   "rank": 89
+  }
+ ],
+ "horizon_sources": {
+  "real": {
+   "detector": 1500
+  },
+  "render": {
+   "geometry": 1511
+  }
+ }
+}

@@ -2579,3 +2579,1504 @@ small tiles of the Parts walls were requested once so the first look is fast.
 Not done: retraining the student on the second set; flukes (their black borders stay: both framing changes measured
 worse, -2.6 and -3.9 points on 154 validation queries, not significant); the safe clusters and the link scores were
 not rebuilt (they would change cluster ids and need their own check).
+
+## 2026-11-16 night — the body map on real photos, one whale against several: where it fails and why (analysis only, nothing built)
+Request (user): the body map is "one of our weakest aspects", "especially in the scenarios where there are multiple whales
+in frame"; "take a close look at how that is happening and analyze if there are any better ways to do it", perhaps
+"through synthetic data similarly to how we were able to do such a good job at semantic segmentation"; "Don't implement
+anything yet". Read-only scripts in experiments/bodymap_review/ (no photos); by-eye sheets in the scratchpad only (two
+show a crew member). Training and validation days only; the evaluation days were not read.
+How it is made (code read, and re-checked): 2560-px jpg -> segmentation seg_r04_ft4 at long side 1280 -> the mask is
+cleaned (canon/predict.py keep_main_components: the largest blob and blobs of at least 25 % of it survive) -> ONE square
+crop, 1.6 x the box of all surviving mask pixels, resized to 512 -> canon_r0304_ft4 (visibility, one rotation) and the
+CSE head cse_r04_ft2 (run04 only, 2 blocks, 4 000 template vertices; predict_cse --as-canon takes the arg-max vertex's
+position, so the map is quantised to the template, and its arg-max probability on real photos is 0.14) -> one flank
+vote per crop -> DAY/cse/<stem>_canon.npz. Instances are made afterwards (cluster/parts.py split_instances: mask blobs,
+joined unless both hold 200 px in one tenth of the body length). The mask is not an input of either network. Nothing
+was retrained on run05 (run05 has no vertex labels). The Model Interpretability "body map" tab shows DAY/canon (the
+older folded regression with one rigid pose per crop), not the CSE map the cut-outs are made from.
+Training data: run04 has one whale per shot plus a calf in 15 % of shots, never two adults. The calf's pixels are
+"whale" in the mask but have no body labels; where it lies inside the mother's projected outline the label is the
+MOTHER's coordinate (a fifth to a third of calf pixels; postprocess writes canon uncleared, data.py valid = mask == 1 &
+canon defined). So the map never saw a correctly labelled second animal.
+Several whales, measured (bodymap_stats.py / bodymap_tables.py, 8 868 photos of 24 days):
+  - 92.9 % of photos have one whale instance, 5.9 % two, 0.1 % three or more; in competitive-group photos 4.7 % have two.
+  - Of the two-instance photos 49 % are fluke + fluke (view classifier), side by side at the same height in 98.5 %: one
+    fluke whose blades the water separates. By eye on 24 random two-instance photos: 8 two whales with the right
+    instances, 1 two whales wrongly grouped, 7 one fluke in two, 5 one whale in two (breach, pectoral fins, head), 3
+    unclear. With the researcher's clicks: the two tips of a fluke lie in two different instances for 25 % of 83 flukes.
+  - The researcher marked 17 other whales on 16 of the 365 clicked photos of 2025-01-02 and 2025-03-18
+    (bodymap_clicks.py): 2 are instances of their own, 6 lie inside the same instance as the main whale, 9 have no mask.
+  - The clean-up removed more than 5 % of what it kept in 13.6 % of photos (canon/points.jsonl) and more than 10 % in
+    8.2 %. Segmentation run again on 24 of them (dropped_whales.py): a second whale removed in 4 clearly and 4 more
+    probably, a drone / boat rail / shore removed in 6, pieces of the same whale or splash in 6; in 2 the largest blob
+    was a crew member (once with the real whale removed).
+  - In a two-instance photo a whale is 146 / 117 px long (largest / the other) in the 512 input against 318 px for a
+    single whale. Head against flank (cut-out turned over 120 deg under the first rule) 33-36 % against 22 %; three-way
+    part call against the view classifier 78 / 72 % against 82 %.
+One whale, measured:
+  - The map of a photo and of its mirror image disagree by 2.0 m (median over photos, geodesic); over 1 m in 75 % of
+    photos; flank agreement under mirroring 0.78.
+  - Dorsal-fin views (4 415 confident): the body fraction is 0.45 for nearly every instance (10th to 90th percentile
+    0.38-0.53), and the cut-out code's "dorsal fin" (u 0.36-0.54, z > 0.9 m; 612 of the 4 000 vertices) takes a median
+    65 % of the whale's pixels, over half in 79 %.
+  - Against the three fin clicks (197 fins): the clicks do fall in the band (88-94 %), but the band is 3.8 x the fin's
+    base (quartiles 2.9-4.6), the cut-out's centre is 0.83 fin bases from the fin (over one in 36 %) and the fin fills
+    14 % of the cut-out's width. Head left / right is right for 96 %, the flank for 95 % (these are clear fin views).
+  - Flukes (83 with both tips clicked; 94 % seen from behind): the map has the whale's left and right tips right for
+    20 %, swapped 41 %, both on one side 35 %. Without labels: in stacks of three or more fluke frames 25.6 % of the
+    cut-outs are mirrored against the stack's majority (a coin gives 25-31 %) and 72 % of stacks hold both states. The
+    student's fluke fingerprint has learned to ignore it: cosine between two frames of one fluke 0.78 mirrored the same
+    way and 0.78 mirrored opposite ways on the validation days (0.79 / 0.73 on its training days).
+  - Cut-out flags against the view classifier's confident answers: a fluke cut-out exists for 79-81 % of flukes; a fin
+    cut-out exists for 31 % of whales that show no fin.
+Probes (frozen DINOv3 ViT-B/16 patch features, one ridge regression per keypoint onto a heat spot; nothing of the
+pipeline involved; the region is the body-map crop):
+  - click_probe.py, trained on the clicks of one training day, tested on the other, both ways. At 896 px: fin tip
+    within a quarter of the fin base 97 % (median error 0.07), back base 82 %, front base 49 %, fluke notch 95 % (of
+    the span), tips as a pair median 0.04; the fin from the three points: centre off 0.10 fin bases (the body map's
+    cut-out: 0.83), over one fin base 4 % (36 %). At 512 px, the body map's own resolution: fin tip 94 %, left / right
+    of the fluke tips wrong 4 % (3 of 76; "the left tip is on the left of the photo" is right for 94 % of these).
+  - synth_probe.py, the same probe trained on 1 500 run05 renders only, tested on the same clicks, 512 px: fin tip 93 %
+    (real 94 %, both 96 %), fluke notch 96 % (98 %), fin back base 42 % (71 %), fin front base 3 % (40 %; the render's
+    front base is still not where the researcher clicks), fluke tips left / right wrong 33 % (4 %) with both probes
+    often on one tip.
+  - click_probe_others.py, whole photo at long side 1344, fin-tip finder trained on the main whale's clicks only: the
+    strongest peak is on the main whale's fin tip for 97 % of 233 photos, and all 11 other whales with a clicked fin tip
+    are among the five strongest peaks (6 as the second).
+Side findings: (a) the synthetic instance and contour labels of run04 / run05 carry a rim of "companion" pixels in
+shots WITHOUT a calf (59 of 65 sampled run05 shots, median 225 px; three quarters of their contour pixels are marked
+"edge against the calf"): supersampled label values fall in the calf's band; any instance training needs the labels
+decoded again, and it may be why contour weighting was a null result. (b) run05's canon labels still carry the
+canonical frame's fabricated fin peak; only the keypoints were fixed. (c) fluke_notch on the rig sits 25 cm off the
+midline.
+Reading. Most of the multi-whale failure happens before the body map: the pipeline has no notion of separate whales
+(one mask, one clean-up rule that deletes small blobs, one crop, one pose, one flank vote), and the map was trained on
+single whales with a wrongly labelled calf. The map itself is asked for more than the pipeline uses (a 3D point per
+pixel; the pipeline needs whales, the fin, the fluke, heading and flank) and answers the easy part coarsely. Finding
+the parts directly is easy with frozen features, from real clicks and, for fin tip and notch, from renders alone.
+Offered to the user, nothing built: whales first (per-blob decisions instead of the quarter rule, re-joining fluke
+blades, part detections as one-per-whale seeds, instance separation trained on multi-whale renders for whales that
+touch), parts second (keypoint finder from renders + clicks, cut-outs from the points, fluke cut-outs turned and never
+flipped), the dense map out of the pipeline, and a real-photo benchmark first (the 546 clicked photos, the 45 marked
+other whales, plus a count and one click per whale on about 150 multi-whale photos).
+
+## 2026-11-17 — after the body-map analysis: decisions, old renders removed, run05 against real photos, the realism score, what a representative run06 takes
+User's decisions (2026-11-17): the dense 3D map stays "purely for illustration"; the goal is the general part per pixel
+(fluke / dorsal / other) "so that like by like portions ... can be compared", from synthetic data; synthetic data for
+multi-whale scenes; the 25 % deletion rule goes (the not-a-whale filter covers island, boat, human, drone, rod);
+"remove the old synth data ... such as run3 or before"; then: "go ahead and make changes to the renders to ... maximize
+realism and ... make sure all of the hard scenarios are created", with subagents (Opus for code) and review here.
+Removed: run03 dataset and raw frames (/var/tmp/sat3737-whale-raw/run03, run03_raw) and the test renders from run03 and
+before (run03_smoke, run03_smoke2, run03_prelaunch_review, run02_smoke, smoke, smoke2, seacheck), 69 GB; kept run04,
+run04_raw, run05 and their test renders. canon_r0304_ft4 (trained on run03 + run04) still runs, its data cannot be
+re-read.
+Run05 against real photos (experiments/bodymap_review/synth_vs_real_stats.py, hard_sheets.py, real_camera_stats.py;
+training + validation days): the coarse mix matches (renders fluke 33 / dorsal fin 58 / neither 9 %, real 37 / 50 / 13.5 %)
+and the head is no longer over-shown (9 % of whale pixels, run04 39 %, real 1 %), but the visible whale is 0.19 of the
+frame width against 0.39 (a quarter of the pixels), flukes with both tips in view are seen from behind in 65 % against
+94 %, the sun is uniform 2-80 deg (under 20 deg in 23 % of shots) where the photos were taken at 25-67 deg (median 46,
+8:45-14:45 local, under 20 deg 1 %), frames are 16:9 at 1280 against 3:2 (7D Mark II + EF 28-300 for 95 % of photos,
+focal 65 / 160 / 220 / 300 / 300 mm at the 5 / 25 / 50 / 75 / 95th percentile). Real hard situations by rule (share of 9 321
+whale instances) and what run05 holds: a fluke without a fluke cut-out 6.4 % and a fin cut-out on a whale without a fin
+12.2 % (by eye both are flukes rolling out flat with water sheeting off: not rendered, flukes are raised and dry); one
+fluke in two instances 4.5 % (only the tips above water: rare in renders); neither fluke nor fin 8.7 % (pectoral fins,
+heads, breaches: 2 % each in run05, toy-like, splashes flat white polygons); a fin view with head and flank at odds
+4.1 % (backs seen end-on); whale over 0.8 of the frame 5.6 %; two or more whales about 7 % of photos (none rendered).
+Realism score (experiments/realism_gap/, built by a subagent; scorecard.py --renders <dataset> --compare
+experiments/realism_gap/scorecard_run05.json; real photos cached, evaluation days refused in code). 1 500 real photos of
+24 days against 1 511 run05 shots, 89 statistics ranked by Kolmogorov-Smirnov distance, real against render: aspect
+1.50 / 1.78 and 2560 / 1280 px; clipped highlights 0.9 % / 0 (renders never clip); water hue 278 / 259 deg and chroma
+25 / 13 (ultramarine against grey-teal); far-water coherence 0.79 / 0.97 (the banding); sky L* 77 / 47; noise 1.22 / 0.45
+grey levels; frame 99th percentile L* 89 / 68 (about 1 EV under); native pixels per crop pixel 2.96 / 0.81; fine-texture
+slope of the water at the whale -2.18 / -3.56; foam in the band 2.4 % / 0.1 %; whale L* 33 / 17, but whale against water
+(-24 / -26) and the highlight share on the whale (6.3 / 6.2 %) already agree, so the silhouette look is exposure, not
+skin; whale length 0.37 / 0.20 of the frame; whale position matched. Frozen DINOv3: real against render AUC 1.000 at
+image and patch level, so progress is read from d' (image 9.5) and a Frechet ratio against a real-days floor (crop
+12.3, whale tokens 8.1, band around the whale 18.7, far water 12.8; run04: crop 14.1, whale 11.4). Coverage: 98 % of
+real whale crops are nearer to another day's real crops than to any render; the hard situations are no farther from
+the renders than the easy ones (ratio 1.3-1.9).
+Factory inventory (subagent, read-only, HEAD 816b1ad): UE 5.8.3 on Vulkan SM5 (no ray tracing, no path tracer); MRQ
+1280x720, 2 spatial samples, 6.5 s per shot; Gerstner sea of 16 waves, whitecaps off; Lumen reflections on single-layer
+water are mirror-only (source: Epic's Lumen page, via the open-source search); every splash is one OBJ pattern (seed 0)
+with a constant-white material; the purchased Niagara splash pack (11 splash / breach systems) and the 12 Poly Haven
+skies are unused; exposure bias -1.5..+1.5 EV; the rig's one clip moves the spine in the vertical plane only; no blow,
+no boats or people; docs/run06_water is not implemented beyond fftocean.py / iwave.py and omits the label shader.
+Searches (subagents, web): Fab's licence restricts generative AI only (read from the German text), TurboSquid and
+CGTrader forbid machine-learning use; no maintained, licensed UE5 FFT ocean exists; FLIP Fluids builds free from
+source (add-on GPL-3, engine MIT); whitecap fraction at survey winds is under 0.5 % (W = 3.84e-6 U^3.41), so glitter
+(Cox-Munk slope statistics) and contact foam matter more; a 13 m whale at 1-3 m/s has a weak Kelvin wake; published
+whale / ship studies found synthetic data alone below real data and little gain from photorealism.
+Running: parts_seg (per-pixel parts from run05), instances_v2 (offline whales-first stage), factory multi-whale shots
+with per-animal labels (test renders), real-water compositing as a measuring stick (parts model with real water / real
+framing / baseline). Results follow in their own entries.
+2026-11-17 01:20, disk clean-up approved by the user ("go ahead and remove the first 5 as suggested"): removed run04's
+raw frames (/var/tmp/sat3737-whale-raw/run04_raw, 32 GB; run04 can no longer be re-labelled); the per-day outputs of
+abandoned experiments in days_all (parts_xr on 28 days, local_xr_local_v1 / v2 / v3 and dino_hr on 7, local_xr_hr on 1;
+40 GB; no live module or page read them; part_landmarks_* outputs that referred to parts_xr charts remain as numbers
+only); the checkpoints of 25 superseded experiments (seg_r02_*, seg_vitb16_*, seg_r03_ft4, seg_r04_cw*, seg_r04_ft4_dev,
+body_*, canon_r02_*, canon_r03_*, canon_r04_cw*, canon_r04_ft4, canon_r04_ft4_dev, canon_r04_ft4_real, canon_r05_ft4,
+cse_r04_frozen; configs, logs and metrics kept) and the 16 model-output folders canon_* / seg_* under
+experiments/real_2024-12-18 (its logs, outline_metric json files and the rest kept), 29 GB together; the pip cache,
+7 GB. Kept on purpose: the old 512-px DAY/parts charts (2 GB; id_v3 / id_v4 and the pair models were trained from
+them, their configs name no other parts folder) and pair_teacher / pair_teacher_g (needed to distil a student again).
+Still present and in use: seg_r04_ft4, seg_r05_ft4, canon_r0304_ft4, cse_r04_ft2, pair_student_g, id_v4. Free after
+this: 183 GB on root, 114 GB on /home. The engine's local derived-data cache (~/.config/Epic/UnrealEngine/Common/
+DerivedDataCache, 101 GB, regenerable) is moved aside and deleted by a watcher at the first moment no editor runs.
+Run06 composition (user): at most three whales per shot, most shots one whale as in the real data, a good share
+with two, a few with three; resolution 2560x1707; the simulated water-sheets library is dropped for now.
+
+## 2026-11-17 night — "whales first" instances without the body map (offline prototype, built by a subagent, reviewed here)
+Code model_fine_tuning/cluster/instances_v2.py (candidates | fit-gate | assemble) and experiments/instances_v2/ (scoring
+scripts, the subagent's own by-eye labels blob_labels_ai*.json, blob_gate.pkl); outputs DAY/instances_v2/ on the 24
+training + validation days (8 944 photos, 590 MB); nothing live changed, no evaluation day read. Per photo the
+segmentation (seg_r04_ft4, long side 1280) is run again WITHOUT keep_main_components; every 8-connected blob of 1 000 px
+or more in the 2560 frame is a candidate (the largest from 200 px); two blobs are joined only as the two blades of one
+fluke (view-classifier P(fluke) of the union >= 0.5, side by side: dy <= 0.6, x-overlap <= 0.25, gap <= 0.25 of the
+union's width, area ratio <= 6); each instance is judged on its own box by the unchanged not-a-whale filter, and every
+instance without the photo's largest blob must also pass a new blob gate (PCA 32 + logistic regression on the frozen
+view features, fitted on 189 by-eye labels). New keys <stem>~n<j>; mapping.json maps every old key to the new instance
+of largest overlap.
+Against the researcher's clicks (2025-01-02, 2025-03-18, 365 photos, 25 px tolerance), old -> new: the 17 marked other
+whales 4 own instance / 5 fused with the main whale / 8 without an instance -> 13 / 4 / 0 (7 of the 8 had been deleted
+by the 25 % rule); both tips of a fluke in one instance 47 of 83 -> 65 of 83; all of a main whale's clicks in one kept
+instance 310 -> 334 of 365; no main whale got worse. Instances per photo (0 / 1 / 2 / 3+) 171 / 8 236 / 526 / 11 ->
+43 / 7 540 / 1 166 / 195; 1 373 new instances without an old key, 245 fluke joins (33 of 36 sampled are one fluke, none
+joins two whales), 2 794 candidates rejected (1 100 by the filter, 1 694 by the gate); of 9 321 old kept instances 24
+lose theirs (16 to the gate, mostly poles, wake and splash; 6 tiny pieces of far whales; 2 to the filter) and 105 are
+split. In 65 photos the old main "whale" was not a whale and the new stage keeps the real one.
+The not-a-whale filter on what the 25 % rule used to delete (subagent's blind by-eye labels, held-out 112 blobs of
+1 000 px or more): it rejects people, drones and boats at every size but keeps splash, wake, water and shore
+(precision of "keep" 0.47, recall 1.0; by size 0.34 at 1 000-3 000 px, 0.91 from 10 000 px); with the gate 0.80 / 0.80
+(second whales 27 of 28 kept, whale pieces under splash 8 of 16). My look at 24 newly kept instances: about two thirds
+second whales or pieces of whales, the rest white water, wake lines and one tagging pole.
+Open: whales touching in the mask stay one instance (4 of the 17), a whale fused with a crew member's blob is rejected
+whole, junk as the largest blob is not gated, pieces of one whale other than fluke blades stay split, new keys depend
+on the rule version. Switching the live pipeline means re-cutting every per-instance output and translating saved
+labels through the mapping: not done, the prototype stays offline. The white-water false whales are a segmentation
+problem at the source (the renders have no realistic splash or wake), so the run06 data is the place to fix them.
+
+## 2026-11-17 night — part segmentation trained on run05 renders only, tested on real photos (built by a subagent, reviewed here)
+Code model_fine_tuning/parts_seg/ (labels, qa_labels, data, model, train, predict, evaluate_real); experiment
+experiments/parts_seg_r05_a/ (real_metrics.json holds every number); real-photo outputs DAY/parts_seg_r05_a/ on the 24
+training + validation days; no evaluation day read; nothing in the pipeline changed.
+Labels from the existing run05 files, cached outside the dataset: fluke = behind the tail stock's narrowest point and
+near the posed tail; dorsal fin = a 3-D test in the posed frame against the outline front base / leading-edge chain /
+tip / trailing-edge chain / back base (the rig has no hump, so the label is the blade plus a thin ridge strip);
+pectoral fin = near the posed base-to-tip segment and outside the body radius; head = the factory's head band; body =
+the rest; ignore = the under-water band and calves. New label finding: in some calf shots the label pass misses a
+clearly visible calf altogether (mask 0), so the calf's projection was rasterised from the shot's companion record and
+ignored. Model: the segmentation network with six classes, started from seg_r05_ft4, about 53 min of training.
+Synthetic validation IoU: fluke 0.942, dorsal fin 0.734, pectoral 0.684, head 0.690, body 0.871.
+Real photos, 9 520 instances, per-instance inference at up to 768 px (better than the full frame at 1280), decision
+rule chosen on the training days (fluke if fluke share >= 0.03 and >= the pectoral share, else fin if fin share >=
+0.0005, else other). Validation days: 0.797 against the cut-out flags' 0.734 on by-eye labels (n 79), 0.857 against
+0.856 on the view classifier's confident answers (n 828); the view classifier itself is right 0.97 of the time, so as
+a three-way call this does not replace it. Different errors from the flags (all days, against the classifier): other
+right 71 % against 34 %, fluke 90 % against 81 %, dorsal fin 88 % against 97 % (418 fins with no fin pixel at all);
+two or more instances in the photo 0.80 against 0.80.
+Where the fin is (the researcher's clicks, 2025-01-02 and 2025-03-18): the predicted fin region is 0.28 fin bases long
+(the body map's band: 3.8), its centre 0.25 bases from the clicked fin (0.83), more than one base off in 2 % (36 %);
+the clicked tip is inside it or within 8 px for 92 % of the 198 fins that have a region (78 % of all 233). Flukes are
+weak: clicked tips and notch inside the predicted fluke 52-57 %, all three for 30 % of flukes.
+Failures by eye (sheets in the scratchpad, mine and the subagent's reading agree): small, stubby or hooked real fins on
+a hump are painted body, and very often HEAD exactly at the fin (the knob at the end of a back looks like the renders'
+head bump; the renders show the head in 9 % of whale pixels, real photos 1 %, and their fins are tall clean blades on
+a back without a hump); flukes rising low or edge-on with water pouring off are body or head, the notch of a fluke
+seen from behind a small fin, a single blade side-on a dorsal fin; raised white pectoral fins are half fluke; wake or
+spray at a body's end is fluke; fluke / pectoral is predicted on the black padding of crops at the photo border.
+Reading: asking for the general part does transfer from renders for the classic views and gives a tight, usable fin
+position, which the dense map never did. Its failures are the situations the renders lack, the same list the
+comparison of run05 with real photos gave: no hump and stubby fins, no flukes in transition with water sheets, few
+realistic pectoral fins, no real wake. Those go to the factory (stage 2) rather than to this model.
+
+## 2026-11-17 night — part cut-outs v3: flukes turned and never flipped, dorsal fins centred on the part map (built by a subagent, reviewed here; identity scores in a later entry)
+Code model_fine_tuning/cutouts_v3/ (points, make, embed, score, train, stats, clickcheck, sheets), scripts and small
+json experiments/cutouts_v3/, cut-outs and caches /var/tmp/sat3737-parts-cache/cutouts_v3 (2.3 GB), the 24 training +
+validation days only (the day list refuses the evaluation days); nothing in a day folder or the web app changed.
+Flukes: for every instance the view classifier calls fluke; pixels = the part map's fluke class when it is at least a
+quarter of the instance, else the instance; instances_v2 blade joins give one cut-out under every old key; the span is
+laid level by the principal axis, and of the 0 / 180 degree turns the one with the tail stock on top is taken (stock
+from the part map's body attached to the fluke in 26 %, else the photo's down); rotation and scale only, never
+mirrored. 3 249 cut-outs on the training days, 223 on validation; 216 / 16 are re-joined flukes. In stacks of three or
+more flukes, mirrored against the stack's majority 25.5 % -> 0 (training) and 25.8 % -> 0 (validation); turned
+against the majority 2.0 % / 0. On the 44 clicked flukes the whale's left tip ends on the right of the cut-out for
+57 % of the old cut-outs and 95 % of v3 (one of the two exceptions is a part-map stock call that overruled the photo
+rule wrongly; the part map overruled it in 106 training flukes).
+Dorsal fins: turn and mirror of parts_up kept, centre and scale new: centred on the part map's largest fin region,
+fin base = longer side / 0.28 capped at the visible length, side 4 bases (B) or 2 bases (C). Fin region for 88.9 % of
+4 138 training fins, head-patch fallback 9.5 % (the knob at the end of the back that the part model paints head),
+old cut-out 1.6 %. On 192 clicked fins: centre off the fin 0.79 fin bases (A, parts_up) against 0.25 (B and C), more
+than one base off 35 % against 2.6 %, fin base 17 % / 25 % / 49 % of the cut-out width, tip inside 99 / 98 / 97 %.
+Bodies: parts_up reused.
+By eye (48 training instances; sheet in the scratchpad only): v3 flukes are consistent with each other and several old
+ones are their mirror image; v3 also makes cut-outs for side-on raised flukes the body map gave none for; edge-on or
+low flukes come out tilted; B and C put the fin in the middle, C is a tight fin-plus-hump view; head fallbacks sit on
+the knob, sometimes with no fin in view.
+Baseline reproduced with the project's scripts on the validation days: first match fins 0.785, bodies 0.773, flukes
+0.714. Running unattended under the GPU lock: F0 (the frozen pair_student_g on the v3 cut-outs), R0 (teacher + student
+retrained on parts_up) and R1 (retrained on v3 with the fin variant F0 scores higher on the validation days, B on a
+tie); same keys in both retrainings, id_v4 kept as the shared starting point. With 154 fluke queries in 75 stacks a
+change under about 4 to 5 points is inside the 90 % interval.
+
+## 2026-11-17 night — run06 water, offline half: FFT sea bake, reference renderer, contact layer (built by a subagent in the factory repo, reviewed here; first round)
+Factory files (new, uncommitted): factory/oceanbake.py (calibration, bake, BakedSea / ShotSurface = the label-exact
+height evaluator that replaces factory.gerstner), factory/exr.py, factory/contact.py (eWave contact layer per shot),
+factory/waterref.py (engine-free reference renderer, torch), factory/water_realism.py (frames / table / sheets),
+factory/water_engine/ (HLSL for vertex offset, pixel shading and labels + WIRING.md; never run in Unreal),
+tests/test_oceanbake.py (8 tests pass); factory/fftocean.py extended (trade-wind states tw_calm 3 m/s .. tw_moderate
+9 m/s, six cascades 1056 m .. 0.34 m, capillary term scaled so the mean-square slope equals Cox-Munk, foam threshold
+set so whitecap cover equals W(U)). A bake is 28-30 MB and 2-8 min of CPU; the evaluator matches the displaced mesh
+to 2e-6 m. Contact layer 16-20 s of CPU per shot.
+Far-water statistics against real photos (training + validation days, 14 statistics, mean KS): run05 0.52, reference
+0.29 (tw_breeze, horizon in a third of the frames, cascade 3 as geometry), 0.32 with cascades 0-2 only. Medians real /
+run05 / reference: coherence 0.785 / 0.969 / 0.832, hue 277.6 / 258.7 / 275.5, chroma 25.0 / 13.4 / 21.7, L* 52.0 /
+37.5 / 51.0, clipped highlights 2.7e-3 / 0 / 2.3e-4, foam share 2.6e-3 / 0 / 2.1e-3, spectrum slope -2.78 / -2.86 /
+-3.04. Best states tw_breeze 0.260 and tw_moderate 0.262.
+My reading of the sheets (scratchpad only): tone, colour and the large shapes are close to the real frames, a clear
+step past run05's mirror water. Up close the reference is told from real at a glance: it looks like a long exposure
+(silky bands, smooth gradients, pastel tones) where the photos are frozen and choppy with hard-edged dark facets; the
+added glints are identical round white discs scattered evenly; the contact foam is a smooth white rim and the
+pectoral slap shows nothing. The table is in-sample: reflectance, modulation, blur, exposure and the glint
+population were fitted to the very statistics it reports, so it does not show the water looks real.
+Decision: no engine port yet (the subagent's estimate is 5-6 days with open engine questions, the first being
+whether single-layer water takes the shading as emissive with specular 0). Second round started: an independent
+measure first (frozen DINOv3 features on water-only patches, linear-probe AUC and Frechet ratio against a
+real-days floor, tuned on training days and read once on validation days), then the look (facet glints, no
+long-exposure smear, short-crested chop, foam with texture), then 400 water-only frames at 2560x1707 as plates for a
+training test next to the real-water arm.
+
+## 2026-11-17 early morning — run06 water, offline half, second round: an independent measure, and where the look still fails (subagent, reviewed here)
+New factory/water_probe.py: water-only 224 px patches at the 1280 frame scale, frozen DINOv3 ViT-B/16 features (the
+realism_gap code), linear probe with whole days / whole frames held out, Frechet distance in 64 components divided
+by the distance between two halves of the real days. Real floor: probe AUC 0.497, mean KS of the 14 far-water
+statistics between two halves of the real days 0.103. Tuned on the 21 training days, validation days read once.
+                              KS mean   probe AUC train / val   Frechet ratio train / val
+  run05                        0.519        1.000 / 1.000             7.16 / 10.09
+  round-1 reference            0.291        1.000 / 0.997             4.82 /  6.74
+  round-2 plates (first 56)    0.304        1.000 / 0.997             4.06 /  6.05
+So the modelled sea is nearer to real than run05 on a measure it was not fitted to, but far from the floor of 1, and
+a linear probe still tells every render set from real without error.
+What changed in round 2: glints from resolved facets (each pixel footprint in four sub-footprints along the range
+axis) instead of the scattered discs; blur drawn per frame 0.45-1.4 px; 50 % isotropic spreading for waves under
+6 m; reflected sky more saturated where it is blue and clamped to 3 degrees elevation (the HDRIs' lowest degrees are
+land haze: khaki casts); whitecaps and contact foam broken up by a bubble pattern. Colour is now at the real medians
+(hue 276.5 / 277.6, chroma 27.5 / 25.0, L* 52.4 / 52.0); far-water coherence got worse (0.915, real 0.785, round 1
+0.832); clipped highlights fell to 3e-6 (real 2.7e-3) because glints now exist only towards the sun.
+My reading of the sheets: frames look like a calm deep-blue sea and the glitter band is believable at frame scale;
+at the 1280 and native scales the water is still silky and long-crested where the photos show short-crested chop
+with hard-edged dark facets; far glitter forms round blobs; skies are flat grey-tan; the dive's foam is a lumpy white
+mound and the pectoral slap shows nothing. The subagent stopped tuning after shading changes did not move the
+measure; its next step would be geometry (chop at 5 cm - 1.5 m with real self-occlusion at sub-pixel level).
+Next: 400 water-only plates at 2560x1707 (/var/tmp/sat3737-parts-cache/water_engine/plates, 21 s of GPU per frame)
+go into a training test, arm parts_seg_r05_fw next to the real-water arm: is this sea as good a background as real
+water, and does water matter for the part model at all. The engine port waits for that answer and for the user.
+
+## 2026-11-17 early morning — cut-outs v3 with the frozen fingerprint network (F0), validation days
+First match in another stack, pair_student_g unchanged (n 470 fins / 154 flukes): fins A (parts_up) 0.785, B (4 fin
+bases, centred on the part map's fin) 0.783 (40 better / 41 worse, 90 % interval -0.038 to +0.030), C (2 fin bases)
+0.713 (33 / 67, p 0.001); flukes old 0.714, v3 turned-never-flipped 0.708 (6 / 7, interval -0.046 to +0.032), top 5
+0.505 -> 0.547, pair AUC 0.858 -> 0.863. So without retraining, centring the fin changes nothing, the tight fin view
+hurts a network trained on wider views, and consistent fluke orientation neither helps nor hurts a network that
+learned to ignore mirroring. R1 was started with fin B; the retrainings R0 / R1 decide.
+
+## 2026-11-17 morning — run06 realism in the factory: final 300-shot test at 2560x1707, a fix round, and why no pilot render started (subagent in the factory repo, reviewed here)
+Factory config factory/config/run06_realism.json (3:2, 2560x1707, real-photo camera targets, hard situations A-F, up to
+three whales, per-animal instance + part labels, splash in front of a whale = background, quality gate, frugal
+storage). Test renders data/renders/r06r_test_* (sweep1-4, hard, c, np, ba_new|old, final = 300 shots, check = 100
+shots after the fix round). Old configs still give byte-identical shot lists (run05 seed 6 x 60, run04 seed 5 x 20,
+run06_multi_test seed 606 x 30); 63 unit tests pass.
+Labels: 0 shots fail qa_multi in the final test (405 whales), the check and the hard tests; on the sheets instances,
+parts, keypoints and splash-as-background agree with the picture in every row I looked at.
+Score card (medians; real = 1 500 crops of 24 days):
+                               real          run05         final (300)    check (100)
+  far water hue / chroma       277.6 / 25.0  258.7 / 13.4  274.2 / 23.8   269.6 / 17.1
+  far water L*                 52.0          37.5          46.1           62.0
+  sky L*                       76.9          47.4          78.0           79.5
+  frame p99 / p01 L*           88.9 / 22.1   67.5 / 6.8    91.2 / 20.0    93.0 / 22.9
+  clipped share of the frame   0.009         0             0              0.001
+  whale L* / b*                32.9 / -10.3  16.7 / -5.2   46.2 / -10.4   51.0 / -9.9
+  noise (grey levels)          1.22          0.45          0.78           1.03
+  whale length / frame width   0.37          0.20          0.30           0.26
+  far-water coherence          0.79          0.97          0.95           0.96
+  sky share of frame, median / upper quartile   0 / 0.10   0.25 / 0.38   0.04 / 0.28   0.02 / 0.28
+Learned measures (frozen features, real against render): image AUC and patch AUC 1.0 for run05, final and check;
+image d' 9.5 / 11.0 / 9.8, patch d' 7.38 / 6.50 / 6.29. So colour, exposure and framing statistics moved to the real
+values and nothing moved the measure that matters: every render set is still told from real without error.
+Whale mix in the final test (whales with >= 200 visible px): 0 / 1 / 2 / 3 = 3.3 / 64.7 / 25.7 / 6.3 %. Situations:
+A fluke rolling out 12.7 %, B fluke sinking 10.7 %, C pec / head / slap / breach 16.3 %, D end-on 5.7 %, E fills the
+frame 12.3 %, F small and far 4.3 %. Gate rejections 3.3 % (final), 4 % (check). Islands in 50 % of batches.
+Cost at 2560x1707 with the GPU shared: 34.3 s per shot (render 24.4, build + editor starts 9.9), postprocess 11.8 s per
+shot per process, Unreal peak 9.6 GB of GPU memory; disk 6.6 MB per shot with the frugal switches (dense maps off, raw
+dropped after postprocess) against 34 MB unchanged; engine caches grow 7 + 11 MB per shot (user-dir derived data,
+ZenData) and can be cleared while no editor runs. Pilot estimate under load: 100-110 shots per hour.
+run05 relabelled into data/renders/run05_relabel (1.7 GB, images symlinked): 464 of 10 000 shots fail qa_multi on the
+primary whale (stray label pixels outside the present mesh; rig / fin code changed since the render) and must be left
+out of training lists.
+My reading of the sheets (final_vs_real, final_frames_random12, check_scenarios_vs_real, check_splash_labels, check_A /
+E / several_whales): not ready. (1) Mirror water: the whale is reflected as in a pond and telephoto crops show
+light / dark horizontal bands; the real sea is rough at centimetre scale and never shows a reflection (this is the
+coherence number). (2) A cyan line on every horizon. (3) A strong vignette the photos do not have. (4) A bright
+cumulus sky over a third of many frames; the photos mostly show no sky, else a thin hazy strip (above-horizon share,
+upper quartile 0.28 against 0.10). (5) Saturated cyan glow under white flukes. (6) Fluke streams in the final test are
+opaque white picket fences larger than the fluke. (7) Contact foam as flat white flakes. (8) A purple cast on dark
+skin. (9) The fix round's per-category metering made exposure unstable: nearly black frames (000037, 000090) and
+white-outs (000025, 000097, 000117). Better in the fix round: the splash material (ragged, see-through, droplets;
+000103 breach, 000027 / 000057 pec slap) and stream / splash sizes tied to the body part.
+Decision: no pilot render. Ordered from the same subagent: the SM6 / ray tracing / path tracer comparison of six shots
+first (the user asked to see it; nothing becomes default), the final test's exposure back with one global change and
+an exposure gate, a second narrower fix round (vignette, sky share, horizon, a bounded try at small-scale water
+roughness including the baked FFT sea as detail normals, glow, foam, skin), then 60 shots on the final test's first
+60 shot definitions so every frame has a before. Not started by the subagent: the splash pack in the sequencer path
+(written, never rendered).
+Pilot command as the subagent left it (NOT run; N shots, seed 61; waits for 10 GB of free GPU memory per batch, drops
+raw frames after postprocess; render about N / 0.96 because gate-rejected shots leave the splits):
+  cd Whale-Image-Data-Factory && WF_RENDER_CONFIG=MRQ_BatchInst_AA2_2560x1707 WF_RES_X=2560 WF_RES_Y=1707 \
+    WF_MIN_GPU_FREE_MIB=10000 WF_POSTPROCESS_WORKERS=8 nohup setsid tools/build_dataset.sh data/renders/r06_pilot N 61 \
+    factory/config/run06_realism.json > data/renders/r06_pilot.log 2>&1 &
+
+## 2026-11-17 morning — splash, wake and gear out of the whale mask with cheap real labels (subagent, reviewed here; NOT live)
+Code model_fine_tuning/seg_real/, results experiments/seg_splash/ (tables.md, blob_labels.json, e2e.json,
+lost_instances.json), variants experiments/seg_splash_s0..s5, caches /var/tmp/sat3737-parts-cache/seg_splash/.
+Labels: 2 045 AI by-eye labels (not the researcher's) on seg_r04_ft4 raw-mask blobs >= 300 px, 1 635 on training days
+/ 410 on validation days, about half marked unsure; only sure whale trains as whale, whale-in-splash and unsure whale
+/ water are ignored, the rest is background. Careful: in nw_labels.json "pos" means NOT a whale.
+Every variant fine-tunes seg_r05_ft4 for 8 render epochs (6 440 steps), real share 0.3 of samples, last.pt scored so no
+checkpoint is chosen on real photos; one run per variant. S0 renders only (control); S1 + real partial labels (40 px
+ignore zone round each whale); S2 = S1 + real splash / wake cut-outs pasted into half the render crops; S3 = S2 +
+real-water composites; S4 = S1 with a background ring 3-12 px outside each sure whale; S5 = S4 gentler (core eroded
+1 px, ignore to 5 px, ring 5-12 px).
+Validation days, share of the blob's pixels still called whale (r04 is 1.0 by construction, the blobs are its output):
+                         n     r05    S0     S1     S2     S3     S4     S5
+  whale, sure            161   0.92   0.88   0.96   0.96   0.96   0.91   0.92
+  whale in splash        13    0.60   0.54   0.53   0.51   0.53   0.40   0.43
+  splash                 18    0.07   0.05   0.03   0.01   0.03   0.01   0.01
+  wake                   69    0.31   0.23   0.12   0.10   0.11   0.10   0.08
+  water                  22    0.26   0.08   0.18   0.16   0.17   0.12   0.12
+  all not-a-whale        197   0.61   0.53   0.03   0.03   0.03   0.03   0.03
+  blobs >= 30 % whale: person (42) 39 / 36 / 1 / 1 / 1 / 1 / 1; drone (9) 9 / 9 / 0 ...; boat (11) 2 / 1 / 0 ...;
+  pole (5) 2 / 1 / 0 ...; shore (16) 1 / 0 / 0 ...; bird (4) 4 / 4 / 1 / 1 / 4 / 3 / 3.
+New blobs of the model's own (>= 300 px, overlapping no r04 blob, 884 validation photos): r05 286 (0.32 per photo, 6
+of 120 sampled are whale), S0 228, S1 4, S2 3, S3 5, S4 11, S5 8 (mostly real whale).
+Whales (77 view-labelled validation photos; clicks on the two click days, which are training days):
+                                             r04     r05     S0      S1      S3      S4      S5
+  median IoU with the r04 blob               0.998   0.905   0.867   0.856   0.887   0.924   0.917
+  share of the r04 blob kept                 0.997   0.911   0.873   0.946   0.950   0.892   0.910
+  area added outside the r04 blob, pooled    -       0.062   0.047   0.123   0.113   0.044   0.055
+End to end with instances_v2 unchanged (shadow run):
+  instances per validation photo             1.262   1.244   1.243   1.150   1.149   1.222   1.201
+  rejected by filter + gate (validation)     336     245     248     14      16      34      25
+  17 clicked other whales own / fused / none 13/4/0  12/5/0  13/4/0  10/7/0  10/5/2  12/4/1  13/3/1
+  flukes with both tips in one instance /83  65      65      65      66      67      60      60
+  main whales, all clicks one instance /365  334     332     329     333     336     324     324
+Lost instances (validation photos where r04 keeps two or more and the candidate fewer; 60 sampled blind per
+candidate): S1 112 lost, sample 9 second whales (7 fused) / 26 pieces of the same whale / 22 not a whale; S5 95 lost,
+5 second whales / 35 pieces / 17 not a whale: about 14 (S1) and 6-7 (S5) real second whales lost in 884 photos.
+Reading. (1) The real labels do it: people, drones, boats, poles and shore go to about zero and splash / wake to
+1-12 % of pixels, with almost no new false whales; the renders-only control with the same schedule does not (people
+36 of 42, 0.26 new false whales per photo), and r05 as it stands is not usable. (2) Pasted real splash and real-water
+composites add nothing measurable on top of the labels (one or two blobs of 18 and 69). (3) The price is the whale's
+outline and depends on how the real whale label is cut: the loose label lets the mask grow a 5-10 px rim into clean
+water (+12 % area) that fuses neighbours (other whales 10 own / 7 fused); the background ring removes the rim
+(+5.5 %, 13 / 3) but drops wet flanks under a film of water and thin awash backs (lowkept sheet: 0.3-0.5 kept where
+S1 keeps 0.9) and splits five more flukes under a join rule tuned on r04 masks. My look at the sheets agrees: gear and
+wake are gone on nearly every tile with the whales in the same frames intact; whales in heavy wash are lost in about
+7 of 24 by every variant.
+White water among r04's errors: back wash 236, travel wake 146, breach / slap 43, fluke stream 20, blow 4, whitecap
+3; gear: person 126, shore 68, drone 52, boat 42, pole 26 (the renders contain none of the gear).
+Candidate for the live mask: S5 (experiments/seg_splash_s5/checkpoints/last.pt), not switched. Ordered before any
+switch: hysteresis / threshold on S5's probabilities chosen on training days, the fluke-join gap re-tuned on S5 masks
+(2025-01-02 to tune, 2025-03-18 to test), a second seed for the noise, a 48-photo sheet for the researcher. Going live
+re-runs everything behind the mask for 28 days (cse / canon crop, instances, view class, cut-outs, fingerprints, link
+scores, safe clusters: instance keys change and need an old-to-new mapping) and is the user's decision.
+
+## 2026-11-17 late morning — run06 look: engine upgrade comparison, exposure undone, fix round 2 on a 68-shot check (subagent in the factory repo, reviewed here; no pilot)
+Upgrade comparison (the user asked to see it; nothing became default). Six final-test shots (000084, 000190, 000187,
+000170, 000268, 000258), final-test exposure, raw frames before camera noise:
+                                          render s / shot at 2560          GPU peak at 2560   labels against default
+  default (Vulkan SM5, Lumen)             5.3 (24 under training load)     6.8 GB             -
+  SM6 + hardware ray tracing (Lumen HWRT  6.3 (+20 %; about 29 under load) 10.2 GB            identical, 0 px differ
+    reflections, front-layer translucency)
+  path tracer 32 spp (1280x853 only)      about 10 at 1280                 4.1 GB at 1280     0.07-0.9 % of px differ
+RT leaves the mirror water, the cyan horizon, the under-water glow and the flat whites as they are; only the skin
+changes (reflections show the surroundings instead of royal blue: grey-brown, with oil-slick bands on 000190). The
+path tracer does not render the Water plugin surface at all (the camera sees the seabed sand and the whole submerged
+body): unusable as it stands. SM6 starts from the command line only (TargetedRHIs=SF_VULKAN_SM6, r.RayTracing,
+r.SkinCache.CompileShaders=True or the start is fatal, the Lumen HWRT variables) through WF_RENDER_EXTRA_ARGS; the
+first shot pays a one-time shader compile of about 3.5 min. My reading: no upgrade is worth making default. RT costs
+20 % render time and 3.4 GB more GPU memory (next to the trainings that decides whether a render fits) for a skin
+change that is not clearly better.
+Exposure: per-category offsets and the doubled sky-light fill removed, one global change (ev100 -1.8 -> -2.2), and an
+exposure gate in factory/postprocess.py (frame mean L* in [31.5, 80.1], p99 in [75.5, 97.0] = the training days' 1st
+to 99th percentiles). The gate rejects 12 % of the final test (applied after the fact), 21 % of the first check and
+32 % of the round-2 check (22 of 68: 11 flat, 8 p99 high, 3 dark).
+Fix round 2, check render data/renders/r06r_test_r2: the first 60 final-test shot definitions + the 8 other "random
+12" shots, restyled (same whale, pose, aim, sun and sea; new look). qa_multi: 0 of 68 shots fail (87 whales).
+  C1 vignette: corner against centre of water-only rows -0.06 L* (real -1.9, final -8.6, run05 -11.2). Done.
+  C2 sky: frames with any sky 31 % (real 32.5 %, final 56 %), sky height where present 0.22 (real 0.21); camera height
+     4.5-10 m, volumetric clouds off, Mie haze doubled. Done; the real skies are a little bluer.
+  C3 horizon: band under the horizon against the water below +20 L* (real +2.5, final +16), sky above against the band
+     +0.4 (real +16.7), band chroma 16 (real 27.7). No longer saturated cyan but still a bright line. Not fixed; same
+     root as C4 (the mirror reflects the bright horizon sky at grazing angles).
+  C4 mirror water: not fixed. Five lookdev variants (water roughness 0.04 -> 0.3, Fresnel roughness 0.1 -> 0.35 / 0.6,
+     near normal strength x1.6 without the long-lens reduction, near ripple scale 512 -> 100 cm) change nothing
+     visible: reflections on Single Layer Water stay a sharp Lumen mirror.
+  C5 under-water glow: absorption distances x [0.5, 0.4, 0.25]: the royal-blue / cyan patches are mostly gone, but
+     the far water is now over-saturated (C* 33.9 against 25).
+  C6 fluke streams: many thin strands 0.4-1.2 cm wide every 4-10 cm (splash._strands). At 1:1 they read as opaque
+     white icicles; the real ones are see-through sheets and bead trains with sparkles. The material is the gap now.
+  C7 foam: opacity 0.5: grey and see-through, the leaf shapes remain; band foam share 0.055 (real 0.024).
+  C8 skin: shadow saturation 0.55, fringe off; hue 290 -> 286 (real 282), chroma 15.7 (real 11.1), whale L* 59.1 (real
+     32.9): the whales are light lilac and brighter than the water. Brightness is worse than before.
+  C9 empty frames: 1 of 68 without a visible whale (1.5 %); 11 of 400 in a generator draw.
+Score card on 54 equal shots (same ids for final and round 2; medians):
+                        real     run05    final    check 1   round 2
+  far water L*          52       40       46.5     58.5      48.5
+  far water C*          25       12.8     23.8     17.8      33.9
+  far water hue         278      257      273      270       274
+  far-water coherence   0.785    0.968    0.953    0.954     0.949
+  frame L*              54       43.2     54.5     65.8      52.7
+  clipped share         0.86 %   0        0        0.11 %    0.17 %
+  noise                 1.22     0.39     0.74     1.10      1.34
+  whale L*              32.9     16.7     54.7     54.2      59.1
+  band foam             0.024    0        0.066    0.012     0.055
+  image d'              -        7.37     8.30     6.80      7.05
+  patch d'              -        5.43     5.23     4.81      5.41
+  Frechet crop ratio    1        4.34     5.01     4.95      4.43
+  coverage ratio        1        1.99     2.15     2.22      2.15
+Image and patch AUC 1.0 for every set. On equal shot counts no version of the new look is nearer to real than run05
+on the learned measures; only the hand-made statistics moved.
+Cost of the check: 33.5 s per shot (render 17.6, build and editor starts 15.9 with batches of 1-8 shots), GPU peak
+8.0 GB.
+My reading of the sheets (upgrade_sm6, upgrade_sm6_crops, round2_before_after_12, round2_vs_real,
+round2_scenarios_vs_real, round2_streams_vs_real, round2_splash_labels): labels right on every tile; look not ready.
+The mirror water with the mirrored whale and the glossy bands is still the first thing the eye sees, then the bright
+line on the horizon, the lilac whales lighter than the sea, the saturated blue, the icicle streams and the flake foam.
+Decision: no pilot. Ordered (round 3, about 2 h): the reflection method itself, which no variant has touched (the
+project sets only r.ReflectionMethod=1 and no r.Water.SingleLayer.* variable): read the engine source, switch traced
+reflections on the water off so it falls back to the roughness-aware sky-light capture, sweep roughness; the milder
+absorption; whale brightness (dark skin L* 25-40, darker than the far water); the gate under about 10 %; the same 68
+shots again as r06r_test_r3. If the engine cannot make the surface rough, the Water plugin route is exhausted and
+what is left is an own water material (the offline agent's M_OceanFFT; the user's decision) or compositing on water
+plates.
+New in the factory (uncommitted): exposure gate (postprocess.py), splash._strands, realism.water_detail /
+stream_strands, batch keys clouds / fog_batch, whitewater foam_opacity, grade keys vignette / saturation_shadows /
+fringe, wf_make_upgrade_configs.py (MRQ_BatchInst_PT32w8_1280x853 / _2560x1707, PT128w8_1280x853),
+wf_probe_ocean_params.py (read-only); data/renders/run05_relabel/qa_failing_ids.txt lists the 464 shots to leave out.
+
+## 2026-11-17 midday — run06 whales pasted on real sea: the swap (subagent, reviewed here; examples only, no training yet)
+User, after the gap list (sea surface, contact water, skin, pose, rest of the frame): "lets see some examples of pasting
+rendered whale over real sea, also please fix our rendered whale coloration". First seen by the user: the night's run05
+composites (scratchpad realwater/judge_rw_rs_01.jpg; real sea right, whales flat black / orange, sticker look, halos).
+Round 3 in the factory, first result: r.Water.SingleLayer.Reflection=0 (water reflects the sky-light capture only)
+removes the mirrored whale in every shot (round3_water_reflection*.jpg); the surface stays a smooth glossy swell;
+roughness 0.35 only darkens the frame. r06r_test_r3 = the 68 check shots with that and skin_look (BaseColorScale 0.6,
+Specular 0.25); report and skin fix (r06r_test_r4 rendering) in a later entry.
+New code model_fine_tuning/synth_aug/paste06.py (CPU, 1.9 s per 2560x1707 composite on one core; pool of 2 273 real
+whales from the 21 training days with classifier view at P >= 0.9, cache /var/tmp/sat3737-parts-cache/realwater/
+paste06/; no validation or evaluation day is read). Methods on the same whales (paste_methods.jpg):
+  A  feathered band of the render's own water (the night's method): halo, smeared splash, razor waterline. Worst.
+  B  whale + its own foam as alpha, no rendered water: no halo, foam reads as white cut-out blobs, cut waterline.
+  C  swap: the render goes where a real whale of the same view sat (size of that whale's box, bottoms aligned, match
+     needs silhouette IoU >= 0.4 and scale 0.5-2); only the real whale's mask + 3 px is filled (mirrored from the
+     water left and right in the same rows); the real wash, wake and splash stay round the rendered whale.
+  Ch = C + the render's white water kept only inside the whale's silhouette + the darker 60 % of skin matched in
+     CIELAB to the real whale that was in the photo (white patterns left alone) + grain and 0.6 px blur matched:
+     the agent's choice.
+Labels stay exact (paste_labels.jpg): instances and parts move with the whale, the render's under-water class is
+ignore wherever it lands, pasted white water, real wash and the filled hole are background, other real whales in the
+photo are ignore.
+By eye on all 35 usable r3 shots (paste_judge_r3_35.jpg): 9 clear failures (26 %), 7 from the render (icicle streams
+on flukes x4, a glassy hollow pectoral, a pink head, a see-through fluke merged with its splash) and 2 from the paste
+(a larger real breaching whale showing round a smaller render; a ghost head in heavy wash); about 6 more show at
+100 % (edges too crisp, two-tone skin from the colour transfer). 60 pastes from r2 / final / check: about 25 %.
+My reading of paste_examples_01 / _02, paste_methods, paste_failures, paste_labels: the sea problem is gone with the
+swap and the contact water is real; what gives a frame away is now the rendered whale (white streams, pink and
+glassy parts, even lighting, shape) and a size or silhouette mismatch with the real whale. The colour transfer hides
+the lilac skin but nothing painted on the whale. Open before any training use: remains of a real whale that the
+render does not cover are labelled background and must become ignore (stricter match: IoU >= 0.55, render box >= 0.9
+of the real one, plus an ignore ring); real splash that covered the real whale is lost under the paste; streams
+should come from the real photo or be rendered off for paste material; a training test needs more shots than the 470
+test renders (the pilot, whose gate would then be the whale's look, not the sea's: the user's decision).
+Real-water arms, interim (same agent): sc against the baseline with one rule family for both, validation days, three-way
+call by eye +6.3 pts [+1.3, +12.5] full frames two-part rule, +5.1 single rule; the hr variant -1.3 / +1.3 (inside
+noise); fin tip in the largest fin region 0.883 -> 0.939 (full), 0.924 -> 0.947 (hr). The identical 0.79747 of sc-full
+and baseline-hr was a coincidence (41 instances right only for one, 41 only for the other). rw trained (render-val
+0.831 against 0.838), its real-photo scoring and the arms rwall, s1, fw are still queued.
+
+## 2026-11-17 midday — run06 look, round 3: why the water is a mirror, whale colour (subagent in the factory repo, reviewed here; no pilot)
+Water, from the engine source of this install: r.Water.SingleLayer.Reflection takes 0 off / 1 same as the scene (Lumen)
+/ 2 reflection captures and sky light only / 3 SSR (SingleLayerWaterRendering.cpp:56-71). In mode 1 Lumen forces the
+water's roughness to 0 (LumenReflectionCommon.ush:244-245, ApplySmoothBias: only the opaque and translucent passes
+keep roughness, "otherwise force to mirror"; SingleLayerWater is pass 1), so no material parameter can blur it. In
+mode 2 material roughness picks the mip of the sky-light cubemap (SingleLayerWaterComposite.usf:103-165), and that
+capture holds no whale. Mode 2 from the command line (-ini:Engine:[SystemSettings]:r.Water.SingleLayer.Reflection=2
+through WF_RENDER_EXTRA_ARGS): the mirrored whale is gone in all 8 test shots; roughness 0.2 / 0.35 only darkens the
+water (L* 48.4 -> 39.7 / 30.0, real 54.5); near normals x1.5-2 with ripple scale 160 cm show a little fine structure
+(chosen). Not possible in the built-in water: rough traced reflections, sub-pixel slope statistics, sun glitter
+across the chop (needs an own material such as M_OceanFFT, or water plates). Horizon band unchanged (+18.8 L* against
+the water below, real +2.5). (An earlier line of this log names the value 0 for this switch; the value used is 2.)
+r3 check (same 68 definitions, labels 0 failures), 54 equal shots: far L* 49.8 (real 52), far C* 31.3 (25; absorption
+back to x[0.7, 0.6, 0.45]), coherence 0.939 (0.785), whale minus band L* -10.2 (-23.8; round 2 -3.2), band foam 0.043
+(0.024); image AUC 1.0, image d' 7.48, patch d' 5.23, Frechet crop ratio 3.98 (run05 4.34, round 2 4.43), coverage
+ratio 2.07. Exposure gate still rejects 32 % (flat frames have nothing bright: no glitter). Streams at opacity 0.35
+are thinner but still white icicles. Cost 30.7 s per shot (13.4 render), GPU peak 7.8 GB.
+Whale colour (the user's request). Causes: all 44 individuals share the shipped atlas with a paper-white fluke
+underside, pectorals and throat and navy / violet dark skin; a broad sky sheen (Specular 0.5); the +0.4 EV. Fix:
+new maps T_Humpback_BaseColor_<id>d.png from factory/skin_run06.py (dark skin chroma x0.2 and x0.85 darker; white kept
+as a per-animal pattern, 70 % mostly black / 22 % mixed / 8 % mostly white, off-white at most albedo 0.7; originals
+untouched, gitignored folder), skin material parameters BaseColorScale 0.62 / Specular 0.2 keyed per whale
+(skin_look; defaults 1.0 / 0.5 keep other configs as they were), grade white temperature 6500, saturation 1.35,
+shadow saturation 0.4, ev100 -2.4, whale.skin_suffix "d". Whale pixels only, foam and splash excluded, medians per
+shot; real = 499 training-day photos with the live masks; renders = the same 24 skin-heavy shots:
+                                  real     round 2   r3      r4b (fix)
+  dark-skin L*                    24.3     33.8      27.7    17.9
+  dark-skin C*                    11.3     15.9      14.3    12.6
+  dark skin minus nearby water    -30.4    -24.9     -31.2   -35.6
+  white share (L* > 75), median   0.02     0.31      0.24    0.11
+  shots over 10 % white           13 %     71 %      67 %    52 %
+  shots over 30 % white           3 %      54 %      42 %    13 %
+  clipped whale pixels, p75       0.01     0.13      0.07    0.00
+  white-area L*, median           84.9     90.2      89.0    87.2
+Corrected dataset: data/renders/r06r_test_r4b/dataset (24 shots, labels 0 failures). My look at
+round3_skin_vs_real.jpg: for the first time the whales read right in colour (grey-black backs, fins, heads, no pink or
+purple, off-white patches); still about 6 L* too dark and white-heavy shots about four times too frequent (fluke
+undersides, thin foam lying on the whale).
+Ordered (round 4, about 90 min): BaseColorScale 0.7-0.8 to centre the dark skin, the white share to the real
+distribution, the paste failures that come from the render (a no-streams switch for paste material, the glassy
+pectoral, the see-through fluke in tail slaps, the cyan patch on head rises), a narrow wet highlight, a 48-shot check
+r06r_test_r5 as a "paste material" preset, and the pilot command for it (not to be started). The paste agent re-runs
+on r4b with the stricter match and ignore labels for uncovered remains of the real whale.
+
+## 2026-11-17 early afternoon — swap paste on the colour-corrected whales, label rule, and the first real-water score for the part model (subagent, reviewed here)
+Paste on r06r_test_r4b (paste_r4b_examples.jpg, 5 pastes): with the corrected skin the render's own colour holds up
+on real sea, so the colour transfer is off for run06 whales (it was what made the skin two-tone); 3 convincing (back
+arch, head rise, pec slap in heavy wash), 1 mild (a piece of the real peduncle beside the pasted fluke, labelled
+ignore), 1 failure from the render (tail slap speckled by its own splash). Tight match (silhouette IoU >= 0.55, render
+box >= 0.9 of the real whale's box in width and height): 213 of 337 usable run06 test renders find a partner (63 %;
+old gate 91 %); with the pool built from every training-day photo (7 190 real whales instead of 2 273) 231.
+Label rule for a swap (my correction: the first version ignored the render's whole under-water zone, 16k-270k px of
+real water under each whale): ignore = remains of the real whale not covered by the opaque render (mask grown by
+max(4 px, 2 % of its length)) + a 4 px ring round the filled hole, the real foam put back on top along the lower edge,
+other real whales, a band 0.15 x the real whale's box height below its waterline, the render's under-water class only
+where render pixels are pasted; everything else is background, including the water right below the pasted whale.
+First real-water score for the part model, validation days, every model's rule re-chosen on the training days in the
+same two-part family (brackets = paired bootstrap over photos, test-set noise only; run-to-run noise comes with s1):
+                                 full, by eye (79)        full, classifier (828)   hr, by eye   hr, classifier
+  baseline parts_seg_r05_a       0.734                    0.837                    0.797        0.858
+  sc (real scale)                0.797 (+6.3 [+1.3,+12.5]) 0.858 (+2.1 [+0.1,+3.9]) 0.785        0.865
+  rw (real-water plates + scale) 0.797 (+6.3 [0,+12.8])    0.856 (+1.9 [+0.1,+3.8]) 0.722 (-7.6 [-16.5,+1.3]) 0.844
+  fin tip in the largest fin region, full / hr: 0.883 / 0.924, 0.939 / 0.947, 0.946 / 0.938; all three fluke points
+  in fluke, hr: 0.301, 0.349, 0.313; render-val score 0.838, 0.837, 0.831.
+Reading so far: on full frames the gain is the framing (whale at the real size), and real water under the whale adds
+nothing on top (rw = sc); on per-instance crops rw is lower, inside the test noise. This is the night's band method
+(a feathered band of rendered water in a real plate), not the swap.
+Queued, in this order, detached (experiments/realwater/chain2.sh, marker /var/tmp/sat3737-parts-cache/realwater/
+chain2.done, table compare_final.txt): s1 (baseline recipe, seed 1 = the noise), sw (parts_seg_r05_sw: rw's recipe and
+seed, each run05 sample replaced with p 0.5 by a swap composite at 1280 px with a random tight-gate partner, colour
+transfer on for run05 whales, corrected labels; 5 300 of 6 440 training renders have composites, 2 each, cache
+3.5 GB; model_fine_tuning/synth_aug/swap_run05.py), fw (modelled-sea plates), rwall (real water p 1.0).
+
+## 2026-11-17 13:30 — the user drops the paste route; new focus and what was started
+User, after sw_train_preview.jpg and the rw = sc table: "these do not look good lets drop this idea. It seems like it
+doesnt help anyway. Lets focus on making sure we are generating the higher rez, realistic poses/partial pieces seen in
+real, multiple whales, and keep measuring to see where our gaps are. Specifically gaps that are causing our models to
+not be able to tell which part of the whale the photo is of." And a side experiment: how state-of-the-art human pose
+estimation works, "paying special attention to methods capable of handling severe oclusion"; few typical whale poses;
+simple or complex pose judged from the amount of splash; complex poses go to the researchers; the purpose is "to
+identify and compare locations precisely on the simple poses such as flukes over all their angles, and dorsal fins in
+varying height above water and direction of travel".
+Done on that: the arms sw, fw and rwall are taken out of the GPU queue (s1, the noise run, stays), the swap cache is
+deleted, paste06.py / swap_run05.py stay in the tree marked as dropped. Renders are full frames again (no "paste
+material" preset). Started (Opus subagents, reviewed here):
+  - part-identification gap analysis: a by-eye taxonomy on about 600 real instances, the part model's error and cost
+    per category for every arm (baseline, sc, rw, w1, s1), the same categories counted in run05 and the run06 tests,
+    nearest renders for failing real cases, resolution, and one command that reprints the ranked gap table for a new
+    model or render set (model_fine_tuning/part_gaps/, experiments/part_gaps/);
+  - pose side experiment: survey with sources, a design for flukes and dorsal fins (keypoints with states and planar
+    rectification against template pose, dense coordinates, model fitting), the splash triage, a first experiment
+    against the researcher's clicks (model_fine_tuning/pose_side/, experiments/pose_side/);
+  - factory round 5: a hump and per-individual dorsal fin shapes (the rig has neither; last night's failure list),
+    part visibility toward the real mix (head 9 % of whale pixels in renders against 1 %), fluke angles and heights,
+    fin heights and headings, touching and overlapping whales, per-landmark 2D positions with states and pose data
+    per whale, check render r06r_test_r6 (about 80 shots).
+Plan told to the user: a 2 000-shot pilot at 2560x1707 as a measuring instrument once r6 passes my check, unless they
+object; the full run06 still needs their go-ahead.
+
+## 2026-11-17 afternoon — part model with real weak labels (W1): most part errors fixed, but whale painted background (subagent, reviewed here; nothing live)
+Code model_fine_tuning/parts_weak/ (build, data, losses, train wraps parts_seg.train: the render batches stay the
+baseline's, 2 real crops are added after each batch of 8), scripts experiments/parts_weak/ (run_w1.sh, eval_w.py,
+compare.py, detail.py, sheets.py; compare_w1.json, detail_w1.json), run experiments/parts_seg_r05_w1 (41 min), real
+outputs in /var/tmp/sat3737-parts-cache/parts_weak/days_shadow/.
+Real supervision, 7 207 photos of 20 training days (2025-03-18 kept out as the click test; no validation or
+evaluation day): certain background (about 86 % of each photo: everything more than 64 px and 0.1 whale lengths from
+whale evidence, 509 by-eye not-a-whale blobs, the black padding); per instance "no fluke" on dorsal and other views
+(4 513), "no fin" on fluke views (2 589), "some fluke" (2 628), "some fin" (3 562) from the view classifier and 559
+by-eye codes; the 2025-01-02 clicks as small shapes (fin: tip to 30 % of the way to each base; fluke tips and notch
+discs; 133 shapes). Losses added to the unchanged render loss; the "no X" terms average over the 10 % most violating
+pixels of the instance.
+Validation days, rule re-chosen on training days for both models, 95 % paired bootstrap over photos:
+                                                  baseline   W1       difference
+  three-way call by eye, per instance (n 79)      0.797      0.861    +0.063 [-0.05, +0.19]
+  three-way call by eye, whole photo (n 79)       0.734      0.873    +0.139 [+0.03, +0.26]
+  view classifier, per instance (n 828; partly circular)  0.858  0.938  +0.081 [+0.054, +0.109]
+  dorsal views with no fin pixel (n 473)          9.1 %      0.85 %   [-11.0, -5.7] points
+  fluke views with no fluke pixel (n 204)         5.4 %      3.9 %    not significant
+  dorsal views that get a fin region (n 492)      89.0 %     99.0 %
+Clicks of 2025-03-18: fin tip inside the largest fin region 74.8 -> 90.8 % (n 119); fin centre off the clicked fin
+0.27 -> 0.17 fin bases; fluke notch / left tip / right tip inside the fluke 57 / 51 / 53 -> 70 / 59 / 68 %; all three
+0.31 -> 0.41; tip part of the clicked fin painted mostly fin 70.7 -> 99.0 %, mostly head 9.1 -> 0 %, mostly body
+14.1 -> 0 %, no fin pixel 12.1 -> 0 %. By kind (classifier truth): dorsal 0.886 -> 0.956, fluke 0.902 -> 0.961,
+other 0.709 -> 0.854; one whale 0.878 -> 0.944, several whales 0.726 -> 0.903. Synthetic validation IoU unchanged
+(fluke 0.942, fin 0.734 -> 0.729, pectoral 0.684 -> 0.701).
+Last night's failure types on 24-tile before / after sheets (picked from the baseline before W1 was scored): stubby or
+hooked fins on a hump painted head or body: fixed in about 22 of 24; low or edge-on flukes: about 17 of 24 (edge-on
+flukes with a white underside are still pectoral); raised white pectorals called fluke: about 20 of 24; wake at a
+body's end called fluke: fixed; fluke / pectoral on the black padding: fixed 24 of 24.
+New problem: W1 paints much of the whale background (median share of the instance: dorsal views 3 % -> 31 %, other
+views 0.5 % -> 28 %; more than half background in 16 % of dorsal and 34 % of other views), its fin regions are fat
+(length over the clicked fin base 0.28 -> 0.68) and in fluke views the tail stock and back go fluke (body share
+0.07 -> 0). Cause as the subagent reads it and I agree from the sheets: the real crops teach background on real
+water but never "this is whale". Not usable for the cut-outs as it is (fin square = region / 0.28; stock direction).
+Ordered: W2 = W1 + background forbidden inside the eroded confident live instance mask (same seed and recipe), the
+noneed ablation already queued (W1 without the "some fluke / some fin" terms), and a note on what the researcher's
+clicked fin is in terms of the render label (the clicked bases span the whole hump, the render label is the blade
+only) so the factory's new hump and the cut-outs agree on one definition.
+Reading for the user's question (why the models cannot tell the part): a large share of the part errors is not a
+rendering gap at all but the missing contact with real photos; a few thousand free constraints from the view
+classifier remove most of it. One seed; the by-eye sets are small.
+
+## 2026-11-17 14:10 — pose side experiment, first hand-back: survey, design, splash triage (subagent, reviewed here; the keypoint model is queued, not yet run)
+User's request: how state-of-the-art human pose estimation works, with attention to severe occlusion; simple or
+complex pose from the amount of splash; complex poses to the researchers; precise comparable locations on flukes over
+all angles and dorsal fins at any height and direction of travel.
+Answer of the survey (sources in the subagent's report; numbers marked checked were read from the paper or official
+repo): take one part of the human recipe. A few named points per part, each with a state (visible, under water, behind
+splash, behind a body, outside the frame) and a position even when hidden (ProbPose-style presence / visibility
+outputs; ViTPose-style heatmap head on a frozen transformer; occluder augmentation as in Sarandi 2018 / PARE;
+conditioning on a proposal as in BUCTD = our part model's fin / fluke region), then a planar frame from the points.
+Skip whole-body 3D fitting (the mesh-recovery literature says truncated bodies are filled in from a learned prior; no
+whale shape space exists and individual fin / fluke shape is the identity signal), render-and-compare with a template
+and the dense whole-body map (ours is 0.83 fin bases off). Working whale photo-ID systems align on fluke landmarks
+(Happywhale) or trace the trailing edge (CurvRank, finFindR): the same points. Checked occlusion numbers worth
+keeping: OCHuman about 90 AP with true person boxes (ViTPose) against about 49 when people must be found (BUCTD).
+Ceiling on our data, from the researcher's 580 paired regions on two photos of the same whale (2025-01-02,
+2025-03-18), region carried from one photo to the other, distance in fin bases: 3-point affine from the CLICKED front
+base, back base and tip 0.066 median, 95 % within 0.25 (n 225); base points only 0.088, 86 %; today's cut-outs v3
+0.148, 65 %. So exact fin points are worth about twice today's precision; only 16 pairs are on flukes.
+Design: (a) points with states + planar frame (fin: 3-point affine, switching to a similarity when the base is under
+0.35 of the fin height = end-on; fluke: similarity from the tips + a shear that centres the notch, because tips and
+notch are nearly collinear from behind) is recommended; (c) part-local dense coordinates (fluke span x chord, fin
+base x height) as a second stage; (b) template pose adds nothing for a planar part; (d) model fitting not recommended.
+Triage v0 (model_fine_tuning/pose_side/splash.py, triage.py; thresholds by eye on training days, nothing fitted):
+white water = unsaturated pixels brighter than the surrounding open water by 60 % of the way to white, in a ring 0.12
+whale lengths wide, over the whale's area; simple = view sure (P >= 0.9), splash <= 0.4, white on a fin <= 0.10, not
+at the photo edge. Simple share: flukes 83 % / fins 76 % / all 68 % on training days (n 8 552), 77 / 72 / 55 % on the
+validation days (n 961, read once). Reasons for complex: view unsure or other 19 %, photo edge 12 %, splash 7 %. My
+look at splash_levels_train.jpg: the levels order as claimed up to about 0.5; the top row (0.86-1.29) mixes real
+splash with a few calm frames on pale water, so the measure still misfires on bright water.
+Queued under the GPU lock (experiments/pose_side/chain1.sh, markers /var/tmp/sat3737-parts-cache/pose_side/chain1.done
+and after_chain1.done): frozen DINOv3 ViT-B/16 + heatmap and 5-way state per point, trained on 7 245 run05 crops with
+waterline cuts at every height, pasted real splash, left / right mirroring; arm A renders only, Bx fine-tuned on one
+click day and tested on the other. A first render-only probe swapped left and right fluke tips 33 % of the time and
+found the clicked front fin base 3 % of the time (the rig's front-base landmark is not where the researcher clicks).
+Factory requests passed on (round 5): landmark fixes (notch 25 cm off the midline, dorsal_fin_front at the start of
+the hump's slope, new tail_stock_top), states from the local water surface (behind_splash, under_wave, label_edge),
+part planes (fluke and fin normals, facing side, fin plane against the line of sight), coverage (flukes from behind
+about 90 % with transitions, fins at every height, end-on fins, balanced headings); cheaper extras: soft visibility,
+waterline polyline, part-local dense coordinates, white-water label with a per-animal amount.
+
+## 2026-11-17 14:20 — part cut-outs v3, scored frozen and retrained: nothing from v3 goes live (subagent, reviewed here)
+Chain ALL_DONE 14:08:58 (R0 teacher 64 min / student 40, R1 teacher 47 / student 39; best validation pair AUC 0.847 /
+0.846 / 0.849 / 0.846, production pair_student_g 0.824 on its own noisy per-epoch measure). Checkpoints
+experiments/pair_student_v3_{r0,r1}{,_teacher}/checkpoints (4.1 GB), score files experiments/cutouts_v3/, tables
+/var/tmp/sat3737-parts-cache/cutouts_v3/score_val.txt and score_train.txt. The trainings waited five hours overnight
+because my GPU priority gatekeeper paused them on purpose, not because of a lock race.
+Validation days (2025-01-15, 2025-02-27, 2025-03-14), first match (90 % interval of the change, bootstrap over stacks):
+  fins (470 queries, 239 stacks): G 0.785, G.B 0.783, G.C 0.713 (-7.2 [-10.9, -3.5], p 0.001), R0 0.811 (+2.6
+    [+0.2, +5.0] against G), R1 on B 0.783 (-2.8 [-6.2, +0.2] against R0), R1.A 0.774.
+  bodies (841, 420 stacks; the same cut-outs in every arm): G 0.773, R0 0.769, R1 0.747 (-2.3 against R0 with
+    identical cut-outs and keys = run-to-run noise).
+  flukes (154, 75 stacks): G 0.714, G.v3 0.708, R0 0.682, R1 on v3 0.682 (0.0 [-6.8, +6.5] against R0), R1.up 0.701.
+In-sample on the 21 training days: flukes R1 0.702 against R0 0.668 (+3.4 [+1.4, +5.4], p 0.001; the retrained
+network does learn to use the consistent side), fins R1 -3.1 against R0 (p < 0.001), bodies level.
+Reading. (1) One run per arm cannot tell differences under about 3 points between two retrained networks (the bodies
+show it); fluke intervals are +/- 6 to 7 points, wider than quoted before. (2) Only R0 on fins is outside the noise
+against production: retraining the student on today's cut-outs, +2.6 points; one run. (3) Turned, never-flipped
+flukes are consistent by construction (mirrored against the stack majority 25.5 % -> 0; left tip on the right 57 % ->
+95 % of clicked flukes) but 154 validation queries cannot show a gain of the in-sample size. (4) The fin cut-outs
+centred on the part map lose, and my look at the found / lost sheet agrees with the cause: the part model's region is
+the upper half of the blade, so squares sit high, cut the fin off at the bottom, blow up a few pixels or (head
+fallback) show no fin; the tight view helps exactly where it frames the whole fin. That is a result about a mis-sized
+fin, not about a centred fin.
+Decision: nothing from v3 is switched. R0 is a candidate for fins only and needs a second seed or one read on the
+evaluation days first. Carries over to point-based cut-outs (the pose side experiment): the fluke turn rule
+(make.py fluke_cut; with tip and notch points the span and the stock side come from the points), stats.py /
+clickcheck.py, the training and scoring scripts (train.py scan_pairs_v3, embed.py, score.py, run_arm.sh); not the 0.28
+ratio, the head-patch fallback or the visible-length cap. Re-scoring a new cut-out set: about 40 min CPU to cut, a few
+minutes of GPU to embed, one line in score.py; retraining about 90 min of GPU per arm, two seeds per arm.
+
+## 2026-11-17 14:45 — ranked gaps for telling the part: what the part model gets wrong on real photos and what the renders lack (subagent, reviewed here)
+Instrument model_fine_tuning/part_gaps/ (common, sample, report, coverage, render_eval, nearest, res_test, sheets,
+run), results experiments/part_gaps/ (sample.json, labels_ai.txt, labels_ai_relook.txt, report_*.json with the
+gap_table key, NOTES.txt), caches /var/tmp/sat3737-parts-cache/part_gaps/. One command for a new model or render set:
+  PYTHONPATH=. .venv/bin/python -m model_fine_tuning.part_gaps.run --model <name> [--renders <dataset> ...]
+    [--score-renders] [--variant hr|full]
+Sample: 609 real instances (401 training-day for the ranking, 208 validation-day for reporting), stratified over view
+class x size, labelled blind by the subagent (AI labels, one labeller; agreement with the view classifier's confident
+answers 0.87, the disagreements sit in the failing categories; 17 marked ambiguous), weighted back to 9 321 instances.
+Baseline parts_seg_r05_a on per-instance crops: three-way error 0.19 training / 0.14 [0.10, 0.19] validation (full
+frames 0.24 / 0.20). Cost = share x error. Coverage = render share / real share (run05, 9 404 whales / the run06
+tests final, check, r3, r4b, r5, 606 whales). Error on renders = the model against the rule on true part pixels.
+  category                                 share tr/val  error tr / val          cost tr/val   coverage r05/r06  on renders r05/r06
+  small, stubby or low fin on a long low back  0.32/0.37  0.21 / 0.15 [.06,.25]  0.068/0.055   0.00 / 0.00       none rendered
+  back or tail stock, no fin in view           0.10/0.13  0.39 / 0.17 [.05,.32]  0.038/0.022   0.07 / 0.16       - / 0.50 (10)
+  pectoral fin                                 0.05/0.10  0.71 / 0.50 [.30,.68]  0.032/0.051   0.23 / 0.81       0.00 (5) / 0.38
+  fluke rising low or rolling out              0.14/0.09  0.22 / 0.08 [0,.21]    0.032/0.007   0.57 / 1.47       0.00 (26) / 0.22
+  head                                         0.01/0.02  0.53 / 0.00 (n 10 / 7) 0.008/0       7.8 / 5.2         0.13 / 0.17
+  tall fin                                     0.11/0.10  0.06 / 0.06            0.006         3.7 / 3.5         0.02 / 0.12
+  fin end-on, far or partly submerged          0.08/0.04  0.06 / 0.00            0.005         1.8 / 1.0         0.03 / 0.27
+  fluke side-on or one blade                   0.11/0.07  0.03 / 0.00            0.003         0.8 / 0.5         0.00 / 0.22
+  roll, belly up, breach                       0.00/0.01  1 of 2 / 0 of 1        0.001         13 / 12           0.11 / 0.38
+  fluke raised                                 0.07/0.06  0.00 / 0.00            0             1.8 / 1.7         0.00 / 0.03
+Reading. (1) Small or low fins: missed outright (all 25 "other" calls have zero fin pixels, back ends painted head);
+not mainly the hump (error 0.10 with a hump in view, 0.28 without); the renders have one fin, a tall clean blade.
+(2) Finless backs and tail stocks are painted fluke or fin; 5 of 12 "dorsal" calls are fin specks at the rule's
+0.0005 threshold, so partly the decision rule; almost never rendered. (3) Pectoral fins read as flukes (about 75 %
+fluke paint); the nearest render to a failing real pectoral is a rendered fluke in about 85 % of cases, so shape and
+look, not count. (4) Low flukes from behind get zero fluke pixels on real photos while the model is right on rendered
+ones: the rendered version (a thin sliver at the waterline) is not the real one (a broad tail-stock arch, blades at
+the waterline, water sheeting off, large in frame); failing real cases sit nearest to rendered dorsal backs.
+(5) Heads, rolls and breaches are rendered 5 to 13 times too often. My look at the nearest-render sheets agrees.
+Size and resolution: error by instance size (train / val) under 200 px 0.44 / 0.40, 200-400 0.37 / 0.25, 400-800 0.19
+/ 0.15, 800+ 0.15 / 0.11, mostly because the hard categories are small; inference at 384 / 768 / 1024 px gives 0.39 /
+0.44 / 0.44 under 200 px and 0.13 / 0.14 / 0.19 from 800 px: more pixels never help, so 2560 renders matter for
+framing, not for the part call.
+What the arms closed (paired, validation days): sc on full frames small fins +0.08 [+0.02, +0.16], pectorals +0.09,
+nothing on per-instance crops and backs worse (-0.19 [-0.38, -0.01]); w1 pectorals +0.39 [+0.21, +0.58] full / +0.30
+crops, small fins +0.15 [+0.05, +0.26] full, but backs -0.37 [-0.58, -0.13] on crops (the whale-painted-background
+fault); rw nothing. No seed noise yet (s1 not scored).
+Passed to the factory as the priorities and category mix of round 5 / r6; the instrument is to be re-run on r6.
+
+## 2026-11-17 15:10 — the dorsal part becomes fin + hump (the user's decision); what the researcher's fin is; W3 queued
+User: "We may want to have the dorsal part be about twice as large to encompase both dorsal and hump, it is very small
+in the labels and we want that whole region for useful identification". Working definition (asked back whether a strip
+of flank below the back line should be included): from where the hump's front slope leaves the back line, over the
+fin, to where the trailing edge meets the back, down to the back line = the researcher's clicked triangle.
+Measured on 197 clicked fins (2025-01-02, 2025-03-18) against 400 run05 renders, each fin in its own triangle (tip,
+front base, back base): base over fin height 2.7 real (quartiles 1.9 / 3.5; 3.1 and 2.3 on the two days) against 1.5
+on the rig; real tip at 0.13 of the base from the back base, the rig's tip at or behind the back base (blades lean
+back). By its own rule the render label already was the whole triangle (94 % of the keypoint triangle); what was small
+is the rig's fin and the baseline's paint on real photos: only the upper half of the blade, region length 0.29 of the
+clicked base (the cut-outs' 0.28 was calibrated on that under-painting). W1 paints 0.74 of the base with 44 % of its
+dorsal paint outside the triangle (a band along the ridge).
+Labels made (subagent): model_fine_tuning/parts_weak/labels_wide.py re-draws only the dorsal class of each cached
+run05 label (labels.py untouched, old caches and models valid): front base moved forward along the back to 2.7 rig fin
+heights from the back base, pixels within 1 fin height of the fin plane and above a depth that tapers from 1.5 fin
+heights at the blade's front root to 0 at the new front base, a 0.15-height strip behind the root. New / old dorsal
+area 2.11 (per-shot quartiles 1.53 / 2.0 / 2.61; 6 416 shots with a fin), cache
+/var/tmp/sat3737-parts-cache/run05/labels_wide/. Real side: build_tri.py, the whole clicked triangle (shrunk 5 %) on
+the 114 clicked photos of 2025-01-02, 2025-03-18 kept out as the test. My look at dorsal_definition_new.jpg: the real
+targets are right (fin plus the hump's front slope); the widened render labels are a stopgap on a rig without a hump
+(uneven shapes, thin stripes down the flank in a few shots).
+Queued: W2 (W1 + background forbidden inside the eroded confident whale mask, 30 % of instance pixels), w2b if the
+noneed ablation shows the "some fin" term makes the fat fins (rule fixed in advance: fin length over clicked base
+<= 0.51), then W3 = W2 with the widened render labels and the full clicked triangle (markers w2.done, w2b.done or
+w2b.skipped, w3.done in /var/tmp/sat3737-parts-cache/parts_weak/). The factory's new hump mesh is to carry fin + hump
+natively with the blade as a sub-label.
+
+## 2026-11-17 15:20 — splash mask follow-up: threshold, fluke join, second seed; candidate ready for the user's look (subagent, reviewed here; NOT live)
+Hysteresis / threshold on S5's cached P(whale), 16 settings swept on training days with the selection rule fixed
+before any validation read (highest kept share with added area <= 0.05, non-whale pixel share <= +0.003 over the plain
+0.5 cut, no more new blobs): chosen h0.6_0.1 (seed P >= 0.6, grow through P >= 0.1). It barely helps and cannot: 75 to
+85 % of the r04 whale pixels S5 drops have P < 0.05, so the thin awash backs and wet flanks are confident misses, not
+middling probabilities. Validation, plain S5 -> h0.6_0.1: sure whale kept 0.92 -> 0.93, view-labelled whales' share
+of the r04 blob kept 0.910 -> 0.921, added area 0.055 -> 0.068, whale in splash 0.43 -> 0.45, splash 0.01 / 0.01,
+wake 0.08 -> 0.09, water 0.12 -> 0.15; all inside the seed noise.
+Fluke-join gap for S5 masks, tuned on 2025-01-02 only (0.35, 0.45, 0.6 all give 19 of 25 flukes in one instance, 0.25
+gives 18): 0.35. Test 2025-03-18 with h0.6_0.1 + gap 0.35: flukes 46 of 58 (r04 47, plain S5 42), main whales with all
+clicks in one instance 185 of 204 (r04 the same, S5 178). Both days: flukes 65 of 83 (r04 65, S5 60), main whales 333
+of 365 (r04 334, S5 324), other whales 13 own / 3 fused / 1 none (r04 13 / 4 / 0), instances per validation photo
+1.201. So the fluke split was the downstream join rule tuned on r04 masks, not lost skin.
+Second seed S5b against S5 (the noise): wake pixels called whale 0.08 / 0.15, water 0.12 / 0.22, splash 0.01 / 0.00,
+sure whale kept 0.92 / 0.93, kept share 0.910 / 0.914, added area 0.055 / 0.058, flukes in one instance 60 / 63, main
+whales 324 / 331, other whales 13 / 3 / 1 against 11 / 5 / 1, validation photos losing an instance 78 / 69. So a few
+flukes, about 7 main whales, 2 other whales and 0.07 to 0.10 on the wake and water rows are noise; the large effects
+(people, drones, boats, poles and shore from nearly all to nearly none; the loose label's 12 % halo against 5 to 6 %;
+r05's 0.31 new false whales per photo) are far outside it. Lost second animals in blind samples of 60 lost instances:
+3 to 9 for every real-label candidate (two labellers, only roughly comparable).
+Candidate as it stands: experiments/seg_splash_s5/checkpoints/last.pt + hysteresis 0.6 / 0.1 + instances_v2 fluke-join
+gap 0.35. Against the live mask on validation days: people 1 of 42, drones / boats / poles / shore none, splash and
+wake <= 0.09 of pixels, filter and gate rejections 336 -> 21, about 0.01 new false whales per photo, flukes / main
+whales / other whales no worse than r04 within the noise. The trade: about 7 to 8 % of r04's whale pixels are lost
+(thin, awash and far backs, wet flanks; no threshold recovers them), whales inside heavy spray are still often lost
+(0.45 kept), the outline is about 7 % larger than r04's without the halo. My look at for_researcher_01.jpg agrees.
+The 48-photo sheet for the researcher is made (12 splash or wake, 12 gear, 12 whales in wash drawn at random, 12
+where the candidate keeps least; setting fixed before). Going live re-runs everything behind the mask for 28 days and
+needs the old-to-new instance mapping: the user's decision. Code model_fine_tuning/seg_real/followup.py, tables in
+experiments/seg_splash/tables.md ("Follow-up").
+
+## 2026-11-17 15:30 — why the mask drops wet skin: the renders' mirror image against our ring label (subagent, reviewed here; S6 queued)
+User: "Is the model confident that those pixels are water because of the previous shadow/reflection? I suspect with
+the reflections removed the model will do better and marking all pixels whale." I answered "probably not for these
+pixels"; the measurement says partly yes. Three effects, measured apart (model_fine_tuning/seg_real/why.py,
+reflect.py; experiments/seg_splash/why_drop_train.json, reflect_renders.json, reflect_real.json, reflect_knn.json):
+1. Render prior (supports the user). On real photos models trained on renders alone fade toward the waterline: mean
+   P(whale) by fifth of the whale's height, top to bottom, r05 0.96 / 0.98 / 0.95 / 0.89 / 0.68 and S0 (eight more
+   render-only epochs) .. / 0.60 (validation 0.69 and 0.57). In frozen DINOv3 features the real whale patches S5
+   drops have the renders' band just below the waterline (where the mirror image lies) as 24 % of their 10 nearest
+   render patches, although that band is 1.4 % of the pool (about 17 times over-represented); for kept patches 6 %
+   (80 % render whale skin). On the renders themselves nothing is confused: the mirror side is P 0.00-0.01 beyond
+   5 px, the whale's inside 0.90-0.93 from 4 px in.
+2. Our real-photo label, the larger part of S5's own loss: S1 (real labels, no ring) brings the bottom fifth to 0.94
+   / 0.87 (training / validation), S5's ring takes it down to 0.82 / 0.77. Confidently dropped (P < 0.05) share of
+   sure-whale pixels on training days by structure thickness (< 6 / 6-10 / 10-20 / 20-40 / >= 40 px): S5 56 / 24 / 12
+   / 5 / 1.3 %, S1 38 / 11 / 6 / 2.5 / 0.5 %, r05 35 / 24 / 15 / 8 / 4 %; bottom fifth S5 12.7 %, S1 5.2 %, r05 20.6 %,
+   S0 29.1 %. In the S5 labels thin blobs (median thickness < 12 px) were 0.71 positive with 2.09 ring negatives within
+   8 px per positive pixel, 0.77 of them below the lower edge; thick blobs 0.97 and 0.13.
+3. Part of the "loss" is not skin: many dropped patches inside r04's blobs are spray, foam or glitter that r04 had
+   fused onto the whale at the waterline.
+S6 (queued under the lock, marker /var/tmp/sat3737-parts-cache/seg_splash/s6.done, tables experiments/seg_splash/
+s6_tables.md; the chain scores itself with hysteresis 0.6 / 0.1 and join gap 0.35): S5's recipe and seed with thin
+structures (< 12 px local thickness) positive without erosion, the ring only where r04 P < 0.05 (was < 0.25) and
+starting at 10 px instead of 5 on the waterline side. Label check S5 -> S6, thin blobs: positive share 0.71 -> 0.96,
+ring negatives per positive 2.09 -> 0.94, of those below the lower edge 0.77 -> 0. Goal: kept share of the r04 blob
+near S1's 0.95 with added area near S5's 0.06-0.07.
+What mirror-free renders would add: a paired test (the same shot list with and without the mirror image, 2-3 k shots
+each, weighted to calm water and low awash poses) of the waterline fade, wet-flank recall and false whales on the
+mirror side; the under-water zone as whale against ignore; glassy against rough water.
+
+## 2026-11-17 about 15:35 — run06, round 5: fin + hump, view mix, pose data on the 80-shot check r6b; the blade does not pass (subagent in the factory repo, reviewed here; no pilot)
+Check data/renders/r06r_test_r6b/dataset (80 generator shots at 2560x1707, mode-2 reflections, new skin maps,
+individuals_run06b.json, real-share pose weights; qa_multi 0 failures, 0 stray pixels). r06r_test_r6 = the same with
+the previous pose weights. Bug found and fixed: factory/deform.py built the render meshes without the run's fin front
+ratio, so the rendered hump differed from the labelled one (9 failures in r6; dorsal_front_ratio now travels in the
+batch json).
+Whale colour in normal frames, r6b against real (whale pixels, foam excluded): dark-skin L* 21.0 against 24.3, C* 13.4
+against 11.3, dark skin minus nearby water -33.4 against -30.4, clipped 0, white-area L* 86.1 against 84.9; white
+share median 0.09 against 0.02 (0.01 in the skin-only set r5), the remainder being white water lying on the whale that
+counts as whale (fluke roll-out 0.23, tail stock 0.14); a fix is in wf_shot.py (the foam's label twin keeps the base
+coverage material), not yet rendered. The per-actor skin_look keys have no effect (cause not found): colour is set by
+the maps (factory/skin_run06.py: fluke white per animal 80 / 15 / 5 % keeping 0-5 / 5-25 / 30-60 % of the atlas
+white, chroma halved, no white on the fin and upper back, dark scale 1.8) and the grade. Streams are switched off
+(still icicles); the "glassy pectoral" and "see-through fluke" were the slap splash round the part.
+Fin + hump: individuals_run06b.json (factory/fins_run06b.py: height log-normal sd 0.6, sweep -60 to -30 cm, hump
+5-35 cm on 85 % of animals), whale.dorsal_front_ratio 7.0 puts dorsal_fin_front at the start of the hump's slope. On
+r6b landmarks (111 adults): base over height 3.01 (quartiles 2.58-3.67; real 3.1 and 2.3, run05 1.5), tip along the
+base 0.06 (real 0.12). Dorsal label = fin + hump, blade kept as sub-label (animals/*.npz a{k}_blade): 3.96 times the
+blade's area (quartiles 2.8-6.6).
+View mix in r6b against real: small fin on a long low back (surface, back arch, logging, awash, blow) 44 % against
+32-37 %; tail stock without fin 7.5 % against 10-13 %; pectoral 1.3 % against 5-10 % (one shot); fluke rising low or
+rolling out 16 % against 9-14 %; flukes up / sinking / down 27 %; head / breach / slaps 4 %. Pixel shares of whale
+pixels: fluke 0.59 against 0.24 real (too large in frame), fin + hump 0.077, pectoral 0.000, head 0.002 (was 0.153 in
+the final test), body 0.33 against 0.71. Flukes from behind 37 of 41 (90 %); fin travel direction right 40 / left 14
+/ toward 8 / away 4; whales per frame one / two / three 68 / 24 / 9 %, adults may touch.
+New label data (whale.landmarks_v2): fluke_notch on the midline, tail_stock_top, states under_wave / label_edge /
+behind_splash, height_above_local_water_m, soft_visibility, part_planes (fluke plane, facing side, view angle, span
+roll, curl; fin plane, flank, angle to the line of sight), parts_amodal, parts_visible_fraction, pose_summary. Left
+out: waterline polyline, part-local dense coordinates, white-water label.
+My look at round5_fins_vs_real.jpg and round5_frames_24.jpg: NOT passing. The rendered fins are thin sharp spikes on
+a mound (some needle-like); real fins are low, broad, falcate or round-tipped, sometimes a nub. The base over height
+number is right only because the front base moved to the hump. Also: beige blotched flukes filling the frame (000014,
+000006), white strands on a tail slap (000045), a large pale belly (000049). Cost 30.1 s per shot (13.8 render),
+about 120 shots per hour, GPU peak 8.1 GB, dataset 7.5 MB per shot.
+Ordered (round 6): the blade outline per individual (broad chord, rounded or hooked tip, low profiles down to a nub)
+with shape numbers against real fins, the foam-twin render, heading balance, pectorals at 5-10 % with a pectoral's
+shape, finless backs and the stock arch at 10-13 %, the low fluke from behind as a broad arch, fluke size in frame,
+check r06r_test_r7. The part-gap instrument is being run on r6b.
+Pilot command as it stands (NOT run; 2 000 shots about 17 h + 50 min postprocess, 15 GB dataset, 36 GB engine caches
+to clear between runs): tools/build_dataset.sh data/renders/r06_pilot 2000 61 factory/config/run06_realism.json with
+WF_RENDER_CONFIG=MRQ_BatchInst_AA2_2560x1707 WF_RES_X=2560 WF_RES_Y=1707 WF_MIN_GPU_FREE_MIB=10000
+WF_POSTPROCESS_WORKERS=8 WF_RENDER_EXTRA_ARGS="-ini:Engine:[SystemSettings]:r.Water.SingleLayer.Reflection=2".
+
+## 2026-11-17 about 15:50 — the part-gap instrument on r6b: the fin gap is shape, and r6b does not close it (subagent, reviewed here)
+Nearest-render test with r6b added to the pool (1 681 rendered whales, r6b's 75 = 4.5 %): of 44 failing real small
+fins r6b is the nearest render for 11 % and among the three nearest for 18 %, about 1.4 times its pool share (run05
+1.2, r3 2.2), and the hits are a pectoral slap in splash and a fin inside a blow, not shape; the best r6b whale is less
+similar than the best older render for 89 % of failing small fins and 84 % of failing backs; pectorals and low flukes
+0 hits. The part model errs 0 to 4 % on r6b's own fins (truth = the rule on blade-only labels) against 21 % on real
+small fins: easy and unlike real.
+Coverage by eye (blind sheets; 50 random run05 whales, 50 from the run06 tests, all 75 r6b whales; render share over
+real share), run05 / run06 tests / r6b: small fin 1.06 / 0.87 / 1.28; of those REAL-LIKE fins 0.31 / 0.19 / 0.42
+(5 of 50, 3 of 50, 10 of 75; spikes 11, 6, 26); finless back 2.16 / 1.37 / 1.57; pectoral 0.39 / 3.13 / 0.26 (one
+whale); low fluke 0.14 / 0.72 / 0.38; fin end-on 0.28 / 0.28 / 2.97; head 4.0 / 4.0 / 1.8; roll 18 / 26 / 5.9.
+Correction to the 14:45 entry: run05 already holds plenty of fins that read as small at a distance, so "never
+rendered" was the label mapping's blind spot (it sees blade size only); the cause of the small-fin gap is the fin's
+shape (spike against low and broad). The real-like share is the number to track for r7.
+25 of the 80 r6b shots are flagged rejected by the exposure gate. Instrument changes: blade_only() for the fin + hump
+label, a per-set coverage table (labels / eye), nearest extract --add <tag>, sheets eye --tag <tag>, run.py --nearest.
+For r7: PYTHONPATH=. .venv/bin/python -m model_fine_tuning.part_gaps.run --model parts_seg_r05_a --renders
+../Whale-Image-Data-Factory/data/renders/r06r_test_r7/dataset --score-renders --nearest, then the blind by-eye labels
+(by hand) and report.py. s1 not yet scored at that time.
+
+## 2026-11-17 about 16:00 — pose side experiment, second hand-back: the point model works for dorsal fins, not yet for flukes (subagent, reviewed here)
+Head: frozen DINOv3 ViT-B/16 (blocks 5, 8, 11) + small decoder, a 128x128 heatmap and a 5-way state per point. A =
+run05 renders only (7 245 crops, 5 000 steps, waterline cuts at every height, pasted real splash, mirroring). Bx = A
+fine-tuned 800 steps on one click day's clicks and tested on the other, both ways. B_both (both click days) only for
+validation-day sheets. No evaluation day; about 45 min of GPU. Results experiments/pose_side/results_chain1.json.
+Points against the researcher's clicks (2025-01-02 + 2025-03-18), median miss in fin bases or fluke spans and share
+within 0.25, A / Bx: fin tip (n 197) 0.037, 95 % / 0.031, 98.5 %; fin back base 0.235, 53 % / 0.072, 95 %; fin front
+base 0.71, 1.5 % / 0.162, 64 % (run05's front base is at the foot of the blade, the researcher's at the start of the
+hump); fin centre off 0.243 / 0.066 (the part model's region today: 0.25); fluke notch (n 59) 0.060, 90 % / 0.031,
+92 %; fluke tips as a pair 0.50 / 0.49 (the two tip channels land on the same tip; pair-matched swap 60 % / 24 %); all
+three fluke points within 0.25: 15 % / 51 % (part model: all three inside the fluke 30 %).
+Same place on two photos, the researcher's 225 paired fin regions, median miss in fin bases / share within 0.25:
+clicked points 3-point affine 0.066 / 95 % (ceiling), clicked back base + tip 0.083 / 85 %, cut-outs v3 0.148 / 65 %,
+A two base points 0.125 / 71 %, Bx 3-point affine 0.121 / 75 %, Bx back base + tip (similarity) 0.113 / 76 %. Where
+the predicted back base and tip are within 0.1 of the clicks in both photos (148 pairs) 0.096 / 84 % against a ceiling
+of 0.071 / 89 % on the same pairs. Same burst 0.126 / 77 % against cut-outs 0.231 / 55 %; different bursts 0.110 /
+73 % against 0.109 / 74 % (no gain). Flukes (16 pairs): clicked 0.018, cut-outs 0.063, Bx 0.31, worse than photo
+coordinates (0.165).
+State head: 87 % right on run05 validation renders (visible 97 %, under water 48 % mostly confused with outside the
+frame, behind splash 21 %, behind a body 57 %), 82 % on r06r_test_final; on real photos it cannot be checked beyond
+"clicked = visible" (A: 79 %) and is not usable as a waterline signal yet.
+My look at rectified_Bboth_val_fin.jpg: the two-point frame gives an upright, consistently framed fin plus hump for
+most of 12 validation rows (tiny far fins blur, two rows sit on the wrong whale or on wash); the affine column
+normalises the fin's shape away (for mapping locations, not for identity).
+Not working: left / right fluke tips (trained with mirroring that swaps them; in 94 % of 83 clicked flukes the
+whale's left tip is simply the one on the left of the photo; a two-peak decoder named by the photo is coded,
+decode_tips.py, and queued); render-only fin bases (definition); the state head on real photos.
+For the factory: side-on in canonical coordinates r6b's fin triangle has base over height 5.4 with the tip above the
+back base (run05 1.7 / 0.80); the researcher's foreshortened clicks give 1.9 / 2.7 / 3.5 and the tip at 0.87 from
+front to back, so r7 should aim at about 3 to 3.5 side-on with the tip at about 0.85. Passed on.
+Queued (chain2.sh, marker /var/tmp/sat3737-parts-cache/pose_side/after_chain2.done): two-peak fluke tips, B_both
+points on all 961 validation-day instances, point-based fin cut-outs finP for the validation days in the cut-outs v3
+format (make_finP.py; frame = the researcher's triangle, side 1.6 x its extent). Scoring finP needs three lines in
+cutouts_v3 (SET_PART in embed.py, embed under the lock, an arm in score.py); noise is about 3 points of first match.
+
+## 2026-11-17 about 16:10 — the noise run: real framing's gain on the part model is inside run-to-run noise; real water adds nothing (subagent, reviewed here)
+model_fine_tuning/synth_aug, experiments/realwater (compare.json, /var/tmp/sat3737-parts-cache/realwater/
+compare_final.txt). The parts_seg_r05_a phase-2 recipe re-run per arm; validation days, the same two-part rule family
+chosen on training days for every model; by eye n 79, classifier n 828; full = whole frame, hr = per-instance crops.
+                                   full, by eye   full, classifier   hr, by eye   hr, classifier
+  baseline _a (seed 0)             0.734          0.837              0.797        0.858
+  s1 (same recipe, seed 1)         0.810 (+7.6 [+2.5, +13.9])  0.859 (+2.2 [+0.2, +4.1])  0.734 (-6.3)  0.850 (-0.7)
+  sc (whales re-scaled to real)    0.797 (+6.3)   0.858 (+2.1)       0.785 (-1.3) 0.865 (+0.7)
+  rw (real-water plates + scale)   0.797 (+6.3)   0.856 (+1.9)       0.722 (-7.6) 0.844 (-1.3)
+Fin tip in the largest fin region, full / hr: 0.883 / 0.924, s1 0.963 / 0.964, sc 0.939 / 0.947, rw 0.946 / 0.938; all
+three fluke points in the fluke: 0.265 / 0.301, s1 0.229 / 0.313, sc 0.277 / 0.349, rw 0.301 / 0.313.
+Run-to-run noise from one extra seed: about +/- 7 points by eye and +/- 2 against the classifier on full frames,
++/- 6 and +/- 1 on crops; per-group swings of 4 to 7 points. So: the gain I reported for real framing (+6 by eye,
+"the only lever that measurably helped") is NOT outside the noise; the seed-0 baseline was a weak draw on full frames.
+Dorsal-fin views: sc +5.0 against s1 +3.8 on full frames (all days), +2.9 against +1.3 on crops: a 1 to 1.5 point
+edge, same sign, not claimable with one extra seed. Real water: nothing remains (equal to sc on full frames, worst on
+crops). The drop on "other" views on crops (-8.6) comes with this recipe across seeds, not with real framing. sw, fw
+and rwall were never trained (the paste route was dropped). Lesson: one run per arm cannot separate effects of this
+size on the part model; at least two seeds per arm, and W1 / W2 / W3 must be read against both baselines.
+
+## 2026-11-17 about 16:25 — run06, round 6: check r7; the fin blade cannot be fixed by deforming the asset (subagent in the factory repo, reviewed here; no pilot)
+Check data/renders/r06r_test_r7/dataset (80 generator shots at 2560x1707, qa_multi 0 failures, library
+individuals_run06c.json with new per-individual blade edits dorsal_chord / dorsal_rake_cm / dorsal_round in
+factory/individuals.py). Blade outline on side views (base line from back base to front base, H = tip height), real
+clicks + live masks on 196 fins (2025-01-02, 2025-03-18) / r6b / r7: broad = chord at 0.75 H over H 0.85 (0.66-1.20)
+/ 0.29 / 0.42; sharp = width at 0.9 H over the chord at 0.75 H 0.70 (0.62-0.74) / 0.55 / 0.83; overhang = trailing
+edge at 0.75 H over H +0.22 (0.05-0.42) / +0.01 / -0.05 (ours lean forward: the run06b sweep put the steep edge in
+front, the reverse of the anatomy); base over H in the image 2.70 (1.9-3.5) / 3.22 / 2.73; side-on from the deformed
+whale-frame landmarks 3.01 / 2.76, tip at 0.94 from front to back (xyz_canonical_cm is the undeformed asset and
+cannot show individual shapes, which is where the point agent's 5.4 came from). Fin + hump label over blade-only area
+2.84 (2.08-4.46; r6b 3.96). Why deformation fails: the asset's blade is about 41 vertices on the midline; widening
+past about x10 throws spikes and a backward sweep with the hump collapses the triangle. What it takes: a generated
+blade mesh stitched onto the back with its own vertex set and landmarks.
+Other items, real target / r6b / r7: fluke pixels over whale pixels 0.24 / 0.59 / 0.19 (fluke categories framed at
+0.6 of the targets); pectoral shots 5-10 % / 1.3 % / 7.5 %; finless back or tail stock 10-13 % / 7.5 % / 16 %; low
+fluke 9-14 % / 16 % / 11 % (roll-out clearance 0.9-1.8 m); small-fin long backs 32-37 % / 44 % / 39 %; head pixels
+about 1-2.5 % / 0.2 % / 3.2 %; travel right / left / toward / away 40 / 14 / 8 / 4 -> 28 / 17 / 14 / 2 (half the
+shots mirrored); flukes from behind 85 %; whales per frame 73 / 20 / 6 %. Colour with the foam-twin fix rendered:
+dark-skin L* 22.8 (real 24.3), white share median 0.06 (backs 0.02-0.04; the excess is white pectoral undersides),
+white-area L* 84.5. Exposure gate still rejects 25 of 80 (p99 high 14, p99 low 9, mean low 3, white water 4) and
+unevenly (fluke roll-out 4 of 9, tail stock 4 of 13, surface 5 of 15). Not fixed: beige blotchy sunlit fluke
+undersides, the pectoral's look, streams (off). fin_spec is now in each animal's metadata.
+My look at round6_fins_vs_real_24.jpg: still thin slivers leaning forward. Decision: no pilot. Ordered (round 7): the
+generated blade with the shapes taken from the 196 real fin outlines (templates or a few principal components,
+inside the real spread, down to nubs), the gate's p99 bounds off as an option, the fluke-underside factor, the
+pectoral's look if time remains, check r06r_test_r8, and pilot commands for (a) 2 000 shots without the mirror image
+and (b) the first 1 000 of the same shot list with it, for a paired test. The part-gap instrument runs on r7 and r8.
+
+## 2026-11-17 about 16:40 — the part-gap instrument on r7, and the arms per category against the seed noise (subagent, reviewed here)
+Coverage by eye (render share over real share; 50 random whales for run05 and the run06 tests, every whale for r6b
+and r7), run05 / run06 tests / r6b / r7: real-like small fins 0.31 / 0.19 / 0.42 / 0.58 (14 of 76 in r7; spikes 25);
+all small fins 1.06 / 0.87 / 1.28 / 1.59; finless backs 2.16 / 1.37 / 1.57 / 0.39; pectorals 0.39 / 3.13 / 0.26 /
+0.51; low flukes 0.14 / 0.72 / 0.38 / 0.47; fins end-on 0.28 / 0.28 / 2.97 / 1.28; heads 4.0 / 4.0 / 1.8 / 1.75.
+Nearest renders to the 44 failing real small fins: r7 is among the three nearest for 41 % (4 times its pool share),
+but 17 of its 23 neighbour slots are r7 FLUKES and 5 are fins: the model's fin-to-fluke confusion, not a fin match.
+The three-point fin triangle of r7 already matches the clicks (height over base 0.38 against 0.37, tip at 0.85
+against 0.87) while the fins still read as spikes, so bluntness needs an outline measure (new fin_shape.py); r7's
+metadata holds only dorsal_height and dorsal_sweep_cm, which do not separate real-like fins from spikes.
+Arms per category against the noise run (validation days, arm minus s1 paired, 95 % bootstrap): sc: no per-category
+gain is larger than the s1 swing (small fins on full frames +0.08 against the baseline while s1 alone is +0.06; the
+finless-back loss on crops -0.19 against s1's -0.20). w1 (real weak labels): pectorals clearly beyond the noise
+(w1 - s1 +0.22 [+0.06, +0.38] full, +0.44 [+0.21, +0.64] crops); small fins marginal on full frames (+0.10 [+0.01,
++0.19]) and inside the noise on crops; finless backs a real loss on full frames (-0.29 [-0.50, -0.11]). The seed
+swing per category reaches about 0.2, so single-run per-category differences under that should not be read.
+
+## 2026-11-17 16:50 — pose side experiment: fluke tips with two-peak decoding (read from results_chain2 by me)
+Two strongest separate peaks of the summed tip maps, named by the head ("model") or by their side in the photo
+("image"). Against the researcher's clicks (83 flukes, 59 with a notch), share within 0.25 span:
+                                 swapped   tips as a pair (median, share)   all three points   notch
+  A, old decoding                60 %      0.50, -                          15 %               90 %
+  A, two peaks, image naming     8 %       0.18, 57 %                       59 %               90 %
+  Bx, old decoding               24 %      0.49, 45 %                       51 %               92 %
+  Bx, two peaks, image naming    16 %      0.08, 61 %                       66 %               92 %
+(the part model: all three clicked points inside the predicted fluke for 30 %). So the renders-only head now places
+all three fluke points for 59 % of clicked flukes, and seeing one day of real clicks adds little (66 %). Carrying the
+16 paired fluke regions is still no better than no alignment (Bx two peaks, similarity 0.163 spans median, 56 %
+within 0.25; none 0.165; cut-outs 0.063, 81 %; clicked points 0.018, 94 %): too few pairs to judge, and today's fluke
+cut-outs are already good on them.
+Point-based fin cut-outs finP exist for the validation days (133 on 2025-01-15); the cut-outs agent is asked to
+score them with the frozen networks (embed.py / score.py, arms G.P and R0.P).
+
+## 2026-11-17 evening — point-based fin cut-outs (finP) scored with the frozen networks: worse, and the loss follows the zoom (subagent, reviewed here)
+finP = the keypoint model's fin + hump triangle (B_both points), side 1.6 x the triangle's extent, turn and mirror of
+parts_up kept; all 470 validation fin queries have one. Validation days, first match (90 % interval of the change over
+stacks, sign test): G on today's cut-outs 0.785; G.B 0.783; G.C 0.713; R0 0.811; G.P 0.704 (-8.1 [-12.4, -4.0],
+33 found / 71 lost, p < 0.001); R0.P 0.745 (-6.6 [-9.9, -3.1] against R0). Zoom relative to today's cut-out A, per fin
+(quartiles): B 1.15 / 1.46 / 1.92, C 2.30 / 2.92 / 3.84, finP 2.88 / 3.76 / 5.09; 30 % of finP cut-outs are enlarged
+beyond the RAW's pixels. The ranking A, B, C, finP is the ranking by zoom: both networks learned from wide views (fin
+about 17 % of the width) and the tight view leaves out the back's scars and pigment. The failure types of B and C
+(centred high, blade cut off, no fin in view) are gone. So this does not yet say whether the point-based centre helps.
+Ordered: the same points re-cut at about B's and A's scale (finP4, finP6) and scored with G and R0, to separate scale
+from centre. A fair retrain would need training-day finP cut-outs, about 90 min of GPU per arm and two seeds per arm.
+Files experiments/cutouts_v3/score_val_finP_base_{G,R0}.json, /var/tmp/sat3737-parts-cache/cutouts_v3/
+score_val_finP_{fallback,common}.txt; score.py --finp, train.py --r1-fin finP.
+
+## 2026-11-17 18:15 — part model W2 (real weak labels + "no background inside the whale"), read against both baseline seeds (subagent, reviewed here; nothing live)
+experiments/parts_weak/compare_w2_s1.json, three_way_vs_s1.json, detail_*_vs_{a,s1}.json, shares_w2.json,
+fin_definition_w2.json. Validation days, rule re-chosen on training days per model; s0 = parts_seg_r05_a, s1 = the
+same recipe with seed 1; "beyond" = larger than the distance between the two baselines.
+                                              s0      s1      W1      noneed   W2
+  three-way by eye, whole photo (n 79)        0.734   0.810   0.873   0.873    0.899  (+16.5 [5, 28] / +8.9 [-1, 19])
+  three-way by eye, crops                     0.797   0.734   0.861   0.911    0.873  (+7.6 [-4, 19] / +13.9 [1, 26])
+  against the classifier, whole photo (n 828) 0.837   0.859   0.942   0.867    0.944  (+10.8 / +8.6: beyond)
+  against the classifier, crops               0.858   0.850   0.938   0.908    0.951  (beyond)
+  dorsal views with no fin pixel (n 473)      9.1 %   6.6 %   0.85 %  4.2 %    0.2 %  (beyond)
+  dorsal views that get a fin region          89.0 %  91.9 %  99.0 %  92.7 %   99.6 % (beyond)
+  fluke views with no fluke pixel (n 204)     5.4 %   3.4 %   3.9 %   24.0 %   2.9 %  (inside)
+Clicks of 2025-03-18 (no region = a miss): fin tip inside the largest fin region 74.8 / 75.6 / 90.8 / 84.0 / 91.6
+(beyond; among fins that have a region the gain is inside the seed distance: the gain is fins found at all); tip part
+of the clicked fin painted mostly fin 70.7 / 70.7 / 99.0 / 96.0 / 100, mostly head 9.1 / 5.1 / 0 / 0 / 0; fluke notch
+inside the fluke 57.4 / 59.3 / 70.4 / 44.4 / 75.9 (beyond); fluke tips marginal or inside. Classifier truth by view,
+crops, s0 / s1 / W2: dorsal .886 / .899 / .977, fluke .902 / .907 / .971, other .709 / .623 / .841; several whales
+.726 / .681 / .920.
+The whale term fixed W1's fault: median share of the whale painted background, dorsal / other / fluke views, W1 31 % /
+28 % / 3.8 % -> W2 0.1 % / 0 / 0; instances more than half background 15.9 % / 33.8 % -> 0 / 2.0 %; finless backs'
+body share back to 0.46. Not fixed: fin region length over the clicked base 0.73 (W1 0.74; the "some fin" term is not
+the cause: noneed 0.67), 44 % of fin paint outside the clicked triangle, the tail stock painted fluke (body share in
+fluke views 0.3 %), about 7 of 33 by-eye other views (mostly finless backs) called dorsal, low flukes with a white
+underside called pectoral. The "some fluke" term is essential (without it fluke views with no fluke pixel 24 %).
+Reading: W2 is the best model for the fluke / dorsal / other call and finds a fin in nearly every dorsal view; for
+cut-outs the fin sizing ratio would have to be re-set (region over base about 0.7, and W3 changes it again) and the
+tail-stock direction cannot be read from its map. One run. W3 (wider dorsal definition, full clicked triangle)
+started 17:54, marker expected about 19:30.
+
+## 2026-11-17 18:20 — whale mask S6 (thin structures positive, the water ring kept off the waterline side): read from s6_tables.md by me
+experiments/seg_splash_s6 (S5's recipe and seed; thin structures under 12 px positive without erosion, ring only where
+r04 P < 0.05 and from 10 px on the waterline side), scored with hysteresis 0.6 / 0.1 (S6h) and the fluke-join gap 0.35.
+Validation days, r04 / S1 / S5h / S6h: sure-whale pixels kept 1.00 / 0.96 / 0.93 / 0.95; view-labelled whales' mean
+kept share of the r04 blob 0.997 / 0.946 / 0.921 / 0.938 (seed distance S5 against S5b 0.004); photos keeping under
+0.9: 0 / 0.143 / 0.182 / 0.182; median IoU with the r04 blob 0.998 / 0.856 / 0.909 / 0.900; added area outside r04
+(pooled) - / 0.123 / 0.068 / 0.083; whale in splash kept - / 0.53 / 0.45 / 0.48; splash 0.03 / 0.01 / 0.01; wake 0.12
+/ 0.09 / 0.12 and water 0.18 / 0.15 / 0.18 (inside the seed noise of 0.07-0.10); people 1 of 42, drones, boats, poles,
+shore 0 for all three. Training days, confidently dropped (P < 0.05) share of sure-whale pixels, S5 / S6 / S1: bottom
+fifth 12.7 / 8.1 / 5.2 %; structures under 6 px 56 / 47 / 38 %, 6-10 px 24 / 18 / 11 %, 10-20 px 12 / 9 / 6 %.
+End to end with S6h and gap 0.35: instances per validation photo 1.189 (r04 1.262, S5h 1.201), rejected by filter +
+gate 22 (r04 336); flukes with both tips in one instance 66 of 83 (r04 65, S5h 65); main whales with all clicks in one
+instance 337 of 365 (r04 334, S5h 333); other whales 12 own / 4 fused / 1 none (r04 13 / 4 / 0, S5h 13 / 3 / 1); new
+blobs 13 on 884 validation photos (S5 8, S1 4; not labelled); 82 validation photos lose an instance (S5 78, S5b 69).
+Reading: S6h recovers about two thirds of what S5 lost against S1 in kept whale (0.921 -> 0.938 of 0.946), more than
+the seed distance, for a slightly larger outline (0.083 against 0.068, S1 0.123) and no change on gear; thin awash
+structures under 10 px are still dropped two to five times in ten, as they are by S1. My look at cmp_s6h_lowiou_01:
+most of the worst "losses" are long thin strips of wake or awash back that r04 had attached; solid backs, fins and
+flukes are kept. Candidate now: experiments/seg_splash_s6/checkpoints/last.pt + hysteresis 0.6 / 0.1 + join gap 0.35.
+Not live; the switch is the user's decision.
+
+## 2026-11-17 18:10 — run06, round 7: generated dorsal blade, check r8; outline on target, surface not passing (subagent in the factory repo, reviewed here; no pilot)
+Blade: factory/blade.py, blade_templates.py, blade_library.py; templates = 196 real fin outlines (live masks + the
+researcher's clicks on 2025-01-02 and 2025-03-18, each in its triangle frame, leading and trailing edge at 19 heights;
+third_party_assets/humpback_4k/blade_templates.json, no photo pixels); per animal a 553-vertex mesh (smoothed outline,
+3 % jitter, 0-3 nicks, thickness, rounded leading edge) with both feet on the back's midline, the asset blade pressed
+flat, the blade following the posed back; library individuals_run06d.json; landmarks, fin + hump part, blade
+sub-label, part planes and fin_spec.blade (template, H_cm, base_over_height, broad, sharp, overhang, outline) follow
+the generated mesh. Old configs byte-identical. Check data/renders/r06r_test_r8/dataset (80 generator shots; qa_multi
+0 failures with the blade on).
+Blade shape on side views, quartiles (real n 196 / r7 n 20 / r8 n 12): base over H 1.90-2.70-3.52 / 2.10-2.73-3.38 /
+1.93-2.65-2.88; broad 0.66-0.85-1.20 / 0.26-0.42-0.52 / 0.71-0.88-1.13; sharp 0.62-0.70-0.74 / 0.78-0.83-0.87 /
+0.56-0.65-0.69; overhang 0.05-0.22-0.42 / -0.34 to -0.05 to 0.21 / 0.12-0.32-0.38. Over 95 adults the tip sits 0.81
+from front to back (target 0.87).
+Gate: the two p99 bounds removed; r8 5 of 80 rejected (r7 re-scored 7 of 80, was 25); a near-black sea under white
+water passes because the white lifts the mean. Colour r8: dark-skin L* quartiles 18.3 / 25.3 / 40.3 (real 12.6 / 23.0
+/ 30.4), white share median 0.05, 35 % of shots over 10 % white (real 11 %). View classes by eye, r8 (r7): fin 0.60
+(0.59), finless back 0.04 (0.10), low fluke 0.20 (0.11), raised fluke 0.28 (0.32), pectoral 0.06 (0.10), head 0.16
+(0.18); part pixel shares fluke 0.134, dorsal 0.097, pectoral 0.044, head 0.022, body 0.704; travel right / left /
+toward / away 21 / 21 / 11 / 8; flukes from behind 30 of 39.
+My look at round7_fins_vs_real_24.jpg and round7_frames_24.jpg: NOT passing. Several blades are flat beige cut-outs
+with facets and thin bright lines at the join (000054, 000067, 000028); bodies pale grey-beige in sun where they fill
+the frame (000026, 000048) with exaggerated ridge knobs; near-black seas (000055, 000079). One blade reads right
+(000037). Lesson: the outline statistics passed fins that are plainly wrong; the check is the eye next to real fins
+plus the part-gap instrument.
+Ordered (round 8, about 2 h): blade normals, join and colour (blade L* against the adjacent back), why the skin_look
+material keys never reach the skin (bake a material instance asset as for the foam), the cause of the black-sea
+frames, ridge knobs, finless backs as their own category, the pectoral prototype, check r06r_test_r9.
+Pilot commands as left by the subagent (NOT run; one after the other):
+  (a) WF_MIN_GPU_FREE_MIB=10000 WF_POSTPROCESS_WORKERS=8 WF_RENDER_CONFIG=MRQ_BatchInst_AA2_2560x1707 WF_RES_X=2560
+      WF_RES_Y=1707 WF_RENDER_EXTRA_ARGS="-ini:Engine:[SystemSettings]:r.Water.SingleLayer.Reflection=2" nohup setsid
+      tools/build_dataset.sh data/renders/r06_pilot 2000 61 factory/config/run06_realism.json
+  (b) python3 tools/paired_subset.py data/renders/r06_pilot data/renders/r06_pilot_mirror --first 1000, then the same
+      build command with Reflection=1, folder r06_pilot_mirror and 1000 shots (build_dataset.sh skips sampling when a
+      shotlist.jsonl exists, so whales, poses, cameras, sun, sea and white water are identical).
+
+## 2026-11-17 18:35 — the part-gap instrument on r8: fin shape solved, the pale look is the gap now (subagent, reviewed here)
+Real-like fins by eye, render share over real share: run05 0.31, run06 tests 0.19, r6b 0.42, r7 0.58, r8 1.01 (31 of
+96 whales; spikes 17). Coverage by eye in r8: small fins 1.20, finless backs 1.43 (0.10 by the label mapping),
+pectorals 0.81, low flukes 0.90, fins end-on 1.74, raised flukes 1.1, heads 1.4. Nearest renders to the 44 failing
+real small fins with r8 in the pool (96 of 1 853 rendered whales): an r8 whale among the three nearest for 27 % (2.2
+times its pool share), and 13 of the 15 r8 slots are FINS (r7: 8 of 21); not closer yet (best r8 fin beats the best
+older fin for 16 %, median similarity 0.80 against 0.82); 7 distinct r8 whales, one of them 7 times. The baseline
+part model's error on r8's own fins rose (tall fins 0.15 from 0.09), as expected if they are more like the hard real
+ones. fin_spec.blade of 61 visible r8 fins against the 196 real outlines, quartiles real | r8: broad 0.66 / 0.84 /
+1.20 | 0.64 / 0.83 / 1.25; sharp 0.62 / 0.70 / 0.74 | 0.59 / 0.63 / 0.73; overhang 0.05 / 0.22 / 0.43 | 0.12 / 0.25 /
+0.45; base over H 1.90 / 2.70 / 3.52 | 2.26 / 3.02 / 3.67. For shape the label route (fin_shape.blade_compare) can
+replace the by-eye count from r8 on; the by-eye pass stays for look and view.
+Still wrong by eye: 35 of 96 whales read as flat pale beige cut-outs (10 of 49 fins, 17 of 26 fluke whales, several
+backs and heads); facets and a light line at the join on a few close fins. This count is the number for r9.
+
+## 2026-11-17 19:00 — point-based fin cut-outs at equal zoom: not worse than today's cut-outs (subagent, reviewed here)
+The same predicted fin + hump triangle (B_both points), re-cut wider: finP4 = side 4.1 x the triangle's extent (median
+zoom 1.47 against today's cut-out A, like B), finP6 = 6.0 x (zoom 1.00, like A). Validation days, 470 fin queries, all
+with a cut-out; first match / top 5 / AUC; change with its 90 % interval, found / lost, sign test:
+  G on A 0.785 / 0.696 / 0.906; G.B 0.783; G.P4 0.811 / 0.674 / 0.880 (+2.6 [-0.8, +6.0] against A, 45 / 33, p 0.21);
+  G.P6 0.802 / 0.673 / 0.892 (+1.7 [-1.7, +4.9], 39 / 31, p 0.40); R0 on A 0.811; R0.P4 0.779 (-3.2 [-6.5, +0.2]);
+  R0.P6 0.806 (-0.4 [-3.7, +2.8]); the first finP at 3.76 x zoom was 0.704 / 0.745.
+So the earlier loss was the zoom. At equal scale the point-based centre and turn equal today's cut-outs (inside the
+noise, slightly ahead with the production network on first match, slightly behind on top 5 and AUC), and the frame
+always holds the whole fin + hump triangle with none of B's and C's failures. Files experiments/pose_side/
+score_val_finP46_base_{G,R0}.json, make_finP.py --margin, arms G.P4 / G.P6 / R0.P4 / R0.P6 in cutouts_v3/score.py.
+Ordered for the night (pose agent, under the GPU lock, marker /var/tmp/sat3737-parts-cache/pose_side/
+retrain_finP6.done): the fair test = R0 seed 1 and RP6 seeds 0 and 1 (same recipe and keys, fins from finP6, bodies
+and flukes on parts_up as in R0), scored on the validation days; bodies and flukes are the built-in noise check.
+
+## 2026-11-17 19:45 — run06, round 8: wet skin fixed at the cause, blade surface still failing (subagent in the factory repo, reviewed here; no pilot)
+Checks: r06r_test_r9 (80 generator shots, mid-round code: use for skin, sea, gate, view mix; old blades), r06r_test_r9s
+and r9s2 (24 side views of fins, r9s2 with the later blade fixes); all qa_multi clean. One more blade change (drape
+only on the lowest quarter) is not rendered; with it the library's outlines are back on target (broad 0.82, sharp
+0.67, overhang 0.25); r9s2's full drape made them too broad (1.16).
+Skin: two causes found. key_wetness bound the material track to the mesh component without its actor binding, so
+neither the wetness roughness nor skin_look ever reached a render; and the asset's roughness map is about 0.07 on the
+body, a near-mirror skin that shows the sky as a pale sheen. Fix: material graph M_Humpback4kSkinBake_v1 (roughness
+0.25-0.6 from each animal's wetness + 0.1 x the map, Specular 0.3, BaseColorScale 1.0) with the values baked into
+instance assets MI_H4kBake_<skin>_<hash> assigned at spawn, batch key skin_bake (old configs untouched). Whale pixels,
+quartiles, real (399 training-day photos) / r8 / r9 / r9s2: dark-skin L* 14.9-24.4-32.9 / 18.3-25.3-40.3 /
+18.3-24.2-38.0 / 18.1-21.9-26.0; shots over 10 % white 13 % / 35 % / 56 % / 25 % (worse: fluke roll-outs at a median
+0.41, sheen on upward-facing flukes).
+Near-black seas: cause = steep elevated cameras (30-35 m up, 29-41 deg down; water brightness tracks the camera angle,
+r 0.74), not the sky-light capture; elevated camera height now 6-12 m, plus a gate rule on the water's own L* (min 28;
+real 0.5th percentile 28.1). Gate in r9: 3 of 80 rejected.
+Blade: written into the body's material slot, smooth vertex normals in the OBJ (welded across UV seams), the asset's
+old blade faces removed and the hole closed, UVs on the dark back skin beside the fin, rounded leading and thin
+trailing edge (they were the wrong way round), moved 6 cm back. Blade against the adjacent back, median L* difference
+and blades lighter by more than 5 L*: r8 -2.1, 8 of 61; r9 -1.0, 11 of 63; r9s 0.5, 7 of 28; r9s2 0.3, 4 of 29.
+Other: ridge knobs lowered by up to 3.5 cm (whale.ridge_soften 0.75); a tail_stock category for finless backs did not
+work (the fin stayed visible; weight 0 again); pectoral library individuals_run06e.json (chord 0.62-0.8, extra knobs),
+pectoral views 0.06 by eye; by eye in r9 fin 0.62, finless back 0.06, low fluke 0.10, raised fluke 0.35, head 0.21.
+My look: round8_frames_24.jpg is the best full-frame sheet so far (whales dark and wet, no black seas; the sea is
+still the smooth glossy built-in water); round8_fins_vs_real_24.jpg still fails at close range (crumpled, folded pale
+plates on about half the side views; a few right as dark shapes). No pilot.
+Ordered (round 9, blade surface only, report by about 22:00): read back the imported mesh's normals or render with a
+debug material before changing geometry, then a denser blade (24 x 40) with a convex cross-section and the back's skin
+detail; fluke sheen (white share by category); checks r06r_test_r10s (24 side views) and r06r_test_r10 (80 shots).
+Plan for the night: a full pilot if r10s passes my look, otherwise only a paired set (same shots with and without the
+mirror image) for the whale-mask test, which does not depend on the fin's surface.
+
+## 2026-11-17 20:10 — the part-gap instrument on r9: backs dark and wet, undersides paper-white (subagent, reviewed here)
+Blind by-eye pass on all 101 r9 whales. Pale or white cut-outs: r8 35 of 96 -> r9 34 of 101 (23 pale grey-beige + 11
+paper-white undersides); fins 10 of 49 -> 7 of 41; fluke whales 17 of 26 -> 15 of 26 (9 pale, 6 paper-white
+undersides; 5 of 9 raised flukes seen from behind show a white or pale underside); others 8 of 21 -> 12 of 34 (5 white
+pectorals with no dark top side). Coverage by eye, run05 / run06 tests / r6b / r7 / r8 / r9: real-like fins 0.31 /
+0.19 / 0.41 / 0.57 / 1.00 / 0.77 (25 of 101; r9 carries the older blades); finless backs 2.16 / 1.37 / 1.57 / 0.39 /
+1.43 / 1.94; pectorals 0.39 / 3.13 / 0.26 / 0.51 / 0.81 / 1.55; low flukes 0.14 / 0.72 / 0.38 / 0.47 / 0.90 / 0.71;
+raised flukes 1.47 / 0.88 / 0.59 / 0.77 / 1.07 / 1.31; heads 3.99 / 3.99 / 1.77 / 1.75 / 1.39 / 1.32. Nearest
+renders, median similarity of the best match: failing real small fins r9 0.811, r8 0.804, older renders 0.827 (r9
+among the three nearest for 43 %, 14 of 20 slots small fins); failing real low flukes r9 0.825, r8 0.814, older
+0.830, but every r9 neighbour is a small-fin back: rendered low flukes still do not look like real ones.
+Reading: the baked wet skin is the right direction; with the material's BaseColorScale now applied the maps' light
+areas render at full brightness, so fluke undersides and pectorals are too white (pigment and sheen both). Passed to
+the factory for round 9.
+
+## 2026-11-17 about 21:05 — part model: W2 holds on a second seed; W3 (wider dorsal) paints the flank and is rejected (subagent, reviewed here; nothing live)
+
+Arms: s0 / s1 = baseline seeds, w2 / w2s1 = W2 seeds 0 / 1, W3 = W2 + widened dorsal labels on renders + the full clicked
+triangle on real. Data in `experiments/parts_weak/` (`compare_final.json`, `fin_definition_final.json`,
+`fin_definition_w3_unclipped.json`, `finless_final.json`, `shares_final.json`). Sheets in the session scratchpad only.
+
+**W3 is not a scoring artefact.** I looked at 12 clicked fins of 2025-03-18 (photo | baseline | W2 | W3): W3 paints a cap
+over the whole upper hump and well down the flank. The earlier constant numbers came from a measure clipped to a window
+around the triangle; unclipped, W3's region is 7.6 times the triangle's area and reaches 1.52 fin heights BELOW the base
+line, which is exactly the depth limit of the widened render label. So the band comes from the render label rule (flank
+skin up to 1.5 fin heights below the ridge on a rig without a hump), not from the 133 real triangles.
+
+| Measure (clicks 2025-03-18; calls on val days) | s0 | s1 | w2 | w2s1 | W3 |
+|---|---|---|---|---|---|
+| Painted fin region length / clicked base (unclipped) | .28 | .28 | .72 | .84 | 2.39 |
+| Share of the clicked triangle painted dorsal | .14 | .15 | .46 | .45 | 1.0 |
+| IoU with the clicked triangle | .13 | .14 | .33 | .30 | .13 |
+| Painted region / triangle area | .18 | .19 | .81 | .97 | 7.6 |
+| Lowest point, fin heights above the base line | +.53 | +.52 | +.29 | +.30 | -1.52 |
+| Three-way call, classifier, whole photo | .837 | .859 | .944 | .947 | .930 |
+| Three-way call, by eye, whole photo (n 79) | .734 | .810 | .899 | .899 | .886 |
+| Finless backs called dorsal, by eye, crops (n 33) | 0 | 0 | 21 % | 15 % | 21 % |
+
+**W2 claims that survive two seeds against both baselines:** dorsal views with no fin pixel 9.1 / 6.6 % -> 0.2 / 0.2 %;
+dorsal views that get a fin region 89.0 / 91.9 -> 99.6 / 99.2 %; fin tip inside the fin region .748 / .756 -> .916 /
+.908 (the gain is fins getting a region at all); head or body painted at the clicked fin 9 / 5 % and 14 / 13 % -> 0;
+classifier-scored call +8.6 to +11 points (partly circular: the classifier supplied the weak labels). Whale painted
+background: equal to the baselines in both seeds (W1's problem stays fixed).
+
+**Do not survive as two-seed, two-baseline claims:** the by-eye call (clears s0, about the seed distance against s1);
+the fluke notch (w2 .759, w2s1 .685); fluke tips (right tip marginal, left no); fluke filling a quarter of the instance.
+I reported the notch gain (57 / 59 -> 76 %) at 18:15 from one seed; it is withdrawn.
+
+**Losses reproducible in both seeds:** the tail stock is painted fluke (body share in fluke views 7.3 / 7.2 % -> 0.3 /
+0.3 %); finless backs called dorsal 15-21 % by eye (baselines 0), 11-15 % by classifier (baselines 2-3 %).
+
+Seed distance for W2 is smaller than for the baselines (by eye 0.0 / +3.8, classifier +0.2 / +1.1).
+
+**Next (queued behind the fin retrain chain, one seed, the effect looked for is far outside the seed spread):** W3b =
+the full real triangle + the OLD render labels + the whale term. Expectation: triangle coverage well above .46 with
+nothing below the back line. Working dorsal definition stays the clicked triangle down to the back line; on renders
+without a hump at most 0.15-0.25 fin heights below the base line. The user's question (lower on the flank or not) is
+still open.
+
+## 2026-11-17 about 21:15 — run06, round 9: blade surface still failing, normals ruled out; paired mirror set ordered for the night (subagent in the factory repo, reviewed here; no pilot)
+
+Checks: `r06r_test_r10s` (24 side views; denser blade, round-8 maps), `r06r_test_r10` (80 shots; denser blade, new
+maps), `r06r_test_r10s2` (as r10 plus a thicker blade). qa_multi 0 failures on all three. Sheets in the session
+scratchpad (`factory_realism/round9_fins_vs_real_24.jpg`, `round9_frames_24.jpg`, my crops
+`round9_closeups_review.jpg`).
+
+**What was ruled out.** The importer recomputes normals and tangents, and the recomputed normals equal the written
+ones on every vertex (opposite sign only, the axis convention). No flipped faces, no hard edges, no creased join ring.
+Offline smooth-shaded views of the same blades look smooth. A blade twice as dense (24 x 37) and a thicker blade
+(half-width 0.20 H at mid height) change nothing by eye.
+
+**My look.** Not passing, and worse than the agent's "two thirds read right":
+- 6-8 of 24 blades are pale crumpled plates when the sun lights the whale's side;
+- several dark blades carry pale horizontal bands (000022, 000004), jagged or chipped outlines (000012, 000014,
+  000015), or sit as a small spike on a pyramid in near end-on views;
+- in r10s2 000006 the whole whale is matt khaki, like cardboard; real sunlit skin stays dark blue-grey with white
+  glints. This is a second fault, not the blade's;
+- in r10s2 000008 the pale plate has straight parallel ridges: stretched texture or collapsed geometry rather than a
+  normal map, to my eye.
+
+Causes left to split, ordered for the agent (offline first): (1) blade UVs sampling outside the back patch's island or
+stretched (unlit offline view decides); (2) automatic mesh reduction on import (Nanite / LODs) crumpling a thin blade
+on distant whales; (3) the agent's guess, normal-map detail of the back patch plus wet sheen (flat-grey debug shot in
+the morning).
+
+| Blade against the back beside it | median blade - back L* | blades lighter by > 5 L* |
+|---|---|---|
+| r10s | +0.1 | 4 of 26 |
+| r10s2 | -0.2 | 3 of 25 |
+| r10 | +0.2 | 13 of 77 |
+
+Blade outline (side views, median): r10s2 base / H 2.30, broad 0.84, sharp 0.62, overhang 0.30 (real 2.70 / 0.85 /
+0.70 / 0.22); r10 2.09 / 0.77 / 0.65 / 0.09 on only 16 side views.
+
+**Colour.** New maps: 85 % of animals keep 0-3 % of their white areas; lighter grey on bellies capped at 1.3x the dark
+skin; pectoral top sides always dark; baked Specular 0.3 -> 0.18, lowest wet roughness 0.25 -> 0.32.
+
+| Whale pixels | real | r9 | r10 |
+|---|---|---|---|
+| dark-skin L* p25 / median / p75 | 14.9 / 24.4 / 32.9 | 18.3 / 24.2 / 38.0 | 17.4 / 20.9 / 28.7 |
+| dark-skin b* median | -10.75 | -13.25 | -12.2 |
+| shots over 10 % white | 13 % | 56 % | 38 % |
+| fluke / tail / peduncle shots over 10 % white | 7 % | 74 % | 49 % |
+
+Still too white: rolling flukes (median 0.22), pectoral slaps (0.18), peduncles (0.11). Gate: 4 of 80 rejected. View
+classes by eye (r10): fin 0.71, finless back 0.12, low fluke 0.19, raised fluke 0.29, pectoral 0.16, head 0.31.
+
+**Tonight.** No pilot. As told to the user at 19:45, only the paired set for the whale-mask test of the user's
+reflection idea: `data/renders/r06_pair_m2` (reflection mode 2) and `r06_pair_m1` (mode 1, the mirrored whale) on the
+same shot list, 1 000 shots each, seed 61. My change to the plan: 1280x853 instead of 2560x1707, because the mask
+models train on 1280-wide renders, the question does not depend on resolution, and the engine is then free in the
+morning for the fin work. Marker `data/renders/r06_pair.done` / `.failed`. The agent diagnoses the fin offline in new
+files meanwhile and edits nothing the chain reads. Part-gap instrument ordered on r10.
+
+## 2026-11-17 about 21:20 — the part-gap instrument on r10: fin outlines at real share, white down, khaki up, low flukes no closer (subagent, reviewed here)
+
+Baseline `parts_seg_r05_a`, blind by-eye labels of all 116 whales in `r06r_test_r10` (labels by the agent, not by a
+person). Files in `experiments/part_gaps/` (`labels_ai_r06r_test_r10.txt`, `nearest_r10_summary.json`, `NOTES.txt`).
+
+| By eye | real share | r8 | r9 | r10 |
+|---|---|---|---|---|
+| real-like fins / real small-fin share | 0.322 | 1.00 | 0.77 | 1.15 |
+| finless backs, render share / real share | 0.102 | 1.43 | 1.94 | 1.01 |
+| pectorals | 0.051 | 0.81 | 1.55 | 1.68 (1.01 without 4 fluke blades that read as pectorals) |
+| low flukes | 0.140 | 0.90 | 0.71 | 0.49 |
+| raised flukes | 0.068 | 1.07 | 1.31 | 0.88 |
+| heads | 0.015 | 1.39 | 1.32 | 3.44 |
+
+- **The instrument's fin measure and my look disagree, and both are right.** "Real-like fins" is judged at sheet
+  scale and tracks the outline: on target. The surface fault (crumpled pale plates at close range) is not seen by
+  it. The instrument needs a close-range fin check before it can gate a pilot; until then my look decides.
+- **Pale or white whales:** 34 of 101 (r9) -> 19 of 116. **Matt khaki on the sunlit side:** 15 of 116, new as a
+  count. Together 29 %.
+- **Low flukes from behind:** fewer (0.49 of the real share), still flat blades with no water sheeting and no
+  tail-stock arch, and further from the failing real ones than r9's (0.814 against 0.825).
+- **The baseline's error on RENDERED flukes rose as they got darker:** low flukes 0.06 / 0.15 / 0.32 (n 18-20), raised
+  flukes 0.00 / 0.00 / 0.21 (n 14) for r8 / r9 / r10. Small n, suggestive only. If it holds, the run05 model uses
+  "pale" as its fluke cue, which would also explain real pectorals being called fluke. Paired test ordered (r9 and r10
+  share shots).
+- **Could teach the wrong thing:** pale single fluke blades seen edge-on read as pectorals (000025, 000030, 000049,
+  000059; verified by me on the sheet) and are the nearest renders to the failing real pectorals; head-on domes with
+  the bright submerged body showing through the water, labelled body; khaki flanks.
+
+## 2026-11-17 21:30 — "pale = fluke" tested and not supported (subagent, reviewed here)
+
+Follow-up to the entry above (the baseline's error on rendered flukes rose as flukes got darker). Four models:
+baseline seeds `parts_seg_r05_a` / `_s1`, W2 seeds 0 / 1. Numbers in `experiments/part_gaps/pale_test.json`, code
+`model_fine_tuning/part_gaps/pale_test.py`.
+
+- **Recolour test (the clean one):** rendered flukes darkened to the back's L* (run05 + r9, n 40, median shift -17
+  L*): 0 of 40 calls flip in all four models; control edit on the back also 0 of 40. The call does not depend on
+  fluke paleness for these whales. The reverse (lighten r10 flukes, n 9) and pectorals (n 4-9) are too few to read.
+- **Paired r9 / r10 renders: not possible.** The shot ids match but only 7 of 80 share category and animal count.
+- **Unpaired:** fluke whales not called fluke: run05 (darkest flukes, L* 19) 0 of 50 in all four models; r9 (palest,
+  L* 58) 2-3 of 35; r10 (L* 35) 4-8 of 35. The misses are fluke_sinking fragments (a tip or one blade, called
+  dorsal), 20 % of r10's fluke whales against 9 % in r9; most are not readable as flukes by eye either. So the rise
+  from r8 to r10 comes from that pose and from seed spread, not from darkness.
+- **Real photos:** fluke views (n 165) missed in the dark / mid / pale tercile: 0.02 / 0.11 / 0.19 (baseline a), same
+  pattern in the other three. Dark real flukes are missed LESS; pale there means glare and water, not white skin.
+  Pectorals (n 59) called fluke: about 60 % even in the dark tercile; a weak pale trend in the baselines only, not
+  supported at 20 per cell.
+
+**Reading:** real pectorals called fluke is a shape confusion (a long blade with no body), not a colour cue. It fits
+the r10 finding that edge-on single fluke blades read as pectorals. Levers: true pectorals in rolling poses with the
+body in view, fewer unreadable fluke fragments (or labelled as such), and real weak labels for pectorals.
+
+## 2026-11-17 21:36 — run06, round 9b: the fin's surface fault is its UV map; paired mirror set rendering (subagent in the factory repo, reviewed here)
+
+**Fin diagnosis without the engine** (sheet `fin_diag/diag_sheet1.jpg` in the session scratchpad, looked at by me):
+- Unlit, through each shot's own camera, every blade is uniformly dark, the four failing ones included (blade texels
+  against the back beside it, mean RGB: 43 vs 52, 58 vs 60, 30 vs 32, 43 vs 42). The colour map is not the cause.
+- The blade's UVs are a thin curved sliver on the map: computed once from the default blade (H 45 cm) and clipped to
+  the back patch, so 62 of 1 969 vertices are pinned at the bound and the hump's front collapses to a line. Texel
+  density on the blade against the back: 0.37 vs 3.0 per cm (000006), 0.90 vs 2.6 (000008), 2.0 vs 2.6 (000018),
+  2.6 vs 3.5 (000010), 1.4 vs 3.5 on a good-looking one. Big blades are stretched up to 8x, so the normal and
+  roughness maps are sampled along a collapsed, sheared map with bad tangents. This fits the pale crumpled plates and
+  the straight parallel ridges, and is the first cause in my list of three.
+- Mesh reduction: LOD 0 has 71 014 triangles against 71 021 in the OBJ, Nanite is off. Further LODs not checked yet
+  (5-minute engine check in the morning). Flat-grey debug shot prepared for the morning as a confirmation.
+- Separate, not surface: spike-on-a-pyramid in near end-on views and a sawtooth where the blade's sunk part is cut by
+  the back.
+
+**Morning order (nothing applied; the render chain reads the factory code):** per-animal blade UVs with even stretch
+and no clipping (2.6 texels per cm, from the back's clean side); LOD check and flat-grey shot; the 24 side views
+again; khaki sunlit skin (measured L* 55-65, b* +9 to +11 on the sunlit half; proposal BaseColorScale 0.5, Specular
+0.35 so the sky's reflection carries the look, A/B on 6 shots, target sunlit L* 25-35 with b* below zero); fluke
+upper sides dark in the maps (removes the edge-on blades that read as pectorals); streams and a tail-stock arch for
+low flukes; fewer heads.
+
+**Label rule for submerged parts (my question):** visible = stencil whale and the camera ray never dips under the
+rendered wave surface; ignore = whale surface down to 1.5 m under the mean water plane; background below. The
+"glowing dome" look is probably a side effect of reflection mode 2 at grazing angles (the surface reflection that
+hides a submerged body is mostly gone). The pair will show it on the same shots.
+
+**Paired mirror set:** launched 21:22, chain `data/renders/r06_pair_chain.sh`, arms `r06_pair_m2` then `r06_pair_m1`,
+1 000 shots each at 1280x853, seed 61, 623 single-whale and 377 multi-whale shots, 14 with no whale. Before launch
+the two arms were identical in shot list, run config, all 37 batches and the splash / white-water meshes; after the
+run the chain checks that instance and part label PNGs are byte-identical per shot (`r06_pair_check.json`). About 10 s
+per shot plus 150 s per batch: m2 done about 02:15, m1 and the marker about 07:00-07:30.
+
+## 2026-11-17 21:50 — run06, round 9c: new blade UVs verified offline, morning kit ready; white rolling flukes are sky reflection, not pigment (subagent in the factory repo, reviewed here)
+
+Nothing the paired render chain reads was changed. New files only: `factory/blade_uv2.py`,
+`third_party_assets/humpback_4k/blade_uv_mask.png`, `data/renders/r06_morning/` (kit).
+
+**New blade UVs (prepared, not applied, not render-tested):** two flat charts per animal, one per blade side, from that
+animal's own blade in cm at the back's 2.6 texels per cm, placed inside the always-dark region of the skin maps;
+seams at the leading edge, trailing edge and tip; seam copies exist only in the OBJ, so geometry and labels do not
+change. A cylinder-wrap chart was tried first and rejected (3-8x shear, 25-555 flipped triangles).
+
+| Offline check, 6 shots + 3 largest + 3 smallest blades | old UVs | new UVs |
+|---|---|---|
+| texels per cm, stretched direction (median) | 0.14-1.13 | 1.81-2.25 |
+| texels per cm, other direction (median) | | 2.60 |
+| UV / 3D area ratio (median; 1 = the back's density) | 0.02-1.36 | 0.72-0.88 |
+| flipped UV triangles | 3 670 (left side reversed) | 0 |
+| faces with + handedness | 0.50 | 1.00 |
+| UV vertices inside the dark region | 0.989 | 1.000 |
+
+The old layout had the whole left side of the blade with reversed tangents; that alone would light one side wrongly
+under a normal map. The back beside the fin: 2.53 texels per cm, handedness 1.00. Sheet `uv2/uv_old_new.jpg`
+(scratchpad; looked at by me: the old sliver against two compact charts).
+
+**White on rolling flukes is not pigment.** Unlit, the seven pectoral-like fluke blades have albedo white share
+0.000-0.003; rendered, the same pixels are L* 78-88 with 0.52-0.79 white on the worst three (000030, 000059,
+000049). It is sky reflection on smooth, wet, flat blades at a grazing angle. Darker fluke tops in the maps will not
+fix these shots. Lever for the morning: roughness or specular by body part in the baked material. Note the tension
+with the khaki fix, which wants MORE sky reflection on the back; both go into one A/B.
+
+**Morning kit** `data/renders/r06_morning/r06_morning.sh STEP` (render and patch steps refuse to run before the marker
+exists): check, apply_uv, old_configs (run04 / run05 / multi-test shot lists must stay byte-identical), lod, side (24
+side views as `r06r_test_r11s`), flatgrey, khaki (A = BaseColorScale 1.0 / Specular 0.18, B = 0.6 / 0.3, C = 0.45 /
+0.35), measure.
+
+Paired render at 21:50: 6 of 37 batches of the first arm done. Fin retrain chain: R0 seed 1 trained at 21:35, RP6
+seed 0 next.
+
+## 2026-11-17 about 21:55 — paired mirror test of the whale mask: design and waiting chain (subagent, reviewed here; nothing live)
+
+The user's idea under test: "with the reflections removed the model will do better and marking all pixels whale".
+Chain `experiments/seg_pair/pair.sh` (code `model_fine_tuning/seg_real/pair.py`), detached since 21:53, waits for
+`Whale-Image-Data-Factory/data/renders/r06_pair.done`; log and marker in `/var/tmp/sat3737-parts-cache/seg_pair/`
+(`pair.log`, `pair.done` / `pair.failed`); results to `experiments/seg_pair/pair_tables.md`.
+
+- **Gate:** the factory's pairing check, plus a byte-by-byte check of `masks/` between the arms (the file the mask
+  model trains on, which the factory's check does not cover). One split on the shared ids, 85 / 15, by category.
+- **Arm A (primary):** renders only, from the DINOv3 weights, seg_r05_ft4 recipe, 30 epochs on the 1 000-shot arm.
+  The only render data the model ever sees is that arm. **Arm B:** seg_r05_ft4 fine-tuned 15 epochs on each arm
+  (practical question, confounded: r05 has already seen mirrors). Two seeds per arm in both. No real labels.
+- **Measures on real photos** (the 581 view-labelled main whales of the earlier why / reflect work, validation days as
+  the headline): P(whale) by height fifth of the live blob, the waterline band (0-9, 10-19, 20-39 px), kept share of
+  the live blob, false whale just below the whale, the mirror-band nearest-neighbour measure; and each model on the
+  OTHER arm's renders. r04 and r05 as reference columns.
+- **By eye, from the pair itself:** 30 head-on or awash pairs, m1 next to m2, for the "submerged body glows in mode 2"
+  suspicion.
+- Expected: renders done 06:30-07:30, then about 2.5-3 h: results about 09:30-10:30 on 2026-11-18.
+
+## 2026-11-17 13:45 — run06 look, round 4 (ordered before the paste route was dropped): whale colour table, a paste preset, one dead setting (subagent in the factory repo; written by the earlier session tab)
+This round was ordered at 12:25 and reported at 13:44, after the user's 13:30 decision; its paste preset is moot, its
+colour work and its findings about the skin settings are not. It ran while factory round 5 was starting: both
+touched the factory tree (see the last paragraph).
+Whale pixels only, foam and splash excluded, medians per shot; real = 499 training-day photos with the live masks:
+                                  real            r4b (24)   r5 (48)
+  dark-skin L*                    24.3 (15-34)    17.9       18.2 (13-23)
+  dark skin minus nearby water    -30.4           -35.6      -36.1
+  dark-skin C*                    11.3            12.6       12.2
+  white share (L* > 75), median   0.02            0.11       0.01
+  shots over 10 % white           13 %            52 %       8 %
+  shots over 30 % white           3 %             13 %       0 %
+  clipped whale pixels            0               0          0
+  white-area L*                   84.9            87.2       82.9
+White share now matches (maps: 80 % of animals keep 0-5 % of the atlas white, 15 % keep 5-25 %, 5 % keep 30-60 %; all
+chroma halved, which removes the pink head, mouth and pleat tints; light-grey atlas areas L* 55-70 now follow the
+white-pattern path, white mask from L* 38, dark texels capped at 1.6x the animal's dark reference, dark scale 1.3;
+ev100 -2.6 in run06_realism.json). NOT centred: backs are about 6 L* too dark, sunlit camera-facing fluke undersides
+come out warm grey and too light (000229, 000006; the sun is probably too strong against the sky fill).
+Dead setting: the per-actor skin_look keys do nothing. BaseColorScale 0.7 and 0.8 render identically (dark L* 14.35
+against 14.37 on the same 8 shots), so Specular 0.2 from round 3 probably never applied either (narrow wet highlights
+are present, as with the default 0.5); cause not found, no error in the build logs. Round 3's colour change came from
+the new maps and the grade, not from these keys.
+Paste preset (moot now): factory/config/run06_paste.json with paste_material = streams, splash, front spray, blow and
+white water off (shotlist.strip_water_effects; applies only when a config sets it). With the splash off the pec-slap
+fins and tail-slap flukes render solid: the "glassy hollow fin" and the "see-through fluke" were the slap splash built
+round the part, not the fin. Cyan at the waterline on head rises is submerged skin seen through the water: not fixed.
+View mix, 400-shot generator draw against real: fluke categories 40 % against 33 %; pec slap / breach / head rise 16 %
+against under 8.7 % (the intended 2-3x over-sampling of hard cases).
+r5 check: data/renders/r06r_test_r5/dataset (48 skin-heavy shots, paste preset, mode-2 reflections, final maps),
+qa_multi 0 failures; 27.7 s per shot (render 11.1), 7.8 MB per shot. Sheets round4_skin_vs_real.jpg and
+round4_whales_1to1.jpg (scratchpad factory_realism/): my look agrees with the table: no white whales, no pink or
+purple; backs read near-black and slightly too dark, two fluke undersides beige; at 1:1 the skin shows plausible scars
+and a blotchy two-tone where the white mask cuts in (000006).
+Hazard seen: run06_paste.json disappeared once during the round and was recreated, and run06_realism.json changed at
+13:40 while round 5 was starting; two agents were editing factory/ and regenerating the 44 skin maps
+(third_party_assets/humpback_4k/skins/*d.png) in the same hour. Old configs still give byte-identical shot lists.

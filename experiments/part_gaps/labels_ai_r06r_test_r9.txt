@@ -1,0 +1,103 @@
+# AI by-eye labels of every r06r_test_r9 whale (101), blind (render + outline only). Same taxonomy and #S / #R fin marks;
+# 'pale' = flat pale beige / grey cut-out look; 'white' = paper-white underside (fluke or pectoral). Format: <shot> <iid> <CATEGORY> ...
+000000 1 X_none s2
+000002 1 D_small #S
+000003 1 B_back e
+000004 1 D_small s1 #R
+000004 2 B_back
+000004 3 F_up
+000005 1 D_tip #R
+000006 2 B_back
+000006 3 D_small m #R
+000007 1 D_small pale
+000008 1 D_small m pale
+000008 2 D_small m pale
+000009 1 B_back
+000010 1 F_up white
+000011 1 F_up
+000012 1 D_small #R
+000013 1 D_tip pale #S
+000013 2 D_small pale #R
+000013 3 D_small pale #R
+000014 1 B_back pale
+000014 3 B_back e
+000015 1 P_pec pale
+000016 1 H_head pale
+000017 1 B_back
+000018 1 D_tip #R
+000019 1 D_small #R
+000020 1 D_small #R
+000021 1 P_pec s2 white
+000022 1 B_back s1
+000023 1 P_pec s2
+000024 1 B_back m
+000024 2 B_back
+000024 3 D_small e #R
+000025 1 D_small s1
+000026 2 B_back s2
+000027 1 P_pec s2 white
+000027 2 F_up white
+000027 3 B_back pale
+000028 1 D_small #R
+000029 1 F_up pale
+000030 1 F_low
+000030 2 D_small pale #S
+000031 1 P_pec white
+000032 1 B_back s2
+000033 1 B_back
+000033 3 D_small #R
+000034 1 D_small #R
+000034 2 D_small #R
+000034 3 D_small #R
+000035 1 X_none s1
+000036 1 D_tip #S
+000037 1 D_tip s2 #S
+000038 1 F_low
+000038 2 F_edge white
+000039 1 F_low
+000040 1 F_edge white
+000041 1 F_edge white
+000042 1 D_small #R
+000043 1 F_low s1
+000044 1 B_back
+000045 1 D_small #R
+000046 1 D_small #R
+000047 1 F_up
+000048 1 F_low pale
+000048 2 D_small #R
+000049 1 R_roll s1
+000049 3 B_back e
+000050 1 D_small #S
+000053 1 B_back pale
+000055 1 D_small s1 #R
+000056 1 D_small #R
+000057 1 D_tip s1 #S
+000057 2 D_tip #R
+000057 3 D_tip s1 #S
+000058 1 P_pec white
+000059 1 P_pec
+000060 1 D_tall #S
+000060 2 D_tall
+000061 1 D_small s1 #R
+000062 1 F_edge s2 pale
+000063 1 F_low s1
+000064 1 H_head e
+000065 1 D_small #R
+000066 1 F_low
+000067 1 D_tip #S
+000068 1 X_none s2 pale
+000069 1 F_low s1 pale
+000069 2 B_back m
+000070 1 F_edge white
+000071 1 B_back pale
+000071 2 D_small #R
+000072 1 D_small s1 #S
+000073 1 F_up
+000074 1 P_pec white
+000075 1 F_edge s1 pale
+000076 1 F_low pale
+000077 1 F_low pale
+000078 1 F_up pale
+000078 2 F_up pale
+000079 1 F_edge s1
+000079 2 B_back s1

@@ -1,0 +1,178 @@
+{
+ "full parts_seg_r05_w1 vs s1 t_eye": {
+  "n": 79,
+  "photos": 78,
+  "base_acc": 0.8101,
+  "arm_acc": 0.8734,
+  "diff": 0.0633,
+  "ci95": [
+   -0.038,
+   0.1646
+  ]
+ },
+ "full parts_seg_r05_w1 vs s1 t_vc": {
+  "n": 828,
+  "photos": 778,
+  "base_acc": 0.8587,
+  "arm_acc": 0.942,
+  "diff": 0.0833,
+  "ci95": [
+   0.0558,
+   0.1098
+  ]
+ },
+ "full parts_seg_r05_w1_noneed vs s1 t_eye": {
+  "n": 79,
+  "photos": 78,
+  "base_acc": 0.8101,
+  "arm_acc": 0.8734,
+  "diff": 0.0633,
+  "ci95": [
+   -0.038,
+   0.1667
+  ]
+ },
+ "full parts_seg_r05_w1_noneed vs s1 t_vc": {
+  "n": 828,
+  "photos": 778,
+  "base_acc": 0.8587,
+  "arm_acc": 0.8671,
+  "diff": 0.0085,
+  "ci95": [
+   -0.0194,
+   0.0387
+  ]
+ },
+ "full parts_seg_r05_w2 vs s1 t_eye": {
+  "n": 79,
+  "photos": 78,
+  "base_acc": 0.8101,
+  "arm_acc": 0.8987,
+  "diff": 0.0886,
+  "ci95": [
+   -0.0128,
+   0.1923
+  ]
+ },
+ "full parts_seg_r05_w2 vs s1 t_vc": {
+  "n": 828,
+  "photos": 778,
+  "base_acc": 0.8587,
+  "arm_acc": 0.9444,
+  "diff": 0.0857,
+  "ci95": [
+   0.058,
+   0.1118
+  ]
+ },
+ "full w2 vs w1 t_eye": {
+  "n": 79,
+  "photos": 78,
+  "base_acc": 0.8734,
+  "arm_acc": 0.8987,
+  "diff": 0.0253,
+  "ci95": [
+   0.0,
+   0.0641
+  ]
+ },
+ "full w2 vs w1 t_vc": {
+  "n": 828,
+  "photos": 778,
+  "base_acc": 0.942,
+  "arm_acc": 0.9444,
+  "diff": 0.0024,
+  "ci95": [
+   -0.0097,
+   0.0145
+  ]
+ },
+ "hr parts_seg_r05_w1 vs s1 t_eye": {
+  "n": 79,
+  "photos": 78,
+  "base_acc": 0.7342,
+  "arm_acc": 0.8608,
+  "diff": 0.1266,
+  "ci95": [
+   0.0,
+   0.2532
+  ]
+ },
+ "hr parts_seg_r05_w1 vs s1 t_vc": {
+  "n": 828,
+  "photos": 778,
+  "base_acc": 0.8502,
+  "arm_acc": 0.9384,
+  "diff": 0.0882,
+  "ci95": [
+   0.0603,
+   0.1168
+  ]
+ },
+ "hr parts_seg_r05_w1_noneed vs s1 t_eye": {
+  "n": 79,
+  "photos": 78,
+  "base_acc": 0.7342,
+  "arm_acc": 0.9114,
+  "diff": 0.1772,
+  "ci95": [
+   0.0633,
+   0.2875
+  ]
+ },
+ "hr parts_seg_r05_w1_noneed vs s1 t_vc": {
+  "n": 828,
+  "photos": 778,
+  "base_acc": 0.8502,
+  "arm_acc": 0.9082,
+  "diff": 0.058,
+  "ci95": [
+   0.0277,
+   0.088
+  ]
+ },
+ "hr parts_seg_r05_w2 vs s1 t_eye": {
+  "n": 79,
+  "photos": 78,
+  "base_acc": 0.7342,
+  "arm_acc": 0.8734,
+  "diff": 0.1392,
+  "ci95": [
+   0.0128,
+   0.2564
+  ]
+ },
+ "hr parts_seg_r05_w2 vs s1 t_vc": {
+  "n": 828,
+  "photos": 778,
+  "base_acc": 0.8502,
+  "arm_acc": 0.9505,
+  "diff": 0.1002,
+  "ci95": [
+   0.0738,
+   0.1273
+  ]
+ },
+ "hr w2 vs w1 t_eye": {
+  "n": 79,
+  "photos": 78,
+  "base_acc": 0.8608,
+  "arm_acc": 0.8734,
+  "diff": 0.0127,
+  "ci95": [
+   -0.0256,
+   0.0625
+  ]
+ },
+ "hr w2 vs w1 t_vc": {
+  "n": 828,
+  "photos": 778,
+  "base_acc": 0.9384,
+  "arm_acc": 0.9505,
+  "diff": 0.0121,
+  "ci95": [
+   0.0024,
+   0.0238
+  ]
+ }
+}

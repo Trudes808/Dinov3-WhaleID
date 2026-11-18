@@ -1,0 +1,79 @@
+{
+ "task": "parts_segmentation",
+ "classes": [
+  "background",
+  "fluke",
+  "dorsal_fin",
+  "pectoral_fin",
+  "head",
+  "body"
+ ],
+ "args": {
+  "name": "parts_seg_r05_s1",
+  "run_dir": "/home/sat3737/NOAA_whales/Whale-Image-Data-Factory/data/renders/run05",
+  "split": "/home/sat3737/NOAA_whales/Dinov3-WhaleID/model_fine_tuning/splits/run05.json",
+  "cache": "/var/tmp/sat3737-parts-cache/run05/labels",
+  "out_root": "/home/sat3737/NOAA_whales/Dinov3-WhaleID/experiments",
+  "init_from": null,
+  "init_weights": "/var/tmp/sat3737-parts-cache/phase1_last.pt",
+  "arch": "vitb16",
+  "unfreeze_blocks": 4,
+  "epochs": 10,
+  "batch_size": 8,
+  "crop": 512,
+  "scale_min": 0.5,
+  "scale_max": 1.5,
+  "whale_bias": 0.7,
+  "rare_bias": 0.5,
+  "photometric": 1.0,
+  "lr_head": 0.0003,
+  "lr_backbone": 3e-05,
+  "layer_decay": 0.8,
+  "weight_decay": 0.05,
+  "warmup_steps": 100,
+  "dice_weight": 1.0,
+  "class_weights": null,
+  "workers": 6,
+  "eval_every": 5,
+  "eval_batch": 4,
+  "seed": 1,
+  "max_train": null,
+  "max_val": null,
+  "max_steps": null,
+  "no_amp": false
+ },
+ "model": {
+  "arch": "vitb16",
+  "unfreeze_blocks": 4,
+  "layers": null,
+  "decoder_width": 256,
+  "num_classes": 6
+ },
+ "train_images": 6440,
+ "val_images": 1379,
+ "params": {
+  "total_M": 88.21,
+  "trainable_M": 30.9
+ },
+ "class_frequency": [
+  0.973676,
+  0.006958,
+  0.000415,
+  0.000218,
+  0.002128,
+  0.016605
+ ],
+ "class_weight": [
+  1.0,
+  10.0,
+  10.0,
+  10.0,
+  10.0,
+  7.657
+ ],
+ "init": {
+  "from": "/var/tmp/sat3737-parts-cache/phase1_last.pt",
+  "loaded_tensors": "all",
+  "not_loaded": []
+ }
+}
