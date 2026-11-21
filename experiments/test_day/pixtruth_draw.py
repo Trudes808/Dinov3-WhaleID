@@ -11,9 +11,11 @@ prompts.json: {seq: [op, ...]} painted in order (later ops overwrite earlier one
   {"c": cls, "box": [x0, y0, x1, y1], "p": [[x, y], ...], "n": [[x, y], ...], "mm": "best" | 0 | 1 | 2, "fill": true}   SAM
   {"c": cls, "p": [...], "n": [...]}                                                                                       SAM, points only
   {"c": cls, "poly": [[x, y], ...]} | {"c": cls, "rect": [x0, y0, x1, y1]} | {"c": cls, "line": [[x, y], ...], "w": px}     painted directly
+  {"c": cls, "wand": {"line": [...], "w": px, "t": thr, "dark": bool}}   brightness wand inside my own corridor (see wand())
   "crop": [x0, y0, x1, y1] on a SAM op sets the crop SAM sees ("full": true = the whole frame).
 optional on any op: "over": [classes] (paint only where the label is one of these now), "blur": r (pixels within r of the
-op's own boundary become 255), "clip": true (SAM mask cut to the box). Coordinates on the half-resolution grid (2748 x 1835).
+op's own boundary become 255), "clip": true (SAM mask cut to the box), "within": {"line": [...], "w": px} | {"poly": [...]}
+(mask cut to my own corridor; added 2026-11-21 for the rail re-draw). Coordinates on the half-resolution grid (2748 x 1835).
 """
 from __future__ import annotations
 
@@ -71,17 +73,22 @@ def overlay(img: np.ndarray, lab: np.ndarray, alpha=0.4) -> np.ndarray:
 
 class Sam:
     def __init__(self, cache: Path):
+        self.cache = cache; cache.mkdir(parents=True, exist_ok=True); self.m = None   # model loaded on the first uncached prompt
+
+    def _load(self):
         import torch
         from transformers import Sam2Model, Sam2Processor
         self.torch = torch; self.dev = "cuda" if torch.cuda.is_available() else "cpu"
         self.m = Sam2Model.from_pretrained("facebook/sam2.1-hiera-large").to(self.dev).eval()
-        self.p = Sam2Processor.from_pretrained("facebook/sam2.1-hiera-large"); self.cache = cache; cache.mkdir(parents=True, exist_ok=True)
+        self.p = Sam2Processor.from_pretrained("facebook/sam2.1-hiera-large")
 
     def mask(self, img: np.ndarray, seq: str, op: dict) -> np.ndarray:
         key = hashlib.sha1(json.dumps([seq, {k: op[k] for k in ("box", "p", "n", "mm", "crop", "full") if k in op}], sort_keys=True).encode()).hexdigest()[:16]
         f = self.cache / f"{seq}_{key}.npz"
         if f.exists():
             return np.unpackbits(np.load(f)["m"])[: H * W].reshape(H, W).astype(bool)
+        if self.m is None:
+            self._load()
         pts = (op.get("p") or []) + (op.get("n") or []); lbl = [1] * len(op.get("p") or []) + [0] * len(op.get("n") or [])
         if op.get("full"):
             x0, y0, x1, y1 = 0, 0, W, H
@@ -114,11 +121,37 @@ class Sam:
         return full
 
 
+def wand(img: np.ndarray, wd: dict) -> np.ndarray:
+    """A brightness wand inside my own corridor (no learned model): {"line": [[x, y], ...], "w": corridor px,
+    "t": threshold on max(R,G,B), or on max - min (colour) with "feat": "s" (default Otsu inside the corridor), "dark": true = take the dark side (a pole),
+    "close": px}. Keeps the components that touch the drawn centre line; holes filled across the corridor."""
+    cm = np.zeros((H, W), np.uint8); cl = np.zeros((H, W), np.uint8); pts = np.array(wd["line"], np.int32)
+    cv2.polylines(cm, [pts], False, 1, int(wd.get("w", 80))); cv2.polylines(cl, [pts], False, 1, 3)
+    i16 = img.astype(np.int16)
+    v = (i16.max(axis=2) - i16.min(axis=2)).astype(np.uint8) if wd.get("feat") == "s" else img.max(axis=2)
+    inside = cm.astype(bool)
+    t = wd.get("t")
+    if t is None:
+        t, _ = cv2.threshold(v[inside].reshape(-1, 1), 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    m = ((v <= t) if wd.get("dark") else (v > t)) & inside
+    k = int(wd.get("close", 5))
+    if k:
+        ker = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (k, k))
+        m = cv2.morphologyEx(cv2.morphologyEx(m.astype(np.uint8), cv2.MORPH_CLOSE, ker), cv2.MORPH_OPEN, ker).astype(bool) & inside
+    n, cc = cv2.connectedComponents(m.astype(np.uint8))
+    keep = np.unique(cc[(cl > 0) & m]); keep = keep[keep > 0]
+    m = np.isin(cc, keep)
+    u = m.astype(np.uint8); cs, _ = cv2.findContours(u, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE); cv2.drawContours(u, cs, -1, 1, -1)
+    return u.astype(bool) & inside
+
+
 def paint(seq: str, ops: list, img: np.ndarray, sam) -> np.ndarray:
     lab = np.zeros((H, W), np.uint8)
     for op in ops:
         c = op["c"]
-        if "poly" in op or "rect" in op or "line" in op:
+        if "wand" in op:
+            m = wand(img, op["wand"])
+        elif "poly" in op or "rect" in op or "line" in op:
             m = np.zeros((H, W), np.uint8)
             if "line" in op:
                 cv2.polylines(m, [np.array(op["line"], np.int32)], False, 1, int(op.get("w", 10)))
@@ -133,6 +166,13 @@ def paint(seq: str, ops: list, img: np.ndarray, sam) -> np.ndarray:
                 b = op["box"]; cm = np.zeros_like(m); cm[b[1]:b[3], b[0]:b[2]] = True; m &= cm
             if op.get("fill"):
                 u = m.astype(np.uint8); cs, _ = cv2.findContours(u, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE); cv2.drawContours(u, cs, -1, 1, -1); m = u.astype(bool)
+        if "within" in op:   # my own corridor: {"line": [[x, y], ...], "w": px} or {"poly": [...]}; the mask is cut to it
+            wi = op["within"]; cm = np.zeros((H, W), np.uint8)
+            if "line" in wi:
+                cv2.polylines(cm, [np.array(wi["line"], np.int32)], False, 1, int(wi.get("w", 40)))
+            else:
+                cv2.fillPoly(cm, [np.array(wi["poly"], np.int32)], 1)
+            m &= cm.astype(bool)
         if "over" in op:
             m &= np.isin(lab, op["over"])
         lab[m] = c

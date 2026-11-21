@@ -47,8 +47,15 @@ def listing(d: Path, stems: list[str]) -> dict:
     return dict(out)
 
 
+# files the app does not read either (the backend's file names were grepped on 2026-11-20): training caches, the old
+# cluster ids, tuning runs of the cluster_v3 study, older fin-model files and research folders of single days
+RESEARCH_RE = re.compile(r"^(parts_hr/<stem>~k__body\.canon48\.npy|safe/clusters_v1\.json|safe/view_match_hw\.npz|part_landmarks_parts_v1(/.*)?"
+                         r"|dino_frozen[^/]*(/.*)?|edges(/.*)?|signature_[^/]*(/.*)?"
+                         r"|cluster_v3/(?!(channels|embeddings)\.npz$|(scores|metrics|tracklets)_student\.(npz|json)$).*)$")
+
+
 def research(k: str) -> bool:
-    return any(k == r or k.startswith(r + "/") for r in RESEARCH)
+    return any(k == r or k.startswith(r + "/") for r in RESEARCH) or bool(RESEARCH_RE.match(k))
 
 
 def sanity(d: Path) -> dict:
@@ -94,7 +101,7 @@ def main() -> None:
             elif lv[1] > 0 and sv[1] < 0.5 * lv[1] * sv[0] / max(1, lv[0]):
                 small.append(k)
         rep[day] = {"missing_in_shadow": miss, "only_in_shadow": extra_s, "much_smaller_in_shadow": small,
-                    "research_only_live": sorted({k.split("/")[0] for k in ll if research(k)}),
+                    "research_only_live": sorted({k if RESEARCH_RE.match(k) and "/" in k and k.startswith("cluster_v3") is False else k.split("/")[0] for k in ll if research(k)}),
                     "bytes": {"live": sum(v[1] for k, v in ll.items() if not research(k)), "shadow": sum(v[1] for v in ss.values())},
                     "images": "link" if (S / "images").is_symlink() else "hardlinked dir" if (S / "images").is_dir() else "missing",
                     "sanity": {"live": sanity(L), "shadow": sanity(S)}, "files": rows}

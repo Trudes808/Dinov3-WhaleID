@@ -1,0 +1,18 @@
+{
+ "params": {
+  "m_along": 0.05,
+  "m_below": 0.45,
+  "d_near": 0.3
+ },
+ "fixed_on": "r06r_check20 renders, 127 fins with all three fin keypoints visible, exact whale mask (instances > 0), objective mean IoU with the run06 dorsal label (fin + hump, part 2 of the fin's own whale); grid_r06r_check20.json + the extension m_below 0.6-1.0 (no change: at d_near 0.3 the depth under the base line is bound by d_near, m_below >= 0.3 does not bind)",
+ "h_eff": "max(fin height above the base line, base / 3)",
+ "frozen": "2026-11-20, before any score on r06r_check21 or on real photos was read",
+ "code": "model_fine_tuning/parts_weak/tri_expand.py",
+ "params_B": {
+  "m_along": 0.0,
+  "m_below": 0.0,
+  "d_near": 0.3
+ },
+ "variant_B": "the same rule fixed on the FIN-ONLY label (blade sub-label) of the same 127 check20 fins: best of the same grid (grid_r06r_check20.json, sorted by iou_fin); nothing under the base line. Added after the first look at the real sheet, before any check21 or real score of B was read.",
+ "variant_A": "params: fixed on the run06 fin + hump label"
+}

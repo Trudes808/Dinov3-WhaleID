@@ -5,6 +5,7 @@ Rules: pixtruth_rules.md (registered before any truth was drawn or any model out
     .venv/bin/python experiments/test_day/pixtruth.py sample --root $R            # P/manifest.json (sample list)
     # drawing: pixtruth_draw.py (prompts -> SAM 2.1 -> label PNGs), checked by eye on overlays
     .venv/bin/python experiments/test_day/pixtruth.py freeze --root $R            # hashes + time stamp into the manifest
+    .venv/bin/python experiments/test_day/pixtruth.py refreeze --root $R          # after a recorded correction (old hashes kept in frozen_history)
     .venv/bin/python experiments/test_day/pixtruth_score.py --root $R ...        # scores (see that file)
 
 Photos are named by their 3-digit sequence number everywhere.
@@ -47,7 +48,7 @@ def sha(p: Path) -> str:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(); ap.add_argument("cmd", choices=["sample", "freeze"]); ap.add_argument("--root", type=Path, required=True)
+    ap = argparse.ArgumentParser(); ap.add_argument("cmd", choices=["sample", "freeze", "refreeze"]); ap.add_argument("--root", type=Path, required=True)
     a = ap.parse_args(); P = a.root / "pixel_truth"; man = P / "manifest.json"
     if a.cmd == "sample":
         if man.exists():
@@ -58,9 +59,11 @@ def main() -> None:
         man.write_text(json.dumps(m, indent=1)); print(len(s["sample"]), "photos;", {k: len(v) for k, v in s["parts"].items()}, "pool", s["pool_size"])
     else:
         m = json.loads(man.read_text())
-        if "frozen" in m:
-            raise SystemExit("already frozen at " + m["frozen"]["time"])
-        files = sorted((P / "labels").glob("*.png")) + [P / "tape_colours.tsv", P / "notes.tsv"]
+        if "frozen" in m and a.cmd == "freeze":
+            raise SystemExit("already frozen at " + m["frozen"]["time"] + "; after a recorded correction use refreeze")
+        if "frozen" in m:   # refreeze: keep every earlier freeze on record
+            m.setdefault("frozen_history", []).append(m.pop("frozen"))
+        files = sorted((P / "labels").glob("*.png")) + [P / "tape_colours.tsv", P / "notes.tsv", P / "prompts.json"]
         missing = [s for s in m["sample"] if not (P / "labels" / f"{s}.png").exists()]
         if missing:
             raise SystemExit(f"missing labels: {missing}")

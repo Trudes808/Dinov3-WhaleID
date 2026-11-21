@@ -5922,6 +5922,140 @@ Seam helper's report; sheet rows 000019:1 and 000166:1 looked at by me at full s
   HANDOVER "Round 20i"): test whether the posed spine turns at one place near the fin (rig joints) where real backs
   turn evenly; if so, spread the bend behind a key; every variant with and without the held hump.
 
+## 2026-11-20 23:53 — session restart stopped six helpers for about 4.5 h (resumed); marker detection on the test day recounted; SAM 3 comparison started
+
+- The Claude session ended between about 19:05 and 19:35 on 2026-11-20 and came back at 23:50. Helpers stopped then
+  (last writes: tent 19:03, pixel truth 19:04); nothing was written afterwards, so no second copy was running.
+  Detached jobs went on: check 21 rendered (marker 21:19, 200 shots), `r06r_seam20c_look` and `r06r_boat20b_look`
+  rendered, the shadow-root driver is still running (day 2025-03-20 at 23:50). Resumed by message: check 21 helpers A
+  and B, tent, pixel truth, expanded triangle (had written nothing yet), shadow root. The marker-look helper (boat
+  round 2) never reported: its look render is on disk, to pick up. /home went from 71 to 316 GB free (not our doing).
+- Marker photos on the test day, recounted by me from `switch_prep/reasons/s6_2026-04-07.json` (rule fixed before its
+  run: candidate mask leaves the photo empty, then Mask2Former ADE says what fills the frame): 19 marker flags, all
+  on true marker photos (0 on the other 404 photos; 0 on the 884 val photos). Land markers 3 of 3 flagged as group
+  change; bow cleat 7 of 7 flagged as role marker; rail markers 8 of 13 flagged as role marker, 1 flagged as group
+  change (island behind the rail), 4 missed (a hand or leg in frame makes the reason "person"). Cleat and rail are not
+  told apart; tape colour not read (first-principles rule 3 of 13).
+- Pixel truth frozen 18:57 (116 photos; drawn with SAM 2.1 prompts and corrected by eye); verification set for the
+  user V01-V30 copied to `review_sheets/testday_2026-04-07/verify/` (overview and one rail image looked at by me).
+- The user asked for a small comparison of SAM 3 (weights on this machine from the underwater thread) against our
+  whale masks (live seg_r04_ft4, candidate S6h): helper started 23:53 (`experiments/sam3_compare/`,
+  `moonshot_cache/sam3_compare/`, scratch `sam3cmp/`): whale mask at photo, pixel and instance level, extra classes
+  and markers incl. the tape band, cost, trade-offs; prompts and thresholds fixed on other days first.
+
+## 2026-11-21 00:01 — test day: pixel truth for the extra classes on 116 photos and the first per-class pixel scores (ready-made model: person IoU 0.86, land 0.62, rail 0.26; candidate whale mask IoU 0.72 against 0.09 for the live mask on this boat-heavy sample)
+
+One helper; truth = its eye with SAM 2.1 prompts (own boxes / points / lines), checked on overlays, frozen 18:57:40 on
+2026-11-20 with hashes before any model output for these photos was opened; scores recounted by me from
+`moonshot_cache/test_days/2026-04-07/pixel_truth/scores/scores.json`; example sheet and verification overview looked at.
+
+- Sample fixed by rule: all 42 no-whale photos, 35 whale + crew, 9 vessel, 30 random whale photos with land / rail /
+  gear = 116. Photos holding each class: whale 72, gear 56, person 49, rail 36, land 29, deck 23, tape 19, pontoon 12,
+  other vessel 9. Classes: 0 water / sky, 1 whale, 2 person, 3 rail, 4 tape, 5 deck incl. cleat, 6 pontoon / hull,
+  7 other vessel, 8 land, 9 gear, 255 not scored.
+- Mask2Former Swin-L ADE20K, pooled pixels, IoU / recall / precision (photos with the class): person 0.864 / 0.956 /
+  0.900 (49); our boat as one thing (rail + tape + deck + pontoon against its boat + vessel classes) 0.838 / 0.915 /
+  0.908 (43); rail + tape against its railing-type classes 0.256 / 0.274 / 0.798 (36): it gets our boat by calling the
+  whole bow a ship, not by finding the rail; other vessel 0.019 / 0.846 / 0.019 (9): our boat and another boat are not
+  told apart; land 0.618 / 0.887 / 0.670 (29); water / sky 0.971. COCO panoptic: person 0.836, any boat 0.298, land
+  0.691. Whale, gear and tape have no class in either.
+- Whale masks: candidate S6h IoU 0.716 / recall 0.821 / precision 0.848 over the 72 whale photos, 0 of 42 no-whale
+  photos painted; live mask 0.092 / 0.841 / 0.094 over all 116 (0.316 on whale photos only), 36 of 42 no-whale photos
+  painted; its pixels fall on deck 0.35, person 0.25, rail 0.16, whale 0.09. Part candidate W3c "any part" with no
+  gate 0.559 / 0.968 / 0.569, 19 no-whale photos painted (bow cleat 0.08 of its pixels).
+- Tape from the truth: 0.2-1.0 % of the frame on the 13 rail markers (median 0.5 %), band height 0.51-0.76 tube
+  widths for 11 of 13 (median 0.60), tube 149-313 px wide on the half grid. For the renders: bands were built too tall.
+- Limits: one day, one annotator, a sample heavy on boat and crew by design; model maps at 1280 px against truth at
+  2748 px; under-water whale bodies, hazy island bands and blurred blobs are "not scored". Known truth error left in
+  after the freeze: photo 353 (whale truth covers only the rear body; V25 in the verification set). Two departures
+  from the registered rules are written in `pixel_truth/tables.md`.
+- Scoring a model of ours later: `experiments/test_day/pixtruth_score.py --root <pixel_truth> --ours NAME=DIR`.
+- No model of ours has the extra classes yet. SAM 3 is being scored on the same truth (helper running).
+
+## 2026-11-21 00:04 — run06, round 21 check (seed 21): builds clean, 3 of 200 rejected, overcast 1 of 33 on the new seed; roll-outs carry the real centre bump; water by the whale, tents and ride height still off; seam keys applied; expanded-triangle sheet ready
+
+Helper A's report (numbers from its message; `check21a/table21.md`); my look at the overcast, roll-out and oddity
+sheets and at the final seam sheet. Helper B (blind views) still running.
+
+- Build: QA 0 of 200 failing; weld 302 whales, 3 second tries, 0 flagged; intersection gate 0 of 302; 3 negatives;
+  about 28 s per shot (GPU shared). Keys reached the engine: run_config = snapshot; top-surface ratio q10/50/90
+  0.974 / 0.983 / 0.989 (n 170; round 20 0.33 / 0.41 / 0.49); rendered outlines of the 11 most arched whales match
+  the new bend at IoU 0.965 (old bend 0.629).
+- Quality gate: 3 of 200 rejected (round 20: 31): sunny 2 of 167, overcast 1 of 33 (round 20: 29 of 42; with the old
+  80.1 bound it would be 2). Sun behind the camera 0 of 17 rejected (round 20: 15 of 19). Overcast n is 33, not 40.
+- Outline, real | round 20 | round 21 (n): surfacing height / length .21 | .24 | .17 (133; 20 % under real p10: whales
+  ride low since the bend fix); back under fin / fin height 2.00 | 2.49 | 2.10 (91); fin chord / height 2.27 | 1.86 |
+  2.14; finless backs .17 | .28 | .23 (28); low flukes h/w .23 | .27 | .21 (41); raised flukes .31 | .35 | .37 (21);
+  side roll-outs .43 | .35 | .32 (11); oblique fluke_down .37 | .49 | .35 (11); pectorals .64 | .65 | .44 (12); no fin
+  in view .165 | .205 | .211; within 30 deg of end-on - | .178 | .226 (155; target .22).
+- Roll-outs on engine renders: centre-bump height / span real .033 (69) | round 20 .098 (32) | round 21 .024 (41);
+  peak turn 23 | 88 | 23 deg; bump width / span .175 | .120 | .098 (too narrow). Tent index side-on -4 | +9 | +6 (29).
+- Light, overcast (n 33), real | round 21: whale lighter / darker half 44.3 / 32.3 | 39.9 / 30.7; water band L* 61.1 |
+  48.4 (worse than the tuning set's 51.2); b* -9.3 | -4.5; frame L* 75.2 | 71.6; white-water share 0.35 | 0.71.
+  Sunny (n 163): halves 32.8 / 17.8 | 32.8 / 21.8; water band 44.9 | 52.0. Cyan waterline over 0.005: 2 of 196 (round
+  20: 11 of 195). Shaded-skin band-pass std real 2.41 | round 20 1.82 | round 21 2.02.
+- My look: all 33 overcast frames grey-blue, none white or pink; roll-outs from behind now read as flukes with two
+  level blades; in close ones the tail stock stands under the blades as a dark column (may be called raised: blind
+  labels decide). Oddities, all known kinds except perhaps one: cyan rim left in 3 shots, waterline seam (000029),
+  hard foam flecks and disc flecks, grey see-through splash and blow sprites, pale glossy skin on some close whales,
+  khaki fluke underside (000132), tent with crease lines (000066), far-water fans (clear in 43, faint in 21 of 154
+  shots with sky), and pale land wedges with straight cut edges (000165, 000181, 000137, 000135; possibly new).
+- Seam: final-code look `r06r_seam20c_look` seen by me (sheet `round20_seam_before_after_c.jpg`): the fin-foot line is
+  gone on 000019:1 and the hard highlight edge on 000166:1. Keys APPLIED 00:03 (`check21/k5_seam20.json`:
+  `whale.obj_shared_vertices` scope model, `whale.blade_uv_match`; backup `check21/run06_realism.before_seam20.json`,
+  revert `check21/revert_live_k5_seam20.json`). Check 21 was rendered WITHOUT them.
+- Expanded triangle (the user's request), interim from the helper: rule = whale-mask pixels within 0.3 fin heights of
+  the clicked triangle, between the bases, connected to it. Variant A (fixed on the renders' fin + hump label) allows
+  a strip under the base line: on renders (check 21, 147 fins) IoU against fin + hump 0.76 with the exact mask, 0.68
+  with S6h (bare triangle 0.52); on 197 real clicked fins A is 1.90 times the triangle. Variant B (nothing under the
+  base line): 1.20 times the triangle; covers 0.98 of the fin blade on renders (triangle 0.83). Sheet
+  `triexp_real_examples.jpg` given to the user with the question A or B.
+- Open before a pilot: helper B's view shares; tent helper; ride height after the bend fix; water by the whale.
+
+## 2026-11-21 00:08 — run06, round 20h (marker look, round 2): picked up after the restart; rail composition, tape colours, deck and clear land are closer; the sea behind the rail is still near black with bright ripple nets; not applied; further polish waits for the SAM 3 result
+
+The helper for this round was at its context limit when the session restarted and never reported. Its look render
+`r06r_boat20b_look` (finished 19:13 on 2026-11-20) and keys `boat20b/keys_boat20b.json` were on disk; I built the
+sheets with its tool (`boat20b/look_sheets2.py`) and looked. Its notes: `boat20b/handover_20h_draft.md` (NOT yet in
+HANDOVER.md). No numbers re-read by me beyond the sheet.
+
+- What the helper changed (its draft): rail markers shot 28-58 deg down at the sea near the hull with the sun to the
+  side, a second tube in 0.9 of shots, a hull wedge in 0.45, the boat floating on the shot's waves, sunny shots of
+  calm sea states only; tape 0.55-1.15 tube diameters tall with wrinkles and worn edges, red moved to coral; paint
+  with grime; pontoons dark grey matte; deck camera 1.4-3 m above the bitt, bow box rebuilt without facets, the cyan
+  glow fixed by floating the boat; land in "clear" (green slopes, cloud card) and "hazy" variants; per-marker
+  exposure offsets and round bokeh as per-shot cvars (restored after the shot); a marker gate of its own.
+- My look: rail markers now look like the real composition (two tubes, wedge, band colours right, coral red), but the
+  sea behind them is still near black with a bright net of ripples in most shots (real: soft dark blue), one shot
+  still has light discs, and 3 of 12 are rejected for a clipped tape. Deck: closer and recognisable (bitt with horns,
+  dark pontoons), still very clean and bright. Land: clear variants read as green hills under cloud (cartoon-smooth),
+  one hazy variant matches the real pale ridge, one whites out and is rejected.
+- Decision: keys NOT applied. The background behind the rail is what is left; whether it is worth a third round
+  depends on the SAM 3 comparison (if SAM 3 finds rail and tape directly, the renders are needed only for a tape
+  reader, where the tube and band matter more than the sea behind). Real tape is 0.6 tube widths tall (pixel truth).
+
+## 2026-11-21 00:25 — the user's answers: three marker kinds (land, rail + tape colour, bollard), dorsal part = expanded triangle variant A, keep fixing run06; verification feedback on the pixel truth
+
+- Verification of the pixel truth sample: "So far the V photos look incredible"; off: V30 (photo 388, rail drawn as
+  straight hand lines that do not follow the tube; the same shortcut in all crew photos 032-043, 350-358, 372-388) and
+  V25 (photo 353, known). Helper re-draws those rails, fixes 353, re-freezes and re-scores (`pixfix/`).
+- Marker definition: a rail marker "is deliberately huge where the rail takes up the whole photo and the tape is
+  prominantly shown, and there is no whale in it ... the tape color described the animal in the previous series of
+  photos"; a rail with tape small in a corner of a busy photo (V30) "should not be confused as a marker shot".
+- Meanings: "The bollard shots indicate an oportunistic fluke which is not of the animal in the rest of that shot
+  series. Railing photos encode gender or role. Red is female in a group or mom when with mother and calf. Green is
+  male in comp group or escort in MCE. Blue is baby." Yellow not explained yet. Checked on the test day from
+  `truth.tsv` / `instances.tsv`: all 5 bollard events (7 shots: 003, 135-136, 145, 154, 172-173) come right after
+  fluke photos (seconds to 2 min). The truth gets `pixel_truth/markers.tsv` (marker = rail / bollard / land / none,
+  tape colour, meaning, the photos a marker refers to, incidental rail / tape flags).
+- Dorsal part: "I prefer variant A which has the extra back pixels as well" (fin, hump top and a strip of back under
+  the base line; 1.9 times the clicked triangle; matches the run06 fin + hump label). The triangle helper was told.
+- Run06: "I agree to keep fixing the things still off." Started 00:25: water helper (`water21/`, keys
+  `water21/keys_water21.json`, HANDOVER "Round 21b"): water band next to the whale (sunny 52.0 against real 44.9,
+  overcast 48.4 against 61.1), overcast white-water share and mirror look, far-water fans, waterline seam, cyan rim,
+  land wedges; tuned on check 21 shots, confirmed on check 20 shots. Foam flecks, sprites and skin gloss follow after
+  it (one engine-material helper at a time). Tent helper still running; ride height to be judged with its result.
+
 ## 2026-11-17 13:45 — run06 look, round 4 (ordered before the paste route was dropped): whale colour table, a paste preset, one dead setting (subagent in the factory repo; written by the earlier session tab)
 This round was ordered at 12:25 and reported at 13:44, after the user's 13:30 decision; its paste preset is moot, its
 colour work and its findings about the skin settings are not. It ran while factory round 5 was starting: both

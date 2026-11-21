@@ -1,0 +1,6429 @@
+{
+ "summary": {
+  "params": {
+   "A": {
+    "m_along": 0.05,
+    "m_below": 0.45,
+    "d_near": 0.3
+   },
+   "B": {
+    "m_along": 0.0,
+    "m_below": 0.0,
+    "d_near": 0.3
+   }
+  },
+  "n_fins": 197,
+  "by_day": {
+   "2025-01-02": 98,
+   "2025-03-18": 99
+  },
+  "fin_size_1280": {
+   "h_px": {
+    "median": 45.743,
+    "q25": 36.862,
+    "q75": 60.202,
+    "mean": 48.02
+   },
+   "base_over_h": {
+    "median": 2.7,
+    "q25": 1.897,
+    "q75": 3.537,
+    "mean": 2.748
+   }
+  },
+  "s6h": {
+   "tri_outside_mask": {
+    "median": 0.012,
+    "q25": 0.0,
+    "q75": 0.03,
+    "mean": 0.024
+   },
+   "exp_over_tri": {
+    "median": 1.902,
+    "q25": 1.773,
+    "q75": 2.051,
+    "mean": 1.918
+   },
+   "added_over_tri": {
+    "median": 0.904,
+    "q25": 0.799,
+    "q75": 1.057,
+    "mean": 0.942
+   },
+   "fins_with_tri_outside_mask_over_0.25": 1,
+   "fins_exp_over_tri_over_2": 69
+  },
+  "live": {
+   "tri_outside_mask": {
+    "median": 0.034,
+    "q25": 0.009,
+    "q75": 0.058,
+    "mean": 0.044
+   },
+   "exp_over_tri": {
+    "median": 1.77,
+    "q25": 1.668,
+    "q75": 1.943,
+    "mean": 1.807
+   },
+   "added_over_tri": {
+    "median": 0.798,
+    "q25": 0.723,
+    "q75": 0.972,
+    "mean": 0.852
+   },
+   "fins_with_tri_outside_mask_over_0.25": 1,
+   "fins_exp_over_tri_over_2": 30
+  },
+  "s6h_B": {
+   "tri_outside_mask": {
+    "median": 0.012,
+    "q25": 0.0,
+    "q75": 0.03,
+    "mean": 0.024
+   },
+   "exp_over_tri": {
+    "median": 1.197,
+    "q25": 1.109,
+    "q75": 1.33,
+    "mean": 1.219
+   },
+   "added_over_tri": {
+    "median": 0.225,
+    "q25": 0.128,
+    "q75": 0.331,
+    "mean": 0.243
+   },
+   "fins_with_tri_outside_mask_over_0.25": 1,
+   "fins_exp_over_tri_over_2": 0
+  },
+  "live_B": {
+   "tri_outside_mask": {
+    "median": 0.034,
+    "q25": 0.009,
+    "q75": 0.058,
+    "mean": 0.044
+   },
+   "exp_over_tri": {
+    "median": 1.101,
+    "q25": 1.024,
+    "q75": 1.222,
+    "mean": 1.122
+   },
+   "added_over_tri": {
+    "median": 0.137,
+    "q25": 0.072,
+    "q75": 0.239,
+    "mean": 0.167
+   },
+   "fins_with_tri_outside_mask_over_0.25": 1,
+   "fins_exp_over_tri_over_2": 0
+  }
+ },
+ "rows": [
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590004-184A4474~0",
+   "tri_px_1280": 655,
+   "base_px_1280": 50.63711516852439,
+   "h_px_1280": 23.626704158369318,
+   "base_over_h": 2.143215356196312,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9236641221374047,
+    "added_over_tri": 0.9236641221374046,
+    "exp_px": 1260
+   },
+   "live": {
+    "tri_outside_mask": 0.010687022900763399,
+    "exp_over_tri": 1.7435114503816793,
+    "added_over_tri": 0.7541984732824427,
+    "exp_px": 1142
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.331297709923664,
+    "added_over_tri": 0.33129770992366414,
+    "exp_px": 872
+   },
+   "live_B": {
+    "tri_outside_mask": 0.010687022900763399,
+    "exp_over_tri": 1.1694656488549617,
+    "added_over_tri": 0.1801526717557252,
+    "exp_px": 766
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590005-184A4475~0",
+   "tri_px_1280": 663,
+   "base_px_1280": 41.85317849741412,
+   "h_px_1280": 29.19643082752965,
+   "base_over_h": 1.433503250607957,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.865761689291101,
+    "added_over_tri": 0.8657616892911011,
+    "exp_px": 1237
+   },
+   "live": {
+    "tri_outside_mask": 0.03469079939668174,
+    "exp_over_tri": 1.616892911010558,
+    "added_over_tri": 0.6515837104072398,
+    "exp_px": 1072
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.2292609351432882,
+    "added_over_tri": 0.22926093514328807,
+    "exp_px": 815
+   },
+   "live_B": {
+    "tri_outside_mask": 0.03469079939668174,
+    "exp_over_tri": 1.0075414781297134,
+    "added_over_tri": 0.042232277526395176,
+    "exp_px": 668
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590013-184A4483~0",
+   "tri_px_1280": 726,
+   "base_px_1280": 62.409675580954556,
+   "h_px_1280": 21.146011009144438,
+   "base_over_h": 2.9513687264215434,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9600550964187329,
+    "added_over_tri": 0.9600550964187328,
+    "exp_px": 1423
+   },
+   "live": {
+    "tri_outside_mask": 0.023415977961432466,
+    "exp_over_tri": 1.7644628099173554,
+    "added_over_tri": 0.7878787878787878,
+    "exp_px": 1281
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3677685950413223,
+    "added_over_tri": 0.3677685950413223,
+    "exp_px": 993
+   },
+   "live_B": {
+    "tri_outside_mask": 0.023415977961432466,
+    "exp_over_tri": 1.2079889807162534,
+    "added_over_tri": 0.23140495867768596,
+    "exp_px": 877
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590014-184A4484~0",
+   "tri_px_1280": 985,
+   "base_px_1280": 62.278726362445795,
+   "h_px_1280": 28.720168759625874,
+   "base_over_h": 2.168466588190656,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.149238578680203,
+    "added_over_tri": 1.149238578680203,
+    "exp_px": 2117
+   },
+   "live": {
+    "tri_outside_mask": 0.0020304568527919065,
+    "exp_over_tri": 1.9857868020304568,
+    "added_over_tri": 0.9878172588832488,
+    "exp_px": 1956
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.50253807106599,
+    "added_over_tri": 0.5025380710659898,
+    "exp_px": 1480
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0020304568527919065,
+    "exp_over_tri": 1.364467005076142,
+    "added_over_tri": 0.366497461928934,
+    "exp_px": 1344
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590016-184A4486~0",
+   "tri_px_1280": 357,
+   "base_px_1280": 45.70837217214813,
+   "h_px_1280": 13.883228416055395,
+   "base_over_h": 3.292344604752612,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.204481792717087,
+    "added_over_tri": 1.2044817927170868,
+    "exp_px": 787
+   },
+   "live": {
+    "tri_outside_mask": 0.0056022408963585235,
+    "exp_over_tri": 1.9943977591036415,
+    "added_over_tri": 1.0,
+    "exp_px": 712
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.4789915966386555,
+    "added_over_tri": 0.4789915966386555,
+    "exp_px": 528
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0056022408963585235,
+    "exp_over_tri": 1.2913165266106443,
+    "added_over_tri": 0.2969187675070028,
+    "exp_px": 461
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590032-184A4502~0",
+   "tri_px_1280": 8111,
+   "base_px_1280": 250.7590385079668,
+   "h_px_1280": 62.4349808799518,
+   "base_over_h": 4.016322820537402,
+   "s6h": {
+    "tri_outside_mask": 0.006041178646282841,
+    "exp_over_tri": 2.311305634323758,
+    "added_over_tri": 1.3173468129700407,
+    "exp_px": 18747
+   },
+   "live": {
+    "tri_outside_mask": 0.012698804093206784,
+    "exp_over_tri": 2.255578843545802,
+    "added_over_tri": 1.2682776476390087,
+    "exp_px": 18295
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.006041178646282841,
+    "exp_over_tri": 1.451485636789545,
+    "added_over_tri": 0.4575268154358279,
+    "exp_px": 11773
+   },
+   "live_B": {
+    "tri_outside_mask": 0.012698804093206784,
+    "exp_over_tri": 1.4019233140180003,
+    "added_over_tri": 0.414622118111207,
+    "exp_px": 11371
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590033-184A4503~0",
+   "tri_px_1280": 8792,
+   "base_px_1280": 251.10675887193796,
+   "h_px_1280": 68.0189981617446,
+   "base_over_h": 3.6917150451822733,
+   "s6h": {
+    "tri_outside_mask": 0.015241128298453144,
+    "exp_over_tri": 2.1196542311191995,
+    "added_over_tri": 1.1348953594176525,
+    "exp_px": 18636
+   },
+   "live": {
+    "tri_outside_mask": 0.027866242038216527,
+    "exp_over_tri": 2.050272975432211,
+    "added_over_tri": 1.0781392174704276,
+    "exp_px": 18026
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.015241128298453144,
+    "exp_over_tri": 1.3264331210191083,
+    "added_over_tri": 0.3416742493175614,
+    "exp_px": 11662
+   },
+   "live_B": {
+    "tri_outside_mask": 0.027866242038216527,
+    "exp_over_tri": 1.2752502274795268,
+    "added_over_tri": 0.3031164695177434,
+    "exp_px": 11212
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590034-184A4504~0",
+   "tri_px_1280": 8416,
+   "base_px_1280": 266.70931319644916,
+   "h_px_1280": 61.549363133055245,
+   "base_over_h": 4.3332586987112505,
+   "s6h": {
+    "tri_outside_mask": 0.02697243346007605,
+    "exp_over_tri": 1.995009505703422,
+    "added_over_tri": 1.021981939163498,
+    "exp_px": 16790
+   },
+   "live": {
+    "tri_outside_mask": 0.049310836501901156,
+    "exp_over_tri": 1.9402328897338403,
+    "added_over_tri": 0.9895437262357415,
+    "exp_px": 16329
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.02697243346007605,
+    "exp_over_tri": 1.0725998098859315,
+    "added_over_tri": 0.0995722433460076,
+    "exp_px": 9027
+   },
+   "live_B": {
+    "tri_outside_mask": 0.049310836501901156,
+    "exp_over_tri": 1.0225760456273765,
+    "added_over_tri": 0.07188688212927756,
+    "exp_px": 8606
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590035-184A4505~0",
+   "tri_px_1280": 8132,
+   "base_px_1280": 242.9518177750981,
+   "h_px_1280": 65.19149592107891,
+   "base_over_h": 3.7267409551272848,
+   "s6h": {
+    "tri_outside_mask": 0.06468273487456955,
+    "exp_over_tri": 1.8004181013280867,
+    "added_over_tri": 0.8651008362026562,
+    "exp_px": 14641
+   },
+   "live": {
+    "tri_outside_mask": 0.08644859813084116,
+    "exp_over_tri": 1.7600836202656174,
+    "added_over_tri": 0.8465322183964584,
+    "exp_px": 14313
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.06468273487456955,
+    "exp_over_tri": 1.0082390555828824,
+    "added_over_tri": 0.07292179045745203,
+    "exp_px": 8199
+   },
+   "live_B": {
+    "tri_outside_mask": 0.08644859813084116,
+    "exp_over_tri": 0.970241023118544,
+    "added_over_tri": 0.05668962124938515,
+    "exp_px": 7890
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590037-184A4507~0",
+   "tri_px_1280": 7033,
+   "base_px_1280": 212.3986343756183,
+   "h_px_1280": 63.71906771702661,
+   "base_over_h": 3.333360671861532,
+   "s6h": {
+    "tri_outside_mask": 0.058012228067680915,
+    "exp_over_tri": 1.7140622778330727,
+    "added_over_tri": 0.7720745059007535,
+    "exp_px": 12055
+   },
+   "live": {
+    "tri_outside_mask": 0.08261055026304565,
+    "exp_over_tri": 1.663443765107351,
+    "added_over_tri": 0.7460543153703967,
+    "exp_px": 11699
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.058012228067680915,
+    "exp_over_tri": 1.0079624626759562,
+    "added_over_tri": 0.06597469074363714,
+    "exp_px": 7089
+   },
+   "live_B": {
+    "tri_outside_mask": 0.08261055026304565,
+    "exp_over_tri": 0.9607564339542158,
+    "added_over_tri": 0.043366984217261484,
+    "exp_px": 6757
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590047-184A4517~0",
+   "tri_px_1280": 5933,
+   "base_px_1280": 163.7928817308018,
+   "h_px_1280": 69.74863506496094,
+   "base_over_h": 2.3483309971335213,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.005562110230912,
+    "added_over_tri": 1.0055621102309118,
+    "exp_px": 11899
+   },
+   "live": {
+    "tri_outside_mask": 0.00016854879487615548,
+    "exp_over_tri": 1.9216248103826057,
+    "added_over_tri": 0.9217933591774818,
+    "exp_px": 11401
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3413113096241362,
+    "added_over_tri": 0.3413113096241362,
+    "exp_px": 7958
+   },
+   "live_B": {
+    "tri_outside_mask": 0.00016854879487615548,
+    "exp_over_tri": 1.267149839878645,
+    "added_over_tri": 0.267318388673521,
+    "exp_px": 7518
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590049-184A4519~0",
+   "tri_px_1280": 3167,
+   "base_px_1280": 93.80926293480613,
+   "h_px_1280": 65.39039052234155,
+   "base_over_h": 1.4346031914697752,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.1307230817808653,
+    "added_over_tri": 1.1307230817808651,
+    "exp_px": 6748
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.022418692769182,
+    "added_over_tri": 1.0224186927691823,
+    "exp_px": 6405
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.38964319545311,
+    "added_over_tri": 0.3896431954531102,
+    "exp_px": 4401
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.2955478370697822,
+    "added_over_tri": 0.2955478370697821,
+    "exp_px": 4103
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590077-184A4547~0",
+   "tri_px_1280": 7357,
+   "base_px_1280": 231.99811405011474,
+   "h_px_1280": 61.65592761236904,
+   "base_over_h": 3.7627868565807234,
+   "s6h": {
+    "tri_outside_mask": 0.024194644556205014,
+    "exp_over_tri": 2.062525485931766,
+    "added_over_tri": 1.0867201304879706,
+    "exp_px": 15174
+   },
+   "live": {
+    "tri_outside_mask": 0.036020116895473686,
+    "exp_over_tri": 2.0044855239907573,
+    "added_over_tri": 1.0405056408862308,
+    "exp_px": 14747
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.024194644556205014,
+    "exp_over_tri": 1.2661410901182548,
+    "added_over_tri": 0.2903357346744597,
+    "exp_px": 9315
+   },
+   "live_B": {
+    "tri_outside_mask": 0.036020116895473686,
+    "exp_over_tri": 1.215305151556341,
+    "added_over_tri": 0.2513252684518146,
+    "exp_px": 8941
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590078-184A4548~0",
+   "tri_px_1280": 5362,
+   "base_px_1280": 196.5822693006884,
+   "h_px_1280": 51.735357176957685,
+   "base_over_h": 3.799766349892793,
+   "s6h": {
+    "tri_outside_mask": 0.027974636329727742,
+    "exp_over_tri": 1.8660947407683701,
+    "added_over_tri": 0.8940693770980978,
+    "exp_px": 10006
+   },
+   "live": {
+    "tri_outside_mask": 0.04643789630734796,
+    "exp_over_tri": 1.8116374487131668,
+    "added_over_tri": 0.8580753450205147,
+    "exp_px": 9714
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.027974636329727742,
+    "exp_over_tri": 1.0745990302126072,
+    "added_over_tri": 0.10257366654233495,
+    "exp_px": 5762
+   },
+   "live_B": {
+    "tri_outside_mask": 0.04643789630734796,
+    "exp_over_tri": 1.0244311823946288,
+    "added_over_tri": 0.07086907870197687,
+    "exp_px": 5493
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590079-184A4549~0",
+   "tri_px_1280": 4204,
+   "base_px_1280": 155.36200779291693,
+   "h_px_1280": 52.194054902743694,
+   "base_over_h": 2.9766226839898193,
+   "s6h": {
+    "tri_outside_mask": 0.02997145575642246,
+    "exp_over_tri": 1.7233587059942912,
+    "added_over_tri": 0.7533301617507137,
+    "exp_px": 7245
+   },
+   "live": {
+    "tri_outside_mask": 0.050666032350142776,
+    "exp_over_tri": 1.6679352997145576,
+    "added_over_tri": 0.7186013320647003,
+    "exp_px": 7012
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.02997145575642246,
+    "exp_over_tri": 1.084919124643197,
+    "added_over_tri": 0.11489058039961941,
+    "exp_px": 4561
+   },
+   "live_B": {
+    "tri_outside_mask": 0.050666032350142776,
+    "exp_over_tri": 1.032825880114177,
+    "added_over_tri": 0.0834919124643197,
+    "exp_px": 4342
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590091-184A4561~0",
+   "tri_px_1280": 2585,
+   "base_px_1280": 84.11267882153317,
+   "h_px_1280": 58.80817796155686,
+   "base_over_h": 1.4302888090924695,
+   "s6h": {
+    "tri_outside_mask": 0.0003868471953578645,
+    "exp_over_tri": 2.0058027079303673,
+    "added_over_tri": 1.0061895551257254,
+    "exp_px": 5185
+   },
+   "live": {
+    "tri_outside_mask": 0.013152804642166394,
+    "exp_over_tri": 1.8897485493230175,
+    "added_over_tri": 0.9029013539651838,
+    "exp_px": 4885
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0003868471953578645,
+    "exp_over_tri": 1.3381044487427467,
+    "added_over_tri": 0.33849129593810445,
+    "exp_px": 3459
+   },
+   "live_B": {
+    "tri_outside_mask": 0.013152804642166394,
+    "exp_over_tri": 1.244100580270793,
+    "added_over_tri": 0.2572533849129594,
+    "exp_px": 3216
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590094-184A4564~0",
+   "tri_px_1280": 1763,
+   "base_px_1280": 76.89921172620944,
+   "h_px_1280": 44.4172670748436,
+   "base_over_h": 1.7312909323446983,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9472490073737947,
+    "added_over_tri": 0.9472490073737947,
+    "exp_px": 3433
+   },
+   "live": {
+    "tri_outside_mask": 0.013613159387407814,
+    "exp_over_tri": 1.815655133295519,
+    "added_over_tri": 0.8292682926829268,
+    "exp_px": 3201
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.2813386273397618,
+    "added_over_tri": 0.2813386273397618,
+    "exp_px": 2259
+   },
+   "live_B": {
+    "tri_outside_mask": 0.013613159387407814,
+    "exp_over_tri": 1.1610890527509927,
+    "added_over_tri": 0.17470221213840045,
+    "exp_px": 2047
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590116-184A4586~0",
+   "tri_px_1280": 425,
+   "base_px_1280": 41.83905733309011,
+   "h_px_1280": 18.657157121908565,
+   "base_over_h": 2.242520500830199,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9741176470588235,
+    "added_over_tri": 0.9741176470588235,
+    "exp_px": 839
+   },
+   "live": {
+    "tri_outside_mask": 0.02117647058823524,
+    "exp_over_tri": 1.7529411764705882,
+    "added_over_tri": 0.7741176470588236,
+    "exp_px": 745
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3647058823529412,
+    "added_over_tri": 0.36470588235294116,
+    "exp_px": 580
+   },
+   "live_B": {
+    "tri_outside_mask": 0.02117647058823524,
+    "exp_over_tri": 1.1552941176470588,
+    "added_over_tri": 0.17647058823529413,
+    "exp_px": 491
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590118-184A4588~0",
+   "tri_px_1280": 314,
+   "base_px_1280": 32.95536750865325,
+   "h_px_1280": 17.368390156465626,
+   "base_over_h": 1.8974336257862765,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9044585987261147,
+    "added_over_tri": 0.9044585987261147,
+    "exp_px": 598
+   },
+   "live": {
+    "tri_outside_mask": 0.05414012738853502,
+    "exp_over_tri": 1.7261146496815287,
+    "added_over_tri": 0.7802547770700637,
+    "exp_px": 542
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.28343949044586,
+    "added_over_tri": 0.28343949044585987,
+    "exp_px": 403
+   },
+   "live_B": {
+    "tri_outside_mask": 0.05414012738853502,
+    "exp_over_tri": 1.124203821656051,
+    "added_over_tri": 0.17834394904458598,
+    "exp_px": 353
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590128-184A4598~0",
+   "tri_px_1280": 978,
+   "base_px_1280": 81.67652782469148,
+   "h_px_1280": 21.551586909009902,
+   "base_over_h": 3.7898150224170086,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.3445807770961147,
+    "added_over_tri": 1.3445807770961145,
+    "exp_px": 2293
+   },
+   "live": {
+    "tri_outside_mask": 0.004089979550102263,
+    "exp_over_tri": 2.219836400817996,
+    "added_over_tri": 1.2239263803680982,
+    "exp_px": 2171
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.547034764826176,
+    "added_over_tri": 0.5470347648261759,
+    "exp_px": 1513
+   },
+   "live_B": {
+    "tri_outside_mask": 0.004089979550102263,
+    "exp_over_tri": 1.4396728016359919,
+    "added_over_tri": 0.4437627811860941,
+    "exp_px": 1408
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590134-184A4604~0",
+   "tri_px_1280": 2210,
+   "base_px_1280": 100.85744263405459,
+   "h_px_1280": 41.538477411377734,
+   "base_over_h": 2.428048617073983,
+   "s6h": {
+    "tri_outside_mask": 0.022624434389140302,
+    "exp_over_tri": 1.7506787330316742,
+    "added_over_tri": 0.7733031674208145,
+    "exp_px": 3869
+   },
+   "live": {
+    "tri_outside_mask": 0.05429864253393668,
+    "exp_over_tri": 1.6547511312217194,
+    "added_over_tri": 0.7090497737556561,
+    "exp_px": 3657
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.022624434389140302,
+    "exp_over_tri": 1.0963800904977377,
+    "added_over_tri": 0.11900452488687782,
+    "exp_px": 2423
+   },
+   "live_B": {
+    "tri_outside_mask": 0.05429864253393668,
+    "exp_over_tri": 1.0221719457013574,
+    "added_over_tri": 0.07647058823529412,
+    "exp_px": 2259
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590136-184A4606~0",
+   "tri_px_1280": 2024,
+   "base_px_1280": 92.77822946825619,
+   "h_px_1280": 41.68173082176709,
+   "base_over_h": 2.2258727658162747,
+   "s6h": {
+    "tri_outside_mask": 0.0370553359683794,
+    "exp_over_tri": 1.790513833992095,
+    "added_over_tri": 0.8275691699604744,
+    "exp_px": 3624
+   },
+   "live": {
+    "tri_outside_mask": 0.06521739130434778,
+    "exp_over_tri": 1.70701581027668,
+    "added_over_tri": 0.7722332015810277,
+    "exp_px": 3455
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0370553359683794,
+    "exp_over_tri": 1.1304347826086956,
+    "added_over_tri": 0.1674901185770751,
+    "exp_px": 2288
+   },
+   "live_B": {
+    "tri_outside_mask": 0.06521739130434778,
+    "exp_over_tri": 1.0553359683794465,
+    "added_over_tri": 0.12055335968379446,
+    "exp_px": 2136
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590147-184A4617~0",
+   "tri_px_1280": 681,
+   "base_px_1280": 61.76714395501867,
+   "h_px_1280": 19.853283161886626,
+   "base_over_h": 3.111180324753351,
+   "s6h": {
+    "tri_outside_mask": 0.01027900146842875,
+    "exp_over_tri": 1.7577092511013215,
+    "added_over_tri": 0.7679882525697503,
+    "exp_px": 1197
+   },
+   "live": {
+    "tri_outside_mask": 0.04552129221732748,
+    "exp_over_tri": 1.6343612334801763,
+    "added_over_tri": 0.6798825256975036,
+    "exp_px": 1113
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.01027900146842875,
+    "exp_over_tri": 1.1395007342143906,
+    "added_over_tri": 0.14977973568281938,
+    "exp_px": 776
+   },
+   "live_B": {
+    "tri_outside_mask": 0.04552129221732748,
+    "exp_over_tri": 1.026431718061674,
+    "added_over_tri": 0.07195301027900147,
+    "exp_px": 699
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590149-184A4619~0",
+   "tri_px_1280": 570,
+   "base_px_1280": 50.04575305285749,
+   "h_px_1280": 20.340995978076734,
+   "base_over_h": 2.460339361297557,
+   "s6h": {
+    "tri_outside_mask": 0.1701754385964912,
+    "exp_over_tri": 1.3245614035087718,
+    "added_over_tri": 0.49473684210526314,
+    "exp_px": 755
+   },
+   "live": {
+    "tri_outside_mask": 0.24912280701754386,
+    "exp_over_tri": 1.1789473684210525,
+    "added_over_tri": 0.4280701754385965,
+    "exp_px": 672
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.1701754385964912,
+    "exp_over_tri": 0.9350877192982456,
+    "added_over_tri": 0.10526315789473684,
+    "exp_px": 533
+   },
+   "live_B": {
+    "tri_outside_mask": 0.24912280701754386,
+    "exp_over_tri": 0.8157894736842105,
+    "added_over_tri": 0.06491228070175438,
+    "exp_px": 465
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590153-184A4623~0",
+   "tri_px_1280": 1244,
+   "base_px_1280": 61.85217468286803,
+   "h_px_1280": 37.57647532305383,
+   "base_over_h": 1.6460344976773442,
+   "s6h": {
+    "tri_outside_mask": 0.02733118971061088,
+    "exp_over_tri": 1.734726688102894,
+    "added_over_tri": 0.7620578778135049,
+    "exp_px": 2158
+   },
+   "live": {
+    "tri_outside_mask": 0.08279742765273312,
+    "exp_over_tri": 1.605305466237942,
+    "added_over_tri": 0.6881028938906752,
+    "exp_px": 1997
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.02733118971061088,
+    "exp_over_tri": 1.1036977491961415,
+    "added_over_tri": 0.1310289389067524,
+    "exp_px": 1373
+   },
+   "live_B": {
+    "tri_outside_mask": 0.08279742765273312,
+    "exp_over_tri": 0.9847266881028939,
+    "added_over_tri": 0.06752411575562701,
+    "exp_px": 1225
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590155-184A4625~0",
+   "tri_px_1280": 965,
+   "base_px_1280": 49.24362544209754,
+   "h_px_1280": 37.23579867278546,
+   "base_over_h": 1.3224807093526436,
+   "s6h": {
+    "tri_outside_mask": 0.08808290155440412,
+    "exp_over_tri": 1.6538860103626942,
+    "added_over_tri": 0.7419689119170985,
+    "exp_px": 1596
+   },
+   "live": {
+    "tri_outside_mask": 0.18341968911917095,
+    "exp_over_tri": 1.4683937823834197,
+    "added_over_tri": 0.6518134715025907,
+    "exp_px": 1417
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.08808290155440412,
+    "exp_over_tri": 1.0290155440414508,
+    "added_over_tri": 0.11709844559585492,
+    "exp_px": 993
+   },
+   "live_B": {
+    "tri_outside_mask": 0.18341968911917095,
+    "exp_over_tri": 0.8518134715025907,
+    "added_over_tri": 0.035233160621761656,
+    "exp_px": 822
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590165-184A4635~0",
+   "tri_px_1280": 1824,
+   "base_px_1280": 79.94173964903197,
+   "h_px_1280": 43.7969986908385,
+   "base_over_h": 1.8252789469282575,
+   "s6h": {
+    "tri_outside_mask": 0.021381578947368474,
+    "exp_over_tri": 1.792763157894737,
+    "added_over_tri": 0.8141447368421053,
+    "exp_px": 3270
+   },
+   "live": {
+    "tri_outside_mask": 0.06798245614035092,
+    "exp_over_tri": 1.6655701754385965,
+    "added_over_tri": 0.7335526315789473,
+    "exp_px": 3038
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.021381578947368474,
+    "exp_over_tri": 1.1491228070175439,
+    "added_over_tri": 0.17050438596491227,
+    "exp_px": 2096
+   },
+   "live_B": {
+    "tri_outside_mask": 0.06798245614035092,
+    "exp_over_tri": 1.031798245614035,
+    "added_over_tri": 0.09978070175438597,
+    "exp_px": 1882
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590173-184A4643~0",
+   "tri_px_1280": 2692,
+   "base_px_1280": 111.55197654022278,
+   "h_px_1280": 45.62554803698002,
+   "base_over_h": 2.444945460157731,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.735884101040119,
+    "added_over_tri": 0.7358841010401189,
+    "exp_px": 4673
+   },
+   "live": {
+    "tri_outside_mask": 0.008915304606240682,
+    "exp_over_tri": 1.673105497771174,
+    "added_over_tri": 0.6820208023774146,
+    "exp_px": 4504
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.1184992570579495,
+    "added_over_tri": 0.11849925705794948,
+    "exp_px": 3011
+   },
+   "live_B": {
+    "tri_outside_mask": 0.008915304606240682,
+    "exp_over_tri": 1.0601783060921248,
+    "added_over_tri": 0.06909361069836553,
+    "exp_px": 2854
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590181-184A4651~0",
+   "tri_px_1280": 5062,
+   "base_px_1280": 202.32861178989396,
+   "h_px_1280": 48.27482924057642,
+   "base_over_h": 4.1911823402128325,
+   "s6h": {
+    "tri_outside_mask": 0.055906756222836806,
+    "exp_over_tri": 2.059857763729751,
+    "added_over_tri": 1.1157645199525879,
+    "exp_px": 10427
+   },
+   "live": {
+    "tri_outside_mask": 0.06716712761754251,
+    "exp_over_tri": 1.9885420782299486,
+    "added_over_tri": 1.055709205847491,
+    "exp_px": 10066
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.055906756222836806,
+    "exp_over_tri": 1.169498222046622,
+    "added_over_tri": 0.2254049782694587,
+    "exp_px": 5920
+   },
+   "live_B": {
+    "tri_outside_mask": 0.06716712761754251,
+    "exp_over_tri": 1.1029237455551166,
+    "added_over_tri": 0.17009087317265903,
+    "exp_px": 5583
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590184-184A4654~0",
+   "tri_px_1280": 7998,
+   "base_px_1280": 258.5821448001583,
+   "h_px_1280": 59.6515324366301,
+   "base_over_h": 4.334878489079205,
+   "s6h": {
+    "tri_outside_mask": 0.020755188797199287,
+    "exp_over_tri": 2.079394848712178,
+    "added_over_tri": 1.1001500375093773,
+    "exp_px": 16631
+   },
+   "live": {
+    "tri_outside_mask": 0.026756689172293124,
+    "exp_over_tri": 2.025631407851963,
+    "added_over_tri": 1.052388097024256,
+    "exp_px": 16201
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.020755188797199287,
+    "exp_over_tri": 1.1685421355338834,
+    "added_over_tri": 0.18929732433108276,
+    "exp_px": 9346
+   },
+   "live_B": {
+    "tri_outside_mask": 0.026756689172293124,
+    "exp_over_tri": 1.1189047261815455,
+    "added_over_tri": 0.14566141535383845,
+    "exp_px": 8949
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590186-184A4656~0",
+   "tri_px_1280": 10249,
+   "base_px_1280": 300.528238956824,
+   "h_px_1280": 65.59776157538472,
+   "base_over_h": 4.581379482155927,
+   "s6h": {
+    "tri_outside_mask": 0.011318177383159322,
+    "exp_over_tri": 2.2428529612645134,
+    "added_over_tri": 1.254171138647673,
+    "exp_px": 22987
+   },
+   "live": {
+    "tri_outside_mask": 0.016782125085374133,
+    "exp_over_tri": 2.1781637232900772,
+    "added_over_tri": 1.1949458483754514,
+    "exp_px": 22324
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.011318177383159322,
+    "exp_over_tri": 1.256805542004098,
+    "added_over_tri": 0.2681237193872573,
+    "exp_px": 12881
+   },
+   "live_B": {
+    "tri_outside_mask": 0.016782125085374133,
+    "exp_over_tri": 1.2000195140989365,
+    "added_over_tri": 0.21680163918431067,
+    "exp_px": 12299
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590192-184A4662~0",
+   "tri_px_1280": 7829,
+   "base_px_1280": 237.2495597773416,
+   "h_px_1280": 64.50702225674533,
+   "base_over_h": 3.6778873288098963,
+   "s6h": {
+    "tri_outside_mask": 0.07765998211776726,
+    "exp_over_tri": 1.7861795887086473,
+    "added_over_tri": 0.8638395708264146,
+    "exp_px": 13984
+   },
+   "live": {
+    "tri_outside_mask": 0.10486652190573509,
+    "exp_over_tri": 1.7221867416017371,
+    "added_over_tri": 0.8270532635074722,
+    "exp_px": 13483
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.07765998211776726,
+    "exp_over_tri": 1.001149572103717,
+    "added_over_tri": 0.07880955422148422,
+    "exp_px": 7838
+   },
+   "live_B": {
+    "tri_outside_mask": 0.10486652190573509,
+    "exp_over_tri": 0.9434155064503768,
+    "added_over_tri": 0.048282028356111895,
+    "exp_px": 7386
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590194-184A4665~0",
+   "tri_px_1280": 2891,
+   "base_px_1280": 125.37945555927253,
+   "h_px_1280": 43.91405214884751,
+   "base_over_h": 2.855110139558438,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9014181943964026,
+    "added_over_tri": 0.9014181943964026,
+    "exp_px": 5497
+   },
+   "live": {
+    "tri_outside_mask": 0.0003459010722933753,
+    "exp_over_tri": 1.7986855759252853,
+    "added_over_tri": 0.7990314769975787,
+    "exp_px": 5200
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.2352127291594603,
+    "added_over_tri": 0.2352127291594604,
+    "exp_px": 3571
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0003459010722933753,
+    "exp_over_tri": 1.175025942580422,
+    "added_over_tri": 0.17537184365271533,
+    "exp_px": 3397
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590195-184A4666~0",
+   "tri_px_1280": 3196,
+   "base_px_1280": 125.14881376977733,
+   "h_px_1280": 49.16932682558137,
+   "base_over_h": 2.5452618908881632,
+   "s6h": {
+    "tri_outside_mask": 0.012202753441802217,
+    "exp_over_tri": 1.7146433041301627,
+    "added_over_tri": 0.726846057571965,
+    "exp_px": 5480
+   },
+   "live": {
+    "tri_outside_mask": 0.04755944931163958,
+    "exp_over_tri": 1.6248435544430537,
+    "added_over_tri": 0.6724030037546934,
+    "exp_px": 5193
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.012202753441802217,
+    "exp_over_tri": 1.0835419274092615,
+    "added_over_tri": 0.09574468085106383,
+    "exp_px": 3463
+   },
+   "live_B": {
+    "tri_outside_mask": 0.04755944931163958,
+    "exp_over_tri": 0.9996871088861077,
+    "added_over_tri": 0.04724655819774718,
+    "exp_px": 3195
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590201-184A4672~0",
+   "tri_px_1280": 2997,
+   "base_px_1280": 118.76337485113999,
+   "h_px_1280": 48.405127813230195,
+   "base_over_h": 2.4535287936721306,
+   "s6h": {
+    "tri_outside_mask": 0.025025025025025016,
+    "exp_over_tri": 1.771438104771438,
+    "added_over_tri": 0.7964631297964632,
+    "exp_px": 5309
+   },
+   "live": {
+    "tri_outside_mask": 0.04971638304971637,
+    "exp_over_tri": 1.6850183516850183,
+    "added_over_tri": 0.7347347347347347,
+    "exp_px": 5050
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.025025025025025016,
+    "exp_over_tri": 1.1327994661327994,
+    "added_over_tri": 0.1578244911578245,
+    "exp_px": 3395
+   },
+   "live_B": {
+    "tri_outside_mask": 0.04971638304971637,
+    "exp_over_tri": 1.0547213880547215,
+    "added_over_tri": 0.10443777110443778,
+    "exp_px": 3161
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590208-184A4679~0",
+   "tri_px_1280": 4264,
+   "base_px_1280": 154.40709423031706,
+   "h_px_1280": 53.6135865633471,
+   "base_over_h": 2.8799993458351727,
+   "s6h": {
+    "tri_outside_mask": 0.030956848030018747,
+    "exp_over_tri": 1.7159943714821764,
+    "added_over_tri": 0.7469512195121951,
+    "exp_px": 7317
+   },
+   "live": {
+    "tri_outside_mask": 0.05816135084427765,
+    "exp_over_tri": 1.6454033771106942,
+    "added_over_tri": 0.7035647279549718,
+    "exp_px": 7016
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.030956848030018747,
+    "exp_over_tri": 1.0698874296435272,
+    "added_over_tri": 0.10084427767354597,
+    "exp_px": 4562
+   },
+   "live_B": {
+    "tri_outside_mask": 0.05816135084427765,
+    "exp_over_tri": 1.0049249530956847,
+    "added_over_tri": 0.06308630393996248,
+    "exp_px": 4285
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590209-184A4680~0",
+   "tri_px_1280": 3539,
+   "base_px_1280": 128.6694630496048,
+   "h_px_1280": 53.000790461765625,
+   "base_over_h": 2.427689510450339,
+   "s6h": {
+    "tri_outside_mask": 0.005086182537439976,
+    "exp_over_tri": 1.8700197795987568,
+    "added_over_tri": 0.8751059621361966,
+    "exp_px": 6618
+   },
+   "live": {
+    "tri_outside_mask": 0.01186775925402661,
+    "exp_over_tri": 1.7747951398700197,
+    "added_over_tri": 0.7866628991240463,
+    "exp_px": 6281
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.005086182537439976,
+    "exp_over_tri": 1.2223792031647358,
+    "added_over_tri": 0.22746538570217575,
+    "exp_px": 4326
+   },
+   "live_B": {
+    "tri_outside_mask": 0.01186775925402661,
+    "exp_over_tri": 1.1435433738344165,
+    "added_over_tri": 0.15541113308844307,
+    "exp_px": 4047
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590214-184A4685~0",
+   "tri_px_1280": 5287,
+   "base_px_1280": 180.36104517729547,
+   "h_px_1280": 56.59007505820804,
+   "base_over_h": 3.187149778327343,
+   "s6h": {
+    "tri_outside_mask": 0.04652922262152448,
+    "exp_over_tri": 1.6954794779648195,
+    "added_over_tri": 0.7420087005863438,
+    "exp_px": 8964
+   },
+   "live": {
+    "tri_outside_mask": 0.07754870436920747,
+    "exp_over_tri": 1.6287119349347456,
+    "added_over_tri": 0.7062606393039531,
+    "exp_px": 8611
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.04652922262152448,
+    "exp_over_tri": 1.0217514658596558,
+    "added_over_tri": 0.06828068848118025,
+    "exp_px": 5402
+   },
+   "live_B": {
+    "tri_outside_mask": 0.07754870436920747,
+    "exp_over_tri": 0.9610365046340079,
+    "added_over_tri": 0.03858520900321544,
+    "exp_px": 5081
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590218-184A4689~0",
+   "tri_px_1280": 4169,
+   "base_px_1280": 136.1274379723368,
+   "h_px_1280": 59.29214465104538,
+   "base_over_h": 2.295876439847023,
+   "s6h": {
+    "tri_outside_mask": 0.0381386423602782,
+    "exp_over_tri": 1.62916766610698,
+    "added_over_tri": 0.6673063084672584,
+    "exp_px": 6792
+   },
+   "live": {
+    "tri_outside_mask": 0.07939553849844083,
+    "exp_over_tri": 1.515471336051811,
+    "added_over_tri": 0.5948668745502519,
+    "exp_px": 6318
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0381386423602782,
+    "exp_over_tri": 1.0458143439673782,
+    "added_over_tri": 0.0839529863276565,
+    "exp_px": 4360
+   },
+   "live_B": {
+    "tri_outside_mask": 0.07939553849844083,
+    "exp_over_tri": 0.9563444471096186,
+    "added_over_tri": 0.03573998560805949,
+    "exp_px": 3987
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590224-184A4695~0",
+   "tri_px_1280": 4317,
+   "base_px_1280": 156.6647711324994,
+   "h_px_1280": 53.08638193252829,
+   "base_over_h": 2.951129186607916,
+   "s6h": {
+    "tri_outside_mask": 0.02339587676627286,
+    "exp_over_tri": 1.703034514709289,
+    "added_over_tri": 0.7264303914755618,
+    "exp_px": 7352
+   },
+   "live": {
+    "tri_outside_mask": 0.058837155432012955,
+    "exp_over_tri": 1.6321519573778087,
+    "added_over_tri": 0.6909891128098217,
+    "exp_px": 7046
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.02339587676627286,
+    "exp_over_tri": 1.0623117905953208,
+    "added_over_tri": 0.0857076673615937,
+    "exp_px": 4586
+   },
+   "live_B": {
+    "tri_outside_mask": 0.058837155432012955,
+    "exp_over_tri": 0.9976835765577947,
+    "added_over_tri": 0.05652073198980773,
+    "exp_px": 4307
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590226-184A4697~0",
+   "tri_px_1280": 3047,
+   "base_px_1280": 101.57860819331006,
+   "h_px_1280": 57.86181461213497,
+   "base_over_h": 1.7555378944511475,
+   "s6h": {
+    "tri_outside_mask": 0.04463406629471611,
+    "exp_over_tri": 1.687889727600919,
+    "added_over_tri": 0.732523793895635,
+    "exp_px": 5143
+   },
+   "live": {
+    "tri_outside_mask": 0.07843780767968489,
+    "exp_over_tri": 1.5999343616672137,
+    "added_over_tri": 0.6783721693468986,
+    "exp_px": 4875
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.04463406629471611,
+    "exp_over_tri": 1.0502133245815557,
+    "added_over_tri": 0.09484739087627174,
+    "exp_px": 3200
+   },
+   "live_B": {
+    "tri_outside_mask": 0.07843780767968489,
+    "exp_over_tri": 0.9698063669182803,
+    "added_over_tri": 0.04824417459796521,
+    "exp_px": 2955
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590235-184A4706~0",
+   "tri_px_1280": 4852,
+   "base_px_1280": 152.73385003940552,
+   "h_px_1280": 60.97146844614603,
+   "base_over_h": 2.5050052742998967,
+   "s6h": {
+    "tri_outside_mask": 0.06038746908491344,
+    "exp_over_tri": 1.6494229183841715,
+    "added_over_tri": 0.7098103874690849,
+    "exp_px": 8003
+   },
+   "live": {
+    "tri_outside_mask": 0.0892415498763397,
+    "exp_over_tri": 1.583676834295136,
+    "added_over_tri": 0.6729183841714756,
+    "exp_px": 7684
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.06038746908491344,
+    "exp_over_tri": 1.0210222588623248,
+    "added_over_tri": 0.08140972794723825,
+    "exp_px": 4954
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0892415498763397,
+    "exp_over_tri": 0.9604286892003298,
+    "added_over_tri": 0.04967023907666941,
+    "exp_px": 4660
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590237-184A4708~0",
+   "tri_px_1280": 3830,
+   "base_px_1280": 115.09999593183136,
+   "h_px_1280": 63.67364583057449,
+   "base_over_h": 1.8076551834034171,
+   "s6h": {
+    "tri_outside_mask": 0.046475195822454296,
+    "exp_over_tri": 1.689817232375979,
+    "added_over_tri": 0.7362924281984334,
+    "exp_px": 6472
+   },
+   "live": {
+    "tri_outside_mask": 0.08903394255874675,
+    "exp_over_tri": 1.6,
+    "added_over_tri": 0.6890339425587467,
+    "exp_px": 6128
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.046475195822454296,
+    "exp_over_tri": 1.0433420365535249,
+    "added_over_tri": 0.0898172323759791,
+    "exp_px": 3996
+   },
+   "live_B": {
+    "tri_outside_mask": 0.08903394255874675,
+    "exp_over_tri": 0.9626631853785901,
+    "added_over_tri": 0.051697127937336815,
+    "exp_px": 3687
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590247-184A4718~0",
+   "tri_px_1280": 2244,
+   "base_px_1280": 123.5341583225773,
+   "h_px_1280": 33.78253236691438,
+   "base_over_h": 3.656746539331759,
+   "s6h": {
+    "tri_outside_mask": 0.017379679144384985,
+    "exp_over_tri": 2.1114081996434937,
+    "added_over_tri": 1.128787878787879,
+    "exp_px": 4738
+   },
+   "live": {
+    "tri_outside_mask": 0.025401069518716568,
+    "exp_over_tri": 2.0258467023172906,
+    "added_over_tri": 1.0512477718360071,
+    "exp_px": 4546
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.017379679144384985,
+    "exp_over_tri": 1.3507130124777185,
+    "added_over_tri": 0.3680926916221034,
+    "exp_px": 3031
+   },
+   "live_B": {
+    "tri_outside_mask": 0.025401069518716568,
+    "exp_over_tri": 1.2740641711229947,
+    "added_over_tri": 0.2994652406417112,
+    "exp_px": 2859
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590249-184A4720~0",
+   "tri_px_1280": 4058,
+   "base_px_1280": 180.5920847164338,
+   "h_px_1280": 42.933850714169424,
+   "base_over_h": 4.206286687833317,
+   "s6h": {
+    "tri_outside_mask": 0.003942828979793034,
+    "exp_over_tri": 2.015771315919172,
+    "added_over_tri": 1.019714144898965,
+    "exp_px": 8180
+   },
+   "live": {
+    "tri_outside_mask": 0.025628388368654553,
+    "exp_over_tri": 1.9344504682109414,
+    "added_over_tri": 0.9600788565795959,
+    "exp_px": 7850
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.003942828979793034,
+    "exp_over_tri": 1.1239526860522424,
+    "added_over_tri": 0.12789551503203547,
+    "exp_px": 4561
+   },
+   "live_B": {
+    "tri_outside_mask": 0.025628388368654553,
+    "exp_over_tri": 1.0500246426811237,
+    "added_over_tri": 0.07565303104977822,
+    "exp_px": 4261
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590252-184A4723~0",
+   "tri_px_1280": 2475,
+   "base_px_1280": 125.81037187740122,
+   "h_px_1280": 37.671566841011234,
+   "base_over_h": 3.3396639011159337,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9066666666666667,
+    "added_over_tri": 0.9066666666666666,
+    "exp_px": 4719
+   },
+   "live": {
+    "tri_outside_mask": 0.005252525252525286,
+    "exp_over_tri": 1.8367676767676768,
+    "added_over_tri": 0.842020202020202,
+    "exp_px": 4546
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.1559595959595959,
+    "added_over_tri": 0.15595959595959596,
+    "exp_px": 2861
+   },
+   "live_B": {
+    "tri_outside_mask": 0.005252525252525286,
+    "exp_over_tri": 1.1006060606060606,
+    "added_over_tri": 0.10585858585858586,
+    "exp_px": 2724
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590254-184A4725~0",
+   "tri_px_1280": 7995,
+   "base_px_1280": 255.99135538805675,
+   "h_px_1280": 61.10421933621974,
+   "base_over_h": 4.189421911758505,
+   "s6h": {
+    "tri_outside_mask": 0.037148217636022496,
+    "exp_over_tri": 1.9839899937460912,
+    "added_over_tri": 1.021138211382114,
+    "exp_px": 15862
+   },
+   "live": {
+    "tri_outside_mask": 0.057035647279549684,
+    "exp_over_tri": 1.9299562226391496,
+    "added_over_tri": 0.9869918699186991,
+    "exp_px": 15430
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.037148217636022496,
+    "exp_over_tri": 1.0880550343964979,
+    "added_over_tri": 0.12520325203252033,
+    "exp_px": 8699
+   },
+   "live_B": {
+    "tri_outside_mask": 0.057035647279549684,
+    "exp_over_tri": 1.0388993120700438,
+    "added_over_tri": 0.0959349593495935,
+    "exp_px": 8306
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590256-184A4727~0",
+   "tri_px_1280": 12268,
+   "base_px_1280": 321.03924382210715,
+   "h_px_1280": 75.10010966215634,
+   "base_over_h": 4.274817244160189,
+   "s6h": {
+    "tri_outside_mask": 0.04091946527551349,
+    "exp_over_tri": 2.0009781545484184,
+    "added_over_tri": 1.0418976198239323,
+    "exp_px": 24548
+   },
+   "live": {
+    "tri_outside_mask": 0.052412781219432714,
+    "exp_over_tri": 1.9675578741441149,
+    "added_over_tri": 1.0199706553635475,
+    "exp_px": 24138
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.04091946527551349,
+    "exp_over_tri": 1.0758069775024455,
+    "added_over_tri": 0.11672644277795892,
+    "exp_px": 13198
+   },
+   "live_B": {
+    "tri_outside_mask": 0.052412781219432714,
+    "exp_over_tri": 1.0466253668079557,
+    "added_over_tri": 0.09903814802738833,
+    "exp_px": 12840
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590267-184A4738~0",
+   "tri_px_1280": 2079,
+   "base_px_1280": 120.70569013061312,
+   "h_px_1280": 32.00203183724074,
+   "base_over_h": 3.771813325619781,
+   "s6h": {
+    "tri_outside_mask": 0.01202501202501205,
+    "exp_over_tri": 1.8614718614718615,
+    "added_over_tri": 0.8734968734968735,
+    "exp_px": 3870
+   },
+   "live": {
+    "tri_outside_mask": 0.05291005291005291,
+    "exp_over_tri": 1.7498797498797498,
+    "added_over_tri": 0.8027898027898028,
+    "exp_px": 3638
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.01202501202501205,
+    "exp_over_tri": 1.086099086099086,
+    "added_over_tri": 0.09812409812409813,
+    "exp_px": 2258
+   },
+   "live_B": {
+    "tri_outside_mask": 0.05291005291005291,
+    "exp_over_tri": 0.9812409812409812,
+    "added_over_tri": 0.034151034151034154,
+    "exp_px": 2040
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590271-184A4742~0",
+   "tri_px_1280": 2003,
+   "base_px_1280": 111.91483930632259,
+   "h_px_1280": 33.728285319556775,
+   "base_over_h": 3.3181301167845216,
+   "s6h": {
+    "tri_outside_mask": 0.02496255616575138,
+    "exp_over_tri": 1.7373939091362955,
+    "added_over_tri": 0.7623564653020469,
+    "exp_px": 3480
+   },
+   "live": {
+    "tri_outside_mask": 0.07538691962056909,
+    "exp_over_tri": 1.6060908637044433,
+    "added_over_tri": 0.6814777833250125,
+    "exp_px": 3217
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.02496255616575138,
+    "exp_over_tri": 1.0668996505242136,
+    "added_over_tri": 0.09186220668996506,
+    "exp_px": 2137
+   },
+   "live_B": {
+    "tri_outside_mask": 0.07538691962056909,
+    "exp_over_tri": 0.9665501747378932,
+    "added_over_tri": 0.04193709435846231,
+    "exp_px": 1936
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590274-184A4745~0",
+   "tri_px_1280": 5576,
+   "base_px_1280": 167.90814598883998,
+   "h_px_1280": 64.39949544174402,
+   "base_over_h": 2.607289775130772,
+   "s6h": {
+    "tri_outside_mask": 0.04250358680057387,
+    "exp_over_tri": 1.7342180774748923,
+    "added_over_tri": 0.7767216642754663,
+    "exp_px": 9670
+   },
+   "live": {
+    "tri_outside_mask": 0.07406743185078912,
+    "exp_over_tri": 1.6597919655667146,
+    "added_over_tri": 0.7338593974175036,
+    "exp_px": 9255
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.04250358680057387,
+    "exp_over_tri": 1.091284074605452,
+    "added_over_tri": 0.13378766140602583,
+    "exp_px": 6085
+   },
+   "live_B": {
+    "tri_outside_mask": 0.07406743185078912,
+    "exp_over_tri": 1.021700143472023,
+    "added_over_tri": 0.09576757532281205,
+    "exp_px": 5697
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590275-184A4746~0",
+   "tri_px_1280": 6681,
+   "base_px_1280": 259.285793065972,
+   "h_px_1280": 49.74290320339448,
+   "base_over_h": 5.212518296444712,
+   "s6h": {
+    "tri_outside_mask": 0.02095494686424193,
+    "exp_over_tri": 2.2513096841790152,
+    "added_over_tri": 1.272264631043257,
+    "exp_px": 15041
+   },
+   "live": {
+    "tri_outside_mask": 0.03248016763957495,
+    "exp_over_tri": 2.177368657386619,
+    "added_over_tri": 1.2098488250261936,
+    "exp_px": 14547
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.02095494686424193,
+    "exp_over_tri": 1.171680886094896,
+    "added_over_tri": 0.19263583295913786,
+    "exp_px": 7828
+   },
+   "live_B": {
+    "tri_outside_mask": 0.03248016763957495,
+    "exp_over_tri": 1.1040263433617723,
+    "added_over_tri": 0.13650651100134711,
+    "exp_px": 7376
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590277-184A4748~0",
+   "tri_px_1280": 6989,
+   "base_px_1280": 246.92126424942512,
+   "h_px_1280": 55.21284770376253,
+   "base_over_h": 4.472170418998302,
+   "s6h": {
+    "tri_outside_mask": 0.04049220203176418,
+    "exp_over_tri": 2.063385319788239,
+    "added_over_tri": 1.1038775218200028,
+    "exp_px": 14421
+   },
+   "live": {
+    "tri_outside_mask": 0.05494348261553872,
+    "exp_over_tri": 1.9969952782944627,
+    "added_over_tri": 1.0519387609100015,
+    "exp_px": 13957
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.04049220203176418,
+    "exp_over_tri": 1.1171841465159535,
+    "added_over_tri": 0.15767634854771784,
+    "exp_px": 7808
+   },
+   "live_B": {
+    "tri_outside_mask": 0.05494348261553872,
+    "exp_over_tri": 1.0549434826155386,
+    "added_over_tri": 0.10988696523107741,
+    "exp_px": 7373
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590280-184A4751~0",
+   "tri_px_1280": 2276,
+   "base_px_1280": 96.33696261487385,
+   "h_px_1280": 44.58107099449814,
+   "base_over_h": 2.1609387227768266,
+   "s6h": {
+    "tri_outside_mask": 0.025043936731107164,
+    "exp_over_tri": 1.8176625659050967,
+    "added_over_tri": 0.8427065026362038,
+    "exp_px": 4137
+   },
+   "live": {
+    "tri_outside_mask": 0.054481546572935025,
+    "exp_over_tri": 1.7078207381370827,
+    "added_over_tri": 0.7623022847100176,
+    "exp_px": 3887
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.025043936731107164,
+    "exp_over_tri": 1.1766256590509665,
+    "added_over_tri": 0.2016695957820738,
+    "exp_px": 2678
+   },
+   "live_B": {
+    "tri_outside_mask": 0.054481546572935025,
+    "exp_over_tri": 1.0830404217926186,
+    "added_over_tri": 0.1375219683655536,
+    "exp_px": 2465
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590281-184A4752~0",
+   "tri_px_1280": 3884,
+   "base_px_1280": 141.68616759404696,
+   "h_px_1280": 52.88021189791003,
+   "base_over_h": 2.679379724642268,
+   "s6h": {
+    "tri_outside_mask": 0.053038105046343986,
+    "exp_over_tri": 1.684346035015448,
+    "added_over_tri": 0.737384140061792,
+    "exp_px": 6542
+   },
+   "live": {
+    "tri_outside_mask": 0.09294541709577753,
+    "exp_over_tri": 1.5885684860968075,
+    "added_over_tri": 0.681513903192585,
+    "exp_px": 6170
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.053038105046343986,
+    "exp_over_tri": 1.054582904222451,
+    "added_over_tri": 0.10762100926879506,
+    "exp_px": 4096
+   },
+   "live_B": {
+    "tri_outside_mask": 0.09294541709577753,
+    "exp_over_tri": 0.9657569515962925,
+    "added_over_tri": 0.05870236869207003,
+    "exp_px": 3751
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590284-184A4755~0",
+   "tri_px_1280": 2479,
+   "base_px_1280": 97.17744541939761,
+   "h_px_1280": 49.207990224668755,
+   "base_over_h": 1.9748306113644325,
+   "s6h": {
+    "tri_outside_mask": 0.05445744251714402,
+    "exp_over_tri": 1.8217022993142395,
+    "added_over_tri": 0.8761597418313837,
+    "exp_px": 4516
+   },
+   "live": {
+    "tri_outside_mask": 0.07785397337636146,
+    "exp_over_tri": 1.7014925373134329,
+    "added_over_tri": 0.7793465106897943,
+    "exp_px": 4218
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.05445744251714402,
+    "exp_over_tri": 1.154901169826543,
+    "added_over_tri": 0.20935861234368697,
+    "exp_px": 2863
+   },
+   "live_B": {
+    "tri_outside_mask": 0.07785397337636146,
+    "exp_over_tri": 1.0633319887051231,
+    "added_over_tri": 0.14118596208148446,
+    "exp_px": 2636
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590287-184A4758~0",
+   "tri_px_1280": 8873,
+   "base_px_1280": 258.5426581427182,
+   "h_px_1280": 66.54941015596039,
+   "base_over_h": 3.8849729477213444,
+   "s6h": {
+    "tri_outside_mask": 0.046320297531838195,
+    "exp_over_tri": 1.918178744505804,
+    "added_over_tri": 0.9644990420376423,
+    "exp_px": 17020
+   },
+   "live": {
+    "tri_outside_mask": 0.06750817085540406,
+    "exp_over_tri": 1.8055899921108982,
+    "added_over_tri": 0.8730981629663023,
+    "exp_px": 16021
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.046320297531838195,
+    "exp_over_tri": 1.0988391750253579,
+    "added_over_tri": 0.145159472557196,
+    "exp_px": 9750
+   },
+   "live_B": {
+    "tri_outside_mask": 0.06750817085540406,
+    "exp_over_tri": 0.9935760171306209,
+    "added_over_tri": 0.06108418798602502,
+    "exp_px": 8816
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590288-184A4759~0",
+   "tri_px_1280": 2294,
+   "base_px_1280": 117.08810958064181,
+   "h_px_1280": 36.35141726985138,
+   "base_over_h": 3.2210053520458106,
+   "s6h": {
+    "tri_outside_mask": 0.03966870095902353,
+    "exp_over_tri": 1.7537053182214473,
+    "added_over_tri": 0.7933740191804708,
+    "exp_px": 4023
+   },
+   "live": {
+    "tri_outside_mask": 0.052310374891020084,
+    "exp_over_tri": 1.6835222319093286,
+    "added_over_tri": 0.7358326068003488,
+    "exp_px": 3862
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.03966870095902353,
+    "exp_over_tri": 1.112467306015693,
+    "added_over_tri": 0.15213600697471666,
+    "exp_px": 2552
+   },
+   "live_B": {
+    "tri_outside_mask": 0.052310374891020084,
+    "exp_over_tri": 1.049694856146469,
+    "added_over_tri": 0.1020052310374891,
+    "exp_px": 2408
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590289-184A4760~0",
+   "tri_px_1280": 2333,
+   "base_px_1280": 120.12134680368015,
+   "h_px_1280": 36.93648650213162,
+   "base_over_h": 3.2521053889830016,
+   "s6h": {
+    "tri_outside_mask": 0.03257608229747111,
+    "exp_over_tri": 1.8204029147021004,
+    "added_over_tri": 0.8529789969995714,
+    "exp_px": 4247
+   },
+   "live": {
+    "tri_outside_mask": 0.04543506215173598,
+    "exp_over_tri": 1.7402486069438492,
+    "added_over_tri": 0.7856836690955851,
+    "exp_px": 4060
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.03257608229747111,
+    "exp_over_tri": 1.1303043291898842,
+    "added_over_tri": 0.16288041148735533,
+    "exp_px": 2637
+   },
+   "live_B": {
+    "tri_outside_mask": 0.04543506215173598,
+    "exp_over_tri": 1.0535790827261038,
+    "added_over_tri": 0.09901414487783969,
+    "exp_px": 2458
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590290-184A4761~0",
+   "tri_px_1280": 3372,
+   "base_px_1280": 168.5497246505979,
+   "h_px_1280": 38.03316885734981,
+   "base_over_h": 4.431650838318883,
+   "s6h": {
+    "tri_outside_mask": 0.0005931198102017143,
+    "exp_over_tri": 2.0708778173190985,
+    "added_over_tri": 1.0714709371293,
+    "exp_px": 6983
+   },
+   "live": {
+    "tri_outside_mask": 0.016607354685646447,
+    "exp_over_tri": 1.9759786476868328,
+    "added_over_tri": 0.9925860023724793,
+    "exp_px": 6663
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0005931198102017143,
+    "exp_over_tri": 1.1708185053380782,
+    "added_over_tri": 0.17141162514827996,
+    "exp_px": 3948
+   },
+   "live_B": {
+    "tri_outside_mask": 0.016607354685646447,
+    "exp_over_tri": 1.0827402135231317,
+    "added_over_tri": 0.09934756820877817,
+    "exp_px": 3651
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590291-184A4762~0",
+   "tri_px_1280": 3894,
+   "base_px_1280": 189.59609242008753,
+   "h_px_1280": 39.44601357410472,
+   "base_over_h": 4.806470292971567,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.274011299435028,
+    "added_over_tri": 1.2740112994350283,
+    "exp_px": 8855
+   },
+   "live": {
+    "tri_outside_mask": 0.004879301489471022,
+    "exp_over_tri": 2.167693888032871,
+    "added_over_tri": 1.1725731895223421,
+    "exp_px": 8441
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.273240883410375,
+    "added_over_tri": 0.27324088341037495,
+    "exp_px": 4958
+   },
+   "live_B": {
+    "tri_outside_mask": 0.004879301489471022,
+    "exp_over_tri": 1.1774524910118132,
+    "added_over_tri": 0.18233179250128403,
+    "exp_px": 4585
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590294-184A4765~0",
+   "tri_px_1280": 9204,
+   "base_px_1280": 188.26437932322733,
+   "h_px_1280": 95.02379230563702,
+   "base_over_h": 1.9812341178479684,
+   "s6h": {
+    "tri_outside_mask": 0.05171664493698391,
+    "exp_over_tri": 1.6656888309430682,
+    "added_over_tri": 0.7174054758800521,
+    "exp_px": 15331
+   },
+   "live": {
+    "tri_outside_mask": 0.08854845719252502,
+    "exp_over_tri": 1.5943068231203825,
+    "added_over_tri": 0.6828552803129074,
+    "exp_px": 14674
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.05171664493698391,
+    "exp_over_tri": 1.0228161668839635,
+    "added_over_tri": 0.07453281182094741,
+    "exp_px": 9414
+   },
+   "live_B": {
+    "tri_outside_mask": 0.08854845719252502,
+    "exp_over_tri": 0.9568665797479357,
+    "added_over_tri": 0.04541503694046067,
+    "exp_px": 8807
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590297-184A4768~0",
+   "tri_px_1280": 5242,
+   "base_px_1280": 195.06545992648216,
+   "h_px_1280": 51.67813386964179,
+   "base_over_h": 3.774622752797832,
+   "s6h": {
+    "tri_outside_mask": 0.018122853872567735,
+    "exp_over_tri": 1.8462418924074782,
+    "added_over_tri": 0.8643647462800458,
+    "exp_px": 9678
+   },
+   "live": {
+    "tri_outside_mask": 0.043494849294162585,
+    "exp_over_tri": 1.7869133918351774,
+    "added_over_tri": 0.83040824112934,
+    "exp_px": 9367
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.018122853872567735,
+    "exp_over_tri": 1.05284242655475,
+    "added_over_tri": 0.07096528042731781,
+    "exp_px": 5519
+   },
+   "live_B": {
+    "tri_outside_mask": 0.043494849294162585,
+    "exp_over_tri": 0.9979015642884396,
+    "added_over_tri": 0.04139641358260206,
+    "exp_px": 5231
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590299-184A4770~0",
+   "tri_px_1280": 6971,
+   "base_px_1280": 206.0707238118496,
+   "h_px_1280": 64.63461173448893,
+   "base_over_h": 3.1882410721110683,
+   "s6h": {
+    "tri_outside_mask": 0.011189212451585107,
+    "exp_over_tri": 1.9588294362358343,
+    "added_over_tri": 0.9700186486874193,
+    "exp_px": 13655
+   },
+   "live": {
+    "tri_outside_mask": 0.0205135561612394,
+    "exp_over_tri": 1.88136565772486,
+    "added_over_tri": 0.9018792138860996,
+    "exp_px": 13115
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.011189212451585107,
+    "exp_over_tri": 1.283173145890116,
+    "added_over_tri": 0.2943623583417013,
+    "exp_px": 8945
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0205135561612394,
+    "exp_over_tri": 1.2104432649548127,
+    "added_over_tri": 0.23095682111605223,
+    "exp_px": 8438
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590305-184A4776~0",
+   "tri_px_1280": 1898,
+   "base_px_1280": 65.52429685412572,
+   "h_px_1280": 54.01878481675202,
+   "base_over_h": 1.2129909452129266,
+   "s6h": {
+    "tri_outside_mask": 0.013171759747102163,
+    "exp_over_tri": 1.7565858798735512,
+    "added_over_tri": 0.7697576396206534,
+    "exp_px": 3334
+   },
+   "live": {
+    "tri_outside_mask": 0.06902002107481564,
+    "exp_over_tri": 1.5948366701791359,
+    "added_over_tri": 0.6638566912539515,
+    "exp_px": 3027
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.013171759747102163,
+    "exp_over_tri": 1.1280295047418336,
+    "added_over_tri": 0.14120126448893572,
+    "exp_px": 2141
+   },
+   "live_B": {
+    "tri_outside_mask": 0.06902002107481564,
+    "exp_over_tri": 0.9783983140147524,
+    "added_over_tri": 0.04741833508956796,
+    "exp_px": 1857
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590307-184A4778~0",
+   "tri_px_1280": 2579,
+   "base_px_1280": 111.42309395733179,
+   "h_px_1280": 44.83950266117377,
+   "base_over_h": 2.484931530112896,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9976735168670028,
+    "added_over_tri": 0.9976735168670027,
+    "exp_px": 5152
+   },
+   "live": {
+    "tri_outside_mask": 0.0023264831329973257,
+    "exp_over_tri": 1.8712679333074835,
+    "added_over_tri": 0.8735944164404809,
+    "exp_px": 4826
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3412175261729353,
+    "added_over_tri": 0.34121752617293527,
+    "exp_px": 3459
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0023264831329973257,
+    "exp_over_tri": 1.2272198526560683,
+    "added_over_tri": 0.22954633578906553,
+    "exp_px": 3165
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590310-184A4781~0",
+   "tri_px_1280": 2170,
+   "base_px_1280": 111.43687941442727,
+   "h_px_1280": 36.86225102886521,
+   "base_over_h": 3.0230622467186268,
+   "s6h": {
+    "tri_outside_mask": 0.01244239631336408,
+    "exp_over_tri": 1.8788018433179723,
+    "added_over_tri": 0.8912442396313364,
+    "exp_px": 4077
+   },
+   "live": {
+    "tri_outside_mask": 0.03917050691244239,
+    "exp_over_tri": 1.737327188940092,
+    "added_over_tri": 0.7764976958525346,
+    "exp_px": 3770
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.01244239631336408,
+    "exp_over_tri": 1.229032258064516,
+    "added_over_tri": 0.24147465437788018,
+    "exp_px": 2667
+   },
+   "live_B": {
+    "tri_outside_mask": 0.03917050691244239,
+    "exp_over_tri": 1.1036866359447004,
+    "added_over_tri": 0.14285714285714285,
+    "exp_px": 2395
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590334-184A4805~0",
+   "tri_px_1280": 7395,
+   "base_px_1280": 299.70024854010643,
+   "h_px_1280": 46.91673422707325,
+   "base_over_h": 6.3879179460697575,
+   "s6h": {
+    "tri_outside_mask": 0.0123056118999324,
+    "exp_over_tri": 2.6190669371196753,
+    "added_over_tri": 1.6313725490196078,
+    "exp_px": 19368
+   },
+   "live": {
+    "tri_outside_mask": 0.01690331304935766,
+    "exp_over_tri": 2.5555104800540906,
+    "added_over_tri": 1.5724137931034483,
+    "exp_px": 18898
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0123056118999324,
+    "exp_over_tri": 1.316159567275186,
+    "added_over_tri": 0.3284651791751183,
+    "exp_px": 9733
+   },
+   "live_B": {
+    "tri_outside_mask": 0.01690331304935766,
+    "exp_over_tri": 1.2562542258282623,
+    "added_over_tri": 0.27315753887762,
+    "exp_px": 9290
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590340-184A4811~0",
+   "tri_px_1280": 9587,
+   "base_px_1280": 301.2026828689552,
+   "h_px_1280": 61.74355585546747,
+   "base_over_h": 4.878285331898055,
+   "s6h": {
+    "tri_outside_mask": 0.012725565870449596,
+    "exp_over_tri": 2.258057786586002,
+    "added_over_tri": 1.2707833524564514,
+    "exp_px": 21648
+   },
+   "live": {
+    "tri_outside_mask": 0.019296964639616165,
+    "exp_over_tri": 2.1930739543131326,
+    "added_over_tri": 1.2123709189527485,
+    "exp_px": 21025
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.012725565870449596,
+    "exp_over_tri": 1.2293731094190048,
+    "added_over_tri": 0.24209867528945447,
+    "exp_px": 11786
+   },
+   "live_B": {
+    "tri_outside_mask": 0.019296964639616165,
+    "exp_over_tri": 1.1701262125795349,
+    "added_over_tri": 0.18942317721915095,
+    "exp_px": 11218
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590345-184A4816~0",
+   "tri_px_1280": 11974,
+   "base_px_1280": 309.799345715927,
+   "h_px_1280": 74.80644308625004,
+   "base_over_h": 4.141345757593845,
+   "s6h": {
+    "tri_outside_mask": 0.12928010689827962,
+    "exp_over_tri": 1.1801403039919827,
+    "added_over_tri": 0.30942041089026223,
+    "exp_px": 14131
+   },
+   "live": {
+    "tri_outside_mask": 0.12802739268414898,
+    "exp_over_tri": 1.4771170870218808,
+    "added_over_tri": 0.6051444797060297,
+    "exp_px": 17687
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.12928010689827962,
+    "exp_over_tri": 0.9275096041423083,
+    "added_over_tri": 0.05678971104058794,
+    "exp_px": 11106
+   },
+   "live_B": {
+    "tri_outside_mask": 0.12802739268414898,
+    "exp_over_tri": 0.9347753465842659,
+    "added_over_tri": 0.0628027392684149,
+    "exp_px": 11193
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590346-184A4817~0",
+   "tri_px_1280": 1104,
+   "base_px_1280": 57.867030415378956,
+   "h_px_1280": 35.210045973579234,
+   "base_over_h": 1.6434806832913815,
+   "s6h": {
+    "tri_outside_mask": 0.04528985507246375,
+    "exp_over_tri": 1.8596014492753623,
+    "added_over_tri": 0.904891304347826,
+    "exp_px": 2053
+   },
+   "live": {
+    "tri_outside_mask": 0.09329710144927539,
+    "exp_over_tri": 1.661231884057971,
+    "added_over_tri": 0.7545289855072463,
+    "exp_px": 1834
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.04528985507246375,
+    "exp_over_tri": 1.236413043478261,
+    "added_over_tri": 0.2817028985507246,
+    "exp_px": 1365
+   },
+   "live_B": {
+    "tri_outside_mask": 0.09329710144927539,
+    "exp_over_tri": 1.0634057971014492,
+    "added_over_tri": 0.15670289855072464,
+    "exp_px": 1174
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590349-184A4820~0",
+   "tri_px_1280": 806,
+   "base_px_1280": 40.86919086561421,
+   "h_px_1280": 36.87934123276533,
+   "base_over_h": 1.1081865754506512,
+   "s6h": {
+    "tri_outside_mask": 0.07196029776674939,
+    "exp_over_tri": 1.8014888337468982,
+    "added_over_tri": 0.8734491315136477,
+    "exp_px": 1452
+   },
+   "live": {
+    "tri_outside_mask": 0.13523573200992556,
+    "exp_over_tri": 1.5918114143920596,
+    "added_over_tri": 0.7270471464019851,
+    "exp_px": 1283
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.07196029776674939,
+    "exp_over_tri": 1.150124069478908,
+    "added_over_tri": 0.22208436724565755,
+    "exp_px": 927
+   },
+   "live_B": {
+    "tri_outside_mask": 0.13523573200992556,
+    "exp_over_tri": 0.9553349875930521,
+    "added_over_tri": 0.09057071960297766,
+    "exp_px": 770
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590354-184A4825~0",
+   "tri_px_1280": 4453,
+   "base_px_1280": 167.92891082872413,
+   "h_px_1280": 50.15862570188976,
+   "base_over_h": 3.3479567767024623,
+   "s6h": {
+    "tri_outside_mask": 0.03256231753873795,
+    "exp_over_tri": 1.712104199416124,
+    "added_over_tri": 0.7446665169548619,
+    "exp_px": 7624
+   },
+   "live": {
+    "tri_outside_mask": 0.06220525488434758,
+    "exp_over_tri": 1.644733887267011,
+    "added_over_tri": 0.7069391421513587,
+    "exp_px": 7324
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.03256231753873795,
+    "exp_over_tri": 1.0287446665169548,
+    "added_over_tri": 0.06130698405569279,
+    "exp_px": 4581
+   },
+   "live_B": {
+    "tri_outside_mask": 0.06220525488434758,
+    "exp_over_tri": 0.9665394116326073,
+    "added_over_tri": 0.028744666516954863,
+    "exp_px": 4304
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590358-184A4829~0",
+   "tri_px_1280": 17108,
+   "base_px_1280": 349.98625789620996,
+   "h_px_1280": 95.72830697794899,
+   "base_over_h": 3.6560372678149347,
+   "s6h": {
+    "tri_outside_mask": 0.05944587327566053,
+    "exp_over_tri": 1.7618073415945756,
+    "added_over_tri": 0.8212532148702362,
+    "exp_px": 30141
+   },
+   "live": {
+    "tri_outside_mask": 0.07359130231470656,
+    "exp_over_tri": 1.727495908346972,
+    "added_over_tri": 0.8010872106616788,
+    "exp_px": 29554
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.05944587327566053,
+    "exp_over_tri": 0.9893032499415478,
+    "added_over_tri": 0.048749123217208326,
+    "exp_px": 16925
+   },
+   "live_B": {
+    "tri_outside_mask": 0.07359130231470656,
+    "exp_over_tri": 0.9582066869300911,
+    "added_over_tri": 0.03179798924479776,
+    "exp_px": 16393
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590361-184A4832~0",
+   "tri_px_1280": 12166,
+   "base_px_1280": 302.7532698585804,
+   "h_px_1280": 78.35696613488999,
+   "base_over_h": 3.863769678593688,
+   "s6h": {
+    "tri_outside_mask": 0.08688147295742232,
+    "exp_over_tri": 1.7691928324839716,
+    "added_over_tri": 0.8560743054413941,
+    "exp_px": 21524
+   },
+   "live": {
+    "tri_outside_mask": 0.11154035837580145,
+    "exp_over_tri": 1.7260397830018084,
+    "added_over_tri": 0.8375801413776097,
+    "exp_px": 20999
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.08688147295742232,
+    "exp_over_tri": 0.9523261548578005,
+    "added_over_tri": 0.03920762781522275,
+    "exp_px": 11586
+   },
+   "live_B": {
+    "tri_outside_mask": 0.11154035837580145,
+    "exp_over_tri": 0.9127075456189381,
+    "added_over_tri": 0.024247903994739438,
+    "exp_px": 11104
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590363-184A4834~0",
+   "tri_px_1280": 5946,
+   "base_px_1280": 234.61713870492582,
+   "h_px_1280": 49.06810370875218,
+   "base_over_h": 4.7814592570667775,
+   "s6h": {
+    "tri_outside_mask": 0.009586276488395606,
+    "exp_over_tri": 2.144635048772284,
+    "added_over_tri": 1.1542213252606794,
+    "exp_px": 12752
+   },
+   "live": {
+    "tri_outside_mask": 0.028758829465186708,
+    "exp_over_tri": 2.072317524386142,
+    "added_over_tri": 1.1010763538513286,
+    "exp_px": 12322
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.009586276488395606,
+    "exp_over_tri": 1.1126807938109653,
+    "added_over_tri": 0.12226707029936092,
+    "exp_px": 6616
+   },
+   "live_B": {
+    "tri_outside_mask": 0.028758829465186708,
+    "exp_over_tri": 1.0507904473595695,
+    "added_over_tri": 0.07954927682475614,
+    "exp_px": 6248
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590364-184A4835~0",
+   "tri_px_1280": 7147,
+   "base_px_1280": 217.30375620636568,
+   "h_px_1280": 63.74049913577263,
+   "base_over_h": 3.409194454902061,
+   "s6h": {
+    "tri_outside_mask": 0.05190989226248777,
+    "exp_over_tri": 1.6981950468728138,
+    "added_over_tri": 0.7501049391353015,
+    "exp_px": 12137
+   },
+   "live": {
+    "tri_outside_mask": 0.07667552819364765,
+    "exp_over_tri": 1.6509024765635931,
+    "added_over_tri": 0.7275780047572408,
+    "exp_px": 11799
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.05190989226248777,
+    "exp_over_tri": 0.9827899818105499,
+    "added_over_tri": 0.03469987407303764,
+    "exp_px": 7024
+   },
+   "live_B": {
+    "tri_outside_mask": 0.07667552819364765,
+    "exp_over_tri": 0.9391353015251155,
+    "added_over_tri": 0.015810829718763117,
+    "exp_px": 6712
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590366-184A4837~0",
+   "tri_px_1280": 5422,
+   "base_px_1280": 174.01706075689128,
+   "h_px_1280": 60.20651364383592,
+   "base_over_h": 2.8903361152304083,
+   "s6h": {
+    "tri_outside_mask": 0.026374031722611546,
+    "exp_over_tri": 1.6761342677978606,
+    "added_over_tri": 0.7025082995204721,
+    "exp_px": 9088
+   },
+   "live": {
+    "tri_outside_mask": 0.05735890815197342,
+    "exp_over_tri": 1.6077093323496865,
+    "added_over_tri": 0.6650682405016599,
+    "exp_px": 8717
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.026374031722611546,
+    "exp_over_tri": 1.031538177794172,
+    "added_over_tri": 0.057912209516783476,
+    "exp_px": 5593
+   },
+   "live_B": {
+    "tri_outside_mask": 0.05735890815197342,
+    "exp_over_tri": 0.9690151235706381,
+    "added_over_tri": 0.02637403172261158,
+    "exp_px": 5254
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590367-184A4838~0",
+   "tri_px_1280": 2682,
+   "base_px_1280": 92.15084934348893,
+   "h_px_1280": 55.79022382142858,
+   "base_over_h": 1.6517382980653057,
+   "s6h": {
+    "tri_outside_mask": 0.0585384041759881,
+    "exp_over_tri": 1.8310961968680088,
+    "added_over_tri": 0.889634601043997,
+    "exp_px": 4911
+   },
+   "live": {
+    "tri_outside_mask": 0.08650260999254289,
+    "exp_over_tri": 1.680462341536167,
+    "added_over_tri": 0.7669649515287099,
+    "exp_px": 4507
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0585384041759881,
+    "exp_over_tri": 1.1983594332587622,
+    "added_over_tri": 0.2568978374347502,
+    "exp_px": 3214
+   },
+   "live_B": {
+    "tri_outside_mask": 0.08650260999254289,
+    "exp_over_tri": 1.0607755406413124,
+    "added_over_tri": 0.14727815063385533,
+    "exp_px": 2845
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590370-184A4841~0",
+   "tri_px_1280": 1684,
+   "base_px_1280": 61.95013896507741,
+   "h_px_1280": 51.88429946948033,
+   "base_over_h": 1.1940055006720878,
+   "s6h": {
+    "tri_outside_mask": 0.04750593824228033,
+    "exp_over_tri": 1.7482185273159145,
+    "added_over_tri": 0.7957244655581948,
+    "exp_px": 2944
+   },
+   "live": {
+    "tri_outside_mask": 0.08669833729216148,
+    "exp_over_tri": 1.6134204275534443,
+    "added_over_tri": 0.7001187648456056,
+    "exp_px": 2717
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.04750593824228033,
+    "exp_over_tri": 1.0926365795724466,
+    "added_over_tri": 0.14014251781472684,
+    "exp_px": 1840
+   },
+   "live_B": {
+    "tri_outside_mask": 0.08669833729216148,
+    "exp_over_tri": 0.9649643705463183,
+    "added_over_tri": 0.05166270783847981,
+    "exp_px": 1625
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590374-184A4845~0",
+   "tri_px_1280": 1000,
+   "base_px_1280": 50.70546735839837,
+   "h_px_1280": 37.12864866120169,
+   "base_over_h": 1.3656696159638055,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.243,
+    "added_over_tri": 1.243,
+    "exp_px": 2243
+   },
+   "live": {
+    "tri_outside_mask": 0.0030000000000000027,
+    "exp_over_tri": 2.068,
+    "added_over_tri": 1.071,
+    "exp_px": 2068
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.578,
+    "added_over_tri": 0.578,
+    "exp_px": 1578
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0030000000000000027,
+    "exp_over_tri": 1.433,
+    "added_over_tri": 0.436,
+    "exp_px": 1433
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590376-184A4847~0",
+   "tri_px_1280": 2533,
+   "base_px_1280": 115.73529382739567,
+   "h_px_1280": 41.059744096792926,
+   "base_over_h": 2.818704703920341,
+   "s6h": {
+    "tri_outside_mask": 0.03908409001184365,
+    "exp_over_tri": 1.6174496644295302,
+    "added_over_tri": 0.6565337544413739,
+    "exp_px": 4097
+   },
+   "live": {
+    "tri_outside_mask": 0.07027240426371895,
+    "exp_over_tri": 1.5641531780497433,
+    "added_over_tri": 0.6344255823134622,
+    "exp_px": 3962
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.03908409001184365,
+    "exp_over_tri": 1.015791551519937,
+    "added_over_tri": 0.0548756415317805,
+    "exp_px": 2573
+   },
+   "live_B": {
+    "tri_outside_mask": 0.07027240426371895,
+    "exp_over_tri": 0.9668377418081326,
+    "added_over_tri": 0.037110146071851556,
+    "exp_px": 2449
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590379-184A4850~0",
+   "tri_px_1280": 1059,
+   "base_px_1280": 61.95385260619708,
+   "h_px_1280": 32.71912110797824,
+   "base_over_h": 1.893506014472077,
+   "s6h": {
+    "tri_outside_mask": 0.02738432483474973,
+    "exp_over_tri": 1.801699716713881,
+    "added_over_tri": 0.8290840415486308,
+    "exp_px": 1908
+   },
+   "live": {
+    "tri_outside_mask": 0.044381491973560006,
+    "exp_over_tri": 1.708215297450425,
+    "added_over_tri": 0.7525967894239849,
+    "exp_px": 1809
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.02738432483474973,
+    "exp_over_tri": 1.1605288007554297,
+    "added_over_tri": 0.18791312559017942,
+    "exp_px": 1229
+   },
+   "live_B": {
+    "tri_outside_mask": 0.044381491973560006,
+    "exp_over_tri": 1.0736543909348442,
+    "added_over_tri": 0.11803588290840415,
+    "exp_px": 1137
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590391-184A4862~0",
+   "tri_px_1280": 1607,
+   "base_px_1280": 83.08805121706726,
+   "h_px_1280": 36.067689770252066,
+   "base_over_h": 2.3036698980813757,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.195395146235221,
+    "added_over_tri": 1.1953951462352208,
+    "exp_px": 3528
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.0827629122588673,
+    "added_over_tri": 1.0827629122588676,
+    "exp_px": 3347
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.5202240199128811,
+    "added_over_tri": 0.5202240199128811,
+    "exp_px": 2443
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.4268823895457374,
+    "added_over_tri": 0.4268823895457374,
+    "exp_px": 2293
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590398-184A4869~0",
+   "tri_px_1280": 8065,
+   "base_px_1280": 235.27316960088834,
+   "h_px_1280": 66.85538575236077,
+   "base_over_h": 3.519135623154795,
+   "s6h": {
+    "tri_outside_mask": 0.023930564166150026,
+    "exp_over_tri": 2.048729076255425,
+    "added_over_tri": 1.0726596404215747,
+    "exp_px": 16523
+   },
+   "live": {
+    "tri_outside_mask": 0.028890266584004953,
+    "exp_over_tri": 1.9944203347799132,
+    "added_over_tri": 1.0233106013639182,
+    "exp_px": 16085
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.023930564166150026,
+    "exp_over_tri": 1.2833230006199627,
+    "added_over_tri": 0.3072535647861128,
+    "exp_px": 10350
+   },
+   "live_B": {
+    "tri_outside_mask": 0.028890266584004953,
+    "exp_over_tri": 1.2364538127712337,
+    "added_over_tri": 0.2653440793552387,
+    "exp_px": 9972
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590401-184A4872~0",
+   "tri_px_1280": 12810,
+   "base_px_1280": 300.4823839010973,
+   "h_px_1280": 83.14025919698108,
+   "base_over_h": 3.6141622218085194,
+   "s6h": {
+    "tri_outside_mask": 0.03950039032006247,
+    "exp_over_tri": 1.8526932084309133,
+    "added_over_tri": 0.8921935987509758,
+    "exp_px": 23733
+   },
+   "live": {
+    "tri_outside_mask": 0.05667447306791573,
+    "exp_over_tri": 1.8056206088992974,
+    "added_over_tri": 0.8622950819672132,
+    "exp_px": 23130
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.03950039032006247,
+    "exp_over_tri": 1.0804839968774396,
+    "added_over_tri": 0.11998438719750196,
+    "exp_px": 13841
+   },
+   "live_B": {
+    "tri_outside_mask": 0.05667447306791573,
+    "exp_over_tri": 1.0372365339578455,
+    "added_over_tri": 0.09391100702576112,
+    "exp_px": 13287
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590403-184A4874~0",
+   "tri_px_1280": 6182,
+   "base_px_1280": 225.87888005345167,
+   "h_px_1280": 52.66786482129186,
+   "base_over_h": 4.288741926787516,
+   "s6h": {
+    "tri_outside_mask": 0.017793594306049876,
+    "exp_over_tri": 2.1399223552248463,
+    "added_over_tri": 1.1577159495308962,
+    "exp_px": 13229
+   },
+   "live": {
+    "tri_outside_mask": 0.027013911355548315,
+    "exp_over_tri": 2.061954060174701,
+    "added_over_tri": 1.0889679715302492,
+    "exp_px": 12747
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.017793594306049876,
+    "exp_over_tri": 1.2395664833387254,
+    "added_over_tri": 0.25736007764477514,
+    "exp_px": 7663
+   },
+   "live_B": {
+    "tri_outside_mask": 0.027013911355548315,
+    "exp_over_tri": 1.1674215464251052,
+    "added_over_tri": 0.19443545778065352,
+    "exp_px": 7217
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590408-184A4879~0",
+   "tri_px_1280": 5151,
+   "base_px_1280": 191.78852399729146,
+   "h_px_1280": 51.00366242048005,
+   "base_over_h": 3.760289259546988,
+   "s6h": {
+    "tri_outside_mask": 0.032226752086973454,
+    "exp_over_tri": 2.059794214715589,
+    "added_over_tri": 1.0920209668025627,
+    "exp_px": 10610
+   },
+   "live": {
+    "tri_outside_mask": 0.0390215492137449,
+    "exp_over_tri": 1.999805862939235,
+    "added_over_tri": 1.03882741215298,
+    "exp_px": 10301
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.032226752086973454,
+    "exp_over_tri": 1.260531935546496,
+    "added_over_tri": 0.29275868763346924,
+    "exp_px": 6493
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0390215492137449,
+    "exp_over_tri": 1.2079207920792079,
+    "added_over_tri": 0.24694234129295284,
+    "exp_px": 6222
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590410-184A4881~0",
+   "tri_px_1280": 9441,
+   "base_px_1280": 254.50927189049042,
+   "h_px_1280": 71.95046375749823,
+   "base_over_h": 3.5372846622405136,
+   "s6h": {
+    "tri_outside_mask": 0.017900646117996022,
+    "exp_over_tri": 2.0157822264590615,
+    "added_over_tri": 1.0336828725770575,
+    "exp_px": 19031
+   },
+   "live": {
+    "tri_outside_mask": 0.02118419658934434,
+    "exp_over_tri": 1.963139497934541,
+    "added_over_tri": 0.9843236945238851,
+    "exp_px": 18534
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.017900646117996022,
+    "exp_over_tri": 1.2537866751403453,
+    "added_over_tri": 0.2716873212583413,
+    "exp_px": 11837
+   },
+   "live_B": {
+    "tri_outside_mask": 0.02118419658934434,
+    "exp_over_tri": 1.205910390848427,
+    "added_over_tri": 0.22709458743777142,
+    "exp_px": 11385
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590415-184A4886~0",
+   "tri_px_1280": 7007,
+   "base_px_1280": 220.07716282760924,
+   "h_px_1280": 61.14746394972964,
+   "base_over_h": 3.5991216742617222,
+   "s6h": {
+    "tri_outside_mask": 0.006279434850863463,
+    "exp_over_tri": 2.049807335521621,
+    "added_over_tri": 1.0560867703724846,
+    "exp_px": 14363
+   },
+   "live": {
+    "tri_outside_mask": 0.00956186670472381,
+    "exp_over_tri": 1.9928642785785642,
+    "added_over_tri": 1.002426145283288,
+    "exp_px": 13964
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.006279434850863463,
+    "exp_over_tri": 1.2547452547452547,
+    "added_over_tri": 0.2610246895961182,
+    "exp_px": 8792
+   },
+   "live_B": {
+    "tri_outside_mask": 0.00956186670472381,
+    "exp_over_tri": 1.2053660625089198,
+    "added_over_tri": 0.2149279292136435,
+    "exp_px": 8446
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590417-184A4888~0",
+   "tri_px_1280": 4920,
+   "base_px_1280": 200.35002420795865,
+   "h_px_1280": 46.42076058461767,
+   "base_over_h": 4.315957379516702,
+   "s6h": {
+    "tri_outside_mask": 0.02073170731707319,
+    "exp_over_tri": 2.180894308943089,
+    "added_over_tri": 1.2016260162601626,
+    "exp_px": 10730
+   },
+   "live": {
+    "tri_outside_mask": 0.027235772357723564,
+    "exp_over_tri": 2.106707317073171,
+    "added_over_tri": 1.1339430894308944,
+    "exp_px": 10365
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.02073170731707319,
+    "exp_over_tri": 1.2733739837398375,
+    "added_over_tri": 0.2941056910569106,
+    "exp_px": 6265
+   },
+   "live_B": {
+    "tri_outside_mask": 0.027235772357723564,
+    "exp_over_tri": 1.2056910569105692,
+    "added_over_tri": 0.2329268292682927,
+    "exp_px": 5932
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590419-184A4890~0",
+   "tri_px_1280": 3840,
+   "base_px_1280": 165.33418932153273,
+   "h_px_1280": 44.227075199622234,
+   "base_over_h": 3.738302579930606,
+   "s6h": {
+    "tri_outside_mask": 0.017708333333333326,
+    "exp_over_tri": 2.021354166666667,
+    "added_over_tri": 1.0390625,
+    "exp_px": 7762
+   },
+   "live": {
+    "tri_outside_mask": 0.022656250000000044,
+    "exp_over_tri": 1.9520833333333334,
+    "added_over_tri": 0.9747395833333333,
+    "exp_px": 7496
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.017708333333333326,
+    "exp_over_tri": 1.2229166666666667,
+    "added_over_tri": 0.240625,
+    "exp_px": 4696
+   },
+   "live_B": {
+    "tri_outside_mask": 0.022656250000000044,
+    "exp_over_tri": 1.1630208333333334,
+    "added_over_tri": 0.18567708333333333,
+    "exp_px": 4466
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590421-184A4892~0",
+   "tri_px_1280": 3110,
+   "base_px_1280": 136.0569280203327,
+   "h_px_1280": 43.55529331235819,
+   "base_over_h": 3.1237748083705017,
+   "s6h": {
+    "tri_outside_mask": 0.030225080385852143,
+    "exp_over_tri": 1.8781350482315113,
+    "added_over_tri": 0.9083601286173634,
+    "exp_px": 5841
+   },
+   "live": {
+    "tri_outside_mask": 0.04051446945337622,
+    "exp_over_tri": 1.797749196141479,
+    "added_over_tri": 0.8382636655948553,
+    "exp_px": 5591
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.030225080385852143,
+    "exp_over_tri": 1.2221864951768489,
+    "added_over_tri": 0.25241157556270094,
+    "exp_px": 3801
+   },
+   "live_B": {
+    "tri_outside_mask": 0.04051446945337622,
+    "exp_over_tri": 1.1485530546623794,
+    "added_over_tri": 0.18906752411575561,
+    "exp_px": 3572
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590935-184A5411~0",
+   "tri_px_1280": 1801,
+   "base_px_1280": 77.08706362108758,
+   "h_px_1280": 44.5100081945966,
+   "base_over_h": 1.731904053669569,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.2820655191560246,
+    "added_over_tri": 1.2820655191560244,
+    "exp_px": 4110
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.1821210438645195,
+    "added_over_tri": 1.1821210438645198,
+    "exp_px": 3930
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.5957801221543586,
+    "added_over_tri": 0.5957801221543587,
+    "exp_px": 2874
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.5341476957245974,
+    "added_over_tri": 0.5341476957245974,
+    "exp_px": 2763
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590936-184A5412~0",
+   "tri_px_1280": 2786,
+   "base_px_1280": 126.2031993733027,
+   "h_px_1280": 41.58232374110589,
+   "base_over_h": 3.035020364880318,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.0423546302943287,
+    "added_over_tri": 1.0423546302943287,
+    "exp_px": 5690
+   },
+   "live": {
+    "tri_outside_mask": 0.001076812634601576,
+    "exp_over_tri": 1.9741564967695622,
+    "added_over_tri": 0.9752333094041636,
+    "exp_px": 5500
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.4002153625269202,
+    "added_over_tri": 0.4002153625269203,
+    "exp_px": 3901
+   },
+   "live_B": {
+    "tri_outside_mask": 0.001076812634601576,
+    "exp_over_tri": 1.3399138549892318,
+    "added_over_tri": 0.34099066762383345,
+    "exp_px": 3733
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591008-184A5484~0",
+   "tri_px_1280": 936,
+   "base_px_1280": 100.55928282605227,
+   "h_px_1280": 16.540148639813975,
+   "base_over_h": 6.079708533210814,
+   "s6h": {
+    "tri_outside_mask": 1.0,
+    "exp_over_tri": 0.0,
+    "added_over_tri": 0.0,
+    "exp_px": 0
+   },
+   "live": {
+    "tri_outside_mask": 1.0,
+    "exp_over_tri": 0.0,
+    "added_over_tri": 0.0,
+    "exp_px": 0
+   },
+   "s6h_B": {
+    "tri_outside_mask": 1.0,
+    "exp_over_tri": 0.0,
+    "added_over_tri": 0.0,
+    "exp_px": 0
+   },
+   "live_B": {
+    "tri_outside_mask": 1.0,
+    "exp_over_tri": 0.0,
+    "added_over_tri": 0.0,
+    "exp_px": 0
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591009-184A5485~0",
+   "tri_px_1280": 3515,
+   "base_px_1280": 155.12411429642398,
+   "h_px_1280": 43.38728509546222,
+   "base_over_h": 3.5753358145160385,
+   "s6h": {
+    "tri_outside_mask": 0.03470839260312941,
+    "exp_over_tri": 2.1007112375533428,
+    "added_over_tri": 1.1354196301564723,
+    "exp_px": 7384
+   },
+   "live": {
+    "tri_outside_mask": 0.052062588904694174,
+    "exp_over_tri": 2.121479374110953,
+    "added_over_tri": 1.1735419630156472,
+    "exp_px": 7457
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.03470839260312941,
+    "exp_over_tri": 1.3083926031294453,
+    "added_over_tri": 0.3431009957325747,
+    "exp_px": 4599
+   },
+   "live_B": {
+    "tri_outside_mask": 0.052062588904694174,
+    "exp_over_tri": 1.3294452347083927,
+    "added_over_tri": 0.38150782361308677,
+    "exp_px": 4673
+   }
+  },
+  {
+   "day": "2025-01-02",
+   "key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591119-184A5600~0",
+   "tri_px_1280": 811,
+   "base_px_1280": 55.35834388160115,
+   "h_px_1280": 27.652075603019743,
+   "base_over_h": 2.0019598049831653,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9235511713933415,
+    "added_over_tri": 0.9235511713933415,
+    "exp_px": 1560
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.7940813810110974,
+    "added_over_tri": 0.7940813810110974,
+    "exp_px": 1455
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.2799013563501849,
+    "added_over_tri": 0.279901356350185,
+    "exp_px": 1038
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.1602959309494452,
+    "added_over_tri": 0.16029593094944514,
+    "exp_px": 941
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0042-184A4101~0",
+   "tri_px_1280": 3516,
+   "base_px_1280": 111.19977817979495,
+   "h_px_1280": 60.2923384113208,
+   "base_over_h": 1.8443434291962295,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.96160409556314,
+    "added_over_tri": 0.96160409556314,
+    "exp_px": 6897
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9027303754266212,
+    "added_over_tri": 0.9027303754266212,
+    "exp_px": 6690
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3100113765642776,
+    "added_over_tri": 0.3100113765642776,
+    "exp_px": 4606
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.257679180887372,
+    "added_over_tri": 0.257679180887372,
+    "exp_px": 4422
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0044-184A4103~0",
+   "tri_px_1280": 1365,
+   "base_px_1280": 45.85922254596125,
+   "h_px_1280": 56.08336033901014,
+   "base_over_h": 0.8176974822612895,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.0175824175824175,
+    "added_over_tri": 1.0175824175824175,
+    "exp_px": 2754
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.898168498168498,
+    "added_over_tri": 0.8981684981684982,
+    "exp_px": 2591
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3516483516483517,
+    "added_over_tri": 0.3516483516483517,
+    "exp_px": 1845
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.2688644688644688,
+    "added_over_tri": 0.26886446886446885,
+    "exp_px": 1732
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0060-184A4119~0",
+   "tri_px_1280": 784,
+   "base_px_1280": 45.07068538318907,
+   "h_px_1280": 32.082048116076145,
+   "base_over_h": 1.4048568601393123,
+   "s6h": {
+    "tri_outside_mask": 0.010204081632653073,
+    "exp_over_tri": 1.7040816326530612,
+    "added_over_tri": 0.7142857142857143,
+    "exp_px": 1336
+   },
+   "live": {
+    "tri_outside_mask": 0.056122448979591844,
+    "exp_over_tri": 1.600765306122449,
+    "added_over_tri": 0.6568877551020408,
+    "exp_px": 1255
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.010204081632653073,
+    "exp_over_tri": 1.1020408163265305,
+    "added_over_tri": 0.11224489795918367,
+    "exp_px": 864
+   },
+   "live_B": {
+    "tri_outside_mask": 0.056122448979591844,
+    "exp_over_tri": 1.0114795918367347,
+    "added_over_tri": 0.06760204081632654,
+    "exp_px": 793
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0072-184A4131~0",
+   "tri_px_1280": 1592,
+   "base_px_1280": 81.50042379808579,
+   "h_px_1280": 37.121699436255625,
+   "base_over_h": 2.195492798976946,
+   "s6h": {
+    "tri_outside_mask": 0.006909547738693456,
+    "exp_over_tri": 1.8907035175879396,
+    "added_over_tri": 0.8976130653266332,
+    "exp_px": 3010
+   },
+   "live": {
+    "tri_outside_mask": 0.025125628140703515,
+    "exp_over_tri": 1.7726130653266332,
+    "added_over_tri": 0.7977386934673367,
+    "exp_px": 2822
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.006909547738693456,
+    "exp_over_tri": 1.2462311557788945,
+    "added_over_tri": 0.25314070351758794,
+    "exp_px": 1984
+   },
+   "live_B": {
+    "tri_outside_mask": 0.025125628140703515,
+    "exp_over_tri": 1.1369346733668342,
+    "added_over_tri": 0.1620603015075377,
+    "exp_px": 1810
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0074-184A4133~0",
+   "tri_px_1280": 1671,
+   "base_px_1280": 81.54240685193437,
+   "h_px_1280": 39.51210000610338,
+   "base_over_h": 2.063732548746805,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.8713345302214244,
+    "added_over_tri": 0.8713345302214243,
+    "exp_px": 3127
+   },
+   "live": {
+    "tri_outside_mask": 0.004787552363853975,
+    "exp_over_tri": 1.770197486535009,
+    "added_over_tri": 0.7749850388988629,
+    "exp_px": 2958
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.232196289646918,
+    "added_over_tri": 0.23219628964691802,
+    "exp_px": 2059
+   },
+   "live_B": {
+    "tri_outside_mask": 0.004787552363853975,
+    "exp_over_tri": 1.1394374625972472,
+    "added_over_tri": 0.14422501496110113,
+    "exp_px": 1904
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0080-184A4139~0",
+   "tri_px_1280": 1226,
+   "base_px_1280": 78.14894904037794,
+   "h_px_1280": 28.848484961955844,
+   "base_over_h": 2.708944651458732,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9404567699836868,
+    "added_over_tri": 0.9404567699836868,
+    "exp_px": 2379
+   },
+   "live": {
+    "tri_outside_mask": 0.006525285481239762,
+    "exp_over_tri": 1.8262642740619903,
+    "added_over_tri": 0.83278955954323,
+    "exp_px": 2239
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.2879282218597063,
+    "added_over_tri": 0.28792822185970635,
+    "exp_px": 1579
+   },
+   "live_B": {
+    "tri_outside_mask": 0.006525285481239762,
+    "exp_over_tri": 1.1916802610114192,
+    "added_over_tri": 0.19820554649265906,
+    "exp_px": 1461
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0084-184A4143~0",
+   "tri_px_1280": 1089,
+   "base_px_1280": 75.88104964554977,
+   "h_px_1280": 26.529455176850632,
+   "base_over_h": 2.8602566143824504,
+   "s6h": {
+    "tri_outside_mask": 0.03397612488521584,
+    "exp_over_tri": 1.8255280073461893,
+    "added_over_tri": 0.859504132231405,
+    "exp_px": 1988
+   },
+   "live": {
+    "tri_outside_mask": 0.06152433425160697,
+    "exp_over_tri": 1.657483930211203,
+    "added_over_tri": 0.71900826446281,
+    "exp_px": 1805
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.03397612488521584,
+    "exp_over_tri": 1.26078971533517,
+    "added_over_tri": 0.29476584022038566,
+    "exp_px": 1373
+   },
+   "live_B": {
+    "tri_outside_mask": 0.06152433425160697,
+    "exp_over_tri": 1.1046831955922864,
+    "added_over_tri": 0.16620752984389348,
+    "exp_px": 1203
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0085-184A4144~0",
+   "tri_px_1280": 123,
+   "base_px_1280": 16.37285376327552,
+   "h_px_1280": 12.351144541801958,
+   "base_over_h": 1.325614294923215,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.073170731707317,
+    "added_over_tri": 1.0731707317073171,
+    "exp_px": 255
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.8699186991869918,
+    "added_over_tri": 0.8699186991869918,
+    "exp_px": 230
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.4715447154471544,
+    "added_over_tri": 0.4715447154471545,
+    "exp_px": 181
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.2926829268292683,
+    "added_over_tri": 0.2926829268292683,
+    "exp_px": 159
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0087-184A4146~0",
+   "tri_px_1280": 232,
+   "base_px_1280": 23.389612216717108,
+   "h_px_1280": 17.2096908189142,
+   "base_over_h": 1.3590954342428339,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.0689655172413794,
+    "added_over_tri": 1.0689655172413792,
+    "exp_px": 480
+   },
+   "live": {
+    "tri_outside_mask": 0.008620689655172376,
+    "exp_over_tri": 1.7974137931034482,
+    "added_over_tri": 0.8060344827586207,
+    "exp_px": 417
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.4482758620689655,
+    "added_over_tri": 0.4482758620689655,
+    "exp_px": 336
+   },
+   "live_B": {
+    "tri_outside_mask": 0.008620689655172376,
+    "exp_over_tri": 1.206896551724138,
+    "added_over_tri": 0.21551724137931033,
+    "exp_px": 280
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0088-184A4147~0",
+   "tri_px_1280": 867,
+   "base_px_1280": 46.313769717111064,
+   "h_px_1280": 34.39847941005334,
+   "base_over_h": 1.3463900297748437,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.050749711649366,
+    "added_over_tri": 1.0507497116493656,
+    "exp_px": 1778
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.8708189158016149,
+    "added_over_tri": 0.8708189158016147,
+    "exp_px": 1622
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.4083044982698962,
+    "added_over_tri": 0.4083044982698962,
+    "exp_px": 1221
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.2560553633217992,
+    "added_over_tri": 0.2560553633217993,
+    "exp_px": 1089
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0090-184A4149~0",
+   "tri_px_1280": 1876,
+   "base_px_1280": 102.11122397848533,
+   "h_px_1280": 34.98032636553831,
+   "base_over_h": 2.919104382030083,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.884861407249467,
+    "added_over_tri": 0.8848614072494669,
+    "exp_px": 3536
+   },
+   "live": {
+    "tri_outside_mask": 0.011727078891258014,
+    "exp_over_tri": 1.7665245202558635,
+    "added_over_tri": 0.7782515991471215,
+    "exp_px": 3314
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.2510660980810235,
+    "added_over_tri": 0.2510660980810235,
+    "exp_px": 2347
+   },
+   "live_B": {
+    "tri_outside_mask": 0.011727078891258014,
+    "exp_over_tri": 1.1433901918976546,
+    "added_over_tri": 0.15511727078891258,
+    "exp_px": 2145
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0092-184A4151~0",
+   "tri_px_1280": 2069,
+   "base_px_1280": 111.5854586531848,
+   "h_px_1280": 34.287412264956494,
+   "base_over_h": 3.2544147044666567,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.025132914451426,
+    "added_over_tri": 1.0251329144514258,
+    "exp_px": 4190
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.8975350410826486,
+    "added_over_tri": 0.8975350410826486,
+    "exp_px": 3926
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3431609473175448,
+    "added_over_tri": 0.3431609473175447,
+    "exp_px": 2779
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.2667955534074433,
+    "added_over_tri": 0.2667955534074432,
+    "exp_px": 2621
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0093-184A4152~0",
+   "tri_px_1280": 3354,
+   "base_px_1280": 154.61467688274485,
+   "h_px_1280": 41.1531783013421,
+   "base_over_h": 3.7570531187308682,
+   "s6h": {
+    "tri_outside_mask": 0.007453786523553996,
+    "exp_over_tri": 1.817829457364341,
+    "added_over_tri": 0.8252832438878951,
+    "exp_px": 6097
+   },
+   "live": {
+    "tri_outside_mask": 0.038163387000596294,
+    "exp_over_tri": 1.51103160405486,
+    "added_over_tri": 0.5491949910554562,
+    "exp_px": 5068
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.007453786523553996,
+    "exp_over_tri": 1.1720333929636255,
+    "added_over_tri": 0.1794871794871795,
+    "exp_px": 3931
+   },
+   "live_B": {
+    "tri_outside_mask": 0.038163387000596294,
+    "exp_over_tri": 1.0948121645796065,
+    "added_over_tri": 0.13297555158020274,
+    "exp_px": 3672
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0095-184A4154~0",
+   "tri_px_1280": 3139,
+   "base_px_1280": 161.68788398252246,
+   "h_px_1280": 36.982961206359676,
+   "base_over_h": 4.371956130833522,
+   "s6h": {
+    "tri_outside_mask": 0.002867155144950617,
+    "exp_over_tri": 2.2194966549856643,
+    "added_over_tri": 1.222363810130615,
+    "exp_px": 6967
+   },
+   "live": {
+    "tri_outside_mask": 0.00796431984708501,
+    "exp_over_tri": 2.1293405543166615,
+    "added_over_tri": 1.1373048741637464,
+    "exp_px": 6684
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.002867155144950617,
+    "exp_over_tri": 1.3102899012424338,
+    "added_over_tri": 0.3131570563873845,
+    "exp_px": 4113
+   },
+   "live_B": {
+    "tri_outside_mask": 0.00796431984708501,
+    "exp_over_tri": 1.229690984389933,
+    "added_over_tri": 0.23765530423701817,
+    "exp_px": 3860
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0097-184A4156~0",
+   "tri_px_1280": 3300,
+   "base_px_1280": 160.33059129963314,
+   "h_px_1280": 39.09075222686056,
+   "base_over_h": 4.1014967010398085,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.232121212121212,
+    "added_over_tri": 1.2321212121212122,
+    "exp_px": 7366
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.1512121212121214,
+    "added_over_tri": 1.1512121212121211,
+    "exp_px": 7099
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3409090909090908,
+    "added_over_tri": 0.3409090909090909,
+    "exp_px": 4425
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.2724242424242425,
+    "added_over_tri": 0.2724242424242424,
+    "exp_px": 4199
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0099-184A4158~0",
+   "tri_px_1280": 2908,
+   "base_px_1280": 129.24824188037672,
+   "h_px_1280": 42.78114529624019,
+   "base_over_h": 3.0211496439702765,
+   "s6h": {
+    "tri_outside_mask": 0.017881705639614887,
+    "exp_over_tri": 1.718707015130674,
+    "added_over_tri": 0.7365887207702888,
+    "exp_px": 4998
+   },
+   "live": {
+    "tri_outside_mask": 0.042297111416781275,
+    "exp_over_tri": 1.6485557083906466,
+    "added_over_tri": 0.6908528198074277,
+    "exp_px": 4794
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.017881705639614887,
+    "exp_over_tri": 1.1011004126547455,
+    "added_over_tri": 0.11898211829436038,
+    "exp_px": 3202
+   },
+   "live_B": {
+    "tri_outside_mask": 0.042297111416781275,
+    "exp_over_tri": 1.0371389270976616,
+    "added_over_tri": 0.07943603851444292,
+    "exp_px": 3016
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0100-184A4159~0",
+   "tri_px_1280": 5585,
+   "base_px_1280": 219.40516860083673,
+   "h_px_1280": 49.145635015231264,
+   "base_over_h": 4.464387702648231,
+   "s6h": {
+    "tri_outside_mask": 0.012175470008952582,
+    "exp_over_tri": 2.1967770814682184,
+    "added_over_tri": 1.208952551477171,
+    "exp_px": 12269
+   },
+   "live": {
+    "tri_outside_mask": 0.020232766338406427,
+    "exp_over_tri": 2.1102954341987465,
+    "added_over_tri": 1.130528200537153,
+    "exp_px": 11786
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.012175470008952582,
+    "exp_over_tri": 1.253715308863026,
+    "added_over_tri": 0.26589077887197854,
+    "exp_px": 7002
+   },
+   "live_B": {
+    "tri_outside_mask": 0.020232766338406427,
+    "exp_over_tri": 1.174395702775291,
+    "added_over_tri": 0.1946284691136974,
+    "exp_px": 6559
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0103-184A4162~0",
+   "tri_px_1280": 3669,
+   "base_px_1280": 157.72897415544688,
+   "h_px_1280": 43.50250033055866,
+   "base_over_h": 3.62574502515776,
+   "s6h": {
+    "tri_outside_mask": 0.004633415099482119,
+    "exp_over_tri": 1.9204142818206595,
+    "added_over_tri": 0.9250476969201418,
+    "exp_px": 7046
+   },
+   "live": {
+    "tri_outside_mask": 0.011719814663396,
+    "exp_over_tri": 1.8440992095938948,
+    "added_over_tri": 0.8558190242572908,
+    "exp_px": 6766
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.004633415099482119,
+    "exp_over_tri": 1.1787953120741346,
+    "added_over_tri": 0.1834287271736168,
+    "exp_px": 4325
+   },
+   "live_B": {
+    "tri_outside_mask": 0.011719814663396,
+    "exp_over_tri": 1.107931316434996,
+    "added_over_tri": 0.11965113109839193,
+    "exp_px": 4065
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0117-184A4176~0",
+   "tri_px_1280": 5072,
+   "base_px_1280": 236.43225607966448,
+   "h_px_1280": 40.88067045447161,
+   "base_over_h": 5.783473055878002,
+   "s6h": {
+    "tri_outside_mask": 0.017350157728706628,
+    "exp_over_tri": 2.349171924290221,
+    "added_over_tri": 1.3665220820189274,
+    "exp_px": 11915
+   },
+   "live": {
+    "tri_outside_mask": 0.034897476340693956,
+    "exp_over_tri": 2.285094637223975,
+    "added_over_tri": 1.3199921135646688,
+    "exp_px": 11590
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.017350157728706628,
+    "exp_over_tri": 1.1579258675078865,
+    "added_over_tri": 0.17527602523659305,
+    "exp_px": 5873
+   },
+   "live_B": {
+    "tri_outside_mask": 0.034897476340693956,
+    "exp_over_tri": 1.099960567823344,
+    "added_over_tri": 0.13485804416403785,
+    "exp_px": 5579
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0119-184A4178~0",
+   "tri_px_1280": 3376,
+   "base_px_1280": 177.83191515343816,
+   "h_px_1280": 36.389500980723646,
+   "base_over_h": 4.886901726067632,
+   "s6h": {
+    "tri_outside_mask": 0.04324644549763035,
+    "exp_over_tri": 2.0533175355450237,
+    "added_over_tri": 1.096563981042654,
+    "exp_px": 6932
+   },
+   "live": {
+    "tri_outside_mask": 0.06013033175355453,
+    "exp_over_tri": 2.0053317535545023,
+    "added_over_tri": 1.065462085308057,
+    "exp_px": 6770
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.04324644549763035,
+    "exp_over_tri": 1.052132701421801,
+    "added_over_tri": 0.09537914691943128,
+    "exp_px": 3552
+   },
+   "live_B": {
+    "tri_outside_mask": 0.06013033175355453,
+    "exp_over_tri": 1.0079976303317535,
+    "added_over_tri": 0.06812796208530805,
+    "exp_px": 3403
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0120-184A4179~0",
+   "tri_px_1280": 1710,
+   "base_px_1280": 95.06996525651842,
+   "h_px_1280": 33.47210780361376,
+   "base_over_h": 2.8402742311392277,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.8187134502923976,
+    "added_over_tri": 0.8187134502923976,
+    "exp_px": 3110
+   },
+   "live": {
+    "tri_outside_mask": 0.019298245614035037,
+    "exp_over_tri": 1.7169590643274855,
+    "added_over_tri": 0.7362573099415205,
+    "exp_px": 2936
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.1912280701754385,
+    "added_over_tri": 0.1912280701754386,
+    "exp_px": 2037
+   },
+   "live_B": {
+    "tri_outside_mask": 0.019298245614035037,
+    "exp_over_tri": 1.1017543859649124,
+    "added_over_tri": 0.12105263157894737,
+    "exp_px": 1884
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0122-184A4181~0",
+   "tri_px_1280": 1248,
+   "base_px_1280": 74.86029436036164,
+   "h_px_1280": 30.834492649046094,
+   "base_over_h": 2.4278101544400648,
+   "s6h": {
+    "tri_outside_mask": 0.019230769230769273,
+    "exp_over_tri": 1.7684294871794872,
+    "added_over_tri": 0.7876602564102564,
+    "exp_px": 2207
+   },
+   "live": {
+    "tri_outside_mask": 0.05208333333333337,
+    "exp_over_tri": 1.6602564102564104,
+    "added_over_tri": 0.7123397435897436,
+    "exp_px": 2072
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.019230769230769273,
+    "exp_over_tri": 1.1586538461538463,
+    "added_over_tri": 0.1778846153846154,
+    "exp_px": 1446
+   },
+   "live_B": {
+    "tri_outside_mask": 0.05208333333333337,
+    "exp_over_tri": 1.0576923076923077,
+    "added_over_tri": 0.10977564102564102,
+    "exp_px": 1320
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0131-184A4190~0",
+   "tri_px_1280": 1098,
+   "base_px_1280": 80.91294152824754,
+   "h_px_1280": 24.978977974918983,
+   "base_over_h": 3.239241477753454,
+   "s6h": {
+    "tri_outside_mask": 0.002732240437158473,
+    "exp_over_tri": 1.7914389799635702,
+    "added_over_tri": 0.7941712204007286,
+    "exp_px": 1967
+   },
+   "live": {
+    "tri_outside_mask": 0.03551912568306015,
+    "exp_over_tri": 1.6903460837887068,
+    "added_over_tri": 0.7258652094717668,
+    "exp_px": 1856
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.002732240437158473,
+    "exp_over_tri": 1.1256830601092895,
+    "added_over_tri": 0.1284153005464481,
+    "exp_px": 1236
+   },
+   "live_B": {
+    "tri_outside_mask": 0.03551912568306015,
+    "exp_over_tri": 1.0318761384335156,
+    "added_over_tri": 0.06739526411657559,
+    "exp_px": 1133
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0134-184A4193~0",
+   "tri_px_1280": 790,
+   "base_px_1280": 70.83521576165352,
+   "h_px_1280": 20.49772380909467,
+   "base_over_h": 3.4557600844550613,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.178481012658228,
+    "added_over_tri": 1.178481012658228,
+    "exp_px": 1721
+   },
+   "live": {
+    "tri_outside_mask": 0.0075949367088608,
+    "exp_over_tri": 1.9645569620253165,
+    "added_over_tri": 0.9721518987341772,
+    "exp_px": 1552
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.4936708860759493,
+    "added_over_tri": 0.4936708860759494,
+    "exp_px": 1180
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0075949367088608,
+    "exp_over_tri": 1.3544303797468353,
+    "added_over_tri": 0.3620253164556962,
+    "exp_px": 1070
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0143-184A4202~0",
+   "tri_px_1280": 685,
+   "base_px_1280": 37.074206453306616,
+   "h_px_1280": 34.18442650914698,
+   "base_over_h": 1.08453498388766,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.1722627737226277,
+    "added_over_tri": 1.1722627737226277,
+    "exp_px": 1488
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9445255474452554,
+    "added_over_tri": 0.9445255474452555,
+    "exp_px": 1332
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.4583941605839417,
+    "added_over_tri": 0.4583941605839416,
+    "exp_px": 999
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.294890510948905,
+    "added_over_tri": 0.2948905109489051,
+    "exp_px": 887
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0147-184A4206~0",
+   "tri_px_1280": 483,
+   "base_px_1280": 22.528964776651488,
+   "h_px_1280": 37.91047398135022,
+   "base_over_h": 0.5942675575022999,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.153209109730849,
+    "added_over_tri": 1.1532091097308488,
+    "exp_px": 1040
+   },
+   "live": {
+    "tri_outside_mask": 0.026915113871635588,
+    "exp_over_tri": 1.7701863354037266,
+    "added_over_tri": 0.7971014492753623,
+    "exp_px": 855
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.5507246376811594,
+    "added_over_tri": 0.5507246376811594,
+    "exp_px": 749
+   },
+   "live_B": {
+    "tri_outside_mask": 0.026915113871635588,
+    "exp_over_tri": 1.1925465838509317,
+    "added_over_tri": 0.2194616977225673,
+    "exp_px": 576
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0148-184A4207~0",
+   "tri_px_1280": 3350,
+   "base_px_1280": 137.8573432601454,
+   "h_px_1280": 45.74250932595071,
+   "base_over_h": 3.0137687086164284,
+   "s6h": {
+    "tri_outside_mask": 0.0005970149253731183,
+    "exp_over_tri": 1.815820895522388,
+    "added_over_tri": 0.8164179104477612,
+    "exp_px": 6083
+   },
+   "live": {
+    "tri_outside_mask": 0.025373134328358193,
+    "exp_over_tri": 1.7059701492537314,
+    "added_over_tri": 0.7313432835820896,
+    "exp_px": 5715
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0005970149253731183,
+    "exp_over_tri": 1.1677611940298507,
+    "added_over_tri": 0.16835820895522388,
+    "exp_px": 3912
+   },
+   "live_B": {
+    "tri_outside_mask": 0.025373134328358193,
+    "exp_over_tri": 1.068955223880597,
+    "added_over_tri": 0.09432835820895523,
+    "exp_px": 3581
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0153-184A4212~0",
+   "tri_px_1280": 4168,
+   "base_px_1280": 132.49130531767884,
+   "h_px_1280": 60.201508665245996,
+   "base_over_h": 2.2007970938802295,
+   "s6h": {
+    "tri_outside_mask": 0.005998080614203483,
+    "exp_over_tri": 1.7787907869481765,
+    "added_over_tri": 0.7847888675623801,
+    "exp_px": 7414
+   },
+   "live": {
+    "tri_outside_mask": 0.034069097888675626,
+    "exp_over_tri": 1.6825815738963532,
+    "added_over_tri": 0.7166506717850288,
+    "exp_px": 7013
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.005998080614203483,
+    "exp_over_tri": 1.1403550863723608,
+    "added_over_tri": 0.1463531669865643,
+    "exp_px": 4753
+   },
+   "live_B": {
+    "tri_outside_mask": 0.034069097888675626,
+    "exp_over_tri": 1.0499040307101728,
+    "added_over_tri": 0.08397312859884837,
+    "exp_px": 4376
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0166-184A4231~0",
+   "tri_px_1280": 8288,
+   "base_px_1280": 202.40905243531083,
+   "h_px_1280": 79.39829744419269,
+   "base_over_h": 2.54928706220155,
+   "s6h": {
+    "tri_outside_mask": 0.031732625482625454,
+    "exp_over_tri": 1.710907335907336,
+    "added_over_tri": 0.7426399613899614,
+    "exp_px": 14180
+   },
+   "live": {
+    "tri_outside_mask": 0.05875965250965254,
+    "exp_over_tri": 1.6446669884169884,
+    "added_over_tri": 0.703426640926641,
+    "exp_px": 13631
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.031732625482625454,
+    "exp_over_tri": 1.055984555984556,
+    "added_over_tri": 0.08771718146718147,
+    "exp_px": 8752
+   },
+   "live_B": {
+    "tri_outside_mask": 0.05875965250965254,
+    "exp_over_tri": 0.9985521235521235,
+    "added_over_tri": 0.057311776061776065,
+    "exp_px": 8276
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0167-184A4232~0",
+   "tri_px_1280": 8355,
+   "base_px_1280": 220.73465401402117,
+   "h_px_1280": 73.90928319988987,
+   "base_over_h": 2.986561964307483,
+   "s6h": {
+    "tri_outside_mask": 0.022022740873728353,
+    "exp_over_tri": 1.720526630760024,
+    "added_over_tri": 0.7425493716337522,
+    "exp_px": 14375
+   },
+   "live": {
+    "tri_outside_mask": 0.04679832435667264,
+    "exp_over_tri": 1.6622381807301017,
+    "added_over_tri": 0.7090365050867744,
+    "exp_px": 13888
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.022022740873728353,
+    "exp_over_tri": 1.069539198084979,
+    "added_over_tri": 0.09156193895870736,
+    "exp_px": 8936
+   },
+   "live_B": {
+    "tri_outside_mask": 0.04679832435667264,
+    "exp_over_tri": 1.0153201675643326,
+    "added_over_tri": 0.06211849192100539,
+    "exp_px": 8483
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0170-184A4235~0",
+   "tri_px_1280": 2788,
+   "base_px_1280": 109.91226392343312,
+   "h_px_1280": 47.94724973343448,
+   "base_over_h": 2.292358050451209,
+   "s6h": {
+    "tri_outside_mask": 0.04913916786226691,
+    "exp_over_tri": 1.6997847919655666,
+    "added_over_tri": 0.7489239598278336,
+    "exp_px": 4739
+   },
+   "live": {
+    "tri_outside_mask": 0.0911047345767575,
+    "exp_over_tri": 1.5728120516499282,
+    "added_over_tri": 0.6639167862266858,
+    "exp_px": 4385
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.04913916786226691,
+    "exp_over_tri": 1.0631276901004305,
+    "added_over_tri": 0.11226685796269728,
+    "exp_px": 2964
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0911047345767575,
+    "exp_over_tri": 0.9461979913916786,
+    "added_over_tri": 0.03730272596843615,
+    "exp_px": 2638
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0173-184A4239~0",
+   "tri_px_1280": 1225,
+   "base_px_1280": 67.55107072004408,
+   "h_px_1280": 34.202410765495706,
+   "base_over_h": 1.9750382855524145,
+   "s6h": {
+    "tri_outside_mask": 0.004897959183673417,
+    "exp_over_tri": 2.0473469387755103,
+    "added_over_tri": 1.0522448979591836,
+    "exp_px": 2508
+   },
+   "live": {
+    "tri_outside_mask": 0.052244897959183634,
+    "exp_over_tri": 1.8506122448979592,
+    "added_over_tri": 0.9028571428571428,
+    "exp_px": 2267
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.004897959183673417,
+    "exp_over_tri": 1.4,
+    "added_over_tri": 0.4048979591836735,
+    "exp_px": 1715
+   },
+   "live_B": {
+    "tri_outside_mask": 0.052244897959183634,
+    "exp_over_tri": 1.2220408163265306,
+    "added_over_tri": 0.2742857142857143,
+    "exp_px": 1497
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0174-184A4240~0",
+   "tri_px_1280": 861,
+   "base_px_1280": 45.66882072297902,
+   "h_px_1280": 35.18357288257082,
+   "base_over_h": 1.2980154367893195,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.24274099883856,
+    "added_over_tri": 1.2427409988385598,
+    "exp_px": 1931
+   },
+   "live": {
+    "tri_outside_mask": 0.0023228803716608404,
+    "exp_over_tri": 2.078977932636469,
+    "added_over_tri": 1.08130081300813,
+    "exp_px": 1790
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.545876887340302,
+    "added_over_tri": 0.5458768873403019,
+    "exp_px": 1331
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0023228803716608404,
+    "exp_over_tri": 1.386759581881533,
+    "added_over_tri": 0.389082462253194,
+    "exp_px": 1194
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0178-184A4244~0",
+   "tri_px_1280": 5166,
+   "base_px_1280": 172.32848097413964,
+   "h_px_1280": 57.38226487520612,
+   "base_over_h": 3.0031662456843837,
+   "s6h": {
+    "tri_outside_mask": 0.0009678668215253872,
+    "exp_over_tri": 1.9423151374370886,
+    "added_over_tri": 0.943283004258614,
+    "exp_px": 10034
+   },
+   "live": {
+    "tri_outside_mask": 0.005807200929152101,
+    "exp_over_tri": 1.8670150987224159,
+    "added_over_tri": 0.872822299651568,
+    "exp_px": 9645
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0009678668215253872,
+    "exp_over_tri": 1.3012001548586913,
+    "added_over_tri": 0.3021680216802168,
+    "exp_px": 6722
+   },
+   "live_B": {
+    "tri_outside_mask": 0.005807200929152101,
+    "exp_over_tri": 1.2334494773519165,
+    "added_over_tri": 0.23925667828106853,
+    "exp_px": 6372
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0180-184A4246~0",
+   "tri_px_1280": 2136,
+   "base_px_1280": 119.65065332501287,
+   "h_px_1280": 33.11981300243837,
+   "base_over_h": 3.6126608962497424,
+   "s6h": {
+    "tri_outside_mask": 0.017790262172284632,
+    "exp_over_tri": 1.9541198501872659,
+    "added_over_tri": 0.9719101123595506,
+    "exp_px": 4174
+   },
+   "live": {
+    "tri_outside_mask": 0.04588014981273403,
+    "exp_over_tri": 1.7982209737827715,
+    "added_over_tri": 0.8441011235955056,
+    "exp_px": 3841
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.017790262172284632,
+    "exp_over_tri": 1.2176966292134832,
+    "added_over_tri": 0.23548689138576778,
+    "exp_px": 2601
+   },
+   "live_B": {
+    "tri_outside_mask": 0.04588014981273403,
+    "exp_over_tri": 1.0739700374531835,
+    "added_over_tri": 0.1198501872659176,
+    "exp_px": 2294
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0182-184A4248~0",
+   "tri_px_1280": 4124,
+   "base_px_1280": 125.56372510696069,
+   "h_px_1280": 63.617566878869006,
+   "base_over_h": 1.973727246533025,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.216779825412221,
+    "added_over_tri": 1.216779825412221,
+    "exp_px": 9142
+   },
+   "live": {
+    "tri_outside_mask": 0.0009699321047527132,
+    "exp_over_tri": 2.1180892337536372,
+    "added_over_tri": 1.11905916585839,
+    "exp_px": 8735
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.5067895247332688,
+    "added_over_tri": 0.5067895247332687,
+    "exp_px": 6214
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0009699321047527132,
+    "exp_over_tri": 1.4255577109602329,
+    "added_over_tri": 0.4265276430649855,
+    "exp_px": 5879
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0184-184A4250~0",
+   "tri_px_1280": 2303,
+   "base_px_1280": 76.10454289525947,
+   "h_px_1280": 58.4050349470119,
+   "base_over_h": 1.3030476390315577,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9791576204950065,
+    "added_over_tri": 0.9791576204950065,
+    "exp_px": 4558
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.872340425531915,
+    "added_over_tri": 0.8723404255319149,
+    "exp_px": 4312
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3230568823273992,
+    "added_over_tri": 0.32305688232739904,
+    "exp_px": 3047
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.2327399044724272,
+    "added_over_tri": 0.23273990447242726,
+    "exp_px": 2839
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0186-184A4252~0",
+   "tri_px_1280": 2762,
+   "base_px_1280": 123.1963370105069,
+   "h_px_1280": 42.558196164556676,
+   "base_over_h": 2.8947734658243642,
+   "s6h": {
+    "tri_outside_mask": 0.012309920347574277,
+    "exp_over_tri": 1.7711803041274439,
+    "added_over_tri": 0.7834902244750181,
+    "exp_px": 4892
+   },
+   "live": {
+    "tri_outside_mask": 0.04742939898624188,
+    "exp_over_tri": 1.668356263577118,
+    "added_over_tri": 0.7157856625633598,
+    "exp_px": 4608
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.012309920347574277,
+    "exp_over_tri": 1.1339608979000724,
+    "added_over_tri": 0.14627081824764662,
+    "exp_px": 3132
+   },
+   "live_B": {
+    "tri_outside_mask": 0.04742939898624188,
+    "exp_over_tri": 1.0427226647356989,
+    "added_over_tri": 0.09015206372194062,
+    "exp_px": 2880
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0188-184A4254~0",
+   "tri_px_1280": 2146,
+   "base_px_1280": 90.88493115002281,
+   "h_px_1280": 44.9242218702717,
+   "base_over_h": 2.0230719056742372,
+   "s6h": {
+    "tri_outside_mask": 0.005125815470643058,
+    "exp_over_tri": 1.7730661696178938,
+    "added_over_tri": 0.7781919850885368,
+    "exp_px": 3805
+   },
+   "live": {
+    "tri_outside_mask": 0.04939422180801489,
+    "exp_over_tri": 1.6425908667287978,
+    "added_over_tri": 0.6919850885368126,
+    "exp_px": 3525
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.005125815470643058,
+    "exp_over_tri": 1.1332712022367195,
+    "added_over_tri": 0.13839701770736254,
+    "exp_px": 2432
+   },
+   "live_B": {
+    "tri_outside_mask": 0.04939422180801489,
+    "exp_over_tri": 1.011183597390494,
+    "added_over_tri": 0.06057781919850885,
+    "exp_px": 2170
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0198-184A4264~0",
+   "tri_px_1280": 1887,
+   "base_px_1280": 85.87864370502362,
+   "h_px_1280": 41.64283113063184,
+   "base_over_h": 2.0622671747659487,
+   "s6h": {
+    "tri_outside_mask": 0.0031796502384737746,
+    "exp_over_tri": 2.124006359300477,
+    "added_over_tri": 1.1271860095389508,
+    "exp_px": 4008
+   },
+   "live": {
+    "tri_outside_mask": 0.019607843137254943,
+    "exp_over_tri": 1.9337572866984631,
+    "added_over_tri": 0.9533651298357181,
+    "exp_px": 3649
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0031796502384737746,
+    "exp_over_tri": 1.4753577106518283,
+    "added_over_tri": 0.4785373608903021,
+    "exp_px": 2784
+   },
+   "live_B": {
+    "tri_outside_mask": 0.019607843137254943,
+    "exp_over_tri": 1.3078961314255433,
+    "added_over_tri": 0.3275039745627981,
+    "exp_px": 2468
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0200-184A4266~0",
+   "tri_px_1280": 1147,
+   "base_px_1280": 55.92092215096605,
+   "h_px_1280": 39.05746009308738,
+   "base_over_h": 1.4317603350982688,
+   "s6h": {
+    "tri_outside_mask": 0.04184829991281602,
+    "exp_over_tri": 2.088055797733217,
+    "added_over_tri": 1.129904097646033,
+    "exp_px": 2395
+   },
+   "live": {
+    "tri_outside_mask": 0.13862249346120314,
+    "exp_over_tri": 1.7515257192676548,
+    "added_over_tri": 0.8901482127288579,
+    "exp_px": 2009
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.04184829991281602,
+    "exp_over_tri": 1.3975588491717523,
+    "added_over_tri": 0.43940714908456846,
+    "exp_px": 1603
+   },
+   "live_B": {
+    "tri_outside_mask": 0.13862249346120314,
+    "exp_over_tri": 1.1665213600697473,
+    "added_over_tri": 0.3051438535309503,
+    "exp_px": 1338
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0214-184A4280~0",
+   "tri_px_1280": 1983,
+   "base_px_1280": 83.71599280349965,
+   "h_px_1280": 44.46728217049084,
+   "base_over_h": 1.8826424444499745,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.2309631870902673,
+    "added_over_tri": 1.2309631870902673,
+    "exp_px": 4424
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.1543116490166416,
+    "added_over_tri": 1.1543116490166414,
+    "exp_px": 4272
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.524457892082703,
+    "added_over_tri": 0.524457892082703,
+    "exp_px": 3023
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.469490670700958,
+    "added_over_tri": 0.4694906707009581,
+    "exp_px": 2914
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0237-184A4303~0",
+   "tri_px_1280": 1057,
+   "base_px_1280": 55.64352729958442,
+   "h_px_1280": 35.86758078406192,
+   "base_over_h": 1.5513599212219553,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.901608325449385,
+    "added_over_tri": 0.9016083254493851,
+    "exp_px": 2010
+   },
+   "live": {
+    "tri_outside_mask": 0.030274361400189242,
+    "exp_over_tri": 1.7634815515610218,
+    "added_over_tri": 0.793755912961211,
+    "exp_px": 1864
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.262062440870388,
+    "added_over_tri": 0.2620624408703879,
+    "exp_px": 1334
+   },
+   "live_B": {
+    "tri_outside_mask": 0.030274361400189242,
+    "exp_over_tri": 1.1400189214758751,
+    "added_over_tri": 0.17029328287606432,
+    "exp_px": 1205
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0239-184A4305~0",
+   "tri_px_1280": 824,
+   "base_px_1280": 48.53491299607334,
+   "h_px_1280": 31.383433485978227,
+   "base_over_h": 1.5465138005934949,
+   "s6h": {
+    "tri_outside_mask": 0.015776699029126262,
+    "exp_over_tri": 1.837378640776699,
+    "added_over_tri": 0.8531553398058253,
+    "exp_px": 1514
+   },
+   "live": {
+    "tri_outside_mask": 0.095873786407767,
+    "exp_over_tri": 1.6177184466019416,
+    "added_over_tri": 0.7135922330097088,
+    "exp_px": 1333
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.015776699029126262,
+    "exp_over_tri": 1.1966019417475728,
+    "added_over_tri": 0.21237864077669902,
+    "exp_px": 986
+   },
+   "live_B": {
+    "tri_outside_mask": 0.095873786407767,
+    "exp_over_tri": 0.9987864077669902,
+    "added_over_tri": 0.09466019417475728,
+    "exp_px": 823
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0251-184A4317~0",
+   "tri_px_1280": 1101,
+   "base_px_1280": 42.945597606665075,
+   "h_px_1280": 48.066056205761896,
+   "base_over_h": 0.8934703821512403,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9037238873751134,
+    "added_over_tri": 0.9037238873751136,
+    "exp_px": 2096
+   },
+   "live": {
+    "tri_outside_mask": 0.04541326067211626,
+    "exp_over_tri": 1.67574931880109,
+    "added_over_tri": 0.7211625794732062,
+    "exp_px": 1845
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.2552225249772935,
+    "added_over_tri": 0.25522252497729336,
+    "exp_px": 1382
+   },
+   "live_B": {
+    "tri_outside_mask": 0.04541326067211626,
+    "exp_over_tri": 1.0508628519527703,
+    "added_over_tri": 0.09627611262488647,
+    "exp_px": 1157
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0269-184A4335~0",
+   "tri_px_1280": 927,
+   "base_px_1280": 57.71705248884417,
+   "h_px_1280": 30.679339346066765,
+   "base_over_h": 1.8813003708387797,
+   "s6h": {
+    "tri_outside_mask": 0.02049622437971954,
+    "exp_over_tri": 1.819848975188781,
+    "added_over_tri": 0.8403451995685005,
+    "exp_px": 1687
+   },
+   "live": {
+    "tri_outside_mask": 0.04207119741100329,
+    "exp_over_tri": 1.7044228694714132,
+    "added_over_tri": 0.7464940668824164,
+    "exp_px": 1580
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.02049622437971954,
+    "exp_over_tri": 1.1877022653721683,
+    "added_over_tri": 0.20819848975188782,
+    "exp_px": 1101
+   },
+   "live_B": {
+    "tri_outside_mask": 0.04207119741100329,
+    "exp_over_tri": 1.0765911542610571,
+    "added_over_tri": 0.1186623516720604,
+    "exp_px": 998
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0299-184A4365~0",
+   "tri_px_1280": 6664,
+   "base_px_1280": 201.696983481468,
+   "h_px_1280": 64.5794599352785,
+   "base_over_h": 3.1232373835830867,
+   "s6h": {
+    "tri_outside_mask": 0.006902761104441768,
+    "exp_over_tri": 1.7924669867947178,
+    "added_over_tri": 0.7993697478991597,
+    "exp_px": 11945
+   },
+   "live": {
+    "tri_outside_mask": 0.03286314525810319,
+    "exp_over_tri": 1.7024309723889557,
+    "added_over_tri": 0.7352941176470589,
+    "exp_px": 11345
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.006902761104441768,
+    "exp_over_tri": 1.1176470588235294,
+    "added_over_tri": 0.12454981992797119,
+    "exp_px": 7448
+   },
+   "live_B": {
+    "tri_outside_mask": 0.03286314525810319,
+    "exp_over_tri": 1.031512605042017,
+    "added_over_tri": 0.06437575030012005,
+    "exp_px": 6874
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0301-184A4367~0",
+   "tri_px_1280": 6835,
+   "base_px_1280": 189.96472737385326,
+   "h_px_1280": 69.28599767960716,
+   "base_over_h": 2.741747737433032,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.851938551572787,
+    "added_over_tri": 0.8519385515727871,
+    "exp_px": 12658
+   },
+   "live": {
+    "tri_outside_mask": 0.006730065837600607,
+    "exp_over_tri": 1.7799561082662765,
+    "added_over_tri": 0.7866861741038771,
+    "exp_px": 12166
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.1839063643013898,
+    "added_over_tri": 0.1839063643013899,
+    "exp_px": 8092
+   },
+   "live_B": {
+    "tri_outside_mask": 0.006730065837600607,
+    "exp_over_tri": 1.1205559619604974,
+    "added_over_tri": 0.12728602779809803,
+    "exp_px": 7659
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0322-184A4388~0",
+   "tri_px_1280": 7429,
+   "base_px_1280": 190.88778236868802,
+   "h_px_1280": 75.23296398604758,
+   "base_over_h": 2.537289138363462,
+   "s6h": {
+    "tri_outside_mask": 0.05545833894198415,
+    "exp_over_tri": 1.7228429129088707,
+    "added_over_tri": 0.7783012518508547,
+    "exp_px": 12799
+   },
+   "live": {
+    "tri_outside_mask": 0.07309193700363437,
+    "exp_over_tri": 1.6646924215910621,
+    "added_over_tri": 0.7377843585946965,
+    "exp_px": 12367
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.05545833894198415,
+    "exp_over_tri": 1.0877641674518779,
+    "added_over_tri": 0.1432225063938619,
+    "exp_px": 8081
+   },
+   "live_B": {
+    "tri_outside_mask": 0.07309193700363437,
+    "exp_over_tri": 1.0335172970790147,
+    "added_over_tri": 0.10660923408264908,
+    "exp_px": 7678
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0354-184A4420~0",
+   "tri_px_1280": 12112,
+   "base_px_1280": 305.81886753216577,
+   "h_px_1280": 77.19512454124482,
+   "base_over_h": 3.961634485980638,
+   "s6h": {
+    "tri_outside_mask": 0.015521796565389656,
+    "exp_over_tri": 1.972836856010568,
+    "added_over_tri": 0.9883586525759577,
+    "exp_px": 23895
+   },
+   "live": {
+    "tri_outside_mask": 0.021961690885072604,
+    "exp_over_tri": 1.9311426684280053,
+    "added_over_tri": 0.9531043593130779,
+    "exp_px": 23390
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.015521796565389656,
+    "exp_over_tri": 1.1287978863936592,
+    "added_over_tri": 0.14431968295904887,
+    "exp_px": 13672
+   },
+   "live_B": {
+    "tri_outside_mask": 0.021961690885072604,
+    "exp_over_tri": 1.092057463672391,
+    "added_over_tri": 0.11401915455746367,
+    "exp_px": 13227
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0365-184A4431~0",
+   "tri_px_1280": 1336,
+   "base_px_1280": 76.70836963369509,
+   "h_px_1280": 32.6352504289486,
+   "base_over_h": 2.3504759003060105,
+   "s6h": {
+    "tri_outside_mask": 0.010479041916167664,
+    "exp_over_tri": 2.0441616766467066,
+    "added_over_tri": 1.0546407185628743,
+    "exp_px": 2731
+   },
+   "live": {
+    "tri_outside_mask": 0.025449101796407136,
+    "exp_over_tri": 1.9191616766467066,
+    "added_over_tri": 0.9446107784431138,
+    "exp_px": 2564
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.010479041916167664,
+    "exp_over_tri": 1.3824850299401197,
+    "added_over_tri": 0.3929640718562874,
+    "exp_px": 1847
+   },
+   "live_B": {
+    "tri_outside_mask": 0.025449101796407136,
+    "exp_over_tri": 1.2687125748502994,
+    "added_over_tri": 0.29416167664670656,
+    "exp_px": 1695
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0373-184A4439~0",
+   "tri_px_1280": 7177,
+   "base_px_1280": 233.28406027633855,
+   "h_px_1280": 59.95306566928172,
+   "base_over_h": 3.891111449799752,
+   "s6h": {
+    "tri_outside_mask": 0.0037620175560819646,
+    "exp_over_tri": 2.0117040546189218,
+    "added_over_tri": 1.0154660721750035,
+    "exp_px": 14438
+   },
+   "live": {
+    "tri_outside_mask": 0.008917374947749801,
+    "exp_over_tri": 1.965305838093911,
+    "added_over_tri": 0.9742232130416608,
+    "exp_px": 14105
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0037620175560819646,
+    "exp_over_tri": 1.1809948446426084,
+    "added_over_tri": 0.18475686219869025,
+    "exp_px": 8476
+   },
+   "live_B": {
+    "tri_outside_mask": 0.008917374947749801,
+    "exp_over_tri": 1.1390553155914727,
+    "added_over_tri": 0.14797269053922252,
+    "exp_px": 8175
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0374-184A4440~0",
+   "tri_px_1280": 6579,
+   "base_px_1280": 203.15202536768462,
+   "h_px_1280": 62.374628907163526,
+   "base_over_h": 3.2569656754198864,
+   "s6h": {
+    "tri_outside_mask": 0.00911992704058373,
+    "exp_over_tri": 1.7981456148350814,
+    "added_over_tri": 0.807265541875665,
+    "exp_px": 11830
+   },
+   "live": {
+    "tri_outside_mask": 0.018543851649186816,
+    "exp_over_tri": 1.7507219942240462,
+    "added_over_tri": 0.769265845873233,
+    "exp_px": 11518
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.00911992704058373,
+    "exp_over_tri": 1.1085271317829457,
+    "added_over_tri": 0.11764705882352941,
+    "exp_px": 7293
+   },
+   "live_B": {
+    "tri_outside_mask": 0.018543851649186816,
+    "exp_over_tri": 1.065359477124183,
+    "added_over_tri": 0.08390332877336981,
+    "exp_px": 7009
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0419-184A4485~0",
+   "tri_px_1280": 4789,
+   "base_px_1280": 97.35217433273071,
+   "h_px_1280": 96.20710402942758,
+   "base_over_h": 1.0119021387750418,
+   "s6h": {
+    "tri_outside_mask": 0.010440593025683897,
+    "exp_over_tri": 1.7577782418041346,
+    "added_over_tri": 0.7682188348298183,
+    "exp_px": 8418
+   },
+   "live": {
+    "tri_outside_mask": 0.027771977448319052,
+    "exp_over_tri": 1.6982668615577365,
+    "added_over_tri": 0.7260388390060556,
+    "exp_px": 8133
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.010440593025683897,
+    "exp_over_tri": 1.0962622676968052,
+    "added_over_tri": 0.10670286072248904,
+    "exp_px": 5250
+   },
+   "live_B": {
+    "tri_outside_mask": 0.027771977448319052,
+    "exp_over_tri": 1.04656504489455,
+    "added_over_tri": 0.07433702234286907,
+    "exp_px": 5012
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0455-184A4521~0",
+   "tri_px_1280": 4788,
+   "base_px_1280": 165.22628149217545,
+   "h_px_1280": 55.88190662864524,
+   "base_over_h": 2.9567044408517003,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.1353383458646618,
+    "added_over_tri": 1.1353383458646618,
+    "exp_px": 10224
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9809941520467835,
+    "added_over_tri": 0.9809941520467836,
+    "exp_px": 9485
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.462406015037594,
+    "added_over_tri": 0.462406015037594,
+    "exp_px": 7002
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3448203842940685,
+    "added_over_tri": 0.3448203842940685,
+    "exp_px": 6439
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0457-184A4523~0",
+   "tri_px_1280": 3539,
+   "base_px_1280": 121.9973244225053,
+   "h_px_1280": 55.74469056675024,
+   "base_over_h": 2.188501239887991,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.946877649053405,
+    "added_over_tri": 0.9468776490534049,
+    "exp_px": 6890
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.8084204577564285,
+    "added_over_tri": 0.8084204577564283,
+    "exp_px": 6400
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.306301215032495,
+    "added_over_tri": 0.3063012150324951,
+    "exp_px": 4623
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.1839502684374117,
+    "added_over_tri": 0.1839502684374117,
+    "exp_px": 4190
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0489-184A4555~0",
+   "tri_px_1280": 3993,
+   "base_px_1280": 140.48329589573837,
+   "h_px_1280": 55.15620898090739,
+   "base_over_h": 2.5470078254357076,
+   "s6h": {
+    "tri_outside_mask": 0.054345103931880745,
+    "exp_over_tri": 1.7465564738292012,
+    "added_over_tri": 0.8009015777610818,
+    "exp_px": 6974
+   },
+   "live": {
+    "tri_outside_mask": 0.0751314800901578,
+    "exp_over_tri": 1.6548960681192086,
+    "added_over_tri": 0.7300275482093664,
+    "exp_px": 6608
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.054345103931880745,
+    "exp_over_tri": 1.1006761833208114,
+    "added_over_tri": 0.1550212872526922,
+    "exp_px": 4395
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0751314800901578,
+    "exp_over_tri": 1.0182819934886052,
+    "added_over_tri": 0.09341347357876284,
+    "exp_px": 4066
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0506-184A4572~0",
+   "tri_px_1280": 2459,
+   "base_px_1280": 98.86470429038665,
+   "h_px_1280": 47.245255410794584,
+   "base_over_h": 2.092584820015558,
+   "s6h": {
+    "tri_outside_mask": 0.04798698657991052,
+    "exp_over_tri": 1.752338348922326,
+    "added_over_tri": 0.8003253355022367,
+    "exp_px": 4309
+   },
+   "live": {
+    "tri_outside_mask": 0.08621390809272067,
+    "exp_over_tri": 1.6714111427409517,
+    "added_over_tri": 0.7576250508336723,
+    "exp_px": 4110
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.04798698657991052,
+    "exp_over_tri": 1.1159007726718178,
+    "added_over_tri": 0.16388775925172835,
+    "exp_px": 2744
+   },
+   "live_B": {
+    "tri_outside_mask": 0.08621390809272067,
+    "exp_over_tri": 1.041073607157381,
+    "added_over_tri": 0.12728751525010168,
+    "exp_px": 2560
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0550-184A4616~0",
+   "tri_px_1280": 1190,
+   "base_px_1280": 78.14894904037803,
+   "h_px_1280": 28.316703954555088,
+   "base_over_h": 2.759817991733703,
+   "s6h": {
+    "tri_outside_mask": 0.01764705882352946,
+    "exp_over_tri": 2.03109243697479,
+    "added_over_tri": 1.0487394957983194,
+    "exp_px": 2417
+   },
+   "live": {
+    "tri_outside_mask": 0.07647058823529407,
+    "exp_over_tri": 1.8571428571428572,
+    "added_over_tri": 0.9336134453781513,
+    "exp_px": 2210
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.01764705882352946,
+    "exp_over_tri": 1.395798319327731,
+    "added_over_tri": 0.4134453781512605,
+    "exp_px": 1661
+   },
+   "live_B": {
+    "tri_outside_mask": 0.07647058823529407,
+    "exp_over_tri": 1.234453781512605,
+    "added_over_tri": 0.31092436974789917,
+    "exp_px": 1469
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0558-184A4624~0",
+   "tri_px_1280": 3338,
+   "base_px_1280": 119.64954727382954,
+   "h_px_1280": 53.58539921217362,
+   "base_over_h": 2.2328759145765096,
+   "s6h": {
+    "tri_outside_mask": 0.023367285799880122,
+    "exp_over_tri": 2.024565608148592,
+    "added_over_tri": 1.0479328939484722,
+    "exp_px": 6758
+   },
+   "live": {
+    "tri_outside_mask": 0.03385260635110843,
+    "exp_over_tri": 1.9661473936488916,
+    "added_over_tri": 1.0,
+    "exp_px": 6563
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.023367285799880122,
+    "exp_over_tri": 1.3511084481725584,
+    "added_over_tri": 0.3744757339724386,
+    "exp_px": 4510
+   },
+   "live_B": {
+    "tri_outside_mask": 0.03385260635110843,
+    "exp_over_tri": 1.3034751348112643,
+    "added_over_tri": 0.3373277411623727,
+    "exp_px": 4351
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0559-184A4625~0",
+   "tri_px_1280": 2467,
+   "base_px_1280": 91.69266566159799,
+   "h_px_1280": 51.99547306515624,
+   "base_over_h": 1.763474015260841,
+   "s6h": {
+    "tri_outside_mask": 0.019456830158086746,
+    "exp_over_tri": 2.0559383867044994,
+    "added_over_tri": 1.0753952168625862,
+    "exp_px": 5072
+   },
+   "live": {
+    "tri_outside_mask": 0.03161734900689095,
+    "exp_over_tri": 1.987028779894609,
+    "added_over_tri": 1.0186461289014999,
+    "exp_px": 4902
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.019456830158086746,
+    "exp_over_tri": 1.3660316173490068,
+    "added_over_tri": 0.38548844750709366,
+    "exp_px": 3370
+   },
+   "live_B": {
+    "tri_outside_mask": 0.03161734900689095,
+    "exp_over_tri": 1.3117146331576814,
+    "added_over_tri": 0.34333198216457234,
+    "exp_px": 3236
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0572-184A4639~0",
+   "tri_px_1280": 1953,
+   "base_px_1280": 91.50478517313945,
+   "h_px_1280": 40.18014049222922,
+   "base_over_h": 2.2773634948050105,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.03020993343574,
+    "added_over_tri": 1.03020993343574,
+    "exp_px": 3965
+   },
+   "live": {
+    "tri_outside_mask": 0.0005120327700972593,
+    "exp_over_tri": 1.9170506912442395,
+    "added_over_tri": 0.9175627240143369,
+    "exp_px": 3744
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3799283154121864,
+    "added_over_tri": 0.37992831541218636,
+    "exp_px": 2695
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0005120327700972593,
+    "exp_over_tri": 1.2800819252432156,
+    "added_over_tri": 0.2805939580133128,
+    "exp_px": 2500
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0577-184A4644~0",
+   "tri_px_1280": 9105,
+   "base_px_1280": 267.91213693539544,
+   "h_px_1280": 65.85752862664343,
+   "base_over_h": 4.068056341048432,
+   "s6h": {
+    "tri_outside_mask": 0.015595826468973062,
+    "exp_over_tri": 1.9979132344865458,
+    "added_over_tri": 1.0135090609555188,
+    "exp_px": 18191
+   },
+   "live": {
+    "tri_outside_mask": 0.023723228995057632,
+    "exp_over_tri": 1.9321252059308072,
+    "added_over_tri": 0.9558484349258649,
+    "exp_px": 17592
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.015595826468973062,
+    "exp_over_tri": 1.1354200988467875,
+    "added_over_tri": 0.15101592531576058,
+    "exp_px": 10338
+   },
+   "live_B": {
+    "tri_outside_mask": 0.023723228995057632,
+    "exp_over_tri": 1.0768808347062053,
+    "added_over_tri": 0.10060406370126304,
+    "exp_px": 9805
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0582-184A4649~0",
+   "tri_px_1280": 5038,
+   "base_px_1280": 149.74293928891476,
+   "h_px_1280": 64.49931833169909,
+   "base_over_h": 2.3216204940156944,
+   "s6h": {
+    "tri_outside_mask": 0.01766574037316393,
+    "exp_over_tri": 2.16534339023422,
+    "added_over_tri": 1.1830091306073838,
+    "exp_px": 10909
+   },
+   "live": {
+    "tri_outside_mask": 0.03175863437872173,
+    "exp_over_tri": 2.1006351726875745,
+    "added_over_tri": 1.1323938070662962,
+    "exp_px": 10583
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.01766574037316393,
+    "exp_over_tri": 1.5244144501786423,
+    "added_over_tri": 0.5420801905518062,
+    "exp_px": 7680
+   },
+   "live_B": {
+    "tri_outside_mask": 0.03175863437872173,
+    "exp_over_tri": 1.4658594680428743,
+    "added_over_tri": 0.4976181024215959,
+    "exp_px": 7385
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0586-184A4653~0",
+   "tri_px_1280": 3596,
+   "base_px_1280": 142.51835821187532,
+   "h_px_1280": 47.95030565895599,
+   "base_over_h": 2.9722095876829147,
+   "s6h": {
+    "tri_outside_mask": 0.026974416017797598,
+    "exp_over_tri": 1.5953837597330367,
+    "added_over_tri": 0.6223581757508343,
+    "exp_px": 5737
+   },
+   "live": {
+    "tri_outside_mask": 0.07591768631813123,
+    "exp_over_tri": 1.4588431590656286,
+    "added_over_tri": 0.5347608453837598,
+    "exp_px": 5246
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.026974416017797598,
+    "exp_over_tri": 1.0,
+    "added_over_tri": 0.026974416017797553,
+    "exp_px": 3596
+   },
+   "live_B": {
+    "tri_outside_mask": 0.07591768631813123,
+    "exp_over_tri": 0.9307563959955506,
+    "added_over_tri": 0.006674082313681869,
+    "exp_px": 3347
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0590-184A4657~0",
+   "tri_px_1280": 4566,
+   "base_px_1280": 153.97567942036693,
+   "h_px_1280": 57.108386267428166,
+   "base_over_h": 2.6962008469181193,
+   "s6h": {
+    "tri_outside_mask": 0.025843188786684235,
+    "exp_over_tri": 1.772886552781428,
+    "added_over_tri": 0.7987297415681122,
+    "exp_px": 8095
+   },
+   "live": {
+    "tri_outside_mask": 0.04336399474375818,
+    "exp_over_tri": 1.7030223390275954,
+    "added_over_tri": 0.7463863337713534,
+    "exp_px": 7776
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.025843188786684235,
+    "exp_over_tri": 1.1392904073587384,
+    "added_over_tri": 0.1651335961454227,
+    "exp_px": 5202
+   },
+   "live_B": {
+    "tri_outside_mask": 0.04336399474375818,
+    "exp_over_tri": 1.0742444152431012,
+    "added_over_tri": 0.1176084099868594,
+    "exp_px": 4905
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0591-184A4658~0",
+   "tri_px_1280": 4121,
+   "base_px_1280": 144.15509516896853,
+   "h_px_1280": 55.08410602924938,
+   "base_over_h": 2.61699981283935,
+   "s6h": {
+    "tri_outside_mask": 0.024508614413977226,
+    "exp_over_tri": 1.8160640621208444,
+    "added_over_tri": 0.8405726765348216,
+    "exp_px": 7484
+   },
+   "live": {
+    "tri_outside_mask": 0.041980101917010404,
+    "exp_over_tri": 1.7146323707837903,
+    "added_over_tri": 0.7566124727008008,
+    "exp_px": 7066
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.024508614413977226,
+    "exp_over_tri": 1.1810240232953166,
+    "added_over_tri": 0.20553263770929386,
+    "exp_px": 4867
+   },
+   "live_B": {
+    "tri_outside_mask": 0.041980101917010404,
+    "exp_over_tri": 1.090026692550352,
+    "added_over_tri": 0.1320067944673623,
+    "exp_px": 4492
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0592-184A4659~0",
+   "tri_px_1280": 2806,
+   "base_px_1280": 77.85340180837566,
+   "h_px_1280": 69.0308379607609,
+   "base_over_h": 1.1278061241648227,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.890591589451176,
+    "added_over_tri": 0.890591589451176,
+    "exp_px": 5305
+   },
+   "live": {
+    "tri_outside_mask": 0.011760513186029886,
+    "exp_over_tri": 1.7622950819672132,
+    "added_over_tri": 0.7740555951532431,
+    "exp_px": 4945
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.2323592302209552,
+    "added_over_tri": 0.2323592302209551,
+    "exp_px": 3458
+   },
+   "live_B": {
+    "tri_outside_mask": 0.011760513186029886,
+    "exp_over_tri": 1.1154668567355666,
+    "added_over_tri": 0.12722736992159658,
+    "exp_px": 3130
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0631-184A4698~0",
+   "tri_px_1280": 2686,
+   "base_px_1280": 76.74599201722253,
+   "h_px_1280": 68.08308180361308,
+   "base_over_h": 1.1272402773804773,
+   "s6h": {
+    "tri_outside_mask": 0.0655249441548772,
+    "exp_over_tri": 1.81198808637379,
+    "added_over_tri": 0.8775130305286671,
+    "exp_px": 4867
+   },
+   "live": {
+    "tri_outside_mask": 0.09568131049888307,
+    "exp_over_tri": 1.6876396128071482,
+    "added_over_tri": 0.7833209233060313,
+    "exp_px": 4533
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0655249441548772,
+    "exp_over_tri": 1.1589724497393894,
+    "added_over_tri": 0.22449739389426657,
+    "exp_px": 3113
+   },
+   "live_B": {
+    "tri_outside_mask": 0.09568131049888307,
+    "exp_over_tri": 1.046909903201787,
+    "added_over_tri": 0.14259121370067016,
+    "exp_px": 2812
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0632-184A4699~0",
+   "tri_px_1280": 1725,
+   "base_px_1280": 74.90189575257479,
+   "h_px_1280": 43.75003262668886,
+   "base_over_h": 1.7120420547271165,
+   "s6h": {
+    "tri_outside_mask": 0.009855072463768155,
+    "exp_over_tri": 1.9918840579710144,
+    "added_over_tri": 1.0017391304347827,
+    "exp_px": 3436
+   },
+   "live": {
+    "tri_outside_mask": 0.04057971014492756,
+    "exp_over_tri": 1.8284057971014493,
+    "added_over_tri": 0.8689855072463768,
+    "exp_px": 3154
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.009855072463768155,
+    "exp_over_tri": 1.3478260869565217,
+    "added_over_tri": 0.35768115942028983,
+    "exp_px": 2325
+   },
+   "live_B": {
+    "tri_outside_mask": 0.04057971014492756,
+    "exp_over_tri": 1.1982608695652175,
+    "added_over_tri": 0.23884057971014494,
+    "exp_px": 2067
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0634-184A4701~0",
+   "tri_px_1280": 764,
+   "base_px_1280": 36.850925309500674,
+   "h_px_1280": 39.23191634059911,
+   "base_over_h": 0.9393098463397141,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.142670157068063,
+    "added_over_tri": 1.1426701570680629,
+    "exp_px": 1637
+   },
+   "live": {
+    "tri_outside_mask": 0.028795811518324554,
+    "exp_over_tri": 1.9384816753926701,
+    "added_over_tri": 0.9672774869109948,
+    "exp_px": 1481
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.4803664921465969,
+    "added_over_tri": 0.4803664921465969,
+    "exp_px": 1131
+   },
+   "live_B": {
+    "tri_outside_mask": 0.028795811518324554,
+    "exp_over_tri": 1.2984293193717278,
+    "added_over_tri": 0.32722513089005234,
+    "exp_px": 992
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0641-184A4708~0",
+   "tri_px_1280": 2349,
+   "base_px_1280": 72.38513318898852,
+   "h_px_1280": 62.73305901995342,
+   "base_over_h": 1.153859453369954,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.8250319284802043,
+    "added_over_tri": 0.8250319284802043,
+    "exp_px": 4287
+   },
+   "live": {
+    "tri_outside_mask": 0.03831417624521072,
+    "exp_over_tri": 1.6628352490421456,
+    "added_over_tri": 0.7011494252873564,
+    "exp_px": 3906
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.1732652192422308,
+    "added_over_tri": 0.17326521924223073,
+    "exp_px": 2756
+   },
+   "live_B": {
+    "tri_outside_mask": 0.03831417624521072,
+    "exp_over_tri": 1.0234142188165176,
+    "added_over_tri": 0.06172839506172839,
+    "exp_px": 2404
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0645-184A4712~0",
+   "tri_px_1280": 2751,
+   "base_px_1280": 68.37135463244537,
+   "h_px_1280": 77.22544733981907,
+   "base_over_h": 0.8853474727260228,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9992729916394039,
+    "added_over_tri": 0.9992729916394039,
+    "exp_px": 5500
+   },
+   "live": {
+    "tri_outside_mask": 0.008360596146855692,
+    "exp_over_tri": 1.8593238822246456,
+    "added_over_tri": 0.8676844783715013,
+    "exp_px": 5115
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3500545256270446,
+    "added_over_tri": 0.3500545256270447,
+    "exp_px": 3714
+   },
+   "live_B": {
+    "tri_outside_mask": 0.008360596146855692,
+    "exp_over_tri": 1.2239185750636132,
+    "added_over_tri": 0.23227917121046893,
+    "exp_px": 3367
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0646-184A4713~0",
+   "tri_px_1280": 1592,
+   "base_px_1280": 45.15835296206453,
+   "h_px_1280": 65.71445829082634,
+   "base_over_h": 0.6871905230080635,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.238065326633166,
+    "added_over_tri": 1.2380653266331658,
+    "exp_px": 3563
+   },
+   "live": {
+    "tri_outside_mask": 0.006909547738693456,
+    "exp_over_tri": 2.0571608040201004,
+    "added_over_tri": 1.064070351758794,
+    "exp_px": 3275
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.5665829145728642,
+    "added_over_tri": 0.5665829145728644,
+    "exp_px": 2494
+   },
+   "live_B": {
+    "tri_outside_mask": 0.006909547738693456,
+    "exp_over_tri": 1.4290201005025125,
+    "added_over_tri": 0.435929648241206,
+    "exp_px": 2275
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0649-184A4716~0",
+   "tri_px_1280": 2461,
+   "base_px_1280": 113.94557218000008,
+   "h_px_1280": 40.86860016685555,
+   "base_over_h": 2.788095792730625,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.0572937830150346,
+    "added_over_tri": 1.0572937830150346,
+    "exp_px": 5063
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9175132060138156,
+    "added_over_tri": 0.9175132060138155,
+    "exp_px": 4719
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3982121088988215,
+    "added_over_tri": 0.39821210889882164,
+    "exp_px": 3441
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.275904104022755,
+    "added_over_tri": 0.275904104022755,
+    "exp_px": 3140
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0650-184A4717~0",
+   "tri_px_1280": 2376,
+   "base_px_1280": 95.67408739147935,
+   "h_px_1280": 47.96112347612179,
+   "base_over_h": 1.9948258184383902,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.089225589225589,
+    "added_over_tri": 1.0892255892255893,
+    "exp_px": 4964
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9431818181818181,
+    "added_over_tri": 0.9431818181818182,
+    "exp_px": 4617
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.4301346801346801,
+    "added_over_tri": 0.43013468013468015,
+    "exp_px": 3398
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3021885521885521,
+    "added_over_tri": 0.3021885521885522,
+    "exp_px": 3094
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0652-184A4719~0",
+   "tri_px_1280": 2124,
+   "base_px_1280": 104.25356987536878,
+   "h_px_1280": 38.61751775449946,
+   "base_over_h": 2.6996445120614165,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9552730696798493,
+    "added_over_tri": 0.9552730696798494,
+    "exp_px": 4153
+   },
+   "live": {
+    "tri_outside_mask": 0.004237288135593209,
+    "exp_over_tri": 1.8225047080979284,
+    "added_over_tri": 0.8267419962335216,
+    "exp_px": 3871
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.329566854990584,
+    "added_over_tri": 0.3295668549905838,
+    "exp_px": 2824
+   },
+   "live_B": {
+    "tri_outside_mask": 0.004237288135593209,
+    "exp_over_tri": 1.2099811676082863,
+    "added_over_tri": 0.21421845574387946,
+    "exp_px": 2570
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0677-184A4744~0",
+   "tri_px_1280": 4014,
+   "base_px_1280": 149.01250251288863,
+   "h_px_1280": 51.176410289817206,
+   "base_over_h": 2.9117419855948414,
+   "s6h": {
+    "tri_outside_mask": 0.0009965122072745913,
+    "exp_over_tri": 1.869706028898854,
+    "added_over_tri": 0.8707025411061285,
+    "exp_px": 7505
+   },
+   "live": {
+    "tri_outside_mask": 0.00871948181365223,
+    "exp_over_tri": 1.7705530642750373,
+    "added_over_tri": 0.7792725460886896,
+    "exp_px": 7107
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0009965122072745913,
+    "exp_over_tri": 1.242899850523169,
+    "added_over_tri": 0.24389636273044346,
+    "exp_px": 4989
+   },
+   "live_B": {
+    "tri_outside_mask": 0.00871948181365223,
+    "exp_over_tri": 1.1517189835575485,
+    "added_over_tri": 0.1604384653712008,
+    "exp_px": 4623
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0694-184A4761~0",
+   "tri_px_1280": 6211,
+   "base_px_1280": 140.36969699601696,
+   "h_px_1280": 86.40220733470804,
+   "base_over_h": 1.6246077655429296,
+   "s6h": {
+    "tri_outside_mask": 0.037675092577684755,
+    "exp_over_tri": 1.8098534857510868,
+    "added_over_tri": 0.8475285783287715,
+    "exp_px": 11241
+   },
+   "live": {
+    "tri_outside_mask": 0.051682498792465004,
+    "exp_over_tri": 1.6717114796329093,
+    "added_over_tri": 0.7233939784253743,
+    "exp_px": 10383
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.037675092577684755,
+    "exp_over_tri": 1.169376911930446,
+    "added_over_tri": 0.20705200450813074,
+    "exp_px": 7263
+   },
+   "live_B": {
+    "tri_outside_mask": 0.051682498792465004,
+    "exp_over_tri": 1.0995008855256803,
+    "added_over_tri": 0.15118338431814524,
+    "exp_px": 6829
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0714-184A4781~0",
+   "tri_px_1280": 1079,
+   "base_px_1280": 61.682413563053814,
+   "h_px_1280": 32.395371003136084,
+   "base_over_h": 1.9040502285676109,
+   "s6h": {
+    "tri_outside_mask": 0.020389249304911927,
+    "exp_over_tri": 1.8387395736793326,
+    "added_over_tri": 0.8591288229842446,
+    "exp_px": 1984
+   },
+   "live": {
+    "tri_outside_mask": 0.050973123262279874,
+    "exp_over_tri": 1.696014828544949,
+    "added_over_tri": 0.7469879518072289,
+    "exp_px": 1830
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.020389249304911927,
+    "exp_over_tri": 1.216867469879518,
+    "added_over_tri": 0.23725671918443003,
+    "exp_px": 1313
+   },
+   "live_B": {
+    "tri_outside_mask": 0.050973123262279874,
+    "exp_over_tri": 1.0843373493975903,
+    "added_over_tri": 0.13531047265987026,
+    "exp_px": 1170
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0724-184A4791~0",
+   "tri_px_1280": 2143,
+   "base_px_1280": 78.86448707772338,
+   "h_px_1280": 52.590491467933994,
+   "base_over_h": 1.4995959322002046,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.979001399906673,
+    "added_over_tri": 0.9790013999066729,
+    "exp_px": 4241
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.763415772281848,
+    "added_over_tri": 0.7634157722818479,
+    "exp_px": 3779
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3299113392440505,
+    "added_over_tri": 0.3299113392440504,
+    "exp_px": 2850
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.136724218385441,
+    "added_over_tri": 0.13672421838544097,
+    "exp_px": 2436
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0741-184A4808~0",
+   "tri_px_1280": 2062,
+   "base_px_1280": 88.13841921686821,
+   "h_px_1280": 44.29780323453746,
+   "base_over_h": 1.9896792342097394,
+   "s6h": {
+    "tri_outside_mask": 0.011154219204655647,
+    "exp_over_tri": 1.973811833171678,
+    "added_over_tri": 0.9849660523763336,
+    "exp_px": 4070
+   },
+   "live": {
+    "tri_outside_mask": 0.031522793404461735,
+    "exp_over_tri": 1.8389912706110572,
+    "added_over_tri": 0.8705140640155189,
+    "exp_px": 3792
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.011154219204655647,
+    "exp_over_tri": 1.3108632395732298,
+    "added_over_tri": 0.32201745877788557,
+    "exp_px": 2703
+   },
+   "live_B": {
+    "tri_outside_mask": 0.031522793404461735,
+    "exp_over_tri": 1.192046556741028,
+    "added_over_tri": 0.22356935014548981,
+    "exp_px": 2458
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0743-184A4810~0",
+   "tri_px_1280": 563,
+   "base_px_1280": 36.92161025806442,
+   "h_px_1280": 27.59387662539644,
+   "base_over_h": 1.3380363607222574,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9023090586145648,
+    "added_over_tri": 0.9023090586145648,
+    "exp_px": 1071
+   },
+   "live": {
+    "tri_outside_mask": 0.001776198934280604,
+    "exp_over_tri": 1.7655417406749556,
+    "added_over_tri": 0.7673179396092362,
+    "exp_px": 994
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.2682060390763765,
+    "added_over_tri": 0.2682060390763766,
+    "exp_px": 714
+   },
+   "live_B": {
+    "tri_outside_mask": 0.001776198934280604,
+    "exp_over_tri": 1.1385435168738898,
+    "added_over_tri": 0.14031971580817051,
+    "exp_px": 641
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0752-184A4819~0",
+   "tri_px_1280": 1415,
+   "base_px_1280": 61.924295385949996,
+   "h_px_1280": 43.71467777124171,
+   "base_over_h": 1.4165561441399375,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.9696113074204946,
+    "added_over_tri": 0.9696113074204947,
+    "exp_px": 2787
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.7908127208480564,
+    "added_over_tri": 0.7908127208480565,
+    "exp_px": 2534
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3123674911660776,
+    "added_over_tri": 0.31236749116607776,
+    "exp_px": 1857
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.1540636042402828,
+    "added_over_tri": 0.15406360424028268,
+    "exp_px": 1633
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0792-184A4859~0",
+   "tri_px_1280": 4861,
+   "base_px_1280": 159.25037582458756,
+   "h_px_1280": 58.59597414450348,
+   "base_over_h": 2.717769917637351,
+   "s6h": {
+    "tri_outside_mask": 0.00781732153877801,
+    "exp_over_tri": 1.760131660152232,
+    "added_over_tri": 0.7679489816910101,
+    "exp_px": 8556
+   },
+   "live": {
+    "tri_outside_mask": 0.024274840567784395,
+    "exp_over_tri": 1.689158609339642,
+    "added_over_tri": 0.7134334499074264,
+    "exp_px": 8211
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.00781732153877801,
+    "exp_over_tri": 1.1127340053486936,
+    "added_over_tri": 0.12055132688747171,
+    "exp_px": 5409
+   },
+   "live_B": {
+    "tri_outside_mask": 0.024274840567784395,
+    "exp_over_tri": 1.0483439621477062,
+    "added_over_tri": 0.07261880271549064,
+    "exp_px": 5096
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0794-184A4861~0",
+   "tri_px_1280": 3588,
+   "base_px_1280": 124.11720004947574,
+   "h_px_1280": 55.386210394528064,
+   "base_over_h": 2.24094046451927,
+   "s6h": {
+    "tri_outside_mask": 0.016443701226309893,
+    "exp_over_tri": 1.7513935340022297,
+    "added_over_tri": 0.7678372352285395,
+    "exp_px": 6284
+   },
+   "live": {
+    "tri_outside_mask": 0.03818283166109249,
+    "exp_over_tri": 1.6577480490523968,
+    "added_over_tri": 0.6959308807134894,
+    "exp_px": 5948
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.016443701226309893,
+    "exp_over_tri": 1.1145484949832776,
+    "added_over_tri": 0.13099219620958752,
+    "exp_px": 3999
+   },
+   "live_B": {
+    "tri_outside_mask": 0.03818283166109249,
+    "exp_over_tri": 1.0303790412486065,
+    "added_over_tri": 0.06856187290969899,
+    "exp_px": 3697
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0802-184A4869~0",
+   "tri_px_1280": 397,
+   "base_px_1280": 38.760931775817745,
+   "h_px_1280": 18.26277594269902,
+   "base_over_h": 2.122400882397802,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.0151133501259446,
+    "added_over_tri": 1.0151133501259446,
+    "exp_px": 800
+   },
+   "live": {
+    "tri_outside_mask": 0.005037783375314908,
+    "exp_over_tri": 1.7329974811083124,
+    "added_over_tri": 0.7380352644836272,
+    "exp_px": 688
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.4080604534005037,
+    "added_over_tri": 0.4080604534005038,
+    "exp_px": 559
+   },
+   "live_B": {
+    "tri_outside_mask": 0.005037783375314908,
+    "exp_over_tri": 1.2619647355163728,
+    "added_over_tri": 0.26700251889168763,
+    "exp_px": 501
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0821-184A4888~0",
+   "tri_px_1280": 1980,
+   "base_px_1280": 155.4657640406326,
+   "h_px_1280": 23.821246219843548,
+   "base_over_h": 6.526348899039827,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 3.0272727272727273,
+    "added_over_tri": 2.0272727272727273,
+    "exp_px": 5994
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.933838383838384,
+    "added_over_tri": 1.933838383838384,
+    "exp_px": 5809
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.6207070707070708,
+    "added_over_tri": 0.6207070707070707,
+    "exp_px": 3209
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.5358585858585858,
+    "added_over_tri": 0.5358585858585858,
+    "exp_px": 3041
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0823-184A4890~0",
+   "tri_px_1280": 2483,
+   "base_px_1280": 129.99034969906958,
+   "h_px_1280": 35.431564251642,
+   "base_over_h": 3.6687725321933944,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.023761578735401,
+    "added_over_tri": 1.0237615787354006,
+    "exp_px": 5025
+   },
+   "live": {
+    "tri_outside_mask": 0.003221908981071331,
+    "exp_over_tri": 1.851389448248087,
+    "added_over_tri": 0.8546113572291583,
+    "exp_px": 4597
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.278695126862666,
+    "added_over_tri": 0.2786951268626661,
+    "exp_px": 3175
+   },
+   "live_B": {
+    "tri_outside_mask": 0.003221908981071331,
+    "exp_over_tri": 1.1232380185259767,
+    "added_over_tri": 0.12645992750704793,
+    "exp_px": 2789
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0840-184A4907~0",
+   "tri_px_1280": 94,
+   "base_px_1280": 15.938108436072314,
+   "h_px_1280": 9.66624117397244,
+   "base_over_h": 1.6488424144627862,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.8404255319148937,
+    "added_over_tri": 0.8404255319148937,
+    "exp_px": 173
+   },
+   "live": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.7234042553191489,
+    "added_over_tri": 0.723404255319149,
+    "exp_px": 162
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.4148936170212767,
+    "added_over_tri": 0.4148936170212766,
+    "exp_px": 133
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.3085106382978724,
+    "added_over_tri": 0.30851063829787234,
+    "exp_px": 123
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0865-184A4932~0",
+   "tri_px_1280": 2932,
+   "base_px_1280": 136.83589989678734,
+   "h_px_1280": 40.04174360749497,
+   "base_over_h": 3.417331204108068,
+   "s6h": {
+    "tri_outside_mask": 0.010572987721691685,
+    "exp_over_tri": 1.927012278308322,
+    "added_over_tri": 0.9375852660300137,
+    "exp_px": 5650
+   },
+   "live": {
+    "tri_outside_mask": 0.06650750341064116,
+    "exp_over_tri": 1.8045702592087312,
+    "added_over_tri": 0.8710777626193724,
+    "exp_px": 5291
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.010572987721691685,
+    "exp_over_tri": 1.3127557980900408,
+    "added_over_tri": 0.32332878581173263,
+    "exp_px": 3849
+   },
+   "live_B": {
+    "tri_outside_mask": 0.06650750341064116,
+    "exp_over_tri": 1.2844474761255116,
+    "added_over_tri": 0.3509549795361528,
+    "exp_px": 3766
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0866-184A4933~0",
+   "tri_px_1280": 2122,
+   "base_px_1280": 105.29991446013811,
+   "h_px_1280": 38.26193741030236,
+   "base_over_h": 2.7520800457894534,
+   "s6h": {
+    "tri_outside_mask": 0.001413760603204528,
+    "exp_over_tri": 1.7841658812441092,
+    "added_over_tri": 0.7855796418473139,
+    "exp_px": 3786
+   },
+   "live": {
+    "tri_outside_mask": 0.057492931196983954,
+    "exp_over_tri": 1.5801131008482563,
+    "added_over_tri": 0.6376060320452404,
+    "exp_px": 3353
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.001413760603204528,
+    "exp_over_tri": 1.152214891611687,
+    "added_over_tri": 0.1536286522148916,
+    "exp_px": 2445
+   },
+   "live_B": {
+    "tri_outside_mask": 0.057492931196983954,
+    "exp_over_tri": 0.969368520263902,
+    "added_over_tri": 0.026861451460885956,
+    "exp_px": 2057
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0874-184A4941~0",
+   "tri_px_1280": 1869,
+   "base_px_1280": 86.405209383326,
+   "h_px_1280": 41.32814763607422,
+   "base_over_h": 2.0907109155771897,
+   "s6h": {
+    "tri_outside_mask": 0.01872659176029967,
+    "exp_over_tri": 1.853932584269663,
+    "added_over_tri": 0.8726591760299626,
+    "exp_px": 3465
+   },
+   "live": {
+    "tri_outside_mask": 0.06313536650615303,
+    "exp_over_tri": 1.7185660781166399,
+    "added_over_tri": 0.7817014446227929,
+    "exp_px": 3212
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.01872659176029967,
+    "exp_over_tri": 1.2081326912787587,
+    "added_over_tri": 0.2268592830390583,
+    "exp_px": 2258
+   },
+   "live_B": {
+    "tri_outside_mask": 0.06313536650615303,
+    "exp_over_tri": 1.0850722311396468,
+    "added_over_tri": 0.14820759764579988,
+    "exp_px": 2028
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0887-184A4954~0",
+   "tri_px_1280": 12859,
+   "base_px_1280": 287.9283537996215,
+   "h_px_1280": 87.04420553699897,
+   "base_over_h": 3.307840562428188,
+   "s6h": {
+    "tri_outside_mask": 0.04596002799595611,
+    "exp_over_tri": 1.7374601446457734,
+    "added_over_tri": 0.7834201726417295,
+    "exp_px": 22342
+   },
+   "live": {
+    "tri_outside_mask": 0.0657127303833891,
+    "exp_over_tri": 1.6894004199393422,
+    "added_over_tri": 0.7551131503227312,
+    "exp_px": 21724
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.04596002799595611,
+    "exp_over_tri": 1.0321175830157867,
+    "added_over_tri": 0.07807761101174275,
+    "exp_px": 13272
+   },
+   "live_B": {
+    "tri_outside_mask": 0.0657127303833891,
+    "exp_over_tri": 0.9875573528268139,
+    "added_over_tri": 0.05327008321020297,
+    "exp_px": 12699
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0921-184A4988~0",
+   "tri_px_1280": 2862,
+   "base_px_1280": 89.97856372992179,
+   "h_px_1280": 60.20196218365112,
+   "base_over_h": 1.4946118110807527,
+   "s6h": {
+    "tri_outside_mask": 0.008385744234800874,
+    "exp_over_tri": 1.8071278825995807,
+    "added_over_tri": 0.8155136268343816,
+    "exp_px": 5172
+   },
+   "live": {
+    "tri_outside_mask": 0.03424178895877006,
+    "exp_over_tri": 1.6795946890286513,
+    "added_over_tri": 0.7138364779874213,
+    "exp_px": 4807
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.008385744234800874,
+    "exp_over_tri": 1.1481481481481481,
+    "added_over_tri": 0.15653389238294899,
+    "exp_px": 3286
+   },
+   "live_B": {
+    "tri_outside_mask": 0.03424178895877006,
+    "exp_over_tri": 1.0377358490566038,
+    "added_over_tri": 0.07197763801537387,
+    "exp_px": 2970
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0952-184A5019~0",
+   "tri_px_1280": 955,
+   "base_px_1280": 73.0576486254628,
+   "h_px_1280": 24.309024151607023,
+   "base_over_h": 3.0053715101777585,
+   "s6h": {
+    "tri_outside_mask": 0.0010471204188481353,
+    "exp_over_tri": 1.8146596858638744,
+    "added_over_tri": 0.8157068062827225,
+    "exp_px": 1733
+   },
+   "live": {
+    "tri_outside_mask": 0.028272251308900542,
+    "exp_over_tri": 1.649214659685864,
+    "added_over_tri": 0.6774869109947644,
+    "exp_px": 1575
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0010471204188481353,
+    "exp_over_tri": 1.1895287958115184,
+    "added_over_tri": 0.1905759162303665,
+    "exp_px": 1136
+   },
+   "live_B": {
+    "tri_outside_mask": 0.028272251308900542,
+    "exp_over_tri": 1.0387434554973822,
+    "added_over_tri": 0.06701570680628273,
+    "exp_px": 992
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-0996-184A5063~0",
+   "tri_px_1280": 8778,
+   "base_px_1280": 174.13201710991694,
+   "h_px_1280": 97.62477726074572,
+   "base_over_h": 1.7836867032723493,
+   "s6h": {
+    "tri_outside_mask": 0.06231487810435177,
+    "exp_over_tri": 1.668261562998405,
+    "added_over_tri": 0.7305764411027569,
+    "exp_px": 14644
+   },
+   "live": {
+    "tri_outside_mask": 0.08304853041695148,
+    "exp_over_tri": 1.6163135110503533,
+    "added_over_tri": 0.6993620414673046,
+    "exp_px": 14188
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.06231487810435177,
+    "exp_over_tri": 1.0242652084757349,
+    "added_over_tri": 0.08658008658008658,
+    "exp_px": 8991
+   },
+   "live_B": {
+    "tri_outside_mask": 0.08304853041695148,
+    "exp_over_tri": 0.9755069491911598,
+    "added_over_tri": 0.05855547960811119,
+    "exp_px": 8563
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-1004-184A5071~0",
+   "tri_px_1280": 1178,
+   "base_px_1280": 86.91761063259841,
+   "h_px_1280": 25.24454849486011,
+   "base_over_h": 3.443024962411001,
+   "s6h": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 2.1782682512733444,
+    "added_over_tri": 1.1782682512733447,
+    "exp_px": 2566
+   },
+   "live": {
+    "tri_outside_mask": 0.01358234295415961,
+    "exp_over_tri": 1.9787775891341257,
+    "added_over_tri": 0.9923599320882852,
+    "exp_px": 2331
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.0,
+    "exp_over_tri": 1.4456706281833616,
+    "added_over_tri": 0.4456706281833616,
+    "exp_px": 1703
+   },
+   "live_B": {
+    "tri_outside_mask": 0.01358234295415961,
+    "exp_over_tri": 1.263157894736842,
+    "added_over_tri": 0.2767402376910017,
+    "exp_px": 1488
+   }
+  },
+  {
+   "day": "2025-03-18",
+   "key": "2025-3-18_C1_Harvey__2025-3-18-Harvey-NOAA-MMHSRP-24359-1028-184A5095~0",
+   "tri_px_1280": 1870,
+   "base_px_1280": 86.49003677655587,
+   "h_px_1280": 40.86827515834887,
+   "base_over_h": 2.116312382684128,
+   "s6h": {
+    "tri_outside_mask": 0.013903743315508033,
+    "exp_over_tri": 1.767379679144385,
+    "added_over_tri": 0.781283422459893,
+    "exp_px": 3305
+   },
+   "live": {
+    "tri_outside_mask": 0.04705882352941182,
+    "exp_over_tri": 1.641711229946524,
+    "added_over_tri": 0.6887700534759358,
+    "exp_px": 3070
+   },
+   "s6h_B": {
+    "tri_outside_mask": 0.013903743315508033,
+    "exp_over_tri": 1.1251336898395723,
+    "added_over_tri": 0.13903743315508021,
+    "exp_px": 2104
+   },
+   "live_B": {
+    "tri_outside_mask": 0.04705882352941182,
+    "exp_over_tri": 1.0160427807486632,
+    "added_over_tri": 0.06310160427807486,
+    "exp_px": 1900
+   }
+  }
+ ]
+}

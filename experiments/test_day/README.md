@@ -66,3 +66,28 @@ its one test-day run). Results: `switch_prep/tables.md`. Nothing live is written
     flock LOCK .venv/bin/python experiments/test_day/readymade_day.py --day-dir DAY --out $SP/readymade/DAY   # ADE20K maps by row
     .venv/bin/python experiments/test_day/reasons.py --day-dir ARMDAY --live-dir LIVEDAY --ade ADE [--ade-key row|seq] --out OUT.json
     PYTHONPATH=. .venv/bin/python experiments/test_day/switch_sheets.py lost|gained|tiles ...   # sheets -> scratch only
+
+## Pixel truth for the extra classes (2026-11-20): per-class segmentation scores on 116 photos
+
+Rules: `pixtruth_rules.md` (registered before any truth was drawn or model output opened). The truth is one annotator's eye with
+SAM 2.1 (public weights) on hand-placed boxes / points / lines, checked on overlays; it is not the researcher's. Truth, manifest
+(sample, hashes, freeze time, verification list), notes and tables: untracked `moonshot_cache/test_days/2026-04-07/pixel_truth/`.
+Classes: 0 water / sky, 1 whale, 2 person, 3 rail, 4 tape, 5 deck, 6 pontoon / hull, 7 other vessel, 8 land, 9 gear, 255 not scored.
+
+    R=/home/sat3737/NOAA_whales/moonshot_cache/test_days/2026-04-07; S=SCRATCH/pixtruth
+    .venv/bin/python experiments/test_day/pixtruth.py sample --root $R                  # fixed sample -> manifest
+    .venv/bin/python experiments/test_day/pixtruth_draw.py grid|zoom|check ...           # views with a coordinate grid (scratch only)
+    flock /var/tmp/sat3737-parts-cache/gpu_train.lock .venv/bin/python experiments/test_day/pixtruth_draw.py run \
+        --half $S/half --prompts $R/pixel_truth/prompts.json --labels $R/pixel_truth/labels --cache $S/samcache [SEQ ...]
+    .venv/bin/python experiments/test_day/pixtruth.py freeze --root $R                  # (refreeze after a recorded correction)
+    PYTHONPATH=experiments/test_day .venv/bin/python experiments/test_day/pixtruth_verify.py --root $R --half $S/half --out $S/verify
+    .venv/bin/python experiments/test_day/pixtruth_score.py --root $R                   # every model we have -> $R/pixel_truth/scores/
+    .venv/bin/python experiments/test_day/pixtruth_sheets.py --root $R --half $S/half --out $S/sheets
+
+Scoring a future model of ours on the same truth (one command): write one uint8 PNG per sampled photo, named `<seq>.png`
+(3-digit sequence number), in the truth's classes (0-9, 255 = no answer), any resolution with the photo's aspect, then
+
+    .venv/bin/python experiments/test_day/pixtruth_score.py --root $R --ours NAME=DIR
+
+It adds NAME to scores.json / per_photo.tsv / confusion_NAME.tsv with every fine class and the grouped pairs (our boat 3-6,
+any boat 3-7, rail + tape). The script refuses to run if any truth file differs from the frozen hashes.

@@ -1,0 +1,94 @@
+{
+ "_note": "Every phrasing SAM 3 is run with, written 2026-11-21 00:20 before any SAM 3 output on any of our photos. Groups map phrasings to the classes they are scored against. Which phrasing is primary per class is chosen on other days (rules_sam3.md), never on the test day. 00:28: 'bollard' and 'mooring bollard' added (user's word for the bow-cleat marker shots), before any run of this file.",
+ "prompts": [
+  "whale",
+  "humpback whale",
+  "marine mammal",
+  "dorsal fin",
+  "whale tail",
+  "whale fluke",
+  "person",
+  "people",
+  "railing",
+  "boat railing",
+  "metal pole",
+  "colored tape",
+  "tape",
+  "colored band",
+  "boat deck",
+  "cleat",
+  "boat bow",
+  "inflatable boat tube",
+  "pontoon",
+  "boat hull",
+  "boat",
+  "ship",
+  "island",
+  "land",
+  "mountain",
+  "drone",
+  "camera",
+  "pole",
+  "crossbow",
+  "bollard",
+  "mooring bollard"
+ ],
+ "groups": {
+  "whale": [
+   "whale",
+   "humpback whale",
+   "marine mammal"
+  ],
+  "dorsal_fin": [
+   "dorsal fin"
+  ],
+  "fluke": [
+   "whale tail",
+   "whale fluke"
+  ],
+  "person": [
+   "person",
+   "people"
+  ],
+  "rail": [
+   "railing",
+   "boat railing",
+   "metal pole"
+  ],
+  "tape": [
+   "colored tape",
+   "tape",
+   "colored band"
+  ],
+  "deck": [
+   "boat deck",
+   "cleat",
+   "boat bow"
+  ],
+  "pontoon": [
+   "inflatable boat tube",
+   "pontoon",
+   "boat hull"
+  ],
+  "other_vessel": [
+   "boat",
+   "ship"
+  ],
+  "land": [
+   "island",
+   "land",
+   "mountain"
+  ],
+  "gear": [
+   "drone",
+   "camera",
+   "pole",
+   "crossbow"
+  ],
+  "bollard": [
+   "cleat",
+   "bollard",
+   "mooring bollard"
+  ]
+ }
+}
