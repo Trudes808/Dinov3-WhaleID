@@ -1,0 +1,25 @@
+{
+ "tone": "none",
+ "boxes": 449,
+ "all": {
+  "n": 449,
+  "hit_all": 0.978,
+  "chance_all": 0.906,
+  "hit_drawn": 0.808,
+  "chance_drawn": 0.671
+ },
+ "small": {
+  "n": 135,
+  "hit_all": 0.933,
+  "chance_all": 0.755,
+  "hit_drawn": 0.563,
+  "chance_drawn": 0.354
+ },
+ "small_dark": {
+  "n": 79,
+  "hit_all": 0.911,
+  "chance_all": 0.729,
+  "hit_drawn": 0.62,
+  "chance_drawn": 0.394
+ }
+}

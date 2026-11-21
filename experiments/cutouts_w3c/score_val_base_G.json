@@ -1,0 +1,398 @@
+{
+ "fin": {
+  "G": {
+   "n": 470,
+   "first": 0.7851063829787234,
+   "top5": 0.6961702127659576,
+   "auc": 0.9064180586126647,
+   "better": 0,
+   "worse": 0,
+   "p": 1.0,
+   "lo": 0.0,
+   "hi": 0.0,
+   "changed": 0.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7851063829787234,
+     470
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7851063829787234,
+     470
+    ]
+   }
+  },
+  "G.W": {
+   "n": 470,
+   "first": 0.7574468085106383,
+   "top5": 0.6502127659574468,
+   "auc": 0.8707768858146006,
+   "better": 31,
+   "worse": 44,
+   "p": 0.1654279417242567,
+   "lo": -0.06055209486700528,
+   "hi": 0.0043572984749454865,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7574468085106383,
+     470
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7574468085106383,
+     470
+    ]
+   }
+  },
+  "G.T": {
+   "n": 470,
+   "first": 0.7297872340425532,
+   "top5": 0.6106382978723405,
+   "auc": 0.8477458730983096,
+   "better": 31,
+   "worse": 57,
+   "p": 0.0073434087237081265,
+   "lo": -0.09159758108851015,
+   "hi": -0.018670266230251732,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7297872340425532,
+     470
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7297872340425532,
+     470
+    ]
+   }
+  },
+  "R0": {
+   "n": 470,
+   "first": 0.8106382978723404,
+   "top5": 0.7004255319148935,
+   "auc": 0.9032659600552029,
+   "better": 27,
+   "worse": 15,
+   "p": 0.08842954698775429,
+   "lo": 0.0021006201222627365,
+   "hi": 0.0495127729477237,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.8106382978723404,
+     470
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.8106382978723404,
+     470
+    ]
+   }
+  },
+  "R0.W": {
+   "n": 470,
+   "first": 0.7851063829787234,
+   "top5": 0.6591489361702128,
+   "auc": 0.8664599329889858,
+   "better": 38,
+   "worse": 38,
+   "p": 1.0,
+   "lo": -0.034936024674015916,
+   "hi": 0.03486601545553783,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7851063829787234,
+     470
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7851063829787234,
+     470
+    ]
+   }
+  },
+  "R0.T": {
+   "n": 470,
+   "first": 0.7361702127659574,
+   "top5": 0.6353191489361701,
+   "auc": 0.8507517443127619,
+   "better": 33,
+   "worse": 56,
+   "p": 0.01918660866014697,
+   "lo": -0.08889579020013805,
+   "hi": -0.0091324200913242,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7361702127659574,
+     470
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7361702127659574,
+     470
+    ]
+   }
+  }
+ },
+ "body": {
+  "G": {
+   "n": 841,
+   "first": 0.7728894173602854,
+   "top5": 0.6470868014268728,
+   "auc": 0.8411919850239234,
+   "better": 0,
+   "worse": 0,
+   "p": 1.0,
+   "lo": 0.0,
+   "hi": 0.0,
+   "changed": 0.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7728894173602854,
+     841
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7728894173602854,
+     841
+    ]
+   }
+  },
+  "R0": {
+   "n": 841,
+   "first": 0.7693222354340071,
+   "top5": 0.6511296076099882,
+   "auc": 0.8397882456155538,
+   "better": 44,
+   "worse": 47,
+   "p": 0.834081039304942,
+   "lo": -0.02364486846201081,
+   "hi": 0.017157915313364656,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7693222354340071,
+     841
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7693222354340071,
+     841
+    ]
+   }
+  }
+ },
+ "fluke": {
+  "G": {
+   "n": 154,
+   "first": 0.7142857142857143,
+   "top5": 0.5051948051948052,
+   "auc": 0.8582382261848366,
+   "better": 0,
+   "worse": 0,
+   "p": 1.0,
+   "lo": 0.0,
+   "hi": 0.0,
+   "changed": 0.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.7142857142857143,
+     154
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.7142857142857143,
+     154
+    ]
+   }
+  },
+  "R0": {
+   "n": 154,
+   "first": 0.6818181818181818,
+   "top5": 0.5051948051948052,
+   "auc": 0.860791067508932,
+   "better": 10,
+   "worse": 15,
+   "p": 0.42435622215270996,
+   "lo": -0.08847220416829162,
+   "hi": 0.029207814512666443,
+   "changed": 1.0,
+   "outside": 0.0,
+   "groups": {
+    "upright (under 10 deg)": [
+     0.6818181818181818,
+     154
+    ],
+    "tilted 10-30": [
+     null,
+     0
+    ],
+    "on its side 30-120": [
+     null,
+     0
+    ],
+    "upside down over 120": [
+     null,
+     0
+    ],
+    "quarter or more outside": [
+     null,
+     0
+    ],
+    "inside the photo": [
+     0.6818181818181818,
+     154
+    ]
+   }
+  }
+ }
+}

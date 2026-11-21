@@ -6605,6 +6605,442 @@
     }
    },
    "n_scored": 25
+  },
+  "r06r_test_r11s": {
+   "n_whales": 27,
+   "coverage_source": "labels (coverage.py)",
+   "cats": {
+    "D_tall": {
+     "n": 21,
+     "share": 0.7777777777777778,
+     "median_L2560": 987.0,
+     "err": 0.050000000000000044,
+     "n_scored": 20
+    },
+    "H_head": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 813.0,
+     "err": 0.0,
+     "n_scored": 1
+    },
+    "F_edge": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 534.0,
+     "err": 0.0,
+     "n_scored": 1
+    },
+    "F_low": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 864.0
+    },
+    "D_tip": {
+     "n": 3,
+     "share": 0.1111111111111111,
+     "median_L2560": 200.0,
+     "err": 0.33333333333333337,
+     "n_scored": 3
+    }
+   },
+   "n_scored": 25
+  },
+  "r06r_test_r12s": {
+   "n_whales": 27,
+   "coverage_source": "labels (coverage.py)",
+   "cats": {
+    "D_tall": {
+     "n": 22,
+     "share": 0.8148148148148148,
+     "median_L2560": 959.0,
+     "err": 0.04761904761904767,
+     "n_scored": 21
+    },
+    "H_head": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 813.0,
+     "err": 0.0,
+     "n_scored": 1
+    },
+    "F_edge": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 534.0,
+     "err": 0.0,
+     "n_scored": 1
+    },
+    "F_low": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 864.0
+    },
+    "D_tip": {
+     "n": 2,
+     "share": 0.07407407407407407,
+     "median_L2560": 145.5,
+     "err": 0.5,
+     "n_scored": 2
+    }
+   },
+   "n_scored": 25
+  },
+  "r06r_test_r13b": {
+   "n_whales": 27,
+   "coverage_source": "labels (coverage.py)",
+   "cats": {
+    "D_tall": {
+     "n": 21,
+     "share": 0.7777777777777778,
+     "median_L2560": 986.0,
+     "err": 0.050000000000000044,
+     "n_scored": 20
+    },
+    "H_head": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 813.0,
+     "err": 0.0,
+     "n_scored": 1
+    },
+    "F_edge": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 534.0,
+     "err": 0.0,
+     "n_scored": 1
+    },
+    "F_low": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 864.0
+    },
+    "D_tip": {
+     "n": 3,
+     "share": 0.1111111111111111,
+     "median_L2560": 200.0,
+     "err": 0.33333333333333337,
+     "n_scored": 3
+    }
+   },
+   "n_scored": 25
+  },
+  "r06r_test_r13s": {
+   "n_whales": 27,
+   "coverage_source": "labels (coverage.py)",
+   "cats": {
+    "D_tall": {
+     "n": 21,
+     "share": 0.7777777777777778,
+     "median_L2560": 986.0,
+     "err": 0.050000000000000044,
+     "n_scored": 20
+    },
+    "H_head": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 813.0,
+     "err": 0.0,
+     "n_scored": 1
+    },
+    "F_edge": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 534.0,
+     "err": 0.0,
+     "n_scored": 1
+    },
+    "F_low": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 864.0
+    },
+    "D_tip": {
+     "n": 3,
+     "share": 0.1111111111111111,
+     "median_L2560": 200.0,
+     "err": 0.33333333333333337,
+     "n_scored": 3
+    }
+   },
+   "n_scored": 25
+  },
+  "r06r_test_r15s": {
+   "n_whales": 27,
+   "coverage_source": "labels (coverage.py)",
+   "cats": {
+    "D_tall": {
+     "n": 21,
+     "share": 0.7777777777777778,
+     "median_L2560": 986.0,
+     "err": 0.050000000000000044,
+     "n_scored": 20
+    },
+    "H_head": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 813.0,
+     "err": 0.0,
+     "n_scored": 1
+    },
+    "F_edge": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 534.0,
+     "err": 0.0,
+     "n_scored": 1
+    },
+    "F_low": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 864.0
+    },
+    "D_tip": {
+     "n": 3,
+     "share": 0.1111111111111111,
+     "median_L2560": 200.0,
+     "err": 0.33333333333333337,
+     "n_scored": 3
+    }
+   },
+   "n_scored": 25
+  },
+  "r06r_test_r17arch": {
+   "n_whales": 5,
+   "coverage_source": "labels (coverage.py)",
+   "cats": {
+    "D_tall": {
+     "n": 5,
+     "share": 1.0,
+     "median_L2560": 1917.0,
+     "err": 0.0,
+     "n_scored": 5
+    }
+   },
+   "n_scored": 5
+  },
+  "r06r_test_r17s": {
+   "n_whales": 27,
+   "coverage_source": "labels (coverage.py)",
+   "cats": {
+    "D_tall": {
+     "n": 21,
+     "share": 0.7777777777777778,
+     "median_L2560": 986.0,
+     "err": 0.050000000000000044,
+     "n_scored": 20
+    },
+    "H_head": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 813.0,
+     "err": 0.0,
+     "n_scored": 1
+    },
+    "F_edge": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 534.0,
+     "err": 0.0,
+     "n_scored": 1
+    },
+    "F_low": {
+     "n": 1,
+     "share": 0.037037037037037035,
+     "median_L2560": 864.0
+    },
+    "D_tip": {
+     "n": 3,
+     "share": 0.1111111111111111,
+     "median_L2560": 200.0,
+     "err": 0.33333333333333337,
+     "n_scored": 3
+    }
+   },
+   "n_scored": 25
+  },
+  "r06r_test_r18a": {
+   "n_whales": 102,
+   "coverage_source": "labels (coverage.py)",
+   "cats": {
+    "D_tip": {
+     "n": 10,
+     "share": 0.09803921568627451,
+     "median_L2560": 175.5,
+     "err": 0.19999999999999996,
+     "n_scored": 10
+    },
+    "D_tall": {
+     "n": 48,
+     "share": 0.47058823529411764,
+     "median_L2560": 831.0,
+     "err": 0.08695652173913049,
+     "n_scored": 46
+    },
+    "F_low": {
+     "n": 20,
+     "share": 0.19607843137254902,
+     "median_L2560": 741.0,
+     "err": 0.25,
+     "n_scored": 20
+    },
+    "B_back": {
+     "n": 3,
+     "share": 0.029411764705882353,
+     "median_L2560": 577.0,
+     "err": 0.0,
+     "n_scored": 3
+    },
+    "P_pec": {
+     "n": 6,
+     "share": 0.058823529411764705,
+     "median_L2560": 654.0,
+     "err": 0.8333333333333334,
+     "n_scored": 6
+    },
+    "H_head": {
+     "n": 5,
+     "share": 0.049019607843137254,
+     "median_L2560": 479.0,
+     "err": 0.0,
+     "n_scored": 5
+    },
+    "F_up": {
+     "n": 8,
+     "share": 0.0784313725490196,
+     "median_L2560": 1077.5,
+     "err": 0.0,
+     "n_scored": 8
+    },
+    "F_edge": {
+     "n": 2,
+     "share": 0.0196078431372549,
+     "median_L2560": 827.5,
+     "err": 0.0,
+     "n_scored": 2
+    }
+   },
+   "n_scored": 100
+  },
+  "r06r_test_r18b": {
+   "n_whales": 109,
+   "coverage_source": "labels (coverage.py)",
+   "cats": {
+    "F_up": {
+     "n": 12,
+     "share": 0.11009174311926606,
+     "median_L2560": 587.5,
+     "err": 0.0,
+     "n_scored": 12
+    },
+    "F_low": {
+     "n": 25,
+     "share": 0.22935779816513763,
+     "median_L2560": 681.0,
+     "err": 0.0,
+     "n_scored": 25
+    },
+    "H_head": {
+     "n": 6,
+     "share": 0.05504587155963303,
+     "median_L2560": 729.5,
+     "err": 0.16666666666666663,
+     "n_scored": 6
+    },
+    "P_pec": {
+     "n": 8,
+     "share": 0.07339449541284404,
+     "median_L2560": 945.5,
+     "err": 0.5,
+     "n_scored": 8
+    },
+    "D_tall": {
+     "n": 46,
+     "share": 0.42201834862385323,
+     "median_L2560": 703.5,
+     "err": 0.13636363636363635,
+     "n_scored": 44
+    },
+    "F_edge": {
+     "n": 6,
+     "share": 0.05504587155963303,
+     "median_L2560": 439.0,
+     "err": 0.16666666666666663,
+     "n_scored": 6
+    },
+    "D_tip": {
+     "n": 6,
+     "share": 0.05504587155963303,
+     "median_L2560": 173.5,
+     "err": 0.5,
+     "n_scored": 6
+    }
+   },
+   "n_scored": 107
+  },
+  "r06r_check20": {
+   "n_whales": 234,
+   "coverage_source": "labels (coverage.py)",
+   "cats": {
+    "D_tall": {
+     "n": 101,
+     "share": 0.43162393162393164,
+     "median_L2560": 839.0,
+     "err": 0.08910891089108908,
+     "n_scored": 101
+    },
+    "F_low": {
+     "n": 70,
+     "share": 0.29914529914529914,
+     "median_L2560": 649.0,
+     "err": 0.30434782608695654,
+     "n_scored": 69
+    },
+    "H_head": {
+     "n": 13,
+     "share": 0.05555555555555555,
+     "median_L2560": 554.0,
+     "err": 0.07692307692307687,
+     "n_scored": 13
+    },
+    "F_up": {
+     "n": 11,
+     "share": 0.04700854700854701,
+     "median_L2560": 774.0,
+     "err": 0.0,
+     "n_scored": 11
+    },
+    "D_tip": {
+     "n": 23,
+     "share": 0.09829059829059829,
+     "median_L2560": 187.0,
+     "err": 0.13043478260869568,
+     "n_scored": 23
+    },
+    "B_back": {
+     "n": 3,
+     "share": 0.01282051282051282,
+     "median_L2560": 388.0,
+     "err": 0.0,
+     "n_scored": 3
+    },
+    "F_edge": {
+     "n": 2,
+     "share": 0.008547008547008548,
+     "median_L2560": 342.5,
+     "err": 0.0,
+     "n_scored": 2
+    },
+    "P_pec": {
+     "n": 11,
+     "share": 0.04700854700854701,
+     "median_L2560": 780.0,
+     "err": 0.4545454545454546,
+     "n_scored": 11
+    }
+   },
+   "n_scored": 233
   }
  },
  "instances": {
@@ -18296,11 +18732,11 @@
    "cost_train": 0.038280383089036515,
    "cost_val": 0.02153721816976127,
    "coverage_run05": 0.06885716868212914,
-   "coverage_run06_tests": 0.14406906382920448,
+   "coverage_run06_tests": 0.13939272372458442,
    "render_err_run05": 0.0,
    "render_n_run05": 1,
-   "render_err_run06_tests": 0.5,
-   "render_n_run06_tests": 10,
+   "render_err_run06_tests": 0.38461538461538464,
+   "render_n_run06_tests": 13,
    "main_confusion": "other->fluke fluke 51%; other->dorsal body 35%",
    "cause": "view missing from the training renders (coverage < 0.5)",
    "factory": "backs and tail stocks with no fin in view: arched peduncle from behind, flat awash backs, backs in foam"
@@ -18329,11 +18765,11 @@
    "cost_train": 0.032073162634649294,
    "cost_val": 0.05119008147025388,
    "coverage_run05": 0.22639773784832173,
-   "coverage_run06_tests": 0.8030990737894529,
+   "coverage_run06_tests": 0.832533501201174,
    "render_err_run05": 0.0,
    "render_n_run05": 5,
-   "render_err_run06_tests": 0.4074074074074074,
-   "render_n_run06_tests": 27,
+   "render_err_run06_tests": 0.42105263157894735,
+   "render_n_run06_tests": 38,
    "main_confusion": "other->fluke fluke 98%; other->dorsal fin 2%",
    "cause": "view missing from the training renders (coverage < 0.5)",
    "factory": "pectoral fins: raised, slapping, lying white on the surface, with splash; dark top side as well as white"
@@ -18362,11 +18798,11 @@
    "cost_train": 0.03206427990466645,
    "cost_val": 0.00746021220159151,
    "coverage_run05": 0.5693508441287104,
-   "coverage_run06_tests": 1.4208840661818354,
+   "coverage_run06_tests": 1.6058491808080562,
    "render_err_run05": 0.0,
    "render_n_run05": 26,
-   "render_err_run06_tests": 0.22962962962962957,
-   "render_n_run06_tests": 135,
+   "render_err_run06_tests": 0.2549019607843137,
+   "render_n_run06_tests": 204,
    "main_confusion": "fluke->other head 49%; fluke->other pec 18%",
    "cause": "appearance / shape (covered, and right on renders, but wrong on real)",
    "factory": "flukes rising low / rolling out flat at the surface, water sheeting off, blades half in the water, seen from behind"
@@ -18395,11 +18831,11 @@
    "cost_train": 0.007591269697372607,
    "cost_val": 0.0,
    "coverage_run05": 7.776813969965104,
-   "coverage_run06_tests": 4.783773555071473,
+   "coverage_run06_tests": 4.504973503785608,
    "render_err_run05": 0.1333333333333333,
    "render_n_run05": 30,
-   "render_err_run06_tests": 0.16326530612244894,
-   "render_n_run06_tests": 49,
+   "render_err_run06_tests": 0.14516129032258063,
+   "render_n_run06_tests": 62,
    "main_confusion": "other->fluke fluke 88%; other->dorsal body 12%",
    "cause": "appearance / shape (covered, and right on renders, but wrong on real)",
    "factory": "heads: head rise / spyhop / lunge from the front with ventral grooves, rostrum with tubercles, blowholes from the front"
@@ -18428,11 +18864,11 @@
    "cost_train": 0.006343045333871021,
    "cost_val": 0.00601997679045093,
    "coverage_run05": 3.719383491301025,
-   "coverage_run06_tests": 3.6592661521182954,
+   "coverage_run06_tests": 3.7129100703525566,
    "render_err_run05": 0.024390243902439046,
    "render_n_run05": 123,
-   "render_err_run06_tests": 0.11481481481481481,
-   "render_n_run06_tests": 270,
+   "render_err_run06_tests": 0.10781671159029647,
+   "render_n_run06_tests": 371,
    "main_confusion": "dorsal->other fluke 41%; dorsal->fluke fluke 27%",
    "cause": "minor",
    "factory": "keep; vary fin height / sweep"
@@ -18461,11 +18897,11 @@
    "cost_train": 0.004690722121914781,
    "cost_val": 0.0,
    "coverage_run05": 1.7503019249920655,
-   "coverage_run06_tests": 0.8588361033593305,
+   "coverage_run06_tests": 0.9892370573822732,
    "render_err_run05": 0.02941176470588236,
    "render_n_run05": 34,
-   "render_err_run06_tests": 0.2682926829268293,
-   "render_n_run06_tests": 41,
+   "render_err_run06_tests": 0.21875,
+   "render_n_run06_tests": 64,
    "main_confusion": "dorsal->other body 100%",
    "cause": "minor",
    "factory": "fin seen end-on from behind on the arched back (dive), far / small fins, fin partly under water"
@@ -18494,11 +18930,11 @@
    "cost_train": 0.0029832435566967113,
    "cost_val": 0.0,
    "coverage_run05": 0.811116524820801,
-   "coverage_run06_tests": 0.5372082809111169,
+   "coverage_run06_tests": 0.4198150614923433,
    "render_err_run05": 0.0,
    "render_n_run05": 32,
-   "render_err_run06_tests": 0.2,
-   "render_n_run06_tests": 40,
+   "render_err_run06_tests": 0.19047619047619047,
+   "render_n_run06_tests": 42,
    "main_confusion": "fluke->other head 57%; fluke->other pec 43%",
    "cause": "minor",
    "factory": "flukes seen side-on / single blade raised (tail throw, slap, dive at an angle), with water streams"
@@ -18527,7 +18963,7 @@
    "cost_train": 0.0006791373763850828,
    "cost_val": 0.0,
    "coverage_run05": 13.18448392093288,
-   "coverage_run06_tests": 12.266852298229573,
+   "coverage_run06_tests": 9.129755644911846,
    "render_err_run05": 0.11111111111111116,
    "render_n_run05": 9,
    "render_err_run06_tests": 0.3684210526315789,
@@ -18560,11 +18996,11 @@
    "cost_train": 0.0,
    "cost_val": 0.0,
    "coverage_run05": 1.8426678112989547,
-   "coverage_run06_tests": 1.7222058829038982,
+   "coverage_run06_tests": 1.4580166771781076,
    "render_err_run05": 0.0,
    "render_n_run05": 40,
-   "render_err_run06_tests": 0.03846153846153847,
-   "render_n_run06_tests": 78,
+   "render_err_run06_tests": 0.03370786516853933,
+   "render_n_run06_tests": 89,
    "main_confusion": "-",
    "cause": "minor",
    "factory": "keep (fluke raised from behind is well covered)"
@@ -18793,6 +19229,124 @@
      "n": 3,
      "share": 0.02586206896551724,
      "coverage": 11.37077098243331
+    }
+   }
+  },
+  "r06r_test_r18a": {
+   "n": 102,
+   "fin_marks": {
+    "R": 51,
+    "S": 3
+   },
+   "cats": {
+    "D_small": {
+     "n": 46,
+     "share": 0.45098039215686275,
+     "coverage": 1.3999693815115615
+    },
+    "B_back": {
+     "n": 11,
+     "share": 0.10784313725490197,
+     "coverage": 1.0580601540633048
+    },
+    "F_up": {
+     "n": 12,
+     "share": 0.11764705882352941,
+     "coverage": 1.724738538614051
+    },
+    "P_pec": {
+     "n": 5,
+     "share": 0.049019607843137254,
+     "coverage": 0.9574763117132657
+    },
+    "F_low": {
+     "n": 13,
+     "share": 0.12745098039215685,
+     "coverage": 0.9135139170593891
+    },
+    "F_edge": {
+     "n": 1,
+     "share": 0.00980392156862745,
+     "coverage": 0.0896663821814879
+    },
+    "X_none": {
+     "n": 3,
+     "share": 0.029411764705882353,
+     "coverage": 4.207628237696514
+    },
+    "D_tip": {
+     "n": 8,
+     "share": 0.0784313725490196,
+     "coverage": 1.0921893303225099
+    },
+    "H_head": {
+     "n": 2,
+     "share": 0.0196078431372549,
+     "coverage": 1.3036213649474482
+    },
+    "R_roll": {
+     "n": 1,
+     "share": 0.00980392156862745,
+     "coverage": 4.310488346281908
+    }
+   }
+  },
+  "r06r_test_r18b": {
+   "n": 109,
+   "fin_marks": {
+    "R": 56,
+    "S": 2
+   },
+   "cats": {
+    "P_pec": {
+     "n": 10,
+     "share": 0.09174311926605505,
+     "coverage": 1.791974014582626
+    },
+    "F_up": {
+     "n": 7,
+     "share": 0.06422018348623854,
+     "coverage": 0.9414857160324408
+    },
+    "F_low": {
+     "n": 12,
+     "share": 0.11009174311926606,
+     "coverage": 0.7890903560202487
+    },
+    "F_edge": {
+     "n": 10,
+     "share": 0.09174311926605505,
+     "coverage": 0.8390799066524557
+    },
+    "B_back": {
+     "n": 5,
+     "share": 0.045871559633027525,
+     "coverage": 0.4500506076499461
+    },
+    "X_none": {
+     "n": 3,
+     "share": 0.027522935779816515,
+     "coverage": 3.9374135802297654
+    },
+    "D_small": {
+     "n": 55,
+     "share": 0.5045871559633027,
+     "coverage": 1.5663797826645114
+    },
+    "H_head": {
+     "n": 3,
+     "share": 0.027522935779816515,
+     "coverage": 1.8298538425409137
+    },
+    "D_tip": {
+     "n": 3,
+     "share": 0.027522935779816515,
+     "coverage": 0.3832682741728074
+    },
+    "D_tall": {
+     "n": 1,
+     "share": 0.009174311926605505,
+     "coverage": 0.08223748431102103
     }
    }
   },

@@ -1,0 +1,162 @@
+{
+ "made": "2026-11-19T14:51:12",
+ "drawings": 1512,
+ "side_on_drawings": 626,
+ "animals_side_on": 160,
+ "n_direct": 8,
+ "min_at": 3,
+ "templates": {
+  "low triangle": {
+   "how": "direct",
+   "animals": 14,
+   "spread_median": 0.0859,
+   "nearest": "moderate triangle",
+   "nearest_dist": 0.0208
+  },
+  "low hook": {
+   "how": "direct",
+   "animals": 13,
+   "spread_median": 0.0937,
+   "nearest": "high point",
+   "nearest_dist": 0.0322
+  },
+  "low round": {
+   "how": "parts",
+   "animals": 4,
+   "spread_median": 0.081,
+   "nearest": "moderate round",
+   "nearest_dist": 0.0186
+  },
+  "low square": {
+   "how": "parts",
+   "animals": 1,
+   "spread_median": 0.0476,
+   "nearest": "moderate square",
+   "nearest_dist": 0.0213
+  },
+  "low point": {
+   "how": "parts",
+   "animals": 5,
+   "spread_median": 0.1375,
+   "nearest": "moderate point",
+   "nearest_dist": 0.0274
+  },
+  "low pyramid": {
+   "how": "parts",
+   "animals": 2,
+   "spread_median": 0.11,
+   "nearest": "moderate pyramid",
+   "nearest_dist": 0.0194
+  },
+  "moderate triangle": {
+   "how": "direct",
+   "animals": 61,
+   "spread_median": 0.0755,
+   "nearest": "low triangle",
+   "nearest_dist": 0.0208
+  },
+  "moderate hook": {
+   "how": "direct",
+   "animals": 16,
+   "spread_median": 0.0617,
+   "nearest": "high triangle",
+   "nearest_dist": 0.0242
+  },
+  "moderate round": {
+   "how": "direct",
+   "animals": 13,
+   "spread_median": 0.0738,
+   "nearest": "low round",
+   "nearest_dist": 0.0186
+  },
+  "moderate square": {
+   "how": "direct",
+   "animals": 10,
+   "spread_median": 0.0429,
+   "nearest": "low square",
+   "nearest_dist": 0.0213
+  },
+  "moderate point": {
+   "how": "direct",
+   "animals": 10,
+   "spread_median": 0.1099,
+   "nearest": "low point",
+   "nearest_dist": 0.0274
+  },
+  "moderate pyramid": {
+   "how": "parts",
+   "animals": 2,
+   "spread_median": 0.0427,
+   "nearest": "low pyramid",
+   "nearest_dist": 0.0194
+  },
+  "high triangle": {
+   "how": "parts",
+   "animals": 1,
+   "spread_median": 0.0724,
+   "nearest": "moderate hook",
+   "nearest_dist": 0.0242
+  },
+  "high hook": {
+   "how": "parts",
+   "animals": 3,
+   "spread_median": 0.1182,
+   "nearest": "high point",
+   "nearest_dist": 0.0337
+  },
+  "high round": {
+   "how": "parts",
+   "animals": 2,
+   "spread_median": 0.0541,
+   "nearest": "high pyramid",
+   "nearest_dist": 0.0302
+  },
+  "high square": {
+   "how": "parts",
+   "animals": 1,
+   "spread_median": 0.0443,
+   "nearest": "high triangle",
+   "nearest_dist": 0.0251
+  },
+  "high point": {
+   "how": "parts",
+   "animals": 2,
+   "spread_median": 0.0762,
+   "nearest": "low hook",
+   "nearest_dist": 0.0322
+  },
+  "high pyramid": {
+   "how": "parts",
+   "animals": 0,
+   "spread_median": null,
+   "nearest": "high round",
+   "nearest_dist": 0.0302
+  }
+ },
+ "template_pair_dist": {
+  "median": 0.0915,
+  "min": 0.0186,
+  "max": 0.2143
+ },
+ "animal_to_own_template_median": 0.0778,
+ "fit": {
+  "animals": 158,
+  "own_rank1_all": 0.139,
+  "chance_all": 0.056,
+  "own_rank_median": 5.0,
+  "n_shapes": 18,
+  "own_in_top3": 0.354,
+  "top1_height": 0.443,
+  "chance_height": 0.333,
+  "top1_form": 0.259,
+  "chance_form": 0.167,
+  "group_clusters": 138,
+  "top1_group": 0.514,
+  "chance_group": 0.344,
+  "own_dist_median": 0.0872,
+  "other_dist_median": 0.1232,
+  "own_closer_than_generic": 0.582,
+  "majority_height": 0.7,
+  "majority_form": 0.475
+ }
+}

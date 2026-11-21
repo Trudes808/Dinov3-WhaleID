@@ -1,0 +1,72 @@
+{
+ "G.C1 no region": {
+  "n": 6,
+  "base": 0.5,
+  "arm": 0.5,
+  "found": 0,
+  "lost": 0
+ },
+ "G.C1 moved 0 (unchanged)": {
+  "n": 37,
+  "base": 0.784,
+  "arm": 0.784,
+  "found": 1,
+  "lost": 1
+ },
+ "G.C1 moved <= 0.5 base": {
+  "n": 158,
+  "base": 0.791,
+  "arm": 0.785,
+  "found": 8,
+  "lost": 9
+ },
+ "G.C1 moved 0.5-1 base": {
+  "n": 152,
+  "base": 0.783,
+  "arm": 0.836,
+  "found": 15,
+  "lost": 7
+ },
+ "G.C1 moved > 1 base": {
+  "n": 117,
+  "base": 0.795,
+  "arm": 0.829,
+  "found": 11,
+  "lost": 7
+ },
+ "R0.C1 no region": {
+  "n": 6,
+  "base": 0.667,
+  "arm": 0.5,
+  "found": 0,
+  "lost": 1
+ },
+ "R0.C1 moved 0 (unchanged)": {
+  "n": 37,
+  "base": 0.811,
+  "arm": 0.784,
+  "found": 1,
+  "lost": 2
+ },
+ "R0.C1 moved <= 0.5 base": {
+  "n": 158,
+  "base": 0.829,
+  "arm": 0.81,
+  "found": 5,
+  "lost": 8
+ },
+ "R0.C1 moved 0.5-1 base": {
+  "n": 152,
+  "base": 0.796,
+  "arm": 0.816,
+  "found": 9,
+  "lost": 6
+ },
+ "R0.C1 moved > 1 base": {
+  "n": 117,
+  "base": 0.812,
+  "arm": 0.846,
+  "found": 10,
+  "lost": 6
+ }
+}

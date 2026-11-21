@@ -1,0 +1,8 @@
+# Round 19 study: the 61 real F_edge instances of sample.json (labels_ai.txt order), sorted by what is in view (AI, by eye).
+# S1 raised fluke seen obliquely / from the side: stock up out of the water, one blade swept to the side, the other
+#    foreshortened (a "7" / "T" shape): 18 of 61 (30 %).  tiles 1 3 4 7 16 17 21 22 41 43 46 47 49 50 53 58 59 61
+# S2 fluke near vertical seen side-on: both blades overlap into one tall sail on a thick stock: 15 of 61 (25 %).
+#    tiles 2 5 9 24 25 27 29 34 40 45 48 51 52 54 55
+# S3 low roll-out / sinking seen from the side: one long blade near level just over the water, stock lump at one end:
+#    28 of 61 (46 %).  tiles 6 8 10 11 12 13 14 15 18 19 20 23 26 28 30 31 32 33 35 36 37 38 39 42 44 56 57 60
+# Tile n = n-th F_edge line of labels_ai.txt. Shares unweighted (sample strata weights not applied).

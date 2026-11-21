@@ -1,0 +1,13 @@
+{
+ "axis": "pca",
+ "wide": 2.0,
+ "tight": 1.3,
+ "note": "L = extent of the largest W3c dorsal region along its own principal axis (least spread of L / clicked base: IQR of log 0.186 against 0.208 for the body / chart axis; L = 1.21 clicked bases, median). Centre = the region's centroid. Wide: smallest k in 0.1 steps that holds the whole clicked triangle with a margin of 10 % of the side on every edge in >= 95 % of the 196 clicked fins (95th percentile 1.98). Tight: the region plus 0.15 L on each side (1.3 L), the fin + hump with little else. No region: the parts_up cut-out. Fixed before any validation-day identity score was read.",
+ "chosen_on": "clicked fins of 2025-01-02 and 2025-03-18 (training days), geometry only, W3c seed 0",
+ "centre_variants": {
+  "size": 1536,
+  "margin": 0.05,
+  "note": "The centre alone (follow-up 2026-11-18 pm): the parts_up fin cut-out with its own turn, mirror AND scale, only the\ncentre changed by the W3c dorsal region. Two variants, fixed in RESULTS/rule.json (\"centre_variants\") before any\nvalidation score:\n  centre   the square's centre moved to the region's centroid, then cluster.parts.frame_inside(..., \"fit\") as parts_up\n           (the square is shifted back inside the photo; the scale is parts_up's, which already fits).\n  nudge    parts_up unchanged when its square holds the whole region (its extent along the chart's axes) with a 5 %\n           margin of the side on every edge; else the smallest shift per chart axis that brings it inside (a region\n           too large for the margin is centred on that axis), then frame_inside(..., \"fit\") as above.",
+  "fixed": "2026-11-18 pm, before any validation-day score of these variants"
+ }
+}

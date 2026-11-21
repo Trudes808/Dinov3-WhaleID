@@ -1,0 +1,360 @@
+{
+ "G.W": {
+  "a1 low fin (H/L < median 0.38)": {
+   "n": 232,
+   "base": 0.802,
+   "arm": 0.763,
+   "found": 12,
+   "lost": 21
+  },
+  "a1 tall fin (H/L >= median)": {
+   "n": 233,
+   "base": 0.768,
+   "arm": 0.751,
+   "found": 19,
+   "lost": 23
+  },
+  "a2 large (L >= median)": {
+   "n": 233,
+   "base": 0.828,
+   "arm": 0.803,
+   "found": 11,
+   "lost": 17
+  },
+  "a2 small (L < median 245 px)": {
+   "n": 232,
+   "base": 0.741,
+   "arm": 0.711,
+   "found": 20,
+   "lost": 27
+  },
+  "b centre moved <= 1 fin base": {
+   "n": 263,
+   "base": 0.791,
+   "arm": 0.768,
+   "found": 15,
+   "lost": 21
+  },
+  "b centre moved > 1 fin base": {
+   "n": 202,
+   "base": 0.777,
+   "arm": 0.743,
+   "found": 16,
+   "lost": 23
+  },
+  "c fallback (no region)": {
+   "n": 5,
+   "base": 0.8,
+   "arm": 0.8,
+   "found": 0,
+   "lost": 0
+  },
+  "c has region": {
+   "n": 465,
+   "base": 0.785,
+   "arm": 0.757,
+   "found": 31,
+   "lost": 44
+  }
+ },
+ "G.T": {
+  "a1 low fin (H/L < median 0.38)": {
+   "n": 232,
+   "base": 0.802,
+   "arm": 0.741,
+   "found": 10,
+   "lost": 24
+  },
+  "a1 tall fin (H/L >= median)": {
+   "n": 233,
+   "base": 0.768,
+   "arm": 0.717,
+   "found": 21,
+   "lost": 33
+  },
+  "a2 large (L >= median)": {
+   "n": 233,
+   "base": 0.828,
+   "arm": 0.781,
+   "found": 13,
+   "lost": 24
+  },
+  "a2 small (L < median 245 px)": {
+   "n": 232,
+   "base": 0.741,
+   "arm": 0.677,
+   "found": 18,
+   "lost": 33
+  },
+  "b centre moved <= 1 fin base": {
+   "n": 263,
+   "base": 0.791,
+   "arm": 0.757,
+   "found": 15,
+   "lost": 24
+  },
+  "b centre moved > 1 fin base": {
+   "n": 202,
+   "base": 0.777,
+   "arm": 0.693,
+   "found": 16,
+   "lost": 33
+  },
+  "c fallback (no region)": {
+   "n": 5,
+   "base": 0.8,
+   "arm": 0.8,
+   "found": 0,
+   "lost": 0
+  },
+  "c has region": {
+   "n": 465,
+   "base": 0.785,
+   "arm": 0.729,
+   "found": 31,
+   "lost": 57
+  }
+ },
+ "G.X1": {
+  "a1 low fin (H/L < median 0.38)": {
+   "n": 232,
+   "base": 0.802,
+   "arm": 0.767,
+   "found": 13,
+   "lost": 21
+  },
+  "a1 tall fin (H/L >= median)": {
+   "n": 233,
+   "base": 0.768,
+   "arm": 0.738,
+   "found": 20,
+   "lost": 27
+  },
+  "a2 large (L >= median)": {
+   "n": 233,
+   "base": 0.828,
+   "arm": 0.785,
+   "found": 12,
+   "lost": 22
+  },
+  "a2 small (L < median 245 px)": {
+   "n": 232,
+   "base": 0.741,
+   "arm": 0.72,
+   "found": 21,
+   "lost": 26
+  },
+  "b centre moved <= 1 fin base": {
+   "n": 263,
+   "base": 0.791,
+   "arm": 0.772,
+   "found": 19,
+   "lost": 24
+  },
+  "b centre moved > 1 fin base": {
+   "n": 202,
+   "base": 0.777,
+   "arm": 0.728,
+   "found": 14,
+   "lost": 24
+  },
+  "c fallback (no region)": {
+   "n": 5,
+   "base": 0.8,
+   "arm": 0.8,
+   "found": 0,
+   "lost": 0
+  },
+  "c has region": {
+   "n": 465,
+   "base": 0.785,
+   "arm": 0.753,
+   "found": 33,
+   "lost": 48
+  }
+ },
+ "R0.W": {
+  "a1 low fin (H/L < median 0.38)": {
+   "n": 232,
+   "base": 0.802,
+   "arm": 0.776,
+   "found": 14,
+   "lost": 20
+  },
+  "a1 tall fin (H/L >= median)": {
+   "n": 233,
+   "base": 0.82,
+   "arm": 0.794,
+   "found": 19,
+   "lost": 25
+  },
+  "a2 large (L >= median)": {
+   "n": 233,
+   "base": 0.824,
+   "arm": 0.837,
+   "found": 18,
+   "lost": 15
+  },
+  "a2 small (L < median 245 px)": {
+   "n": 232,
+   "base": 0.797,
+   "arm": 0.733,
+   "found": 15,
+   "lost": 30
+  },
+  "b centre moved <= 1 fin base": {
+   "n": 263,
+   "base": 0.814,
+   "arm": 0.798,
+   "found": 16,
+   "lost": 20
+  },
+  "b centre moved > 1 fin base": {
+   "n": 202,
+   "base": 0.807,
+   "arm": 0.767,
+   "found": 17,
+   "lost": 25
+  },
+  "c fallback (no region)": {
+   "n": 5,
+   "base": 0.8,
+   "arm": 0.8,
+   "found": 0,
+   "lost": 0
+  },
+  "c has region": {
+   "n": 465,
+   "base": 0.811,
+   "arm": 0.785,
+   "found": 33,
+   "lost": 45
+  }
+ },
+ "R0.T": {
+  "a1 low fin (H/L < median 0.38)": {
+   "n": 232,
+   "base": 0.802,
+   "arm": 0.754,
+   "found": 12,
+   "lost": 23
+  },
+  "a1 tall fin (H/L >= median)": {
+   "n": 233,
+   "base": 0.82,
+   "arm": 0.717,
+   "found": 14,
+   "lost": 38
+  },
+  "a2 large (L >= median)": {
+   "n": 233,
+   "base": 0.824,
+   "arm": 0.803,
+   "found": 13,
+   "lost": 18
+  },
+  "a2 small (L < median 245 px)": {
+   "n": 232,
+   "base": 0.797,
+   "arm": 0.668,
+   "found": 13,
+   "lost": 43
+  },
+  "b centre moved <= 1 fin base": {
+   "n": 263,
+   "base": 0.814,
+   "arm": 0.772,
+   "found": 14,
+   "lost": 25
+  },
+  "b centre moved > 1 fin base": {
+   "n": 202,
+   "base": 0.807,
+   "arm": 0.688,
+   "found": 12,
+   "lost": 36
+  },
+  "c fallback (no region)": {
+   "n": 5,
+   "base": 0.8,
+   "arm": 0.8,
+   "found": 0,
+   "lost": 0
+  },
+  "c has region": {
+   "n": 465,
+   "base": 0.811,
+   "arm": 0.735,
+   "found": 26,
+   "lost": 61
+  }
+ },
+ "R0.X1": {
+  "a1 low fin (H/L < median 0.38)": {
+   "n": 232,
+   "base": 0.802,
+   "arm": 0.793,
+   "found": 13,
+   "lost": 15
+  },
+  "a1 tall fin (H/L >= median)": {
+   "n": 233,
+   "base": 0.82,
+   "arm": 0.755,
+   "found": 11,
+   "lost": 26
+  },
+  "a2 large (L >= median)": {
+   "n": 233,
+   "base": 0.824,
+   "arm": 0.824,
+   "found": 15,
+   "lost": 15
+  },
+  "a2 small (L < median 245 px)": {
+   "n": 232,
+   "base": 0.797,
+   "arm": 0.724,
+   "found": 9,
+   "lost": 26
+  },
+  "b centre moved <= 1 fin base": {
+   "n": 263,
+   "base": 0.814,
+   "arm": 0.791,
+   "found": 13,
+   "lost": 19
+  },
+  "b centre moved > 1 fin base": {
+   "n": 202,
+   "base": 0.807,
+   "arm": 0.752,
+   "found": 11,
+   "lost": 22
+  },
+  "c fallback (no region)": {
+   "n": 5,
+   "base": 0.8,
+   "arm": 0.8,
+   "found": 0,
+   "lost": 0
+  },
+  "c has region": {
+   "n": 465,
+   "base": 0.811,
+   "arm": 0.774,
+   "found": 24,
+   "lost": 41
+  }
+ },
+ "_info": {
+  "n_queries": 470,
+  "fallback": 5,
+  "median_HL": 0.3843524496771743,
+  "median_L": 245.0,
+  "shift_bases_median": 0.87967,
+  "shift_over_1": 0.4344086021505376,
+  "sideA_over_L_median": 4.949,
+  "zoom_vs_A_wide": 2.4745
+ }
+}

@@ -1,0 +1,48 @@
+sketch_fluke (2026-11-18): automatic researcher-style fluke drawings (contour + light / dark pattern) and their comparison
+on the moonshot bench. CPU only, no eval day read, nothing fitted except the fusion / veto (16 pool days of each bench
+split). Arrays in moonshot_cache/sketch_fluke, sheets in the scratchpad (sketch_fluke/), none in the repo.
+
+PIPELINE
+  prep.py    parts_up fluke cut-outs at 384 px, flipped blades-up, masks, the aligned agent's tip / notch points mapped in
+  draw.py    canonical canvas 256 x 128 from the two tips (similarity); seen = whale mask eroded 2 px, blades only;
+             brightness n = (L - p5 on the whale) / (p99.5 of the cut-out - p5); drawing = dark (n < .35) / grey / light (> .5)
+             + outline; per cluster a consensus (median n over the frames, kept where >= half the frames saw it,
+             'stable' = share of frames agreeing on light / dark)
+  build.py   cache of every instance's drawing + template (mean silhouette of clear light underside views)
+  score.py   drawable gate: tips from the point model and on the mask, span >= 250 RAW px, not cut by the frame, blade
+             area >= .045 span^2, >= 60 % of the seen mask inside the loose template and >= 30 % of it seen;
+             comparison at 128 x 64: best Pearson r of the blurred n over the common seen region (15 small shifts);
+             light-share difference, contradiction share (clear light vs clear dark), 5-step light class
+  run.py     1 bench.evaluate_pairs (sketch_fluke_any, sketch_fluke_light) | 2 exclusion | 3 class repeatability |
+             4 fusion + veto on the 20 splits (logs run1.log, run23.log, run4.log; exclusion.json, classes.json, fusion.json)
+  marks.py   researcher's marked regions (2025-01-02) against the drawn marks (marks.log, marks.json)
+  sheet.py   sheets
+
+COUNTS  3444 fluke instances on the 24 days; 2703 with a cut-out; 802 drawable (23 % of instances); 476 of 1279 clusters
+  have a drawing (223 from >= 2 frames); 67 of them are light enough (>= 15 % light blade) to be called underside views.
+  Pairs drawn: 1641 of 16617 (9.9 %); both light: 31.
+
+TOP / BOTTOM  no usable label. The notch-vs-tip-line geometry in the upright photo and the parts.py CSE 'underside' flag
+  are independent of each other (2703 instances: 894 / 720 / 635 / 454) and neither tracks the one sure cue (a light blade
+  is an underside): light clusters CSE-underside 0.22, notch below 0.67; dark clusters 0.53, 0.69. Same-animal pairs with
+  one dark and one light drawing are mostly upper side vs underside of one fluke (sheet same_but_class_apart.jpg).
+
+RESULTS (val + 5 set-aside days, mean of the bench's 20 splits; BASE = live features, head leave-one-day-out)
+  drawing alone, bench (1641 pairs): AUC 0.648 vs BASE 0.805, P95 13.5 vs 21.4 %, P90 17.9 vs 29.4 % (0/20 up in AUC)
+  drawn pairs: drawing 0.648 / 13.5 / 17.9 | BASE 0.801 / 19.1 / 26.5 | BASE+kp 0.848 / 46.5 / 50.8 | BASE+kp+drawing
+    0.833 / 41.5 / 48.5 (w 0.5: 0.842 / 45.5 / 49.8): the drawing lowers the best existing score.
+  all pairs: BASE 0.698 / 2.9 / 5.8 | BASE+kp 0.715 / 13.5 / 18.8 | + drawing 0.715 / 11.6 / 17.8
+  exclusion, light-share difference, every drawn pair: AUC (different vs same) 0.545; ruled out at P 0.95 0.14 % of all
+    different pairs (1.3 % of the drawn ones), at 0.90 0.47 % (4.8 %); pooled 24 days 0.09 / 0.09 %. Class difference: 0 /
+    0.34 %. Between two light drawings (contradiction share) AUC 0.76 pooled but on 31 pairs: 2 pairs ruled out.
+  veto (contradiction >= threshold at 'different' precision 0.95 on the pool days) on BASE+kp joins at P 0.90: removes 6
+    right, 0 wrong joins (of 3812 / 580, summed over the splits); at P 0.95: nothing.
+  5-step light class, drawn cluster pairs (24 days): same animal equal 63.0 %, within one 93.0 %, two+ apart 7.0 %;
+    different animals 53.9 / 86.3 / 13.7 %; classes 1..5: 336 / 98 / 22 / 15 / 5 (Hawaii flukes here are mostly dark).
+  researcher marks: drawn-mark pixels in her boxes 0.187 vs 0.159 over the whole seen fluke; box above chance in 45 of 105
+    photos (keypoint inliers: 0.33 vs 0.24): weak.
+
+WHY  (sheets) 1 side unknown: dark vs light is not evidence of different without it; 2 the brightness normalisation turns
+  the grey marks of dark flukes into dark in one exposure and grey in another (pairs_same_animal.jpg rows 2-3); 3 only a
+  quarter of flukes are flat, whole and tip-located; close-ups of one blade and blurred frames slip through; 4 one or two
+  frames per cluster, so the 'persistent across frames' filter rarely has anything to vote with.

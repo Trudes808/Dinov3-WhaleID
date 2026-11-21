@@ -1,0 +1,238 @@
+{
+ "all 24 days|A  HW only": {
+  "n_same": 11546,
+  "n_diff": 39383,
+  "auc": 0.7996400459681968,
+  "out95": 21,
+  "out90": 29333,
+  "honest95": [
+   15,
+   4,
+   39383
+  ],
+  "honest90": [
+   22544,
+   3049,
+   39383
+  ],
+  "found95": 2038,
+  "found90": 3465
+ },
+ "all 24 days|A  LR HW": {
+  "n_same": 11546,
+  "n_diff": 39383,
+  "auc": 0.7843923381664689,
+  "out95": 21,
+  "out90": 25741,
+  "honest95": [
+   6,
+   1,
+   39383
+  ],
+  "honest90": [
+   12955,
+   2338,
+   39383
+  ],
+  "found95": 2005,
+  "found90": 3337
+ },
+ "all 24 days|B  LR HW + viewing quality": {
+  "n_same": 11546,
+  "n_diff": 39383,
+  "auc": 0.8348623789051612,
+  "out95": 16004,
+  "out90": 32428,
+  "honest95": [
+   14267,
+   907,
+   39383
+  ],
+  "honest90": [
+   30414,
+   3578,
+   39383
+  ],
+  "found95": 1599,
+  "found90": 3196
+ },
+ "all 24 days|C  LR HW + quality + drawing": {
+  "n_same": 11546,
+  "n_diff": 39383,
+  "auc": 0.8335226661131903,
+  "out95": 16139,
+  "out90": 32220,
+  "honest95": [
+   14162,
+   898,
+   39383
+  ],
+  "honest90": [
+   30053,
+   3559,
+   39383
+  ],
+  "found95": 1399,
+  "found90": 3163
+ },
+ "all 24 days|A  HW only|same flank": {
+  "n_same": 4452,
+  "n_diff": 16196,
+  "auc": 0.8474005511327212,
+  "out95": 1921,
+  "out90": 15123
+ },
+ "all 24 days|B  LR HW + viewing quality|same flank": {
+  "n_same": 4452,
+  "n_diff": 16196,
+  "auc": 0.8842418940530168,
+  "out95": 11253,
+  "out90": 15306
+ },
+ "all 24 days|C  LR HW + quality + drawing|same flank": {
+  "n_same": 4452,
+  "n_diff": 16196,
+  "auc": 0.8831402859889977,
+  "out95": 11058,
+  "out90": 15350
+ },
+ "all 24 days|A  HW only|opposite flanks": {
+  "n_same": 3656,
+  "n_diff": 12027,
+  "auc": 0.8198313231771185,
+  "out95": 1215,
+  "out90": 9657
+ },
+ "all 24 days|B  LR HW + viewing quality|opposite flanks": {
+  "n_same": 3656,
+  "n_diff": 12027,
+  "auc": 0.840564396591986,
+  "out95": 4891,
+  "out90": 10008
+ },
+ "all 24 days|C  LR HW + quality + drawing|opposite flanks": {
+  "n_same": 3656,
+  "n_diff": 12027,
+  "auc": 0.8397923599690631,
+  "out95": 5342,
+  "out90": 9966
+ },
+ "all 24 days|A  HW only|flank unknown": {
+  "n_same": 2817,
+  "n_diff": 8765,
+  "auc": 0.7326828940336775,
+  "out95": 0,
+  "out90": 211
+ },
+ "all 24 days|B  LR HW + viewing quality|flank unknown": {
+  "n_same": 2817,
+  "n_diff": 8765,
+  "auc": 0.7281690234966134,
+  "out95": 19,
+  "out90": 1966
+ },
+ "all 24 days|C  LR HW + quality + drawing|flank unknown": {
+  "n_same": 2817,
+  "n_diff": 8765,
+  "auc": 0.7240918302029423,
+  "out95": 4,
+  "out90": 1757
+ },
+ "all 24 days|A  HW only|gap > 1 h": {
+  "n_same": 1722,
+  "n_diff": 5243,
+  "auc": 0.7351205290478561,
+  "out95": 8,
+  "out90": 13
+ },
+ "all 24 days|B  LR HW + viewing quality|gap > 1 h": {
+  "n_same": 1722,
+  "n_diff": 5243,
+  "auc": 0.7661752642702853,
+  "out95": 6,
+  "out90": 2630
+ },
+ "all 24 days|C  LR HW + quality + drawing|gap > 1 h": {
+  "n_same": 1722,
+  "n_diff": 5243,
+  "auc": 0.7638767513257542,
+  "out95": 4,
+  "out90": 2619
+ },
+ "val 3 days|A  HW only": {
+  "n_same": 824,
+  "n_diff": 2136,
+  "auc": 0.8129158939674921,
+  "out95": 84,
+  "out90": 1083,
+  "honest95": [
+   0,
+   0,
+   2136
+  ],
+  "honest90": [
+   1390,
+   192,
+   2136
+  ],
+  "found95": 288,
+  "found90": 351
+ },
+ "val 3 days|A  LR HW": {
+  "n_same": 824,
+  "n_diff": 2136,
+  "auc": 0.8114489018581142,
+  "out95": 80,
+  "out90": 1054,
+  "honest95": [
+   0,
+   0,
+   2136
+  ],
+  "honest90": [
+   1255,
+   169,
+   2136
+  ],
+  "found95": 288,
+  "found90": 351
+ },
+ "val 3 days|B  LR HW + viewing quality": {
+  "n_same": 824,
+  "n_diff": 2136,
+  "auc": 0.8582489045852878,
+  "out95": 753,
+  "out90": 1585,
+  "honest95": [
+   781,
+   53,
+   2136
+  ],
+  "honest90": [
+   1731,
+   220,
+   2136
+  ],
+  "found95": 311,
+  "found90": 389
+ },
+ "val 3 days|C  LR HW + quality + drawing": {
+  "n_same": 824,
+  "n_diff": 2136,
+  "auc": 0.859940888513145,
+  "out95": 898,
+  "out90": 1602,
+  "honest95": [
+   818,
+   46,
+   2136
+  ],
+  "honest90": [
+   1710,
+   217,
+   2136
+  ],
+  "found95": 316,
+  "found90": 381
+ }
+}

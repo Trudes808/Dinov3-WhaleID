@@ -1,0 +1,39 @@
+{
+ "pairs": 1628,
+ "profile": {
+  "n": 1602,
+  "agree": 0.582
+ },
+ "profile_big_gap": {
+  "n": 570,
+  "agree": 0.633
+ },
+ "profile_val": {
+  "n": 84,
+  "agree": 0.595
+ },
+ "bperp": {
+  "n": 1624,
+  "agree": 0.73
+ },
+ "bperp_big_gap": {
+  "n": 813,
+  "agree": 0.753
+ },
+ "bperp_val": {
+  "n": 89,
+  "agree": 0.618
+ },
+ "rule_side>=0.85_angled<0.5": {
+  "n": 222,
+  "agree": 0.698
+ },
+ "rule_side>=0.9_angled<0.4": {
+  "n": 114,
+  "agree": 0.667
+ },
+ "rule_side>=0.85_angled<0.6": {
+  "n": 338,
+  "agree": 0.66
+ }
+}

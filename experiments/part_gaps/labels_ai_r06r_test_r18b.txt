@@ -1,0 +1,114 @@
+# AI by-eye labels of every r06r_test_r18b whale (109), blind (render + outline only; round 18 pose / view mix, second check;
+# labelled before looking at any shot's category). Same taxonomy and #S / #R fin marks as labels_ai_r06r_test_r10.txt, with the
+# F_low / F_up boundary of the real labels: a fluke seen face-on as a broad V / W is F_up even with the notch at the water;
+# F_low = blades edge-on, near level or drooping, just above the water. 'pale' = flat pale look; 'ghost' = submerged body bright
+# under the dome. Format: <shot> <iid> <CATEGORY> ...
+000000 1 P_pec pale
+000001 1 F_up
+000001 2 F_low
+000002 1 P_pec s2
+000002 2 F_edge
+000003 1 F_low s1
+000003 2 F_edge pale
+000004 2 B_back
+000005 1 X_none s2
+000006 1 F_low pale
+000007 1 P_pec s1
+000008 1 P_pec
+000009 1 P_pec s1 pale
+000010 1 F_up s1
+000010 2 D_small #R
+000011 1 F_edge pale
+000012 1 D_small s1 pale #R
+000013 1 D_small #R
+000013 2 D_small #R
+000014 1 F_up
+000015 1 D_small pale #R
+000016 1 D_small pale #R
+000017 1 F_edge
+000018 1 F_low pale
+000019 1 F_edge
+000020 1 D_small #R
+000021 1 F_edge
+000021 2 D_small #R
+000022 1 F_edge s1
+000023 1 F_edge s1 pale
+000024 1 D_small pale e #R
+000024 2 D_small s2 #R
+000025 1 D_small #R
+000026 1 P_pec pale
+000026 2 D_small #R
+000026 3 D_small #R
+000027 1 D_small pale #R
+000028 1 B_back s1
+000029 1 H_head
+000030 1 D_small #R
+000032 1 F_up pale
+000033 1 D_small #R
+000034 1 F_edge s1
+000034 2 D_small #R
+000035 1 D_small pale #S
+000035 2 D_small pale #R
+000036 1 D_small #R
+000036 2 D_small #R
+000036 3 D_small #R
+000037 1 D_small #R
+000038 1 D_small #R
+000039 1 F_low s1
+000039 2 D_small #R
+000040 1 B_back s2
+000040 2 D_tip ghost #R
+000040 3 F_edge pale s2
+000041 1 D_small #R
+000042 1 P_pec pale
+000043 1 D_small pale #R
+000043 2 F_low
+000045 1 D_small #R
+000046 1 D_tip #R
+000048 1 D_small #R
+000048 2 D_small #R
+000049 1 D_tip #S
+000049 2 F_low
+000050 1 D_small pale #R
+000051 1 D_small #R
+000052 1 F_up s1
+000053 1 D_small #R
+000053 2 D_small #R
+000054 1 D_small #R
+000054 2 H_head
+000055 1 D_small pale #R
+000056 1 D_small pale #R
+000057 1 F_low pale
+000057 2 D_small #R
+000057 3 D_tall
+000058 1 F_up
+000058 2 F_low
+000058 3 H_head
+000059 1 P_pec s2
+000060 1 D_small pale #R
+000061 1 P_pec pale s1
+000062 2 D_small #R
+000063 1 X_none s2
+000064 1 F_low pale
+000065 1 D_small #R
+000066 1 D_small s1 #R
+000066 2 D_small #R
+000067 1 D_small #R
+000068 1 D_small #R
+000068 2 D_small #R
+000068 3 P_pec
+000069 1 F_low
+000069 2 D_small #R
+000069 3 F_up pale
+000070 1 D_small pale #R
+000071 1 D_small s1 #R
+000072 1 D_small pale #R
+000072 2 D_small pale #R
+000073 1 D_small #R
+000073 2 D_small #R
+000074 1 D_small pale #R
+000074 2 B_back pale
+000075 1 X_none
+000076 1 D_small #R
+000077 1 B_back e
+000078 1 F_low

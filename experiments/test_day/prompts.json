@@ -1,0 +1,24 @@
+{
+  "_note": "Fixed 2026-11-20 before any open-vocabulary output on the test day 2026-04-07 was looked at. Not changed afterwards.",
+  "clip_model": "openai/clip-vit-large-patch14",
+  "owl_model": "google/owlv2-base-patch16-ensemble",
+  "photo_classes": {
+    "whale": ["a photo of a humpback whale in the ocean", "a whale's dorsal fin above the water", "a whale's tail fluke above the water", "the back of a whale at the sea surface"],
+    "person": ["a photo of a person on a boat", "a photo of people", "a person wearing a hat and sunglasses"],
+    "railing": ["a photo of a boat railing", "the metal railing of a boat", "the deck and rail of a small boat"],
+    "land": ["a photo of an island seen from the sea", "a coastline with mountains", "a photo of land on the horizon"],
+    "vessel": ["a photo of a boat on the ocean", "another boat on the water"],
+    "water": ["a photo of empty ocean water and sky", "a photo of the sea surface with nothing on it"]
+  },
+  "photo_rule": "CLIP: mean of the normalised prompt embeddings per class; softmax over the six classes at the model's logit scale; main class = argmax; class present = p >= 0.2.",
+  "box_queries": {
+    "whale": ["a whale", "a whale fin", "a whale tail"],
+    "person": ["a person"],
+    "railing": ["a boat railing"],
+    "land": ["an island", "a mountain"],
+    "vessel": ["a boat"]
+  },
+  "box_rule": "OWLv2 on the 2560-px photo (model input 960); a detection counts at score >= 0.2 (fixed); photo-level presence of a class = any detection of it at >= 0.2; best score per class kept for a descriptive sweep only.",
+  "instance_rule": "CLIP on each pipeline instance's square crop (box x 1.15, as the not-whale filter cuts it): softmax over the six photo classes; instance name = argmax.",
+  "railing_colour_rule": "On the 2560-px photo: HSV, saturation >= 0.45 and value >= 0.25; hue bands red <15 or >=165 (OpenCV 0-180), green 40-85, blue 95-130; the marker colour = the band with the most pixels if that band holds >= 0.5 % of the photo and >= 2x the next band; else none. Fixed before looking at the marker photos' pixel values."
+}

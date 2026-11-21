@@ -1,0 +1,136 @@
+{
+ "note": "round 20: nearest renders (frozen DINOv3 whale tokens, top 5 of the whole pool) of the real sample after adding r06r_check20 (234 whales, 0.10 of the pool); best = mean over real instances of the best similarity in the whole pool; top1/top3 = share of real instances whose nearest / 3 nearest include a check20 whale",
+ "pool": {
+  "r06r_check20": 234,
+  "r06r_test_check": 121,
+  "r06r_test_final": 389,
+  "r06r_test_r10": 116,
+  "r06r_test_r3": 59,
+  "r06r_test_r4b": 21,
+  "r06r_test_r5": 16,
+  "r06r_test_r6b": 75,
+  "r06r_test_r7": 76,
+  "r06r_test_r8": 96,
+  "r06r_test_r9": 101,
+  "run05": 1000
+ },
+ "D_small|fail": {
+  "n": 44,
+  "best_any_mean": 0.8394,
+  "top1_check20": 0.5,
+  "top3_check20": 0.568,
+  "top3_r10": 0.114
+ },
+ "D_small|pass": {
+  "n": 113,
+  "best_any_mean": 0.8754,
+  "top1_check20": 0.885,
+  "top3_check20": 0.956,
+  "top3_r10": 0.044
+ },
+ "D_tall|fail": {
+  "n": 7,
+  "best_any_mean": 0.834,
+  "top1_check20": 0.857,
+  "top3_check20": 0.857,
+  "top3_r10": 0.286
+ },
+ "D_tall|pass": {
+  "n": 56,
+  "best_any_mean": 0.8736,
+  "top1_check20": 0.714,
+  "top3_check20": 0.946,
+  "top3_r10": 0.089
+ },
+ "D_tip|fail": {
+  "n": 1,
+  "best_any_mean": 0.8735,
+  "top1_check20": 0.0,
+  "top3_check20": 1.0,
+  "top3_r10": 0.0
+ },
+ "D_tip|pass": {
+  "n": 34,
+  "best_any_mean": 0.8395,
+  "top1_check20": 0.559,
+  "top3_check20": 0.912,
+  "top3_r10": 0.029
+ },
+ "B_back|fail": {
+  "n": 32,
+  "best_any_mean": 0.8193,
+  "top1_check20": 0.25,
+  "top3_check20": 0.406,
+  "top3_r10": 0.281
+ },
+ "B_back|pass": {
+  "n": 66,
+  "best_any_mean": 0.8167,
+  "top1_check20": 0.455,
+  "top3_check20": 0.788,
+  "top3_r10": 0.379
+ },
+ "P_pec|fail": {
+  "n": 37,
+  "best_any_mean": 0.8268,
+  "top1_check20": 0.135,
+  "top3_check20": 0.324,
+  "top3_r10": 0.216
+ },
+ "P_pec|pass": {
+  "n": 22,
+  "best_any_mean": 0.8347,
+  "top1_check20": 0.227,
+  "top3_check20": 0.318,
+  "top3_r10": 0.227
+ },
+ "F_low|fail": {
+  "n": 13,
+  "best_any_mean": 0.8522,
+  "top1_check20": 0.923,
+  "top3_check20": 1.0,
+  "top3_r10": 0.0
+ },
+ "F_low|pass": {
+  "n": 57,
+  "best_any_mean": 0.8542,
+  "top1_check20": 0.439,
+  "top3_check20": 0.754,
+  "top3_r10": 0.175
+ },
+ "F_up|pass": {
+  "n": 33,
+  "best_any_mean": 0.8781,
+  "top1_check20": 0.303,
+  "top3_check20": 0.515,
+  "top3_r10": 0.152
+ },
+ "F_edge|fail": {
+  "n": 2,
+  "best_any_mean": 0.8106,
+  "top1_check20": 0.0,
+  "top3_check20": 0.0,
+  "top3_r10": 0.0
+ },
+ "F_edge|pass": {
+  "n": 60,
+  "best_any_mean": 0.8523,
+  "top1_check20": 0.333,
+  "top3_check20": 0.683,
+  "top3_r10": 0.183
+ },
+ "H_head|fail": {
+  "n": 5,
+  "best_any_mean": 0.8176,
+  "top1_check20": 0.2,
+  "top3_check20": 0.8,
+  "top3_r10": 0.2
+ },
+ "H_head|pass": {
+  "n": 12,
+  "best_any_mean": 0.8174,
+  "top1_check20": 0.0,
+  "top3_check20": 0.25,
+  "top3_r10": 0.083
+ }
+}

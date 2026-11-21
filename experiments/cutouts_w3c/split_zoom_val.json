@@ -1,0 +1,90 @@
+{
+ "terciles_zoom_wide_vs_A": [
+  2.073292,
+  2.98354
+ ],
+ "low G.W": {
+  "n": 155,
+  "base": 0.774,
+  "arm": 0.768,
+  "found": 9,
+  "lost": 10
+ },
+ "low R0.W": {
+  "n": 155,
+  "base": 0.8,
+  "arm": 0.781,
+  "found": 7,
+  "lost": 10
+ },
+ "low G.X1": {
+  "n": 155,
+  "base": 0.774,
+  "arm": 0.755,
+  "found": 9,
+  "lost": 12
+ },
+ "low R0.X1": {
+  "n": 155,
+  "base": 0.8,
+  "arm": 0.794,
+  "found": 7,
+  "lost": 8
+ },
+ "mid G.W": {
+  "n": 155,
+  "base": 0.755,
+  "arm": 0.755,
+  "found": 14,
+  "lost": 14
+ },
+ "mid R0.W": {
+  "n": 155,
+  "base": 0.8,
+  "arm": 0.806,
+  "found": 16,
+  "lost": 15
+ },
+ "mid G.X1": {
+  "n": 155,
+  "base": 0.755,
+  "arm": 0.774,
+  "found": 16,
+  "lost": 13
+ },
+ "mid R0.X1": {
+  "n": 155,
+  "base": 0.8,
+  "arm": 0.781,
+  "found": 11,
+  "lost": 14
+ },
+ "high G.W": {
+  "n": 155,
+  "base": 0.826,
+  "arm": 0.748,
+  "found": 8,
+  "lost": 20
+ },
+ "high R0.W": {
+  "n": 155,
+  "base": 0.832,
+  "arm": 0.768,
+  "found": 10,
+  "lost": 20
+ },
+ "high G.X1": {
+  "n": 155,
+  "base": 0.826,
+  "arm": 0.729,
+  "found": 8,
+  "lost": 23
+ },
+ "high R0.X1": {
+  "n": 155,
+  "base": 0.832,
+  "arm": 0.748,
+  "found": 6,
+  "lost": 19
+ }
+}

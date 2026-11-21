@@ -1,0 +1,38 @@
+{
+ "fin_A": {
+  "n": 195,
+  "centre_off_median": 0.797,
+  "off_over_1": 0.354,
+  "off_over_half": 0.764,
+  "base_share_median": 0.175,
+  "base_share_q": [
+   0.129,
+   0.243
+  ],
+  "tip_inside": 0.99
+ },
+ "fin_finB": {
+  "n": 195,
+  "centre_off_median": 0.065,
+  "off_over_1": 0.0,
+  "off_over_half": 0.005,
+  "base_share_median": 0.413,
+  "base_share_q": [
+   0.381,
+   0.458
+  ],
+  "tip_inside": 1.0
+ },
+ "fin_finC": {
+  "n": 195,
+  "centre_off_median": 0.065,
+  "off_over_1": 0.0,
+  "off_over_half": 0.005,
+  "base_share_median": 0.635,
+  "base_share_q": [
+   0.586,
+   0.705
+  ],
+  "tip_inside": 1.0
+ }
+}

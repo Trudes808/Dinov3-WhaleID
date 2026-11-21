@@ -1,0 +1,1226 @@
+[
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590000-184A4470~0",
+"cue": [
+"barnacles"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.007692307692307693,
+"chance": 0.0049532195927352776,
+"box_share": 0.03577325261419923
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590003-184A4473~0",
+"cue": [
+"barnacles"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.0546875,
+"chance": 0.06833098921706517,
+"box_share": 0.28504453820909514
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590328-184A4799~0",
+"cue": [
+"barnacles"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.013383521539104977,
+"box_share": 0.022793810121288165
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590333-184A4804~0",
+"cue": [
+"barnacles"
+],
+"drawable": false,
+"frame": "mask",
+"in_box": 0.12741046831955924,
+"chance": 0.03972736124634859,
+"box_share": 0.2827653359298929
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590581-184A5052~0",
+"cue": [],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.26049204052098407,
+"chance": 0.15127245508982035,
+"box_share": 0.051721556886227545
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590585-184A5056~0",
+"cue": [],
+"drawable": true,
+"frame": "points",
+"in_box": 0.006896551724137931,
+"chance": 0.0011039050641644817,
+"box_share": 0.020008279287981233
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591030-184A5506~0",
+"cue": [
+"barnacles"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.14232209737827714,
+"chance": 0.013107456411524668,
+"box_share": 0.06603190305428465
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590584-184A5055~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.0010851871947911015,
+"box_share": 0.19234943027672274
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590585-184A5056~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.0011039050641644817,
+"box_share": 0.1502690768593901
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590620-184A5092~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.012477718360071301,
+"chance": 0.03487717982373898,
+"box_share": 0.31558222388899304
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590621-184A5093~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": false,
+"frame": "mask",
+"in_box": 0.4094931617055511,
+"chance": 0.4792460397032284,
+"box_share": 0.24924804491678365
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590643-184A5116~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.5900621118012422,
+"chance": 0.5544540020411138,
+"box_share": 0.16430966613208922
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590644-184A5117~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.611013986013986,
+"chance": 0.6117968529162348,
+"box_share": 0.7545463111278621
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590024-184A4494~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.6515837104072398,
+"chance": 0.6196918451709883,
+"box_share": 0.08305148440435926
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590025-184A4495~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.6666666666666666,
+"chance": 0.8519777853337867,
+"box_share": 0.2553553213192792
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590593-184A5064~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.0103866128101558,
+"box_share": 0.18869013271783036
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590594-184A5065~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.0030818902260052834,
+"chance": 0.01367741935483871,
+"box_share": 0.43961290322580643
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590507-184A4978~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.013255240443896425,
+"box_share": 0.23951911220715166
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590011-184A4481~0",
+"cue": [
+"fluke_shape",
+"barnacles"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0037105751391465678,
+"chance": 0.008680555555555556,
+"box_share": 0.2673611111111111
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590012-184A4482~1",
+"cue": [
+"fluke_shape",
+"barnacles"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.05510918829831067,
+"chance": 0.059537461773700305,
+"box_share": 0.9277522935779816
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590009-184A4479~0",
+"cue": [
+"barnacles"
+],
+"drawable": false,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.031163049526989426,
+"box_share": 0.005008347245409015
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590010-184A4480~0",
+"cue": [
+"barnacles"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.00980392156862745,
+"chance": 0.01744381080174438,
+"box_share": 0.017108352901710835
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591127-184A5608~0",
+"cue": [
+"barnacles"
+],
+"drawable": false,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.006289308176100629,
+"box_share": 0.007861635220125786
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591129-184A5610~0",
+"cue": [
+"barnacles"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.4375,
+"chance": 0.04457252641690682,
+"box_share": 0.018443804034582133
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590957-184A5433~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.011355815554026153,
+"box_share": 0.10805230557467309
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590958-184A5434~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.8511430090377459,
+"chance": 0.5319574506773344,
+"box_share": 0.34203109373579416
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590141-184A4611~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.006024096385542169,
+"chance": 0.009446254071661237,
+"box_share": 0.054071661237785014
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590142-184A4612~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.08933582787652011,
+"chance": 0.07448203514293207,
+"box_share": 0.5607133490689745
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590768-184A5242~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": false,
+"frame": "mask",
+"in_box": 0.0055309734513274336,
+"chance": 0.006667836462537287,
+"box_share": 0.1586243200561502
+},
+{
+"key": "2025-1-2_C3_Smith__2025-1-2-Smith_NOAA_MMHSRP-243591482-HR5_2958~0",
+"cue": [
+"fluke_shape",
+"scars"
+],
+"drawable": false,
+"frame": "mask",
+"in_box": 0.16458333333333333,
+"chance": 0.05074719800747198,
+"box_share": 0.099626400996264
+},
+{
+"key": "2025-1-2_C3_Smith__2025-1-2-Smith_NOAA_MMHSRP-243591483-HR5_2959~0",
+"cue": [
+"fluke_shape",
+"scars"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.1553537973771437,
+"chance": 0.05276971957452687,
+"box_share": 0.3195192706174886
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590024-184A4494~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.9235127478753541,
+"chance": 0.6196918451709883,
+"box_share": 0.13265689590379556
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590025-184A4495~1",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.9,
+"chance": 0.8542128603104213,
+"box_share": 0.5404656319290465
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590537-184A5008~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.027731373204143,
+"box_share": 0.037086535248914136
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590011-184A4481~0",
+"cue": [
+"barnacles"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.014814814814814815,
+"chance": 0.008680555555555556,
+"box_share": 0.033482142857142856
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590682-184A5156~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.7106598984771574,
+"chance": 0.5582063811440069,
+"box_share": 0.028312733544121876
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590924-184A5400~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": false,
+"frame": "points",
+"in_box": 0.0765661252900232,
+"chance": 0.1155433287482806,
+"box_share": 0.29642365887207706
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590925-184A5401~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.510800121691512,
+"chance": 0.4267471557928953,
+"box_share": 0.7631762247504064
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590002-184A4472~0",
+"cue": [
+"barnacles"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.02702702702702703,
+"chance": 0.005919962112242482,
+"box_share": 0.03504617570447549
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590507-184A4978~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.013255240443896425,
+"box_share": 0.1344019728729963
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591030-184A5506~0",
+"cue": [
+"barnacles"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.22916666666666666,
+"chance": 0.013107456411524668,
+"box_share": 0.035612711759614196
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590870-184A5346~0",
+"cue": [
+"barnacles",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.42401500938086306,
+"chance": 0.22716319824753559,
+"box_share": 0.11675794085432639
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590871-184A5347~0",
+"cue": [
+"barnacles",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.6023564064801178,
+"chance": 0.4109176155391829,
+"box_share": 0.4547890154052244
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590725-184A5199~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.005109150023223409,
+"box_share": 0.06146462300665738
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590726-184A5200~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.01765719207579673,
+"chance": 0.036356425171866734,
+"box_share": 0.9209413008989953
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590602-184A5073~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.002509095471082675,
+"box_share": 0.08104378371597039
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590603-184A5074~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": false,
+"frame": "mask",
+"in_box": 0.11507395363474247,
+"chance": 0.2863549007046765,
+"box_share": 0.610698270339526
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590649-184A5122~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.0022391401701746527,
+"box_share": 0.11150918047469771
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591029-184A5505~0",
+"cue": [
+"barnacles"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.5338345864661654,
+"chance": 0.23797414706505615,
+"box_share": 0.056367874549692734
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591030-184A5506~0",
+"cue": [
+"barnacles"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.2832618025751073,
+"chance": 0.013107456411524668,
+"box_share": 0.02881167305552121
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590851-184A5327~0",
+"cue": [
+"barnacles",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.4743150684931507,
+"chance": 0.5569417786308382,
+"box_share": 0.18682021753039027
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590852-184A5328~0",
+"cue": [
+"barnacles",
+"pigmentation"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.4125717932354818,
+"chance": 0.23706091973527915,
+"box_share": 0.5318174104870185
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591089-184A5565~0",
+"cue": [
+"fluke_shape",
+"barnacles"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.017777777777777778,
+"chance": 0.020794901895019285,
+"box_share": 0.03773268489015596
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591090-184A5566~1",
+"cue": [
+"fluke_shape",
+"barnacles"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.03276247207743857,
+"chance": 0.027984094830820018,
+"box_share": 0.10075774626753695
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590574-184A5045~0",
+"cue": [
+"fluke_shape",
+"barnacles"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.29310344827586204,
+"chance": 0.09221488078138466,
+"box_share": 0.008330939385234128
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591126-184A5607~0",
+"cue": [
+"fluke_shape",
+"barnacles"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.6296296296296297,
+"chance": 0.010406176569318564,
+"box_share": 0.00906344410876133
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590003-184A4473~0",
+"cue": [
+"fluke_shape",
+"barnacles"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.0778232884727911,
+"chance": 0.06833098921706517,
+"box_share": 0.2003047351148617
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590012-184A4482~1",
+"cue": [
+"fluke_shape",
+"barnacles"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.09715932482503088,
+"chance": 0.059537461773700305,
+"box_share": 0.23212920489296637
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590602-184A5073~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.00028686173264486515,
+"chance": 0.002509095471082675,
+"box_share": 0.4373353406097102
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590643-184A5116~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.5103556076592419,
+"chance": 0.5544540020411138,
+"box_share": 0.3730864557515673
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590851-184A5327~0",
+"cue": [
+"fluke_shape",
+"barnacles",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.4964114832535885,
+"chance": 0.5569417786308382,
+"box_share": 0.5348688419705694
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590934-184A5410~0",
+"cue": [
+"fluke_shape",
+"barnacles",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.24171779141104294,
+"chance": 0.43216531895777177,
+"box_share": 0.48817011081162026
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590871-184A5347~0",
+"cue": [
+"fluke_shape",
+"barnacles"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.2591549295774648,
+"chance": 0.4109176155391829,
+"box_share": 0.1188881446751507
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590958-184A5434~1",
+"cue": [
+"fluke_shape",
+"barnacles"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.7142857142857143,
+"chance": 0.5699822137091257,
+"box_share": 0.046928444383636615
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590603-184A5074~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": false,
+"frame": "mask",
+"in_box": 0.14829677189227752,
+"chance": 0.2863549007046765,
+"box_share": 0.7183856502242153
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590683-184A5157~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.8830882352941176,
+"chance": 0.7683820204395405,
+"box_share": 0.24599801031021074
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590614-184A5086~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.0,
+"chance": 0.014555536302200658,
+"box_share": 0.06601975394212442
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590747-184A5221~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.009752438109527382,
+"chance": 0.007915296052631578,
+"box_share": 0.13702713815789475
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590722-184A5196~0",
+"cue": [
+"fluke_shape",
+"scars"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.04696132596685083,
+"chance": 0.02920751633986928,
+"box_share": 0.22181372549019607
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590796-184A5270~0",
+"cue": [
+"fluke_shape",
+"scars"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.011450381679389313,
+"chance": 0.09050350541746335,
+"box_share": 0.2226471213086892
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590910-184A5386~0",
+"cue": [
+"fluke_shape",
+"scars"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.014694508894044857,
+"chance": 0.05831315577078289,
+"box_share": 0.2608958837772397
+},
+{
+"key": "2025-1-2_C3_Smith__2025-1-2-Smith_NOAA_MMHSRP-243591481-HR5_2957~0",
+"cue": [
+"fluke_shape",
+"scars"
+],
+"drawable": false,
+"frame": "mask",
+"in_box": 0.0028089887640449437,
+"chance": 0.11346324180690877,
+"box_share": 0.40992028343666964
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590869-184A5345~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.08816595945308817,
+"chance": 0.052179128348660536,
+"box_share": 0.4240303878448621
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590957-184A5433~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.01935812531839022,
+"chance": 0.011355815554026153,
+"box_share": 0.3377494838265657
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590683-184A5157~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.9008801341156748,
+"chance": 0.7683820204395405,
+"box_share": 0.43158180338247265
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590726-184A5200~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.03383058071390517,
+"chance": 0.036356425171866734,
+"box_share": 0.9925965097831835
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590973-184A5449~0",
+"cue": [
+"fluke_shape",
+"barnacles"
+],
+"drawable": false,
+"frame": "mask",
+"in_box": 0.0792712949286066,
+"chance": 0.09090069284064665,
+"box_share": 0.9381062355658198
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591031-184A5507~0",
+"cue": [
+"fluke_shape",
+"barnacles"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.0,
+"chance": 0.1609072489869428,
+"box_share": 0.008948671769473211
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590738-184A5212~0",
+"cue": [
+"fluke_shape"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.008341056533827619,
+"box_share": 0.8671609514983009
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590785-184A5259~0",
+"cue": [
+"fluke_shape"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.02556926599669253,
+"chance": 0.02556926599669253,
+"box_share": 1.0
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590141-184A4611~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.004392386530014641,
+"chance": 0.009446254071661237,
+"box_share": 0.6674267100977199
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590171-184A4641~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.09637964774951076,
+"chance": 0.05330833110099116,
+"box_share": 0.5475488882935976
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590178-184A4648~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.004159733777038269,
+"chance": 0.007929764939110734,
+"box_share": 0.3404134806003965
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590387-184A4858~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.01715537169972016,
+"chance": 0.03356617980586047,
+"box_share": 0.745622788714506
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590832-184A5306~0",
+"cue": [
+"fluke_shape"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.014322438486962909,
+"box_share": 0.3213367609254499
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590835-184A5311~0",
+"cue": [
+"fluke_shape"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.00018044027426921688,
+"box_share": 0.286178274990978
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590642-184A5115~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.09204498125780924,
+"chance": 0.05672932956246881,
+"box_share": 0.39943437032107804
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590682-184A5156~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.6497351199750702,
+"chance": 0.5582063811440069,
+"box_share": 0.4611957459039954
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590044-184A4514~0",
+"cue": [
+"fluke_shape"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.014953271028037384,
+"chance": 0.018107556160653505,
+"box_share": 0.1456773315180395
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590088-184A4558~0",
+"cue": [
+"fluke_shape"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.051492100643651256,
+"box_share": 0.48437682855471037
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590594-184A5065~0",
+"cue": [],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.0019450522732798443,
+"chance": 0.01367741935483871,
+"box_share": 0.5307096774193548
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590650-184A5123~0",
+"cue": [],
+"drawable": false,
+"frame": "mask",
+"in_box": 0.003995006242197253,
+"chance": 0.05851528384279476,
+"box_share": 0.5829694323144105
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590387-184A4858~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.008525418377012947,
+"chance": 0.03356617980586047,
+"box_share": 0.2873083552571895
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590508-184A4979~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.0,
+"chance": 0.013862380713209442,
+"box_share": 0.43043696634856854
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590958-184A5434~0",
+"cue": [
+"fluke_shape",
+"barnacles"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.6373831775700934,
+"chance": 0.5319574506773344,
+"box_share": 0.5350486407855259
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590973-184A5449~1",
+"cue": [
+"fluke_shape",
+"barnacles"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.013250517598343685,
+"chance": 0.07109136351013608,
+"box_share": 0.6706470424881977
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591123-184A5604~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.07905544147843943,
+"chance": 0.04918710388536787,
+"box_share": 0.26839349683108293
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243591132-184A5613~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.33244274809160307,
+"chance": 0.14736499674690956,
+"box_share": 0.4261548471047495
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590976-184A5452~0",
+"cue": [
+"fluke_shape",
+"barnacles",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.0032292787944025836,
+"box_share": 0.42536777897380695
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590981-184A5457~0",
+"cue": [
+"fluke_shape",
+"barnacles",
+"pigmentation"
+],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.1244267808009783,
+"box_share": 0.20758177927239377
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590142-184A4612~1",
+"cue": [
+"fluke_shape"
+],
+"drawable": true,
+"frame": "mask",
+"in_box": 0.13117134559535334,
+"chance": 0.12781092244148692,
+"box_share": 0.9481413492427719
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590172-184A4642~0",
+"cue": [
+"fluke_shape"
+],
+"drawable": false,
+"frame": "points",
+"in_box": 0.02127659574468085,
+"chance": 0.01660682226211849,
+"box_share": 0.2742369838420108
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590603-184A5074~0",
+"cue": [
+"fluke_shape",
+"pigmentation"
+],
+"drawable": false,
+"frame": "mask",
+"in_box": 0.2736519527938971,
+"chance": 0.2863549007046765,
+"box_share": 0.9825112107623318
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590620-184A5092~0",
+"cue": [],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0,
+"chance": 0.03487717982373898,
+"box_share": 0.029064316519782488
+},
+{
+"key": "2025-1-2_Harvey_C1__2025-1-2-Harvey_NOAA_MMHSRP-243590748-184A5222~0",
+"cue": [],
+"drawable": true,
+"frame": "points",
+"in_box": 0.0345679012345679,
+"chance": 0.024213950126490785,
+"box_share": 0.09757860498735092
+}
+]

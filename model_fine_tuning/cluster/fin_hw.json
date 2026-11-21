@@ -1,0 +1,119 @@
+{
+ "note": "cluster/fin_hw.py: HW-b6 dorsal-fin models (checkpoints outside the repo) and their calibrations. train_days = the days whose catalogue animals a fine-tuned run was trained on (moonshot_sizing/fin_tune, pool[:16] of bench.splits()[0]): scores on them are in-sample and they are never used to calibrate that model.",
+ "public_checkpoint": "/home/sat3737/NOAA_whales/moonshot_cache/public_reid/models/hw_b6_1024/checkpoints/last_checkpoint.pth",
+ "models": {
+  "hwb6": {
+   "what": "public HW-b6 as published (liu-peilin/happywhale_b6_pseudo_charm_round2_1024_v2), no training on our days",
+   "ckpt": null,
+   "train_days": [],
+   "cal": {
+    "a": 10.1091,
+    "b": -2.1135,
+    "days": [
+     "2024-12-23",
+     "2025-01-02",
+     "2025-01-08",
+     "2025-01-16",
+     "2025-01-17",
+     "2025-01-20",
+     "2025-01-23",
+     "2025-02-03",
+     "2025-02-12",
+     "2025-02-24",
+     "2025-02-28",
+     "2025-03-03",
+     "2025-03-06",
+     "2025-03-13",
+     "2025-03-18",
+     "2025-03-20",
+     "2025-03-24",
+     "2025-03-26",
+     "2025-04-01",
+     "2025-04-09",
+     "2025-04-11"
+    ],
+    "pairs": 47969,
+    "same": 10722,
+    "auc": 0.809,
+    "fitted": "2026-11-18",
+    "how": "Platt (logistic, no penalty) of same animal on the best day-centred cosine, safe-cluster pairs of one catalogue group > 60 s apart that both show a dorsal fin"
+   }
+  },
+  "hwb6_s16_0": {
+   "what": "HW-b6 fine-tuned on 16 train days, seed 0 (fin_tune run s16_0, 600 steps, blocks 5+ trained)",
+   "ckpt": "/home/sat3737/NOAA_whales/moonshot_cache/fin_tune/runs/s16_0/final.pt",
+   "train_days": [
+    "2024-12-23",
+    "2025-01-02",
+    "2025-01-08",
+    "2025-01-16",
+    "2025-01-17",
+    "2025-01-20",
+    "2025-01-23",
+    "2025-02-12",
+    "2025-03-03",
+    "2025-03-06",
+    "2025-03-13",
+    "2025-03-18",
+    "2025-03-20",
+    "2025-03-24",
+    "2025-04-09",
+    "2025-04-11"
+   ],
+   "cal": {
+    "a": 7.982,
+    "b": -1.3035,
+    "days": [
+     "2025-02-03",
+     "2025-02-24",
+     "2025-02-28",
+     "2025-03-26",
+     "2025-04-01"
+    ],
+    "pairs": 4544,
+    "same": 1857,
+    "auc": 0.7994,
+    "fitted": "2026-11-18",
+    "how": "Platt (logistic, no penalty) of same animal on the best day-centred cosine, safe-cluster pairs of one catalogue group > 60 s apart that both show a dorsal fin"
+   }
+  },
+  "hwb6_s16_1": {
+   "what": "HW-b6 fine-tuned on 16 train days, seed 1 (fin_tune run s16_1)",
+   "ckpt": "/home/sat3737/NOAA_whales/moonshot_cache/fin_tune/runs/s16_1/final.pt",
+   "train_days": [
+    "2024-12-23",
+    "2025-01-02",
+    "2025-01-08",
+    "2025-01-16",
+    "2025-01-17",
+    "2025-01-20",
+    "2025-01-23",
+    "2025-02-12",
+    "2025-03-03",
+    "2025-03-06",
+    "2025-03-13",
+    "2025-03-18",
+    "2025-03-20",
+    "2025-03-24",
+    "2025-04-09",
+    "2025-04-11"
+   ],
+   "cal": {
+    "a": 8.3374,
+    "b": -1.3446,
+    "days": [
+     "2025-02-03",
+     "2025-02-24",
+     "2025-02-28",
+     "2025-03-26",
+     "2025-04-01"
+    ],
+    "pairs": 4544,
+    "same": 1857,
+    "auc": 0.8058,
+    "fitted": "2026-11-18",
+    "how": "Platt (logistic, no penalty) of same animal on the best day-centred cosine, safe-cluster pairs of one catalogue group > 60 s apart that both show a dorsal fin"
+   }
+  }
+ }
+}

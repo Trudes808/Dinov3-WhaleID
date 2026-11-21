@@ -1,0 +1,244 @@
+# AI by-eye labels of every r06r_check20 whale with >= 200 visible px (234 whales in the 166 accepted shots with whales; 31 shots
+# rejected by the exposure / quality gate not labelled; 18 whales under 200 px not labelled), blind: shuffled crops (crop +
+# outline | same crop plain), no pose category, metadata or shot order seen until this file was written (round 20 check).
+# Same taxonomy and marks as labels_ai_r06r_test_r18a.txt (#R real-like fin / #S thin spike or blocky fin; 'pale' flat pale
+# look; 'w' water streams / sheeting; s1 / s2 splash; m other whale; e frame edge; b blur). New: side-on fluke sub-view as an
+# attribute of F_edge: S1 oblique raised (stock up, one blade swept aside), S2 near-vertical sail, S3 low roll-out from the side
+# (one long blade near level with the stock lump at one end, incl. arched tail stock with the blade dropping to the water).
+# Convention kept from r18a: face-on V / W flukes with the notch at the water = F_up; blades level at the water with little or no
+# stock = F_low; fins on renders mostly D_small unless clearly tall (D_tall 2). No correction pass after opening the key.
+# Format: <shot> <iid> <CATEGORY> [attrs] [#R|#S]
+000000 1 D_small m #R
+000000 2 D_small m #R
+000001 1 F_edge S1
+000003 1 D_small m #R
+000003 2 D_small #R
+000004 1 D_small #R
+000005 1 F_edge S3 m pale
+000005 2 D_small e m #R
+000005 3 P_pec m pale
+000006 1 F_edge S3 e
+000006 2 D_small #R
+000007 1 D_small #R
+000009 1 D_small s1 #R
+000011 1 D_small #R
+000011 2 D_small #R
+000012 1 D_tip pale #R
+000013 1 H_head
+000014 1 F_low
+000014 2 D_small #R
+000014 3 D_small m b #R
+000015 1 F_up
+000017 1 D_tip #R
+000018 1 D_small #R
+000019 1 D_small #R
+000020 1 D_small #R
+000021 1 F_edge S1 m
+000021 2 P_pec m s1
+000021 3 D_small m #R
+000022 1 D_small e #R
+000023 1 B_back pale
+000024 1 D_small #R
+000024 2 D_small s1 #R
+000025 1 D_small m pale #R
+000025 2 D_tip m pale #R
+000026 1 B_back
+000027 1 D_small m #R
+000027 2 D_tip pale #R
+000028 1 D_small m #R
+000028 2 B_back m pale
+000029 1 F_edge S3 w
+000030 1 F_up
+000031 1 D_small #R
+000033 1 F_low
+000034 1 D_small m #R
+000034 2 F_up m
+000034 3 F_edge S1 pale
+000035 1 F_edge S3 e w
+000035 2 F_up
+000036 1 B_back
+000037 1 D_small #R
+000039 2 F_edge S1 e
+000040 1 B_back
+000041 1 D_small s1 #R
+000042 1 D_small b #S
+000042 2 D_small pale #R
+000042 3 D_small #R
+000043 1 D_small #R
+000043 2 D_tip m b #R
+000044 1 F_edge S1
+000045 1 F_up
+000046 1 D_small #R
+000047 1 F_edge S3 pale
+000049 1 D_small #S
+000051 1 D_small #R
+000052 1 F_low pale
+000054 1 F_edge S1
+000054 2 B_back m
+000055 1 D_small #R
+000057 1 F_low
+000058 1 F_edge S1 w
+000058 2 D_tip #R
+000059 1 B_back
+000061 1 D_small #R
+000061 2 D_small #R
+000062 1 B_back
+000062 2 D_small #R
+000062 3 F_up
+000063 1 D_small #R
+000063 2 D_small m #R
+000064 1 D_small m #S
+000064 2 D_small m #R
+000065 1 D_small s1 #R
+000067 1 D_small #R
+000068 1 P_pec
+000068 2 D_small e #R
+000069 1 F_up
+000071 1 D_small #R
+000072 1 X_none
+000072 2 D_small #R
+000073 1 D_small #R
+000073 2 D_small s1 #R
+000074 1 D_tip #R
+000075 1 X_none
+000077 1 D_small e #R
+000078 1 F_edge S3
+000079 1 F_edge S3
+000079 2 D_small m #R
+000080 1 P_pec s1
+000080 2 D_small m b #R
+000080 3 D_tip #R
+000081 1 F_up e
+000081 2 D_small #R
+000082 1 B_back s1
+000084 1 D_small pale #R
+000085 1 F_edge S1 pale
+000086 1 F_edge S1
+000087 1 D_small #R
+000088 1 F_edge S3 m pale
+000088 2 D_small m #R
+000089 1 P_pec s1
+000090 1 D_small m #R
+000090 2 D_tip m #R
+000090 3 D_small m #R
+000091 1 D_tip s1 #R
+000092 1 D_small pale #R
+000092 2 D_tip pale #R
+000093 1 F_edge S1
+000094 1 D_small #R
+000094 3 D_small #R
+000095 1 F_edge S3
+000095 2 D_small m #R
+000096 1 F_edge S1
+000096 2 D_tall b #R
+000097 1 P_pec s1
+000098 1 F_edge S3
+000099 1 D_small #R
+000100 1 D_small m #R
+000100 2 D_small m #R
+000100 3 F_edge S3 m
+000102 1 F_edge S3
+000104 1 F_edge S1 pale
+000106 1 D_small #R
+000107 1 F_up
+000107 2 F_up m
+000108 1 F_low m pale
+000108 2 D_tip m b #R
+000108 3 F_edge S1
+000109 1 D_small #R
+000110 1 D_small s1 #R
+000111 1 D_small #R
+000112 1 F_edge S1
+000113 1 D_tall #R
+000115 1 D_small m #R
+000115 2 D_small m #R
+000116 1 D_small #R
+000117 1 P_pec pale
+000118 1 D_small #R
+000119 1 F_edge S3 pale
+000120 1 D_small #R
+000121 1 D_small m pale #R
+000121 2 D_small m #R
+000123 1 B_back
+000124 1 F_edge S1
+000125 1 D_tip #R
+000126 1 F_edge S1 w
+000126 2 D_small m #R
+000128 1 F_low
+000130 1 F_edge S3
+000132 1 F_edge S3
+000133 1 H_head e
+000134 1 F_low
+000135 1 F_low
+000136 1 P_pec pale
+000138 1 D_small e #R
+000139 1 D_small m b #R
+000139 2 B_back
+000141 1 D_small #R
+000142 1 P_pec
+000144 1 D_small #R
+000146 1 B_back
+000147 1 D_small s1 #R
+000149 1 D_small pale #R
+000150 1 F_low
+000151 1 F_up
+000152 1 D_small #R
+000153 1 D_small #R
+000154 1 D_small #R
+000156 1 F_edge S3 m s1
+000156 2 P_pec b
+000156 3 D_small m #R
+000157 1 F_edge S1 m
+000157 2 D_small m pale #R
+000158 1 F_edge S3
+000159 1 D_small #R
+000160 1 B_back e
+000162 1 D_tip s1 #R
+000164 1 D_small #R
+000165 1 F_edge S3 s1
+000166 1 B_back
+000167 1 D_small #R
+000167 2 F_up
+000168 1 P_pec s1
+000169 1 D_small #R
+000171 1 F_up
+000172 1 F_up e
+000172 2 D_small m #R
+000173 1 D_small #R
+000173 2 D_small m pale #R
+000173 3 D_tip e #R
+000174 1 B_back
+000175 1 F_up
+000176 1 D_small e #R
+000176 2 D_small #R
+000177 1 D_small #R
+000178 1 P_pec s2
+000178 3 D_tip b #R
+000179 1 D_small #R
+000179 2 D_small e s1 #S
+000180 1 D_small #R
+000180 2 B_back s2
+000180 3 D_small #R
+000181 1 B_back s1
+000182 1 F_low
+000183 1 P_pec
+000184 1 F_edge S1 pale
+000185 1 D_small m #R
+000185 2 D_small m #R
+000186 1 F_up w
+000186 2 D_tip #R
+000187 1 D_tip s1 #R
+000187 2 D_small #R
+000188 1 F_low
+000189 1 F_edge S1
+000189 2 F_edge S1 pale
+000191 1 D_small m #R
+000191 2 D_small #R
+000193 1 F_low
+000194 1 D_small s1 #S
+000195 1 D_small #R
+000196 1 F_up pale
+000197 1 D_small pale #R
+000198 1 D_tip #R
+000199 1 D_small #R
+000199 2 B_back m

@@ -1,0 +1,37 @@
+{
+ "fixed": "2026-11-18 evening, before any score of an arm other than L0 was read (only the coverage counts of the centre embeddings had been read)",
+ "days": ["2025-01-15", "2025-02-27", "2025-03-14"],
+ "truth": "catalog identities (labels_all_days.json, the val days only); stack truth = label_assist.major (pair measures) / sim2 prep's most common catalogue id (ranking)",
+ "arms": {
+  "L0": "live: fin fingerprints DAY/cluster_up (parts_up cut-outs, network G), WHALE_VIEW_GATE=blend: P and S.A take every fin / fluke fingerprint; ranking fluke / dorsal similarities gated by the view classifier; dorsal = labeling._match_code(student fin code, view_match fin cosine) as match.bin (VIEW_MATCH=mean)",
+  "L1": "WHALE_VIEW_GATE=all: P and S.A take the fin (fluke) fingerprint only of instances the view classifier calls dorsal (fluke), threshold of DAY/safe/view_class.json, stale boxes dropped as load_day. Ranking = L0 by construction (not scored twice)",
+  "L2": "W3c gate: a fin fingerprint counts (P, S.A and the ranking's dorsal term) only for instances whose W3c dorsal region exists (regions/<seed>/<day>.json 'reg' is not None, the falsefins_val.json rule). Ranking: dorsal term (student code and view_match cosine) only for instances the view classifier calls dorsal AND W3c has a region. Fluke and body as live. Seeds s0 and s1",
+  "L3": "W3c centre: fin fingerprint = G embedding of the 'centre' cut-out (centre.py; CACHE/emb/G <seed>_centre plus the missing ones made here, CACHE/live_e2e/emb_G <seed>x_centre); no W3c region = the parts_up fingerprint (centre.py rule). No extra gate (P, S.A ungated; ranking gated by the view classifier as live). Seeds s0 and s1",
+  "L4": "L3 fingerprints with the L2 gate. Seeds s0 and s1"
+ },
+ "unchanged_in_every_arm": "stacks (safe clusters), sequence P, gap, body fingerprints, flukes (except L1), the stack phase (fluke / fin / rest) of the order of work = the view classifier as live, the view_match embeddings",
+ "modes": {
+  "frozen": "labeling_model.json 'pair' weights and 'blend' calibrations as they are",
+  "refit": "leave one val day out: pair logistic = label_assist fit (LogisticRegression C=1, max_iter=3000 on pair_training of the two other days, the arm's inputs); blend calibrations = the 2026-11-12 blend.py fit (C=10, max_iter=2000, stack-animal rows of the link-score order-of-work simulation of the two other days, the arm's inputs and refit P); held-out day scored. Weights 3:2:1 kept"
+ },
+ "measures": {
+  "pair_auc": "P as a classifier of same whale over every pair of label_assist stacks inside one catalogue scope (label_assist.scopes, pair_training pairs)",
+  "pair_pr": "precision / recall of P >= t over the same pairs, t in thresholds_P",
+  "top1_top3": "label_assist.simulate tau 1.5: stacks of a scope one by one in capture order, true animal first / in top three by its closest stack ('pair' val 0.843 / 0.987, 441 stacks)",
+  "decisions_capture": "label_assist.simulate tau 0.9 (runs, stop at frame traces): decisions on the 3 days",
+  "first_choice": "blend.py / sim2.py order of work (flukes, dorsal fins, rest by score; catalogue as the researcher; runs tau 0.9 both directions) on the page's stacks and matrices: first choice right of the stacks named; blend 3:2:1 and the link score P ('blend' chosen_on: 77.2 % / 77.9 % of 276)",
+  "decisions_order": "the same simulation's decision count (3 days; per day = /3)",
+  "same_as_hints": "pairs of (scope, catalogue animal) units in different scopes of a day whose best S.A (max over the three part cosines of the arm's P inputs, uint8 as the page) >= 0.85; true = same catalogue animal (merges applied)",
+  "split": "touched pair = both stacks have an L0 fin fingerprint and at least one of them holds a fin fingerprint of an instance the view classifier does not call dorsal; touched stack (top-1, first choice) = the stack holds such a fingerprint. Small bins: hints only"
+ },
+ "thresholds_P": {
+  "0.5": "lab_core.js L617 BURST.link (burst neighbours ride along)",
+  "0.6": "lab_core.js L784 reviewFlags alt >= 0.6; labeling_model.json passer_by isolation 0.4 = best link <= 0.6 (lab_core.js L381-384)",
+  "0.8": "labeling_model.json collect.tau (order of work of 2026-11-11, replaced; listed for the record)",
+  "0.85": "lab_core.js L851 merge rule of an older backend (link >= 0.85)",
+  "0.9": "labeling_model.json run.tau (lab_core.js L59, L629: the run that rides along)"
+ },
+ "threshold_S_A": "0.85 (lab_core.js L863 same_as)",
+ "uncertainty": "bootstrap over encounters (label_assist scopes for pair / top-1 measures, sim2 segments for first choice), 2000 resamples, paired with L0, 90 % percentile interval of the difference; found / lost per stack with a two-sided sign test. A difference counts only if both W3c seeds are on the same side of L0 and both intervals exclude zero",
+ "reproduction": "before any arm: label_assist LODO top-1 / top-3 on the inputs it was fitted with (cluster_v3) = 0.843 / 0.987 on 441 stacks; blend.py on the inputs of 2026-11-12 14:15 (cluster_v3, chart flags, no gate) = 77.2 % / 77.9 % of 276"
+}

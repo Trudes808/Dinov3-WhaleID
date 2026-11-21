@@ -1,0 +1,874 @@
+{
+ "relations": {
+  "contour": {
+   "same flank": {
+    "same": 3250,
+    "diff": 12488,
+    "auc": 0.5771668925245158,
+    "hw_auc": 0.9058986349972897
+   },
+   "opposite flanks": {
+    "same": 2704,
+    "diff": 9148,
+    "auc": 0.5675127359942872,
+    "hw_auc": 0.8641143713632236
+   },
+   "flank unknown": {
+    "same": 941,
+    "diff": 3461,
+    "auc": 0.5739696714659569,
+    "hw_auc": 0.8202177535563272
+   },
+   "mixed": {
+    "same": 163,
+    "diff": 896,
+    "auc": 0.6517206671779141,
+    "hw_auc": 0.9119056748466258
+   },
+   "gap > 1 h": {
+    "same": 953,
+    "diff": 3373,
+    "auc": 0.5345354084920402,
+    "hw_auc": 0.8213104559415567
+   },
+   "all": {
+    "same": 7058,
+    "diff": 25993,
+    "auc": 0.5748939921560721,
+    "hw_auc": 0.8741173771341559
+   }
+  },
+  "marks": {
+   "same flank": {
+    "same": 3324,
+    "diff": 12131,
+    "auc": 0.6190337561444405,
+    "hw_auc": 0.8770881524901494
+   },
+   "opposite flanks": {
+    "same": 228,
+    "diff": 546,
+    "auc": 0.5334610564873723,
+    "hw_auc": 0.6807724439303386
+   },
+   "flank unknown": {
+    "same": 1074,
+    "diff": 3136,
+    "auc": 0.5791260201706381,
+    "hw_auc": 0.7623459649222818
+   },
+   "mixed": {
+    "same": 224,
+    "diff": 820,
+    "auc": 0.6158155487804878,
+    "hw_auc": 0.777177700348432
+   },
+   "gap > 1 h": {
+    "same": 599,
+    "diff": 2136,
+    "auc": 0.598748382135019,
+    "hw_auc": 0.776784653573684
+   },
+   "all": {
+    "same": 4850,
+    "diff": 16633,
+    "auc": 0.6076561561570868,
+    "hw_auc": 0.8263252099137164
+   }
+  },
+  "draw": {
+   "same flank": {
+    "same": 3912,
+    "diff": 14536,
+    "auc": 0.6142740208922098,
+    "hw_auc": 0.8753975040320175
+   },
+   "opposite flanks": {
+    "same": 2869,
+    "diff": 9570,
+    "auc": 0.5673170631326182,
+    "hw_auc": 0.8495890383019143
+   },
+   "flank unknown": {
+    "same": 1606,
+    "diff": 5302,
+    "auc": 0.5911397423749961,
+    "hw_auc": 0.7714288599945602
+   },
+   "mixed": {
+    "same": 300,
+    "diff": 1382,
+    "auc": 0.6254124457308249,
+    "hw_auc": 0.7985552339604438
+   },
+   "gap > 1 h": {
+    "same": 1206,
+    "diff": 3997,
+    "auc": 0.5585565625296917,
+    "hw_auc": 0.7926002545026515
+   },
+   "all": {
+    "same": 8687,
+    "diff": 30790,
+    "auc": 0.5930148131362775,
+    "hw_auc": 0.8396119316537428
+   }
+  }
+ },
+ "exclusion": {
+  "all 24 days": {
+   "contour distance": {
+    "n_same": 7058,
+    "n_diff": 25993,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.5748939921560721,
+     "out95": 0,
+     "out90": 22
+    },
+    "hw": {
+     "auc_diff": 0.8741173771341559,
+     "out95": 17634,
+     "out90": 24549
+    }
+   },
+   "contour distance | same flank": {
+    "n_same": 3250,
+    "n_diff": 12488,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.5771668925245158,
+     "out95": 0,
+     "out90": 10
+    },
+    "hw": {
+     "auc_diff": 0.9058986349972897,
+     "out95": 10534,
+     "out90": 12264
+    }
+   },
+   "contour distance | opposite flanks": {
+    "n_same": 2704,
+    "n_diff": 9148,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.5675127359942872,
+     "out95": 3,
+     "out90": 3
+    },
+    "hw": {
+     "auc_diff": 0.8641143713632236,
+     "out95": 4807,
+     "out90": 8240
+    }
+   },
+   "contour distance | flank unknown": {
+    "n_same": 941,
+    "n_diff": 3461,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.5739696714659569,
+     "out95": 62,
+     "out90": 131
+    },
+    "hw": {
+     "auc_diff": 0.8202177535563272,
+     "out95": 231,
+     "out90": 2892
+    }
+   },
+   "contour distance | gap > 1 h": {
+    "n_same": 953,
+    "n_diff": 3373,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.5345354084920402,
+     "out95": 6,
+     "out90": 6
+    },
+    "hw": {
+     "auc_diff": 0.8213104559415567,
+     "out95": 42,
+     "out90": 2918
+    }
+   },
+   "missing marks (same side)": {
+    "n_same": 6058,
+    "n_diff": 21458,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.560048184756168,
+     "out95": 6,
+     "out90": 49
+    },
+    "hw": {
+     "auc_diff": 0.8171029998300519,
+     "out95": 63,
+     "out90": 18033
+    }
+   },
+   "missing marks (same side) | same flank": {
+    "n_same": 3967,
+    "n_diff": 14904,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.5642985369367058,
+     "out95": 3,
+     "out90": 40
+    },
+    "hw": {
+     "auc_diff": 0.8743005905808264,
+     "out95": 9681,
+     "out90": 14394
+    }
+   },
+   "missing marks (same side) | opposite flanks": {
+    "n_same": 334,
+    "n_diff": 815,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.545817567319349,
+     "out95": 4,
+     "out90": 9
+    },
+    "hw": {
+     "auc_diff": 0.6813893685022593,
+     "out95": 10,
+     "out90": 10
+    }
+   },
+   "missing marks (same side) | flank unknown": {
+    "n_same": 1461,
+    "n_diff": 4516,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.5348389390767574,
+     "out95": 2,
+     "out90": 2
+    },
+    "hw": {
+     "auc_diff": 0.7487779400522229,
+     "out95": 0,
+     "out90": 122
+    }
+   },
+   "missing marks (same side) | gap > 1 h": {
+    "n_same": 853,
+    "n_diff": 2914,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.5779854862446,
+     "out95": 1,
+     "out90": 1
+    },
+    "hw": {
+     "auc_diff": 0.7533602988684613,
+     "out95": 7,
+     "out90": 307
+    }
+   },
+   "nick disagreement": {
+    "n_same": 7182,
+    "n_diff": 26539,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.5192390078570496,
+     "out95": 0,
+     "out90": 0
+    },
+    "hw": {
+     "auc_diff": 0.8685509901838007,
+     "out95": 16723,
+     "out90": 25006
+    }
+   },
+   "shape class differs": {
+    "n_same": 5338,
+    "n_diff": 19835,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.5299229131152541,
+     "out95": 0,
+     "out90": 0
+    },
+    "hw": {
+     "auc_diff": 0.895763427822435,
+     "out95": 15523,
+     "out90": 18984
+    }
+   },
+   "low mark correlation": {
+    "n_same": 4850,
+    "n_diff": 16633,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.6076561561570868,
+     "out95": 0,
+     "out90": 0
+    },
+    "hw": {
+     "auc_diff": 0.8263252099137164,
+     "out95": 46,
+     "out90": 14040
+    }
+   },
+   "drawing max-rank": {
+    "n_same": 9359,
+    "n_diff": 33210,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.5622378502993397,
+     "out95": 0,
+     "out90": 37
+    },
+    "hw": {
+     "auc_diff": 0.8273881810181377,
+     "out95": 445,
+     "out90": 28831
+    }
+   },
+   "drawing max-rank | same flank": {
+    "n_same": 4093,
+    "n_diff": 15335,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.5684831737741463,
+     "out95": 0,
+     "out90": 24
+    },
+    "hw": {
+     "auc_diff": 0.867848126111915,
+     "out95": 8033,
+     "out90": 14734
+    }
+   },
+   "drawing max-rank | opposite flanks": {
+    "n_same": 2975,
+    "n_diff": 9868,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.5610100724521669,
+     "out95": 0,
+     "out90": 12
+    },
+    "hw": {
+     "auc_diff": 0.841565198434461,
+     "out95": 2432,
+     "out90": 8426
+    }
+   },
+   "drawing max-rank | flank unknown": {
+    "n_same": 1933,
+    "n_diff": 6388,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.5501489552481519,
+     "out95": 6,
+     "out90": 6
+    },
+    "hw": {
+     "auc_diff": 0.7552467589093752,
+     "out95": 30,
+     "out90": 3006
+    }
+   },
+   "drawing max-rank | gap > 1 h": {
+    "n_same": 1354,
+    "n_diff": 4364,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.5648188921848831,
+     "out95": 7,
+     "out90": 10
+    },
+    "hw": {
+     "auc_diff": 0.7696486426475785,
+     "out95": 12,
+     "out90": 397
+    }
+   },
+   "LR HW only": {
+    "n_same": 11546,
+    "n_diff": 39383,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.7841330181306658,
+     "out95": 21,
+     "out90": 25730
+    },
+    "hw": {
+     "auc_diff": 0.7996400459681968,
+     "out95": 21,
+     "out90": 29333
+    }
+   },
+   "LR HW + drawing": {
+    "n_same": 11546,
+    "n_diff": 39383,
+    "n_diff_all": 39383,
+    "cand": {
+     "auc_diff": 0.8212036482067258,
+     "out95": 8531,
+     "out90": 31186
+    },
+    "hw": {
+     "auc_diff": 0.7996400459681968,
+     "out95": 21,
+     "out90": 29333
+    }
+   }
+  },
+  "val 3 days": {
+   "contour distance": {
+    "n_same": 578,
+    "n_diff": 1593,
+    "n_diff_all": 2136,
+    "cand": {
+     "auc_diff": 0.5503310330446569,
+     "out95": 1,
+     "out90": 1
+    },
+    "hw": {
+     "auc_diff": 0.8663052237622644,
+     "out95": 506,
+     "out90": 1317
+    }
+   },
+   "missing marks (same side)": {
+    "n_same": 409,
+    "n_diff": 1054,
+    "n_diff_all": 2136,
+    "cand": {
+     "auc_diff": 0.6096057399219645,
+     "out95": 5,
+     "out90": 5
+    },
+    "hw": {
+     "auc_diff": 0.8251555374101688,
+     "out95": 185,
+     "out90": 633
+    }
+   },
+   "nick disagreement": {
+    "n_same": 581,
+    "n_diff": 1649,
+    "n_diff_all": 2136,
+    "cand": {
+     "auc_diff": 0.4873391164936972,
+     "out95": 0,
+     "out90": 0
+    },
+    "hw": {
+     "auc_diff": 0.8683476868576272,
+     "out95": 576,
+     "out90": 1404
+    }
+   },
+   "shape class differs": {
+    "n_same": 350,
+    "n_diff": 1008,
+    "n_diff_all": 2136,
+    "cand": {
+     "auc_diff": 0.5236507936507937,
+     "out95": 0,
+     "out90": 0
+    },
+    "hw": {
+     "auc_diff": 0.9156887755102041,
+     "out95": 780,
+     "out90": 942
+    }
+   },
+   "low mark correlation": {
+    "n_same": 323,
+    "n_diff": 930,
+    "n_diff_all": 2136,
+    "cand": {
+     "auc_diff": 0.6365891008355804,
+     "out95": 0,
+     "out90": 0
+    },
+    "hw": {
+     "auc_diff": 0.8631279336862079,
+     "out95": 458,
+     "out90": 783
+    }
+   },
+   "drawing max-rank": {
+    "n_same": 694,
+    "n_diff": 1887,
+    "n_diff_all": 2136,
+    "cand": {
+     "auc_diff": 0.5468085902481563,
+     "out95": 3,
+     "out90": 3
+    },
+    "hw": {
+     "auc_diff": 0.8363724802951791,
+     "out95": 292,
+     "out90": 1247
+    }
+   },
+   "LR HW only": {
+    "n_same": 824,
+    "n_diff": 2136,
+    "n_diff_all": 2136,
+    "cand": {
+     "auc_diff": 0.8114420839242209,
+     "out95": 80,
+     "out90": 1054
+    },
+    "hw": {
+     "auc_diff": 0.8129158939674921,
+     "out95": 84,
+     "out90": 1083
+    }
+   },
+   "LR HW + drawing": {
+    "n_same": 824,
+    "n_diff": 2136,
+    "n_diff_all": 2136,
+    "cand": {
+     "auc_diff": 0.8477191738482237,
+     "out95": 693,
+     "out90": 1495
+    },
+    "hw": {
+     "auc_diff": 0.8129158939674921,
+     "out95": 84,
+     "out90": 1083
+    }
+   }
+  }
+ },
+ "miss_counts": {
+  "True|0": 2718,
+  "True|1": 1460,
+  "True|3": 1057,
+  "True|2": 823,
+  "False|0": 7500,
+  "False|3": 4897,
+  "False|1": 5369,
+  "False|2": 3692
+ },
+ "class": {
+  "train 21|all": {
+   "same_eq": 903,
+   "same_n": 4988,
+   "diff_eq": 2267,
+   "diff_n": 18827
+  },
+  "train 21|same flank": {
+   "same_eq": 463,
+   "same_n": 2411,
+   "diff_eq": 1225,
+   "diff_n": 9437
+  },
+  "train 21|opposite flanks": {
+   "same_eq": 344,
+   "same_n": 1946,
+   "diff_eq": 727,
+   "diff_n": 6510
+  },
+  "val 3|all": {
+   "same_eq": 61,
+   "same_n": 350,
+   "diff_eq": 128,
+   "diff_n": 1008
+  },
+  "val 3|same flank": {
+   "same_eq": 21,
+   "same_n": 155,
+   "diff_eq": 51,
+   "diff_n": 453
+  },
+  "val 3|opposite flanks": {
+   "same_eq": 32,
+   "same_n": 163,
+   "diff_eq": 66,
+   "diff_n": 480
+  }
+ },
+ "fusion": {
+  "HW-b6 raw": {
+   "auc": 0.8078514190374927,
+   "ap": 0.6969739927330894,
+   "r95": 0.23048837258521168,
+   "r90": 0.3490608166064724,
+   "d_auc": 0.0,
+   "d_r95": 0.0,
+   "up_auc": 0
+  },
+  "HW-b6 + draw (positive only)": {
+   "auc": 0.8047430183547186,
+   "ap": 0.693459653799883,
+   "r95": 0.22574695627154778,
+   "r90": 0.3448298035017167,
+   "d_auc": -0.0031084006827739987,
+   "d_r95": -0.4741416313663878,
+   "up_auc": 0
+  },
+  "HW-b6 + marks (positive only)": {
+   "auc": 0.8083056613106047,
+   "ap": 0.6978999459617319,
+   "r95": 0.23247989612630135,
+   "r90": 0.3511037509466222,
+   "d_auc": 0.0004542422731118878,
+   "d_r95": 0.19915235410896354,
+   "up_auc": 11
+  },
+  "HW-b6 + contour (positive only)": {
+   "auc": 0.8014086208953353,
+   "ap": 0.6868047552801513,
+   "r95": 0.20889515976832093,
+   "r90": 0.33397409401770906,
+   "d_auc": -0.006442798142157563,
+   "d_r95": -2.1593212816890754,
+   "up_auc": 0
+  },
+  "HW-b6 + drawing (logistic, both ways)": {
+   "auc": 0.8417344398034411,
+   "ap": 0.7173811964028834,
+   "r95": 0.18058256082506807,
+   "r90": 0.3344553907158755,
+   "d_auc": 0.03388302076594839,
+   "d_r95": -4.990581176014364,
+   "up_auc": 20
+  },
+  "HW-b6 raw, LR pairs": {
+   "auc": 0.8078514190374927,
+   "ap": 0.6969739927330894,
+   "r95": 0.23048837258521168,
+   "r90": 0.3490608166064724,
+   "d_auc": 0.0,
+   "d_r95": 0.0,
+   "up_auc": 0
+  }
+ },
+ "veto": {
+  "drawing max-rank|0.95": {
+   "joins": 2209,
+   "wrong": 121,
+   "vetoed": 0,
+   "vetoed_wrong": 0,
+   "day": {
+    "animals": 379,
+    "pieces": 835,
+    "whole": 159,
+    "clean": 151,
+    "found": 375,
+    "mixed": 26,
+    "groups": 115,
+    "groups_right": 24,
+    "per_animal": 2.3060686015831133
+   },
+   "day_veto": {
+    "animals": 379,
+    "pieces": 835,
+    "whole": 159,
+    "clean": 151,
+    "found": 375,
+    "mixed": 26,
+    "groups": 115,
+    "groups_right": 24,
+    "per_animal": 2.3060686015831133
+   }
+  },
+  "drawing max-rank|0.9": {
+   "joins": 3909,
+   "wrong": 418,
+   "vetoed": 0,
+   "vetoed_wrong": 0,
+   "day": {
+    "animals": 379,
+    "pieces": 665,
+    "whole": 193,
+    "clean": 161,
+    "found": 359,
+    "mixed": 36,
+    "groups": 115,
+    "groups_right": 28,
+    "per_animal": 1.9604221635883905
+   },
+   "day_veto": {
+    "animals": 379,
+    "pieces": 665,
+    "whole": 193,
+    "clean": 161,
+    "found": 359,
+    "mixed": 36,
+    "groups": 115,
+    "groups_right": 28,
+    "per_animal": 1.9604221635883905
+   }
+  },
+  "missing marks|0.95": {
+   "joins": 2209,
+   "wrong": 121,
+   "vetoed": 0,
+   "vetoed_wrong": 0,
+   "day": {
+    "animals": 379,
+    "pieces": 835,
+    "whole": 159,
+    "clean": 151,
+    "found": 375,
+    "mixed": 26,
+    "groups": 115,
+    "groups_right": 24,
+    "per_animal": 2.3060686015831133
+   },
+   "day_veto": {
+    "animals": 379,
+    "pieces": 835,
+    "whole": 159,
+    "clean": 151,
+    "found": 375,
+    "mixed": 26,
+    "groups": 115,
+    "groups_right": 24,
+    "per_animal": 2.3060686015831133
+   }
+  },
+  "missing marks|0.9": {
+   "joins": 3909,
+   "wrong": 418,
+   "vetoed": 0,
+   "vetoed_wrong": 0,
+   "day": {
+    "animals": 379,
+    "pieces": 665,
+    "whole": 193,
+    "clean": 161,
+    "found": 359,
+    "mixed": 36,
+    "groups": 115,
+    "groups_right": 28,
+    "per_animal": 1.9604221635883905
+   },
+   "day_veto": {
+    "animals": 379,
+    "pieces": 665,
+    "whole": 193,
+    "clean": 161,
+    "found": 359,
+    "mixed": 36,
+    "groups": 115,
+    "groups_right": 28,
+    "per_animal": 1.9604221635883905
+   }
+  },
+  "contour distance|0.95": {
+   "joins": 2209,
+   "wrong": 121,
+   "vetoed": 0,
+   "vetoed_wrong": 0,
+   "day": {
+    "animals": 379,
+    "pieces": 835,
+    "whole": 159,
+    "clean": 151,
+    "found": 375,
+    "mixed": 26,
+    "groups": 115,
+    "groups_right": 24,
+    "per_animal": 2.3060686015831133
+   },
+   "day_veto": {
+    "animals": 379,
+    "pieces": 835,
+    "whole": 159,
+    "clean": 151,
+    "found": 375,
+    "mixed": 26,
+    "groups": 115,
+    "groups_right": 24,
+    "per_animal": 2.3060686015831133
+   }
+  },
+  "contour distance|0.9": {
+   "joins": 3909,
+   "wrong": 418,
+   "vetoed": 0,
+   "vetoed_wrong": 0,
+   "day": {
+    "animals": 379,
+    "pieces": 665,
+    "whole": 193,
+    "clean": 161,
+    "found": 359,
+    "mixed": 36,
+    "groups": 115,
+    "groups_right": 28,
+    "per_animal": 1.9604221635883905
+   },
+   "day_veto": {
+    "animals": 379,
+    "pieces": 665,
+    "whole": 193,
+    "clean": 161,
+    "found": 359,
+    "mixed": 36,
+    "groups": 115,
+    "groups_right": 28,
+    "per_animal": 1.9604221635883905
+   }
+  },
+  "LR HW + drawing|0.95": {
+   "joins": 2209,
+   "wrong": 121,
+   "vetoed": 0,
+   "vetoed_wrong": 0,
+   "day": {
+    "animals": 379,
+    "pieces": 835,
+    "whole": 159,
+    "clean": 151,
+    "found": 375,
+    "mixed": 26,
+    "groups": 115,
+    "groups_right": 24,
+    "per_animal": 2.3060686015831133
+   },
+   "day_veto": {
+    "animals": 379,
+    "pieces": 835,
+    "whole": 159,
+    "clean": 151,
+    "found": 375,
+    "mixed": 26,
+    "groups": 115,
+    "groups_right": 24,
+    "per_animal": 2.3060686015831133
+   }
+  },
+  "LR HW + drawing|0.9": {
+   "joins": 3909,
+   "wrong": 418,
+   "vetoed": 0,
+   "vetoed_wrong": 0,
+   "day": {
+    "animals": 379,
+    "pieces": 665,
+    "whole": 193,
+    "clean": 161,
+    "found": 359,
+    "mixed": 36,
+    "groups": 115,
+    "groups_right": 28,
+    "per_animal": 1.9604221635883905
+   },
+   "day_veto": {
+    "animals": 379,
+    "pieces": 665,
+    "whole": 193,
+    "clean": 161,
+    "found": 359,
+    "mixed": 36,
+    "groups": 115,
+    "groups_right": 28,
+    "per_animal": 1.9604221635883905
+   }
+  }
+ }
+}

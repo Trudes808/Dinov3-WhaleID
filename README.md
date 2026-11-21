@@ -256,6 +256,34 @@ eval days 71.7 % -> 75.1 %). For flukes it made no difference on the page and is
 A new day needs `view_class features`, `view_class predict` and `view_match embed` after `safe_clusters features` (they read `DAY/safe/photos.json`);
 Whale-Review-Web /labeling reads `view_class.json` when the day has one and falls back to the chart flags when not.
 
+`model_fine_tuning/cluster/fin_hw.py` (2026-11-18): the public Happywhale dorsal model HW-b6 (raw, or a fine-tuned run of
+`experiments/moonshot_sizing/fin_tune`) on the instances `view_class.json` calls a dorsal fin: box x 1.15 at 1024 px,
+day-centred, written as `DAY/safe/view_match_<model>.npz` in the layout of `view_match.npz` (dorsal part replaced, fluke
+part copied). It reads no catalogue labels; `fit` calibrates P(same whale) on train days only (never on a fine-tuned
+run's own training days; models, checkpoints and calibrations in `cluster/fin_hw.json`). Whale-Review-Web /labeling reads
+it behind switches whose defaults change nothing (`WHALE_HINT_FIN*` for the merge hints, `WHALE_VIEW_MATCH_FILE` for the
+ranking; see its README).
+
+    flock /var/tmp/sat3737-parts-cache/gpu_train.lock env OMP_NUM_THREADS=8 python -m model_fine_tuning.cluster.fin_hw embed \
+        --day-dir experiments/days_all/DAY [--models hwb6,hwb6_s16_0,hwb6_s16_1]   # GPU, ~10-80 s a day (3 models) -> DAY/safe/fin_hw/<model>.npz + DAY/safe/view_match_<model>.npz
+    python -m model_fine_tuning.cluster.fin_hw write --day-dir experiments/days_all/DAY [--models ...]   # CPU: the page file again (after a new fit)
+    python -m model_fine_tuning.cluster.fin_hw fit --model hwb6                                         # once per model: calibration on the train days
+
+A new day needs `fin_hw embed` after `view_class predict` (and after `view_match embed`, whose fluke part it copies).
+
+The order of the trip log's noted-whale cards on /labeling (2026-11-19, `cluster/log_cards.py`): per safe cluster,
+readers of the fin's height and form (the HW-b6 embedding above), the fluke type, the role and the sex, fitted on
+labelled days without the day itself (train day: the other train days; val day: the train days; any other day:
+train + val), and the views the cluster shows; the page orders the cards of noted whales without photos by it (a
+suggestion; nothing is assigned). The trip log and the fitted readers are private: they stay outside the repository
+(the log in Whale-Review-Web/data/trip_log, the readers in moonshot_cache/notes_rank, the output in the day folder).
+
+    python -m model_fine_tuning.cluster.log_cards fit                                           # once, CPU ~20 s: the readers of every fold
+    python -m model_fine_tuning.cluster.log_cards write --day-dir experiments/days_all/DAY      # a day with a trip log -> DAY/safe/log_cards.json
+    python -m model_fine_tuning.cluster.log_cards check                                         # the readers on train (held out) / val days
+
+A new day with a trip log needs `log_cards write` after `fin_hw embed` (and the log's import, Whale-Review-Web README).
+
 ## Part cut-outs, second set: never upside down, inside the photo (2026-11-16)
 
 The first rule for a fin or body cut-out (`cluster/parts.py`, `DAY/parts_hr`) turns the whale's long axis level with

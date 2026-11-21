@@ -1,0 +1,12 @@
+{
+ "n_halves_contour": 75,
+ "n_halves_marks": 72,
+ "contour_auc_halves_vs_diff": 0.8461294645458253,
+ "marks_auc_halves_vs_diff": 0.7923599979645319,
+ "miss_zero_halves": 0.8222222222222222,
+ "miss_zero_diff": 0.3318191203799298,
+ "dc_median_halves": 0.0494791641831398,
+ "dc_median_diff": 0.125,
+ "ncc_median_halves": 0.5768545567989349,
+ "ncc_median_diff": 0.23199857771396637
+}

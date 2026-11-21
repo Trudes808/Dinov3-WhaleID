@@ -1,0 +1,13 @@
+{
+ "tone": "raw",
+ "dark_only": true,
+ "halves": 123,
+ "halves_with_marks": 87,
+ "marks_per_half": 5.26,
+ "found_again": 0.414,
+ "n_marks": 647,
+ "ncc_median_halves": 0.312,
+ "ncc_median_diff": 0.077,
+ "diff_pairs": 3563,
+ "auc_halves_vs_diff": 0.6941
+}

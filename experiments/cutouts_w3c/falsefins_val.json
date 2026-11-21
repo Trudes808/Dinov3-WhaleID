@@ -1,0 +1,60 @@
+{
+ "s0": {
+  "fluke": {
+   "n": 221,
+   "w3c_region": 1,
+   "parts_up_fin": 46,
+   "both": 0,
+   "main_n": 198,
+   "main_w3c": 0,
+   "main_up": 45
+  },
+  "dorsal": {
+   "n": 501,
+   "w3c_region": 497,
+   "parts_up_fin": 492,
+   "both": 488,
+   "main_n": 485,
+   "main_w3c": 481,
+   "main_up": 482
+  },
+  "other": {
+   "n": 240,
+   "w3c_region": 48,
+   "parts_up_fin": 111,
+   "both": 38,
+   "main_n": 196,
+   "main_w3c": 46,
+   "main_up": 105
+  }
+ },
+ "s1": {
+  "dorsal": {
+   "n": 501,
+   "w3c_region": 496,
+   "parts_up_fin": 492,
+   "both": 487,
+   "main_n": 485,
+   "main_w3c": 480,
+   "main_up": 482
+  },
+  "fluke": {
+   "n": 221,
+   "w3c_region": 1,
+   "parts_up_fin": 46,
+   "both": 1,
+   "main_n": 198,
+   "main_w3c": 1,
+   "main_up": 45
+  },
+  "other": {
+   "n": 240,
+   "w3c_region": 62,
+   "parts_up_fin": 111,
+   "both": 45,
+   "main_n": 196,
+   "main_w3c": 58,
+   "main_up": 105
+  }
+ }
+}

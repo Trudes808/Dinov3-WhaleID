@@ -1,0 +1,51 @@
+{
+ "pairs": 1718,
+ "same": 372,
+ "diff": 1346,
+ "base_rate_diff": 0.7834691501746216,
+ "area30_miss>=1": {
+  "n": 1029,
+  "precision_diff": 0.8406219630709426,
+  "share_of_diff": 0.6426448736998515
+ },
+ "area30_miss>=2": {
+  "n": 557,
+  "precision_diff": 0.8617594254937163,
+  "share_of_diff": 0.35661218424962854
+ },
+ "area30_miss>=3": {
+  "n": 271,
+  "precision_diff": 0.8339483394833949,
+  "share_of_diff": 0.16790490341753342
+ },
+ "area60_miss>=1": {
+  "n": 745,
+  "precision_diff": 0.851006711409396,
+  "share_of_diff": 0.4710252600297177
+ },
+ "area60_miss>=2": {
+  "n": 321,
+  "precision_diff": 0.8629283489096573,
+  "share_of_diff": 0.20579494799405645
+ },
+ "area60_miss>=3": {
+  "n": 125,
+  "precision_diff": 0.856,
+  "share_of_diff": 0.07949479940564635
+ },
+ "area120_miss>=1": {
+  "n": 349,
+  "precision_diff": 0.9083094555873925,
+  "share_of_diff": 0.23551263001485884
+ },
+ "area120_miss>=2": {
+  "n": 84,
+  "precision_diff": 0.8928571428571429,
+  "share_of_diff": 0.05572065378900446
+ },
+ "area120_miss>=3": {
+  "n": 24,
+  "precision_diff": 0.9583333333333334,
+  "share_of_diff": 0.017087667161961365
+ }
+}
