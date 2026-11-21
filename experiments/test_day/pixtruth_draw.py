@@ -124,7 +124,7 @@ class Sam:
 def wand(img: np.ndarray, wd: dict) -> np.ndarray:
     """A brightness wand inside my own corridor (no learned model): {"line": [[x, y], ...], "w": corridor px,
     "t": threshold on max(R,G,B), or on max - min (colour) with "feat": "s" (default Otsu inside the corridor), "dark": true = take the dark side (a pole),
-    "close": px}. Keeps the components that touch the drawn centre line; holes filled across the corridor."""
+    "close" / "open": px (default 5 / 5; close 25 bridges a tape band across the tube)}. Keeps the components that touch the drawn centre line; holes filled across the corridor."""
     cm = np.zeros((H, W), np.uint8); cl = np.zeros((H, W), np.uint8); pts = np.array(wd["line"], np.int32)
     cv2.polylines(cm, [pts], False, 1, int(wd.get("w", 80))); cv2.polylines(cl, [pts], False, 1, 3)
     i16 = img.astype(np.int16)
@@ -134,10 +134,11 @@ def wand(img: np.ndarray, wd: dict) -> np.ndarray:
     if t is None:
         t, _ = cv2.threshold(v[inside].reshape(-1, 1), 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
     m = ((v <= t) if wd.get("dark") else (v > t)) & inside
-    k = int(wd.get("close", 5))
-    if k:
-        ker = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (k, k))
-        m = cv2.morphologyEx(cv2.morphologyEx(m.astype(np.uint8), cv2.MORPH_CLOSE, ker), cv2.MORPH_OPEN, ker).astype(bool) & inside
+    m = m.astype(np.uint8)
+    for op_, k in ((cv2.MORPH_CLOSE, int(wd.get("close", 5))), (cv2.MORPH_OPEN, int(wd.get("open", 5)))):
+        if k > 1:
+            m = cv2.morphologyEx(m, op_, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (k, k)))
+    m = m.astype(bool) & inside
     n, cc = cv2.connectedComponents(m.astype(np.uint8))
     keep = np.unique(cc[(cl > 0) & m]); keep = keep[keep > 0]
     m = np.isin(cc, keep)
