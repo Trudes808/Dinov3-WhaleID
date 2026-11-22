@@ -1,0 +1,25 @@
+| reading | W3c s0 | W3c s1 | W3c filled (a) s0 | W3c filled (a) s1 | W3d (b) s0 | W3d (b) s1 | (a) vs W3c | (b) vs W3c | (b) vs (a) |
+|---|---|---|---|---|---|---|---|---|---|
+| fin region found, dorsal views (cut-outs, val) | 0.990 | 0.988 | 0.990 | 0.988 | 0.996 | 0.988 | not separable (seed distance 0.002) | not separable (seed distance 0.008) | not separable (seed distance 0.008) |
+| fin tip inside the largest fin region (hr, clicks 03-18) | 0.991 | 0.973 | 0.982 | 0.965 | 0.982 | 0.982 | not separable (seed distance 0.018) | not separable (seed distance 0.018) | not separable (seed distance 0.017) |
+| lowest painted point, fin heights (clicks 03-18, median) | -0.038 | -0.022 | -0.481 | -0.467 | -0.305 | -0.329 | lower, separable (gap 0.429 > 0.016) | lower, separable (gap 0.267 > 0.024) | higher, separable (gap 0.138 > 0.024) |
+| lowest point of the connected region (band down the flank) | -0.038 | -0.022 | -0.495 | -0.498 | -0.305 | -0.329 | lower, separable (gap 0.457 > 0.016) | lower, separable (gap 0.267 > 0.024) | higher, separable (gap 0.166 > 0.024) |
+| connected region over triangle area (median) | 1.468 | 1.510 | 2.883 | 2.866 | 2.329 | 2.525 | higher, separable (gap 1.356 > 0.042) | higher, separable (gap 0.819 > 0.196) | lower, separable (gap 0.341 > 0.196) |
+| clicked triangle covered (median) | 0.969 | 0.962 | 1.000 | 1.000 | 1.000 | 1.000 | higher, separable (gap 0.031 > 0.007) | higher, separable (gap 0.031 > 0.007) | not separable (seed distance 0.000) |
+| dorsal share of the whale in dorsal views (hr, val, median) | 0.068 | 0.072 | 0.157 | 0.157 | 0.112 | 0.113 | higher, separable (gap 0.085 > 0.004) | higher, separable (gap 0.040 > 0.004) | lower, separable (gap 0.044 > 0.001) |
+| finless backs called dorsal, by eye (n 33) | 0.061 | 0.152 | 0.061 | 0.152 | 0.182 | 0.182 | not separable (seed distance 0.091) | not separable (seed distance 0.091) | not separable (seed distance 0.091) |
+| finless backs called dorsal, classifier (n 151) | 0.093 | 0.126 | 0.093 | 0.119 | 0.132 | 0.126 | not separable (seed distance 0.033) | not separable (seed distance 0.033) | not separable (seed distance 0.026) |
+| three-way call by eye, crops (n 79) | 0.937 | 0.911 | 0.937 | 0.911 | 0.899 | 0.899 | not separable (seed distance 0.025) | not separable (seed distance 0.025) | not separable (seed distance 0.025) |
+| three-way call by eye, whole photo (n 79) | 0.899 | 0.861 | 0.911 | 0.835 | 0.899 | 0.848 | not separable (seed distance 0.076) | not separable (seed distance 0.051) | not separable (seed distance 0.076) |
+| three-way call by classifier, whole photo | 0.941 | 0.949 | 0.949 | 0.943 | 0.938 | 0.943 | not separable (seed distance 0.009) | not separable (seed distance 0.009) | not separable (seed distance 0.006) |
+| fluke covers a quarter (cut-outs, val) | 0.882 | 0.928 | 0.882 | 0.928 | 0.896 | 0.914 | not separable (seed distance 0.045) | not separable (seed distance 0.045) | not separable (seed distance 0.045) |
+| fluke notch inside the fluke (hr, clicks 03-18) | 0.837 | 0.809 | 0.837 | 0.809 | 0.833 | 0.809 | not separable (seed distance 0.028) | not separable (seed distance 0.028) | not separable (seed distance 0.028) |
+| tail stock: body share in fluke views (hr, val, median) | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.001 | not separable (seed distance 0.000) | not separable (seed distance 0.001) | not separable (seed distance 0.001) |
+| synthetic pectoral IoU (run05 val) | 0.679 | 0.701 | - | - | 0.685 | 0.696 | - | not separable (seed distance 0.022) | - |
+| synthetic dorsal IoU (run05 val, OLD render label) | 0.727 | 0.726 | - | - | 0.720 | 0.731 | - | not separable (seed distance 0.011) | - |
+| NEW: IoU with the expanded-triangle truth, held-out clicks 03-18 | 0.593 | 0.589 | 0.639 | 0.641 | 0.668 | 0.652 | higher, separable (gap 0.046 > 0.004) | higher, separable (gap 0.059 > 0.016) | not separable (seed distance 0.016) |
+| NEW: IoU with the bare triangle, held-out clicks 03-18 | 0.552 | 0.553 | 0.362 | 0.359 | 0.442 | 0.417 | lower, separable (gap 0.190 > 0.003) | lower, separable (gap 0.110 > 0.025) | higher, separable (gap 0.055 > 0.025) |
+| NEW: renders check21, IoU with the run06 fin + hump label | 0.215 | 0.205 | 0.347 | 0.322 | 0.245 | 0.224 | higher, separable (gap 0.107 > 0.025) | not separable (seed distance 0.021) | lower, separable (gap 0.077 > 0.025) |
+| NEW: renders check21, IoU with the fin-only label | 0.397 | 0.385 | 0.318 | 0.322 | 0.388 | 0.378 | lower, separable (gap 0.063 > 0.012) | not separable (seed distance 0.012) | higher, separable (gap 0.056 > 0.010) |
+
+Rule (fixed before any W3d or filled score was read; W3c's own rule from parts_weak/two_seeds.py): a reading of an arm is SEPARABLE from W3c when both of its seeds lie on the same side of both W3c seeds and the gap between the nearest seeds is larger than the larger of the two seed distances (W3c s0 - s1, the arm's own s0 - s1). Validation days for the standing measures; held-out clicks of 2025-03-18 for the shape; check21 renders for the render IoU.

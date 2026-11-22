@@ -1,0 +1,12 @@
+{
+ "_note": "rules_sam3.md part B, chosen on dev (dev.json) by the part A rules, written before the one test-day run",
+ "class_prompts": {"whale": ["humpback whale"], "person": ["person"], "gear": ["drone", "camera", "pole", "crossbow"],
+                   "rail": ["railing"], "tape": ["colored tape"], "deck": ["boat deck"], "pontoon": ["inflatable boat tube"],
+                   "other_vessel": ["boat"], "land": ["island"], "bollard": ["cleat", "bollard"]},
+ "class_thr": {"whale": 0.5, "person": 0.3, "gear": 0.3, "rail": 0.5, "tape": 0.5, "deck": 0.5, "pontoon": 0.5,
+               "other_vessel": 0.5, "land": 0.5, "bollard": 0.5, "dorsal_fin": 0.5, "fluke": 0.5},
+ "part_thr": 0.5,
+ "marker_rule": {"land_min": 0.25, "bollard_prompts": ["cleat", "bollard"], "bollard_score": 0.5, "bollard_min": 0.03,
+                 "tape_min": 0.001, "rail_tape_min": 0.03, "rail_tape_min_variant": 0.05, "person_min": 0.01},
+ "tape_rule": {"erode_frac": 0.002, "s_min": 0.25, "v_min": 0.20, "min_px": 200}
+}

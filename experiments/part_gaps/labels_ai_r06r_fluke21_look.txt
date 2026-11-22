@@ -1,0 +1,59 @@
+# AI by-eye labels of every r06r_fluke21_look whale with >= 200 visible px (52 whales in the 38 accepted shots with whales; 1 shot
+# rejected by the exposure / quality gate, 1 negative), blind: shuffled crops (crop + outline | plain, seed 21021) mixed with 40
+# calibration crops of r06r_check21, no pose category, metadata or shot order seen until the tile labels were frozen (sha1
+# 90656f57 of the tile file; round 21c fluke helper). Same taxonomy, marks and conventions as labels_ai_r06r_check21.txt.
+# Forced mix: pose_cycle 28 fluke_rollout (about 20 from behind, 8 side-on), 8 fluke_down, 4 fluke_up: shares are NOT a
+# natural mix. Calibration: exact agreement with the check-21 labeller 30 / 40, same class 34 / 40.
+# Format: <shot> <iid> <CATEGORY> [attrs] [#R|#S]
+000000 1 F_edge S3 e
+000000 2 D_small m #R
+000000 3 F_edge S3 m
+000001 1 F_edge S3
+000002 1 F_up
+000003 1 F_edge S3
+000004 1 F_edge S1
+000005 1 F_low
+000005 2 F_low e
+000006 1 F_edge S3 s1
+000007 1 F_edge S1
+000008 1 F_low
+000009 1 F_low
+000010 1 F_edge S1 m
+000010 2 D_small #R
+000011 1 D_small #R
+000012 1 F_up
+000013 1 F_low
+000015 1 F_edge S3
+000017 1 F_edge S3
+000018 1 D_small e #R
+000018 2 D_tip #S
+000019 1 F_low
+000019 2 P_pec m s1
+000020 1 F_edge S3
+000021 1 F_up e
+000021 2 D_tip #S
+000022 1 F_edge S1
+000023 1 F_edge S3 e
+000023 2 D_small #R
+000023 3 B_back e s1
+000024 1 F_edge S3 m s1
+000024 2 B_back m s1
+000025 1 F_edge S3
+000026 1 F_edge S3
+000026 2 D_small #R
+000027 1 F_low
+000027 2 D_tip #S
+000028 1 F_edge S3 s1
+000029 1 H_head s1
+000030 1 F_up e
+000030 2 D_tip #S
+000031 1 F_low s1
+000032 1 F_edge S1
+000032 2 D_small #R
+000033 1 F_low s1
+000034 1 F_low
+000035 1 F_low
+000036 1 F_edge S3
+000037 1 F_low s1
+000038 1 F_edge S3
+000039 1 F_edge S1

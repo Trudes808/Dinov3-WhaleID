@@ -6,7 +6,7 @@
 # Before this: test_scripts/bash/process_day_v2.sh SRC OUT_ROOT (images, canon = seg_r04_ft4 mask, cse, parts, timestamps).
 set -uo pipefail
 cd "$(dirname "$0")/../.."
-D="${1:?day dir}"; PY=.venv/bin/python; export PYTHONPATH=.; LOCK="flock /var/tmp/sat3737-parts-cache/gpu_train.lock"
+D="${1:?day dir}"; PY=.venv/bin/python; export PYTHONPATH=.; LOCK="${GPU_LOCK-flock /var/tmp/sat3737-parts-cache/gpu_train.lock}"   # GPU_LOCK="": the caller holds the lock
 STUDENT=experiments/pair_student_g/checkpoints/best.pt
 step() { echo "== $(date +%T) $1"; }
 q() { grep -v -i "warn\|_check_multiprocessing\|nanmean"; }

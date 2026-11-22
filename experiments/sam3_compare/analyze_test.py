@@ -24,7 +24,8 @@ PT = C.TD / "pixel_truth"
 TH, TW = 1835, 2748
 TRUTH = ["water_sky", "whale", "person", "rail", "tape", "deck", "pontoon", "other_vessel", "land", "gear"]
 CLS_T = {"whale": [1], "person": [2], "rail": [3], "tape": [4], "deck": [5], "pontoon": [6], "other_vessel": [7], "land": [8], "gear": [9],
-         "rail_tape": [3, 4], "our_boat": [3, 4, 5, 6], "any_boat": [3, 4, 5, 6, 7]}
+         "rail_tape": [3, 4], "our_boat": [3, 4, 5, 6], "any_boat": [3, 4, 5, 6, 7],
+         "bollard": [5], "dorsal_fin": [1], "fluke": [1]}   # bollard scored against deck (the cleat is in class 5); parts against whale
 G = (427, 640)
 NOWHALE = ["marker_rail", "bow", "crew_nowhale", "marker_land", "water"]
 # truth.tsv tag -> SAM 3 class used for the photo-level table

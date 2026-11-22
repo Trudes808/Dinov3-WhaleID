@@ -16,7 +16,7 @@
 set -uo pipefail
 cd "$(dirname "$0")/../.."
 REPO=$PWD; SR="${1:?shadow root}"; shift
-PY=$REPO/.venv/bin/python; export PYTHONPATH=.; LOCK="flock /var/tmp/sat3737-parts-cache/gpu_train.lock"
+PY=$REPO/.venv/bin/python; export PYTHONPATH=.; LOCK="${GPU_LOCK-flock /var/tmp/sat3737-parts-cache/gpu_train.lock}"   # GPU_LOCK="": the caller holds the lock
 SEG=$REPO/experiments/seg_splash_s6/checkpoints/last.pt; CANON=$REPO/experiments/canon_r0304_ft4/checkpoints/best.pt; CSE=experiments/cse_r04_ft2/checkpoints/best.pt
 LAB=model_fine_tuning/splits/labels_all_days.json
 TESTDAY=2026-04-07; TESTLIVE=/home/sat3737/NOAA_whales/moonshot_cache/test_days/2026-04-07/days/2026-04-07

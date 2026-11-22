@@ -91,3 +91,23 @@ Scoring a future model of ours on the same truth (one command): write one uint8 
 
 It adds NAME to scores.json / per_photo.tsv / confusion_NAME.tsv with every fine class and the grouped pairs (our boat 3-6,
 any boat 3-7, rail + tape). The script refuses to run if any truth file differs from the frozen hashes.
+
+### Correction and second freeze (2026-11-21)
+
+The researcher checked the 30 verification photos: all fine except V30 (rail drawn as straight segments across the curved
+tube) and V25 (whale outline missed the head). Rails in every crew photo that had hand lines or rough SAM boxes were
+re-drawn along the real tubes; while there, other plain errors were fixed (missed tape bands, deck outlines holding sea,
+missed parts of persons, poles off the pole, the 353 whale). 24 of 116 label PNGs changed; every change is a line
+"FIX 2026-11-21" in notes.tsv. Freeze 1 (2026-11-20 18:57:40) is kept in manifest "frozen_history" and as files in
+`pixel_truth/freeze_2026-11-20/`; freeze 2 time is manifest "frozen.time". Scores of any model must name the freeze.
+Drawing tool additions in `pixtruth_draw.py`: "within" (SAM mask cut to my own corridor), "wand" (brightness or colour
+threshold inside my own corridor around a hand-placed centre line; no learned model), lazy SAM load, per-crop embedding cache.
+Old prompts render identically.
+
+    .venv/bin/python experiments/test_day/pixtruth_markers.py --root $R    # markers.tsv: all 427 photos, marker kind, tape colour,
+                                                                          # meaning, refers_to, incidental rail / tape, pixel facts
+
+markers.tsv writes the researcher's marker definition (2026-11-21) into the truth: marker = rail (13 deliberate rail + tape
+close-ups, no whale) / bollard (7 bow-cleat close-ups: the fluke just photographed is an opportunistic one of another animal)
+/ land (3, the boat switches group) / none; tape colour meaning red = female in a group or the mother with a calf, green =
+male in a competitive group or the escort, blue = calf, yellow unknown. Rails or tape seen in busy photos are "incidental".

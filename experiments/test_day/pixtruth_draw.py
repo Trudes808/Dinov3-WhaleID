@@ -110,8 +110,15 @@ class Sam:
             kw["input_points"] = [[[[q[0] - x0, q[1] - y0] for q in pts]]]; kw["input_labels"] = [[lbl]]
         inp = self.p(images=crop, return_tensors="pt", **kw).to(self.dev)
         mm = op.get("mm", 0 if "box" in op else "best")
+        # image embeddings are kept per (photo, crop): several prompts on one crop cost one encoder pass
+        ef = self.cache / f"emb_{seq}_{x0}_{y0}_{x1}_{y1}.pt"
         with self.torch.no_grad():
-            out = self.m(**inp, multimask_output=(mm != 0 or "box" not in op))
+            if ef.exists():
+                emb = [e.to(self.dev) for e in self.torch.load(ef)]
+            else:
+                emb = self.m.get_image_embeddings(inp["pixel_values"]); self.torch.save([e.cpu() for e in emb], ef)
+            kw2 = {k: v for k, v in inp.items() if k in ("input_points", "input_labels", "input_boxes")}
+            out = self.m(image_embeddings=emb, **kw2, multimask_output=(mm != 0 or "box" not in op))
         ms = self.p.post_process_masks(out.pred_masks.cpu(), inp["original_sizes"])[0][0]   # K x h x w
         sc = out.iou_scores.cpu()[0, 0]
         k = int(sc.argmax()) if mm == "best" else int(mm)
@@ -124,7 +131,7 @@ class Sam:
 def wand(img: np.ndarray, wd: dict) -> np.ndarray:
     """A brightness wand inside my own corridor (no learned model): {"line": [[x, y], ...], "w": corridor px,
     "t": threshold on max(R,G,B), or on max - min (colour) with "feat": "s" (default Otsu inside the corridor), "dark": true = take the dark side (a pole),
-    "close" / "open": px (default 5 / 5; close 25 bridges a tape band across the tube)}. Keeps the components that touch the drawn centre line; holes filled across the corridor."""
+    "frac": f (cut at background + f x (object - background) instead of Otsu), "close" / "open": px (default 5 / 5; close 25 bridges a tape band across the tube)}. Keeps the components that touch the drawn centre line; holes filled across the corridor."""
     cm = np.zeros((H, W), np.uint8); cl = np.zeros((H, W), np.uint8); pts = np.array(wd["line"], np.int32)
     cv2.polylines(cm, [pts], False, 1, int(wd.get("w", 80))); cv2.polylines(cl, [pts], False, 1, 3)
     i16 = img.astype(np.int16)
@@ -133,6 +140,9 @@ def wand(img: np.ndarray, wd: dict) -> np.ndarray:
     t = wd.get("t")
     if t is None:
         t, _ = cv2.threshold(v[inside].reshape(-1, 1), 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+        if "frac" in wd:   # blurred tube edges: move the cut from Otsu toward the background level
+            vi = v[inside].astype(float); lo, hi = np.median(vi[vi <= t]), np.median(vi[vi > t])
+            t = lo + wd["frac"] * (hi - lo) if not wd.get("dark") else hi - wd["frac"] * (hi - lo)
     m = ((v <= t) if wd.get("dark") else (v > t)) & inside
     m = m.astype(np.uint8)
     for op_, k in ((cv2.MORPH_CLOSE, int(wd.get("close", 5))), (cv2.MORPH_OPEN, int(wd.get("open", 5)))):

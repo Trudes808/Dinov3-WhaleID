@@ -43,7 +43,8 @@ def main() -> None:
         labels = cat[day]["photos"]
         for stem in C.day_stems(C.LIVE / day):
             rec = C.load("val", stem)
-            assert rec is not None, stem
+            if rec is None:
+                continue
             lv = C.live_mask(day, stem, G); s6 = C.s6_mask_val(day, stem, G)
             sure = lv & s6; ours = lv | s6; is_cat = bool(labels.get(stem.split("__")[-1]))
             n_cat += is_cat

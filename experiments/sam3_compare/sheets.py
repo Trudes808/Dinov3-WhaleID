@@ -38,6 +38,8 @@ def tile(seq, layers, title, filled=False):
     im = cv2.imread(str(C.TD / "days" / "2026-04-07" / "images" / f"{st}.jpg"))
     h = int(round(im.shape[0] * TW / im.shape[1])); im = cv2.resize(im, (TW, h), interpolation=cv2.INTER_AREA)
     for m, col in layers:
+        if m.shape != im.shape[:2]:
+            m = cv2.resize(m.astype(np.uint8), (im.shape[1], im.shape[0]), interpolation=cv2.INTER_NEAREST) > 0
         if filled:
             im = fill(im, m, col)
         outline(im, m, col)
@@ -63,7 +65,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(); ap.add_argument("kind"); ap.add_argument("--settings", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True); ap.add_argument("--seqs", default=""); ap.add_argument("--notes", type=Path)
     ap.add_argument("--ncol", type=int, default=4)
-    a = ap.parse_args(); S = json.loads(a.settings.read_text()); idx = C.prompt_index("test")
+    a = ap.parse_args(); S = json.loads(a.settings.read_text()); idx = C.prompt_index("val" if a.kind == "val_only" else "test")
     seqs = [s for s in a.seqs.split(",") if s]
     notes = json.loads(a.notes.read_text()) if a.notes else {}
     wj = [idx[p] for p in S["class_prompts"]["whale"]]; wthr = S["class_thr"]["whale"]
@@ -81,7 +83,7 @@ def main() -> None:
             cv2.rectangle(im, (0, 0), (TW, 22), (0, 0, 0), -1)
             cv2.putText(im, f"{day} {stem.split('-')[-1]} " + notes.get(it, ""), (4, 16), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (255, 255, 255), 1, cv2.LINE_AA)
             tiles.append(im)
-        cv2.imwrite(str(a.out), grid(tiles, a.ncol, "val days: green S6h, orange live, magenta SAM 3 whale"), [cv2.IMWRITE_JPEG_QUALITY, 85]); print(a.out, len(tiles)); return
+        cv2.imwrite(str(a.out), grid(tiles, a.ncol, "val days: green S6h, light blue live, magenta SAM 3 whale"), [cv2.IMWRITE_JPEG_QUALITY, 85]); print(a.out, len(tiles)); return
     for seq in seqs:
         rec = C.load("test", seq)
         W = TW; H = int(round(1709 * TW / 2560)); g = (H, W)

@@ -1,0 +1,49 @@
+{
+ "task": "scene_segmentation",
+ "args": {
+  "name": "seg_scene_sam3_s1",
+  "seed": 1,
+  "pseudo_dir": "/home/sat3737/NOAA_whales/moonshot_cache/sam3_labeller/pseudo",
+  "real_dir": "/home/sat3737/NOAA_whales/moonshot_cache/sam3_labeller/real_s6mc",
+  "init": "/home/sat3737/NOAA_whales/Dinov3-WhaleID/experiments/seg_r05_ft4/checkpoints/best.pt",
+  "p_s6": 0.2,
+  "p_pseudo": 0.3,
+  "p_extra": 0.6,
+  "epochs": 8,
+  "batch_size": 8,
+  "crop": 512,
+  "lr_head": 0.0003,
+  "lr_backbone": 3e-05,
+  "layer_decay": 0.8,
+  "weight_decay": 0.05,
+  "warmup_steps": 200,
+  "dice_weight": 1.0,
+  "workers": 6,
+  "budget": 1500.0,
+  "max_steps": null
+ },
+ "model": {
+  "arch": "vitb16",
+  "unfreeze_blocks": 4,
+  "layers": null,
+  "decoder_width": 256,
+  "n_classes": 7,
+  "classes": [
+   "water_sky",
+   "whale",
+   "person",
+   "rail",
+   "tape",
+   "deck",
+   "land"
+  ]
+ },
+ "train_synthetic": 6440,
+ "real_s6mc_centres": 1344,
+ "pseudo_photos": 2200,
+ "params": {
+  "total_M": 88.21,
+  "trainable_M": 30.9
+ },
+ "recipe": "experiments/seg_splash_s6/config.json + 7-class head (rules_labeller.md A6)"
+}

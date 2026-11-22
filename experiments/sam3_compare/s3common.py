@@ -79,7 +79,7 @@ def live_mask(day: str, stem: str, hw):
 
 
 def s6_mask_val(day: str, stem: str, hw):
-    return read_bin(SP / "days_s6" / day / "canon" / f"{stem}_mask.png", hw)
+    return read_bin(NW / "moonshot_cache" / "switch_root" / "days" / day / "canon" / f"{stem}_mask.png", hw)   # S6h + rule F shadow root
 
 
 @lru_cache(maxsize=1)

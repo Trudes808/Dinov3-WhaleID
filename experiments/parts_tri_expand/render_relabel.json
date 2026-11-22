@@ -1,0 +1,900 @@
+{
+ "r06r_check20": {
+  "whales_considered": 159,
+  "applied": 128,
+  "applied_without_old_dorsal": 0,
+  "applied_new_empty": 0,
+  "not_applied": 31,
+  "not_applied_with_old_dorsal": 31,
+  "old_px_total": 4971962,
+  "old_px_not_applied": 1468240,
+  "not_applied_by_states": {
+   "under_wave+visible": {
+    "whales": 3,
+    "with_old_dorsal": 3,
+    "old_px": 609124,
+    "old_px_median_where_present": 9356
+   },
+   "under_water+visible": {
+    "whales": 10,
+    "with_old_dorsal": 10,
+    "old_px": 520520,
+    "old_px_median_where_present": 25791
+   },
+   "out_of_frame+under_water+visible": {
+    "whales": 1,
+    "with_old_dorsal": 1,
+    "old_px": 248856,
+    "old_px_median_where_present": 248856
+   },
+   "occluded+visible": {
+    "whales": 13,
+    "with_old_dorsal": 13,
+    "old_px": 70763,
+    "old_px_median_where_present": 2768
+   },
+   "out_of_frame+visible": {
+    "whales": 1,
+    "with_old_dorsal": 1,
+    "old_px": 9635,
+    "old_px_median_where_present": 9635
+   },
+   "under_water+under_wave+visible": {
+    "whales": 1,
+    "with_old_dorsal": 1,
+    "old_px": 4850,
+    "old_px_median_where_present": 4850
+   },
+   "label_edge+visible": {
+    "whales": 1,
+    "with_old_dorsal": 1,
+    "old_px": 4490,
+    "old_px_median_where_present": 4490
+   },
+   "occluded+under_water": {
+    "whales": 1,
+    "with_old_dorsal": 1,
+    "old_px": 2,
+    "old_px_median_where_present": 2
+   }
+  },
+  "all": {
+   "n_applied_with_old": 128,
+   "degenerate_points (base < 2 px)": 0,
+   "iou_mean": 0.777,
+   "iou_ci": [
+    0.753,
+    0.799
+   ],
+   "iou_median": 0.801,
+   "old_dropped_share_mean": 0.13,
+   "new_added_share_mean": 0.103,
+   "new_over_old_area_median": 0.996,
+   "old_below_share_median": 0.352,
+   "new_below_share_median": 0.35,
+   "old_depth_p5_median": -0.299,
+   "new_depth_p5_median": -0.259,
+   "old_depth_min_p5": -0.944,
+   "new_depth_min_p5": -0.378
+  },
+  "view": {
+   "end-on (>60)": {
+    "n_applied_with_old": 23,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.667,
+    "iou_ci": [
+     0.6,
+     0.738
+    ],
+    "iou_median": 0.748,
+    "old_dropped_share_mean": 0.234,
+    "new_added_share_mean": 0.118,
+    "new_over_old_area_median": 0.891,
+    "old_below_share_median": 0.341,
+    "new_below_share_median": 0.302,
+    "old_depth_p5_median": -0.299,
+    "new_depth_p5_median": -0.256,
+    "old_depth_min_p5": -2.483,
+    "new_depth_min_p5": -0.923,
+    "whales": 31,
+    "with_old_dorsal": 31,
+    "not_applied": 8,
+    "old_px_to_ignore": 23008
+   },
+   "oblique (30-60)": {
+    "n_applied_with_old": 46,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.78,
+    "iou_ci": [
+     0.746,
+     0.811
+    ],
+    "iou_median": 0.801,
+    "old_dropped_share_mean": 0.127,
+    "new_added_share_mean": 0.105,
+    "new_over_old_area_median": 0.936,
+    "old_below_share_median": 0.386,
+    "new_below_share_median": 0.344,
+    "old_depth_p5_median": -0.366,
+    "new_depth_p5_median": -0.259,
+    "old_depth_min_p5": -0.778,
+    "new_depth_min_p5": -0.38,
+    "whales": 54,
+    "with_old_dorsal": 54,
+    "not_applied": 8,
+    "old_px_to_ignore": 234835
+   },
+   "side-on (<30)": {
+    "n_applied_with_old": 59,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.817,
+    "iou_ci": [
+     0.792,
+     0.843
+    ],
+    "iou_median": 0.838,
+    "old_dropped_share_mean": 0.091,
+    "new_added_share_mean": 0.096,
+    "new_over_old_area_median": 1.038,
+    "old_below_share_median": 0.344,
+    "new_below_share_median": 0.358,
+    "old_depth_p5_median": -0.272,
+    "new_depth_p5_median": -0.262,
+    "old_depth_min_p5": -0.832,
+    "new_depth_min_p5": -0.352,
+    "whales": 74,
+    "with_old_dorsal": 74,
+    "not_applied": 15,
+    "old_px_to_ignore": 1210397
+   }
+  },
+  "animals": {
+   "one whale": {
+    "n_applied_with_old": 38,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.821,
+    "iou_ci": [
+     0.795,
+     0.847
+    ],
+    "iou_median": 0.832,
+    "old_dropped_share_mean": 0.104,
+    "new_added_share_mean": 0.081,
+    "new_over_old_area_median": 0.958,
+    "old_below_share_median": 0.364,
+    "new_below_share_median": 0.347,
+    "old_depth_p5_median": -0.326,
+    "new_depth_p5_median": -0.259,
+    "old_depth_min_p5": -0.738,
+    "new_depth_min_p5": -0.369,
+    "whales": 52,
+    "with_old_dorsal": 52,
+    "not_applied": 14,
+    "old_px_to_ignore": 796487
+   },
+   "several whales": {
+    "n_applied_with_old": 90,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.758,
+    "iou_ci": [
+     0.728,
+     0.789
+    ],
+    "iou_median": 0.796,
+    "old_dropped_share_mean": 0.14,
+    "new_added_share_mean": 0.113,
+    "new_over_old_area_median": 1.001,
+    "old_below_share_median": 0.348,
+    "new_below_share_median": 0.35,
+    "old_depth_p5_median": -0.29,
+    "new_depth_p5_median": -0.259,
+    "old_depth_min_p5": -1.069,
+    "new_depth_min_p5": -0.426,
+    "whales": 107,
+    "with_old_dorsal": 107,
+    "not_applied": 17,
+    "old_px_to_ignore": 671753
+   }
+  },
+  "finless_back": {
+   "fin": {
+    "n_applied_with_old": 111,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.802,
+    "iou_ci": [
+     0.782,
+     0.823
+    ],
+    "iou_median": 0.828,
+    "old_dropped_share_mean": 0.109,
+    "new_added_share_mean": 0.097,
+    "new_over_old_area_median": 1.005,
+    "old_below_share_median": 0.348,
+    "new_below_share_median": 0.35,
+    "old_depth_p5_median": -0.292,
+    "new_depth_p5_median": -0.259,
+    "old_depth_min_p5": -0.845,
+    "new_depth_min_p5": -0.367,
+    "whales": 131,
+    "with_old_dorsal": 131,
+    "not_applied": 20,
+    "old_px_to_ignore": 951725
+   },
+   "finless back (blade < 100 px or < 2 fin points visible)": {
+    "n_applied_with_old": 17,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.612,
+    "iou_ci": [
+     0.543,
+     0.675
+    ],
+    "iou_median": 0.616,
+    "old_dropped_share_mean": 0.264,
+    "new_added_share_mean": 0.146,
+    "new_over_old_area_median": 0.819,
+    "old_below_share_median": 0.435,
+    "new_below_share_median": 0.344,
+    "old_depth_p5_median": -0.483,
+    "new_depth_p5_median": -0.254,
+    "old_depth_min_p5": -2.018,
+    "new_depth_min_p5": -0.732,
+    "whales": 28,
+    "with_old_dorsal": 28,
+    "not_applied": 11,
+    "old_px_to_ignore": 516515
+   }
+  },
+  "flat (base/h > 3: h_eff = base/3)": {
+   "base/h <= 3": {
+    "n_applied_with_old": 103,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.783,
+    "iou_ci": [
+     0.759,
+     0.808
+    ],
+    "iou_median": 0.8,
+    "old_dropped_share_mean": 0.133,
+    "new_added_share_mean": 0.094,
+    "new_over_old_area_median": 0.96,
+    "old_below_share_median": 0.353,
+    "new_below_share_median": 0.347,
+    "old_depth_p5_median": -0.299,
+    "new_depth_p5_median": -0.258,
+    "old_depth_min_p5": -0.884,
+    "new_depth_min_p5": -0.327,
+    "whales": 134,
+    "with_old_dorsal": 134,
+    "not_applied": 31,
+    "old_px_to_ignore": 1468240
+   },
+   "base/h > 3": {
+    "n_applied_with_old": 25,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.751,
+    "iou_ci": [
+     0.689,
+     0.807
+    ],
+    "iou_median": 0.807,
+    "old_dropped_share_mean": 0.115,
+    "new_added_share_mean": 0.143,
+    "new_over_old_area_median": 1.095,
+    "old_below_share_median": 0.348,
+    "new_below_share_median": 0.369,
+    "old_depth_p5_median": -0.281,
+    "new_depth_p5_median": -0.3,
+    "old_depth_min_p5": -2.233,
+    "new_depth_min_p5": -0.895,
+    "whales": 25,
+    "with_old_dorsal": 25,
+    "not_applied": 0,
+    "old_px_to_ignore": 0
+   }
+  },
+  "fin_in_front_of_another_whale": {
+   "applied_in_multi_whale_shots": 82,
+   "any_whale_mask_would_add_other_whale_px (whales)": 6,
+   "px_median_where_present": 174
+  }
+ },
+ "r06r_check21": {
+  "whales_considered": 160,
+  "applied": 131,
+  "applied_without_old_dorsal": 0,
+  "applied_new_empty": 0,
+  "not_applied": 29,
+  "not_applied_with_old_dorsal": 29,
+  "old_px_total": 2586965,
+  "old_px_not_applied": 1005028,
+  "not_applied_by_states": {
+   "under_water+visible": {
+    "whales": 14,
+    "with_old_dorsal": 14,
+    "old_px": 616595,
+    "old_px_median_where_present": 6219
+   },
+   "occluded+under_water+visible": {
+    "whales": 2,
+    "with_old_dorsal": 2,
+    "old_px": 257649,
+    "old_px_median_where_present": 128824
+   },
+   "behind_splash+visible": {
+    "whales": 1,
+    "with_old_dorsal": 1,
+    "old_px": 58643,
+    "old_px_median_where_present": 58643
+   },
+   "out_of_frame+visible": {
+    "whales": 2,
+    "with_old_dorsal": 2,
+    "old_px": 33410,
+    "old_px_median_where_present": 16705
+   },
+   "occluded+visible": {
+    "whales": 6,
+    "with_old_dorsal": 6,
+    "old_px": 19169,
+    "old_px_median_where_present": 529
+   },
+   "out_of_frame": {
+    "whales": 1,
+    "with_old_dorsal": 1,
+    "old_px": 10379,
+    "old_px_median_where_present": 10379
+   },
+   "under_wave+visible": {
+    "whales": 2,
+    "with_old_dorsal": 2,
+    "old_px": 9066,
+    "old_px_median_where_present": 4533
+   },
+   "occluded": {
+    "whales": 1,
+    "with_old_dorsal": 1,
+    "old_px": 117,
+    "old_px_median_where_present": 117
+   }
+  },
+  "all": {
+   "n_applied_with_old": 131,
+   "degenerate_points (base < 2 px)": 0,
+   "iou_mean": 0.752,
+   "iou_ci": [
+    0.727,
+    0.777
+   ],
+   "iou_median": 0.782,
+   "old_dropped_share_mean": 0.149,
+   "new_added_share_mean": 0.106,
+   "new_over_old_area_median": 0.961,
+   "old_below_share_median": 0.358,
+   "new_below_share_median": 0.366,
+   "old_depth_p5_median": -0.304,
+   "new_depth_p5_median": -0.266,
+   "old_depth_min_p5": -1.374,
+   "new_depth_min_p5": -0.424
+  },
+  "view": {
+   "end-on (>60)": {
+    "n_applied_with_old": 28,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.651,
+    "iou_ci": [
+     0.579,
+     0.715
+    ],
+    "iou_median": 0.662,
+    "old_dropped_share_mean": 0.297,
+    "new_added_share_mean": 0.073,
+    "new_over_old_area_median": 0.692,
+    "old_below_share_median": 0.461,
+    "new_below_share_median": 0.32,
+    "old_depth_p5_median": -0.581,
+    "new_depth_p5_median": -0.256,
+    "old_depth_min_p5": -2.72,
+    "new_depth_min_p5": -0.379,
+    "whales": 40,
+    "with_old_dorsal": 40,
+    "not_applied": 12,
+    "old_px_to_ignore": 36074
+   },
+   "oblique (30-60)": {
+    "n_applied_with_old": 37,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.791,
+    "iou_ci": [
+     0.751,
+     0.828
+    ],
+    "iou_median": 0.818,
+    "old_dropped_share_mean": 0.104,
+    "new_added_share_mean": 0.108,
+    "new_over_old_area_median": 0.987,
+    "old_below_share_median": 0.357,
+    "new_below_share_median": 0.368,
+    "old_depth_p5_median": -0.294,
+    "new_depth_p5_median": -0.265,
+    "old_depth_min_p5": -1.006,
+    "new_depth_min_p5": -0.399,
+    "whales": 42,
+    "with_old_dorsal": 42,
+    "not_applied": 5,
+    "old_px_to_ignore": 347019
+   },
+   "side-on (<30)": {
+    "n_applied_with_old": 66,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.774,
+    "iou_ci": [
+     0.743,
+     0.803
+    ],
+    "iou_median": 0.798,
+    "old_dropped_share_mean": 0.111,
+    "new_added_share_mean": 0.119,
+    "new_over_old_area_median": 0.997,
+    "old_below_share_median": 0.358,
+    "new_below_share_median": 0.375,
+    "old_depth_p5_median": -0.274,
+    "new_depth_p5_median": -0.271,
+    "old_depth_min_p5": -0.856,
+    "new_depth_min_p5": -0.426,
+    "whales": 78,
+    "with_old_dorsal": 78,
+    "not_applied": 12,
+    "old_px_to_ignore": 621935
+   }
+  },
+  "animals": {
+   "one whale": {
+    "n_applied_with_old": 45,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.797,
+    "iou_ci": [
+     0.759,
+     0.831
+    ],
+    "iou_median": 0.839,
+    "old_dropped_share_mean": 0.118,
+    "new_added_share_mean": 0.089,
+    "new_over_old_area_median": 1.018,
+    "old_below_share_median": 0.353,
+    "new_below_share_median": 0.363,
+    "old_depth_p5_median": -0.273,
+    "new_depth_p5_median": -0.265,
+    "old_depth_min_p5": -1.078,
+    "new_depth_min_p5": -0.397,
+    "whales": 57,
+    "with_old_dorsal": 57,
+    "not_applied": 12,
+    "old_px_to_ignore": 645145
+   },
+   "several whales": {
+    "n_applied_with_old": 86,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.729,
+    "iou_ci": [
+     0.696,
+     0.762
+    ],
+    "iou_median": 0.764,
+    "old_dropped_share_mean": 0.164,
+    "new_added_share_mean": 0.115,
+    "new_over_old_area_median": 0.95,
+    "old_below_share_median": 0.391,
+    "new_below_share_median": 0.368,
+    "old_depth_p5_median": -0.341,
+    "new_depth_p5_median": -0.27,
+    "old_depth_min_p5": -1.439,
+    "new_depth_min_p5": -0.426,
+    "whales": 103,
+    "with_old_dorsal": 103,
+    "not_applied": 17,
+    "old_px_to_ignore": 359883
+   }
+  },
+  "finless_back": {
+   "fin": {
+    "n_applied_with_old": 111,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.768,
+    "iou_ci": [
+     0.744,
+     0.792
+    ],
+    "iou_median": 0.782,
+    "old_dropped_share_mean": 0.141,
+    "new_added_share_mean": 0.096,
+    "new_over_old_area_median": 0.961,
+    "old_below_share_median": 0.389,
+    "new_below_share_median": 0.369,
+    "old_depth_p5_median": -0.324,
+    "new_depth_p5_median": -0.266,
+    "old_depth_min_p5": -1.223,
+    "new_depth_min_p5": -0.407,
+    "whales": 129,
+    "with_old_dorsal": 129,
+    "not_applied": 18,
+    "old_px_to_ignore": 566747
+   },
+   "finless back (blade < 100 px or < 2 fin points visible)": {
+    "n_applied_with_old": 20,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.668,
+    "iou_ci": [
+     0.573,
+     0.756
+    ],
+    "iou_median": 0.761,
+    "old_dropped_share_mean": 0.192,
+    "new_added_share_mean": 0.16,
+    "new_over_old_area_median": 1.002,
+    "old_below_share_median": 0.282,
+    "new_below_share_median": 0.346,
+    "old_depth_p5_median": -0.226,
+    "new_depth_p5_median": -0.269,
+    "old_depth_min_p5": -3.342,
+    "new_depth_min_p5": -0.433,
+    "whales": 31,
+    "with_old_dorsal": 31,
+    "not_applied": 11,
+    "old_px_to_ignore": 438281
+   }
+  },
+  "flat (base/h > 3: h_eff = base/3)": {
+   "base/h <= 3": {
+    "n_applied_with_old": 87,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.777,
+    "iou_ci": [
+     0.751,
+     0.802
+    ],
+    "iou_median": 0.787,
+    "old_dropped_share_mean": 0.176,
+    "new_added_share_mean": 0.054,
+    "new_over_old_area_median": 0.871,
+    "old_below_share_median": 0.424,
+    "new_below_share_median": 0.358,
+    "old_depth_p5_median": -0.377,
+    "new_depth_p5_median": -0.261,
+    "old_depth_min_p5": -1.116,
+    "new_depth_min_p5": -0.333,
+    "whales": 116,
+    "with_old_dorsal": 116,
+    "not_applied": 29,
+    "old_px_to_ignore": 1005028
+   },
+   "base/h > 3": {
+    "n_applied_with_old": 44,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.704,
+    "iou_ci": [
+     0.65,
+     0.752
+    ],
+    "iou_median": 0.775,
+    "old_dropped_share_mean": 0.095,
+    "new_added_share_mean": 0.209,
+    "new_over_old_area_median": 1.238,
+    "old_below_share_median": 0.259,
+    "new_below_share_median": 0.392,
+    "old_depth_p5_median": -0.186,
+    "new_depth_p5_median": -0.317,
+    "old_depth_min_p5": -1.707,
+    "new_depth_min_p5": -0.463,
+    "whales": 44,
+    "with_old_dorsal": 44,
+    "not_applied": 0,
+    "old_px_to_ignore": 0
+   }
+  },
+  "fin_in_front_of_another_whale": {
+   "applied_in_multi_whale_shots": 81,
+   "any_whale_mask_would_add_other_whale_px (whales)": 5,
+   "px_median_where_present": 507
+  }
+ },
+ "run05": {
+  "whales_considered": 6392,
+  "applied": 5606,
+  "applied_without_old_dorsal": 17,
+  "applied_new_empty": 91,
+  "not_applied": 786,
+  "not_applied_with_old_dorsal": 786,
+  "old_px_total": 3070774,
+  "old_px_not_applied": 646074,
+  "not_applied_by_states": {
+   "hidden+visible": {
+    "whales": 470,
+    "with_old_dorsal": 470,
+    "old_px": 477296,
+    "old_px_median_where_present": 83
+   },
+   "occluded+visible": {
+    "whales": 229,
+    "with_old_dorsal": 229,
+    "old_px": 78985,
+    "old_px_median_where_present": 27
+   },
+   "hidden+under_water+visible": {
+    "whales": 11,
+    "with_old_dorsal": 11,
+    "old_px": 46963,
+    "old_px_median_where_present": 48
+   },
+   "under_water+visible": {
+    "whales": 50,
+    "with_old_dorsal": 50,
+    "old_px": 23133,
+    "old_px_median_where_present": 60
+   },
+   "out_of_frame+visible": {
+    "whales": 12,
+    "with_old_dorsal": 12,
+    "old_px": 14678,
+    "old_px_median_where_present": 558
+   },
+   "hidden+occluded+visible": {
+    "whales": 8,
+    "with_old_dorsal": 8,
+    "old_px": 4918,
+    "old_px_median_where_present": 150
+   },
+   "occluded+out_of_frame+visible": {
+    "whales": 1,
+    "with_old_dorsal": 1,
+    "old_px": 91,
+    "old_px_median_where_present": 91
+   },
+   "occluded": {
+    "whales": 1,
+    "with_old_dorsal": 1,
+    "old_px": 4,
+    "old_px_median_where_present": 4
+   },
+   "hidden+under_water": {
+    "whales": 1,
+    "with_old_dorsal": 1,
+    "old_px": 2,
+    "old_px_median_where_present": 2
+   },
+   "hidden+occluded": {
+    "whales": 1,
+    "with_old_dorsal": 1,
+    "old_px": 2,
+    "old_px_median_where_present": 2
+   },
+   "hidden": {
+    "whales": 1,
+    "with_old_dorsal": 1,
+    "old_px": 1,
+    "old_px_median_where_present": 1
+   },
+   "occluded+under_water+visible": {
+    "whales": 1,
+    "with_old_dorsal": 1,
+    "old_px": 1,
+    "old_px_median_where_present": 1
+   }
+  },
+  "all": {
+   "n_applied_with_old": 5505,
+   "degenerate_points (base < 2 px)": 89,
+   "iou_mean": 0.602,
+   "iou_ci": [
+    0.597,
+    0.606
+   ],
+   "iou_median": 0.614,
+   "old_dropped_share_mean": 0.145,
+   "new_added_share_mean": 0.308,
+   "new_over_old_area_median": 1.343,
+   "old_below_share_median": 0.075,
+   "new_below_share_median": 0.34,
+   "old_depth_p5_median": -0.015,
+   "new_depth_p5_median": -0.262,
+   "old_depth_min_p5": -1.631,
+   "new_depth_min_p5": -0.659
+  },
+  "view": {
+   "end-on (>60)": {
+    "n_applied_with_old": 1891,
+    "degenerate_points (base < 2 px)": 84,
+    "iou_mean": 0.584,
+    "iou_ci": [
+     0.574,
+     0.593
+    ],
+    "iou_median": 0.603,
+    "old_dropped_share_mean": 0.285,
+    "new_added_share_mean": 0.21,
+    "new_over_old_area_median": 0.948,
+    "old_below_share_median": 0.234,
+    "new_below_share_median": 0.297,
+    "old_depth_p5_median": -0.227,
+    "new_depth_p5_median": -0.254,
+    "old_depth_min_p5": -3.728,
+    "new_depth_min_p5": -1.005,
+    "whales": 2312,
+    "with_old_dorsal": 2308,
+    "not_applied": 336,
+    "old_px_to_ignore": 218735
+   },
+   "oblique (30-60)": {
+    "n_applied_with_old": 2085,
+    "degenerate_points (base < 2 px)": 5,
+    "iou_mean": 0.633,
+    "iou_ci": [
+     0.626,
+     0.641
+    ],
+    "iou_median": 0.646,
+    "old_dropped_share_mean": 0.083,
+    "new_added_share_mean": 0.328,
+    "new_over_old_area_median": 1.4,
+    "old_below_share_median": 0.069,
+    "new_below_share_median": 0.349,
+    "old_depth_p5_median": -0.01,
+    "new_depth_p5_median": -0.263,
+    "old_depth_min_p5": -0.613,
+    "new_depth_min_p5": -0.534,
+    "whales": 2308,
+    "with_old_dorsal": 2302,
+    "not_applied": 214,
+    "old_px_to_ignore": 136988
+   },
+   "side-on (<30)": {
+    "n_applied_with_old": 1529,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.58,
+    "iou_ci": [
+     0.574,
+     0.587
+    ],
+    "iou_median": 0.597,
+    "old_dropped_share_mean": 0.057,
+    "new_added_share_mean": 0.403,
+    "new_over_old_area_median": 1.594,
+    "old_below_share_median": 0.007,
+    "new_below_share_median": 0.37,
+    "old_depth_p5_median": 0.039,
+    "new_depth_p5_median": -0.267,
+    "old_depth_min_p5": -0.168,
+    "new_depth_min_p5": -0.513,
+    "whales": 1772,
+    "with_old_dorsal": 1765,
+    "not_applied": 236,
+    "old_px_to_ignore": 290351
+   }
+  },
+  "animals": {
+   "one whale": {
+    "n_applied_with_old": 4613,
+    "degenerate_points (base < 2 px)": 30,
+    "iou_mean": 0.603,
+    "iou_ci": [
+     0.598,
+     0.609
+    ],
+    "iou_median": 0.616,
+    "old_dropped_share_mean": 0.146,
+    "new_added_share_mean": 0.306,
+    "new_over_old_area_median": 1.338,
+    "old_below_share_median": 0.079,
+    "new_below_share_median": 0.341,
+    "old_depth_p5_median": -0.019,
+    "new_depth_p5_median": -0.262,
+    "old_depth_min_p5": -1.675,
+    "new_depth_min_p5": -0.684,
+    "whales": 5324,
+    "with_old_dorsal": 5318,
+    "not_applied": 675,
+    "old_px_to_ignore": 631600
+   },
+   "several whales": {
+    "n_applied_with_old": 892,
+    "degenerate_points (base < 2 px)": 59,
+    "iou_mean": 0.593,
+    "iou_ci": [
+     0.581,
+     0.605
+    ],
+    "iou_median": 0.6,
+    "old_dropped_share_mean": 0.142,
+    "new_added_share_mean": 0.322,
+    "new_over_old_area_median": 1.375,
+    "old_below_share_median": 0.044,
+    "new_below_share_median": 0.333,
+    "old_depth_p5_median": 0.011,
+    "new_depth_p5_median": -0.257,
+    "old_depth_min_p5": -1.347,
+    "new_depth_min_p5": -0.608,
+    "whales": 1068,
+    "with_old_dorsal": 1057,
+    "not_applied": 111,
+    "old_px_to_ignore": 14474
+   }
+  },
+  "finless_back": {
+   "fin": {
+    "n_applied_with_old": 5505,
+    "degenerate_points (base < 2 px)": 89,
+    "iou_mean": 0.602,
+    "iou_ci": [
+     0.597,
+     0.606
+    ],
+    "iou_median": 0.614,
+    "old_dropped_share_mean": 0.145,
+    "new_added_share_mean": 0.308,
+    "new_over_old_area_median": 1.343,
+    "old_below_share_median": 0.075,
+    "new_below_share_median": 0.34,
+    "old_depth_p5_median": -0.015,
+    "new_depth_p5_median": -0.262,
+    "old_depth_min_p5": -1.631,
+    "new_depth_min_p5": -0.659,
+    "whales": 6392,
+    "with_old_dorsal": 6375,
+    "not_applied": 786,
+    "old_px_to_ignore": 646074
+   }
+  },
+  "flat (base/h > 3: h_eff = base/3)": {
+   "base/h <= 3": {
+    "n_applied_with_old": 4439,
+    "degenerate_points (base < 2 px)": 89,
+    "iou_mean": 0.631,
+    "iou_ci": [
+     0.626,
+     0.635
+    ],
+    "iou_median": 0.63,
+    "old_dropped_share_mean": 0.101,
+    "new_added_share_mean": 0.305,
+    "new_over_old_area_median": 1.381,
+    "old_below_share_median": 0.059,
+    "new_below_share_median": 0.337,
+    "old_depth_p5_median": -0.003,
+    "new_depth_p5_median": -0.258,
+    "old_depth_min_p5": -0.654,
+    "new_depth_min_p5": -0.366,
+    "whales": 5316,
+    "with_old_dorsal": 5309,
+    "not_applied": 786,
+    "old_px_to_ignore": 646074
+   },
+   "base/h > 3": {
+    "n_applied_with_old": 1066,
+    "degenerate_points (base < 2 px)": 0,
+    "iou_mean": 0.48,
+    "iou_ci": [
+     0.467,
+     0.494
+    ],
+    "iou_median": 0.5,
+    "old_dropped_share_mean": 0.331,
+    "new_added_share_mean": 0.321,
+    "new_over_old_area_median": 1.042,
+    "old_below_share_median": 0.261,
+    "new_below_share_median": 0.358,
+    "old_depth_p5_median": -0.325,
+    "new_depth_p5_median": -0.367,
+    "old_depth_min_p5": -7.056,
+    "new_depth_min_p5": -2.753,
+    "whales": 1076,
+    "with_old_dorsal": 1066,
+    "not_applied": 0,
+    "old_px_to_ignore": 0
+   }
+  },
+  "fin_in_front_of_another_whale": {
+   "applied_in_multi_whale_shots": 0,
+   "any_whale_mask_would_add_other_whale_px (whales)": 0,
+   "px_median_where_present": 0
+  }
+ }
+}

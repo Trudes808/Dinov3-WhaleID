@@ -1,0 +1,232 @@
+{
+ "note": "round 21: nearest renders (frozen DINOv3 whale tokens, top 5 of the whole pool) of the real sample after adding r06r_check21 (pool also holds r06r_check20); top1/top3 = share of real instances whose nearest / 3 nearest include a whale of that set; check21 share of pool 0.108",
+ "pool": {
+  "r06r_check20": 234,
+  "r06r_check21": 279,
+  "r06r_test_check": 121,
+  "r06r_test_final": 389,
+  "r06r_test_r10": 116,
+  "r06r_test_r3": 59,
+  "r06r_test_r4b": 21,
+  "r06r_test_r5": 16,
+  "r06r_test_r6b": 75,
+  "r06r_test_r7": 76,
+  "r06r_test_r8": 96,
+  "r06r_test_r9": 101,
+  "run05": 1000
+ },
+ "B_back|fail": {
+  "n": 32,
+  "top1_check21": 0.25,
+  "top3_check21": 0.469,
+  "top1_check20": 0.125,
+  "top3_check20": 0.25,
+  "check21_nn1_meta": {
+   "fluke_rollout": 4,
+   "back_arch": 2,
+   "surface": 1,
+   "logging": 1
+  }
+ },
+ "B_back|pass": {
+  "n": 66,
+  "top1_check21": 0.333,
+  "top3_check21": 0.682,
+  "top1_check20": 0.303,
+  "top3_check20": 0.652,
+  "check21_nn1_meta": {
+   "surface": 8,
+   "fluke_rollout": 7,
+   "back_arch": 3,
+   "blow": 3
+  }
+ },
+ "D_small|fail": {
+  "n": 44,
+  "top1_check21": 0.318,
+  "top3_check21": 0.523,
+  "top1_check20": 0.318,
+  "top3_check20": 0.432,
+  "check21_nn1_meta": {
+   "fluke_rollout": 4,
+   "back_arch": 3,
+   "surface": 2,
+   "fluke_up": 1
+  }
+ },
+ "D_small|pass": {
+  "n": 113,
+  "top1_check21": 0.257,
+  "top3_check21": 0.593,
+  "top1_check20": 0.673,
+  "top3_check20": 0.894,
+  "check21_nn1_meta": {
+   "surface": 11,
+   "back_arch": 7,
+   "logging": 6,
+   "peduncle": 4
+  }
+ },
+ "D_tall|fail": {
+  "n": 7,
+  "top1_check21": 0.143,
+  "top3_check21": 0.429,
+  "top1_check20": 0.714,
+  "top3_check20": 0.857,
+  "check21_nn1_meta": {
+   "fluke_rollout": 1
+  }
+ },
+ "D_tall|pass": {
+  "n": 56,
+  "top1_check21": 0.232,
+  "top3_check21": 0.518,
+  "top1_check20": 0.536,
+  "top3_check20": 0.857,
+  "check21_nn1_meta": {
+   "surface": 7,
+   "logging": 3,
+   "fluke_rollout": 2,
+   "peduncle": 1
+  }
+ },
+ "D_tip|fail": {
+  "n": 1,
+  "top1_check21": 0.0,
+  "top3_check21": 0.0,
+  "top1_check20": 0.0,
+  "top3_check20": 1.0,
+  "check21_nn1_meta": {}
+ },
+ "D_tip|pass": {
+  "n": 34,
+  "top1_check21": 0.176,
+  "top3_check21": 0.529,
+  "top1_check20": 0.382,
+  "top3_check20": 0.853,
+  "check21_nn1_meta": {
+   "logging": 3,
+   "fluke_rollout": 1,
+   "back_arch": 1,
+   "surface": 1
+  }
+ },
+ "F_edge|fail": {
+  "n": 2,
+  "top1_check21": 0.5,
+  "top3_check21": 0.5,
+  "top1_check20": 0.0,
+  "top3_check20": 0.0,
+  "check21_nn1_meta": {
+   "fluke_sinking": 1
+  }
+ },
+ "F_edge|pass": {
+  "n": 60,
+  "top1_check21": 0.383,
+  "top3_check21": 0.65,
+  "top1_check20": 0.133,
+  "top3_check20": 0.367,
+  "check21_nn1_meta": {
+   "fluke_rollout": 10,
+   "fluke_edge": 7,
+   "fluke_down": 4,
+   "blow": 1
+  }
+ },
+ "F_low|fail": {
+  "n": 13,
+  "top1_check21": 0.538,
+  "top3_check21": 0.692,
+  "top1_check20": 0.385,
+  "top3_check20": 0.846,
+  "check21_nn1_meta": {
+   "fluke_rollout": 7
+  }
+ },
+ "F_low|pass": {
+  "n": 57,
+  "top1_check21": 0.544,
+  "top3_check21": 0.772,
+  "top1_check20": 0.123,
+  "top3_check20": 0.474,
+  "check21_nn1_meta": {
+   "fluke_rollout": 23,
+   "fluke_down": 5,
+   "fluke_up": 2,
+   "logging": 1
+  }
+ },
+ "F_up|pass": {
+  "n": 33,
+  "top1_check21": 0.364,
+  "top3_check21": 0.667,
+  "top1_check20": 0.091,
+  "top3_check20": 0.394,
+  "check21_nn1_meta": {
+   "fluke_rollout": 10,
+   "fluke_up": 2
+  }
+ },
+ "H_head|fail": {
+  "n": 5,
+  "top1_check21": 0.2,
+  "top3_check21": 0.2,
+  "top1_check20": 0.0,
+  "top3_check20": 0.8,
+  "check21_nn1_meta": {
+   "peduncle": 1
+  }
+ },
+ "H_head|pass": {
+  "n": 12,
+  "top1_check21": 0.167,
+  "top3_check21": 0.25,
+  "top1_check20": 0.0,
+  "top3_check20": 0.25,
+  "check21_nn1_meta": {
+   "pec_up": 1,
+   "surface": 1
+  }
+ },
+ "P_pec|fail": {
+  "n": 37,
+  "top1_check21": 0.054,
+  "top3_check21": 0.189,
+  "top1_check20": 0.135,
+  "top3_check20": 0.297,
+  "check21_nn1_meta": {
+   "fluke_down": 1,
+   "pec_slap": 1
+  }
+ },
+ "P_pec|pass": {
+  "n": 22,
+  "top1_check21": 0.182,
+  "top3_check21": 0.318,
+  "top1_check20": 0.182,
+  "top3_check20": 0.318,
+  "check21_nn1_meta": {
+   "pec_slap": 3,
+   "fluke_down": 1
+  }
+ },
+ "R_roll|fail": {
+  "n": 1,
+  "top1_check21": 0.0,
+  "top3_check21": 0.0,
+  "top1_check20": 0.0,
+  "top3_check20": 0.0,
+  "check21_nn1_meta": {}
+ },
+ "R_roll|pass": {
+  "n": 2,
+  "top1_check21": 0.5,
+  "top3_check21": 1.0,
+  "top1_check20": 0.0,
+  "top3_check20": 0.0,
+  "check21_nn1_meta": {
+   "pec_up": 1
+  }
+ }
+}
