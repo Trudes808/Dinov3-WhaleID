@@ -337,6 +337,26 @@ of those days and not the re-made ones. Retraining it on `parts_up` is open. A n
 `scripts/parts_up_all.sh DAY` after `parts_hr` exists, then a restart of the review server. The second set takes as
 much disk as the first (15 GB for the 28 days).
 
+## The web app: launching the current and the previous version, rolling back
+
+The reviewers' web app is the sibling folder `Whale-Review-Web` (not in this repository). The **current** version (the
+beta, live since 2026-11-24) needs a sign-in, has uploads, a job worker and a Video Analysis page, and listens on
+127.0.0.1 only. The **previous** version (code of 2026-11-23) has no sign-in and only the three sorting modules; its
+code is kept only in `moonshot_cache/switch_root/backup_beta_golive_2026-11-24/code_before/`.
+
+```bash
+# current (beta), http://localhost:8765/ through an SSH forward
+cd /home/sat3737/NOAA_whales/Whale-Review-Web && setsid nohup ./serve.sh --port 8765 >> serve.log 2>&1 &
+# previous version next to it, http://localhost:8766/ (127.0.0.1 only, no sign-in; builds its own copy on first use)
+scripts/web_app_launch_old.sh            # --status, --stop
+# roll the live app on 8765 back to the previous version
+bash /home/sat3737/NOAA_whales/moonshot_cache/switch_root/ROLLBACK_beta.sh
+```
+
+Both versions read and write the same sorting state files: never sort in both at once. Checks, restart by pid,
+worker, first admin, what the roll-back replaces and how to verify it or go forward again:
+[docs/web_app_versions.md](docs/web_app_versions.md).
+
 ## Earlier work
 
 The classical-vision isolation and clustering code from the first iteration lives in git
