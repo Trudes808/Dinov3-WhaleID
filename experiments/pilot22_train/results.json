@@ -1,0 +1,790 @@
+{
+ "arms": {
+  "W3e": [
+   "parts_seg_r05_w3e",
+   "parts_seg_r05_w3es1"
+  ],
+  "P_add": [
+   "parts_seg_p22add",
+   "parts_seg_p22adds1"
+  ],
+  "P_only": [
+   "parts_seg_p22only",
+   "parts_seg_p22onlys1"
+  ]
+ },
+ "rows": [
+  {
+   "group": "1 part gaps",
+   "measure": "VAL total cost (weighted error)",
+   "n": "202",
+   "values": {
+    "parts_seg_r05_w3e": 0.1640404607170051,
+    "parts_seg_r05_w3es1": 0.15474937341360867,
+    "parts_seg_p22add": 0.15135182270810266,
+    "parts_seg_p22adds1": 0.13386627656971858,
+    "parts_seg_p22only": 0.1659992313742029,
+    "parts_seg_p22onlys1": 0.15759552961285353
+   },
+   "higher_better": false,
+   "role": "total",
+   "P_add": {
+    "both": "better",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "-",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "train-day total cost (ranking set, reference)",
+   "n": "395",
+   "values": {
+    "parts_seg_r05_w3e": 0.16029948451526663,
+    "parts_seg_r05_w3es1": 0.17910392422429136,
+    "parts_seg_p22add": 0.15815483996741297,
+    "parts_seg_p22adds1": 0.1511433085287156,
+    "parts_seg_p22only": 0.15634483143468686,
+    "parts_seg_p22onlys1": 0.18225001841697233
+   },
+   "higher_better": false,
+   "role": "",
+   "P_add": {
+    "both": "better",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "-",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL F_low error",
+   "n": "22",
+   "values": {
+    "parts_seg_r05_w3e": 0.1588994740133151,
+    "parts_seg_r05_w3es1": 0.1588994740133151,
+    "parts_seg_p22add": 0.1840144186559752,
+    "parts_seg_p22adds1": 0.1840144186559752,
+    "parts_seg_p22only": 0.1840144186559752,
+    "parts_seg_p22onlys1": 0.20951680337416156
+   },
+   "higher_better": false,
+   "role": "cat",
+   "P_add": {
+    "both": "worse",
+    "sep": "higher, sep"
+   },
+   "P_only": {
+    "both": "worse",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL F_edge error",
+   "n": "16",
+   "values": {
+    "parts_seg_r05_w3e": 0.13801057687896878,
+    "parts_seg_r05_w3es1": 0.13801057687896878,
+    "parts_seg_p22add": 0.06338263530737825,
+    "parts_seg_p22adds1": 0.0,
+    "parts_seg_p22only": 0.0,
+    "parts_seg_p22onlys1": 0.0
+   },
+   "higher_better": false,
+   "role": "cat",
+   "P_add": {
+    "both": "better",
+    "sep": "lower, sep"
+   },
+   "P_only": {
+    "both": "better",
+    "sep": "lower, sep"
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL F_up error",
+   "n": "12",
+   "values": {
+    "parts_seg_r05_w3e": 0.0,
+    "parts_seg_r05_w3es1": 0.0,
+    "parts_seg_p22add": 0.0,
+    "parts_seg_p22adds1": 0.0,
+    "parts_seg_p22only": 0.0,
+    "parts_seg_p22onlys1": 0.0
+   },
+   "higher_better": false,
+   "role": "cat",
+   "P_add": {
+    "both": "-",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "-",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL D_small error",
+   "n": "55",
+   "values": {
+    "parts_seg_r05_w3e": 0.06531636818350016,
+    "parts_seg_r05_w3es1": 0.07152808146798272,
+    "parts_seg_p22add": 0.07596501952832739,
+    "parts_seg_p22adds1": 0.06795069140834795,
+    "parts_seg_p22only": 0.06795069140834795,
+    "parts_seg_p22onlys1": 0.06795069140834795
+   },
+   "higher_better": false,
+   "role": "cat",
+   "P_add": {
+    "both": "-",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "-",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL D_tip error",
+   "n": "7",
+   "values": {
+    "parts_seg_r05_w3e": 0.23885511651469096,
+    "parts_seg_r05_w3es1": 0.23885511651469096,
+    "parts_seg_p22add": 0.23885511651469096,
+    "parts_seg_p22adds1": 0.0,
+    "parts_seg_p22only": 0.5605369807497467,
+    "parts_seg_p22onlys1": 0.3996960486322188
+   },
+   "higher_better": false,
+   "role": "cat",
+   "P_add": {
+    "both": "-",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "worse",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL D_tall error",
+   "n": "23",
+   "values": {
+    "parts_seg_r05_w3e": 0.01183227044138874,
+    "parts_seg_r05_w3es1": 0.01183227044138874,
+    "parts_seg_p22add": 0.01183227044138874,
+    "parts_seg_p22adds1": 0.01183227044138874,
+    "parts_seg_p22only": 0.01183227044138874,
+    "parts_seg_p22onlys1": 0.01183227044138874
+   },
+   "higher_better": false,
+   "role": "cat",
+   "P_add": {
+    "both": "-",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "-",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL B_back error",
+   "n": "30",
+   "values": {
+    "parts_seg_r05_w3e": 0.6573321977837912,
+    "parts_seg_r05_w3es1": 0.6497466639300238,
+    "parts_seg_p22add": 0.6082849505870808,
+    "parts_seg_p22adds1": 0.5929707595992862,
+    "parts_seg_p22only": 0.6376252230403316,
+    "parts_seg_p22onlys1": 0.6294231581331377
+   },
+   "higher_better": false,
+   "role": "cat",
+   "P_add": {
+    "both": "better",
+    "sep": "lower, sep"
+   },
+   "P_only": {
+    "both": "better",
+    "sep": "lower, sep"
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL P_pec error",
+   "n": "29",
+   "values": {
+    "parts_seg_r05_w3e": 0.19269873079492317,
+    "parts_seg_r05_w3es1": 0.09126920507682029,
+    "parts_seg_p22add": 0.12131596526386106,
+    "parts_seg_p22adds1": 0.13434201736806947,
+    "parts_seg_p22only": 0.1635203740814963,
+    "parts_seg_p22onlys1": 0.14346025384101538
+   },
+   "higher_better": false,
+   "role": "cat",
+   "P_add": {
+    "both": "-",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "-",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL H_head error",
+   "n": "7",
+   "values": {
+    "parts_seg_r05_w3e": 0.0,
+    "parts_seg_r05_w3es1": 0.0,
+    "parts_seg_p22add": 0.0,
+    "parts_seg_p22adds1": 0.0,
+    "parts_seg_p22only": 0.0637910085054678,
+    "parts_seg_p22onlys1": 0.0
+   },
+   "higher_better": false,
+   "role": "cat",
+   "P_add": {
+    "both": "-",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "-",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL F_low cost",
+   "n": "22",
+   "values": {
+    "parts_seg_r05_w3e": 0.01492042440318302,
+    "parts_seg_r05_w3es1": 0.01492042440318302,
+    "parts_seg_p22add": 0.01727868037135278,
+    "parts_seg_p22adds1": 0.01727868037135278,
+    "parts_seg_p22only": 0.01727868037135278,
+    "parts_seg_p22onlys1": 0.01967331638667845
+   },
+   "higher_better": false,
+   "role": "",
+   "P_add": {
+    "both": "worse",
+    "sep": "higher, sep"
+   },
+   "P_only": {
+    "both": "worse",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL F_edge cost",
+   "n": "16",
+   "values": {
+    "parts_seg_r05_w3e": 0.009698275862068966,
+    "parts_seg_r05_w3es1": 0.009698275862068966,
+    "parts_seg_p22add": 0.004454022988505747,
+    "parts_seg_p22adds1": 0.0,
+    "parts_seg_p22only": 0.0,
+    "parts_seg_p22onlys1": 0.0
+   },
+   "higher_better": false,
+   "role": "",
+   "P_add": {
+    "both": "better",
+    "sep": "lower, sep"
+   },
+   "P_only": {
+    "both": "better",
+    "sep": "lower, sep"
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL F_up cost",
+   "n": "12",
+   "values": {
+    "parts_seg_r05_w3e": 0.0,
+    "parts_seg_r05_w3es1": 0.0,
+    "parts_seg_p22add": 0.0,
+    "parts_seg_p22adds1": 0.0,
+    "parts_seg_p22only": 0.0,
+    "parts_seg_p22onlys1": 0.0
+   },
+   "higher_better": false,
+   "role": "",
+   "P_add": {
+    "both": "-",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "-",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL D_small cost",
+   "n": "55",
+   "values": {
+    "parts_seg_r05_w3e": 0.024078065134099616,
+    "parts_seg_r05_w3es1": 0.026367935823754792,
+    "parts_seg_p22add": 0.02800355774493706,
+    "parts_seg_p22adds1": 0.02504917556102901,
+    "parts_seg_p22only": 0.02504917556102901,
+    "parts_seg_p22onlys1": 0.02504917556102901
+   },
+   "higher_better": false,
+   "role": "",
+   "P_add": {
+    "both": "-",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "-",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL D_tip cost",
+   "n": "7",
+   "values": {
+    "parts_seg_r05_w3e": 0.009237852664576801,
+    "parts_seg_r05_w3es1": 0.009237852664576801,
+    "parts_seg_p22add": 0.009237852664576801,
+    "parts_seg_p22adds1": 0.0,
+    "parts_seg_p22only": 0.021679075235109715,
+    "parts_seg_p22onlys1": 0.015458463949843258
+   },
+   "higher_better": false,
+   "role": "",
+   "P_add": {
+    "both": "-",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "worse",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL D_tall cost",
+   "n": "23",
+   "values": {
+    "parts_seg_r05_w3e": 0.0012122844827586212,
+    "parts_seg_r05_w3es1": 0.0012122844827586212,
+    "parts_seg_p22add": 0.0012122844827586212,
+    "parts_seg_p22adds1": 0.0012122844827586212,
+    "parts_seg_p22only": 0.0012122844827586212,
+    "parts_seg_p22onlys1": 0.0012122844827586212
+   },
+   "higher_better": false,
+   "role": "",
+   "P_add": {
+    "both": "-",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "-",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL B_back cost",
+   "n": "30",
+   "values": {
+    "parts_seg_r05_w3e": 0.08248507957559684,
+    "parts_seg_r05_w3es1": 0.08153321175950488,
+    "parts_seg_p22add": 0.07633040450928384,
+    "parts_seg_p22adds1": 0.07440870910698498,
+    "parts_seg_p22only": 0.08001215738284705,
+    "parts_seg_p22onlys1": 0.07898292440318302
+   },
+   "higher_better": false,
+   "role": "",
+   "P_add": {
+    "both": "better",
+    "sep": "lower, sep"
+   },
+   "P_only": {
+    "both": "better",
+    "sep": "lower, sep"
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL P_pec cost",
+   "n": "29",
+   "values": {
+    "parts_seg_r05_w3e": 0.019926364942528734,
+    "parts_seg_r05_w3es1": 0.009437859195402298,
+    "parts_seg_p22add": 0.012544899425287357,
+    "parts_seg_p22adds1": 0.013891882183908046,
+    "parts_seg_p22only": 0.01690912356321839,
+    "parts_seg_p22onlys1": 0.01483477011494253
+   },
+   "higher_better": false,
+   "role": "",
+   "P_add": {
+    "both": "-",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "-",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "1 part gaps",
+   "measure": "VAL H_head cost",
+   "n": "7",
+   "values": {
+    "parts_seg_r05_w3e": 0.0,
+    "parts_seg_r05_w3es1": 0.0,
+    "parts_seg_p22add": 0.0,
+    "parts_seg_p22adds1": 0.0,
+    "parts_seg_p22only": 0.0013469827586206897,
+    "parts_seg_p22onlys1": 0.0
+   },
+   "higher_better": false,
+   "role": "",
+   "P_add": {
+    "both": "-",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "-",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "2 fin shape",
+   "measure": "IoU with the expanded-triangle truth (clicks 03-18)",
+   "n": "99",
+   "values": {
+    "parts_seg_r05_w3e": 0.636,
+    "parts_seg_r05_w3es1": 0.662,
+    "parts_seg_p22add": 0.697,
+    "parts_seg_p22adds1": 0.691,
+    "parts_seg_p22only": 0.7,
+    "parts_seg_p22onlys1": 0.69
+   },
+   "higher_better": true,
+   "role": "",
+   "P_add": {
+    "both": "better",
+    "sep": "higher, sep"
+   },
+   "P_only": {
+    "both": "better",
+    "sep": "higher, sep"
+   }
+  },
+  {
+   "group": "3 standing",
+   "measure": "fin tip inside the largest fin region (hr, clicks 03-18)",
+   "n": "119",
+   "values": {
+    "parts_seg_r05_w3e": 0.956,
+    "parts_seg_r05_w3es1": 0.939,
+    "parts_seg_p22add": 0.991,
+    "parts_seg_p22adds1": 0.955,
+    "parts_seg_p22only": 0.964,
+    "parts_seg_p22onlys1": 0.965
+   },
+   "higher_better": true,
+   "role": "guard",
+   "P_add": {
+    "both": "-",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "better",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "3 standing",
+   "measure": "finless backs called dorsal, by eye",
+   "n": "33",
+   "values": {
+    "parts_seg_r05_w3e": 0.182,
+    "parts_seg_r05_w3es1": 0.242,
+    "parts_seg_p22add": 0.091,
+    "parts_seg_p22adds1": 0.121,
+    "parts_seg_p22only": 0.091,
+    "parts_seg_p22onlys1": 0.121
+   },
+   "higher_better": false,
+   "role": "guard",
+   "P_add": {
+    "both": "better",
+    "sep": "lower, sep"
+   },
+   "P_only": {
+    "both": "better",
+    "sep": "lower, sep"
+   }
+  },
+  {
+   "group": "3 standing",
+   "measure": "finless backs called dorsal, classifier",
+   "n": "151",
+   "values": {
+    "parts_seg_r05_w3e": 0.139,
+    "parts_seg_r05_w3es1": 0.152,
+    "parts_seg_p22add": 0.086,
+    "parts_seg_p22adds1": 0.086,
+    "parts_seg_p22only": 0.099,
+    "parts_seg_p22onlys1": 0.093
+   },
+   "higher_better": false,
+   "role": "guard",
+   "P_add": {
+    "both": "better",
+    "sep": "lower, sep"
+   },
+   "P_only": {
+    "both": "better",
+    "sep": "lower, sep"
+   }
+  },
+  {
+   "group": "3 standing",
+   "measure": "three-way call by eye, crops",
+   "n": "79",
+   "values": {
+    "parts_seg_r05_w3e": 0.8861,
+    "parts_seg_r05_w3es1": 0.8608,
+    "parts_seg_p22add": 0.9241,
+    "parts_seg_p22adds1": 0.9241,
+    "parts_seg_p22only": 0.9367,
+    "parts_seg_p22onlys1": 0.8987
+   },
+   "higher_better": true,
+   "role": "guard",
+   "P_add": {
+    "both": "better",
+    "sep": "higher, sep"
+   },
+   "P_only": {
+    "both": "better",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "3 standing",
+   "measure": "three-way call by eye, whole photo",
+   "n": "79",
+   "values": {
+    "parts_seg_r05_w3e": 0.9114,
+    "parts_seg_r05_w3es1": 0.8481,
+    "parts_seg_p22add": 0.8734,
+    "parts_seg_p22adds1": 0.9114,
+    "parts_seg_p22only": 0.8861,
+    "parts_seg_p22onlys1": 0.8481
+   },
+   "higher_better": true,
+   "role": "guard",
+   "P_add": {
+    "both": "-",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "-",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "3 standing",
+   "measure": "three-way call by classifier, whole photo",
+   "n": "828",
+   "values": {
+    "parts_seg_r05_w3e": 0.9493,
+    "parts_seg_r05_w3es1": 0.93,
+    "parts_seg_p22add": 0.9481,
+    "parts_seg_p22adds1": 0.9626,
+    "parts_seg_p22only": 0.9505,
+    "parts_seg_p22onlys1": 0.942
+   },
+   "higher_better": true,
+   "role": "guard",
+   "P_add": {
+    "both": "-",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "-",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "3 standing",
+   "measure": "fluke notch inside the fluke (hr, clicks 03-18)",
+   "n": "54",
+   "values": {
+    "parts_seg_r05_w3e": 0.812,
+    "parts_seg_r05_w3es1": 0.818,
+    "parts_seg_p22add": 0.812,
+    "parts_seg_p22adds1": 0.809,
+    "parts_seg_p22only": 0.766,
+    "parts_seg_p22onlys1": 0.809
+   },
+   "higher_better": true,
+   "role": "guard",
+   "P_add": {
+    "both": "-",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "worse",
+    "sep": "n.s."
+   }
+  },
+  {
+   "group": "4 renders",
+   "measure": "pilot val dorsal IoU (rule A, 1280)",
+   "n": "495",
+   "values": {
+    "parts_seg_r05_w3e": 0.3081,
+    "parts_seg_r05_w3es1": 0.2393,
+    "parts_seg_p22add": 0.7358,
+    "parts_seg_p22adds1": 0.7373,
+    "parts_seg_p22only": 0.7889,
+    "parts_seg_p22onlys1": 0.7939
+   },
+   "higher_better": true,
+   "role": "",
+   "P_add": {
+    "both": "better",
+    "sep": "higher, sep"
+   },
+   "P_only": {
+    "both": "better",
+    "sep": "higher, sep"
+   }
+  },
+  {
+   "group": "4 renders",
+   "measure": "pilot val fluke IoU (1280)",
+   "n": "495",
+   "values": {
+    "parts_seg_r05_w3e": 0.5323,
+    "parts_seg_r05_w3es1": 0.5747,
+    "parts_seg_p22add": 0.9119,
+    "parts_seg_p22adds1": 0.9133,
+    "parts_seg_p22only": 0.9248,
+    "parts_seg_p22onlys1": 0.9256
+   },
+   "higher_better": true,
+   "role": "",
+   "P_add": {
+    "both": "better",
+    "sep": "higher, sep"
+   },
+   "P_only": {
+    "both": "better",
+    "sep": "higher, sep"
+   }
+  },
+  {
+   "group": "4 renders",
+   "measure": "run05 val dorsal IoU (rule-A label)",
+   "n": "1379",
+   "values": {
+    "parts_seg_r05_w3e": 0.6659,
+    "parts_seg_r05_w3es1": 0.6532,
+    "parts_seg_p22add": 0.6513,
+    "parts_seg_p22adds1": 0.6372,
+    "parts_seg_p22only": 0.1216,
+    "parts_seg_p22onlys1": 0.1021
+   },
+   "higher_better": true,
+   "role": "",
+   "P_add": {
+    "both": "worse",
+    "sep": "n.s."
+   },
+   "P_only": {
+    "both": "worse",
+    "sep": "lower, sep"
+   }
+  },
+  {
+   "group": "4 renders",
+   "measure": "run05 val fluke IoU",
+   "n": "1379",
+   "values": {
+    "parts_seg_r05_w3e": 0.9382,
+    "parts_seg_r05_w3es1": 0.9413,
+    "parts_seg_p22add": 0.9446,
+    "parts_seg_p22adds1": 0.9455,
+    "parts_seg_p22only": 0.884,
+    "parts_seg_p22onlys1": 0.8841
+   },
+   "higher_better": true,
+   "role": "",
+   "P_add": {
+    "both": "better",
+    "sep": "higher, sep"
+   },
+   "P_only": {
+    "both": "worse",
+    "sep": "lower, sep"
+   }
+  }
+ ],
+ "verdict": {
+  "P_add": {
+   "verdict": "HELPS",
+   "total": "better",
+   "guards_worse_both": [],
+   "guards_better_both": [
+    "finless backs called dorsal, by eye",
+    "finless backs called dorsal, classifier",
+    "three-way call by eye, crops"
+   ],
+   "categories_moved_both_seeds": {
+    "VAL F_low error": "worse",
+    "VAL F_edge error": "better",
+    "VAL B_back error": "better"
+   }
+  },
+  "P_only": {
+   "verdict": "not separable at this size",
+   "total": "-",
+   "guards_worse_both": [
+    "fluke notch inside the fluke (hr, clicks 03-18)"
+   ],
+   "guards_better_both": [
+    "fin tip inside the largest fin region (hr, clicks 03-18)",
+    "finless backs called dorsal, by eye",
+    "finless backs called dorsal, classifier",
+    "three-way call by eye, crops"
+   ],
+   "categories_moved_both_seeds": {
+    "VAL F_low error": "worse",
+    "VAL F_edge error": "better",
+    "VAL D_tip error": "worse",
+    "VAL B_back error": "better"
+   }
+  }
+ }
+}

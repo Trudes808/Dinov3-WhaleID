@@ -1,0 +1,53 @@
+{
+ "task": "scene_segmentation",
+ "args": {
+  "name": "seg_scene_v3b0_s0",
+  "seed": 0,
+  "pseudo_dir": "/home/sat3737/NOAA_whales/moonshot_cache/sam3_labeller/v3/pseudo_v3",
+  "real_dir": "/home/sat3737/NOAA_whales/moonshot_cache/sam3_labeller/v3/real_s6mc_v3",
+  "init": "/home/sat3737/NOAA_whales/Dinov3-WhaleID/experiments/seg_r05_ft4/checkpoints/best.pt",
+  "p_s6": 0.2,
+  "p_pseudo": 0.3,
+  "p_extra": 0.6,
+  "balanced": true,
+  "render_dir": "/home/sat3737/NOAA_whales/moonshot_cache/sam3_labeller/v3/renders/train",
+  "p_render": 0.1,
+  "epochs": 8,
+  "batch_size": 8,
+  "crop": 512,
+  "lr_head": 0.0003,
+  "lr_backbone": 3e-05,
+  "layer_decay": 0.8,
+  "weight_decay": 0.05,
+  "warmup_steps": 200,
+  "dice_weight": 1.0,
+  "workers": 6,
+  "budget": 3000.0,
+  "max_steps": null
+ },
+ "model": {
+  "arch": "vitb16",
+  "unfreeze_blocks": 4,
+  "layers": null,
+  "decoder_width": 256,
+  "n_classes": 7,
+  "classes": [
+   "water_sky",
+   "whale",
+   "person",
+   "rail",
+   "tape",
+   "deck",
+   "land"
+  ]
+ },
+ "train_synthetic": 6440,
+ "real_s6mc_centres": 1316,
+ "pseudo_photos": 2176,
+ "render_shots": 43,
+ "params": {
+  "total_M": 88.21,
+  "trainable_M": 30.9
+ },
+ "recipe": "experiments/seg_splash_s6/config.json + 7-class head (rules_labeller.md A6)"
+}

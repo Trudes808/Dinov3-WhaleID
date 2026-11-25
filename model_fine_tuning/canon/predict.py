@@ -31,9 +31,28 @@ from ..common import geometry, paths
 from ..common.data import bbox_of, square_crop_params, to_tensor, warp_image, warp_params
 from ..common.viz import canon_rgb, draw_points, hstack, side_rgb
 from ..segmentation.model import WhaleSegModel
-from ..segmentation.predict import segment
+from ..segmentation.predict import resize_long_side, segment
 from .evaluate import predict_crop
 from .model import WhaleCanonModel
+
+
+def hysteresis_mask(prob: np.ndarray, hi: float, lo: float) -> np.ndarray:
+    """Components of P >= lo that hold a pixel with P >= hi (the candidate mask's rule, seg_real.followup mask_of "h<hi>_<lo>")."""
+    n, lab = cv2.connectedComponents((prob >= lo).astype(np.uint8), connectivity=8)
+    keep = np.zeros(n, bool); keep[np.unique(lab[prob >= hi])] = True; keep[0] = False
+    return keep[lab]
+
+
+def segment_mask(seg_model, image: np.ndarray, device, max_side: int, threshold: float, hysteresis: tuple | None):
+    """The whale mask at the frame's size. hysteresis None: P >= threshold as before. (hi, lo): P at long side max_side,
+    hysteresis there, nearest-neighbour back to the frame (exactly as experiments/test_day/s6_swap.py and
+    seg_real.followup e2e produce the candidate mask S6h)."""
+    if hysteresis is None:
+        return segment(seg_model, image, device, max_side, threshold)
+    small, _ = resize_long_side(image, max_side)
+    prob, _ = segment(seg_model, small, device, max_side, threshold)
+    m = hysteresis_mask(prob, *hysteresis).astype(np.uint8)
+    return prob, cv2.resize(m, (image.shape[1], image.shape[0]), interpolation=cv2.INTER_NEAREST) > 0
 
 
 def keep_main_components(mask: np.ndarray, keep_frac: float = 0.25) -> np.ndarray:
@@ -48,9 +67,18 @@ def keep_main_components(mask: np.ndarray, keep_frac: float = 0.25) -> np.ndarra
     return np.isin(labels, keep)
 
 
+FALLBACK_MIN_PX = 400                             # parts.split_instances min_px / parts.extract_photo floor (crop px)
+
+
+def _no_instance(use: np.ndarray) -> bool:
+    """True when parts.split_instances would make no instance of this use map (no 8-connected piece of >= 400 px)."""
+    n, _, st, _ = cv2.connectedComponentsWithStats(use.astype(np.uint8), connectivity=8)
+    return n <= 1 or st[1:, cv2.CC_STAT_AREA].max() < FALLBACK_MIN_PX
+
+
 @torch.no_grad()
 def estimate(model: WhaleCanonModel, image: np.ndarray, mask: np.ndarray, device, K: np.ndarray, table: dict, landmarks: dict,
-             crop: int = 512, margin: float = 1.6, tta: bool = True) -> dict | None:
+             crop: int = 512, margin: float = 1.6, tta: bool = True, use_fallback: bool = False) -> dict | None:
     bbox = bbox_of(mask)
     if bbox is None:
         return None
@@ -60,6 +88,8 @@ def estimate(model: WhaleCanonModel, image: np.ndarray, mask: np.ndarray, device
     pred = predict_crop(model, to_tensor(crop_img)[None], device, tta=tta)
     seg_in_crop = cv2.warpAffine(mask.astype(np.uint8), M, (crop, crop), flags=cv2.INTER_NEAREST) > 0
     use = pred["vis"][0] & seg_in_crop
+    if use_fallback and _no_instance(use) and not _no_instance(seg_in_crop):
+        use = seg_in_crop                         # rule F (switch prep 2026-11-20): the visibility map left no 400-px piece of a painted whale
     pm = geometry.unfold_norm(np.moveaxis(pred["xyz"][0], 0, -1), table)
     pa = geometry.unfold_norm(np.moveaxis(pred["xyz_a"][0], 0, -1), table)
     pb = geometry.unfold_norm(np.moveaxis(pred["xyz_b"][0], 0, -1), table)
@@ -110,10 +140,13 @@ def main(argv=None) -> int:
     p.add_argument("--sensor-width-mm", type=float, default=36.0)
     p.add_argument("--hfov-deg", type=float, default=None)
     p.add_argument("--min-pixels", type=int, default=200)
+    p.add_argument("--hysteresis", default=None, help="HI,LO: the mask = components of P >= LO holding a pixel P >= HI, on P at --max-side (S6h: 0.6,0.1); default: P >= --threshold")
+    p.add_argument("--use-fallback", action="store_true", help="rule F: where vis AND mask leaves no 400-px piece but the mask in the crop has one, use the mask in the crop")
     p.add_argument("--no-tta", action="store_true")
     args = p.parse_args(argv)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     seg_model, _ = WhaleSegModel.from_checkpoint(args.seg_checkpoint, device)
+    hyst = tuple(float(x) for x in args.hysteresis.split(",")) if args.hysteresis else None
     model, _ = WhaleCanonModel.from_checkpoint(args.checkpoint, device)
     table = geometry.load_folded_table(paths.FOLDED_TABLE)
     landmarks = geometry.load_landmarks(paths.ASSETS_DIR / "landmarks_mesh_frame_cm.json")
@@ -128,7 +161,7 @@ def main(argv=None) -> int:
             image = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
             H, W = image.shape[:2]
             stem = path.stem
-            prob, mask = segment(seg_model, image, device, args.max_side, args.threshold)
+            prob, mask = segment_mask(seg_model, image, device, args.max_side, args.threshold, hyst)
             raw_pixels = int(mask.sum())
             mask = keep_main_components(mask)
             rec = {"image": str(path), "whale_pixels": int(mask.sum()), "whale_pixels_before_cleanup": raw_pixels}
@@ -139,7 +172,7 @@ def main(argv=None) -> int:
                 print(rec)
                 continue
             K = geometry.intrinsics_guess(W, H, args.focal_mm, args.sensor_width_mm, args.hfov_deg)
-            est = estimate(model, image, mask, device, K, table, landmarks, tta=not args.no_tta)
+            est = estimate(model, image, mask, device, K, table, landmarks, tta=not args.no_tta, use_fallback=args.use_fallback)
             extra = {}
             if est.get("keypoints"):
                 kp = est["keypoints"]

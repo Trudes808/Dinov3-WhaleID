@@ -1,0 +1,272 @@
+# Blind fin-SHAPE pass, real vs r06_pilot22 (pilot22e, 2026-11-23). One judge (Claude subagent, helper E), one pass. NOT the researcher's labels.
+# Design: 130 real fins (this folder's sample.json, training days only, labelled D_small / D_tall / D_tip in labels_ai.txt + relook; 169 eligible
+# with an instance mask, random seed 31) + 130 r06_pilot22 animals (the earlier 600-sample, labelled D_*, not in a shot holding i12) drawn (seed 32)
+# to match the real set per size band (terciles of sqrt(instance px) / image width: cuts 0.0746 / 0.1595; 43 / 43 / 44).
+# Same tile maker for both (2560-wide frame, square crop 1.4 x mask box + 30 px, 300 px INTER_AREA, cyan outline | plain, JPEG q85), shuffled
+# (seed 33), tile number only. Labels frozen (sha1 6942cc77299a9348e8885f50e51c9f870af9e9ef) before the key was opened.
+# SHAPE: H hooked / falcate with a tip, T plain triangle, N low rounded nub, B flat-topped block / shelf with a near-vertical edge and no tip
+# ("slab"), S thin spike / pyramid apex end-on, U cannot tell. VIEW: my mark. GUESS: my source guess (photo / render / unsure).
+# Result: B real 9/130 = 0.069, pilot 21/130 = 0.162
+# (diff +0.092, 95 % +0.014 to +0.172, Fisher p 0.031); among D_small-labelled fins only 9/74 vs 21/114 (p 0.31);
+# large band D_small 0/30 vs 8/41 (p 0.017). Tables: scratchpad pilot22e/table_fin_shape.md (not in the repo).
+# Format: <tile> <source real|pilot> <id: real = part_gaps sheet/tile, pilot = shot:iid individual> <size band> <SHAPE> <VIEW> <GUESS> ; note
+001 pilot 001795:1 i01 large T side photo ; low triangle on long back
+002 real train_12/8 middle S end-on photo ; thin spike on arched back from behind
+003 real train_05/3 middle S end-on photo ; narrow tall fin from behind
+004 pilot 001298:2 c05 small T side photo ; blurred triangle, white background
+005 real train_01/12 middle S oblique photo ; apex of arched back, small tip
+006 real train_07/18 small H side unsure ; small hooked fin
+007 real train_10/8 middle H side unsure ; small hook at apex of triangular back
+008 pilot 000716:1 i26 middle N side render ; low rounded fin, steep rear
+009 real train_02/7 middle H side photo ; hooked tip on triangle
+010 pilot 001737:2 i19 small T oblique render ; pointed, steep rear edge
+011 pilot 001831:2 i09 large N side unsure ; low pale bump on long back
+012 pilot 000422:1 i26 middle T side photo ; small pointed fin at apex
+013 pilot 001338:1 i27 large T side render ; small triangle, horizon
+014 real train_06/19 middle S end-on unsure ; fin end-on from behind, steep edge
+015 pilot 000497:2 c06 middle T side render ; small pointed fin, steep rear
+016 pilot 001824:1 i01 large B side render ; flat-topped box, vertical front edge, notched top
+017 real train_10/18 middle U side unsure ; long low back, fin tiny
+018 real train_14/14 large H side photo ; falcate, concave rear
+019 pilot 001983:3 i29 small S end-on render ; tall fin from behind, white body
+020 real train_07/3 small U oblique photo ; blurred in blow
+021 pilot 001563:1 i26 large H side unsure ; small hook at apex, calm silver water
+022 pilot 001725:1 i31 large H side render ; hooked tip, regular ripples
+023 pilot 001690:1 i34 middle S end-on render ; tall thin fin from behind
+024 real train_06/14 middle T side photo ; small low pointed fin
+025 pilot 001211:1 i02 large T side render ; rounded point, steep rear
+026 real train_02/11 middle H side photo ; small hooked fin, scarred back
+027 real train_07/13 middle H side photo ; small falcate fin
+028 pilot 001617:2 i24 small B side render ; flat sloping top, vertical rear edge
+029 real train_07/10 large T side photo ; small fin, blow with rainbow
+030 real train_03/8 large S end-on photo ; spike on arched back
+031 pilot 001832:1 i29 large H oblique render ; hooked fin, smooth grey skin
+032 pilot 000746:2 c02 small T side render ; wedge, near-vertical front edge, sharp corner
+033 real train_07/14 large H side photo ; hooked tip at frame edge
+034 pilot 001584:2 i09 middle T oblique unsure ; small pointed fin
+035 pilot 001425:1 i31 large T side unsure ; small rounded-point fin
+036 pilot 001615:1 i11 middle B side unsure ; tiny flat-topped fin, vertical rear
+037 real train_18/16 large H side photo ; small hook at apex
+038 pilot 000970:2 c08 middle N side unsure ; low rounded bump
+039 real train_17/19 large H side photo ; small hooked fin
+040 real train_03/16 small S end-on photo ; spike from behind
+041 pilot 001502:2 i26 small S end-on unsure ; spike from front/behind, shiny
+042 pilot 001242:1 i08 small T side unsure ; tip at top, vertical trailing edge, long leading edge
+043 pilot 000285:1 i31 middle T oblique render ; small sharp triangle, calf beside big whale
+044 real train_03/1 large H side unsure ; small hooked fin
+045 real train_05/10 large N side photo ; tiny bump on arched back, land behind
+046 real train_14/9 small B side unsure ; blurred, front end a flat-topped block with vertical edge
+047 pilot 000992:3 i18 small N side render ; rounded dark fin on pale body
+048 pilot 000704:3 i01 large H side unsure ; hooked tip, several whales
+049 real train_03/3 large N side photo ; low bump at apex
+050 real train_03/5 middle S end-on unsure ; thin spike from behind
+051 real train_10/6 large H side photo ; small hooked fin, glittering water
+052 real train_00/3 small T oblique photo ; blurred pointed apex
+053 pilot 000606:2 c08 large S end-on render ; small hooked spike on arched back from behind
+054 pilot 000145:2 i21 middle T side unsure ; small triangle, far
+055 pilot 000850:1 i10 large T oblique render ; rounded-tip triangle, faceted body
+056 pilot 000493:1 i28 large B oblique render ; low flat-topped block, steep front
+057 pilot 001228:2 i25 middle N side unsure ; low rounded apex, no distinct fin
+058 real train_09/3 large N side photo ; small rounded knob
+059 real train_06/1 large T side photo ; small pointed fin
+060 pilot 000536:2 i21 middle B side render ; rounded front then flat top and vertical drop
+061 real train_17/14 middle S end-on photo ; far, thin spike from behind
+062 pilot 000029:1 i03 large T side photo ; pointed fin in splash
+063 pilot 000114:2 c07 small H side unsure ; blurred dark falcate fin by blow
+064 real train_11/18 small H side photo ; tall falcate fin, orange tag
+065 real train_00/1 small H oblique photo ; hooked tip, water sheeting
+066 real train_18/1 middle S end-on photo ; tall spike from behind
+067 real train_11/7 middle H side photo ; small hooked fin, long low back
+068 real train_07/11 large S end-on photo ; spike from behind
+069 pilot 000277:3 i07 middle N side render ; small knob, shiny pale highlights
+070 real train_04/2 small T side photo ; tip top-left, vertical trailing edge, tag
+071 real train_16/18 large H side photo ; small hooked fin
+072 real train_00/18 large H side photo ; small notched hook
+073 pilot 000858:1 i04 small T side unsure ; sharp triangle, steep rear
+074 real train_16/9 large S oblique photo ; tall pointed fin from rear quarter
+075 pilot 001181:1 i35 middle N side unsure ; low rounded fin
+076 real train_15/5 small U side photo ; back barely out, fin not readable
+077 pilot 000414:1 i35 small B side unsure ; low flat-topped fin, steep rounded rear
+078 real train_08/4 small H oblique photo ; tall falcate
+079 real train_00/16 middle T side photo ; tip top-left, steep trailing edge, spray
+080 pilot 000118:2 i14 middle N side unsure ; rounded tip, vertical rear, low
+081 pilot 001013:1 i03 small B side render ; vertical front edge, flat lumpy top, no tip
+082 real train_18/20 large S oblique photo ; tall fin from rear quarter
+083 real train_07/6 small T side photo ; tall ragged fin, splash
+084 pilot 001247:1 i34 middle H side unsure ; hooked tip, steep rear, calm silver water
+085 pilot 000617:1 i07 middle N side render ; small knob with highlight
+086 pilot 001574:1 i08 small B side unsure ; low shelf, vertical edge, rounded corner
+087 real train_02/6 small S end-on unsure ; blurred spike from behind
+088 pilot 000901:1 i15 middle B side render ; flat long back ending in vertical-edged flat fin
+089 pilot 001604:2 c03 middle T side unsure ; small pointed fin on low back
+090 real train_01/7 middle N side photo ; arched back, no distinct fin
+091 real train_14/7 large H side photo ; small hooked fin
+092 real train_01/20 large S end-on unsure ; small spike from behind, silver
+093 real train_05/18 middle N oblique unsure ; low rounded fin
+094 real train_03/20 large H side photo ; falcate, concave trailing edge
+095 real train_06/15 middle H side photo ; tall hooked fin with notch
+096 real train_07/9 small N side unsure ; small rounded fin, steep rear
+097 real train_08/2 small B side unsure ; parallelogram, vertical edge with brown damaged end
+098 real train_15/13 large N side unsure ; low rounded fin
+099 real train_17/1 middle H oblique photo ; hooked fin from rear quarter
+100 pilot 001801:1 i05 middle T side render ; small pointed fin, pale highlights
+101 pilot 001957:1 i26 small N side unsure ; tiny bump on low back, calm silver water
+102 pilot 001324:1 i29 small T side render ; small fin, steep trailing edge, horizon, highlight
+103 pilot 000017:1 i23 large H oblique render ; tall hooked fin, white oval patches on body
+104 real train_17/17 small N side photo ; knobby back, low fin, steep rear
+105 real train_06/2 small T side photo ; broad low triangle, rounded top
+106 real train_10/4 large H side photo ; notched hook, steep rear
+107 real train_02/8 middle B side photo ; tall rounded lobe, near-vertical sides, no tip, glittering water
+108 real train_12/7 small S oblique photo ; blurred, small fin on hump from rear quarter
+109 pilot 001428:1 i08 large N side render ; small knob with highlight
+110 pilot 001503:2 i06 middle T side photo ; small pointed fin
+111 pilot 000491:2 c05 small T side render ; pointed fin, pod of three, foam pattern
+112 real train_08/20 small B side unsure ; flat-topped block, vertical front edge, glossy water
+113 real train_09/11 large T oblique unsure ; narrow fin, rounded tip
+114 pilot 000138:1 i09 middle T side render ; rounded triangle, white blotches, splash
+115 real train_19/7 middle U oblique photo ; fin edge near-vertical, partly hidden
+116 real train_01/13 small T side photo ; small pointed fin, long low back
+117 pilot 001746:1 i30 large T side render ; sharp apex, purple fringe
+118 pilot 001550:1 i11 small H side photo ; small hooked fin on arched back
+119 pilot 001053:2 i21 small U end-on render ; blurred rounded dome
+120 pilot 000288:1 i06 large T side render ; small pointed fin, white spots
+121 pilot 001748:2 i27 small T side unsure ; long leading edge, short flat top then steep drop, corner
+122 real train_03/17 middle N side photo ; small rounded nub
+123 pilot 001100:2 c06 small T side render ; small rounded-point fin, stylised water
+124 pilot 000986:1 i31 large H side render ; falcate, concave trailing edge, foam blotches
+125 real train_08/6 large T side photo ; small pointed fin, low back
+126 pilot 001049:1 i05 large T side render ; broad triangle, blunt apex
+127 pilot 000060:2 c01 small N side render ; rounded fin, white blobs
+128 pilot 000733:1 i06 middle T side photo ; small pointed fin, horizon
+129 real train_12/14 small B side photo ; vertical edge and flat top, splash
+130 real train_02/10 middle H oblique photo ; tall notched hooked fin, grey
+131 real train_08/5 small H oblique photo ; tall falcate fin in splash
+132 pilot 001210:2 i15 middle S end-on render ; spike at apex, lilac-grey smooth
+133 real train_00/14 small T side unsure ; narrow pointed fin on long low back
+134 real train_10/10 small T side unsure ; wedge, vertical trailing edge, knobbly skin
+135 pilot 000165:3 i29 small T oblique render ; tall pointed, lilac-grey
+136 pilot 000485:3 i08 small H side unsure ; hooked fin, calm silver water
+137 real train_15/17 large U side photo ; tiny fin with red object on big back
+138 real train_13/6 large T side unsure ; small low fin
+139 pilot 000741:1 i04 middle N side unsure ; low rounded fin, glare and blow
+140 real train_07/4 small T side photo ; low pointed fin, steep rear
+141 real train_00/6 small N side photo ; blurred small flat knob
+142 pilot 001165:1 i23 large B side render ; blocky fin, notched flat top, vertical edge, highlights
+143 real train_11/20 large N side photo ; low small fin
+144 pilot 001081:1 i15 middle N side render ; small rounded fin, pinkish, splash
+145 real train_01/11 middle T side photo ; small pointed fin, pale
+146 pilot 000168:2 i05 middle H oblique render ; tall fin with hooked tip, white spot
+147 pilot 001921:3 i10 small S oblique render ; pointed fin at apex, pale pattern
+148 real train_19/5 large H side photo ; small hooked fin
+149 real train_17/18 middle T side unsure ; small pointed fin, low back
+150 real train_16/19 middle S end-on render ; tall spike, white back from behind
+151 pilot 001635:1 i31 large H side render ; tip curls over vertical edge, shiny grey
+152 pilot 001655:1 i31 small T side unsure ; vertical trailing edge, short flat top with notch, slope
+153 real train_10/20 middle S end-on photo ; tall spike, knobby ridge, pale
+154 pilot 000770:1 i32 middle T side render ; pointed fin at end of flat black back
+155 pilot 001619:1 i02 large T side unsure ; small pointed dark fin
+156 real train_16/3 small B side unsure ; vertical edge, flat knobby top, white patches
+157 pilot 000342:1 i32 large B oblique render ; pale body, steep edge, flat top, no fin tip
+158 real train_19/17 small H side photo ; blurred falcate, highlight on trailing edge
+159 pilot 001731:1 i36 large N side unsure ; small rounded fin
+160 real train_07/15 large T side photo ; small pointed fin, pale low back
+161 real train_15/8 small S end-on photo ; spike from behind, cut at frame
+162 real train_19/6 large H side photo ; small hooked fin
+163 real train_04/8 middle B side unsure ; vertical rear edge, flat top, white blotches
+164 real train_11/17 large H side photo ; small hooked fin, pale back
+165 pilot 000883:2 i22 small T side render ; tip at top, steep trailing edge, horizon, fluke behind
+166 pilot 001313:1 i27 small T side unsure ; low fin, small point
+167 real train_14/6 middle H side photo ; small hooked fin
+168 real train_07/17 middle H side photo ; small hooked fin
+169 pilot 000359:1 i01 small N side render ; rounded knob in splash, white oval blobs
+170 real train_12/1 small H side photo ; tall falcate, highlight on trailing edge
+171 pilot 000567:1 i19 middle N side unsure ; low rounded apex, calm water
+172 pilot 001752:3 i23 middle T side unsure ; small pointed fin, group
+173 real train_07/8 large H side photo ; small hooked fin
+174 real train_12/15 small B side unsure ; knobby tilted block, no tip, separate back strip
+175 real train_06/5 middle T side photo ; small pointed fin, churn
+176 real train_14/13 small H oblique unsure ; tall falcate, pale grey
+177 real train_09/18 middle S end-on render ; spike from behind, pink stripe
+178 pilot 001631:1 i17 middle T side render ; dark pointed fin on lighter back
+179 real train_18/3 middle T side photo ; small pointed fin, steep rear
+180 pilot 001728:2 c06 middle T side render ; broad triangle, pointed apex
+181 pilot 001088:1 i21 large N side render ; small rounded hump with slight hook, shiny
+182 real train_06/3 middle S end-on photo ; thin spike, knobbed ridge
+183 real train_10/15 small B side photo ; long flat top ending in near-vertical drop, glitter
+184 pilot 001122:1 i13 middle B oblique render ; flat-topped lens body, corner at fin, blotches
+185 pilot 000722:1 i34 large H side render ; hooked fin, steep rear, streaky sky
+186 pilot 000894:1 i26 small T side render ; pointed fin, steep edge, foam pattern
+187 pilot 000983:1 i11 large H side render ; hooked fin, blotchy pattern
+188 pilot 000386:1 i07 small B side render ; tiny fin, flat top, vertical edges, streaky sky
+189 pilot 001282:1 i24 middle T side unsure ; small notched fin, steep rear
+190 real train_19/11 middle S oblique photo ; tall pointed fin from rear quarter
+191 real train_08/8 small N oblique photo ; rounded blunt fin, vertical rear, orange tag
+192 pilot 001888:1 i31 large T oblique render ; tall sharp fin, steep trailing edge
+193 real train_00/20 middle H side photo ; small hooked fin
+194 real train_11/1 large H side photo ; small hooked fin, boat rail in frame
+195 real train_13/3 large H side photo ; small hooked fin
+196 pilot 000642:1 i11 large B oblique render ; flat top, vertical edge, pink patches
+197 pilot 000116:1 i08 large T side photo ; small pointed fin
+198 pilot 001733:2 c06 small N side unsure ; low rounded fin, pale
+199 pilot 000721:3 i15 small T side photo ; small notched fin
+200 real train_13/8 small T side photo ; small pointed fin
+201 real train_04/16 small T side photo ; tall fin, knobby leading edge, splash
+202 pilot 000349:2 i17 middle T side render ; small pointed fin, steep rear
+203 real train_18/13 small H oblique photo ; tall notched fin, white scar
+204 pilot 001703:1 i29 small T side render ; tip top-left, steep edge, stylised water
+205 pilot 001259:1 i11 large T side render ; small point then flat back, blotches
+206 pilot 000477:1 i30 middle S end-on render ; tall fin with highlight, white ovals on body
+207 pilot 001093:1 i13 large T side photo ; small pointed fin
+208 pilot 001320:2 c06 small N side unsure ; small rounded knob, pale
+209 real train_17/10 small S end-on unsure ; small spike from behind
+210 real train_16/16 small S end-on photo ; tall narrow fin from behind
+211 pilot 001175:2 c08 middle H side render ; large fin cut at frame, hooked corner then flat top
+212 real train_12/12 large S end-on unsure ; spike from behind, pale
+213 real train_08/16 large T side photo ; small notched fin on low back
+214 pilot 001134:1 i06 large T oblique unsure ; sharp tip, long slope
+215 pilot 001398:1 i26 large T side render ; pointed fin, blow
+216 real train_18/17 large N side photo ; low rounded hump
+217 real train_10/14 small S oblique photo ; tall narrow fin from rear quarter
+218 real train_05/2 large T side unsure ; pointed top, knobby slope, pale
+219 pilot 000509:1 i15 middle T side render ; broad dark triangle
+220 pilot 000782:1 i07 middle T side render ; small fin, shiny highlight
+221 pilot 001377:2 c08 small B side render ; vertical rear edge, flat dipped top, shiny
+222 real train_13/7 middle S oblique photo ; tall narrow fin from rear quarter
+223 real train_12/19 large T side photo ; small pointed fin, long back, horizon
+224 pilot 001803:1 i28 large N side unsure ; rounded top, steep front
+225 pilot 001140:2 c01 middle T side unsure ; small tip, steep rear
+226 real train_02/15 middle T side photo ; tiny fin, steep rear, far
+227 pilot 001578:1 i23 middle H side render ; hooked notched fin, foam pattern
+228 pilot 000544:1 i29 middle B side render ; rectangular flat-topped fin, vertical rear edge
+229 pilot 000024:1 i14 large B side render ; vertical edge, flat top, rounded corner
+230 pilot 000286:1 i21 small N side unsure ; tiny nub on broad back, calm pale water
+231 pilot 000206:1 i35 middle T side photo ; small pointed fin
+232 real train_00/8 large T side photo ; low fin, tip and steep trailing edge
+233 pilot 001716:1 i25 large T oblique render ; small tip at corner, sloping top, splash
+234 real train_09/9 large U side unsure ; low back, no fin readable
+235 pilot 000876:2 c01 small S oblique render ; pointed fin from rear quarter, cone knobs on ridge
+236 real train_18/18 middle N side photo ; knobby dome, no distinct fin
+237 real train_17/11 middle S end-on photo ; spike from behind, knobs
+238 real train_02/2 large H side photo ; hooked fin on long back
+239 real train_00/5 large S end-on photo ; spike from behind
+240 pilot 000132:3 i18 small S end-on render ; tall fin from behind in splash
+241 pilot 001460:3 i01 small S end-on render ; tall pale narrow fin from behind, foam pattern
+242 pilot 001431:1 i21 large H side render ; small hooked fin, white spots
+243 real train_13/18 middle S oblique photo ; tall pointed fin from rear quarter
+244 real train_15/19 middle N side photo ; knobby back, small rounded fin, steep rear
+245 real train_07/20 small H side photo ; small falcate fin on low back
+246 pilot 001226:1 i21 small S oblique unsure ; pointed apex from rear quarter, white patches
+247 pilot 001875:1 i14 middle T side photo ; small pointed fin, double bump
+248 pilot 000683:1 i28 large N side render ; small knob with highlight
+249 real train_06/13 small S end-on unsure ; spike from behind, pale highlight, blurred
+250 real train_13/19 middle S end-on photo ; spike from behind, pale tip
+251 pilot 000346:1 i31 large H side render ; dark falcate fin, stylised water
+252 pilot 001239:2 c05 small S end-on render ; spike from behind, foam pattern
+253 pilot 000956:1 i07 large N side render ; rounded blunt fin, steep rear
+254 pilot 001252:1 i33 small B oblique render ; blurred block, vertical edge, rounded top corners
+255 pilot 000807:2 i20 large B oblique render ; big shelf, rounded corner, flat top, steep edge
+256 real train_05/19 large H side photo ; small hooked fin on arched back
+257 pilot 001766:1 i06 large B side unsure ; flat notched top, steep sides, highlight
+258 pilot 001892:1 i13 small B side render ; low flat-topped block, vertical edge, highlight
+259 real train_18/15 small N side photo ; small rounded fin
+260 real train_06/17 small N side photo ; knobby back, rounded fin, steep rear

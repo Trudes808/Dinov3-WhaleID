@@ -15,7 +15,7 @@ while true; do
     [ -f "$SR/markers/$DAY.catalog" ] && continue
     $PY -c "import json,sys; sys.exit(0 if json.load(open('$LAB'))['days'].get('$DAY',{}).get('photos') else 1)" || { touch "$SR/markers/$DAY.catalog"; continue; }
     cp "$D/safe/clusters.json" "$SR/logs/clusters_nolabels_$DAY.json"
-    $PY -m model_fine_tuning.cluster.safe_tracklets cluster --day-dir "$D" --model experiments/safe_clusters/safe_model.pkl --threshold 0.995 --strict --cost 1.5 --skip 3 --filter --labels $LAB 2>&1 | tail -1
+    $PY -m model_fine_tuning.cluster.safe_tracklets cluster --day-dir "$D" --model experiments/safe_clusters/safe_model.pkl --threshold 0.995 --strict --cost 1.5 --skip 3 --filter --guard-fused --labels $LAB 2>&1 | tail -1
     $PY - "$SR/logs/clusters_nolabels_$DAY.json" "$D/safe/clusters.json" <<'PYEOF' && touch "$SR/markers/$DAY.catalog"
 import json, sys
 a, b = (json.load(open(f)) for f in sys.argv[1:3])

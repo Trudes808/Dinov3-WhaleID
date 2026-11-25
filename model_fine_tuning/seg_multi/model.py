@@ -61,10 +61,26 @@ class SceneSegModel(nn.Module):
         return m.to(device).eval(), ck
 
 
+NOT_WHALE = 254      # v3 (rules_scene_v3.md S2a): any class but whale
+
+
 def scene_loss(logits: torch.Tensor, target: torch.Tensor, dice_weight: float = 1.0) -> tuple[torch.Tensor, dict]:
-    """Cross-entropy over non-ignored pixels + soft Dice averaged over the classes present in the batch's target."""
-    ce = F.cross_entropy(logits, target, ignore_index=IGNORE)
-    valid = (target != IGNORE).unsqueeze(1).float()
+    """Cross-entropy over non-ignored pixels + soft Dice averaged over the classes present in the batch's target.
+    Pixels labelled NOT_WHALE add -log(1 - P(whale)) to the cross-entropy mean and count as whale background in Dice."""
+    nw = target == NOT_WHALE
+    if nw.any():
+        tgt = target.masked_fill(nw, IGNORE)
+        ce_sum = F.cross_entropy(logits, tgt, ignore_index=IGNORE, reduction="sum")
+        lse = torch.logsumexp(logits, 1)
+        others = torch.cat([logits[:, :1], logits[:, 2:]], 1)
+        nw_sum = (lse - torch.logsumexp(others, 1))[nw].sum()
+        ce = (ce_sum + nw_sum) / ((tgt != IGNORE).sum() + nw.sum()).clamp(min=1)
+        valid = (tgt != IGNORE).unsqueeze(1).float().repeat(1, logits.shape[1], 1, 1)
+        valid[:, 1] = torch.maximum(valid[:, 1], nw.float())
+        target = tgt
+    else:
+        ce = F.cross_entropy(logits, target, ignore_index=IGNORE)
+        valid = (target != IGNORE).unsqueeze(1).float()
     p = torch.softmax(logits, 1) * valid
     t = F.one_hot(target.clamp(max=logits.shape[1] - 1), logits.shape[1]).permute(0, 3, 1, 2).float() * valid
     inter = (p * t).sum((0, 2, 3)); den = p.sum((0, 2, 3)) + t.sum((0, 2, 3))

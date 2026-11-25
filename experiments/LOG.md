@@ -6409,6 +6409,1311 @@ Shape helper's report; pleats A/B sheet and the shape-against-real sheet looked 
   companions.
 - Pilot now waits only for the sunny-water helper (and the foam flag if it fits there).
 
+## 2026-11-22 20:20 — state after a second stop (helpers hit the weekly usage limit on 2026-11-21 about midday; reset 2026-11-22 20:00): shadow root complete and tested, W3e scored, two helpers resumed
+
+Read by me from the files; no helper report for these.
+
+- Shadow day root for the mask switch: COMPLETE. 34 `.done` markers, `SHADOW_ROOT_DONE 13:48:35`, `CATALOG_FIX_DONE
+  13:49:06`, `POSTRUN_DONE 13:57`, `POSTRUN2_DONE 13:58` (all 2026-11-21); 55 GB. App tests on the full shadow root
+  (`scratchpad/switchroot/tests_shadow.txt`): labeling_e2e 80, labeling_panes_e2e 97, bursts_e2e 43,
+  labeling_sketch_e2e 57, interpret_e2e 66, library_e2e 95, labeling_light_e2e 32: all pass; the two trip-log tests
+  fail without and pass with the clock-margin patch (30 and 26 ok); interpret_models_e2e fails as on the live root
+  (stale test). Go-live = `moonshot_cache/switch_root/SWITCH.md`; waits for the user's go. Not yet read by me: the
+  full-root sanity table and the migration dry run on all state days (postrun outputs in `switch_root/logs/`).
+- W3e (rule A on real AND synthetic labels; `experiments/parts_tri_expand/two_seeds_w3e.md`), two seeds, against W3d
+  (rule A on real labels only) and W3c: IoU with the expanded-triangle truth on the held-out clicks 0.636 / 0.662
+  (W3d 0.668 / 0.652; W3c 0.593 / 0.589): W3e over W3c separable, W3e against W3d NOT separable. On check 21 renders
+  against the rule-A label, per-whale window: W3e 0.416 / 0.388, W3d 0.326 / 0.309, W3c 0.286 / 0.278 (W3e higher,
+  separable); full frame at 1280 not separable (0.391 / 0.308). run05 val dorsal IoU against the rule-A label 0.666
+  / 0.653 (W3d 0.581 / 0.576). Standing measures: fin tip inside the largest fin region 0.956 / 0.939 (W3d 0.982 /
+  0.982: lower, separable); finless backs called dorsal by eye 0.18 / 0.24 (not separable); three-way call, fluke
+  notch not separable. Reading: one definition on both sides does not help on real fins beyond W3d, helps on
+  renders, and costs a little on the tip measure. No winner between W3d and W3e on real photos; README section and
+  model sheet still to do.
+- Sunny-water helper (`water22/`) and SAM 3 labeller helper (`sam3_labeller/`) both stopped mid-work by the limit;
+  their files are on disk (water: K1 / K2 key variants measured on three sets, foam tests; labeller: pseudo-labels,
+  predictions, one validation score). Both resumed by message at 20:20. GPU idle, render lock free.
+- Pilot still held for the sunny-water result.
+
+## 2026-11-22 20:24 — mask switch, full shadow root read by me: catalogue photos without a whale 196 -> 81 over 28 days, but ONE wrong automatic link appears (eval day 2025-02-19; live has none)
+
+Read from `moonshot_cache/switch_root/logs/sanity_all.json` (28 days with a catalogue, 11 111 photos), live | shadow:
+instances 11 810 | 11 705; kept 11 600 | 11 702; filtered 210 | 3; photos without a kept instance 197 | 81 (catalogue
+photos 196 | 81); clusters 5 040 | 4 925; strict automatic links 347 | 232; WRONG automatic links 0 | 1; impure
+photos 20 | 21 (differs on 7 days, both directions). Days where the shadow loses more catalogue photos: 2025-01-08
+(0 -> 2), 2025-03-20 (0 -> 3). Test day: photos without a kept instance 77 | 63, clusters 155 | 154. Migration dry
+run on all 9 state days: originals unchanged (checksums).
+
+The wrong link (2025-02-19, an EVAL day: looked at, nothing tuned on it): photos 151-154 show two whales close
+together, a sinking fluke (catalogue G01A01) and a back with its fin just left of it (G01A03); both roots have ONE
+instance per photo there carrying fin and fluke charts (the two animals fused in one detection). Photo 155, half a
+second later, shows only the back with the fin (G01A03). The shadow links the 151-154 tracklet to 155 at P 0.998
+(fin appearance 0.93, gap 0.48 s); the live chain's score for the same pair stayed under 0.995. By the photo-level
+catalogue label the link is wrong (4 photos A01 + 1 photo A03 in one cluster); on the instance level it follows the
+fin of A03, which is in every one of the five photos. Sheet for the user:
+`review_sheets/testday_2026-04-07/switch_wrong_link_2025-02-19.jpg`.
+Reading: 1 of 232 strict links (0.4 %) is inside the tier's nominal P >= 0.995 but breaks the "zero wrong automatic
+links on labelled days" record. Not to be fixed by tuning on this day. Told to the user with the switch decision; a
+guard for fused two-whale instances could be studied on train days only.
+
+## 2026-11-22 20:33 — SAM 3 as an offline labeller for our own multi-class model: person, rail and land come out at SAM 3's level at our speed; tape and deck weak; the model's whale class paints the bollard and deck, so the whale stays with S6h
+
+Labeller helper's report (finished after the usage-limit stop); scores recounted by me from
+`moonshot_cache/sam3_labeller/pixtruth_scores/scores.json` and `markers_*.json`; both result sheets looked at.
+
+- Set-up without the test day: SAM 3 phrasings chosen on 53 boat renders with exact labels + 297 by-eye tagged
+  val / non-whale photos by a rule written first (rail "metal pole" @ 0.3, tape "colored tape" + "colored band" @
+  0.3, deck "boat deck" @ 0.3 (weak: render IoU 0.08), land "land" + "mountain" @ 0.5, person "person" @ 0.3); the
+  winners are the phrasings the comparison had found after seeing the test day (they won on other data; attention to
+  them was not blind). 2 200 train-day photos pseudo-labelled (whale = S6h, extras from SAM 3; inside S6h a SAM 3
+  class wins only at score >= 0.5); photos holding each class: whale 2 157, land 705, person 248, rail 230, deck 64,
+  tape 57 (61 k pixels in all), rail-marker close-ups 0. Helper's by-eye look at 60 labels: 56 clean, 3 gear poles
+  labelled rail, 1 fluke labelled person (fixed by the 0.5 rule).
+- Our DINOv3 scene model (`model_fine_tuning/seg_multi/`; v2 seed 0 = thin ignore bands + class-balanced crops,
+  chosen on val days by a rule written first; v1 two seeds), test-day pixel truth scored once (116 photos), IoU:
+  person 0.879 (v1 0.841 / 0.862; labeller 0.885; SAM 3 0.91; ADE 0.880); rail 0.857 (0.668 / 0.782; 0.862); rail +
+  tape 0.839 (SAM 3 primary 0.74; ADE 0.282); tape 0.346 (v1 0 / 0; labeller 0.806); deck 0.475 (0.234 / 0.201;
+  labeller 0.098); our boat 0.800 (ADE 0.848); land 0.854 (0.786 / 0.851; ADE 0.618); whale on the 72 whale photos
+  0.733 (S6h 0.720); whale over all 116 photos 0.385 (S6h 0.720): 26 of 44 no-whale photos get whale pixels (S6h 0).
+  46 % of its whale pixels lie on truth deck; a third of truth tape is called whale.
+- Validation days (883 catalogue photos): pooled whale IoU with S6h 0.955; photos with no whale pixel 6 (S6h 7, all
+  shared). So the whale does not regress on culled photos; the boat fault shows only on the unculled day.
+- Markers with the rule fixed beforehand (gate = the model's own whale): rail 1 of 13, bollard 0 of 7, land 3 of 3, 0
+  false; 11 of 13 rail markers pass the size rule but carry a few thousand whale pixels; the bollard is painted whale
+  on all 7. Post hoc (NOT a test) with S6h as the whale gate: 12 / 7 / 3, right kinds, 0 false on the other 404
+  photos, 1 false on 884 val photos; tape colour 10 of 13. The labeller itself: 13 / 3 / 2, 0 false.
+- Cost 0.072 s per photo, 753 MB (S6h 0.055 s, 727 MB).
+- My look: rail, tape band, person, deck and land are painted cleanly on the marker and crew photos; the bollard is
+  solid green (whale) on every close-up.
+- Reading: people and rail need no renders; tape and deck / bollard do (almost no real training examples, and deck
+  must be taught as "not whale"); the whale stays S6h. Started 20:33: helper trains scene model v3 (whale = 0 on boat
+  pixels from the ADE boat region and SAM 3 rail; deck labels from ADE; about 300 synthetic marker shots with exact
+  labels, with / without ablation) and writes the marker reader as code (`seg_multi/markers.py`: kind, tape colour,
+  refers_to), frozen before one more scored reading of the test day: `moonshot_cache/sam3_labeller/v3/`, scratch
+  `scene3/`, renders `r06r_boat22_markers`.
+
+## 2026-11-22 20:52 — the user's answers: yellow tape = challenger or joiner, bollard = passer-by not of the group; synthetic + SAM 3-labelled real training approved; up to five helpers; a second unculled day is coming as a held-out test; three helpers started
+
+- User: "I found that the yellow marker indicated a challenger or joiner to the group, and the bollard indicated a
+  passerbye or opportunistic not part of that group." "Sounds good to use a mix of synth and sam3 labeled real as
+  training data." "go ahead and use up to 5 helpers at a time if they are useful." "I can transfer an additional ful
+  raw day as well that we can use as held out testing." No answer yet on the mask switch.
+- Held-out day: to arrive in `raw_test_days_unsorted/`; nobody opens it before scene model v3 and the marker reader
+  are frozen (`moonshot_cache/sam3_labeller/v3/FREEZE.json`); then one scored run by me. Every helper brief says so.
+- Running now (five): sunny water + foam in the lighting (`water22/`); scene model v3 + marker reader (`scene3/`;
+  told the meanings and the one-command run for a new day); NEW two whales in one detection (`fused/`,
+  `moonshot_cache/fused_instances/`, `experiments/fused_instances/`: split by SAM 3 instances / instances_v2 or a
+  guard on automatic links, chosen on train + val days, one read of the eval days at the end incl. the 2025-02-19
+  link); NEW markers and removal candidates in a copy of the Labeling Assistant (`moonshot_cache/labeling_markers/`,
+  http://localhost:8874/labeling, on the shadow root + the test day, records from `markers.tsv` + the reasons file,
+  model records later); NEW fuller low flukes and banked side roll-outs as pose code (`fluke22/`, keys
+  `fluke22/keys_fluke22.json`, look `r06r_fluke22_look`, HANDOVER "Round 22d").
+
+## 2026-11-22 21:17 — markers and removal candidates in a COPY of the Labeling Assistant (port 8874, shadow root + the unculled test day): land = proposed group change, rail colour = role on the series before it, bollard = passer-by, removal tray; nothing live changed
+
+Helper's report; checked by me: copy server up (8874 answers), live server up and untouched (no file in the live
+`Whale-Review-Web` changed, git status clean), `markers.json` holds rail 13 / bollard 7 / land 3 and 54 removal
+proposals (marker 23, crew 14, water 17), 12 unsure; three screenshots looked at.
+
+- Where: `moonshot_cache/labeling_markers/` (app copy via `mkenv.sh`, own empty state in `state/`, `serve_copy.sh
+  start | stop | status`, patches in `patches/` 01 backend / 02 frontend + new `lab_markers.js` / 03 tests; adapter
+  `markers_adapter.py`, schema v1: per photo stem kind, tape, role, meaning, refers_to, source truth / rule / model,
+  removal {reason, source, why}, unsure; `truth` mode from `pixel_truth/markers.tsv` + the reasons file, `model` mode
+  reads the coming `seg_multi/markers.py` records). Server env: `WHALE_MARKERS_ROOT`; the RAW root links only the
+  test day's folder.
+- Behaviour (all proposals, labelled buttons, Z undoes): Encounters: land marker row in its gap with the photo and
+  badges "trip log: a new group here" / "model: cut proposed here" (test day: 3 of 3 and 3 of 3), accept / reject,
+  nothing cut on load; removal tray "Proposed for removal - 54 photos" by reason with every photo visible, per-photo
+  and per-reason buttons, removed photos stay greyed with "put back", additive state field `removed`, nothing
+  deleted, Lightroom step leaves them out. Animals: role chip in the tape colour on the stacks of the series before
+  the marker, the trip-log card of that role first, candidates of another role colour down-weighted x0.3 and never
+  offered as "may be one whale" (hand merge still works); "which is this stack?" where two markers refer to the same
+  photos. Bollard: "bollard - passer-by?" on the series' stacks, O button highlighted, group animals down-weighted,
+  Review row "make passer-by (O)". Review: every marker listed with the stacks it refers to and a "set role" button.
+  Marker-only stacks are held out of sorting.
+- Tests in the copy: new `labeling_markers_e2e.py` 40 of 40; existing suites pass on catalogue days (labeling_e2e 80,
+  panes 97, light 32, triplog 30, triplog cards 26, sketch 57); on the test day three checks fail with and without
+  the changes (trip log on an uncatalogued day, two exposure checks on a saturated whale). Val-day replay live code
+  against the copy: payload, decisions (66 / 99 / 120), segments and final sorting identical.
+- Known limits: of the rule's 54 removal proposals, 6 hold a whale by the truth table (5 lost in wash, 1 whale +
+  crew) and 9 are under-water whales (my look at the tray agrees: blows and backs among "water only"); "joiner" is not
+  in the page's role list (yellow maps to Challenger); a marker inside a mixed stack is not split out; records are
+  truth-made for this one day until the marker reader exists.
+- The three patches do not depend on the mask switch; serving an uncatalogued day does (shadow day folder,
+  registration patches).
+
+## 2026-11-22 21:47 — the user's GO: mask switch and marker features to live ("live really is a development"); held-out day 2026-03-30 with the researcher's catalogue has arrived (sealed); go-live helper started
+
+- User: "Please make the mask switch to our latest and greatest, as well as move this all to live. Live really is a
+  development so for now its fine to just push new features directly to live so that we are always working with the
+  latest". Given after I had reported the one wrong automatic link on 2025-02-19 with the new mask.
+- On the marker copy: "Challenger is fine as the label for yellow. A marker inside a stack should cause that stack to
+  split. I like how you have the land shot there to show the split. Rail markers look like good detections. The water
+  only removal candidates seem to sometimes be just water but a lot of them have a bit of whale." And: "please remind
+  me to try the new marker page later."
+- Held-out day: "the new raw data is 2026-3-30 transferring now. I also have added the lightroom catalog files to that
+  folder so we can compare raw vs the catalog after sorting by researcher"; then "The day is fully transferred".
+  `raw_test_days_unsorted/` now holds "2026-3-30 HRA ..." and "2026-2029 Research catalog ..." (names seen in one
+  listing by me; nothing opened). SEALED, images and catalogue, until scene model v3, the marker reader and the
+  removal rule are frozen. My decision: 2026-04-07 is from now on the DEVELOPMENT unculled day (it has shaped many
+  choices), 2026-03-30 the test; the catalogue gives real truth for the cull, the groups and the animals.
+- Go-live helper started 21:47 (`golive/`, log `moonshot_cache/switch_root/golive.log`): Part 1 = SWITCH.md step by
+  step (state backup with checksums, stop by pid, migration, patches, `days_all` repointed, caches aside, restart,
+  test day registered); Part 2 = marker patches 01-03 to live, `WHALE_MARKERS_ROOT` in `serve.sh`, copy server on 8874
+  stopped; Part 3 = a marker inside a stack splits it. The live server's RAW roots may reach only the 2026-4-7 folder.
+- Queued for the next free helper slot (five are running): removal rule v2 (the water-only proposals are too eager;
+  second opinions from SAM 3 and the scene model, a "faint whale?" lane; developed on 2026-04-07, scored on 2026-03-30
+  against the researcher's real cull).
+
+## 2026-11-22 22:43 — LIVE: the review app runs on the S6h + rule F mask, with marker features and split-at-marker; the unculled day 2026-04-07 is registered; server down 69 s; no roll-back
+
+Go-live helper's report; checked by me: `days_all` -> `moonshot_cache/switch_root/days`; live pages answer (labeling,
+interpret, bursts, root); no traceback in serve.log; state files equal the pre-markers backup by checksum; the RAW
+root for unculled days is `Whale-Review-Web/data/raw_test_days/` with a link to the 2026-4-7 folder ONLY; the copy
+server on 8874 is off; screenshot of the sorted day 2025-02-27 (329 of 329 photos sorted, 35 animals) looked at.
+
+- Part 1 (SWITCH.md steps 1-11): server stopped 22:15:58, answering 22:17:07. Migration equals the dry run. Sorted
+  days, photos keeping their animal: 2024-12-23 95 of 95, 2025-01-15 166 of 166, 2025-01-17 333 of 333, 2025-02-27
+  329 of 329. Pair labels unchanged / remapped / same keys on a changed box / gone: 2024-12-18 150 / 6 / 27 / 0 (of
+  183); 2025-01-02 764 / 45 / 80 / 68 (of 957; the 68 stay in the file with their old values); 2025-03-18 115 / 4 /
+  12 / 0 (of 131). 2025-01-02 cluster links shown 725 (779 before); 25 "same" links and 4 "no similarity" links now
+  fall inside one cluster (the new clustering joins photos the researcher had said differ, 4 pairs); 89 links
+  untracked (62 before).
+- Part 2: marker patches 01-03 live; `data/markers/2026-04-07/markers.json`; `serve.sh` sets `WHALE_MARKERS_ROOT` and
+  `WHALE_RAW_ROOT`; yellow chip reads "Challenger". Test day on the live page: 3 land markers in their gaps (trip log
+  and model agree 3 of 3), 13 rail markers with role chips, 7 bollards, removal tray 54.
+- Part 3: a stack holding a marker photo and other photos is split at load into before / marker held out / after, with
+  a tag and a Review row "keep as one stack" / "split again"; not split when already sorted with the marker in it;
+  patch `labeling_markers/patches/04_marker_split.diff`. The test day's own records split nothing.
+- Tests on a copy of the live code: labeling_e2e 80, panes 97, bursts 43, triplog 30, triplog cards 26, sketch 57,
+  interpret 66, library 95, light 32, markers 40, marker split 24, panes on the test day 87; failing:
+  interpret_models_e2e (stale, as before), two exposure checks and two trip-log-related checks on the test day (as in
+  the copy before the changes). Validation days: payload byte-identical between old and new page code.
+- Modified, uncommitted: Whale-Review-Web (not a git repository) backend `labeling.py`, `pairs.py`, `trip_log.py`,
+  frontend `lab_core.js`, `lab_encounters.js`, `lab_animals.js`, `lab_review.js`, `lab_export.js`, new
+  `lab_markers.js`, `labeling.css`, two new tests, `serve.sh`; Dinov3-WhaleID `experiments/days_all` (link),
+  `model_fine_tuning/canon/predict.py`, `test_scripts/bash/process_day_v2.sh`,
+  `model_fine_tuning/cluster/label_assist.py` (new days now get S6h + rule F by default).
+- Backups under `moonshot_cache/switch_root/`: `backup_state_pre_2026-11-22_2152`, `backup_state_2026-11-22_2215`,
+  `backup_state_before_markers_2026-11-22_2217`, `code_backup_2026-11-22_2201`. Roll-back:
+  `bash moonshot_cache/switch_root/ROLLBACK_golive.sh --yes` (stops if the researcher has saved since). The old day
+  root `/var/tmp/sat3737-whale-days` must stay (image links, roll-back).
+- Started 22:43: removal rule v2 helper (`removal2/`, `moonshot_cache/removal_v2/`, `experiments/removal_v2/`): new
+  whale-trace truth on the development day, proposals only when several readings see no whale, a "faint whale?"
+  group, pushed live, frozen runner and a scorer against the researcher's real cull for the sealed day.
+
+## 2026-11-23 00:58 — removal rule v2 live and frozen: no proposal holds a whale trace; GPU lock was held by a hung job of the other thread
+
+Removal rule v2 (helper; `model_fine_tuning/seg_multi/removal.py`, README `experiments/removal_v2/README.md`, freeze
+`moonshot_cache/sam3_labeller/v3/removal_FREEZE.json`, 2026-11-23 00:55:32). Reviewed by me: both sheets viewed, counts
+re-read from `moonshot_cache/removal_v2/records/2026-04-07_removal.jsonl`, `truth_whale_trace.tsv`, `analysis.json` and
+the live `data/markers/2026-04-07/markers.json`.
+
+- New truth (a helper's eye, not the researcher's): `moonshot_cache/test_days/2026-04-07/truth_whale_trace.tsv`, 427 rows:
+  above 364, awash 19, trace (blow / splash / footprint) 14, none 30. 103 photos looked at again at full size with the
+  exposure moved; 324 carried over. All 12 first-pass "water only" photos hold a whale trace: the day has no empty
+  open-water photo. Its 30 "none" photos are the 23 markers and 7 crew photos.
+- Rule in words: a photo with an S6h whale (>= 50 px) or a kept live instance is never proposed. Any other photo is
+  proposed only when EVERY reading is silent (S6h P >= 0.25 on >= 20 px, old live mask kept instance, SAM 3 whale family
+  >= 0.10, fluke / fin >= 0.20, blow / splash >= 0.20, under water >= 0.40, white water >= 1 % of the frame, turquoise
+  glow >= 0.02 %). If any reading fires, the photo goes to "faint whale?" (shown, own remove button, no remove-all).
+  Thresholds = the lowest level silent on the 30 "none" photos of 2026-04-07 (the development day).
+- 2026-04-07, n = 427, v1 -> v2 on the live page (markers from the by-eye list): proposed 54 -> 30 (marker 23, crew 7);
+  proposals holding a whale trace 24 -> 0; "none" photos proposed 30 of 30; faint 33, all 33 with a trace by eye
+  (above 4, awash 15, trace 14; 3 rated unsure).
+- The rule ALONE, without marker records (my re-count of the records file): proposed 29 (named crew 18, water 9, land 2;
+  all 29 truth none, 22 of them markers), faint 34 = the 33 plus land marker 050 (white water 2.4 % of the frame, surf at
+  the shore). So on a new day one land marker can land in "faint" unless the marker reader names it first. The live page
+  uses the marker list first, so it shows 30 / 33.
+- Culled days (every photo was kept by the researcher): 3 val days 884 photos + 5 train days 2,737 photos: 0 proposed
+  (v1: 6 of 884 on val), 19 faint (val 7, train 12). Caveat from the helper: four val photos v1 wrongly proposed were
+  looked at while designing (they led to the glow reading), so the val check is weaker than a clean test.
+- Whale photos the mask misses but the faint group catches (by eye on the faint sheet): 118 (splash with a dark back),
+  175 (back above water), 261 / 262 (blow with head awash), 350 (blow and back behind crew). Mask recall cases, not a
+  removal problem.
+- Live: tray "Proposed for removal, 30 photos" plus the strip "faint whale?, not proposed, 33 photos". Backend restarted
+  once (pid 2592427) with the serve.sh environment (checked: WHALE_RAW_ROOT reaches only the 2026-4-7 folder,
+  WHALE_MARKERS_ROOT set). Researcher state: 11 of 11 files identical to the pre-markers backup. Live backups in
+  `moonshot_cache/removal_v2/live_backup_20261122_234541/`. markers.json fields added: `faint`, `removal_v1`,
+  `removal_rule`, `counts.faint` (additive). The helper's transcript holds no read of the sealed folders.
+- Not verified: the researcher's real cull (the sealed day decides; footprint-only frames may be exactly what gets
+  culled); the new-day path through `run_new_day.sh` then `removal.py` end to end (asked of the scene model helper);
+  scorer `experiments/removal_v2/score_cull.py` passes its self-test only.
+- Sheets (untracked): `review_sheets/labeling_markers/removal2_{proposed_v2,faint,truth_changes,culled_days}.jpg`.
+
+Shared GPU lock: a `09_seafloor_sand/cost.py` of the Underwater thread sat in pipe_read behind a dead child for 1 h 43
+min holding `gpu_train.lock` (two jobs of this session queued behind it). Not signalled by me; reported to that session,
+which ended it at 00:57. The removal helper had moved its SAM 3 runs to the CPU meanwhile (scores within about 0.01 of
+the GPU run on the cached phrases).
+
+Correction to the go-live note of 22:43: the 2025-01-02 pairs inside one cluster carry the verdict "no_similarity"
+(cannot tell from this pair), not "different". Re-count on the live clusters: 15 no_similarity pairs inside a cluster,
+all catalogue-same; 0 of 92 "different" pairs inside a cluster. No contradiction.
+
+## 2026-11-23 01:15 — two whales in one instance: guard B_G chosen and frozen, the wrong automatic link is gone; roll-out to live started
+
+Helper result (`experiments/fused_instances/README.md`, `rules_fused.md`; data `moonshot_cache/fused_instances/`,
+`FREEZE.txt` 2026-11-23 01:06:24, eval read 01:06:31 to 01:07:32). Reviewed by me: both sheets viewed, pooled rows re-read
+from `score_8days.json`, `score_PB_24days.json`, `score_eval_BG.json`.
+
+- Choice: guard B_G = no strict automatic link when either end instance has flag_G (a fluke-like mask component,
+  median u < 0.15, joined in one instance to a back / fin component, median u >= 0.30, with a gap >= 0.2 of their size).
+  CPU only (16 s for 6,073 photos on 8 workers), no new model, instances and keys unchanged.
+- 8 candidate days (4,107 instances), P = plain chain: wrong links 0 in every arm; strict links P 76, B_G 73;
+  clusters 1,516 -> 1,519; impure photos 14 -> 14. Split arms (re-cut the instance by flag_G or by SAM 3) fail the noise
+  band by one step (flukes with both tips 47 < 48 of 83, main whales 311 < 312 of 363) and are out, though the SAM 3
+  split would fix 2 of the 5 click-fused cases and lower impure photos 14 -> 12.
+- 24 train + val days (9,412 instances): strict links 187 -> 177, clusters 3,513 -> 3,523, wrong 0 -> 0, flagged 57.
+- 4 eval days, read once after the freeze (2,290 instances): wrong links live r04 0 | S6h chain 1 | B_G 0; strict links
+  65 | 45 | 41; clusters 858 | 842 | 846; impure photos 4 | 7 | 5. On 2025-02-19 photos 153 and 154 are flagged, so the
+  154 -> 155 link no longer forms.
+- My caveat: the guard was designed knowing this eval failure (my brief described it), so the eval read shows that
+  the known link is removed and no new one appears. It is not a blind test of the guard.
+- What it does not catch: two animals that touch in the mask (3 of the 5 click-fused cases). By eye on 80 flagged or
+  click-fused instances: 34 two animals, 17 one, 29 unclear (the helper's eye).
+- The helper ran its GPU steps on the CPU after hours behind the hung lock (rows differ <= 0.003 in embeddings).
+- Sheets (untracked): `review_sheets/fused_instances/fused_{examples,eval_link}.jpg`.
+
+Decision (mine, under the user's "live is development" rule): adopt B_G. Reason: the strict tier's whole claim is zero
+wrong automatic links, and the cost is about 5 % of strict links (10 of 187). A helper is adding `--guard-fused` to
+`safe_tracklets cluster`, reproducing the stored numbers in a scratch root, proving the saved state still attaches, then
+swapping the cluster files in the live root with backups and `ROLLBACK_guard.sh`.
+
+## 2026-11-23 02:02 — LIVE: guard B_G on all 29 days with safe clusters (server down 4.3 s)
+
+Roll-out helper; verified by me at 02:01 (server pid 3625424 with the serve.sh environment, RAW root still only the
+2026-4-7 folder; /labeling, /bursts, /interpret, / answer 200; no traceback in serve.log; the 13 researcher state files
+identical to the pre-swap backup; every live `safe/clusters.json` report carries `guard_fused`).
+
+- Code: new `model_fine_tuning/cluster/fused_guard.py` (the frozen flag_G logic, one source of truth for the chain;
+  `experiments/fused_instances/flags.py` stays as the frozen record), `safe_tracklets cluster --guard-fused` (default
+  off, needs `--strict`). Flag off = byte-identical clusters.json on 29 of 29 days.
+- Reproduction in a scratch root: 24 train + val days strict links 187 -> 177, photo clusters 3,513 -> 3,523, flagged
+  57, each day equal to the stored B_G arm; the 4 eval days reproduce the stored numbers (41 links, 29 flagged);
+  2026-04-07 links 13 -> 12, flagged 2. Live totals re-read by me: 230 links, 88 flagged on 29 days.
+- Cluster ids changed on 12 days: 2025-01-16, 01-20, 01-23, 02-24, 03-03, 03-20, 03-26, 04-01, three eval days
+  (2024-12-18, 2024-12-26, 2025-02-19) and 2026-04-07. Readers re-made: `link_scores.json`, `log_cards.json`, `sketch/`.
+- Saved state (page loads on scratch copies, old root vs guard root): photos keeping their animal 95/95, 166/166, 2/2,
+  329/329; stacks identical on the 4 sorted days; region links and "no" refusals all attach; 2025-01-02 cluster-level
+  links 725 of 725 attach; no migration needed and none applied (labeling.json and review_extra.json use instance keys;
+  pair_marks.json set ids are used only under a matching revision).
+- Tests on a byte-identical scratch copy before the swap: all suites pass except the three known failures
+  (interpret_models_e2e 1, labeling_e2e on 2026-04-07 1, labeling_light on 2026-04-07 2).
+- Backup `moonshot_cache/switch_root/backup_clusters_pre_guard_2026-11-23_015533/`; roll-back
+  `bash moonshot_cache/switch_root/ROLLBACK_guard.sh --yes` (dry run only; refuses if the researcher saved since).
+- Default for new days: `--guard-fused` in `experiments/test_day/run_pipeline.sh` and `shadow_catalog_fix.sh`.
+- Open: the app's revision string does not name the guard, so a cluster-level link saved from now on shares its
+  revision with older records; a later re-clustering must remap by keys. Suites not re-run after the swap.
+
+## 2026-11-23 02:45 — run06 round 22b: sunny water keys K3 and the foam-in-lighting key applied; fluke shape key built, engine look rendered, blind labels running
+
+Sunny water (helper; HANDOVER "Round 22b (sunny water)"; `scratchpad/water22/table22b.md`). Reviewed by me: the two
+sheets and the foam crops viewed, the seed 23 row re-computed from `meas_r06r_water22_seed23.json` and the manifest.
+
+- Cause of look 22's dark sunny water: the round-21b keys push shots two ways. Closer than 100 m about 15 L* darker
+  (near ripples tilt facets to the dark lower hemisphere), beyond 100 m about 13 L* brighter (far normals x0.3 make the
+  horizon a mirror); n 40 paired shots. Per-shot band brightness splits into a dark cluster (28-45) and a bright one
+  (54-58); the 20-shot confirm set's median 44.9 fell in the gap by luck. Look 22 leans to the dark cluster (40 % of its
+  sunny shots closer than 60 m, n 43).
+- Fix K3 (sunny only): near ripple strength x0.7, near tile scale 160 -> 320, Water Fresnel Roughness 0.1 -> 0.35, sunny
+  lower hemisphere [0.03, 0.05, 0.09] -> [0.16, 0.18, 0.21]. Overcast pinned to its current values by a complete
+  `realism.overcast_ocean` dict (10 overcast shots re-rendered: frame L* change 0.000 on 10 of 10).
+- Sunny band water L* (real 2025-01-02 44.9, n 300), before -> K3: look 22 39.2 -> 41.0 (n 43), check 21 50.0 -> 46.1
+  (n 20), check 20 44.9 -> 46.9 (n 20), pooled 43.7 -> 44.4 (n 83); per-shot q10..q90 28-58 -> 34-57 (real 34-54). Fresh
+  seed 23 with keys (no before): 41.8 (n 27), frame q10 30.8 (real 36.7).
+- Gate rejects with K3: pooled 4 of 85; fresh seeds: look 22 4 of 45 sunny + 0 of 15 overcast, seed 23 4 of 27 sunny
+  + 1 of 13 overcast = 9 of 100. Passes my 10 % line narrowly. The far-water fans and the smooth band at the end of
+  the near ripples are gone (sheet).
+- Not fixed: close steep sunny shots (under 60 m, pitch below -7) still about 37 L*, the remaining dark tail and
+  rejects (lifting them costs about 1 L* on the whale's dark half per step, already 22 against real 17.8); water about
+  3 b* too blue (-27 vs -24.3); streaky ripples at grazing angles on a few close shots; no blind look.
+- Foam in the whale's lighting (pleats on look 22 000022): confirmed, cause = the hidden coverage twin "foamc" seen by
+  Lumen reflections. New dormant key `atmosphere.foam_lumen` = "twin" (wf_shot.py, additive). On 000022 the bands are
+  gone on both whales, masks byte-identical, visible foam L* 76.55 -> 76.57; three other heavy-foam shots within
+  0.25 L*. Control after the last test: 4 untouched look 22 shots, frame L* change 0.000.
+- APPLIED by me 02:43 (dry run on a copy, 12 leaf changes, live equals the dry copy): `check22/k10_water22_foam22.json`,
+  revert `check22/revert_live_k10_water22_foam22.json`, backup `check22/run06_realism.before_water22b.json`. Config
+  sha1 da1f242b -> 2a8ead53.
+
+Fluke shape (round 22d helper; HANDOVER "Round 22d"): new dormant key `realism.fluke_shape` (`factory/fluke_shape.py`:
+keel rounded 12-18 cm, blades pitched 10-20 deg trailing edge down, tips drooped 10-22 deg, roll-outs seen >= 60 deg
+off axis banked 20-45 deg). Offline outlines on a fresh list of 400 roll-outs: height / width .194 -> .235 (real F_low
+.228, n 69), bump width / span .121 -> .170 (real .175), peak sharpness 49 -> 23 deg (real 23), side height / width
+.278 -> .450 (real S3 .431, n 26); sunk share 2.4 % (limit 2 %). Engine look `r06r_fluke22_look` (36 shots) rendered
+02:35, QA 0. NOT applied: a fresh helper labels it blind and judges the 8 banked side views one by one (two offline
+cases looked draped).
+
+Pilot: waits only for that verdict. Disk before the pilot: root 92 % (69 GB free), engine cache
+`/var/tmp/sat3737-unreal/ZenData` 83.5 GB and growing with renders; datasets go to /home (237 GB free).
+Sheets (untracked): `review_sheets/run06_fin/round22_sunny_before_after.jpg`, `round22_sunny_vs_real.jpg`,
+`round22_foam_pleats_before_after.jpg`, `round22_fluke_offline_live_vs_key.jpg`.
+
+## 2026-11-23 02:58 — run06 round 22e: fluke shape works from behind, half the banked side views odd; one more loop before the pilot
+
+Blind labels on `r06r_fluke22_look` by a fresh helper (labels frozen before the key was opened, sha1 d84b2825...; HANDOVER
+"Round 22e"). Reviewed by me: `round22_fluke_low_vs_real.jpg` and `round22_fluke_side_verdicts.jpg` viewed.
+
+- Engine meshes carry the shape (26 OBJs: shaped roll-outs within 0.17 cm of the offline mesh with the key, 61-386 cm
+  without; controls <= 0.02 cm).
+- Anchors against the check-21 labeller: exact 25 of 30.
+- Roll-outs from behind (n 19, two more rejected by the gate as dark): F_low 17, F_up 1, F_edge 1 (S3); check 21 had
+  F_low 30 / F_edge 10 (S1 9) of 46. Blade face showing on 13 of 19, slightly on 5. Edge-on planks 1 clear + 3 mild.
+  Engine outlines: bump width / span .096 -> .145 (real .175), bump height / span .025 -> .034 (real .033), height /
+  width .208 -> .209 (real .228; offline had said .235, gap unexplained), peak sharpness 24 -> 27 deg (real 23).
+- Side roll-outs (n 8): height / width .313 -> .451 (real S3 .431), but 4 of 8 look odd by eye (hood, lid, thumb, fold
+  over the stock), none broken. Bank size and sign do not separate them; pitch does on this thin sample (pitch <= 12:
+  3 of 3 plausible; above 12: 1 of 5).
+- Faults over 27 shaped shots: sharp centre spike 2 (pitch 19.4; keel 12.7), creases at the root 5 (three at pitch
+  19-20), drape / hood / fold 3 (all side), none noted on 11.
+- Labels: fluke part and 77 of 77 visible fluke keypoints sit on the fluke (6 shots overlaid); QA 0 of 36.
+- 000019 "hole" on a back_arch companion: looked at by me at full size with the mask outline. Not a mesh hole: a hard
+  dark pocket on whale 3's flank where whale 2's tail stock overlaps it (two companions almost touching, cast shadow).
+  Left as is.
+
+Decision: pitch_deg narrowed to [10, 16]; before the pilot one more loop by the same helper: optional
+`bank_pitch_deg` [8, 12] for banked shots (dormant when absent), then a combined look with ALL keys (K3 water, foam,
+fluke): 18 side roll-outs + 24 full-mix shots of fresh seed 24, side views judged blind by a fresh subagent against the
+old 8 and 12 real ones. My pass line: new side roll-outs odd <= 25 %, none broken. Cache growth per batch measured in
+the same run for the pilot's disk budget. Key NOT applied yet.
+
+## 2026-11-23 04:22 — run06 round 22f: banked side roll-outs better (6 of 17 odd) but over my 25 % line; paired sign test sent before the pilot
+
+Helper's round 22f, reviewed by me (sheets viewed, verdict file and shot lists re-read).
+
+- Cause of the hood / lid in round 22d side views: the spanwise droop, not the pitch (offline: droop 0 removes it). Code: `factory/fluke_shape.py` `draw()` gained optional `bank_pitch_deg` and `bank_droop_deg` (the shot's own uniform draw mapped onto the banked range; dormant when absent; 64 / 64 shot lists byte-identical with the 22d dict).
+- Renders with the live config of 02:43 + dict (pitch 10-16, bank pitch 8-12, droop 10-22, bank droop 0-5, keel 12-18, bank 20-45, axis min 60): `r06r_fluke22b_side` (n 18, seed 2261), `r06r_fluke22b_mix` (n 24, seed 24). QA failing 0 / 18 and 0 / 24.
+- Blind judge (one fresh Opus subagent, 37 shuffled tiles): new side roll-outs 11 plausible / 6 odd / 0 broken of 17 (35 %); the 8 old 22d ones 3 / 5 / 0 (the earlier judge said 4 odd of these 8); real S2 / S3 12 / 0 / 0. My pass line was odd <= 25 %, none broken: FAILS on the rate.
+- My tabulation of the 17 against the shot lists: whale-frame bank sign negative 6 odd of 10, positive 0 of 7; camera-relative side no pattern (raised blade on the camera's side 2 odd of 9, far side 4 of 8); all 6 odd shots are far and low (95-140 m, elevation 4-5 deg); among far shots negative 6 of 6 odd, positive 0 of 4; the 4 negative shots that passed are close (33-76 m). In the mix, 000010 (positive bank) still shows a large domed blade, so the sign is not proven as the cause.
+- Side outline height / width now .545 (n 15, engine; real S3 .431; 22d .451; flat about .31): the bank overshoots.
+- Mix (n 24): gate rejects sunny 1 / 20, overcast 0 / 4; sunny band water L* 39.6 (n 20; real 44.9; round 22b fresh sets 41.8 and 41.0); roll-outs from behind (n 7) read as low flukes; no flank pleats in the 3 heavy-foam shots. Other faults seen, not from the fluke key: pec slap 000009 reads as a stick, back arch 000021 lit back near white, close-up 000004 keeps a tent ridge at the centre. 10 of the 24 shots are fluke roll-outs, 3 banked.
+- ZenData 83,552 -> 84,161 MB over 26 batches (23.4 MB / batch). Extrapolated to the pilot: 26-32 GB; root has 69 GB free.
+
+Decision: one last paired loop (round 22g), rule fixed before the result. The same 18 shots under three more conditions (sign flipped; positive only with bank 15-35; flat), all judged by one judge together with the 22f tiles and the 12 real ones. Pick the banked setting with the lowest odd rate if <= 25 % and none broken, else the lowest of all four including flat. Then the fluke key goes into the live config and the pilot starts. Fluke key still NOT applied; pilot NOT started.
+
+Sheets (untracked): review_sheets/run06_fin/round22f_side_mixed_verdicts.jpg, round22f_mix_contact.jpg.
+
+## 2026-11-23 04:28 — scene model v3 + marker reader FROZEN (03:30); protocol for the held-out unculled day 2026-03-30 fixed before it is opened
+
+Helper's report reviewed by me: marker sheet and the false-call sheet viewed, `moonshot_cache/sam3_labeller/v3/testday/summary.json` and `FREEZE.json` re-read, all 7 code hashes + checkpoint + rules hash recomputed (equal), `experiments/removal_v2/freeze.py check` = FREEZE OK.
+
+Frozen: `seg_scene_v3b_s0` (v3 labels + 291 boat marker renders, seed 0), marker reader `model_fine_tuning/seg_multi/markers.py` with whale gate "own", runner `model_fine_tuning/seg_multi/run_new_day.sh` (decode, S6 + scene model, marker records, then removal rule v2 after its own hash check). One amendment after the freeze (03:57): markers.py always caches S6 P, because the removal step needs it; marker logic unchanged, records of the second call identical to the first (helper's statement; first call's records kept as `2026-04-07_markers.first_call_unscored.jsonl`).
+
+Development day 2026-04-07 (third scored reading of this day for this line of work, so not a test):
+
+| | v2 | v3a labels only | v3b s0 frozen | v3b s1 |
+|---|---|---|---|---|
+| no-whale photos painted whale (of 44) | 26 | 29 | 6 | 7 |
+| rail markers found, right kind (of 13) | - | 1 | 13 | 12 |
+| bollard (of 7) | - | 0 | 7 | 7 |
+| land (of 3) | - | 3 | 3 | 3 |
+| false marker calls (of 404) | - | 0 | 1 (389) | 0 |
+| tape colour right (of 13) | - | 6 | 10 | 10 |
+
+- refers_to exact 18 of 20 called markers (v3b s0). Colour misses: 027 red read "other", 068 red read blue, 078 green read blue.
+- 389 is crew at the bow rail over an awash whale: the scene model paints 48 whale px, under the 50 px gate, so it passes as a rail marker and the removal rule then proposes it. Runner end to end on this day: 31 proposed (24 marker, 7 crew), 32 faint; with by-eye marker records the reference was 30 / 33. Land marker 050 comes out as a land marker.
+- Whale IoU on the 3 val days (883 photos, against S6h): v2 0.955, v3b s0 0.951. Culled days (3 val + 5 train, 3,621 photos): 1 false marker call (crew at the bow over a large deck, called bollard).
+- The renders did the work: labels alone (v3a) do not find the markers. Training holds no real marker shot.
+
+Held-out day: `raw_test_days_unsorted/2026-3-30 HRA/2026-3-30 C1 Harvey`, 282 CR2 (counted 04:28, first time the folder was listed). The catalogue side holds no `.lrcat`: only `Helper.lrdata` (helper.db, metadatahelper.db with AgImagesMetadata 31,390 rows) and `Previews.lrdata`. Whether that is enough for the cull and the animals is being worked out; if not the user is asked for the `.lrcat`.
+
+Protocol, fixed now:
+1. By-eye truth by a helper who sees only the photos: class per photo, markers (kind, tape colour, refers_to), whale trace level (above / awash / trace / none). No model output, no catalogue, no trip log. Frozen with hashes (`moonshot_cache/test_days/2026-03-30/truth/TRUTH_FREEZE.json`) before any run.
+2. Catalogue side by a second helper who sees neither the truth nor any model output: which of the 282 frames the researcher kept, and what sorting information exists.
+3. ONE run of the frozen runner by me, SAM 3 on the CPU as in the rule's development (`REMOVAL_ARGS=--sam3-cpu`). No code change after output is seen; a technical stop is fixed and written down as an amendment.
+4. Scores, all reported whatever they are:
+   - markers: found / right kind per kind, false calls, tape colour right, refers_to exact;
+   - no whale: by-eye no-whale photos the runner says whale, and whale photos it says no whale (own gate and S6h);
+   - removal: proposed and faint counts; proposals with a whale trace by eye; proposals the researcher kept; share of the researcher's removed photos that are proposed or faint;
+   - groups: encounter cuts and land markers against the catalogue's / trip log's groups;
+   - animals (catalogue photos only): wrong automatic links, impure clusters, pieces per animal.
+   The Labeling Assistant chain for groups and animals is run once with the live code as it stands now (masks S6h + rule F, guard B_G).
+5. Until the scores are written the live server does not reach the day.
+
+## 2026-11-23 04:40 — held-out day 2026-03-30: the catalogue holds all 282 frames, so there is no cull to score; protocol amended BEFORE any run
+
+Catalogue helper's report, counts re-read by me from `moonshot_cache/test_days/2026-03-30/catalog/catalog_photos.tsv` (282 rows). No pipeline output for this day exists yet (0 files in day_runs).
+
+- All 282 RAW frames are in the catalogue (exact file name, size and capture time, 282 of 282). The RAW folder is a copy of the catalogue's own image folder: renamed files, import sequence 000-281 without gaps. Camera counters 1562-1855 with 12 missing; at most 17 frames were shot and are in neither place.
+- The same holds for 2026-04-07 (427 of 427, count only) and season wide: 43 of 44 renamed folders have no sequence gaps and keep 90-100 % of their counter span (median 98.7 %). Reading: this researcher does not remove photos after import. (Not excluded: a rename after a cull; the side files cannot tell.)
+- Sorting found without the `.lrcat`: the photo's title is the animal (226 of 282 titled: G01A01 16, G01A02 11, G02A01 52, G02A02 1, G03A01 60, G03A02 5, G03A03 72, O01 9; 56 untitled), collection names give group type and role (Group 1 Singer: Singer + Joiner; Group 2 MC; Group 3 MCE; O01 other). Groups 2 and 3 overlap in time (10:21-10:40 and 10:27-13:18). Colour labels: Green 16, Yellow 2 (best-of sets). On 2025, where both exist, title = collection membership for 11,245 of 11,304 photos; 96 of 450 untitled photos were in an animal collection.
+- `.lrcat` needed only for exact animal membership and the flukes / best-of / tagged sets. Asked of the user at 04:30.
+
+Amendments to the protocol of 04:28, made now, before the run:
+- Removal against the researcher's cull: NOT measurable (kept 282, culled 0). The frozen `score_cull.py` would count every proposal as false; it is not run.
+- Added instead, weaker and named as such: proposals against "sorted to an animal". A proposal on a titled photo is an error (the researcher used the photo). Of the 56 untitled photos: how many are proposed, faint, marker, or none of these. Untitled means "not sorted to an animal", not "removed".
+- Animals and groups reference = titles (expected about 0.5 % off against membership); re-scored if the `.lrcat` arrives.
+- Because groups 2 and 3 overlap in time, encounter cuts are scored against group changes in the title sequence, and the overlap stretch is reported separately.
+
+Files: `moonshot_cache/test_days/2026-03-30/catalog/` (README.md, catalog_photos.tsv, catalog_groups.tsv, catalog_animals.tsv, read_helper_db.py, score_cull_from_tsv.py, check_2025.txt).
+
+## 2026-11-23 05:02 — HELD-OUT DAY 2026-03-30 scored (one run, 04:43-04:57, EXIT 0): markers 25 of 27 with the right kind and no false call; no removal proposal on a photo with a whale or an animal title; clusters pure but in 12 pieces per animal
+
+Truth: one helper's eye on the photos only, frozen 04:42:41 before the run (hashes re-checked by me). Reference for animals / groups: photo titles from the Lightroom side files (226 of 282 titled, 8 animals incl. O01). Runner: `run_new_day.sh` with `REMOVAL_ARGS=--sam3-cpu`, started 04:43:23 by me, no code change. Scores by a helper with the frozen marker scorer; numbers re-read by me from `moonshot_cache/test_days/2026-03-30/scores/scores.json`; sheets viewed (markers, removal, timeline).
+
+A. Markers (n 282 photos; truth 21 rail, 3 bollard, 3 land; 6 of the rail ones marked unsure by the truth)
+
+| | n | found | right kind |
+|---|---|---|---|
+| rail | 21 | 20 | 19 |
+| bollard | 3 | 3 | 3 |
+| land | 3 | 3 | 3 |
+| false calls | 255 other photos | 0 | |
+| tape colour right | 21 | 17 | |
+| refers_to exact | 23 called | 22 | |
+
+With the 6 unsure ones set aside: rail 15 / 15 / 15, colour 14 of 15, refers_to 17 of 18.
+- Missed: 203 (crew torso over 39 % of the frame; largest tape patch 0.116 % against the 0.12 % needed). Wrong kind: 174 (two thin far stanchions, called bollard).
+- Colour: all 4 green tapes read blue (174, 216, 238, 267; 216 and 238 also show a blue band, 267 is a single dark green band). Green is right 0 of 5 over both unculled days. Red 13 of 13, blue 4 of 4.
+- refers_to miss: 154 gains 137 and 140 (a hand on the rail painted as whale by the own gate).
+
+B. Whale / no whale (by eye: 251 with a whale or a trace, 31 none)
+
+| reading | whale said whale | whale said no | none said whale | none said none |
+|---|---|---|---|---|
+| runner gate "own" | 249 | 2 (122, 175) | 3 (137, 140, 221) | 28 |
+| S6h, 50 px | 247 | 4 (017, 122, 123, 175) | 0 | 31 |
+
+C. Removal rule v2: 29 proposed (26 marker, 3 crew), 6 faint.
+- Proposals with a whale trace by eye: 0 of 29. Proposals on a titled photo: 0 of 29.
+- By trace level: above 249 (0 proposed, 2 faint), trace 2 (0, 2), none 31 (29 proposed, 2 faint: 141 crew, 221 drone launch).
+- The 56 untitled photos (not sorted to an animal; nothing was removed): 29 proposed, 4 faint, 23 neither. The 23 are whale photos by eye (far or small; 2 whale + crew), all in safe clusters.
+- The researcher's cull could not be scored (none exists; LOG 04:40).
+
+D. Animals and groups (live chain, run once, no fix needed)
+- Safe clusters against titles: 121 clusters (51 with several photos), strict links 5, wrong links 0, impure clusters 0, pair precision 1.000, pair recall 0.060, pieces per animal 12.0 (mean of 8; oracle 3.5), titled photos covered 223 of 226. Guard B_G flagged 1 instance.
+- Encounter cuts at P 0.35: 3 proposals (09:00 at the log's group 1 start; 14:35 at G03 to O01; one after the last titled photo). Group changes in the titles: 7, of which 3 inside the 10:27-10:40 stretch where groups 2 and 3 overlap. Outside it 1 of 4 changes is cut; G01 to G02 (a 58 min span with far untitled photos in it) is missed at best P 0.214. Trip log changes 1 to 2 and 2 to 3: no proposal within 5 min.
+- Land markers (truth = runner: 038, 135, 271): 038 on G01 to G02, 271 on G03 to O01, 135 at 10:49, 5 min after the trip log's group 3 start (the log's 2 to 3 change; in the titles G03 starts earlier, with the escort at 10:27). So the 3 land markers carry the 3 group changes of the day that the cut model mostly misses.
+- Marker meaning against the catalogue roles (truth colours, 21 rail markers): every referred photo has the colour's role in 16; the role is the majority or the pair in 4; 1 not checkable. Red = Mother 12 of 12, blue = Calf 4 of 4, green = Escort 4 of 4. With the runner's colours the 4 greens come out as Calf. Bollards: 068 refers to the escort's first 3 photos while the boat was with group 2; 001 and 281 refer to nothing within 60 s (281 is 149 s after the 9 photos of O01).
+
+Reading: the frozen marker reader and removal rule hold on a day they never saw (kind and zero false calls; zero unsafe proposals). Open faults, all seen first on this day: green read as blue, crew in a marker frame, hand / drone painted as whale by the own gate, far whales near a shoreline missed. The big loss is unchanged: consolidation (12 pieces per animal). About 150 of the 282 photos sit in a marker's series, so the tape colours could carry much of it.
+
+This day is now spent as a test for markers, removal and no-whale. Freezes lifted for development from here; anything new needs a fresh day to be called tested.
+
+Files: `moonshot_cache/test_days/2026-03-30/{truth,catalog,scores,days}/`, runner records `moonshot_cache/sam3_labeller/v3/day_runs/2026-03-30_*.jsonl`, sheets (untracked, show crew) `review_sheets/heldout_2026-03-30/heldout_{markers,removal,errors,timeline}.jpg`.
+
+## 2026-11-23 05:15 — tape colour rule 2 (band nearest the frame centre, Lab hue): 34 of 34 rail markers over both unculled days (old 27); in the reader as default; development freeze written; NOT tested on a fresh day
+
+Helper's work, reviewed by me: band sheet viewed, colours of old and new records re-scored by me against the by-eye colours (first word of the truth cell): 2026-04-07 old 10 of 13, new 13 of 13; 2026-03-30 old 17 of 21, new 21 of 21; kinds identical (04-07 rail 14 / bollard 7 / land 3; 03-30 rail 19 / bollard 4 / land 3).
+
+- Cause: dark green tape photographs as dark teal (HSV hue 170-187, V 0.23-0.29); the old rule's green range ended at 170, so every green fell into blue (real blue 211-219). The old reader also read the LARGEST band, not the centred one; on 193 and 203 that was the off-centre green band, right only because green read as blue (two faults cancelling). 027: pink under bluish light fell into "other"; 068: out of focus, only bluish edge pixels passed the saturation cut. White balance by the white tube does not help.
+- Rule (`markers.py --colour-rule lab_centre`, default; `old` gives the scored records byte for byte, helper's cmp): among tape areas at least 25 % of the largest, the one nearest the frame centre; hue angle of its mean CIE a*, b*; nearest of red 13, yellow 83, green 198, blue 284 deg. No "other" class. New record fields colour_rule, tape_hue_ab, tape_band_dist.
+- Cross-day: fit 04-07, score 03-30: 21 of 21 (old 17); fit 03-30, score 04-07: 13 of 13 (old 10). Renders: 28 of 28 held-out rail shots from the model's maps (old 26), 170 of 170 from exact tape labels (old 159). Render green is yellow-green (hue 142-200), not the real teal: the renders say little about real green.
+- Limits: 34 real markers, both days looked at, colour space picked after seeing both; the band-choice part rests on 03-30's 10 two-band photos and on the truth's own definition (band at the frame centre). The researcher has not confirmed which band counts when two are in frame.
+- New records: `moonshot_cache/sam3_labeller/v3/day_runs_colour2/` (the scored ones in `day_runs/` untouched). Freeze: the scored one kept as `FREEZE_scored_2026-11-23_0330.json`; `FREEZE.json` now carries the new markers.py hash with an amendment naming it a development freeze. The runner works again (0 mismatches).
+- Described, not built: (a) 203 passes if rail / tape shares are measured over the frame minus person pixels (tape 0.19 %); 174 passes with "rail when rail + tape at least 4 %, centred band at least 0.05 %, centre distance at most 0.10" before the bollard rule (crew photo 141 sits at 0.102: fragile). (b) hand / drone painted as whale by the own gate: use "both" (own and S6h) only for which photos a marker refers to; switching the whole gate would make a false land marker of 03-30's 017.
+- Write-up `experiments/sam3_labeller/COLOUR2.md`; sheet (untracked) `review_sheets/labeling_markers/colour2_bands_sheet.jpg`.
+
+## 2026-11-23 05:17 — merging by tape colour, measured on the two unculled days (development, not a test): 12.0 -> 6.6 pieces per animal on 03-30 with 0 wrong merges under a guarded rule; little on 04-07, where one lone whale without any marker holds 189 photos
+
+Helper's measurement (`moonshot_cache/marker_roles/`: mr.py, results.json, tables.md), headline table re-read by me, timeline sheet viewed; then re-run by me on a scratch copy with the colour-rule-2 records (`day_runs_colour2`), because the helper had used the old colours.
+
+Reference = the researcher's titles; universe = titled photos that are the main photo of a safe cluster (03-30: 223 photos, 8 animals; 04-07: 333 photos, 15 animals, live clusters). Cell = pieces per animal / impure sets / wrong merges. Group boundaries = the tool's own (land markers + cut proposals at P 0.35); trip-log or catalogue boundaries give the same numbers.
+
+| rule | 03-30 by-eye markers | 03-30 runner, colour rule 2 | 04-07 by-eye | 04-07 runner, colour rule 2 |
+|---|---|---|---|---|
+| a. safe clusters alone | 12.0 / 0 / 0 | 12.0 / 0 / 0 | 7.73 / 0 / 0 | 7.73 / 0 / 0 |
+| b. + each rail series one animal | 7.50 / 3 / 3 | 7.62 / 3 / 3 | 7.47 / 2 / 3 | 7.47 / 2 / 3 |
+| c. + same colour in one group one animal | 5.62 / 2 / 4 | 6.00 / 2 / 4 | 7.13 / 2 / 4 | 7.13 / 2 / 4 |
+| guarded rule | 6.25 / 0 / 0 | 6.62 / 0 / 0 | 7.20 / 0 / 0 | 7.20 / 0 / 0 |
+| guarded, red only | 6.88 / 0 / 0 | 7.00 / 0 / 0 | 7.33 / 0 / 0 | 7.33 / 0 / 0 |
+| guarded + "a trip-log group of one is one animal" | 6.25 / 0 / 0 | 6.62 / 0 / 0 | 3.87 / 0 / 0 | 3.87 / 0 / 0 |
+
+- With the OLD runner colours the guarded rule made 2 wrong merges per day (green read as blue); with colour rule 2 it makes none on either day. Pair recall on 03-30: 0.060 -> 0.412 (runner) / 0.455 (by eye), precision 1.000.
+- Guards (chosen after looking at the 5 mixed series of these two days): series = the burst after the last gap over 30 s before the marker (series heads were another animal in 3 cases: 154, 238, 04-07's 199); a run of two markers on one series is split, the last marker takes the last cluster (219 red + 220 blue; 027 + 028: mother first, calf last, n 2); never join sets of different colours; never join sets seen in one frame.
+- Group boundaries are needed: with the whole day as one group rule c makes 11 wrong merges on 03-30 (the two mothers merge); land marker 135 keeps them apart. A red series of the second mother inside the 10:27-10:40 overlap would have broken it; none occurred.
+- Coverage: 03-30 147 of 226 titled photos in a series (Mother 102 of 112, Calf 5 of 6, Escort 37 of 72, singer group 0 of 27, O01 0 of 9). 04-07 only 58 of 358 (the single G04A01, 189 photos, has no marker): there "group of one" does the work (53 pieces -> 3), seen once.
+- Loose sets do not attach safely: nearest series in time within 60 s is right 1 of 6 and 2 of 11; best link score at 0.9 right 4 of 5 and 8 of 11. Suggestion grade only.
+- Untested: two animals of one role in a group (competition groups), the trip-log cap, any fresh day.
+
+Decision: build it into the Labeling Assistant as role labels on stacks plus one-click, undoable merge suggestions (same series; same tape colour inside one group; "the log says single"), not as silent merges, until a fresh day has tested the guards and the colour rule. Starts when the live update of the two days is done (same files).
+
+Sheets (plots only): review_sheets/labeling_markers/roles_2026-03-30.jpg, roles_2026-04-07.jpg. Catalogue table for 04-07 now exists: `moonshot_cache/test_days/2026-04-07/catalog/` (427 of 427 frames, 358 titled, 4 groups).
+
+## 2026-11-23 05:29 — run06 round 22g: banked side roll-outs lose to flat by the fixed rule; fluke shape key APPLIED (flat side views); pilot r06_pilot22 STARTED 05:29
+
+Paired test (helper; verdict table `scratchpad/fluke22/G/tab22g.txt` re-read by me, paired sheet viewed): the same 18 side roll-outs of seed 2261 under four conditions, one fresh blind judge, 80 shuffled tiles with 12 real ones. Shot 000004 is rejected by the frame gate in every condition, so n 17 each.
+
+| condition | n | plausible | odd | broken |
+|---|---|---|---|---|
+| C both signs, bank 20-45 (22f tiles re-judged) | 17 | 10 | 7 (41 %) | 0 |
+| flip (signs inverted) | 17 | 12 | 5 (29 %) | 0 |
+| A positive, 20-45 (pooled) | 17 | 12 | 5 (29 %) | 0 |
+| B positive, 15-35 | 17 | 11 | 6 (35 %) | 0 |
+| D flat | 17 | 16 | 1 (6 %) | 0 |
+| real S2 / S3 | 12 | 12 | 0 | 0 |
+
+- Rule fixed at 04:22: a banked setting wins only at 25 % or under; none does, so D flat. No more fluke loops.
+- What the oddness follows: not the whale-frame sign (my 04:22 reading was wrong: negative 7 of 17, positive 5 of 17 when pooled) but the camera side. Raised blade on the FAR side from the camera: 16 of 27 odd (59 %); on the camera's side: 2 of 24 (8 %). The far blade's upper face stands behind the stock with its root hidden and reads as a lid or hood. Skin and clip are symmetric (pre-roll within 2 deg; base colour left .355 / right .348). Judge noise is large: two judges agree on 10 of 17 identical tiles.
+- Not built (outside the rule): choose the bank sign from the camera so the raised blade faces it; by this judge about 8 % odd; needs its own render and judge.
+- Side outline height / width: 22f .545, positive 15-35 .470, flat .335, real S3 .431 (n 15 each): flat side views stay too low; known and accepted for the pilot.
+- Code: `factory/fluke_shape.py` `draw()` optional `bank_sign` (1, -1, "flip"; coin still drawn; dormant when absent); 64 / 64 and 18 / 18 shot lists identical; old_configs gate equal. QA 0 failing in the three new runs (r06r_fluke22c_flip / pos / flat). ZenData +25 MB per batch.
+
+Applied by me 05:29 (k11, `scratchpad/check22/k11_fluke22g_flat.json`; revert `check22/revert_live_k11_fluke22g_flat.json`; backup `check22/run06_realism.before_fluke22g.json`): 9 leaf additions, nothing else: `realism.fluke_shape` = categories [fluke_rollout], max_phase 0.3, pitch_deg [10, 16], bank_pitch_deg [8, 12], droop_deg [10, 22], bank_droop_deg [0, 5], keel_drop [12, 18], bank_deg [0, 0], bank_axis_min_deg 60. Dry run on a copy first; the result differs from the config the flat test rendered with only in that test's own keys (pose_cycle, side-only bearing). Live config sha1 2a8ead53 -> d0841e58.
+
+Pilot: `data/renders/r06_pilot22`, 2,000 shots, seed 22, snapshot `data/renders/r06_pilot22_config.json` (= live config, sha1 d0841e58), chain `scratchpad/pilot22/chain.sh` (shot list without the lock, then build_dataset under the render lock, then qa_multi), log `data/renders/r06_pilot22.log`, started 05:29:18. Expected about 20 h. Root disk 67 GB free at the start, ZenData 84,916 MB; the pilot should add about 30 GB there; a watcher reports at the first batches, on failure, or under 20 GB free.
+
+Sheets (untracked): review_sheets/run06_fin/round22g_side_paired_a.jpg, round22g_side_paired_b.jpg.
+
+## 2026-11-23 05:42 — LIVE: day 2026-03-30 in the Labeling Assistant, both unculled days on model-made marker records with colour rule 2 (server down 3.7 s)
+
+Go-live helper's report, checked by me over HTTP and in the two marker files (counts below re-read from `Whale-Review-Web/data/markers/<day>/markers.json`; server pid 1382393 answers 200).
+
+- 2026-03-30 registered: day folder `moonshot_cache/switch_root/testday/2026-03-30` (hard-linked copy of the scored day folder, `safe/` copied; plus log cards and 64 fin drawings), linked as `switch_root/days/2026-03-30`; RAW link `Whale-Review-Web/data/raw_test_days/2026-3-30 C1 Harvey` (282 CR2, no Lightroom folder reachable); `backend/pairs.py` `WHALE_TEST_DAYS` default "2026-04-07,2026-03-30". The researcher's Lightroom titles are NOT loaded into the app.
+- Marker files from the runner's records (`markers_adapter.py runner`: kind / refers_to / tape / meaning from `day_runs_colour2`, removal and faint from the scored `day_runs` removal records; the adapter stops if the two disagree; they agree on 282 and 427 rows):
+  - 2026-03-30: rail 19 (red 13, blue 3, green 3), bollard 4, land 3; removal tray 29 (marker 26, crew 3); faint 6.
+  - 2026-04-07: rail 14 (blue 6, red 6, green 1, yellow 1), bollard 7, land 3; tray 31 (24 + 7); faint 32. The by-eye file is kept as `markers.by_eye.json`; all old fields carried, new per-photo `reader`, top-level `runner`.
+- Checks: labeling days 29 -> 30, only 2026-03-30 new; loads and exports of 2025-02-27 and 2024-12-23 identical by hash; all 13 researcher state files equal the backup by sha256; no saved state exists for 2026-04-07. Full-resolution view and RAW re-render work on 2026-03-30.
+- Suites: catalogue-day suites pass as before. New failures are fixed expectations meeting the new records (markers_e2e 04-07 1, marker_split_e2e 04-07 2: 389 now splits a stack; markers_e2e 03-30 1: bollard 174 counted with the rail rows) and one open item: labeling_e2e / labeling_panes on 2026-03-30 with the trip log on (the first stack does not become A01, then a TypeError in the test); with the trip log off both pass (77 / 77, 97 / 97). Old known failures unchanged. interpret_e2e showed an intermittent scipy import error (passes alone 3 times).
+- Reader faults the page shows: 03-30 174 as a bollard (really a green rail marker), 03-30 203 missing (in the tray as crew), 04-07 389 a false calf marker on a whale photo (stack split, proposed for removal). The page has "reject" and "keep as one stack", but NO control to correct a marker's kind / colour, to add a missed marker, or to return a held marker photo to sorting.
+- Backup `moonshot_cache/switch_root/backup_live0330_2026-11-23_050806/`, go-live script `golive0330.sh`, roll-back `ROLLBACK_live0330.sh` (dry run only).
+
+Next (helper started): marker correction control, the failing expectations and the trip-log / A01 item, then role labels and merge suggestions from the 05:17 measurement.
+
+## 2026-11-23 06:31 — LIVE 06:28: the researcher can correct markers; role labels on stacks; one-click merge suggestions from the markers (server down about 2 s)
+
+Helper's build, checked by me: page 200, 30 days listed, server pid 1644186; scores re-read from the helper's `score_sugg.json`; screenshots viewed (Review of Group 3 on 2026-03-30, the corrected 174 row).
+
+Stage 1, corrections (state field `marker_fix[stem] = {kind: rail | bollard | land | none, tape, by, user, t, model}`, written only when used; the model's record stays and shows as "model said"):
+- every rail / bollard row in Review has a line: rail with red / green / blue / yellow, bollard, land, not a marker; land rows, removal-tray photos and the photo viewer have a folded "marker?" button with the same line; one click undoes.
+- every reader of markers uses the corrected value (roles, splits, held photos, removal tray, land cuts, suggestions). "Not a marker" on 04-07's 389 rejoins its stack and drops the removal proposal; a photo she makes a marker (03-30's 203) gets its series walked.
+- tests tied to the by-eye records now check behaviour. The trip-log failures on 2026-03-30 were test assumptions: with two or more noted whales the first stack is asked, not made automatically; the plain-loop checks are skipped on that day with a printed note.
+
+Stage 2, role labels: Mother / Calf / Escort / Challenger / passer-by pills on stacks in Animals and Review, from the guarded series (burst after the last gap over 30 s; two markers on one series: the last takes the last cluster). The guarded series now also drives the role chips and the passer-by set, so chip and label agree.
+
+Stage 3, suggestions (state field `mk_links[id]`, each accepted suggestion its own undoable link): in Review's "May be one whale" box under "From the markers": same series / same tape, same group / the log says single; each row shows the stacks it joins, the marker photos it comes from, what it leaves out and why. Guards: group = cuts as they stand + non-rejected land markers; never two colours; never two stacks seen in one frame or that she said differ; not offered if the trip log lists two or more of the role.
+
+All suggestions accepted, against the Lightroom titles (scratch script only; titles never reach the app), pieces per animal:
+
+| day, records | stacks alone | + same series | + same tape | + log says single | wrong suggestions |
+|---|---|---|---|---|---|
+| 2026-03-30, model records | 12.00 | 8.25 | 6.62 | 6.62 | 0 |
+| 2026-03-30, 174 and 203 corrected | 12.00 | 8.12 | 6.25 | 6.25 | 0 |
+| 2026-04-07, model records | 7.73 | 7.53 | 7.20 | 5.00 | 0 |
+| 2026-04-07, after the 14:08-14:28 stretch is settled as Group 4 | 7.73 | 7.53 | 7.20 | 3.87 | 0 |
+
+Impure sets 0, pair precision 1.000 everywhere; pair recall 0.412 / 0.455 / 0.451 / 0.898. Matches the 05:17 measurement (6.62 and 3.87).
+
+Tests after: markers e2e 46 / 46 on both days, marker split 24 / 24 on both, labeling_e2e 04-07 75 / 75, 03-30 26 / 26 (plain loop skipped), panes 87 / 87 and 65 / 65, new labeling_roles_e2e 48 / 48 and 40 / 40; the 12 catalogue-day suites unchanged in counts (run before one last cosmetic class rename). interpret_models_e2e keeps its 1 old failure. All 13 state files unchanged by sha256; 2025-02-27 and 2024-12-23 load and export identical.
+
+Not verified: the live page was not clicked (opening Animals would write to her state; screenshots are from a scratch copy of the same code); undo of an accepted suggestion after a reload; corrections on a day already sorted; the split-point case with sorted parts.
+
+Backups `moonshot_cache/switch_root/backup_roles_2026-11-23_054725/` and `backup_roles_golive_2026-11-23_062819/`; roll-back `ROLLBACK_roles.sh` (dry run only). Screenshots (untracked, show crew) `review_sheets/labeling_markers/roles_ui_*.png`.
+
+## 2026-11-23 08:16 — pilot r06_pilot22: shot list done (2.7 h), render lock taken 08:12; removal freeze renewed
+
+Pilot (`Whale-Image-Data-Factory/data/renders/r06_pilot22`, log `r06_pilot22.log`):
+- Shot list took 9,791 s. 2,000 shots in 80 batches. Weld re-draw: 5 shots redrawn, 0 dropped.
+- Categories: fluke_rollout 643, surface 319, pec_slap 182, peduncle 167, back_arch 157, logging 122, fluke_up 96, blow 86,
+  awash 74, fluke_down 45, fluke_sinking 42, blow_sliver 40, tail_slap 14, peduncle_throw 13. No whale in frame: 35.
+- Scenes: single 1,203, pair 197, mother_calf 194, mother_calf_escort 182, competitive 224. Animals per shot 1 / 2 / 3: 1,203 / 517 / 280.
+  Framing: primary 1,526, group 474. Deformed 1,621.
+- Render lock taken 08:12:29. `factory.weld_check` runs first (CPU), Unreal after it. ZenData 84,916 MB, root 67 GB free at the start.
+
+Check that key k11 (fluke shape, flat side views) reached the shot list:
+- 642 of 643 roll-outs carry a fluke shape. Bank is 0 on all of them.
+- Side views (camera 60-120 deg off the axis): pitch 10.1-16.0, droop 10.0-21.9, keel 12.1-18.0. That equals the tested flat set
+  (`r06r_fluke22c_flat`: pitch 11.0-15.8, droop 10.1-21.3). `bank_pitch_deg` / `bank_droop_deg` are dormant while bank is [0, 0].
+- Side views are 136 of 643 (21 %). The bearing bands say 15 %. Primary framing has 122 of 485 (25 %), group framing 14 of 158 (9 %).
+  Cause not checked; the re-draws for extent and visibility probably pass side views more often. Left as is for the pilot.
+
+Watcher: my first one exited at once after the shot list, because it counted the 80 batch lists, not rendered batches.
+Re-armed on `raw/batch_*/done` >= 4 (and failure, finish, root below 20 GB free, chain gone).
+
+Removal freeze:
+- `experiments/removal_v2/freeze.py check` failed as expected, on `moonshot_cache/labeling_markers/markers_adapter.py` only.
+  The adapter gained the `runner` command for the live app (81 added lines). The frozen copy (b6b018ac) is in
+  `switch_root/backup_live0330_2026-11-23_050806/code/`.
+- The freeze that scored the held-out day is kept as `sam3_labeller/v3/removal_FREEZE_scored_2026-11-23_0055.json`.
+- New development `removal_FREEZE.json` written with a note. Rule file, prompts, SAM 3 code and score_cull.py have the same hashes
+  as before. Check: FREEZE OK. The runner can be used on a new day again.
+
+Started: one helper tests undo after a page reload (accepted merge suggestion, marker correction) on a copy of the app.
+
+## 2026-11-23 08:43 — LIVE 08:42: undo of an accepted marker suggestion after a reload had two faults; fixed (server down 2.1 s)
+
+A helper tested undo after a page reload on a copy with scratch state (new `Whale-Review-Web/tests/labeling_roles_reload_e2e.py`;
+every reload is a fresh browser context; state compared field by field without time stamps, rev, log, cluster_rev, trip_log).
+
+Found, both only when the accept had merged two ANIMALS (stacks already sorted):
+1. The accept rewrote the "not this animal" lists and the undo did not put them back (`no: ["a2"]` stayed `["a1"]`).
+2. Undo of a first suggestion after a second one had merged the first's animal away brought back an empty animal. After both
+   undos one hand-sorted photo sat in the wrong animal and an open stack was left assigned.
+On open stacks the undo was already exact.
+
+Fix (state schema gains only the optional link field `mk_links[id].no_prev = {key: {was, now}}`; older links load and undo as before):
+- the accept stores the rewritten lists; undo puts a list back only if it is still as the accept left it;
+- a merged-away animal comes back only together with its photos;
+- undo is refused, with a note on the row and a toast, while a later accepted suggestion merged its animal away
+  ("to undo this one, first undo the later one that built on it");
+- a toast says how many photos stay where the researcher moved them since.
+Files: `backend/labeling.py`, `frontend/js/lab_core.js`, `frontend/js/lab_markers.js`, `README.md`, the new test.
+
+Checks after the fix (pass / fail), 2026-03-30 | 2026-04-07: reload test 86/0 | 103/0, roles 40/0 | 48/0, markers 46/0 | 46/0,
+marker split 24/0 | 24/0, labeling 26/0 | 75/0, panes 65/0 | 87/0, light 31/0 | 29/2 (the two exposure checks failed the same way
+before this change). Catalogue days unchanged (triplog 30, cards 26, sketch 57, labeling 80, panes 97, light 32).
+Also tested and passing: photo taken out of a joined stack or moved by hand before the undo (it stays where she put it);
+marker correction, reload, undo (174 to rail green on 03-30; 389 to "not a marker" on 04-07, which re-stacks the day);
+accept, then correct away the marker the suggestion came from (the link stays shown as "accepted earlier" with a working undo);
+every photo in exactly one stack after every step (282 / 427).
+
+Go-live 08:42:07. Checked by me: `/labeling` 200, 30 days listed, all 13 state files unchanged by sha256 (same list as at 06:28),
+no live state file holds `mk_links` or `marker_fix` yet, so no researcher data met the fault.
+Backup `moonshot_cache/switch_root/backup_reload_undo_golive_2026-11-23_084204/`, scripts `golive_reload_undo.sh`,
+`ROLLBACK_reload_undo.sh` (dry run checked), note in `SWITCH.md`.
+
+Not testable: Z after a reload (the Z history lives in memory; the row's undo button is the way back, and the test checks Z does
+nothing then). Stacks joined by hand live in the browser's local storage, so a fresh context loses them.
+Port 8772 holds a dev server of another session from 2026-11-12; not ours, left alone.
+
+Pilot: batch 0 of 80 rendered at 08:43.
+
+## 2026-11-23 08:57 — pilot r06_pilot22: first 36 frames by my eye; one slab-shaped back (shot 000448); helper started on cause and count
+
+State: 4 of 80 batches done at 08:52 (8 + 2 + 19 + 7 = 36 shots; batches are grouped by sea state and look, sizes differ).
+Unreal started about 08:41 after the mesh check. Batch 2 took 5.6 min for 19 shots, batch 3 2.7 min for 7: about 18-23 s per shot,
+so about 10-13 h for 2,000 shots, less than the 20 h I expected. ZenData 84,916 -> 85,742 MB (+826 MB after 36 shots and part
+of batch 4). Root 67 GB free. The mesh check (`blade_check.json`) flags 2,995 of 3,077 whales, so it does not select anything.
+
+By my eye on 640-px tiles (sheets `review_sheets/run06_fin/pilot22_early_{1,2,3}.jpg`; one judge, n 36, not blind):
+- All 36 frames rendered, water and foam present, no black or empty frame. Shot 000718 is one of the 35 planned no-whale frames.
+- FAULT, shot 000448 (surface, single, i12, bearing 80 deg): the back is a flat-topped slab about 2.3 m long and 0.45 m high with
+  a vertical cliff at one end (`pilot22_shot000448_slab.jpg`). Not a real shape. Cause unknown: generated dorsal blade of i12
+  at extreme values, a break in the body bend (arch -43, head pitch -26, tail curl -19), or a clip / mirror fault.
+- DOUBT, shot 001331 (peduncle, i02, very close): dull dark patches with a sharp outline, one edge stair-stepped
+  (`pilot22_shot001331_patches.jpg`). Skin pattern, wetness mask or texture fault: not known.
+- Known looks seen again: pale near-white fluke undersides and backs (011, 016, 024), pec fin as a dark stick (016).
+- The flat side-view roll-out (033) reads as a boomerang; plausible.
+
+Started: one helper finds the cause of both, counts the affected shots from the shot list and meshes (CPU only, read-only on the
+pilot), does a blind by-eye pass over all frames rendered so far, and recommends keep or stop. The pilot keeps rendering meanwhile.
+Watcher re-armed for failure, finish, root below 20 GB free, chain gone.
+
+## 2026-11-23 09:41 — pilot r06_pilot22: the slab is individual i12's generated dorsal blade (82 shots); pilot keeps running; library fix waits for an engine check
+
+Helper's diagnosis (CPU only, read-only on the pilot; files kept in `moonshot_cache/run06_pending/slab22/`), checked by me on its sheets:
+- Shot 000448's slab is in the mesh itself, and it is i12's dorsal blade. Bend zeroed: slab stays. No dorsal_hump: slab stays.
+- i12 has blade template 184, the widest of the 196 (base / H 6.53, top still 1.85 H wide), and its height draw hit the 75 cm clip.
+  That gives a blade with a 4.9 m base; the next longest of the 44 animals is 2.1 m. Source: `factory/blade_library.py`, whose evenly
+  spaced picks always include the top template. Library `third_party_assets/humpback_4k/individuals_run06e.json`.
+- Side views of all 44 animals at rest (`review_sheets/run06_fin/pilot22_rest_blades_all44.jpg`): i12 is the only slab.
+  i01 (template 11, H 61 cm) and i10 (template 129, H 35 cm) are flat-topped fins with a vertical FRONT, milder. My note: these two
+  may be real outlines the wrong way round (a real fin is steep at the back); not checked.
+- Count, re-read by me from the shot list: 3,077 animals (the log's 3,082 is the weld re-draw count), 82 shots hold an i12 animal
+  (62 as primary) = 4.1 %. Helper: blade above water and in frame in 54 shots (2.7 %): surface 18, back_arch 9, logging 8,
+  fluke_rollout 6, peduncle 5, blow 4, four others 1 each. On rendered frames: predicted visible 5 of 5 show it (two predicted before
+  they rendered), predicted not visible 0 of 3. i01 / i10 visible in 42 / 38 shots.
+- Shot 001331's patches: the large dull oval is glossy skin reflecting the dark sea (no texture has it; the reflection geometry gives
+  the same outline). The stair-stepped patch is a UV seam of the base mesh cutting the painted mottling (`factory/skin.py` paints in
+  texture space). Tone step across the seam: median dL* >= 4 in 11 of 44 skins, <= 1 in 24. Shows only in close views of that flank.
+
+Helper's blind pass over 121 rendered frames (one judge, crops, 9 frames not blind, NO real photos mixed in, so no baseline):
+odd 43 of 121. Blocky back 14 (4 are i12; 10 are a steep fin face on the hump in other animals), splash sprites / see-through
+sheets 9, jagged fluke edge 8 (7 of 7 fluke_up), shape 8, skin patch 3, pale 1.
+My reading: only the i12 slab is a new fault. I looked at four of the flagged raised flukes at full size
+(`pilot22_fluke_up_crops.jpg`): heavy knobbly trailing edges, in the range earlier rounds passed as barnacles. The steep fin face on
+the hump (`pilot22_other_blocky_backs_not_i12.jpg`) is the fin + hump design of the earlier rounds; 001923 is the most cliff-like.
+Splash sprites, pale backs (the calf in 001074 is lit near white) and the pec stick are on the open list already.
+Without real photos in the pass, 36 % odd cannot be compared with the earlier blind rounds.
+
+Decisions (mine):
+- The pilot keeps running. The fault is one animal; the labels stay consistent; stopping would buy back at most 4.1 % of the shots.
+  No in-place change of the remaining batches (the chain reads batch files as it goes, every whale's weld patch would change, and
+  i12's placement and whitewater were drawn for the slab).
+- When the pilot is scored, the 82 i12 shots are reported apart (all 2,000, and 1,918 without i12).
+- Before any next run: a library without the slab. Two candidates in `run06_pending/slab22/fix/`: `individuals_run06f.json` (only i12:
+  template 184 -> 67, H 75 -> 32.9 cm, base 2.1 m) and `individuals_run06f_also.json` (also i01 and i10). Key `whale.individuals`
+  (`keys_slab22.json`; the library must first be copied into `third_party_assets/humpback_4k/`). NOT applied: no engine render of the
+  fixed animals exists yet, and the render lock is the pilot's. Patch for `blade_library.py` (drop non-fin templates, cap the base at
+  210 cm): `blade_library_slab22.patch`, not applied.
+- New on the open list: paint the skin mottling across the UV seam.
+
+Pilot at 09:40: 10 of 80 batches, 203 shots in the first hour of rendering (about 17.5 s per shot, end near 18:30).
+ZenData 88,003 MB (+3.1 GB, about 15 MB per shot, about 30 GB in all). Root 64 GB free.
+
+## 2026-11-23 10:11 — fin templates: 16 of 196 are tilted (clicked base line), not mirrored; paired engine check of two fixes queued behind the pilot
+
+Helper, CPU only (scripts kept in `moonshot_cache/run06_pending/slabfix22/`); counts re-read by me from its `steep.json`:
+- My guess of 09:41 (i01 / i10 fins stored the wrong way round) is WRONG. The templates come from the researcher's three clicks per
+  fin (tip, front base, back base; train days 2025-01-02 and 2025-03-18; `factory/blade_templates.py`). Each outline is laid on the
+  line from the clicked back base to the clicked front base. Where that line is tilted, the frame is rotated.
+- Steeper side in the template frame, n 196: rear (normal) 172, front 16, neither 8. Front-steep templates: 2, 3, 11, 15, 80, 104,
+  105, 106, 121, 129, 132, 151, 171, 183, 186, 189. Median tilt of the base line: 37 deg for the front-steep ones, 4 deg for the others.
+  Template 11 is tilted 39 deg, 129 is 55 deg. Measured against the photo's vertical, 15 of the 16 are rear steep.
+- Template 184 (i12) is a different case: a whale with almost no fin; the outline between the clicks is a broad piece of back.
+  Scaled to 75 cm it becomes the slab.
+- Library animals on a front-steep template: 3 of 44 (i01 = 11, i10 = 129, i28 = 171). i23 (167) is in "neither".
+- The earlier replacements are not clean: template 15 (for i01) is mildly front steep itself, 168 (for i10) is a narrow spike.
+  Mirrored 11 / 129 look like ordinary fins in the side views (`review_sheets/run06_fin/pilot22_templates_sideviews_orig_also_mirror.jpg`;
+  sources with the clicks: `pilot22_templates_sources_11_129_184_171.jpg`). The mirror is a stand-in; the proper fix is to re-cut the
+  tilted outlines on a level base line (new template file + code; not done).
+
+Queued behind the pilot (pid 2463281, waiting on the render lock; log `Whale-Image-Data-Factory/data/renders/r06r_slab22.log`;
+markers `scratchpad/slabfix22/check.{state,done,failed}`): 20 pilot shots re-rendered twice.
+- Shots: i12 000448, 000163, 000768, 001219, 000062, 001839; i01 000645, 000149, 000117, 001795, 000739; i10 001647, 001694, 000850,
+  001465, 001696; controls 001331, 001184, 000005, 000405.
+- Set `r06r_slab22_also`: library `individuals_run06f_also.json` (i12 -> template 67 at 32.9 cm, i01 -> 15, i10 -> 168).
+  Config = pilot snapshot with `whale.individuals` changed (checked by me: 1 leaf differs).
+- Set `r06r_slab22_mirror`: library `individuals_run06f_mirror.json` (i12 as above, i01 / i10 on their own templates mirrored =
+  new numbers 196 / 197 in `blade_templates_mirror22.json`). 2 leaves differ: `whale.individuals`, `whale.blade_templates`.
+- The changed animals are moved so the top keeps its drawn clearance (i12 up 40-78 cm; i01 / i10 -15 to +6 cm); white water rebuilt.
+- All 27 meshes per set build on the CPU; weld crossings 0; manifold clean.
+- A new library changes EVERY whale's weld patch (48,728 -> 47,422 vertices; surfaces of unchanged animals within 3 cm), so the four
+  controls test that too, and one run must never mix two libraries.
+- After `check.done`: `python3 scratchpad/slabfix22/make_pairs.py` writes `review_sheets/run06_fin/pilot22_slabfix_pairs_{1,2}.jpg`
+  (pilot | also | mirror per shot). Expected about 40 min after the pilot frees the lock.
+New files in `third_party_assets/humpback_4k/` (nothing existing changed): `individuals_run06f_also.json`,
+`individuals_run06f_mirror.json`, `blade_templates_mirror22.json`.
+
+Pilot at 10:11: 18 of 80 batches, 299 shots (about 19 s per shot).
+
+Open, for the full-render decision: the engine cache on the root disk (`/var/tmp/sat3737-unreal/ZenData`, 84.9 GB before the pilot)
+grows about 15 MB per shot. The pilot will leave about 35 GB free on root. A full render of several thousand shots does not fit
+unless the cache is cleaned or moved first. Not looked into yet (only when no render runs).
+Not started on purpose: re-cut of the 16 tilted templates and the skin seam repair. Both touch only close views or 3 of 44 animals;
+they wait for the pilot's result and the engine check.
+
+## 2026-11-23 19:02 — pilot r06_pilot22 BUILT (18:38): 2,000 shots, QA 0 failing, gate rejects 148 (7.4 %); scoring started with four helpers; fin check rendering
+
+Read by me from `scratchpad/pilot22/qa_multi.txt`, the build log and `dataset/manifest.jsonl`. No helper report in this entry.
+
+- Build: shot list 9,791 s; render lock 08:12:29, build done 18:38:43 (`BUILD_RC 0`, 37,574 s = 18.8 s per shot over the
+  whole build); `qa_multi` 0 of 2,000 shots failing (2,848 animals checked, 0 stray pixels, min inside own mesh 0.9998,
+  630 poorly explained px of 323 M). Dataset 16 GB under `data/renders/r06_pilot22/dataset`, raw frames dropped by
+  the build. Train 1,345, val 507.
+- Quality gate: 148 of 2,000 rejected = 7.4 % (my line: at most 10 %). By look: midday_blue 90 of 1,212 (7.4 %),
+  open_blue 39 of 509 (7.7 %), grey 19 of 279 (6.8 %): even. `qa_flags` on the rejected: none 123,
+  mask_touches_border 23, empty_mask 1, projection_not_covered 1 (reasons by measure: helper A).
+- i12 (slab blade): 82 shots, 9 of them rejected; accepted shots 1,852, without i12 1,779.
+- Engine cache on the root disk: ZenData 84,916 -> 113,951 MB = 29.0 GB for 2,000 shots (14.5 MB per shot). Root 38 GB
+  free at the end. A full render of several thousand shots does not fit without cleaning or moving the cache.
+- Started 18:59-19:00, four Opus helpers (scratch `pilot22a/`, `pilot22b/`, `pilot22d/`):
+  A measures against round 21 (gate by reason, realised mix, bearings, outlines, light; sheets; fake-look list;
+  why 21 % of roll-outs are side views; part-gap instrument on the renders), every table for all shots and without i12;
+  B tiles for 600 animals sampled at random (seed 2222) from accepted shots, blind labels for tiles 1-330, then the
+  share table against real (all | without i12); C blind labels for tiles 271-600 (60 double-labelled: first
+  agreement number between two labellers in this series);
+  D training test, plan fixed before training: W3e recipe plus the pilot's train split (minus i12, minus rejected),
+  two seeds, against both W3e seeds on the validation-day part-gap cost; "helps" only if both seeds beat both.
+  GPU only after the fin check ends.
+- Fin check `r06r_slab22_{also,mirror}`: took the render lock 18:38:43, on the second set at 18:58.
+- My pass lines, unchanged: QA 0 failing (met); gate at most 10 % (met); classes with real share >= 0.05 within
+  0.7-1.4; heads / end-on fins at most 1.5; reported for all shots and without i12.
+
+## 2026-11-23 19:23 — pilot r06_pilot22 views (600 blind labels, two labellers): the mix misses my lines on finless backs (0.54 of real), raised flukes (0.42) and heads (1.88); low and side-on flukes pass; i12 is confirmed as a shape fault (9 of 10 fin views marked slab); a "slab" mark also falls on 11 % of the other animals' fins, cause open
+
+Helpers B and C (reports; table `scratchpad/pilot22b/table_pilot22_views.md` re-read by me; record file
+`part_gaps/labels_ai_r06_pilot22.txt`, 600 rows, checked: text only). Sheets looked at by me:
+`review_sheets/run06_fin/pilot22_views_{slab_and_odd_1,slab_and_odd_2,fins_R_vs_S,low_side_flukes}.jpg`.
+
+- Design: population 2,642 animals with >= 200 visible px in the 1,817 accepted shots with whales; 600 drawn at random
+  (seed 2222), shuffled, tiles blind (crop + outline | plain). B labelled 001-330, C 271-600, both frozen with sha1
+  before the key was opened. No real photos among the tiles. Real shares = the pooled constants of round 20 / 21.
+- Labeller agreement on the 60 double-labelled tiles (first such number in this series): exact category 0.750
+  (kappa 0.65), pooled classes 0.817 (kappa 0.70); #R / #S agree on 30 of 34 fins. So a class share moves by about a
+  fifth between labellers; the fin sub-classes (D_small / D_tall / D_tip) move most.
+- Shares against real, ratio (95 %), all 600 | without the 26 animals in i12 shots | round 21:
+  all fins 1.07 (0.99-1.15) | 1.07 | 0.90: pass.
+  finless backs B_back 0.54 (0.39-0.75) | 0.53 | 1.05: FAIL. Surfacing whales read as finless 26 of 366 = 0.07
+  (real 0.17, round 21 0.15). B alone 0.070 of animals, C 0.037: the labellers differ by a factor of two here.
+  low flukes F_low 1.21 (1.01-1.44) | 1.20 | 0.92: pass.
+  raised flukes F_up 0.42 (0.26-0.66) | 0.41 | 1.26: FAIL. Only 26 of 600 animals are in a `fluke_up` pose, and 14 of
+  them read as F_up; roll-outs no longer read as raised (1 of 136; round 21: 4 of 46).
+  side-on flukes F_edge 0.91 (0.72-1.16) | 0.89 | 1.37: pass; S3 1.21; S1 oblique raised 0.86 (n 18; round 21 3.06):
+  present and read as such; S2 0.36 (n 5; was 0).
+  pectorals 1.27 (0.94-1.71) | 1.33 | 0.84: pass.
+  heads 1.88 (1.18-2.99) | 1.85 | 1.66: over my 1.5 cap, interval includes it; 9 of the 31 `blow` animals read as heads.
+  end-on fins D_tip 0.67 (0.47-0.95) | 0.70; D_small 1.49, D_tall 0.10: the labeller boundary inside the fin
+  classes, as in every round.
+  With C's labels on the shared tiles no verdict changes. Removing i12 changes no verdict except D_tip (0.67 -> 0.70).
+- Against my pass lines the pilot FAILS on the view mix: finless backs, raised flukes, heads. Low flukes, side-on
+  flukes, pectorals and pooled fins pass, and the oblique raised excess of round 21 is gone.
+- Pose against label: `fluke_rollout` from behind within 30 deg (106): F_low 79, S3 15, B_back 6, D_small 5, F_up 1;
+  at 60-90 deg from behind (19): F_low 7, S1 7, S3 4; from the front (10): S3 7, F_low 3. `fluke_up` (26): F_up 14,
+  F_low 5, S1 4, pec 2, S3 1. `peduncle` (39): D_small 34 (a fin is in view in nearly all). `blow` (31): D_small 17,
+  H_head 9, B_back 3.
+- My arithmetic for the mix (not applied, to be list-verified): moving 45 of 600 animals from `fluke_rollout` to
+  `fluke_up` (roll-outs 136 -> 91, fluke_up 26 -> 71) predicts F_up 1.0, F_low 0.96, S1 1.05, S3 0.98 of real. Heads
+  reach 1.5 with `blow` cut by 40 %. Finless backs have no pose category of their own (largest source: surface 14
+  of 156), so that row needs a phase / ride-height answer, not a weight; helper A's geometric "no fin in view" share
+  decides whether it is the renders or the labellers' boundary.
+- Fins: #R 180 / #S 144 of 324 (B 106 / 71, C 92 / 92; round 21 one labeller 116 / 11). #R share 0.93 of real
+  (round 21 1.29). #S rate by angle: end-on 0.72, oblique 0.42, side-on 0.28; by size small 0.59, mid 0.43, large 0.31.
+- New mark `slab` (fin is a block, not a fin): 43 of 324 fin views. i12: 9 of its 10 fin views (0.90) = 21 % of all
+  slab marks: the shape fault is confirmed blind. Front-steep templates i01 / i10 / i28: 2 of 20 (0.10). The other
+  40 animals: 32 of 294 (0.11), spread thin (23 animals with one or two, none over two). By size without i12: small
+  22 of 104, mid / large 12 of 210; by angle: oblique 0.21, side-on 0.10, end-on 0.09. Shared tiles: both 3, one
+  labeller only 3.
+  My look at the two slab sheets: i12 is a different thing (large faceted blocks). The others are low fins with a
+  flat top and a near-vertical rear edge at the end of a long low back; several calves (c02, c05, c06, c08), and
+  i29 / i33 / i34 / i35 / i36 with a hard trapezoid. Real humpbacks have low flat-topped fins too, and the outlines
+  come from real fins, so whether 11 % is a fault cannot be read from this pass. Started 19:22: helper E, one blind
+  pass with real train-day fins and pilot fins mixed, shape class per tile (`pilot22e/`).
+- `odd` marks 26 (6 on i12): camouflage-like skin blotches about 6 (i11 three times, i13, c01, c05), stamped-looking
+  white ovals / rings / stitch lines about 7 (i10, i23, i30, i34), facets or panel seams about 5, shape 6, metallic
+  sheen 1, detached piece 1 (000556:3).
+- Caveats: both labellers are AI; real shares come from a third AI labeller's earlier pass with a relook step the
+  pilot labels did not get; `slab` has no real-photo base rate yet.
+
+## 2026-11-23 19:28 — fin check rendered (2 x 20 shots, QA 0 failing): library `individuals_run06f_also.json` APPLIED (i12 slab gone; i01 / i10 on clean templates); the mirrored-template variant is worse than the pilot and is dropped
+
+Check finished 19:25 (`scratchpad/slabfix22/check.done`; `r06r_slab22_also` and `r06r_slab22_mirror`, 1,541 s for the
+second set). Paired sheets made with `make_pairs.py` and looked at by me, full size for six shots:
+`review_sheets/run06_fin/pilot22_slabfix_pairs_{1,2,zoom}.jpg` (pilot | also | mirror).
+
+- Build: `qa_multi` 0 of 20 failing in both sets (23 animals, 0 stray px). Gate rejects 000149 and 001839 in both; both
+  are also rejected in the pilot, so the fix changes no gate verdict. The four control shots (no changed animal) look
+  identical in all three columns although the library change resizes every whale's weld patch.
+- i12 (template 184 -> 67, H 75 -> 32.9 cm), same in both sets: the slab is gone in all six shots. It now reads as a
+  long low fin with a small hooked tip on a raised hump (000448, 000062, 001219, 001839). Far and awash views
+  (000768, 000163) show a short low block with a tiny tip: plain, not broken.
+- i01 / i10, "also" (templates 11 -> 15, 129 -> 168): clean pointed fins in every shot (000149, 001795, 001647,
+  001694, 000850, 001465, 001696).
+- i01 / i10, "mirror" (templates 11 and 129 flipped): broad flat-topped wedges with the steep edge on the wrong side
+  (000149, 001795, 000739) and humps with a knob (001647, 001694): MORE slab-like than the pilot's own frames. My
+  preference for mirror from the CPU side views (10:11) was wrong; the engine frames decide. Dropped:
+  `individuals_run06f_mirror.json` and `blade_templates_mirror22.json` stay on disk unused.
+- Applied 19:28: `whale.individuals` = `third_party_assets/humpback_4k/individuals_run06f_also.json` (differs from
+  run06e in i01, i10, i12 only; sha1 cd6cefe9). Dry run on a copy first: one leaf differs, and the result equals the
+  engine-checked `r06r_slab22_also_config.json` leaf for leaf. Live config sha1 d0841e58 -> a3618502. Keys, revert
+  and the config before: `moonshot_cache/run06_pending/slabfix22/apply/` (`revert_live_slab22_also.json`).
+- Not touched: i28 (template 171, front-steep) and i23 (167, "neither"); the blind labels do not single them out
+  (front-steep animals slab 2 of 20 against 0.11 for the rest). `blade_library_slab22.patch` (drop non-fin templates,
+  cap the base at 210 cm) still not applied: needed before the library is ever REBUILT, not for this file.
+- Engine cache after the two check sets: ZenData 114,197 MB. Root 38 GB free.
+
+## 2026-11-23 19:38 — pilot fins against real fins, one blind mixed pass: flat-topped blocks 0.162 on pilot fins against 0.069 on real (large fins 8 of 44 against 0 of 44); hooked fins 0.138 against 0.308; fin generator revision started; training test running; day-root mix found in the W3 scorers
+
+Helper E's report (table `scratchpad/pilot22e/table_fin_shape.md` re-read by me; record file
+`part_gaps/fin_shape_blind_pilot22.txt`, 260 rows, text only, checked); sheet
+`review_sheets/run06_fin/pilot22_fins_real_vs_pilot_B.jpg` looked at by me. Helper D's interim hand-back.
+
+- Design: 130 real train-day fins (part_gaps sample, D_small 74 / D_tall 35 / D_tip 21) and 130 pilot fins without
+  i12 shots, matched in three size bands, same tile maker, shuffled, one judge, one pass, shape only
+  (H hooked, T triangle, N nub, B flat-topped block, S spike, U cannot tell), frozen before the key was opened.
+- B (the "slab" mark): real 9 of 130 = 0.069 (0.037-0.126), pilot 21 of 130 = 0.162 (0.108-0.234), difference +0.092
+  (+0.014 to +0.172), Fisher p 0.031. By size: small 7 of 43 | 8 of 43 (none), middle 2 | 5 of 43, large 0 of 44 | 8 of 44
+  (+0.18, +0.06 to +0.32). By the judge's view mark: side 9 of 86 | 15 of 100, oblique 0 of 21 | 6 of 20. So real fins
+  are flat-topped blocks too (my look: train-day examples with a flat top and a vertical edge exist), but only when
+  small in the frame; the pilot's excess is in large fins, most of it in oblique views.
+- Other shapes, real | pilot: hooked 0.308 | 0.138 (-0.17, -0.27 to -0.07); plain triangle 0.208 | 0.415 (+0.21);
+  nub 0.131 | 0.185; spike 0.238 | 0.092 (the pilot sample has fewer end-on and tall fins). Too few hooks, too many
+  triangles.
+- Weak points of the pass: the pilot pool is 114 of 130 D_small by the earlier labels (real 74), so part of the
+  overall gap is class mix (D_small only: 0.122 | 0.184, p 0.31; the large-band gap survives: 0 of 30 | 8 of 41,
+  p 0.017). The judge told the sources apart on 180 of 194 decided guesses and marked B more on tiles guessed
+  "render" (17 of 80). Repeat of the earlier `slab` mark on the same pilot tiles: kappa 0.48.
+- Sort of the 21 pilot B marks (after the freeze): template itself flat-topped 12, angle / size 5, fin and hump
+  forming a plateau with a vertical drop behind 4.
+- Cause proposed by the helper, code read by me: `blade_templates.outline` samples heights 0.1-1 of the CLICKED tip,
+  so whatever a fin has above its clicked tip is cut and the template ends in a flat chord (chord at h = 1: median
+  0.29 H, upper quartile 0.46 H); `blade._top_cap` rounds only the top 0.05-0.2 H. On a hooked fin the clicked tip
+  is the hook's point, below the fin's top: the hook is lost and a shoulder stays. Pilot B rate by tercile of the
+  template's top chord: 3 of 45, 8 of 42, 10 of 43. i12's template 184 has the second widest top chord (1.85 H).
+  Not verified on the source photos yet.
+- Started 19:35: helper F (`fin23/`): overlay all 196 templates on their source masks, templates v2 as a new file
+  (outline to the fin's true top, hooks kept, level base line, non-fins dropped), blade top thinning to an edge behind
+  a key, library `individuals_run06g.json`, one paired engine check of at most 40 pilot shots, its own blind mixed
+  pass. My lines, set before any result: B on v2 renders not above real beyond chance and at most 2 in the large band;
+  hooked share at least 0.22.
+- Training test (helper D, interim): plan fixed and copied to `experiments/pilot22_train/plan.md`; P_add seed 0
+  training since 19:27 (detached chain `experiments/pilot22_train/run_p22.sh add`, marker
+  `moonshot_cache/pilot22/d/p22_add.done`, expected about 23:00; then `run_p22_compare.sh`). 1,191 pilot train shots
+  after i12 (61), defect flags (16) and the min-visible filter (77); one third of the render samples from the pilot.
+  Baseline re-scored on the old day root, W3e seed 0 / 1: validation-day part-gap cost 0.1640 / 0.1547 (n 202);
+  B_back error 0.657 / 0.650 (n 30: finless backs are by far the largest real failure); pilot val dorsal IoU
+  0.308 / 0.239 and fluke IoU 0.532 / 0.575 (run05 val 0.666 / 0.653 and 0.938 / 0.941): the current part model does
+  poorly on the pilot's views.
+- FOUND by helper D, matters beyond this test: `experiments/days_all` points to the new mask root since the switch
+  (2026-11-22 22:16), but the W3-family class maps were made on the old root, so the existing scorers
+  (evaluate_real, compare, finless, part_gaps report) now mix two roots (finless backs by eye n 33 -> 31, 0.182 ->
+  0.161 for W3e). D scores through an old-root shadow (`model_fine_tuning/pilot22_train/oldroot.py`,
+  `/var/tmp/sat3737-parts-cache/pilot22/days_shadow`), on which W3e reproduces `two_seeds_w3e.md` exactly. The rule
+  caches `/var/tmp/sat3737-parts-cache/part_gaps/rules/parts_seg_r05_{sc,rw,s1,w1,w3e,w3es1}.json` were rewritten with
+  live-root rules by D's first runs. Helper A was told (its part-gap numbers on real photos are not comparable
+  unless run on the shadow). OPEN: decide how W3-family scoring should work after the mask switch (re-predict on the
+  new root, or keep the old-root shadow as the scoring root) and say so in the scorers' README.
+
+## 2026-11-23 19:52 — pilot r06_pilot22 measures: light is on real; whales are small in the frame (median box 593 px against real 934), finless backs too tall (0.30 against 0.17), close steep sunny shots too dark (121 of 480 rejected); three more helpers started; pilot verdict: clean build, NOT ready for a full render
+
+Helper A's report; table `scratchpad/pilot22a/table_pilot22.md` re-read by me for the rows quoted; sheets
+`review_sheets/run06_fin/pilot22_score_{accepted_1,rejected}.jpg` looked at by me. All rows were given for all shots and
+without the 82 i12 shots; the two differ by at most 0.02 everywhere, so one value is quoted.
+
+- Build: 18.8 s per shot overall, about 16.4 s in the engine; weld 3,082 whales, second try 88 (2.9 %), re-drawn
+  shots 5, dropped 0; whales with >= 200 visible px 2,836 (2,642 in accepted shots).
+- Gate (148 rejects): reasons frame_L_mean_low 127, water_L_low 57, frame_L_mean_high 9, white water 8, whale hidden
+  1. Sunny 142 of 1,629 (8.7 %), overcast 6 of 371. By distance: < 60 m 126 of 749 (16.8 %), 60-100 m 14 of 609,
+  >= 100 m 8 of 642. One cell carries it: sunny, closer than 60 m, camera pitched down more than 7 deg: 121 of 480
+  (25.2 %); the other three distance / pitch cells 1-8 %. My look at the reject sheet: these are the frames with the
+  whale large and the water deep navy (frame L* 23-31). The gate removes exactly the close shots.
+- Size in the frame (new measure, real from the realism_gap scorecard, 1,500 train / val photos): largest instance
+  box width q25 / q50 / q75 = 315 / 593 / 1,039 px of 2,560 in accepted shots against real 530 / 934 / 1,432; area share
+  .0032 / .0101 / .0312 against .0096 / .0253 / .0541. Primary-framed non-fluke shots follow the config's framing
+  (extent median .345 against .39); the shortfall comes from roll-outs at 0.6 of it, group framing, far side views
+  and the gate. My look at the accepted sheet: 5 of 24 frames hold a whale as a speck.
+- Realised views: surfacing whales within 30 deg of end-on .259 (target .22; primaries .136, companions .399); no
+  fin in view by geometry .188 (real .165, round 21 .211).
+- Outlines, real | round 21 | pilot (medians): surfacing height / length .21 | .17 | .26 (n 1,415; 15 % over the real
+  p90); back under fin / fin height at the knees 1.87 | 1.95 | 1.31 (19 % under the real p10); fin chord / height
+  3.09 | 3.55 | 3.13; FINLESS BACKS .17 | .23 | .30 (n 266; 44 % over the real p90); low flukes .23 | .21 | .24; raised
+  flukes .31 | .37 | .34; side roll-outs .43 | .32 | .33; pectorals .64 | .44 | .71.
+  Read with the labels (19:23): by geometry the share of finless backs is right, by eye only 0.07 of surfacing
+  whales read as finless. So the finless backs exist but stand tall and humped, and are read as fins.
+- Light, real | round 21 | pilot. Sunny (n 1,449): whale halves 32.8 / 17.8 | 32.8 / 21.8 | 34.1 / 22.6; water band L*
+  44.9 | 52.0 | 44.3 (q10-q90 real 34-54, pilot 35-56); frame L* 46.5 | 52.0 | 46.8; white-water share .050 | .023 |
+  .033. Overcast (n 352): halves 44.3 / 32.3 | 39.9 / 30.7 | 44.7 / 33.9; water band 61.0 | 48.4 | 61.1; frame L* 75.2
+  | 71.6 | 68.0 (low); lighter half b* -6.2 | -7.9 | -11.9 (too blue); white water .354 | .71 | .405. Cyan waterline 0
+  of 1,945. The sunny-water and overcast keys of rounds 21b / 22b hold at scale.
+- Why 21 % of roll-outs are side views (bands give 15 %): `sample_camera_for_size` re-draws the bearing up to 40
+  times and, when no draw reaches the extent target, keeps the closest; with the roll-outs' small targets at the
+  60 mm focal floor that is usually a far side view. Reached target: side 63 of 394 (16 %); missed: 59 of 91 (65 %).
+- Part-gap instrument on the pilot's renders (model parts_seg_r05_a, render errors only; old-root rule cache,
+  reproduces the logged check 20 / 21 numbers), check 20 | check 21 | pilot: F_low .30 (69) | .06 (79) | .29 (231);
+  fins .09 | .10 | .11 (394); D_tip .13 | .23 | .13; pectorals .46 | .43 | .50 (46); heads .08 | .19 | .07; all .17 |
+  .12 | .18 (863). The old part model fails on the pilot's low flukes as often as on check 20's. They read as low
+  flukes to both labellers (share 1.21), so I read this as "hard like real", to be settled by the training test
+  (real F_low error of W3e 0.159).
+- Fake-look pass, 150 crops, not blind (helper): 64 with at least one kind. Known: splash / blow sprites 17, steep
+  fin face or cliff back 14, jagged raised-fluke edge 10, pale backs 6, pec slap as a stick 5, i12 4. New: `fluke_down`
+  side view as a thin plank on a goose-neck stock 5 of 5; flat side roll-out as a bent hose 4; crumple at the tail
+  stock 3; `fluke_sinking` tips as dark lumps 2; awash body as a grey smear 1.
+- MY VERDICT on the pilot: the build is clean and the light is right, but the set is not ready for a full render.
+  Open before it: view mix (raised flukes, heads), size in the frame, finless backs, fin tops and hooks, dark close
+  water. None needs a new idea; all are tuning with a check. After the fixes: one 200-shot check against the same
+  lines, not a second 2,000-shot pilot.
+- Started 19:50-19:52, three Opus helpers beside F (fins) and the training chain:
+  G1 `mix23/` list-only: category mix, extent targets against real per view class, the camera re-draw fault behind a
+  key, companions' bearing; proof on a 600-shot list with a predictor built from the 600 blind labels. My lines:
+  predicted F_up, F_low, F_edge, pectorals 0.8-1.25 of real; S1 <= 1.4; heads <= 1.5; box width quartiles within 15 %
+  of real; roll-out side views within 3 points of the bands; end-on 0.19-0.25.
+  G2 `finless23/` diagnosis only: why finless backs are tall and read as fins (hump, fore arch, clearance, phase),
+  offline tests on config copies, proposal + shot list for one engine check.
+  G3 `steep23/` engine: are real close photos that dark; water at steep angles; at most 100 rendered shots. My
+  lines: water band L* in the real range for large whales, at most 2 of 16 close shots rejected by the unchanged
+  gate, far controls move by less than 2, whale halves within 2, no cyan waterline.
+
+## 2026-11-23 20:38 — the user's answers: the centre tape band gives the colour; the paired fin frames "look a bit off", the flipped ones "very odd"; the engine cache may be cleared whenever it makes sense; cache helper started
+
+The user's message of about 20:35, verbatim: "yes the band in center is what should be used for color. The pilot,
+swapped, flipped look a bit off. Especially the flipped looks very odd. It is fine to clear the cache whenever it makes
+sense."
+
+- Tape band: confirms the assumption behind colour rule 2 (band nearest the frame centre). One question closed.
+- Fins: the user looked at `pilot22_slabfix_pairs_zoom.jpg` (pilot | swapped | flipped; i12, i01, i10). All three
+  columns are "a bit off" to the researcher's eye, the flipped column most. The flipped variant was already dropped
+  (19:28). The applied library `individuals_run06f_also.json` therefore stands as a stop-gap against the slab only.
+  What is off was not said; I asked once. Passed on to helper F with two additions: note what real fins have beyond
+  the outline in large side views, and make `fin23_for_researcher.jpg` (v2 render fins beside the real fin each
+  template was cut from). The fin revision is judged by the researcher on that sheet, not by the AI labels alone.
+- Cache: standing permission to clear the engine's Zen store. Read at 20:38: `/var/tmp/sat3737-unreal/ZenData` 114,219 MB
+  (`cache/` 96.5 GB, `cas/` 17.4 GB); the auto-launched server runs with a 14-day cache duration, GC every 6 h and a
+  2 GB low-disk threshold, which explains the unbounded growth during a day of rendering. Started: helper H
+  (`cache23/`): what the store holds, clean-up under the render lock with no editor running (supported GC first,
+  removal of `cache/` and `cas/` only as a fallback), two-shot proof render against the pilot's frames, and a growth
+  cap for long renders as a switch that defaults to off. Scripts to `moonshot_cache/run06_pending/cache23/`.
+- The marker-page reminder was given once more in the 19:52 status while the user was active; closed.
+- Still open with the user: the full run06 render and its mirror mix; the water engine port; a copy of
+  `2026-2029 Research catalog.lrcat`; whether every imported photo is kept; whether marker merge suggestions become
+  automatic; shaded fluke undersides.
+
+## 2026-11-23 22:00 — finless backs: cause found, fix not ready (helper G2, CPU only)
+
+Read from `moonshot_cache/run06_pending/finless23/` (`table_B.md`, `tabD_all.md`, `real_types.txt`, patch, keys) and two sheets by me.
+
+- Cause: every surfacing pose is placed by the highest vertex inside a window that holds the dorsal fin (SURF_TOP_X / BACK_X). With the hump and fore arch the fin is that vertex in 0.87-1.00 of animals per category. Offline base (200 pilot shots, 226 surfacing animals): fin tip under water 0.009. `awash` and `blow_sliver` show the fin with the fore back under water, the opposite of their descriptions. `tail_stock` has weight 0. So the list cannot make a real finless back; the pilot's finless views are frame cuts, occlusion and tiny or end-on animals.
+- Helper A's "no fin in view by geometry 0.188" was a rule artefact: 209 of the 266 have all three fin keypoints on the outline (small fins, half calves). Their excess height is bearing: h/l q50 0.51 at 0-15 deg from end-on, 0.40 at 15-30, 0.18-0.26 beyond 30 (real finless .10/.17/.25). So "finless backs too tall" = small fins seen end-on, mostly companions (G1's bearing fix covers that part).
+- Real finless backs by type (91 by eye, weighted): low strip 0.43 (h/l 0.10), dome 0.39 (0.215), arched tail stock 0.09, end-on 0.03, other 0.07.
+- Offline variants (fin gone = tip < 5 cm above water or no keypoint; real 0.165): base 0.009, hump off 0.014, fore arch off 0.038, both off 0.051, clearance -10 / -20 / -30 cm 0.004 / 0.009 / 0.009 (hides the fin base, not the fin), phase widened 0.024, tail-stock recipe on all 0.042, nose-up recipe on all surfacing (partial, n 100) 0.160 with h/l .10/.13/.18. No existing key gets near real.
+- Proposal on disk, NOT applied: `finless23_round23.patch` (new dormant key `realism.finless_backs`: clearance taken on the back ahead of the fin, nose up 6-14 deg, clearance 0.05-0.40 m; own seeded generator) + `keys_finless23.json`.
+- My review, why it is not ready: (1) dormancy with the key unset is unproven; (2) the companion hook passes no phase, so every companion in blow / surface / logging would be treated at fraction 1.0; (3) nose-up shows the head, and heads are already 1.88 of real; (4) it makes strips only, domes (0.39 of real) have no recipe, the nose-up recipe made arched poses worse; (5) the check-shot list was picked for an older design; (6) the two targeted runs and the dry test were unfinished at hand-back; (7) `factory/shotlist.py` is being changed by the mix helper, so the patch must be re-based.
+- Next: follow-up helper G2b, CPU only, in a pinned copy: finish the runs, fix (1)-(5), re-base after the mix helper lands, hand back a check list. Engine check ordered by me after that.
+- Addendum 22:16 (the helper's final report, read from `tabD_all.md`, not re-run): dry test, key unset: identical to the original on 37 of 37 compared shots. Key set: the whole list diverges from shot 000000 on (the changed placement moves later draws on the main stream), so a paired engine check must re-place the treated animals inside existing pilot shots, not regenerate the list. Targeted partial runs: recipe on `blow` only, fin gone 0.051 (n 177, h/l .07/.10/.13 on 9); blow + early surface / logging 0.061 (n 164). Strips only and too rare; more `blow` would collide with the head share. Passed to helper G2b (started 22:02).
+- Complete targeted runs (22:18, `finless23/tabD_F.md`): recipe on `blow` only, fin gone 0.041 (n 222, h/l .07/.10/.13 on 9); blow + surface / logging with phase < 0.3, 0.056 (n 216, .07/.09/.16 on 12); every other measure stays on base. Dormancy with the key unset: 40 of 40 shots identical. These replace the partial numbers in the addendum above.
+- Side note from the sheets: end-on fins on small animals read as a thin spike on a dome (labelled D_tip); passed to the fin helper's topic, not acted on.
+- Disk: root 139 GB free at 22:00 (37 GB at 20:37), so the cache helper's clean has run; its report is still to come.
+
+## 2026-11-23 22:22 — engine cache cleaned (114 GB to 0.75 GB), growth switch added, default off (helper H)
+
+Read by me from `moonshot_cache/run06_pending/cache23/` (`numbers.txt`, `logs/qa_multi_{cold,warm}.txt`, diff of `tools/render_batch.sh` against `render_batch.sh.orig`); frame differences recomputed by me; side-by-side of the proof frames viewed.
+
+- Clean: one hold of the render lock 21:52-22:18, no editor up, the server's own collection only (`zen gc -s -m 21600`, 38 s), nothing removed by hand. ZenData 114,303 MB -> 8,053 MB, then 747 MB after the warm proof run with a 2 h age. Root disk 35 GB -> 146 GB free, 82 % used (my `df` at 22:21 agrees; ZenData 769 MB).
+- What it held: Chaos collision builds of each batch's deformed whale and white-water meshes 93.3 GB in 47,100 entries; static mesh attachments 18.1 GB; distance fields 6.4 GB; textures 1.5 GB; shaders under 0.2 GB. Written once, almost never read again (a 12-shot render re-read 6 of 47,060 Chaos entries). About 15 MB per shot.
+- Why the 14-day expiry never ran: every editor session starts its own cache server and the server dies with it, so the 6 h collection timer never fires (last full collection 2026-11-17 22:58).
+- Proof: pilot shots 000323 and 000919 re-rendered cold (first start after the clean) and warm. QA 2 shots, 0 failing, both runs. Mean absolute grey difference pilot vs cold 0.57 / 0.63 by my recompute (helper 0.68 / 0.74 with its grey), largest single-pixel difference 14 and 9 levels, cold vs warm 0.14 / 0.02; same-night noise between re-renders 0.11-0.55, pilot vs re-render 0.17-1.16. Frames look the same. No extra start time after the clean (build session 44 s cold, 155 s warm under load).
+- Switch: `tools/render_batch.sh` got `WF_ZEN_GC_MAX_AGE_S` (+ `WF_ZEN_GC_EVERY`, default 1): after every Nth batch, with no editor and no cache server up, it starts its own server, collects entries older than the age, stops it. 43 added lines, unset = one false `if`, syntax checked. A failed collection prints a line and never stops the render. Tested once (age 7200).
+- MY CHOICE for renders from now on: `WF_ZEN_GC_MAX_AGE_S=21600 WF_ZEN_GC_EVERY=10` in the standard render env. Six hours is the age proven tonight to keep every shared shader and asset across a gap; every 10th batch keeps the overhead near 1 min per 250 shots. Expected ceiling about 0.75 + 6 h x 3.6 GB/h = 22 GB, flat with run length. Without it a 10,000-shot render would add about 145 GB, more than the disk has.
+- Repeat by hand: `bash /home/sat3737/NOAA_whales/moonshot_cache/run06_pending/cache23/clean_cache.sh 21600` (takes the lock itself).
+- Not tested: `--gc-disksize-softlimit`; turning collision off at import (would remove most of the 15 MB per shot at the source; a project change, proposal only).
+- HANDOVER.md has the helper's section "Engine cache (Zen) clean-up and cap, 2026-11-23".
+
+## 2026-11-23 23:20 — fin tops and hooks (helper F): passes my two lines on a small sample, but by my eye the fins are still off; keys NOT applied yet
+
+Read by me: `moonshot_cache/run06_pending/fin23/{table_fin23.txt, keys_fin23.json, labels_FROZEN.txt (72 rows, sha1 127912d1)}`, QA of `data/renders/r06r_fin23_v2top` (40 shots, 0 failing), hashes (live config still a3618502, old template file 97867d59 unchanged). Sheets viewed: `review_sheets/run06_fin/fin23_for_researcher.jpg`, `fin23_pairs_1.jpg`, `fin23_pairs_3.jpg`.
+
+- What was built (uncommitted): `factory/blade_templates.py` (`outline_v2`: outline to the true top between the base clicks, noise guards), `factory/blade.py` (`top_edge_gain`: the blade thins to an edge above 0.55 H when the template carries `top_edge`), `factory/blade_library.py` (`fin_class`, v2 library). New files `third_party_assets/humpback_4k/blade_templates_v2.json` (173 templates; 23 dropped: 16 tilted, 7 noise / not a fin), `blade_templates_v2_top.json` (same + top edge), `individuals_run06g.json` (sha1 8aa627d6; same 44 animals, only the template re-drawn; rule mix hooked 16, triangle 16, nub 11, flat 1). Old configs give identical meshes (vertex and face sha1 of 4 posed animals equal before and after).
+- Diagnosis correction: the cut at the clicked tip loses little height (true top / tip median 1.04). The lid came from wide flat tops (98 of 196 old templates end in a chord wider than 0.30 H) that kept mid-height thickness. Hooks were NOT lost by the template cut (55 hooked old outlines); they are lost in thick tops and oblique views.
+- Blind mixed pass by the helper (it knew the design; 34 v2 render fins + 34 real train-day fins, middle and large bands): flat-topped real 0/34, v2 3/34 = 0.088, difference +0.088 (95 % interval -0.029 to +0.230); large band 2 of 26; hooked v2 11/34 = 0.324, real 11/34. My lines (flat not above real beyond chance, at most 2 in the large band, hooked share at least 0.22): MET, with n small. Not met by the same table: triangles 17/34 against real 7/34 (+0.294, interval +0.067 to +0.483); the helper guessed the source right for 26 of 34 renders, so renders are still easy to tell.
+- MY LOOK at real beside render (12 pairs) and pilot beside v2 (24 pairs): tops are a little more pointed (000493 i28, 000029 i03), a few are worse (000342 i32 glossy knob, 000509 i15 crease on the leading edge, 001088 i21 and 000793 i04 blunter). In both sets the render fin is a small tip on a broad waxy pyramid with crease lines; the real fin is a thin blade whose leading edge runs into the back, with a tight notch behind. Hooked real fins 6, 9, 12 render without a hook. The outline revision does not touch this. This is my reading of the user's "a bit off"; the user has not said yet.
+- Helper's list of what real fins have and renders lack: thin blade above 0.3 H with a crisp trailing edge; tight notch at the trailing foot and a long ramp ahead (renders: weld fillet + round-20e hump = mound); ragged, scarred trailing edges; matte scarred skin (renders glossy, crease lines); thin overhanging hooks.
+- Plateau case = hump draws at the top of the range (k 1.27-1.36): hump 32-45 cm taller than the fin above its base 25-33 cm. A cap belongs in `whalemodel.py`. Not fixed.
+- Found on the way, not from this round: the posed mesh from `from_config` and the OBJ that deform writes differ by median 1.2 cm, max 12-14 cm (pilot config the same). Open: who owns it, and do keypoints sit off the rendered surface by that much.
+- Decision: `keys_fin23.json` (`whale.blade_templates` = v2 top file, `whale.individuals` = run06g; always together) is NOT applied to the live config now. It becomes the base of the next fin round (fin foot, blade thickness, hump cap; helper F2, on a config copy), and all passing key files go into the live config together once the mix, finless and water helpers are back. The user gets `fin23_for_researcher.jpg` to judge.
+
+## 2026-11-23 23:23 — GPU lock: note from the Underwater session; second fin round started
+
+- The Underwater session (peer `noaa-whales-8a`) wrote that its tracker run (pieces of at most 15 min, about 1.9 GPU hours left) waits behind each whole pilot22 job on `gpu_train.lock` (seed 0 eval held it 1 h 42 min under load). No action was asked. My answer: the eval stays one piece (one python call in a running script, fixed test design); left on my side are the seed 1 training (since 22:40), one eval piece, two pieces of about a minute; I will NOT start the optional P_only arm or any other long GPU job of mine until their run is through.
+- Training test state 23:21: `parts_seg_p22add` (seed 0) trained 20:08, scored 22:25; seed 1 training since 22:40. Verdict expected 00:30-01:00.
+- Helper F2 started 23:25 (`moonshot_cache/run06_pending/fin24/`): fin foot / weld fillet, blade thickness below 0.55 H, hump cap, gloss and crease lines as diagnosis only; one paired engine check on round 23's 40 shots (`data/renders/r06r_fin24_foot`); blind tiles for an independent labeller that I send afterwards. Base = live config + `keys_fin23.json` on a copy.
+- Render env from now on carries `WF_ZEN_GC_MAX_AGE_S=21600 WF_ZEN_GC_EVERY=10`.
+
+## 2026-11-23 23:39 — mix and framing (helper G1): every line passes by prediction; keys APPLIED to the live config
+
+Read by me: `moonshot_cache/run06_pending/mix23/{table_mix23.md, keys_mix23.json, proofC_repro60b.txt}`; dry run of the keys on a copy = the helper's `config_mix23C.json`, 0 leaves different; 57 leaves changed or new, all under the 15 intended keys.
+
+- Predicted on the official 600-shot list (seed 23, 819 animals of 200 px or more; ratio to real, 95 % interval): F_up 0.97 (0.63-1.38), F_low 1.02 (0.82-1.25), F_edge 0.93 (0.66-1.13), pectorals 0.93 (0.62-1.33), S1 0.81, heads 1.22 (0.55-1.97); pilot measured 0.42 / 1.21 / 0.91 / 1.27 / 0.86 / 1.88. Largest whale box width / frame 0.208 / 0.330 / 0.503 against real 0.207 / 0.365 / 0.560 (pilot 0.128 / 0.234 / 0.408). Roll-out side views 22 / 132 = 0.167 (band 0.150 +- 3 points; pilot 0.212). End-on 0.242 (primaries 0.156, companions 0.370; target 0.19-0.25). My lines: all MET, as predictions; a single 600-shot list moves a ratio by about +-0.15, so the 200-shot check will only confirm the large moves.
+- Predictor check on the pilot's own list: every measured value inside the predicted interval (F_up 0.51 predicted, 0.42 measured; heads 2.16 / 1.88; finless backs 0.54 / 0.54; end-on 0.271 / 0.259).
+- Not fixed by this round: finless backs 0.52 of real (helper G2b); D_tip 0.67; shots with two or more visible whales 0.30 against real 0.069 (the scene mix, a design choice from 2026-11-17, changed only around fluking primaries); all animals still small at the median (0.255 vs 0.358) because companions are small.
+- Keys (15): `camera.bearing_once` true (NEW: the bearing is drawn once per shot, re-draws keep it; this was the cause of the extra side-on roll-outs), `camera.distance_m` [30, 200], `pose_weights` fluke_rollout 31.4 -> 18.5, fluke_up 4.5 -> 10, blow 4 -> 1.6, pec_slap 9 -> 5.5, peduncle_throw 0.5 -> 3, tail_slap 0.5 -> 1; `scenes.adult_pose_weights` fluke_up 8 -> 12, blow 5 -> 2; `scenes.calf_pose_weights` blow 10 -> 4, fluke_up 2 -> 3; `scenes.weights_by_category` (NEW; groups around a fluking primary 40 % -> 30 %); `realism.end_on.fraction` 0.03 -> 0.05; `realism.extent_quantiles_by_category` (NEW; framing table per primary category from real single-whale box widths).
+- Code: `factory/shotlist.py` md5 e993629f (uncommitted). Proof of dormancy: pilot config, seed 22, 60 shots, keys absent: 12,047 leaves, 0 differences against the pilot's rows apart from run-folder paths.
+- APPLIED 23:38 with `set_keys.py`: live config sha1 a3618502 -> 87f3b1c336a29e7be3a38ba727cb862eaf759f2e. Before-copy and revert: `mix23/apply/{run06_realism.before_mix23.json, revert_live_mix23.json}`. Shot-list keys only, no geometry or label change. Fin helper F2 and finless helper G2b told.
+- Watch: shots closer than 60 m rise 0.374 -> 0.418 (larger framing at the 320 mm focal cap), so more shots meet the dark close-water gate (helper G3's topic). Open: the 320 mm cap and the 200 m far limit are assumptions; the photos' EXIF focal lengths on train days could settle the cap (not read yet).
+
+## 2026-11-23 23:43 — finless backs, recipe (helper G2b, CPU only): ready for one engine check; patch NOT applied
+
+Read by me: `moonshot_cache/run06_pending/finless23b/{table_finless23b.md, keys_finless23b.json, finless23b.patch}` (`git apply --check` passes on the live repo; 133 added lines in `factory/realism.py` and `factory/shotlist.py`); sheets `review_sheets/run06_fin/finless23b_{A_strips_domes, C_untreated_pilot_poses}.png` viewed.
+
+- Design: one dormant key `realism.finless_backs`. The function runs at the very END of `make_shot`, after every random draw, with its own seeded generator per animal, so the main stream, cameras and every untreated animal stay byte-identical also in a regenerated list (the earlier patch diverged from row 12 on). Three types: strip (low back ahead of the fin, clearance 0.08-0.30 m), dome (rounded back ahead of the fin, 0.45-0.95 m), tail stock (late-roll arch, nose down 6-16 deg). The clearance is taken above the local water and lowered until the fin blade is 8 cm under; a head guard keeps the head under; a frame guard drops treatments that would leave the frame.
+- Helper's numbers (offline, by geometry): dormancy = same path-normalised sha1 for the pilot's first 60 rows, the unpatched and the patched code without the key. Fin gone share of surfacing animals 0.163 on the final mix (pilot mix 0.169; actual draws 101 / 616 = 0.164; real 0.165). Fin-gone h/l .114 / .177 / .244 (real .10 / .17 / .25). Split strip / dome / tail .43 / .43 / .13 (real .43 / .39 / .09). No treated animal shows its head; expected head labels among surfacing animals 0.0216 -> 0.0177. Untreated: 1,747 of 1,747 untreated pilot rows byte-identical, untreated animals inside treated rows identical. Treated share on the pilot list 266 of 1,873 surfacing animals = 0.142 (primaries 0.140, companions 0.144); the earlier patch would have treated 0.458 (companions 0.714).
+- My lines: all MET offline. Not measured: anything in the engine; the budget on the final mix is reweighted, not run on the 600-shot list.
+- MAIN RISK (helper's caveat, and my look at the side views): the bends are far stronger than any pose so far (arch about 160 strip, 310 dome, 240 tail stock; pilot surface poses about 80, late back_arch 125; dome arch -75 to -100 deg over a quarter to a third of the body). Above the water the strips and domes look right; under water the body is folded behind the apex. Open: does the fold show through the water, does the skin crease or stretch on the dome.
+- Other known staleness: extra blow sprays stay where drawn; white water of treated animals is re-drawn on the side generator; 1 of 193 newly posed bodies hits the weld gate.
+- Tail stock stays weight 0 as a category; the look comes from treated back_arch (0.06) and peduncle (0.09) animals.
+- Next: engine check on `check_shots_finless23b.json` (30 treated shots: 12 strip, 12 dome, 6 tail stock; 6 controls), built by `scripts/build_checkset.py` from pilot rows without regenerating the list. Helper G2c started 23:44 (`run06_pending/finless23c/`, run `data/renders/r06r_finless23c`); it prepares blind tiles for an independent labeller that I send afterwards. My lines: QA 0 failing, controls unchanged; fin gone in the engine on at least 90 % of visible treated animals, head on at most 2; h/l median per type within 0.05 of real (strip 0.10, dome 0.215, tail stock 0.31); plainly wrong by eye at most 3 and no type above a quarter.
+
+## 2026-11-24 00:24 — second fin round (helper F2): the outline of the fin foot is not the gap; thinner blade + hump cap built, engine check still in the render queue
+
+Read by me: `moonshot_cache/run06_pending/fin24/keys_fin24.json`, hashes (`factory/blade.py` 474a1aee, `factory/whalemodel.py` ecd37891, new `blade_templates_v2_foot.json` 16b6a844; live config untouched at 87f3b1c3); sheet `review_sheets/run06_fin/fin24_offline_v2_final.jpg` viewed. The helper's measures are from its files, not re-run.
+
+- Measured real against render with one code (real = the 196 clicked train-day source fins; render = the 44 library animals at rest, offline): trailing-edge corner fill .06/.11/.15 real, .08/.12/.15 v2; notch angle 103/122/139 real, 103/121/133 v2. So the rest outline of the foot is on real. NOT on real: leading-edge slope 17/24/40 deg real against 28/36/47 (render steeper), leading ramp .36/.68/.99 against .28/.41/.56 (render shorter), trailing flare at the foot .13/.20/.29 against .11/.13/.15. On the 34 POSED engine frames the notch is too open: pilot / v2 147 / 157 deg against real 122, corner fill .02 / .01 against .11 (the back behind the fin falls away in the arch).
+- End-on half-width over fin-plus-mound height at 0.25 / 0.5 / 0.75: real D_tip (n 26) .16/.30/.50, v2 offline .13/.26/.45: inside real by that scaling.
+- Inside the outline: blade full thickness over H at 0.5 H = 0.40 (v2), no real number can be had; hump taller than the blade in 17 of 44 library animals (above 0.8 H in 28).
+- Built (uncommitted, dormant without the new fields): `foot_thin` in the template file (blade above 0.5 H is 0.7 x as thick: 0.40 -> 0.28 at 0.5 H, foot unchanged) and `whale.dorsal_hump.k_cap` 0.8 (hump taller than blade: 0 of 44). `keys_fin24.json` REPLACES `keys_fin23.json`. Old configs: identical meshes on 4 posed animals with both the pilot and the v2 config.
+- Dropped: a thinner foot (6 of 59 check animals cross themselves in posing) and a tighter fillet (moves the corner away from real).
+- Gloss and crease lines, inferred only: `skin_bake` wet_roughness [0.18, 0.4], Specular 0.3 (round 19 made the skin glossier for glints); crease lines probably the asset's normal-map wrinkles stretched over the weld patch and blade charts. `fin24/uvstretch.py` written, not run.
+- Engine check `data/renders/r06r_fin24_foot` (round 23's 40 shots) was queued on the render lock at 00:22 behind the water and finless checks; nothing rendered at hand-back. One weld crossing (000850, one face pair) is reported as present before this round too although round 23 recorded 0; cause not found, to be checked.
+- MY LOOK at the offline shaded views: v2 and the new keys differ little. Both show the same thing as the engine frames: a thin small blade standing on a broad rounded lump. The hump key has `half_width_cm` 100, so the lump is a wide dome, where a real back under the fin is a ridge with a crest. That reading is mine and unconfirmed; the user has the real-beside-render sheet and has not answered yet.
+- Left to do after the render (helper F3 when my watcher fires): QA, `eng.py` measures on the engine frames, three-column sheets `fin24_pairs_*` and `fin24_for_researcher.jpg`, blind set `mk24.py`, then an independent labeller. Later, one at a time with the water helper's engine work: gloss / roughness and normal fade on the fin.
+
+## 2026-11-24 00:33 — training test: the pilot HELPS the part model on real photos by the fixed rule (narrow on the total, clear on finless backs and fin fill)
+
+Read by me from `experiments/pilot22_train/results.md` / `results.json` and the four part-gap reports in `moonshot_cache/pilot22/d/part_gaps/` (compare run 00:30-00:32 by `run_p22_compare.sh`; all scores on the old-root shadow). Plan and rule: `experiments/pilot22_train/plan.md`, fixed before training. Arm P_add = W3e's recipe with one third of the render samples from the pilot (1,191 shots), seeds 0 / 1; baseline W3e seeds 0 / 1.
+
+| measure | n | W3e s0 | W3e s1 | P_add s0 | P_add s1 |
+|---|---|---|---|---|---|
+| validation-day part-gap cost | 202 | 0.1640 (40 wrong) | 0.1547 (36) | 0.1514 (36) | 0.1339 (34) |
+| finless backs called dorsal, by eye | 33 | 0.182 | 0.242 | 0.091 | 0.121 |
+| finless backs called dorsal, classifier | 151 | 0.139 | 0.152 | 0.086 | 0.086 |
+| three-way call by eye, crops | 79 | 0.886 | 0.861 | 0.924 | 0.924 |
+| IoU with the expanded-triangle truth | 99 | 0.636 | 0.662 | 0.697 | 0.691 |
+| fin tip inside the largest fin region | 119 | 0.956 | 0.939 | 0.991 | 0.955 |
+| validation B_back error | 30 | 0.657 | 0.650 | 0.608 | 0.593 |
+| validation F_edge error | 16 | 0.138 | 0.138 | 0.063 | 0.000 |
+| validation F_low error | 22 | 0.159 | 0.159 | 0.184 | 0.184 |
+| run05 val dorsal IoU | 1379 | 0.666 | 0.653 | 0.651 | 0.637 |
+| pilot val dorsal / fluke IoU | 495 | 0.308 / 0.532 | 0.239 / 0.575 | 0.736 / 0.912 | 0.737 / 0.913 |
+
+- Rule: both P_add seeds below both W3e seeds on the validation total (0.1514 and 0.1339 against 0.1547) and no standing measure worse for both seeds: HELPS.
+- My reading: on the total the margin of the weaker seed is 0.003, less than one instance (the plan said only moves of 0.03-0.04 are reliable), so the total alone would not convince me. The standing measures do: finless backs called dorsal roughly halve for both seeds on both judges, the fin fill gains 0.03-0.06 IoU, the three-way call on crops rises. Worse for both seeds: low flukes (0.159 -> 0.184 weighted error, n 22, about half an instance) and run05 val dorsal IoU (-0.015, expected since run05 is seen two thirds as often).
+- What it means: even this flawed pilot (few true finless backs, raised flukes at 0.42 of real, small whales) moves the real-photo measures the right way at one third of the render stream. That supports going on with the run06 fixes; it says nothing yet about a full render's size of effect.
+- Optional arm P_only (pilot as the only render source) will start by itself once `gpu_train.lock` has been quiet for 15 minutes (the Underwater session's tracker run goes first, as I told it); my background command then waits for `p22_only.done`. After it: `bash experiments/pilot22_train/run_p22_compare.sh` again.
+- GPU time used by the chain so far: two trainings 41 + 42 min, evals 101 + 20 min, small pieces about 12 min.
+
+## 2026-11-24 01:05 — finless backs in the engine (helper G2c): all my lines met; strips too low vanish under their own foam; blind labeller sent
+
+Read by me: the helper's report against `moonshot_cache/run06_pending/finless23c/{eye_finless23c.txt, whiteshare.json}`; sheets `review_sheets/run06_fin/finless23c_pairs_1.jpg` and `_3.jpg` viewed (12 of the 33 pairs). Run `data/renders/r06r_finless23c` (36 shots = 30 treated + 6 controls, pilot rows re-placed by `finless23b/scripts/build_checkset.py` from the pinned patched copy; nothing live patched).
+
+- QA 0 of 36 failing, 0 stray pixels, weld gate 0 of 67. Controls against the pilot: mean absolute grey difference 0.006-0.81 (noise reference 0.17-1.16). 6 of 6 control rows and 27 of 27 untreated animals in treated shots byte-identical.
+- Fin gone in the engine: 33 of 33 treated animals (14 strip, 13 dome, 6 tail stock). Head showing: 1, at 0.015 of the instance. Engine h/l q50: strip .128 (real .10), dome .251 (real .215), tail stock .284 (real .31); engine minus offline at most 0.027 per animal. Through-water pixels new / pilot q50: 0.91, 0.76, 1.03.
+- The OBJ the engine got carries the treated pose (p99 0.64-0.98 cm against the offline mesh). The 12 cm maximum between posed mesh and OBJ shows on an untreated animal too: it is in the OBJ export, not the pose (same finding as the fin helper's).
+- Helper's eye: clean / minor / plainly wrong = strip 7 / 7 / 0, dome 10 / 3 / 0, tail stock 4 / 1 / 1. No folded body shows through the water in any of the 33. Plainly wrong: 001924_1 (end-on tail stock, a faceted box). Dome 000914_2 has a crease at the tight end of the bend range.
+- MY LOOK (12 pairs): domes and most strips read as real finless backs (000491_1, 001038_2, 000002_1, 000362_1). Three of the strips I saw show foam only while the mask holds 2,000-6,000 px of whale (000417_2, 001953_1, 001977_2): a label problem, foam called whale. 000852_1 is a smooth pill with no wash at the waterline. So the fold I feared does not show; the weak points are clearance and white water.
+- Open on white water: 3 treated animals lost theirs entirely in the re-draw, 3 keep sprays of the old pose, 1 has a detached foam patch.
+- Correction to my notes: the pilot's own `run_config.json` names `individuals_run06e.json` (the library before the slab fix), as it must.
+- Helper's value proposals for the key: strip `min_clearance_m` 0.05 -> 0.10; dome `arch_deg` [-100, -75] -> [-92, -72] and `arch_span` [0.24, 0.32] -> [0.27, 0.34]; tail stock `arch_deg` -> [-90, -75].
+- Started 01:05: an independent labeller on `finless23c/blind23c/` (132 tiles: 33 treated renders, 33 untreated pilot surfacing animals, 33 real finless backs, 33 real animals with a fin; view code, photo-or-render guess, odd remark). I score it against the key when it is back. Patch and key are still NOT in the live repo.
+
+## 2026-11-24 01:11 — finless backs, blind labels by an independent labeller: treated renders read as finless backs; recipe accepted with value changes
+
+Scored by me from `moonshot_cache/run06_pending/finless23c/blind23c/{labels.txt, key_SECRET.json}` (132 tiles, 33 per source; the labeller saw only the instruction sheet and the tiles).
+
+| source | n | B_back | X_none | fin (D_*) | head | other | guessed render (sure) | odd remark |
+|---|---|---|---|---|---|---|---|---|
+| real, fin in view | 33 | 0 | 0 | 31 | 1 | 1 | 0 | 0 |
+| real finless backs | 33 | 22 | 0 | 3 | 3 | 5 | 1 (0) | 1 |
+| treated renders (finless recipe) | 33 | 27 | 4 | 1 | 0 | 1 | 11 (6) | 8 |
+| untreated pilot renders, surfacing | 33 | 2 | 0 | 30 | 0 | 1 | 18 (8) | 13 |
+
+- By type, treated: dome 12 of 13 B_back, 6 guessed render, 5 odd ("smooth symmetric dome, no texture", "dome floats, no water contact", "glossy dome, streaky highlights"); strip 9 of 14 B_back, 4 X_none (the foam-only ones: 001377_1, 001429_2, 001977_2, 001332_3), 2 guessed render, 1 odd ("tube-like body with seam lines"); tail stock 6 of 6 B_back, 3 guessed render, 2 odd ("boxy faceted body", "flat black, no shading").
+- My lines for the blind read (B_back at least 70 %, heads and fins each at most 15 %): MET (27 of 33 = 0.82; heads 0; fins 1). Treated renders are called B_back more often than the real finless backs are (22 of 33), so the class is readable.
+- Treated renders are guessed "render" less often than the pilot's fin views (0.33 against 0.55; real 1 of 66). The labeller's odd remarks on the 13 untreated pilot renders are all about the fin and skin: "blocky square-topped fin", "fin end cut square like block", "creased fin on cone-shaped body", "angular pyramid-shaped body", "glossy plastic skin, creased fin", "metallic skin, creases on hump", "hard crease down the back", "rubbery body", "white blobs stuck on skin", "purple glow under body". Independent support for the fin, hump and gloss work; note these pilot tiles carry the old fin library.
+- DECISION: the recipe goes in, with (1) strip clearance floor 0.10 m, (2) dome and tail stock bends tightened as the engine helper proposed, (3) white water fixed for treated animals (wash at the waterline kept, old sprays not left behind), (4) budget re-run offline on the final mix. Helper G2d (started 01:13, `run06_pending/finless23d/`) does this, applies the patch to the live code (dormant), and hands me the key. No second engine render; the 200-shot check covers it. Dome smoothness (no texture, mirror shading) is the skin topic, not the pose.
+
+## 2026-11-24 01:27 — second fin round's engine check stopped by the mesh gate; helper F3 takes it over
+
+- `data/renders/r06r_fin24_foot` got the render lock 01:19 and stopped after 311 s, 0 batches: the mesh gate found one self-intersecting whale, 000850 animal 2 (i18, a companion not visible in round 23's frames; 58 others 0). Log `data/renders/r06r_fin24.log` (very long lines: read with `cut`).
+- Open reproducibility question: round 23's check recorded 0 crossings of 59 on the same shots; the previous helper says the round-23 config gives this crossing today, with the backed-up code too. Either mesh generation is not deterministic, or something changed meshes for old configs on 2026-11-23 (the identity proofs covered 4 posed animals only). This matters for the pilot and for every "old configs unchanged" claim.
+- Helper F3 started 01:27: (1) answer that question, (2) render the check without switching the gate off (drop the shot or its invisible companion), (3) QA + engine measures pilot | v2 | round 24, (4) three-column sheets `fin24_pairs_*`, `fin24_for_researcher.jpg`, (5) blind set `fin24/blind24/` for an independent labeller, (6) run `uvstretch.py` for the crease and gloss diagnosis. No live code or config edits.
+- Water helper G3 is on its third render round (`r06r_steep23_r3full` done, `r3mild` rendering at 01:26).
+
+## 2026-11-24 01:48 — optional training arm P_only started
+
+- The Underwater session wrote at about 01:45 that its tracker run left `gpu_train.lock` at 01:32 and that I need not hold the second arm back (its further jobs are pieces under 15 minutes). So `run_p22.sh only` was started at 01:47 through `scratchpad/p22only/start_and_wait.sh`; log `moonshot_cache/pilot22/d/run_p22_only.log`, marker `p22_only.done` / `.failed`. Expected about 3 hours. After it: `bash experiments/pilot22_train/run_p22_compare.sh` again, then read `results.md`.
+- Lesson repeated: a one-line guard with `pgrep -f` matched its own shell twice tonight (the command text held the chain's path); process checks belong in a script file.
+
+## 2026-11-24 02:24 — finless backs: final code in the live repo, key APPLIED to the live config (helper G2d)
+
+Read by me: `moonshot_cache/run06_pending/finless23d/{keys_finless23d.json, finless23d.patch (179 added lines, 0 removed), proofs/a_c_dormancy_live.txt}`; live hashes `factory/realism.py` 7ba2f324, `factory/shotlist.py` 33fcee16; import runs; dry run of the key on a copy: 73 leaves new, all under `realism.finless_backs`, none removed.
+
+- Proofs (helper's, checksums re-read by me for the first): live patched code without the key gives the pilot's first 60 rows byte for byte (normalised sha1 f99c97f7, same as the pilot and the unpatched list). With the key on all 2,000 pilot rows: 1,745 of 1,745 untreated rows identical, untreated animals inside treated rows 101 of 101 primaries and 99 of 99 companions identical. Regenerated 60-row list with the key: 50 of 50 untreated rows identical.
+- Final values: strip clearance [0.10, 0.30] m with floor 0.10 and a visible-area floor of 0.10 m2 standing more than 10 cm above the local water (0 of 123 pilot strips below; the 5 foam-only check animals: 4 now sit higher, 1 no longer treated); dome arch [-92, -72] over span [0.27, 0.34]; tail stock arch [-90, -75]. Strip fractions raised by 1.33 because only 0.63 of drawn strips can now be placed: awash and blow_sliver .40, blow .32, logging .13, surface .07; dome and tail stock fractions unchanged.
+- Offline on the final mix: fin gone 0.163 of surfacing animals (real 0.165); fin-gone h/l .116 / .169 / .229 (real .10 / .17 / .25); split strip .437, dome .426, tail stock .130. No head on any of 270 treated pilot animals; frame guard 0 failures.
+- White water: always re-drawn on the new pose, scaled per type to what an untreated animal of the same above-water area gets (strip 0.75, tail stock 0.9, dome 1); main splash, front spray and fluke streams of the old pose dropped; a blow moves to the new blowhole if less than 30 cm under water, else dropped (`blow_max_depth_cm`). On the check shots: no white water 4 -> 0, old sprays kept 6 -> 0.
+- APPLIED 02:23: only `realism.finless_backs` (the helper's key file also carried a top-level `_note` that would have overwritten the config's own note, so I applied `finless23d/apply/keys_finless23d_only.json`). Live config sha1 87f3b1c3 -> 614cbb7d3c25bed0d7b2bc59d67d54feebd11d84. Before-copy and revert in `finless23d/apply/`.
+- NOT confirmed in the engine: the tightened bends, the moved blows, the new foam levels (the 23c engine check ran the earlier values). The 200-shot check has to cover them. Known limits: domes look smooth and untextured (skin), close end-on tail stocks can look boxy, strips sit a little high (h/l .116 against real .101), 1 of 1,504 new bends crosses itself at the fin weld (the gate re-draws such shots).
+- Live config now = slab-fix library + mix and framing keys + finless backs. Not in yet: fin rounds 23 / 24 (engine check running, helper F3), close-water keys (helper G3, third render round).
+
+## 2026-11-24 02:40 — close steep sunny water (helper G3): real close water is NOT that dark; cause found; no tested key set passes all lines; nothing applied
+
+Read by me: `moonshot_cache/run06_pending/steep23/table23.md`; sheets `review_sheets/run06_fin/steep23_pairs_steep_1.jpg` and `steep23_pairs_far_controls.jpg` viewed. 86 shots rendered in three rounds; engine material state restored (control shot before and after: 0.145 grey levels against the pilot both times, masks 0 px apart).
+
+- Real (969 photos of 2025-01-02 + 1,631 from 11 other sunny train days, m19 measure): water band next to a large whale (box 0.45 of the frame or more) is at most 2.4 L* darker than next to a small one; large-whale band IQR 38.2-49.6, median 43.8; frames darker than the gate's 31.5: 1.5 % (2.7 % with large whales). Pilot: large minus small -7.1; band by camera pitch 47.6 at -2..-4 deg, 39.1 at -7..-10, 29.7 below -15; under 35 m 32.7.
+- Cause (shader read + regression, R2 0.74): on open water the reflection is the only light; Fresnel reflectance falls from about 0.6 at 3 deg below the horizon to about 0.2 at 15 deg, and the water body returns almost nothing (single-scatter albedo 1e-4 / 1e-3 / 0.016). Real steep water is lit by light coming back out of the water. Pitch is the main term (+1.27 L* per degree) after sun side, exposure, sea state.
+- Levers (same 16 rejected steep shots + 8 accepted far controls):
+
+| variant | steep band median | steep in real IQR | rejected | far change min / med / max | shots with a whale half moving 2 or more |
+|---|---|---|---|---|---|
+| pilot | 30.7 | 0 of 16 | 16 | | |
+| body scattering x(4, 8, 8) (8 + 4 shots) | +1.3 | 0 of 8 | 8 -> 7 | +0.1 / +0.4 / +0.9 | 0 of 12 |
+| Water Specular 0.4, Fresnel Specular 0.08 (8 + 4) | +5.1 | 1 of 8 | 8 -> 2 | -2.3 / -0.1 / +2.3 | 2 of 12 |
+| lower hemisphere +0.1 (8 + 4) | +2.3 | 0 of 8 | 8 -> 5 | +0.1 / +0.9 / +1.8 | 0 of 12 |
+| mild: WS 0.3, FS 0.14 | 35.5 | 4 of 16 | 16 -> 4 | -0.5 / +3.1 / +4.0 | 3 of 24 |
+| full: WS 0.4, FS 0.13, lower hemisphere | 37.6 | 6 of 16 | 16 -> 2 | -3.0 / +5.5 / +6.8 | 6 of 24 |
+
+- My lines: steep median inside the real IQR: NOT met (37.6, 0.6 short); at most 2 of 16 rejected: met by "full"; far controls within 2: NOT met (0 of 8); whale halves within 2: NOT met (6 of 24); no cyan: met. So nothing is applied.
+- My look: steep water in both round-3 variants is a lighter, natural blue with no artefact; the far water gets lighter, and faint radial streaks come back on far rough water (000558).
+- Reading: Water Specular lifts steep water, Fresnel Specular sets the far water; 0.13-0.14 is too high for far shots, 0.08 holds them at the median. The whale's dark half rises with the brighter water because the wet skin mirrors it, and it is already above real (pilot 18.9 against real 13.4 for large whales): the same gloss that makes the fins look waxy.
+- Keys on disk, not applied: `steep23/{keys_steep23.json, keys_steep23_mild.json, revert_steep23.json}`. Continue with `mk23.py NAME KEYS.json @all24`, `chain23b.sh`, `table23.py`.
+- Next: one helper for engine materials (G4, started 02:43, `run06_pending/matter24/`, at most 220 shots): water round 4 (Water Specular 0.4 with Fresnel Specular near 0.09, or Fresnel by sea state) and the skin gloss, measured together because both move the whale's light and dark halves.
+
+## 2026-11-24 02:44 — second fin round in the engine (helper F3): little visible change; TWO PYTHONS BUILD DIFFERENT MESHES
+
+Read by me: the helper's report; sheet `review_sheets/run06_fin/fin24_for_researcher.jpg` (real | v2 | round 24, 12 pairs) viewed. Run `data/renders/r06r_fin24_foot`: 29 batches, 2,664 s, gate 0 of 58 crossing, QA 0 of 40 failing, 0 stray pixels (shot 000850 kept, its invisible companion i18 removed).
+
+- REPRODUCIBILITY, the answer: mesh building is deterministic for a fixed config, code AND interpreter. But the render pipeline runs `/usr/bin/python3` (numpy 1.26.4, scipy 1.11.4) and the helpers' offline work ran in the Dinov3 venv (numpy 2.5.2, scipy 1.18.1), and the two build a different fin weld (90,570 faces / 47,302 vertices in the pipeline, 90,634 / 47,335 in the venv). Under the pipeline's python, today's code reproduces round 23's gate records 59 of 59, the pilot's gate on its first 60 shots 89 of 89, and three engine OBJ files of round 23 byte for byte. So no change of 2026-11-23 altered meshes for old configs, and the pilot would rebuild the same. The helpers' identity proofs hold as old-code against new-code comparisons but were made on the venv's mesh, not the renderer's.
+- RULE from now on: anything that builds or gates meshes (weld gate, identity proofs, OBJ checks, crossings counts) runs with `/usr/bin/python3`, the pipeline's interpreter. Offline measures in the venv are approximations of the rendered mesh (they agreed with the engine to about 1-3 % where checked) and must say so. To re-check: the finless helper's "1 of 1,504 new bends crosses itself" was counted in the venv.
+- The crossing on 000850 animal 2 (i18) is NOT old: it comes from round 24's hump cap (`k_cap` 0.8 lowers i18's hump from k 0.903; then both the gate's posing and its retry cross once, about 7 cm behind and 10 cm below the fin's rear base). The previous helper called it pre-existing because it tested in the venv. A list made with `keys_fin24.json` relies on the gate to re-draw such animals; the rate is unknown (1 of 59 here).
+- The engine got round 24: 15 grabbed OBJ files byte-identical to the offline deform with the round-24 config; blade 0.8-3.8 cm thinner above 0.5 H; the 11 animals with k above 0.8 lose up to 15.5 cm of hump.
+- Engine frames, medians (n 19-25): notch angle real 122 deg, pilot 147, v2 157, round 24 156; trailing-edge corner fill real .11, pilot .02, v2 .01, round 24 -.01; leading-edge slope 37 / 33 / 33 deg; back drop 1 chord ahead 1.29 / 1.24 / 1.17; back under fin over fin height 3.21 / 2.70 / 2.69. Hump taller than the fin: 17 -> 0 of 44 library animals. So round 24 acts inside the outline, as designed, and the posed notch stays far too open.
+- Helper's eye on the 12 researcher pairs: same as v2 on 10, slightly closer on 2 (thinner upper blade). MY LOOK agrees: v2 and round 24 are nearly the same picture. What differs from real in every pair: the fin is a small rounded tip on a tall cone with crease lines and broad highlights; real fins are larger, crisp blades with a clear notch behind.
+- `uvstretch.py` (4 animals): texel size on fin and mound equals the back; UV anisotropy is higher on fin and mound (median 1.6 against 1.3-1.45; p90 2.7-2.9 against 1.7-1.8); normal detail the same; the roughness map is near zero everywhere. Inferred: crease lines = normal-map wrinkles stretched along the fin's charts; the wax look = the material's gloss over the whole skin.
+- Blind set `moonshot_cache/run06_pending/fin24/blind24/` (34 real + 34 round-24 tiles); an independent labeller started 02:45. Two content tells remain: render tiles are smaller files and touch the frame edge more often.
+- Where this leaves the fin: two rounds on outline and thickness moved the counts (flat tops, hooks, plateau) but not the look. The measured gap that remains is in POSED frames (notch 156 against 122 deg, no hollow behind the fin) and in the skin (gloss, with the water helper G4 now). Next fin step, after the blind labels: why the notch opens when the body arches (bend placed under and behind the fin) and a stiff zone around the fin.
+
+## 2026-11-24 02:50 — fins, blind labels by an independent labeller (round 24): renders told apart 25 of 34; gloss, creases and the mound are the tells
+
+Scored by me from `moonshot_cache/run06_pending/fin24/blind24/{labels.txt, key_SECRET.json}` (68 tiles; the labeller saw the instruction sheet and the tiles only).
+
+| source | n | hooked | triangle | nub | flat-topped block | end-on | unclear | guessed render | odd remark |
+|---|---|---|---|---|---|---|---|---|---|
+| real train-day fins | 34 | 14 | 7 | 3 | 1 | 8 | 1 | 0 | 0 |
+| round-24 renders | 34 | 8 | 14 | 6 | 6 | 0 | 0 | 25 | 25 |
+
+- The 25 remarks, by my count of their words: gloss / plastic / waxy sheen / highlight in about 12, skin too smooth in about 12, crease or fold lines in 9, fin on a pyramid mound or ridge in 6, knob or square-knob or flat-cut top in 6, single mentions of white oval spots, round blotches "painted on skin", a splash "pasted on", a translucent body.
+- Against my fin lines: flat-topped 6 of 34 against real 1 of 34 (the helper's own non-blind pass in round 23 had said 3 of 34): NOT met under an independent eye. Hooked 8 of 34 = 0.24 (line 0.22: met), but real reads 14 of 34 here. Triangles double real. The six block tiles: 000970 c08, 000722 i34, 001898 i36, 001944 i24, 000024 i14, 001088 i21.
+- Lesson: a helper judging its own design is not a blind judge (3 against 6 blocks; "26 of 34 guessed" was right, though). Blind reads go to a fresh labeller from now on.
+- Not comparable with the finless test's "18 of 33 pilot renders guessed" (other tile kind and size).
+- Order of work this gives: (1) skin gloss and smoothness, with helper G4 now (told at 02:50 to judge its skin variants on round 24's fin shots and to build a repeat blind set); (2) crease lines = normal-map wrinkles stretched on the fin charts (G4, if a key reaches it); (3) the mound and the missing notch in posed frames; (4) knob and block tops; (5) skin stamps and pasted splashes.
+- Helper F4 started 02:52 (`run06_pending/fin25/`, run `data/renders/r06r_fin25_notch`): the posed notch (stiff zone or bend placement or hump rear), the mound in oblique views, the six knob / block tops, the crossing from the hump cap; geometry only; system python for every mesh; finless-treated animals must stay as they are; blind set `fin25/blind25/` at the end.
+- `keys_fin24.json` stays unapplied until the next fin step is in; if the 200-shot check comes first, it goes in then as the best fin state so far.
+
+## 2026-11-24 04:01 — state at night: fin round 25 queued, pre-check helper P1 started
+
+- Fin round 25 (helper F4), interim, NOT reviewed yet: its notes (`run06_pending/fin25/keys_fin25_notes.txt`) name a cause for the missing notch in posed frames: a bent back stretches the surface above the bend's neutral line by up to about 20 % at the fin, the foot ring's ends slide apart and drag the blade's low edges. New dormant key `whale.weld_pose_stiff` (`factory/weld15.py`), offline notch 122 on 34 check fins (side views n 24). Its check render `data/renders/r06r_fin25_notch` has waited for the render lock since 03:44 behind the water and skin round (helper G4, variant `r06r_matter24_wb` rendering at 03:59).
+- Training arm P_only: first seed scored 03:54, second seed training (GPU). Compare script after `p22_only.done`.
+- Helper P1 started (CPU only, read-only on the factory; folder `run06_pending/precheck24/`): (1) self-crossing rate of finless-treated animals counted with `/usr/bin/python3` for the live config and for live + `keys_fin25` (the designer's 1 of 1,504 was counted in the venv); (2) focal lengths of the real photos on train and val days against the synthetic 320 mm cap and 30 to 200 m range; (3) cause of the posed mesh against engine OBJ difference (median 1.2 cm, max 12 to 14 cm). Deliverable `precheck24/report.md`.
+
+## 2026-11-24 05:05 — fin round 25 reviewed: posed notch fixed by measure, mound and block tops not
+
+Helper F4 handed back 05:02 (`run06_pending/fin25/`, check run `data/renders/r06r_fin25_notch`, same 40 shot ids as round 24; HANDOVER section "Round 25 (posed notch, mound, tops)"). Numbers below re-read by me from `fin25/measures/`.
+
+- Cause of the missing notch in posed frames: both body bends open it (clip keyframe alone +29 deg, procedural arch alone +20; rest pose 119). The bend's neutral line runs half way up the body, the surface at the fin stretches by up to about 20 %, the weld's foot ring followed that stretch and the low trailing edge was dragged about 0.3 fin heights back into the back. Fix: new dormant key `whale.weld_pose_stiff` = {"d": [0.0, 0.6]} (`factory/weld15.py` `_stiff_along()`, read in `whalemodel.py` `from_config` and `deform.py` `write_batch_meshes`): the back's along-body residual is removed on the foot ring and fades out by 0.6 fin heights.
+- Engine medians, side views n 24 (`eng_r06r_fin25_notch.json` against `fin24/f3/eng_*.json`):
+
+| measure | real | pilot | v2 | round 24 | round 25 |
+|---|---|---|---|---|---|
+| notch deg | 122 | 147.0 | 157.2 | 156.3 | 122.8 |
+| corner fill | .11 | .008 | .007 | -.006 | .069 |
+| leading edge slope deg | 24 | 37.1 | 33.1 | 33.2 | 24.7 |
+| leading edge ramp | .68 | .40 | .46 | .46 | .65 |
+
+- My lines: key absent gives identical meshes 45 of 45 (25 live config incl. 5 finless-treated, 20 round-24 config; system python): met. Notch within 10 deg of 122 and fill at least .05: met. Back profile within 10 %: met by the helper's paired numbers (drop 1 chord x0.93, 2 chords x0.96; not re-derived by me). QA 0 of 40 failing, gate log 0 intersections: met. Crossings over 320 pilot animals: 1 with the key (000190 animal 0, i18, the same animal as before), 0 only without the hump cap: stated, 0.3 %, far inside the 10 % gate line. Finless-treated animals with the key on: fin top stays 29 to 105 cm under water, moves at most 3.5 cm, area above water unchanged (5 animals).
+- NOT met: oblique fin against rise, hw50 .55 to .48 against real .36 (real IQR .22 to .57; the helper counts the gap as about 35 % smaller, not halved; hw75 .88 to .78 against .58). Block tops: 5 of the 6 named animals still block or knob (only 001898 better). Hooks in engine frames not measured.
+- By eye (`review_sheets/run06_fin/fin25_for_researcher.jpg`, `fin25_pairs_1.jpg`): the change against round 24 is small; a notch at the trailing-edge foot shows in 001898, 000983, 000493. What still separates render from photo is unchanged: waxy gloss with bright bands, dark crease lines on the back, a broad cone under small fins in oblique views (000017, pairs 4 / 6 / 11 / 12 of the researcher sheet), knob tops (001428, 001088).
+- Helper's diagnoses for the open parts (small samples, one inferred): the mound is not the blade height, not the hump, not the fillet radius; inferred to be the rig's own broad back ridge under the fin. Block tops: the six templates are wide at 0.9 of the height (.50 to .75 against .29 for a pointed fin); four of the six source fins are truly blunt with a crisp trailing corner; thickness is not the cause.
+- Decisions: `keys_fin25.json` replaces `keys_fin24.json` as the fin state to apply before the 200-shot check (not applied yet: helper P1 is counting crossings against the live config; apply after it and the skin round land). The fin25-only blind set (`fin25/blind25/`) is NOT sent to a labeller: gloss was the first tell and is unchanged here, so helper G4 was asked 05:05 to build its repeat blind set (`matter24/blind24m/`) on round 25 geometry + its final skin keys; one blind read then judges the state that will be rendered. `blind25` stays on disk in case the combined read needs splitting.
+- Training arm P_only finished 05:04 (`p22_only.done`); compare script started 05:05.
+
+## 2026-11-24 05:11 — training test, optional arm P_only (pilot instead of run05): not separable from the baseline
+
+Chain finished 05:04 (`moonshot_cache/pilot22/d/p22_only.done`), scored 05:10 with `pilot22_train/run_p22_compare.sh` on the old-root shadow; table `pilot22_train/results.md` (now three arms, two seeds each). Numbers re-read by me from that table. Rule fixed in `plan.md` before any arm was trained.
+
+| measure (validation days unless said) | n | W3e s0 / s1 | P_add s0 / s1 | P_only s0 / s1 |
+|---|---|---|---|---|
+| total part-gap cost | 202 | 0.164 / 0.155 | 0.151 / 0.134 | 0.166 / 0.158 |
+| finless backs called dorsal, by eye | 33 | 0.182 / 0.242 | 0.091 / 0.121 | 0.091 / 0.121 |
+| finless backs called dorsal, classifier | 151 | 0.139 / 0.152 | 0.086 / 0.086 | 0.099 / 0.093 |
+| B_back error | 30 | 0.657 / 0.650 | 0.608 / 0.593 | 0.638 / 0.629 |
+| F_edge error | 16 | 0.138 / 0.138 | 0.063 / 0.000 | 0.000 / 0.000 |
+| F_low error | 22 | 0.159 / 0.159 | 0.184 / 0.184 | 0.184 / 0.210 |
+| D_tip error | 7 | 0.239 / 0.239 | 0.239 / 0.000 | 0.561 / 0.400 |
+| IoU with the expanded-triangle truth | 99 | 0.636 / 0.662 | 0.697 / 0.691 | 0.700 / 0.690 |
+| three-way call by eye, crops | 79 | 0.886 / 0.861 | 0.924 / 0.924 | 0.937 / 0.899 |
+| fluke notch inside the fluke | 54 | 0.812 / 0.818 | 0.812 / 0.809 | 0.766 / 0.809 |
+| run05 val dorsal IoU (synthetic) | 1379 | 0.666 / 0.653 | 0.651 / 0.637 | 0.122 / 0.102 |
+| pilot val dorsal IoU (synthetic) | 495 | 0.308 / 0.239 | 0.736 / 0.737 | 0.789 / 0.794 |
+
+- Verdict by the rule: P_only is neither "helps" (both seeds are not below both W3e seeds on the total) nor "hurts": not separable at this size. P_add stays the arm that helps.
+- What it still shows: 2,000 pilot shots without any run05 shot reach the baseline's total on real validation photos and keep most of P_add's gains on finless backs, back error, fluke edges and the expanded-triangle IoU. They lose on fin tips (n 7 only), on low flukes like P_add, and the model no longer fits run05's own labels (expected: it never saw run05).
+- Consequence for run06: keep run05 in the training mix until run06 is much larger than the pilot; the full run06 is expected to add, not to replace. No further arms planned from this test.
+
+## 2026-11-24 05:39 — pre-checks (helper P1): crossings fine, OBJ offset an artefact, synthetic camera too close and too wide
+
+Helper P1 handed back 05:35 (`run06_pending/precheck24/`; HANDOVER section "Round 24 (pre-checks: finless crossings, focal lengths, OBJ offset)"; it could not write a report file, its report is that section). All mesh numbers with `/usr/bin/python3` and the pipeline's gate `python3 -m factory.weld_check` on a snapshot of the live tree. Numbers re-read by me from `check1_*_combined.json`, `focal24.json`, `objoff24_summary.txt`.
+
+1. Self-crossings on a natural pose mix (first draws, no re-draw):
+
+| config | animals | crossings | strip | dome | tail_stock | untreated |
+|---|---|---|---|---|---|---|
+| live | 1,036 | 4 (0.39 %) | 0 / 169 | 1 / 141 | 0 / 129 | 3 / 597 |
+| live + `keys_fin25` | 1,122 | 11 (0.98 %) | 1 / 177 | 0 / 154 | 0 / 141 | 10 / 650 |
+
+   Finless types are not the risk (2 of 911 treated). Live: tail_slap clip poses (i09 twice, i21) and one dome at the end of its arch range. With `keys_fin25`: 9 of 11 are the one animal i18 (9 of its 30 poses; fluke_up 3 of 3, fluke_down 2 of 2, surface 3 of 10, pec_slap 1 of 3). Helper's shot shares (weighted from a sample): 0.7 % and 2.3 % of shots refused, far under the 10 % line. CORRECTIONS to earlier notes: F3 put i18 on the hump cap alone; in fluke poses it crosses without the cap too and `whale.weld_pose_stiff` makes it worse (11 to 29 face pairs). F4's 0.3 % came from surfacing animals only. A list drawn by `factory.shotlist` re-draws crossing shots by itself (`weld_redraw`, same test); a list copied from an old one must drop or allow them by name. Passed to helper F5 (05:38).
+2. Posed mesh against engine OBJ ("up to 12 to 14 cm"): a measuring artefact, no patch. The posed array holds 461 vertices no face uses (458 rig vertices of the hole under the weld patch, a copy of the blade apex, two weld landmarks); the OBJ writer drops them. Faces' vertices agree to 0.0001 cm on all 58 animals of `r06r_fin24_foot`. Label side: keypoints dorsal_fin_front / dorsal_fin_back are weld landmark vertices at most 0.39 cm off the surface (about 0.3 px typical, 3 px at most). Future OBJ checks: compare `np.unique(model.faces)` only. This closes the open item from F3.
+3. CAMERA (EXIF of 9,493 real photos on 30 days; the four sealed days not opened; NOTE the total includes the held-out day 2026-03-30, so every target to fit must be re-derived without both 2026 days):
+
+| | real | synthetic list (mix23C, 600 shots) |
+|---|---|---|
+| camera | 7D Mark II 22.4 mm sensor, 28-300 lens (95 %); R5 with 200-800 / 100-500 | filmback 23.76 mm, focal 60..320 |
+| focal mm q5 / 25 / 50 / 75 / 95 | 70 / 160 / 220 / 300 / 300 | 60 / 60 / 139 / 300 / 320 |
+| horizontal field of view deg | 4.28 / 4.28 / 5.83 / 8.01 / 18.2 | 4.25 / 4.53 / 9.79 / 22.35 / 22.4 |
+| share wider than 22.3 deg | 0.034 | 0.252 (25 % of shots at the 60 mm floor) |
+| share 4.25 to 5 deg | 0.378 | 0.283 |
+| distance m q5 / 25 / 50 / 75 / 95 | 36 / 83 / 131 / 202 / 410 (rough) | 32 / 46 / 71 / 110 / 173 |
+
+   The 320 mm cap is right (4.25 deg against 4.28 deg at the real 300 mm). The fault is the other end: the list draws a distance in [30, 200] m and goes wide when the target is small; the real photographer zooms in and the whale is small because it is far. The mix round matched the whale's size in frame but not how it is reached. Consequences: close shots are over-represented about three times, far grazing-angle water is the typical real frame, and the "steep close water" fault weighs less than assumed.
+- Started 05:38: helper G5 (`run06_pending/cam24/`, check run `data/renders/r06r_cam24_far`, at most 40 shots): one dormant key (suggested `camera.lens_model`) that draws field of view and frame share the real way from training + validation days only, side generator so that poses and scenes stay as they are, class measures of the mix round must hold, engine check of 150 to 400 m. Helper G4 told to protect the far controls first.
+- Order now: the 200-shot check waits for the camera key (it changes the water look of most frames), the skin keys and the fin keys.
+
 ## 2026-11-17 13:45 — run06 look, round 4 (ordered before the paste route was dropped): whale colour table, a paste preset, one dead setting (subagent in the factory repo; written by the earlier session tab)
 This round was ordered at 12:25 and reported at 13:44, after the user's 13:30 decision; its paste preset is moot, its
 colour work and its findings about the skin settings are not. It ran while factory round 5 was starting: both

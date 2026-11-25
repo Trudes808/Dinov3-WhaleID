@@ -15,7 +15,7 @@ q() { grep -v -i "warn\|_check_multiprocessing\|nanmean"; }
 [ -f "$D/safe/photos.json" ] || { step "safe_clusters features"; $PY -m model_fine_tuning.cluster.safe_clusters features --day-dir "$D" 2>&1 | q | tail -2; }
 [ -f "$D/safe/inst_feat.npz" ] || { step "link_scores instances"; $LOCK $PY -m model_fine_tuning.cluster.link_scores instances --day-dir "$D" 2>&1 | q | tail -2; }
 [ -f "$D/safe/not_whale.json" ] || { step "not-whale"; $PY -m model_fine_tuning.cluster.link_scores not-whale --day-dir "$D" 2>&1 | q | tail -2; }
-[ -f "$D/safe/clusters.json" ] || { step "safe clusters"; $PY -m model_fine_tuning.cluster.safe_tracklets cluster --day-dir "$D" --model experiments/safe_clusters/safe_model.pkl --threshold 0.995 --strict --cost 1.5 --skip 3 --filter 2>&1 | q | tail -3; }
+[ -f "$D/safe/clusters.json" ] || { step "safe clusters"; $PY -m model_fine_tuning.cluster.safe_tracklets cluster --day-dir "$D" --model experiments/safe_clusters/safe_model.pkl --threshold 0.995 --strict --cost 1.5 --skip 3 --filter --guard-fused 2>&1 | q | tail -3; }
 [ -f "$D/safe/view_feat.npz" ] || { step "view_class features"; $LOCK $PY -m model_fine_tuning.cluster.view_class features --day-dir "$D" 2>&1 | q | tail -2; }
 [ -f "$D/safe/view_class.json" ] || { step "view_class predict"; $PY -m model_fine_tuning.cluster.view_class predict --day-dir "$D" 2>&1 | q | tail -2; }
 [ -f "$D/safe/view_match.npz" ] || { step "view_match embed"; $PY -m model_fine_tuning.cluster.view_match embed --day-dir "$D" 2>&1 | q | tail -2; }

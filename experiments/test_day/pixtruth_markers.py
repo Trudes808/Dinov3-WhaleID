@@ -6,10 +6,9 @@ pixel truth, from the label PNGs. Describes the day; nothing is fitted or tuned 
 
 Marker definition (the researcher, 2026-11-21): a rail + tape marker is a deliberate close-up where the rail takes up the
 whole photo, the tape is prominent and there is no whale; the tape colour describes the animal of the series just before
-(red = female in a group or the mother with a calf, green = male in a competitive group or the escort, blue = calf; yellow
-not explained yet). A rail with tape seen small in a busy photo is an accidental picture of the railing, not a marker.
-Bollard (bow cleat) close-ups mark that the fluke just photographed is an opportunistic one of another animal, not the
-series' animal. Land shots mark that the boat switches to another group.
+(red = female in a group or the mother with a calf, green = male in a competitive group or the escort, blue = calf; yellow = a challenger or joiner to the group; meanings final from the researcher via the user, 2026-11-22). A rail with tape seen small in a busy photo is an accidental picture of the railing, not a marker.
+Bollard (bow cleat) close-ups mark that the animal just photographed is a passer-by / opportunistic animal, not part of that
+group (the catalogue files such animals as "<day>_Onn"). Land shots mark that the boat switches to another group.
 refers_to (rail and bollard markers): the whale photos before the marker, walking back past the marker's own run of
 consecutive markers, until the previous marker or a gap of more than 60 s between consecutive photos.
 """
@@ -26,7 +25,7 @@ from PIL import Image
 
 W, H = 2748, 1835
 MEANING = {"red": "female in a group, or the mother with a calf", "green": "male in a competitive group, or the escort",
-           "blue": "calf", "yellow": "unknown (not explained yet)"}
+           "blue": "calf", "yellow": "challenger or joiner to the group"}
 KIND = {"marker_rail": "rail", "marker_land": "land", "bow": "bollard"}
 
 
@@ -55,7 +54,7 @@ def main() -> None:
         f = pixel_facts(np.asarray(Image.open(labdir / f"{s}.png"))) if s in sample else None
         col = colour.get(s, "").split(" ")[0] if k == "rail" else ""
         meaning = (MEANING.get(col, "unknown") if k == "rail" else "the boat switches to another group" if k == "land"
-                   else "the fluke just photographed is an opportunistic one of another animal, not the series' animal" if k == "bollard" else "")
+                   else "the animal just photographed is a passer-by / opportunistic animal, not part of that group (catalogue <day>_Onn)" if k == "bollard" else "")
         refers = []; far = ""
         if k in ("rail", "bollard"):
             j = i - 1

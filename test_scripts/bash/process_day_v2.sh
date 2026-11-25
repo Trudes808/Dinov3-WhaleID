@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # Process one day of RAW photos with the run04 models and the CSE map (2026-10-18):
+# (mask switch 2026-11-20: the whale mask is the candidate S6h = seg_splash_s6 last.pt + hysteresis 0.6 / 0.1;
+#  rule F in canon.predict is on; SEG_FALLBACK=0 turns it off)
 #   images (RAW -> jpg + EXIF index) -> segmentation + crops + direct rotation (canon.predict: seg_r04_ft4 + canon_r0304_ft4)
 #   -> CSE map in the canon layout (predict_cse --as-canon, cse_r04_ft2) -> gated part charts -> timestamps
 # Usage: process_day_v2.sh "SRC_DAY_DIR" OUT_ROOT     (the day folder name starts with YYYY-M-D; output OUT_ROOT/<ISO day>/)
@@ -9,9 +11,9 @@ SRC="${1:?day folder}"; ROOT="${2:?output root}"
 NAME="$(basename "$SRC")"; DATE="${NAME%% *}"; IFS=- read -r Y M D <<< "$DATE"; DAY=$(printf "%04d-%02d-%02d" "$((10#$Y))" "$((10#$M))" "$((10#$D))")
 OUT="$ROOT/$DAY"; mkdir -p "$OUT"
 PY=.venv/bin/python; export PYTHONPATH=.
-SEG=experiments/seg_r04_ft4/checkpoints/best.pt; CANON=experiments/canon_r0304_ft4/checkpoints/best.pt; CSE=experiments/cse_r04_ft2/checkpoints/best.pt
+SEG=experiments/seg_splash_s6/checkpoints/last.pt; SEG_OPTS="--hysteresis 0.6,0.1 $([ "${SEG_FALLBACK:-1}" = 0 ] || echo --use-fallback)"; CANON=experiments/canon_r0304_ft4/checkpoints/best.pt; CSE=experiments/cse_r04_ft2/checkpoints/best.pt
 echo "== $DAY: images"; [ -f "$OUT/images/index.jsonl" ] || $PY test_scripts/python/convert_raw.py "$SRC" "$OUT/images" --long-side 2560 --workers "${RAW_WORKERS:-10}" > "$OUT/images.log" 2>&1
-echo "== $DAY: segmentation + crops"; [ -f "$OUT/canon/points.jsonl" ] || $PY -m model_fine_tuning.canon.predict --seg-checkpoint $SEG --checkpoint $CANON --images "$OUT/images" --out "$OUT/canon" --max-side 1280 > "$OUT/canon.log" 2>&1
+echo "== $DAY: segmentation + crops"; [ -f "$OUT/canon/points.jsonl" ] || $PY -m model_fine_tuning.canon.predict --seg-checkpoint $SEG --checkpoint $CANON --images "$OUT/images" --out "$OUT/canon" --max-side 1280 $SEG_OPTS > "$OUT/canon.log" 2>&1
 echo "== $DAY: CSE map"; [ -f "$OUT/cse/points.jsonl" ] || $PY -m model_fine_tuning.canon.predict_cse --checkpoint $CSE --canon-dir "$OUT/canon" --images "$OUT/images" --out "$OUT/cse" --overlays 0 --as-canon > "$OUT/cse.log" 2>&1
 echo "== $DAY: part charts"; [ -f "$OUT/parts/index.jsonl" ] || $PY -m model_fine_tuning.cluster.parts --index "$OUT/images/index.jsonl" --canon-dir "$OUT/cse" --out "$OUT/parts" --size 512 --workers 10 --fluke-min-fraction 0.3 --fin-min-fraction 0.03 2>&1 | grep -v -i "warn\|_check_multiprocessing" | tail -1
 echo "== $DAY: timestamps"; [ -f "$OUT/timestamps.json" ] || $PY - "$OUT" <<'PYEOF'

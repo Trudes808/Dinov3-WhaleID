@@ -164,11 +164,16 @@ and the closest-looking clusters of one interaction are written as `suggestions`
 
     python -m model_fine_tuning.cluster.safe_clusters features --day-dir experiments/days_all/DAY     # EXIF, pose, colour per instance -> DAY/safe/photos.json
     python -m model_fine_tuning.cluster.safe_tracklets cluster --day-dir experiments/days_all/DAY --model experiments/safe_clusters/safe_model.pkl \
-        --threshold 0.995 --strict --cost 1.5 --skip 3 [--labels model_fine_tuning/splits/labels_all_days.json]   # -> DAY/safe/clusters.json (+ suggestions, audit)
+        --threshold 0.995 --strict --cost 1.5 --skip 3 --filter --guard-fused [--labels model_fine_tuning/splits/labels_all_days.json]   # -> DAY/safe/clusters.json (+ suggestions, audit)
     python -m model_fine_tuning.cluster.safe_tracklets report|sweep --root experiments/days_all --days model_fine_tuning/splits/days.json \
         --labels ... --model ... [--threshold 0.98] [--baselines]                                            # per-day table / threshold sweep
 
 Needs `DAY/cluster_v3/embeddings.npz` (student embeddings: `cluster_day.py channels --sources id:experiments/pair_student_g/checkpoints/best.pt`).
+Fused-instance guard (`--guard-fused`, production since 2026-11-23; `cluster/fused_guard.py`, rule B_G of
+experiments/fused_instances): no strict link whose end instance joins a fluke-like mask component far from the back of
+probably another whale (flag_G, CPU only). On the 24 train + val days it costs 10 of 187 strict links (all correct
+ones; clusters 3,513 -> 3,523) and removes the one wrong automatic link seen on an evaluation day; instance keys do
+not change, a refused link leaves two clusters.
 Result of the strict tier (photos in impure clusters, by the catalog's one-label-per-photo): val 4 / 878, eval 4 / 2146,
 all four stage-one assignments inside multi-whale bursts, at 8.5 / 9.2 clusters per animal (P 0.98 without the rule:
 8 and 22 impure photos at 6.9 / 6.7; 1.5-s bursts: 18 and 79 at 5.7 / 5.5). Multi-whale audit (bursts holding two or
@@ -212,7 +217,7 @@ link is made across gaps over 1.5 s at this threshold (same-animal share there i
     python -m model_fine_tuning.cluster.link_scores instances --day-dir experiments/days_all/DAY    # crop features of every instance (quick)
     python -m model_fine_tuning.cluster.link_scores not-whale --day-dir experiments/days_all/DAY    # -> DAY/safe/not_whale.json
     python -m model_fine_tuning.cluster.safe_tracklets cluster --day-dir experiments/days_all/DAY --model experiments/safe_clusters/safe_model.pkl \
-        --threshold 0.995 --strict --filter [--labels model_fine_tuning/splits/labels_all_days.json]     # clusters without the non-whales
+        --threshold 0.995 --strict --filter --guard-fused [--labels model_fine_tuning/splits/labels_all_days.json]     # clusters without the non-whales
     python -m model_fine_tuning.cluster.link_scores windows --day-dir experiments/days_all/DAY      # GPU: ~250 windows per instance, ~560 crops/s
     python -m model_fine_tuning.cluster.link_scores scores --day-dir experiments/days_all/DAY       # -> DAY/safe/window_scores.npz
     python -m model_fine_tuning.cluster.link_scores pairs --day-dir experiments/days_all/DAY        # -> DAY/safe/link_scores.json (the review queue)

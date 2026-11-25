@@ -50,7 +50,10 @@ from .safe_clusters import PARTS, load_embeddings
 
 PAIR_NAMES = ["p_seq", "has_p_seq", "app_fin", "has_fin", "app_fluke", "has_fluke", "app_body", "has_body", "log_gap", "log_gap_cap60"]
 BOUNDARY_NAMES = ["log_gap", "log1p_dist", "speed", "has_gps", "del_some", "log1p_del", "del_none"]
-CAMERA_NUMBER = re.compile(r"-([A-Za-z0-9_]*?)(\d{4})$")       # ...-184A4470 / ...-HR5_2949: the camera's own file name survives the rename
+# ...-184A4470 / ...-HR5_2949 / ..._000_184A5044 (2026 naming): the camera's own file name survives the rename; the token before
+# the counter joins by "_" only when it holds a letter, so a sequence number is never part of the body (same groups as
+# the earlier rule on every name it matched; Whale-Review-Web backend/labeling.py has the same rule)
+CAMERA_NUMBER = re.compile(r"(?:^|[-_])((?:[A-Za-z0-9]*[A-Za-z][A-Za-z0-9]*_)?[A-Za-z0-9]*?)(\d{4})$")
 SIGHTING_GAP = 120.0
 RAW_ROOT = Path("/datasets/NOAA_whales_data/Lightroom images/Topside research/2025 Research")
 RAW_EXT = (".cr2", ".cr3", ".dng", ".arw", ".nef", ".jpg", ".jpeg", ".tif", ".tiff")

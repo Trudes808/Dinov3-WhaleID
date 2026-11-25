@@ -19,6 +19,11 @@ tracklets best first by union-find, one instance per photo per cluster. Needs DA
 the deck, gear, drones that got a whale mask): they form no tracklet, a frame with a person and a whale counts as a
 single-whale frame for the strict tier, and when the dropped instance was the largest one (~0) the catalog label of
 the photo goes to the largest instance that is left.
+
+--guard-fused (2026-11-23, with --strict; default off): the fused-instance guard B_G (cluster/fused_guard.py). No strict
+link whose end instances (A's last, B's first) include an instance flagged by flag_G (a fluke-like mask component
+joined far from the back of probably another whale). Instances and keys do not change; a refused link leaves two
+clusters where there was one (later ids shift). The report gains "guard_fused" (flagged keys, refused candidates).
 """
 from __future__ import annotations
 
@@ -265,9 +270,15 @@ def suggestions(dd: dict, clusters: list[dict], prob: np.ndarray) -> list[dict]:
     return out
 
 
-def evaluate(dd: dict, model: dict, threshold: float, window: float, strict: bool = False, with_suggestions: bool = False) -> dict:
+def evaluate(dd: dict, model: dict, threshold: float, window: float, strict: bool = False, with_suggestions: bool = False, guard: frozenset | None = None) -> dict:
+    """guard (with strict): instance keys flagged by fused_guard.flag_G; no strict link whose end instances include one."""
     prob = predict(model, dd["pairs"]) if dd["pairs"] else np.zeros(0)
     allow = np.array([p["n_inst_max"] <= 1 for p in dd["pairs"]], bool) if (strict and dd["pairs"]) else None
+    if guard is not None and allow is not None:
+        from .fused_guard import guard_allow
+        g = guard_allow(dd["tracks"], dd["pairs"], guard)
+        dd["guard_refused"] = int(np.sum(allow & ~g & (prob >= threshold)))       # candidate links of the strict tier the guard refused
+        allow = allow & g
     clusters = link_tracklets(dd["tracks"], dd["pairs"], prob, threshold, allow)
     inst_count = {s: len(f.get("instances", [])) for s, f in dd["feats"].items()}
     for c in clusters:
@@ -347,11 +358,21 @@ def main(argv=None) -> int:
     s.add_argument("--labels", type=Path, default=None); s.add_argument("--gap", type=float, default=1.5); s.add_argument("--cost", type=float, default=1.5)
     s.add_argument("--window", type=float, default=300.0); s.add_argument("--skip", type=int, default=3); s.add_argument("--strict", action="store_true")
     s.add_argument("--filter", action="store_true")
+    s.add_argument("--guard-fused", action="store_true", help="(with --strict) no strict link whose end instance holds two whales by flag_G (cluster/fused_guard.py, rule B_G)")
+    s.add_argument("--guard-workers", type=int, default=8)
     a = p.parse_args(argv)
     if a.cmd == "cluster":
+        if a.guard_fused and not a.strict:
+            p.error("--guard-fused guards the strict tier: it needs --strict")
         model = load_model(a.model)
         dd = day_data(a.day_dir.parent, a.day_dir.name, a.labels, a.gap, a.cost, a.window, a.skip, a.filter)
-        rep, clusters = evaluate(dd, model, a.threshold, a.window, a.strict, with_suggestions=True)
+        guard, ginfo = None, None
+        if a.guard_fused:
+            from .fused_guard import flagged_keys
+            guard, ginfo = flagged_keys(a.day_dir, a.guard_workers)
+        rep, clusters = evaluate(dd, model, a.threshold, a.window, a.strict, with_suggestions=True, guard=guard)
+        if ginfo is not None:
+            ginfo["refused_candidates"] = dd.get("guard_refused", 0); rep["guard_fused"] = ginfo
         rep.update({"gap": a.gap, "cost": a.cost, "window": a.window, "skip": a.skip, "model": str(a.model)})
         if dd["labels"]:
             rep["audit"] = audit(dd, clusters)
@@ -359,7 +380,8 @@ def main(argv=None) -> int:
         (a.day_dir / "safe" / "clusters.json").write_text(json.dumps({"report": rep, "tracklets": dd["tracks"], "clusters": clusters, "suggestions": dd.get("suggestions", [])}, indent=1))
         n_multi = sum(1 for c in clusters if len(c["photos"]) > 1)
         print(f"{a.day_dir.name}: {len(dd['tracks'])} tracklets -> {len(clusters)} clusters ({n_multi} with several photos), {rep['links']} links" +
-              (f"; impure photos {rep['metrics']['photos_in_impure_clusters']} / {rep['metrics']['photos']}, clusters/animal {rep['metrics']['clusters_per_animal']}" if rep.get("metrics") else ""))
+              (f"; impure photos {rep['metrics']['photos_in_impure_clusters']} / {rep['metrics']['photos']}, clusters/animal {rep['metrics']['clusters_per_animal']}" if rep.get("metrics") else "") +
+              (f"; guard {ginfo['rule']}: {ginfo['flagged']} flagged instances, {ginfo['refused_candidates']} strict candidates refused" if ginfo else ""))
         return 0
     days_js = json.loads(a.days.read_text())
 

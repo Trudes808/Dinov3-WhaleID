@@ -177,3 +177,8 @@ Primary model for the test-day run, fixed now from the val days: version 2 seed 
 on at least 5 of the 17 photos where the labeller paints tape and keeps the whale (pooled IoU with S6h >= 0.93);
 otherwise version 1 seed 0. All three trained models are scored on the test day and reported; only the primary's
 numbers answer the question.
+
+# Part D (record, 2026-11-22 20:29 -0600)
+Primary by rule B6 (val days): version 2 seed 0 (tape on 17 of 17 val photos where the labeller paints tape; pooled IoU
+with S6h 0.955). The single test-day run (pixel truth, markers) was made 2026-11-22 20:2x for v2 s0, v1 s0, v1 s1 and the
+labeller; nothing was changed after it. One post-hoc variant (marker rule with S6h as the whale gate) is reported as such.

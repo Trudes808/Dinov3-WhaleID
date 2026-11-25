@@ -1,0 +1,54 @@
+# round 22d look set (data/renders/r06r_fluke22_look, realism.fluke_shape) AI by-eye blind labels, every whale >= 200 px;
+# shuffled with 30 check-21 anchors, frozen before the key was opened. Taxonomy and marks as labels_ai_r06r_check21.txt.
+# Format: <shot> <iid> <CATEGORY> [attrs]
+000000 1 F_low
+000001 1 F_edge S1 w s1
+000002 1 F_up s1
+000003 1 F_low s1
+000004 1 F_low s1
+000005 1 F_low
+000005 2 D_small b
+000006 1 F_low m
+000006 2 D_tip h b a
+000007 1 F_low s1
+000007 2 D_tip h
+000008 1 F_low m
+000008 2 D_tip m pale a
+000008 3 F_edge S3 a m
+000009 1 F_edge S3 s1
+000010 1 F_low
+000011 1 F_edge S2 s1 a
+000011 2 D_small h b
+000012 1 F_low
+000012 2 D_tip h a
+000012 3 F_edge e a2
+000013 1 F_low s1
+000014 2 H_head s1
+000015 1 F_edge S3 s1 w m
+000015 3 D_small h m e
+000016 1 F_low
+000016 2 D_tip h b
+000016 3 P_pec s2
+000017 1 F_edge S1 s1
+000018 1 F_edge S1 s1
+000018 2 D_small h s1
+000018 3 D_small h s1
+000019 1 F_edge S3
+000019 2 F_edge S2 m
+000019 3 F_edge S2 m
+000020 1 F_up
+000021 1 F_low m
+000021 2 F_up m
+000022 1 F_edge S1 b
+000023 1 F_low
+000024 1 F_edge S2 s1 b
+000024 2 D_small h
+000024 3 X_none m s2 b
+000027 2 D_tip h
+000028 1 F_low e
+000028 2 B_back e b pale a
+000030 1 F_low s1
+000031 1 F_up a
+000033 1 F_low
+000034 1 F_low s1
+000035 1 F_low s1

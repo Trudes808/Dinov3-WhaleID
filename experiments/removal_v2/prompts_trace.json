@@ -1,0 +1,5 @@
+{
+ "_note": "SAM 3 phrasings for removal rule v2, written 2026-11-22 before any output of the trace phrasings on any photo. Base whale family (also in prompts_all.json) + person / land for the reason + trace phrasings (blow, splash, a whale under the surface, white water). Run only on photos without an S6h whale.",
+ "prompts": ["whale", "humpback whale", "marine mammal", "whale tail", "whale fluke", "dorsal fin", "person", "land", "mountain",
+             "whale blow", "whale spout", "splash", "whale splash", "whale under water", "submerged whale", "white water", "foam"]
+}

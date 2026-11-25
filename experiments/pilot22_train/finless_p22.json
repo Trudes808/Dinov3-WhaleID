@@ -1,0 +1,614 @@
+{
+ "hr": {
+  "parts_seg_r05_w3e": {
+   "t_eye": {
+    "n": 33,
+    "with_fin_region": 0.364,
+    "called_dorsal": 0.182
+   },
+   "t_vc": {
+    "n": 151,
+    "with_fin_region": 0.265,
+    "called_dorsal": 0.139
+   }
+  },
+  "parts_seg_r05_w3es1": {
+   "t_eye": {
+    "n": 33,
+    "with_fin_region": 0.394,
+    "called_dorsal": 0.242
+   },
+   "t_vc": {
+    "n": 151,
+    "with_fin_region": 0.298,
+    "called_dorsal": 0.152
+   }
+  },
+  "parts_seg_p22add": {
+   "t_eye": {
+    "n": 33,
+    "with_fin_region": 0.212,
+    "called_dorsal": 0.091
+   },
+   "t_vc": {
+    "n": 151,
+    "with_fin_region": 0.166,
+    "called_dorsal": 0.086
+   }
+  },
+  "parts_seg_p22adds1": {
+   "t_eye": {
+    "n": 33,
+    "with_fin_region": 0.152,
+    "called_dorsal": 0.121
+   },
+   "t_vc": {
+    "n": 151,
+    "with_fin_region": 0.146,
+    "called_dorsal": 0.086
+   }
+  },
+  "parts_seg_p22only": {
+   "t_eye": {
+    "n": 33,
+    "with_fin_region": 0.242,
+    "called_dorsal": 0.091
+   },
+   "t_vc": {
+    "n": 151,
+    "with_fin_region": 0.152,
+    "called_dorsal": 0.099
+   }
+  },
+  "parts_seg_p22onlys1": {
+   "t_eye": {
+    "n": 33,
+    "with_fin_region": 0.303,
+    "called_dorsal": 0.121
+   },
+   "t_vc": {
+    "n": 151,
+    "with_fin_region": 0.199,
+    "called_dorsal": 0.093
+   }
+  },
+  "paired_vs_parts_seg_r05_w3e": {
+   "parts_seg_r05_w3es1": {
+    "t_eye_region": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.3636,
+     "arm_acc": 0.3939,
+     "diff": 0.0303,
+     "ci95": [
+      -0.0606,
+      0.1515
+     ]
+    },
+    "t_eye_called": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.1818,
+     "arm_acc": 0.2424,
+     "diff": 0.0606,
+     "ci95": [
+      -0.0909,
+      0.2121
+     ]
+    },
+    "t_vc_region": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.2649,
+     "arm_acc": 0.298,
+     "diff": 0.0331,
+     "ci95": [
+      -0.0067,
+      0.08
+     ]
+    },
+    "t_vc_called": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.1391,
+     "arm_acc": 0.1523,
+     "diff": 0.0132,
+     "ci95": [
+      -0.0323,
+      0.0633
+     ]
+    }
+   },
+   "parts_seg_p22add": {
+    "t_eye_region": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.3636,
+     "arm_acc": 0.2121,
+     "diff": -0.1515,
+     "ci95": [
+      -0.303,
+      0.0
+     ]
+    },
+    "t_eye_called": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.1818,
+     "arm_acc": 0.0909,
+     "diff": -0.0909,
+     "ci95": [
+      -0.1818,
+      0.0
+     ]
+    },
+    "t_vc_region": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.2649,
+     "arm_acc": 0.1656,
+     "diff": -0.0993,
+     "ci95": [
+      -0.1548,
+      -0.0473
+     ]
+    },
+    "t_vc_called": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.1391,
+     "arm_acc": 0.0861,
+     "diff": -0.053,
+     "ci95": [
+      -0.0972,
+      -0.0136
+     ]
+    }
+   },
+   "parts_seg_p22adds1": {
+    "t_eye_region": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.3636,
+     "arm_acc": 0.1515,
+     "diff": -0.2121,
+     "ci95": [
+      -0.3636,
+      -0.0909
+     ]
+    },
+    "t_eye_called": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.1818,
+     "arm_acc": 0.1212,
+     "diff": -0.0606,
+     "ci95": [
+      -0.1818,
+      0.0606
+     ]
+    },
+    "t_vc_region": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.2649,
+     "arm_acc": 0.1457,
+     "diff": -0.1192,
+     "ci95": [
+      -0.183,
+      -0.06
+     ]
+    },
+    "t_vc_called": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.1391,
+     "arm_acc": 0.0861,
+     "diff": -0.053,
+     "ci95": [
+      -0.094,
+      -0.0136
+     ]
+    }
+   },
+   "parts_seg_p22only": {
+    "t_eye_region": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.3636,
+     "arm_acc": 0.2424,
+     "diff": -0.1212,
+     "ci95": [
+      -0.2727,
+      0.0
+     ]
+    },
+    "t_eye_called": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.1818,
+     "arm_acc": 0.0909,
+     "diff": -0.0909,
+     "ci95": [
+      -0.1818,
+      0.0
+     ]
+    },
+    "t_vc_region": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.2649,
+     "arm_acc": 0.1523,
+     "diff": -0.1126,
+     "ci95": [
+      -0.1761,
+      -0.0584
+     ]
+    },
+    "t_vc_called": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.1391,
+     "arm_acc": 0.0993,
+     "diff": -0.0397,
+     "ci95": [
+      -0.0861,
+      0.0
+     ]
+    }
+   },
+   "parts_seg_p22onlys1": {
+    "t_eye_region": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.3636,
+     "arm_acc": 0.303,
+     "diff": -0.0606,
+     "ci95": [
+      -0.1818,
+      0.0606
+     ]
+    },
+    "t_eye_called": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.1818,
+     "arm_acc": 0.1212,
+     "diff": -0.0606,
+     "ci95": [
+      -0.2121,
+      0.0909
+     ]
+    },
+    "t_vc_region": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.2649,
+     "arm_acc": 0.1987,
+     "diff": -0.0662,
+     "ci95": [
+      -0.1293,
+      -0.0065
+     ]
+    },
+    "t_vc_called": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.1391,
+     "arm_acc": 0.0927,
+     "diff": -0.0464,
+     "ci95": [
+      -0.0966,
+      0.0
+     ]
+    }
+   }
+  }
+ },
+ "full": {
+  "parts_seg_r05_w3e": {
+   "t_eye": {
+    "n": 33,
+    "with_fin_region": 0.303,
+    "called_dorsal": 0.152
+   },
+   "t_vc": {
+    "n": 151,
+    "with_fin_region": 0.225,
+    "called_dorsal": 0.126
+   }
+  },
+  "parts_seg_r05_w3es1": {
+   "t_eye": {
+    "n": 33,
+    "with_fin_region": 0.364,
+    "called_dorsal": 0.182
+   },
+   "t_vc": {
+    "n": 151,
+    "with_fin_region": 0.298,
+    "called_dorsal": 0.166
+   }
+  },
+  "parts_seg_p22add": {
+   "t_eye": {
+    "n": 33,
+    "with_fin_region": 0.273,
+    "called_dorsal": 0.182
+   },
+   "t_vc": {
+    "n": 151,
+    "with_fin_region": 0.212,
+    "called_dorsal": 0.139
+   }
+  },
+  "parts_seg_p22adds1": {
+   "t_eye": {
+    "n": 33,
+    "with_fin_region": 0.182,
+    "called_dorsal": 0.121
+   },
+   "t_vc": {
+    "n": 151,
+    "with_fin_region": 0.172,
+    "called_dorsal": 0.086
+   }
+  },
+  "parts_seg_p22only": {
+   "t_eye": {
+    "n": 33,
+    "with_fin_region": 0.182,
+    "called_dorsal": 0.152
+   },
+   "t_vc": {
+    "n": 151,
+    "with_fin_region": 0.172,
+    "called_dorsal": 0.106
+   }
+  },
+  "parts_seg_p22onlys1": {
+   "t_eye": {
+    "n": 33,
+    "with_fin_region": 0.333,
+    "called_dorsal": 0.212
+   },
+   "t_vc": {
+    "n": 151,
+    "with_fin_region": 0.258,
+    "called_dorsal": 0.132
+   }
+  },
+  "paired_vs_parts_seg_r05_w3e": {
+   "parts_seg_r05_w3es1": {
+    "t_eye_region": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.303,
+     "arm_acc": 0.3636,
+     "diff": 0.0606,
+     "ci95": [
+      -0.0909,
+      0.2121
+     ]
+    },
+    "t_eye_called": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.1515,
+     "arm_acc": 0.1818,
+     "diff": 0.0303,
+     "ci95": [
+      -0.0909,
+      0.1818
+     ]
+    },
+    "t_vc_region": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.2252,
+     "arm_acc": 0.298,
+     "diff": 0.0728,
+     "ci95": [
+      0.0133,
+      0.1319
+     ]
+    },
+    "t_vc_called": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.1258,
+     "arm_acc": 0.1656,
+     "diff": 0.0397,
+     "ci95": [
+      -0.0068,
+      0.0897
+     ]
+    }
+   },
+   "parts_seg_p22add": {
+    "t_eye_region": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.303,
+     "arm_acc": 0.2727,
+     "diff": -0.0303,
+     "ci95": [
+      -0.1515,
+      0.0606
+     ]
+    },
+    "t_eye_called": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.1515,
+     "arm_acc": 0.1818,
+     "diff": 0.0303,
+     "ci95": [
+      -0.0909,
+      0.1515
+     ]
+    },
+    "t_vc_region": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.2252,
+     "arm_acc": 0.2119,
+     "diff": -0.0132,
+     "ci95": [
+      -0.0544,
+      0.0267
+     ]
+    },
+    "t_vc_called": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.1258,
+     "arm_acc": 0.1391,
+     "diff": 0.0132,
+     "ci95": [
+      -0.0205,
+      0.0516
+     ]
+    }
+   },
+   "parts_seg_p22adds1": {
+    "t_eye_region": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.303,
+     "arm_acc": 0.1818,
+     "diff": -0.1212,
+     "ci95": [
+      -0.2727,
+      0.0
+     ]
+    },
+    "t_eye_called": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.1515,
+     "arm_acc": 0.1212,
+     "diff": -0.0303,
+     "ci95": [
+      -0.1515,
+      0.0909
+     ]
+    },
+    "t_vc_region": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.2252,
+     "arm_acc": 0.1722,
+     "diff": -0.053,
+     "ci95": [
+      -0.1074,
+      -0.0062
+     ]
+    },
+    "t_vc_called": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.1258,
+     "arm_acc": 0.0861,
+     "diff": -0.0397,
+     "ci95": [
+      -0.0805,
+      0.0
+     ]
+    }
+   },
+   "parts_seg_p22only": {
+    "t_eye_region": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.303,
+     "arm_acc": 0.1818,
+     "diff": -0.1212,
+     "ci95": [
+      -0.2727,
+      0.0
+     ]
+    },
+    "t_eye_called": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.1515,
+     "arm_acc": 0.1515,
+     "diff": 0.0,
+     "ci95": [
+      -0.1515,
+      0.1515
+     ]
+    },
+    "t_vc_region": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.2252,
+     "arm_acc": 0.1722,
+     "diff": -0.053,
+     "ci95": [
+      -0.1067,
+      0.0
+     ]
+    },
+    "t_vc_called": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.1258,
+     "arm_acc": 0.106,
+     "diff": -0.0199,
+     "ci95": [
+      -0.0617,
+      0.0204
+     ]
+    }
+   },
+   "parts_seg_p22onlys1": {
+    "t_eye_region": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.303,
+     "arm_acc": 0.3333,
+     "diff": 0.0303,
+     "ci95": [
+      -0.0909,
+      0.1515
+     ]
+    },
+    "t_eye_called": {
+     "n": 33,
+     "photos": 33,
+     "base_acc": 0.1515,
+     "arm_acc": 0.2121,
+     "diff": 0.0606,
+     "ci95": [
+      -0.0909,
+      0.2121
+     ]
+    },
+    "t_vc_region": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.2252,
+     "arm_acc": 0.2583,
+     "diff": 0.0331,
+     "ci95": [
+      -0.0212,
+      0.0946
+     ]
+    },
+    "t_vc_called": {
+     "n": 151,
+     "photos": 133,
+     "base_acc": 0.1258,
+     "arm_acc": 0.1325,
+     "diff": 0.0066,
+     "ci95": [
+      -0.0323,
+      0.0473
+     ]
+    }
+   }
+  }
+ }
+}

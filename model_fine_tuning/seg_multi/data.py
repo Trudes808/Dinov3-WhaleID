@@ -66,14 +66,17 @@ class PseudoCrops(Dataset):
 class Mixed3(Dataset):
     """One epoch = len(synth) samples; each sample is real_s6mc with p_s6, pseudo with p_pseudo, else synthetic."""
 
-    def __init__(self, synth, real, pseudo, p_s6: float, p_pseudo: float, seed: int = 0):
+    def __init__(self, synth, real, pseudo, p_s6: float, p_pseudo: float, seed: int = 0, render=None, p_render: float = 0.0):
         self.synth, self.real, self.pseudo, self.p6, self.pp, self.seed, self.epoch = synth, real, pseudo, p_s6, p_pseudo, seed, 0
+        self.render, self.pr = render, (p_render if render is not None else 0.0)   # v3 (rules_scene_v3.md S4): boat renders
 
     def __len__(self):
         return len(self.synth)
 
     def set_epoch(self, e):
         self.epoch = e; self.synth.set_epoch(e); self.real.set_epoch(e); self.pseudo.set_epoch(e)
+        if self.render is not None:
+            self.render.set_epoch(e)
 
     def __getitem__(self, i):
         rng = np.random.default_rng([self.seed, self.epoch, i, 99]); u = rng.random()
@@ -81,4 +84,7 @@ class Mixed3(Dataset):
             return self.real.get(int(rng.integers(len(self.real))), rng)
         if u < self.p6 + self.pp:
             return self.pseudo.get(int(rng.integers(len(self.pseudo))), rng)
+        if u < self.p6 + self.pp + self.pr:
+            out = self.render.get(int(rng.integers(len(self.render))), rng); out["id"] = "render:" + out["id"]
+            return out
         return self.synth[i]

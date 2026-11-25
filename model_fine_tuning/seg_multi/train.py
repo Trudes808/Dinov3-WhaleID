@@ -37,6 +37,8 @@ def parse(argv=None):
     p.add_argument("--init", type=Path, default=SC.SEG_R05)
     p.add_argument("--p-s6", type=float, default=0.2); p.add_argument("--p-pseudo", type=float, default=0.3); p.add_argument("--p-extra", type=float, default=0.6)
     p.add_argument("--balanced", action="store_true", help="v2: class-balanced centring of pseudo crops")
+    p.add_argument("--render-dir", type=Path, default=None, help="v3: boat renders (v3_tools.py renders, train part)")
+    p.add_argument("--p-render", type=float, default=0.0)
     p.add_argument("--epochs", type=int, default=8); p.add_argument("--batch-size", type=int, default=8); p.add_argument("--crop", type=int, default=512)
     p.add_argument("--lr-head", type=float, default=3e-4); p.add_argument("--lr-backbone", type=float, default=3e-5)
     p.add_argument("--layer-decay", type=float, default=0.8); p.add_argument("--weight-decay", type=float, default=0.05)
@@ -67,10 +69,11 @@ def main(argv=None) -> int:
     run = open_runs(SC.RUN05, paths.SPLITS_DIR / "run05.json")
     synth = SynthCrops(run, run.ids("train"), crop=a.crop, scale_range=(0.5, 1.5), whale_bias=0.7, photometric_strength=1.0, train=True, seed=a.seed)
     real = RealBlobCrops(crop=a.crop, seed=a.seed, real_dir=a.real_dir); pseudo = PseudoCrops(a.pseudo_dir, crop=a.crop, p_extra=a.p_extra, seed=a.seed, balanced=a.balanced)
-    ds = Mixed3(synth, real, pseudo, a.p_s6, a.p_pseudo, seed=a.seed)
+    render = PseudoCrops(a.render_dir, crop=a.crop, p_extra=a.p_extra, seed=a.seed, balanced=True) if a.render_dir else None
+    ds = Mixed3(synth, real, pseudo, a.p_s6, a.p_pseudo, seed=a.seed, render=render, p_render=a.p_render)
     model = SceneSegModel().to(dev)
     config = {"task": "scene_segmentation", "args": {k: str(v) if isinstance(v, Path) else v for k, v in vars(a).items()}, "model": model.config,
-              "train_synthetic": len(synth), "real_s6mc_centres": len(real), "pseudo_photos": len(pseudo), "params": count_params(model),
+              "train_synthetic": len(synth), "real_s6mc_centres": len(real), "pseudo_photos": len(pseudo), "render_shots": len(render) if render else 0, "params": count_params(model),
               "recipe": "experiments/seg_splash_s6/config.json + 7-class head (rules_labeller.md A6)"}
     opt = torch.optim.AdamW(model.param_groups(a.lr_head, a.lr_backbone, a.layer_decay, a.weight_decay), betas=(0.9, 0.999))
     start_epoch, step = 0, 0
@@ -84,11 +87,11 @@ def main(argv=None) -> int:
     tl = DataLoader(ds, batch_size=a.batch_size, shuffle=True, num_workers=a.workers, pin_memory=True, drop_last=True, persistent_workers=True)
     total = a.epochs * len(tl)
     for epoch in range(start_epoch, a.epochs):
-        model.train(); ds.set_epoch(epoch); te = time.time(); run_l = []; src = {"real": 0, "pseudo": 0, "synth": 0}
+        model.train(); ds.set_epoch(epoch); te = time.time(); run_l = []; src = {"real": 0, "pseudo": 0, "synth": 0, "render": 0}
         torch.manual_seed(a.seed * 1000 + epoch)
         for batch in tl:
             for i in batch["id"]:
-                src["real" if str(i).startswith("real:") else "pseudo" if str(i).startswith("pseudo:") else "synth"] += 1
+                src["real" if str(i).startswith("real:") else "render" if str(i).startswith("render:") else "pseudo" if str(i).startswith("pseudo:") else "synth"] += 1
             f = lr_at(step, total, a.warmup_steps, 1.0); apply_lr(opt, f); batch = move(batch, dev)
             with torch.autocast("cuda", dtype=torch.bfloat16):
                 logits = model(batch["image"])
