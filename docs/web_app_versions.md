@@ -2,7 +2,9 @@
 
 The web app is the sibling folder `/home/sat3737/NOAA_whales/Whale-Review-Web` (not part of this repository).
 
-**Its code is not in git.** No repository holds it. The only safety net is the backup folders in
+**Its code is in a local git repository of its own since 2026-11-27** (`Whale-Review-Web/.git`, branch `main`, no
+remote; `data/` and the logs are ignored). The first commit is round 3 as deployed on 2026-11-25, so git knows only
+round 3 and what comes after it. For the two earlier versions the only safety net is the backup folders in
 `/home/sat3737/NOAA_whales/moonshot_cache/switch_root/`, and both roll-back scripts and the old-app launcher read from
 them. Do not delete, move or edit these folders: `backup_beta_golive_2026-11-24/` (the old app, `code_before/`, and the
 researchers' state at go-live, `state/`) and `backup_beta_round3_2026-11-25/` (the beta before round 3). Also keep the

@@ -339,8 +339,9 @@ much disk as the first (15 GB for the 28 days).
 
 ## The web app: launching the current and the previous versions, rolling back
 
-The reviewers' web app is the sibling folder `Whale-Review-Web` (not in this repository, and not in any git repository:
-its safety net is the backup folders in `moonshot_cache/switch_root/`, which must not be deleted). Three versions:
+The reviewers' web app is the sibling folder `Whale-Review-Web` (not in this repository; since 2026-11-27 it is a
+local git repository of its own, with no remote, whose first commit is round 3. The two earlier versions exist only
+in the backup folders in `moonshot_cache/switch_root/`, which must not be deleted). Three versions:
 the **current** one ("round 3", 2026-11-25: sign-in, uploads, job worker, Video Analysis, leaner photo processing,
 jobs on every CPU thread but two; 127.0.0.1 only), the **beta before round 3** (2026-11-24 23:48 to the round-3
 go-live; code in `backup_beta_round3_2026-11-25/code_before/`), and the **old app** (code of 2026-11-23, no sign-in,
