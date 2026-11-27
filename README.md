@@ -337,24 +337,32 @@ of those days and not the re-made ones. Retraining it on `parts_up` is open. A n
 `scripts/parts_up_all.sh DAY` after `parts_hr` exists, then a restart of the review server. The second set takes as
 much disk as the first (15 GB for the 28 days).
 
-## The web app: launching the current and the previous version, rolling back
+## The web app: launching the current and the previous versions, rolling back
 
-The reviewers' web app is the sibling folder `Whale-Review-Web` (not in this repository). The **current** version (the
-beta, live since 2026-11-24) needs a sign-in, has uploads, a job worker and a Video Analysis page, and listens on
-127.0.0.1 only. The **previous** version (code of 2026-11-23) has no sign-in and only the three sorting modules; its
-code is kept only in `moonshot_cache/switch_root/backup_beta_golive_2026-11-24/code_before/`.
+The reviewers' web app is the sibling folder `Whale-Review-Web` (not in this repository, and not in any git repository:
+its safety net is the backup folders in `moonshot_cache/switch_root/`, which must not be deleted). Three versions:
+the **current** one ("round 3", 2026-11-25: sign-in, uploads, job worker, Video Analysis, leaner photo processing,
+jobs on every CPU thread but two; 127.0.0.1 only), the **beta before round 3** (2026-11-24 23:48 to the round-3
+go-live; code in `backup_beta_round3_2026-11-25/code_before/`), and the **old app** (code of 2026-11-23, no sign-in,
+only the three sorting modules; code in `backup_beta_golive_2026-11-24/code_before/`).
 
 ```bash
-# current (beta), http://localhost:8765/ through an SSH forward
+# current, http://localhost:8765/ through an SSH forward
 cd /home/sat3737/NOAA_whales/Whale-Review-Web && setsid nohup ./serve.sh --port 8765 >> serve.log 2>&1 &
-# previous version next to it, http://localhost:8766/ (127.0.0.1 only, no sign-in; builds its own copy on first use)
+# old app next to it, http://localhost:8766/ (127.0.0.1 only, no sign-in; builds its own copy on first use)
 scripts/web_app_launch_old.sh            # --status, --stop
-# roll the live app on 8765 back to the previous version
+# live app on 8765 back to the beta before round 3 (keeps the sign-in); add --forward to return to round 3
+bash /home/sat3737/NOAA_whales/moonshot_cache/switch_root/ROLLBACK_round3.sh
+# live app on 8765 back to the old app (NO sign-in, 127.0.0.1 only); add --forward to return to the beta
 bash /home/sat3737/NOAA_whales/moonshot_cache/switch_root/ROLLBACK_beta.sh
 ```
 
-Both versions read and write the same sorting state files: never sort in both at once. Checks, restart by pid,
-worker, first admin, what the roll-back replaces and how to verify it or go forward again:
+Use `ROLLBACK_round3.sh` for a fault that came with round 3, `ROLLBACK_beta.sh` when the sign-in version itself must go.
+Each swaps whole code folders, keeps the code it replaces in a `code_at_rollback_<time>/` folder, and leaves `data/`
+(accounts, database, researcher state) alone. Both scripts and both `--forward` directions were rehearsed on a copy of
+the app on another port on 2026-11-25; they have not been run on the live app. Never sort in two versions at once. The
+old 18-file script `ROLLBACK_beta_v1_in_place.sh` must not be used. Checks, restart by pid, worker, first admin, what
+each roll-back does step by step and how to verify it:
 [docs/web_app_versions.md](docs/web_app_versions.md).
 
 ## Earlier work

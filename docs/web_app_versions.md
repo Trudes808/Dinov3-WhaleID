@@ -1,19 +1,32 @@
-# Whale Review web app: the two versions, launching them, rolling back
+# Whale Review web app: the three versions, launching them, rolling back
 
-The web app is the sibling folder `/home/sat3737/NOAA_whales/Whale-Review-Web` (not part of this repository). Two
-versions exist:
+The web app is the sibling folder `/home/sat3737/NOAA_whales/Whale-Review-Web` (not part of this repository).
 
-| | current ("the beta", live since 2026-11-24 23:48) | previous ("the old app", code of 2026-11-23 08:42) |
-|---|---|---|
-| sign-in | required (invite-only accounts) | none |
-| modules | Library, Model Interpretability, Labeling Assistant, Upload, Video Analysis, Admin | Library, Model Interpretability, Labeling Assistant |
-| listens on | 127.0.0.1 | 0.0.0.0 by default (this page always starts it on 127.0.0.1) |
-| code | `Whale-Review-Web/` | only in `moonshot_cache/switch_root/backup_beta_golive_2026-11-24/code_before/` |
+**Its code is not in git.** No repository holds it. The only safety net is the backup folders in
+`/home/sat3737/NOAA_whales/moonshot_cache/switch_root/`, and both roll-back scripts and the old-app launcher read from
+them. Do not delete, move or edit these folders: `backup_beta_golive_2026-11-24/` (the old app, `code_before/`, and the
+researchers' state at go-live, `state/`) and `backup_beta_round3_2026-11-25/` (the beta before round 3). Also keep the
+`code_at_rollback_*` folders that a roll-back creates inside them: they hold the code you can go forward to.
 
-Both read and write the same researcher state files (`Whale-Review-Web/data/<day>/labeling.json`, `pair_marks.json`,
-...). Nothing below changes those files.
+Three versions exist:
 
-## 1. Launch the current app (beta)
+| | current ("round 3", go-live 2026-11-25) | the beta before round 3 (2026-11-24 23:48 to the round-3 go-live) | the old app (code of 2026-11-23 08:42) |
+|---|---|---|---|
+| sign-in | required (invite-only accounts) | required | none |
+| modules | Library, Model Interpretability, Labeling Assistant, Upload, Video Analysis, Admin | the same | Library, Model Interpretability, Labeling Assistant |
+| differences | leaner photo processing, a day opens before its job ends, jobs use every CPU thread but two, dead code removed (`attic/` and `frontend_next/` are gone) | has `attic/` and `frontend_next/` | no uploads, no job worker |
+| listens on | 127.0.0.1 | 127.0.0.1 | 0.0.0.0 by default (this page always starts it on 127.0.0.1) |
+| code | `Whale-Review-Web/` | only in `backup_beta_round3_2026-11-25/code_before/` (228 files) | only in `backup_beta_golive_2026-11-24/code_before/` (83 files) |
+| go there | (current) | `ROLLBACK_round3.sh` (part 4) | `ROLLBACK_beta.sh` (part 3), or launch next to the current app (part 2) |
+
+All three read and write the same researcher state files (`Whale-Review-Web/data/<day>/labeling.json`,
+`pair_marks.json`, ...). Nothing below changes those files.
+
+`moonshot_cache/switch_root/golive_round3.sh` is the record of how round 3 was deployed from the build folder
+`/home/sat3737/NOAA_whales/Whale-Review-Web-next` (it checks the live code against the pre-round-3 snapshot and refuses
+while a job runs). It is not something to run again.
+
+## 1. Launch the current app
 
 ```bash
 cd /home/sat3737/NOAA_whales/Whale-Review-Web
@@ -63,9 +76,11 @@ $PY -m backend.worker --status      # is it running, what is it doing (pid also 
 $PY -m backend.worker --stop        # stop it; its job goes back to the queue and continues when a worker starts again
 ```
 
+Processing jobs use every CPU thread of the machine but two (`WHALE_JOB_THREADS=<n>` overrides that number).
+
 Worker messages: `data/app/jobs/worker.out`; each job's log: `data/app/jobs/<id>.log`.
 
-## 2. Launch the old app next to the beta, without rolling back
+## 2. Launch the old app next to the current app, without rolling back
 
 ```bash
 /home/sat3737/NOAA_whales/Dinov3-WhaleID/scripts/web_app_launch_old.sh            # builds the copy on first use, starts it
@@ -98,46 +113,124 @@ Read this before using it:
 * Stop it with `--stop`, or by the pid that listens on 8766 (`ss -ltnp 'sport = :8766'`, `kill -TERM PID`).
 * The built folder `app_old_2026-11-23` is small (code and links); delete it whenever you like, the script rebuilds it.
 
-## 3. Roll back to the old app
+## 3. Roll back to the old app (no sign-in)
 
-When: the beta misbehaves in a way that blocks the researchers' sorting (the Library, Labeling Assistant or Interpret
-pages fail or lose state) and a fix is not quick. Before that, try the "next to it" launch above: it needs no change to
-the live folder. A roll-back puts the old, sign-in-free app on port 8765 (still on 127.0.0.1).
+When: the web app misbehaves in a way that blocks the researchers' sorting (the Library, Labeling Assistant or Interpret
+pages fail or lose state) and a fix is not quick. If the fault came only with round 3, use part 4 first (it keeps the
+sign-in). Before either, try the "next to it" launch (part 2): it needs no change to the live folder. A roll-back puts
+the old app on port 8765 (still on 127.0.0.1).
+
+**The old app has no sign-in.** The script starts it with `--host 127.0.0.1`; never start it on another address.
 
 ```bash
 bash /home/sat3737/NOAA_whales/moonshot_cache/switch_root/ROLLBACK_beta.sh
 ```
 
-What the script does, in order (it stops at the first failing command):
+What the script does, in order (it stops at the first failing command; the earlier steps change nothing):
 
-1. Takes these 18 files of the live `Whale-Review-Web/`: `backend/{app,interpret,labeling,labeling_sketch,library,pairs,signatures}.py`,
-   `frontend/{index,labeling,interpret,pairs,bursts,signatures}.html`, `frontend/js/{bursts,lab_lightbox,interp_step_photos}.js`,
-   `serve.sh`, `README.md`. Copies them (with times) to
-   `backup_beta_golive_2026-11-24/code_at_rollback_<date>_<time>/` in the backup folder.
-2. Copies the same 18 files from `code_before/` over the live ones.
-3. Compares the live files with `code_before/` by sha256 and prints `code restored` when they match (a mismatch prints
-   the differences and the script stops there, before any restart).
-4. Sends TERM to the process that listens on 8765 (found by `ss`), waits 2 s.
-5. Runs `python -m backend.worker --stop` (the beta's worker; a running job goes back to the queue).
-6. Starts `./serve.sh --port 8765 --host 127.0.0.1` (now the old `serve.sh`) in the background, appending to
-   `Whale-Review-Web/serve.log`, waits 4 s and prints `ss` for 8765.
+1. Refuses if `Whale-Review-Web/backend/auth.py` is missing (the live app is then not the beta: already rolled back).
+2. Checks `code_before/` of the backup against `sha256_code_before.txt`.
+3. Stops the beta's job worker (`python -m backend.worker --stop`; a running job goes back to the queue), then stops the
+   server by the pid that listens on 8765 (TERM, up to 20 s).
+4. Moves the live `backend/ frontend/ tests/ serve.sh README.md` to
+   `backup_beta_golive_2026-11-24/code_at_rollback_<date>_<time>/` (moved, not deleted), and copies the same five from
+   `code_before/` (the 83 files of the old app) into `Whale-Review-Web/`.
+5. Checks the live files against `sha256_code_before.txt` and prints `old code in place (83 files match code_before)`.
+6. Starts the old `./serve.sh --port 8765 --host 127.0.0.1` in the background (appending to `Whale-Review-Web/serve.log`),
+   waits up to 60 s for the day list to answer, prints `ss` for 8765 and the name of the folder that holds the beta's code.
 
-What it leaves in place: everything else in `Whale-Review-Web/`: the beta-only backend modules (`auth.py`, `video.py`,
-`uploads.py`, `jobs.py`, `worker.py`, ...), the other frontend pages, `pipelines/`, `docs/`, `data/app/` (accounts and
-database), and the upload, day, video and export folders (`app_uploads`, `app_days`, `app_video`, `app_exports`). The old
-code does not use them. The researchers' state files are not touched; days uploaded through the beta stay in the days
-root and show up in the old app. The `tests/` folder is not restored (the beta's tests stay).
+What it leaves in place: `pipelines/`, `docs/`, `requirements.txt`, `data/` (accounts, database, researcher state) and
+the folders `app_uploads`, `app_days`, `app_video`, `app_exports`; whatever else is there stays too. The old code does not
+use them. The researchers' state files are not touched; days uploaded through the beta stay in the days root and show up
+in the old app.
 
 Verify afterwards:
 
 ```bash
 B=/home/sat3737/NOAA_whales/moonshot_cache/switch_root/backup_beta_golive_2026-11-24; W=/home/sat3737/NOAA_whales/Whale-Review-Web
-ss -ltnp 'sport = :8765'                                                  # 127.0.0.1:8765
+ss -ltnp 'sport = :8765'                                                  # 127.0.0.1:8765, not 0.0.0.0
 curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8765/           # 200 with no sign-in page
 curl -s http://localhost:8765/api/library/days | head -c 200              # a list of days (the beta answers 401 / a sign-in)
-# the 18 restored files against the backup's checksums (83 lines in that file also cover tests/, which are not restored):
-cd $W && grep -E ' \./(backend/(app|interpret|labeling|labeling_sketch|library|pairs|signatures)\.py|frontend/(index|labeling|interpret|pairs|bursts|signatures)\.html|frontend/js/(bursts|lab_lightbox|interp_step_photos)\.js|serve\.sh|README\.md)$' $B/sha256_code_before.txt | sha256sum -c -
+ls $W/backend/auth.py                                                     # must not exist
+cd $W && sha256sum -c --quiet $B/sha256_code_before.txt && echo match     # the 83 old files are in place
 ```
+
+Go forward again (one command; the same script):
+
+```bash
+bash /home/sat3737/NOAA_whales/moonshot_cache/switch_root/ROLLBACK_beta.sh --forward
+```
+
+It refuses if `backend/auth.py` already exists. It takes the newest `code_at_rollback_*` folder of the backup (check the
+date if you rolled back more than once), stops the old server by pid, moves the old code that ran meanwhile to
+`old_code_put_aside_<date>_<time>/`, copies the beta's five items back, starts `./serve.sh --port 8765 --host 127.0.0.1`
+and waits for `/healthz` to answer 200 (the job worker starts with the server). Accounts, sessions and the database in
+`data/app/` were never removed, so people can sign in again as before. Check with the commands of part 1.
+
+Do not use `backup_beta_golive_2026-11-24/ROLLBACK_beta_v1_in_place.sh`. It is the earlier 18-file version, kept for the
+record, and it does not fit the code of round 3.
+
+## 4. Roll back to the beta before round 3 (keeps the sign-in)
+
+When: a fault appeared with round 3 (photo processing, a day opening early, job speed, a page that was changed) and the
+beta as it ran from 2026-11-24 23:48 to the round-3 go-live is the known good state.
+
+```bash
+bash /home/sat3737/NOAA_whales/moonshot_cache/switch_root/ROLLBACK_round3.sh
+```
+
+What the script does, in order (it stops at the first failing command):
+
+1. Refuses if `backend/auth.py` is missing (it is then not for that state; if the old app is live, go forward first with
+   `ROLLBACK_beta.sh --forward`), and refuses if `attic/` already exists (the code from before round 3 is already live).
+2. Checks `backup_beta_round3_2026-11-25/code_before/` against `sha256_code_before.txt` (228 files).
+3. Stops the job worker and the server (pid that listens on 8765). A queued or running job goes back to the queue and
+   continues with the code that is then live.
+4. Moves `attic backend docs frontend frontend_next pipelines tests README.md requirements.txt serve.sh` of the live folder
+   to `backup_beta_round3_2026-11-25/code_at_rollback_<date>_<time>/` (moved, not deleted), and copies the same items from
+   `code_before/` into `Whale-Review-Web/`.
+5. Checks the live files against `sha256_code_before.txt` and prints `code from before round 3 in place (228 files match
+   code_before)`.
+6. Starts `./serve.sh --port 8765` (the beta's `serve.sh`, 127.0.0.1) in the background, appending to `serve.log`, and
+   waits up to 60 s for `/healthz` to answer 200.
+
+It does not touch `data/` (accounts, database, researcher state) or `app_uploads`, `app_days`, `app_video`,
+`app_exports`. The database keeps the two job columns round 3 added (`ready_at`, `ready_note`); the older code ignores
+them.
+
+Verify afterwards:
+
+```bash
+B=/home/sat3737/NOAA_whales/moonshot_cache/switch_root/backup_beta_round3_2026-11-25; W=/home/sat3737/NOAA_whales/Whale-Review-Web
+ss -ltnp 'sport = :8765'                                                  # 127.0.0.1:8765
+curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8765/healthz    # 200
+curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8765/api/library/days   # 401: the sign-in is back
+ls -d $W/attic                                                            # exists again
+cd $W && sha256sum -c --quiet $B/sha256_code_before.txt && echo match     # the 228 files of the beta before round 3
+```
+
+Go forward to round 3 again:
+
+```bash
+bash /home/sat3737/NOAA_whales/moonshot_cache/switch_root/ROLLBACK_round3.sh --forward
+```
+
+It refuses if `attic/` is missing (round 3 is already live). It takes the newest `code_at_rollback_*` folder (it must hold
+`pipelines/cpu.py`), stops the worker and the server, moves the code that is live to
+`round2_code_put_aside_<date>_<time>/`, copies round 3 back, starts the server and waits for `/healthz`. Check with the
+commands of part 1. The go-live wrote `backup_beta_round3_2026-11-25/sha256_code_after.txt`, which lists the round-3
+files: `cd $W && sha256sum -c --quiet $B/sha256_code_after.txt`. If that file is not there, the go-live has not run.
+
+## 5. Which roll-back, and what was tested
+
+* Fault only since round 3, the sign-in is wanted: part 4.
+* The beta itself is the problem, or the sorting must go on without it: part 3.
+* Only one state file is damaged: the next paragraph, no roll-back.
+* Do not sort in two versions at once, and do not run `ROLLBACK_beta_v1_in_place.sh`.
+
+Both roll-back scripts and both `--forward` directions were rehearsed on 2026-11-25 on a copy of the app on another
+port: the old app answered without sign-in, the beta answered with sign-in, and the code matched the backups' checksums.
+They have not been run on the live app.
 
 Restore one state file by hand (only if a file was damaged; `state/` is the copy of the researchers' state at go-live,
 so anything saved since is lost for that file; `sha256_state.txt` lists 418 files, `sha256_state_live_at_backup.txt`
@@ -149,19 +242,3 @@ f=data/2025-01-15/labeling.json                                  # example: path
 cp -p $W/$f $W/$f.damaged_$(date +%F_%H%M%S) && cp -p $B/state/$f $W/$f
 (cd $B/state && grep " \./$f\$" ../sha256_state.txt | sha256sum -c - ) ; sha256sum $W/$f      # the two sums must agree
 ```
-
-Go forward to the beta again: the roll-back script keeps the beta's version of the 18 files in
-`$B/code_at_rollback_<date>_<time>/` (same relative paths). With the app stopped, copy them back and start the beta:
-
-```bash
-B=/home/sat3737/NOAA_whales/moonshot_cache/switch_root/backup_beta_golive_2026-11-24; W=/home/sat3737/NOAA_whales/Whale-Review-Web
-A=$(ls -d $B/code_at_rollback_* | tail -1)          # the right one if you rolled back more than once: check the date
-cp -a $A/. $W/                                       # backend/, frontend/, serve.sh, README.md
-(cd $A && sha256sum -c <(grep -F -f <(find . -type f | sed 's|^\./|  |') $B/sha256_code_after.txt))   # only for the files of go-live
-# then start as in part 1 (the old process on 8765 must be stopped first)
-```
-
-`sha256_code_after.txt` holds the checksums of the beta files that went live on 2026-11-24; the beta has changed since
-(a later backup folder, `backup_beta_round2_2026-11-25`, exists), so files from `code_at_rollback_*` made after that
-date will differ from it legitimately; compare with the newer backup's own checksum file instead. Accounts, sessions
-and the database in `data/app/` were never removed, so people can sign in again as before.
